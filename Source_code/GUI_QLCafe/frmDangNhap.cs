@@ -13,5 +13,10 @@ namespace GUI_QLCafe
         {
 
         }
+
+        private void btnDN_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

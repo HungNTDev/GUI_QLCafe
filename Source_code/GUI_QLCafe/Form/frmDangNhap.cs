@@ -19,11 +19,6 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnDN_Click(object sender, System.EventArgs e)
         {
 
@@ -74,6 +69,25 @@ namespace GUI_QLCafe
                 MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Clear();
                 txtPassword.Focus();
+            }
+        }
+
+        private void picHiddenPassWord_Click(object sender, System.EventArgs e)
+        {
+            // Show password nếu người dùng click vào icon ẩn pass
+            if (txtPassword.PasswordChar == '*')
+            {
+                picShowPassWord.BringToFront();
+                txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void picShowPassWord_Click(object sender, System.EventArgs e)
+        {  // Ẩn password nếu người dùng click vào icon show pass
+            if (txtPassword.PasswordChar == '\0')
+            {
+                picHiddenPassWord.BringToFront();
+                txtPassword.PasswordChar = '*';
             }
         }
     }

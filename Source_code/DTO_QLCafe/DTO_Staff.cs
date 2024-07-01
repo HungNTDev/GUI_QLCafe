@@ -37,7 +37,7 @@ namespace DTO_QLCafe
             get { return email; }
             set { email = value; }
         }
-        public string Password
+        public string PasswordStaff
         {
             get { return passwordStaff; }
             set { passwordStaff = value; }

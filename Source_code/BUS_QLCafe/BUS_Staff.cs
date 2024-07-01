@@ -1,6 +1,9 @@
 ﻿using DAL_QLCafe;
+using DTO_QLCafe;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -11,7 +14,7 @@ namespace BUS_QLCafe
     public class BUS_Staff
     {
         DAL_Staff dalStaff = new DAL_Staff();
-        //xử lí md5
+
         public string encryption(string password)
         {
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
@@ -27,49 +30,45 @@ namespace BUS_QLCafe
             }
             return encryptdata.ToString();
         }
-        public void DangNhap()
+        public bool DangNhap(DTO_Staff staff)
         {
-
+            return dalStaff.dangNhap(staff);
         }
-        public void QuenMK()
+        public bool QuenMK(string email)
         {
-
+            return dalStaff.quenMK(email);
         }
-        public void CapNhatMK()
+        public bool CapNhatMK(string email, string matkhau)
         {
-
+            return dalStaff.capNhatMK(email, matkhau);
         }
-        public void VaiTro()
+        public DataTable VaiTro(string email)
         {
-
+            return dalStaff.vaiTro(email);
         }
-        public void LayMK()
+        public DataTable LayMK(string emal)
         {
-
+            return dalStaff.layMK(emal);
         }
-        public void GetID()
+        public DataTable LayID()
         {
-
+            return dalStaff.layID();
         }
-        public void get()
+        public DataTable get()
         {
-
+            return dalStaff.get();
         }
-        public void insert()
+        public bool insert(DTO_Staff staff)
         {
-
+            return dalStaff.insert(staff);
         }
-        public void update()
+        public bool update(DTO_Staff staff)
         {
-
+            return dalStaff.update(staff);
         }
-        public void delete()
+        public DataTable search(string keyword, string column)
         {
-
-        }
-        public void search()
-        {
-
+            return dalStaff.search(keyword, column);
         }
     }
 }

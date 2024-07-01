@@ -44,9 +44,9 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.BorderRadiusFormDangNhap = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picHiddenPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -283,10 +283,6 @@
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 20;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -301,6 +297,7 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.Controls.Add(this.picHiddenPassWord);
             this.guna2GradientPanel1.Controls.Add(this.picShowPassWord);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button2);
@@ -324,6 +321,13 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1170, 684);
             this.guna2GradientPanel1.TabIndex = 3;
             // 
+            // BorderRadiusFormDangNhap
+            // 
+            this.BorderRadiusFormDangNhap.BorderRadius = 20;
+            this.BorderRadiusFormDangNhap.ContainerControl = this;
+            this.BorderRadiusFormDangNhap.DockIndicatorTransparencyValue = 0.6D;
+            this.BorderRadiusFormDangNhap.TransparentWhileDrag = true;
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,6 +337,7 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";
             ((System.ComponentModel.ISupportInitialize)(this.picHiddenPassWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPassWord)).EndInit();
@@ -360,8 +365,8 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm BorderRadiusFormDangNhap;
     }
 }

@@ -5,10 +5,8 @@ using System.Data.SqlClient;
 
 namespace DAL_QLCafe
 {
-    public class DAL_Staff
+    public class DAL_Staff: DBConnect
     {
-        private SqlConnection conn = new SqlConnection("server=CHIBAO\\SQLEXPRESS; database=QLBH; integrated security=true");
-
         public bool dangNhap(DTO_Staff staff)
         {
             try

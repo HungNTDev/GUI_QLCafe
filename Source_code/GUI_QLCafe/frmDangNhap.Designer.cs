@@ -33,14 +33,14 @@
             this.picHiddenPassWord = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picShowPassWord = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDN = new Guna.UI2.WinForms.Guna2Button();
             this.chkGhiNhoTK = new System.Windows.Forms.CheckBox();
             this.btnQuenMatKhau = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -61,7 +61,7 @@
             this.picHiddenPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picHiddenPassWord.Image")));
             this.picHiddenPassWord.ImageRotate = 0F;
             this.picHiddenPassWord.Location = new System.Drawing.Point(772, 313);
-            this.picHiddenPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picHiddenPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.picHiddenPassWord.Name = "picHiddenPassWord";
             this.picHiddenPassWord.Size = new System.Drawing.Size(40, 25);
             this.picHiddenPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -75,7 +75,7 @@
             this.picShowPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picShowPassWord.Image")));
             this.picShowPassWord.ImageRotate = 0F;
             this.picShowPassWord.Location = new System.Drawing.Point(772, 313);
-            this.picShowPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picShowPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.picShowPassWord.Name = "picShowPassWord";
             this.picShowPassWord.Size = new System.Drawing.Size(40, 25);
             this.picShowPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -103,7 +103,7 @@
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2Button2.Location = new System.Drawing.Point(530, 488);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.BorderRadius = 15;
             this.guna2Button2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
@@ -112,23 +112,24 @@
             this.guna2Button2.Text = "Login with Google";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // guna2Button1
+            // btnDN
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(458, 395);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(363, 47);
-            this.guna2Button1.TabIndex = 10;
-            this.guna2Button1.Text = "Login";
+            this.btnDN.BackColor = System.Drawing.Color.Transparent;
+            this.btnDN.BorderRadius = 15;
+            this.btnDN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDN.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDN.ForeColor = System.Drawing.Color.White;
+            this.btnDN.Location = new System.Drawing.Point(458, 395);
+            this.btnDN.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDN.Name = "btnDN";
+            this.btnDN.Size = new System.Drawing.Size(363, 47);
+            this.btnDN.TabIndex = 10;
+            this.btnDN.Text = "Login";
+            this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
             // 
             // chkGhiNhoTK
             // 
@@ -138,9 +139,9 @@
             this.chkGhiNhoTK.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGhiNhoTK.ForeColor = System.Drawing.Color.Black;
             this.chkGhiNhoTK.Location = new System.Drawing.Point(461, 351);
-            this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(2);
             this.chkGhiNhoTK.Name = "chkGhiNhoTK";
-            this.chkGhiNhoTK.Size = new System.Drawing.Size(123, 24);
+            this.chkGhiNhoTK.Size = new System.Drawing.Size(139, 27);
             this.chkGhiNhoTK.TabIndex = 9;
             this.chkGhiNhoTK.Text = "Remember me";
             this.chkGhiNhoTK.UseVisualStyleBackColor = false;
@@ -157,10 +158,10 @@
             this.btnQuenMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnQuenMatKhau.HoverState.FillColor = System.Drawing.Color.White;
             this.btnQuenMatKhau.Location = new System.Drawing.Point(689, 347);
-            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.PressedColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Size = new System.Drawing.Size(146, 30);
+            this.btnQuenMatKhau.Size = new System.Drawing.Size(164, 34);
             this.btnQuenMatKhau.TabIndex = 8;
             this.btnQuenMatKhau.Text = "Forgot Password?";
             // 
@@ -173,7 +174,7 @@
             this.label4.Location = new System.Drawing.Point(622, 455);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 21);
+            this.label4.Size = new System.Drawing.Size(37, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "OR";
             // 
@@ -185,7 +186,7 @@
             this.label3.Location = new System.Drawing.Point(455, 275);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.Size = new System.Drawing.Size(91, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
             // 
@@ -222,34 +223,34 @@
             this.label2.Location = new System.Drawing.Point(455, 192);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 21);
+            this.label2.Size = new System.Drawing.Size(58, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Email";
             // 
-            // guna2TextBox1
+            // txtEmail
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(458, 223);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.guna2TextBox1.PlaceholderText = "user@example.com";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(363, 37);
-            this.guna2TextBox1.TabIndex = 5;
+            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmail.BorderColor = System.Drawing.Color.Silver;
+            this.txtEmail.BorderRadius = 10;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.txtEmail.Location = new System.Drawing.Point(458, 223);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtEmail.PlaceholderText = "user@example.com";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(363, 37);
+            this.txtEmail.TabIndex = 5;
             // 
             // guna2ControlBox1
             // 
@@ -261,7 +262,7 @@
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox1.Location = new System.Drawing.Point(844, 6);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(26, 22);
             this.guna2ControlBox1.TabIndex = 3;
@@ -272,7 +273,7 @@
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(584, 30);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(116, 112);
@@ -288,7 +289,7 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -9);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(400, 574);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -304,7 +305,7 @@
             this.label1.Location = new System.Drawing.Point(548, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 37);
+            this.label1.Size = new System.Drawing.Size(241, 42);
             this.label1.TabIndex = 4;
             this.label1.Text = "Welcome Back!";
             // 
@@ -314,14 +315,14 @@
             this.guna2GradientPanel1.Controls.Add(this.picHiddenPassWord);
             this.guna2GradientPanel1.Controls.Add(this.picShowPassWord);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button2);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
+            this.guna2GradientPanel1.Controls.Add(this.btnDN);
             this.guna2GradientPanel1.Controls.Add(this.chkGhiNhoTK);
             this.guna2GradientPanel1.Controls.Add(this.btnQuenMatKhau);
             this.guna2GradientPanel1.Controls.Add(this.label4);
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.txtPassword);
             this.guna2GradientPanel1.Controls.Add(this.label2);
-            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox1);
+            this.guna2GradientPanel1.Controls.Add(this.txtEmail);
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox1);
             this.guna2GradientPanel1.Controls.Add(this.guna2CirclePictureBox1);
@@ -330,11 +331,10 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(878, 556);
             this.guna2GradientPanel1.TabIndex = 3;
-            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
             // BorderRadiusFormDangNhap
             // 
@@ -351,7 +351,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";
@@ -370,14 +370,14 @@
         private Guna.UI2.WinForms.Guna2PictureBox picHiddenPassWord;
         private Guna.UI2.WinForms.Guna2PictureBox picShowPassWord;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnDN;
         private System.Windows.Forms.CheckBox chkGhiNhoTK;
         private Guna.UI2.WinForms.Guna2Button btnQuenMatKhau;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;

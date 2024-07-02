@@ -46,9 +46,9 @@ namespace BUS_QLCafe
         {
             return dal.vaiTro(email);
         }
-        public DataTable LayMK(string emal)
+        public DataTable LayMK(string email)
         {
-            return dal.layMK(emal);
+            return dal.layMK(email);
         }
         public DataTable LayID()
         {

@@ -26,8 +26,16 @@ namespace GUI_QLCafe
         public frmDangNhap()
         {
             InitializeComponent();
+            DeleteStoredCredentials();
         }
-
+        private void DeleteStoredCredentials()
+        {
+            string credPath = "token.json";
+            if (File.Exists(credPath))
+            {
+                File.Delete(credPath);
+            }
+        }
         private void btnDN_Click(object sender, System.EventArgs e)
         {
 
@@ -121,9 +129,13 @@ namespace GUI_QLCafe
         {
             UserCredential credential;
 
+            string credPath = "token.json";
+
+            // Delete the stored credentials if they exist
+            DeleteStoredCredentials();
+
             using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
             {
-                string credPath = "token.json";
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.FromStream(stream).Secrets,
                     Scopes,

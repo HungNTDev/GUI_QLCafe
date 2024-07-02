@@ -112,3 +112,9 @@ as
 begin
 	select RoleStaff from staff where email = @email
 end
+
+create proc KiemTraEmail(@email nvarchar(50))
+as
+begin
+	SELECT COUNT(email) FROM nhanvien WHERE email = @Email
+end

@@ -4,6 +4,7 @@ using Google.Apis.Auth.OAuth2;
 using Google.Apis.Oauth2.v2;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using System;
 using System.Data;
 using System.IO;
 using System.Threading;
@@ -28,12 +29,35 @@ namespace GUI_QLCafe
             InitializeComponent();
             DeleteStoredCredentials();
         }
+
+        //Xóa tài khoản đã chọn lần trước để đăng nhập
         private void DeleteStoredCredentials()
         {
             string credPath = "token.json";
-            if (File.Exists(credPath))
+            try
             {
-                File.Delete(credPath);
+                if (Directory.Exists(credPath))
+                {
+                    // It's a directory, so delete its contents and then the directory
+                    Directory.Delete(credPath, true);
+                    Console.WriteLine("token.json directory and its contents deleted successfully.");
+                }
+                else if (File.Exists(credPath))
+                {
+                    // It's a file, so delete it
+                    File.Delete(credPath);
+                    Console.WriteLine("token.json file deleted successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("token.json does not exist.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting token.json: {ex.Message}");
+                // You might want to show this message to the user
+                MessageBox.Show($"Error deleting token.json: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnDN_Click(object sender, System.EventArgs e)
@@ -129,6 +153,8 @@ namespace GUI_QLCafe
         {
             UserCredential credential;
 
+
+            //Tạo thư mục + file để lưu thông tin đăng nhập
             string credPath = "token.json";
 
             // Delete the stored credentials if they exist
@@ -150,6 +176,7 @@ namespace GUI_QLCafe
                 ApplicationName = ApplicationName,
             });
 
+            //Lấy email
             var userInfo = oauth2Service.Userinfo.Get().Execute();
 
             if (userInfo != null && !string.IsNullOrEmpty(userInfo.Email))
@@ -182,7 +209,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Email không tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

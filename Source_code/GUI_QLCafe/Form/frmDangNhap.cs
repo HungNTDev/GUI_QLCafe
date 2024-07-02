@@ -1,6 +1,12 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Oauth2.v2;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
 using System.Data;
+using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -10,6 +16,9 @@ namespace GUI_QLCafe
 
         public int role { get; set; }
         public int status { get; set; }
+
+        static string[] Scopes = { Oauth2Service.Scope.UserinfoEmail };
+        static string ApplicationName = "QuanLyQuanCaPhe";
 
         DTO_Staff staff;
         BUS_Staff busStaff;
@@ -105,6 +114,64 @@ namespace GUI_QLCafe
             {
                 Properties.Settings.Default.SavedEmail = string.Empty;
                 Properties.Settings.Default.Save();
+            }
+        }
+
+        private void btnDNGoogle_Click(object sender, System.EventArgs e)
+        {
+            UserCredential credential;
+
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                string credPath = "token.json";
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.FromStream(stream).Secrets,
+                    Scopes,
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore(credPath, true)).Result;
+            }
+
+            var oauth2Service = new Oauth2Service(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = ApplicationName,
+            });
+
+            var userInfo = oauth2Service.Userinfo.Get().Execute();
+
+            if (userInfo != null && !string.IsNullOrEmpty(userInfo.Email))
+            {
+                // Check if the email exists in your database
+                staff = new DTO_Staff();
+                busStaff = new BUS_Staff();
+
+                staff.email = userInfo.Email;
+
+                if (busStaff.KiemTraEmail(staff.email)) // Adjust this method to check only the email if necessary
+                {
+                    DataTable dt = busStaff.VaiTro(staff.email);
+                    //frmMainQLBH.vaiTro = dt.Rows[0]["VaiTro"].ToString();
+                    //frmMainQLBH.session = 1;
+                    //frmMainQLBH.email = nv.EmailNV;
+
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //foreach (Form form in Application.OpenForms)
+                    //{
+                    //    if (form is frmMainQLBH)
+                    //    {
+                    //        ((frmMainQLBH)form).HienMenu();
+                    //        break;
+                    //    }
+                    //}
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Email không tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

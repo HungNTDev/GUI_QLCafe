@@ -54,6 +54,10 @@ namespace BUS_QLCafe
         {
             return dal.layID();
         }
+        public bool KiemTraEmail(string email)
+        {
+            return dal.kiemtraEmail(email);
+        }
         public DataTable get()
         {
             return dal.get();

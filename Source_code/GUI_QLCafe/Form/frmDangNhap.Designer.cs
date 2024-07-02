@@ -114,6 +114,7 @@
             this.btnDNGoogle.TabIndex = 5;
             this.btnDNGoogle.Text = "Login with Google account";
             this.btnDNGoogle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDNGoogle.Click += new System.EventHandler(this.btnDNGoogle_Click);
             // 
             // btnDN
             // 

@@ -40,5 +40,9 @@ namespace DTO_QLCafe
             this.percentVoucher = percentVoucher;
             this.statusVoucher = statusVoucher;
         }
+        public DTO_Voucher() 
+        {
+
+        }
     }
 }

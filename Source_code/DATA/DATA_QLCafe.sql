@@ -96,3 +96,7 @@ Foreign key (IdVoucher) references Voucher(IdVoucher)
 alter table Bill
 add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
+
+insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
+('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',1,0),
+('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',0,0)

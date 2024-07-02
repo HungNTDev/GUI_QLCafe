@@ -32,7 +32,7 @@ namespace GUI_QLCafe
 
             if (busStaff.DangNhap(staff))
             {
-                if (chkGhiNhoTK.Checked)
+                if (cknGhiNhoTK.Checked)
                 {
                     Properties.Settings.Default.SavedEmail = txtEmail.Text;
                     Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
@@ -95,7 +95,7 @@ namespace GUI_QLCafe
         private void chkGhiNhoTK_CheckedChanged(object sender, System.EventArgs e)
         {
             //Lưu email
-            if (chkGhiNhoTK.Checked)
+            if (cknGhiNhoTK.Checked)
             {
                 Properties.Settings.Default.SavedEmail = txtEmail.Text;
                 Properties.Settings.Default.Save();

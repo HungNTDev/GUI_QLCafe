@@ -30,31 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMatKhau));
-            this.BorderFormDangNhap = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.eDoiMatKhau = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblOldPassword = new System.Windows.Forms.Label();
+            this.picBackground = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lbOldPassword = new System.Windows.Forms.Label();
             this.txtOldPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblText = new System.Windows.Forms.Label();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.panelDangNhap = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.panelDoiMatKhau = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
-            this.lblRetypePass = new System.Windows.Forms.Label();
-            this.lblNewPassword = new System.Windows.Forms.Label();
+            this.lbRetypePass = new System.Windows.Forms.Label();
+            this.lbNewPassword = new System.Windows.Forms.Label();
             this.txtRetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.panelDangNhap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
+            this.panelDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BorderFormDangNhap
+            // eDoiMatKhau
             // 
-            this.BorderFormDangNhap.BorderRadius = 20;
-            this.BorderFormDangNhap.TargetControl = this;
+            this.eDoiMatKhau.BorderRadius = 20;
+            this.eDoiMatKhau.TargetControl = this;
             // 
             // btnChangePassword
             // 
@@ -80,30 +80,30 @@
             this.btnChangePassword.TabIndex = 10;
             this.btnChangePassword.Text = "Change";
             // 
-            // guna2PictureBox1
+            // picBackground
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(130)))), ((int)(((byte)(112)))));
-            this.guna2PictureBox1.BorderRadius = 15;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -11);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(533, 706);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
+            this.picBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(130)))), ((int)(((byte)(112)))));
+            this.picBackground.BorderRadius = 15;
+            this.picBackground.Image = ((System.Drawing.Image)(resources.GetObject("picBackground.Image")));
+            this.picBackground.ImageRotate = 0F;
+            this.picBackground.Location = new System.Drawing.Point(-1, -11);
+            this.picBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBackground.Name = "picBackground";
+            this.picBackground.Size = new System.Drawing.Size(533, 706);
+            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackground.TabIndex = 4;
+            this.picBackground.TabStop = false;
             // 
-            // lblOldPassword
+            // lbOldPassword
             // 
-            this.lblOldPassword.AutoSize = true;
-            this.lblOldPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblOldPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOldPassword.Location = new System.Drawing.Point(606, 245);
-            this.lblOldPassword.Name = "lblOldPassword";
-            this.lblOldPassword.Size = new System.Drawing.Size(130, 28);
-            this.lblOldPassword.TabIndex = 6;
-            this.lblOldPassword.Text = "Old Password";
+            this.lbOldPassword.AutoSize = true;
+            this.lbOldPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbOldPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOldPassword.Location = new System.Drawing.Point(606, 245);
+            this.lbOldPassword.Name = "lbOldPassword";
+            this.lbOldPassword.Size = new System.Drawing.Size(130, 28);
+            this.lbOldPassword.TabIndex = 6;
+            this.lbOldPassword.Text = "Old Password";
             // 
             // txtOldPassword
             // 
@@ -131,16 +131,16 @@
             this.txtOldPassword.Size = new System.Drawing.Size(484, 46);
             this.txtOldPassword.TabIndex = 5;
             // 
-            // lblEmail
+            // lbEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(607, 154);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(59, 28);
-            this.lblEmail.TabIndex = 6;
-            this.lblEmail.Text = "Email";
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(607, 154);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(59, 28);
+            this.lbEmail.TabIndex = 6;
+            this.lbEmail.Text = "Email";
             // 
             // txtEmail
             // 
@@ -181,81 +181,81 @@
             this.lblText.TabIndex = 4;
             this.lblText.Text = "Change your password";
             // 
-            // guna2ControlBox2
+            // cbMinimize
             // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.BorderRadius = 5;
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(1084, 7);
-            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(35, 27);
-            this.guna2ControlBox2.TabIndex = 3;
+            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.cbMinimize.BorderRadius = 5;
+            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.cbMinimize.FillColor = System.Drawing.Color.White;
+            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
+            this.cbMinimize.IconColor = System.Drawing.Color.Black;
+            this.cbMinimize.Location = new System.Drawing.Point(1084, 7);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMinimize.Name = "cbMinimize";
+            this.cbMinimize.Size = new System.Drawing.Size(35, 27);
+            this.cbMinimize.TabIndex = 3;
             // 
-            // guna2ControlBox1
+            // cbClose
             // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.BorderRadius = 5;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1125, 7);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(35, 27);
-            this.guna2ControlBox1.TabIndex = 3;
+            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClose.BackColor = System.Drawing.Color.Transparent;
+            this.cbClose.BorderRadius = 5;
+            this.cbClose.FillColor = System.Drawing.Color.White;
+            this.cbClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.White;
+            this.cbClose.IconColor = System.Drawing.Color.Black;
+            this.cbClose.Location = new System.Drawing.Point(1125, 7);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClose.Name = "cbClose";
+            this.cbClose.Size = new System.Drawing.Size(35, 27);
+            this.cbClose.TabIndex = 3;
             // 
-            // panelDangNhap
+            // panelDoiMatKhau
             // 
-            this.panelDangNhap.BackColor = System.Drawing.Color.Transparent;
-            this.panelDangNhap.Controls.Add(this.guna2Shapes1);
-            this.panelDangNhap.Controls.Add(this.chkShowPassword);
-            this.panelDangNhap.Controls.Add(this.btnChangePassword);
-            this.panelDangNhap.Controls.Add(this.lblRetypePass);
-            this.panelDangNhap.Controls.Add(this.lblNewPassword);
-            this.panelDangNhap.Controls.Add(this.txtRetypePassword);
-            this.panelDangNhap.Controls.Add(this.lblOldPassword);
-            this.panelDangNhap.Controls.Add(this.txtNewPassword);
-            this.panelDangNhap.Controls.Add(this.txtOldPassword);
-            this.panelDangNhap.Controls.Add(this.lblEmail);
-            this.panelDangNhap.Controls.Add(this.txtEmail);
-            this.panelDangNhap.Controls.Add(this.lblText);
-            this.panelDangNhap.Controls.Add(this.guna2ControlBox2);
-            this.panelDangNhap.Controls.Add(this.guna2ControlBox1);
-            this.panelDangNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDangNhap.FillColor = System.Drawing.Color.White;
-            this.panelDangNhap.FillColor2 = System.Drawing.Color.White;
-            this.panelDangNhap.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.panelDangNhap.Location = new System.Drawing.Point(0, 0);
-            this.panelDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelDangNhap.Name = "panelDangNhap";
-            this.panelDangNhap.Size = new System.Drawing.Size(1171, 684);
-            this.panelDangNhap.TabIndex = 5;
+            this.panelDoiMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.panelDoiMatKhau.Controls.Add(this.shapeLine);
+            this.panelDoiMatKhau.Controls.Add(this.chkShowPassword);
+            this.panelDoiMatKhau.Controls.Add(this.btnChangePassword);
+            this.panelDoiMatKhau.Controls.Add(this.lbRetypePass);
+            this.panelDoiMatKhau.Controls.Add(this.lbNewPassword);
+            this.panelDoiMatKhau.Controls.Add(this.txtRetypePassword);
+            this.panelDoiMatKhau.Controls.Add(this.lbOldPassword);
+            this.panelDoiMatKhau.Controls.Add(this.txtNewPassword);
+            this.panelDoiMatKhau.Controls.Add(this.txtOldPassword);
+            this.panelDoiMatKhau.Controls.Add(this.lbEmail);
+            this.panelDoiMatKhau.Controls.Add(this.txtEmail);
+            this.panelDoiMatKhau.Controls.Add(this.lblText);
+            this.panelDoiMatKhau.Controls.Add(this.cbMinimize);
+            this.panelDoiMatKhau.Controls.Add(this.cbClose);
+            this.panelDoiMatKhau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDoiMatKhau.FillColor = System.Drawing.Color.White;
+            this.panelDoiMatKhau.FillColor2 = System.Drawing.Color.White;
+            this.panelDoiMatKhau.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.panelDoiMatKhau.Location = new System.Drawing.Point(0, 0);
+            this.panelDoiMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDoiMatKhau.Name = "panelDoiMatKhau";
+            this.panelDoiMatKhau.Size = new System.Drawing.Size(1171, 684);
+            this.panelDoiMatKhau.TabIndex = 5;
             // 
-            // guna2Shapes1
+            // shapeLine
             // 
-            this.guna2Shapes1.BorderThickness = 1;
-            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Shapes1.LineEndCap = System.Drawing.Drawing2D.LineCap.Round;
-            this.guna2Shapes1.LineStartCap = System.Drawing.Drawing2D.LineCap.Round;
-            this.guna2Shapes1.LineThickness = 1;
-            this.guna2Shapes1.Location = new System.Drawing.Point(547, 117);
-            this.guna2Shapes1.Name = "guna2Shapes1";
-            this.guna2Shapes1.PolygonSkip = 1;
-            this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.guna2Shapes1.Size = new System.Drawing.Size(612, 22);
-            this.guna2Shapes1.TabIndex = 12;
-            this.guna2Shapes1.Text = "guna2Shapes1";
-            this.guna2Shapes1.UseTransparentBackground = true;
-            this.guna2Shapes1.Zoom = 80;
+            this.shapeLine.BorderThickness = 1;
+            this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.shapeLine.LineEndCap = System.Drawing.Drawing2D.LineCap.Round;
+            this.shapeLine.LineStartCap = System.Drawing.Drawing2D.LineCap.Round;
+            this.shapeLine.LineThickness = 1;
+            this.shapeLine.Location = new System.Drawing.Point(547, 117);
+            this.shapeLine.Name = "shapeLine";
+            this.shapeLine.PolygonSkip = 1;
+            this.shapeLine.Rotate = 0F;
+            this.shapeLine.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.shapeLine.Size = new System.Drawing.Size(612, 22);
+            this.shapeLine.TabIndex = 12;
+            this.shapeLine.Text = "guna2Shapes1";
+            this.shapeLine.UseTransparentBackground = true;
+            this.shapeLine.Zoom = 80;
             // 
             // chkShowPassword
             // 
@@ -271,27 +271,27 @@
             this.chkShowPassword.Text = "Show password";
             this.chkShowPassword.UseVisualStyleBackColor = false;
             // 
-            // lblRetypePass
+            // lbRetypePass
             // 
-            this.lblRetypePass.AutoSize = true;
-            this.lblRetypePass.BackColor = System.Drawing.Color.Transparent;
-            this.lblRetypePass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePass.Location = new System.Drawing.Point(607, 425);
-            this.lblRetypePass.Name = "lblRetypePass";
-            this.lblRetypePass.Size = new System.Drawing.Size(158, 28);
-            this.lblRetypePass.TabIndex = 6;
-            this.lblRetypePass.Text = "Retype Password";
+            this.lbRetypePass.AutoSize = true;
+            this.lbRetypePass.BackColor = System.Drawing.Color.Transparent;
+            this.lbRetypePass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRetypePass.Location = new System.Drawing.Point(607, 425);
+            this.lbRetypePass.Name = "lbRetypePass";
+            this.lbRetypePass.Size = new System.Drawing.Size(158, 28);
+            this.lbRetypePass.TabIndex = 6;
+            this.lbRetypePass.Text = "Retype Password";
             // 
-            // lblNewPassword
+            // lbNewPassword
             // 
-            this.lblNewPassword.AutoSize = true;
-            this.lblNewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewPassword.Location = new System.Drawing.Point(608, 336);
-            this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(137, 28);
-            this.lblNewPassword.TabIndex = 6;
-            this.lblNewPassword.Text = "New Password";
+            this.lbNewPassword.AutoSize = true;
+            this.lbNewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNewPassword.Location = new System.Drawing.Point(608, 336);
+            this.lbNewPassword.Name = "lbNewPassword";
+            this.lbNewPassword.Size = new System.Drawing.Size(137, 28);
+            this.lbNewPassword.TabIndex = 6;
+            this.lbNewPassword.Text = "New Password";
             // 
             // txtRetypePassword
             // 
@@ -350,36 +350,36 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 684);
-            this.Controls.Add(this.guna2PictureBox1);
-            this.Controls.Add(this.panelDangNhap);
+            this.Controls.Add(this.picBackground);
+            this.Controls.Add(this.panelDoiMatKhau);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDoiMatKhau";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.panelDangNhap.ResumeLayout(false);
-            this.panelDangNhap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
+            this.panelDoiMatKhau.ResumeLayout(false);
+            this.panelDoiMatKhau.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2GradientPanel panelDangNhap;
+        private Guna.UI2.WinForms.Guna2PictureBox picBackground;
+        private Guna.UI2.WinForms.Guna2GradientPanel panelDoiMatKhau;
         private Guna.UI2.WinForms.Guna2Button btnChangePassword;
-        private System.Windows.Forms.Label lblOldPassword;
+        private System.Windows.Forms.Label lbOldPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtOldPassword;
-        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lbEmail;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label lblText;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2Elipse BorderFormDangNhap;
-        private System.Windows.Forms.Label lblNewPassword;
+        private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
+        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
+        private Guna.UI2.WinForms.Guna2Elipse eDoiMatKhau;
+        private System.Windows.Forms.Label lbNewPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtNewPassword;
-        private System.Windows.Forms.Label lblRetypePass;
+        private System.Windows.Forms.Label lbRetypePass;
         private Guna.UI2.WinForms.Guna2TextBox txtRetypePassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
-        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
+        private Guna.UI2.WinForms.Guna2Shapes shapeLine;
     }
 }

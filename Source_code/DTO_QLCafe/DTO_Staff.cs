@@ -46,15 +46,15 @@
             get { return statusStaff; }
             set { statusStaff = value; }
         }
-        public DTO_Staff(string id, string name, string image, string email, string password, int role, int status)
+        public DTO_Staff(string idStaff, string fullName, string imageStaff, string email, string passwordStaff, int roleStaff, int statusStaff)
         {
-            this.idStaff = id;
-            this.fullName = name;
-            this.imageStaff = image;
+            this.idStaff = idStaff;
+            this.fullName = fullName;
+            this.imageStaff = imageStaff;
             this.email = email;
-            this.passwordStaff = password;
-            this.roleStaff = role;
-            this.statusStaff = status;
+            this.passwordStaff = passwordStaff;
+            this.roleStaff = roleStaff;
+            this.statusStaff = statusStaff;
         }
         public DTO_Staff()
         {

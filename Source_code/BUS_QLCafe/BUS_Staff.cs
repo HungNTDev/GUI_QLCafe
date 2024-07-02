@@ -13,7 +13,7 @@ namespace BUS_QLCafe
 {
     public class BUS_Staff
     {
-        DAL_Staff dalStaff = new DAL_Staff();
+        DAL_Staff dal = new DAL_Staff();
 
         public string encryption(string password)
         {
@@ -32,43 +32,43 @@ namespace BUS_QLCafe
         }
         public bool DangNhap(DTO_Staff staff)
         {
-            return dalStaff.dangNhap(staff);
+            return dal.dangNhap(staff);
         }
         public bool QuenMK(string email)
         {
-            return dalStaff.quenMK(email);
+            return dal.quenMK(email);
         }
         public bool CapNhatMK(string email, string matkhau)
         {
-            return dalStaff.capNhatMK(email, matkhau);
+            return dal.capNhatMK(email, matkhau);
         }
         public DataTable VaiTro(string email)
         {
-            return dalStaff.vaiTro(email);
+            return dal.vaiTro(email);
         }
         public DataTable LayMK(string emal)
         {
-            return dalStaff.layMK(emal);
+            return dal.layMK(emal);
         }
         public DataTable LayID()
         {
-            return dalStaff.layID();
+            return dal.layID();
         }
         public DataTable get()
         {
-            return dalStaff.get();
+            return dal.get();
         }
         public bool insert(DTO_Staff staff)
         {
-            return dalStaff.insert(staff);
+            return dal.insert(staff);
         }
         public bool update(DTO_Staff staff)
         {
-            return dalStaff.update(staff);
+            return dal.update(staff);
         }
         public DataTable search(string keyword, string column)
         {
-            return dalStaff.search(keyword, column);
+            return dal.search(keyword, column);
         }
     }
 }

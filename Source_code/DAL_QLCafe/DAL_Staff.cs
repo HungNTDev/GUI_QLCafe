@@ -182,7 +182,7 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("getStaff", conn))
+                using (SqlCommand cmd = new SqlCommand("GetStaff", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

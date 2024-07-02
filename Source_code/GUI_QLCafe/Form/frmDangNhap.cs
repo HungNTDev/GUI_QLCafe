@@ -25,6 +25,7 @@ namespace GUI_QLCafe
             //frmMainQLBH.email = nv.EmailNV;
 
             staff = new DTO_Staff();
+            busStaff = new BUS_Staff();
 
             staff.email = txtEmail.Text;
             staff.passwordStaff = txtPassword.Text;

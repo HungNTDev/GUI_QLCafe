@@ -61,10 +61,10 @@
             this.picHiddenPassWord.BorderRadius = 10;
             this.picHiddenPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picHiddenPassWord.Image")));
             this.picHiddenPassWord.ImageRotate = 0F;
-            this.picHiddenPassWord.Location = new System.Drawing.Point(1029, 383);
-            this.picHiddenPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picHiddenPassWord.Location = new System.Drawing.Point(772, 311);
+            this.picHiddenPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picHiddenPassWord.Name = "picHiddenPassWord";
-            this.picHiddenPassWord.Size = new System.Drawing.Size(53, 31);
+            this.picHiddenPassWord.Size = new System.Drawing.Size(40, 25);
             this.picHiddenPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picHiddenPassWord.TabIndex = 11;
             this.picHiddenPassWord.TabStop = false;
@@ -76,10 +76,10 @@
             this.picShowPassWord.BorderRadius = 10;
             this.picShowPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picShowPassWord.Image")));
             this.picShowPassWord.ImageRotate = 0F;
-            this.picShowPassWord.Location = new System.Drawing.Point(1029, 383);
-            this.picShowPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picShowPassWord.Location = new System.Drawing.Point(772, 311);
+            this.picShowPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picShowPassWord.Name = "picShowPassWord";
-            this.picShowPassWord.Size = new System.Drawing.Size(53, 31);
+            this.picShowPassWord.Size = new System.Drawing.Size(40, 25);
             this.picShowPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picShowPassWord.TabIndex = 12;
             this.picShowPassWord.TabStop = false;
@@ -105,13 +105,13 @@
             this.btnDNGoogle.Image = ((System.Drawing.Image)(resources.GetObject("btnDNGoogle.Image")));
             this.btnDNGoogle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDNGoogle.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDNGoogle.Location = new System.Drawing.Point(677, 601);
-            this.btnDNGoogle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDNGoogle.Location = new System.Drawing.Point(508, 488);
+            this.btnDNGoogle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDNGoogle.Name = "btnDNGoogle";
             this.btnDNGoogle.ShadowDecoration.BorderRadius = 15;
             this.btnDNGoogle.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDNGoogle.Size = new System.Drawing.Size(353, 58);
-            this.btnDNGoogle.TabIndex = 10;
+            this.btnDNGoogle.Size = new System.Drawing.Size(265, 47);
+            this.btnDNGoogle.TabIndex = 5;
             this.btnDNGoogle.Text = "Login with Google account";
             this.btnDNGoogle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -126,17 +126,18 @@
             this.btnDN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDN.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDN.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDN.ForeColor = System.Drawing.Color.White;
             this.btnDN.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDN.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnDN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnDN.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDN.Location = new System.Drawing.Point(611, 486);
-            this.btnDN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDN.Location = new System.Drawing.Point(458, 395);
+            this.btnDN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDN.Name = "btnDN";
-            this.btnDN.Size = new System.Drawing.Size(484, 58);
-            this.btnDN.TabIndex = 10;
+            this.btnDN.Size = new System.Drawing.Size(363, 47);
+            this.btnDN.TabIndex = 4;
             this.btnDN.Text = "Login";
             this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
             // 
@@ -146,11 +147,11 @@
             this.chkGhiNhoTK.BackColor = System.Drawing.Color.Transparent;
             this.chkGhiNhoTK.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGhiNhoTK.ForeColor = System.Drawing.Color.Black;
-            this.chkGhiNhoTK.Location = new System.Drawing.Point(615, 430);
-            this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkGhiNhoTK.Location = new System.Drawing.Point(461, 349);
+            this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkGhiNhoTK.Name = "chkGhiNhoTK";
-            this.chkGhiNhoTK.Size = new System.Drawing.Size(150, 29);
-            this.chkGhiNhoTK.TabIndex = 9;
+            this.chkGhiNhoTK.Size = new System.Drawing.Size(141, 27);
+            this.chkGhiNhoTK.TabIndex = 2;
             this.chkGhiNhoTK.Text = "Remember me";
             this.chkGhiNhoTK.UseVisualStyleBackColor = false;
             // 
@@ -165,12 +166,12 @@
             this.btnQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuenMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnQuenMatKhau.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Location = new System.Drawing.Point(919, 425);
-            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuenMatKhau.Location = new System.Drawing.Point(689, 345);
+            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.PressedColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Size = new System.Drawing.Size(176, 36);
-            this.btnQuenMatKhau.TabIndex = 8;
+            this.btnQuenMatKhau.Size = new System.Drawing.Size(164, 34);
+            this.btnQuenMatKhau.TabIndex = 3;
             this.btnQuenMatKhau.Text = "Forgot Password?";
             // 
             // lblText1
@@ -179,9 +180,10 @@
             this.lblText1.BackColor = System.Drawing.Color.Transparent;
             this.lblText1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblText1.ForeColor = System.Drawing.Color.Silver;
-            this.lblText1.Location = new System.Drawing.Point(829, 560);
+            this.lblText1.Location = new System.Drawing.Point(622, 455);
+            this.lblText1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblText1.Name = "lblText1";
-            this.lblText1.Size = new System.Drawing.Size(39, 28);
+            this.lblText1.Size = new System.Drawing.Size(37, 25);
             this.lblText1.TabIndex = 6;
             this.lblText1.Text = "OR";
             // 
@@ -190,9 +192,10 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(607, 338);
+            this.lblPassword.Location = new System.Drawing.Point(455, 275);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(93, 28);
+            this.lblPassword.Size = new System.Drawing.Size(91, 25);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Password";
             // 
@@ -212,24 +215,25 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtPassword.Location = new System.Drawing.Point(611, 374);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtPassword.Location = new System.Drawing.Point(458, 304);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPassword.PlaceholderText = "At least 8 characters";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(484, 46);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.Size = new System.Drawing.Size(363, 37);
+            this.txtPassword.TabIndex = 1;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(607, 236);
+            this.lblEmail.Location = new System.Drawing.Point(455, 192);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(59, 28);
+            this.lblEmail.Size = new System.Drawing.Size(58, 25);
             this.lblEmail.TabIndex = 6;
             this.lblEmail.Text = "Email";
             // 
@@ -249,15 +253,15 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtEmail.Location = new System.Drawing.Point(611, 274);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtEmail.Location = new System.Drawing.Point(458, 223);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtEmail.PlaceholderText = "user@example.com";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(484, 46);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.Size = new System.Drawing.Size(363, 37);
+            this.txtEmail.TabIndex = 0;
             // 
             // guna2ControlBox1
             // 
@@ -268,10 +272,10 @@
             this.guna2ControlBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1125, 7);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(844, 6);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(35, 27);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(26, 22);
             this.guna2ControlBox1.TabIndex = 3;
             // 
             // pbLogo
@@ -279,11 +283,11 @@
             this.pbLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.ImageRotate = 0F;
-            this.pbLogo.Location = new System.Drawing.Point(774, 37);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbLogo.Location = new System.Drawing.Point(580, 30);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbLogo.Size = new System.Drawing.Size(155, 138);
+            this.pbLogo.Size = new System.Drawing.Size(116, 112);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
@@ -295,10 +299,10 @@
             this.guna2PictureBox1.BorderRadius = 15;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -11);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -9);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(533, 706);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(400, 574);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
@@ -309,9 +313,10 @@
             this.lblText.BackColor = System.Drawing.Color.Transparent;
             this.lblText.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lblText.Location = new System.Drawing.Point(726, 178);
+            this.lblText.Location = new System.Drawing.Point(544, 145);
+            this.lblText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(256, 45);
+            this.lblText.Size = new System.Drawing.Size(241, 42);
             this.lblText.TabIndex = 4;
             this.lblText.Text = "Welcome Back!";
             // 
@@ -338,9 +343,9 @@
             this.panelDangNhap.FillColor2 = System.Drawing.Color.White;
             this.panelDangNhap.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.panelDangNhap.Location = new System.Drawing.Point(0, 0);
-            this.panelDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDangNhap.Name = "panelDangNhap";
-            this.panelDangNhap.Size = new System.Drawing.Size(1171, 684);
+            this.panelDangNhap.Size = new System.Drawing.Size(878, 556);
             this.panelDangNhap.TabIndex = 3;
             // 
             // guna2ControlBox2
@@ -353,10 +358,10 @@
             this.guna2ControlBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(1084, 7);
-            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(813, 6);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(35, 27);
+            this.guna2ControlBox2.Size = new System.Drawing.Size(26, 22);
             this.guna2ControlBox2.TabIndex = 3;
             // 
             // BorderFormDangNhap
@@ -366,13 +371,13 @@
             // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 684);
+            this.ClientSize = new System.Drawing.Size(878, 556);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.panelDangNhap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";

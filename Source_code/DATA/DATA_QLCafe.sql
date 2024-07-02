@@ -100,18 +100,25 @@ Foreign key (IdStaff) references Staff(IdStaff)
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',1,0),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',0,0)
+go
+
+update Staff set PasswordStaff='196145663720616991136127245362061123820032'
+where IdStaff='NV1'
+go
 
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
 as
 begin
 select * from staff where email = @Email and PasswordStaff = @password
 end
+go
 
 create proc VaiTro (@email nvarchar(50))
 as
 begin
 	select RoleStaff from staff where email = @email
 end
+go
 
 create proc KiemTraEmail(@email nvarchar(50))
 as

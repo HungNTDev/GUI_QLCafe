@@ -34,30 +34,19 @@ namespace GUI_QLCafe
         private void DeleteStoredCredentials()
         {
             string credPath = "token.json";
-            try
+
+            if (Directory.Exists(credPath))
             {
-                if (Directory.Exists(credPath))
-                {
-                    // It's a directory, so delete its contents and then the directory
-                    Directory.Delete(credPath, true);
-                    Console.WriteLine("token.json directory and its contents deleted successfully.");
-                }
-                else if (File.Exists(credPath))
-                {
-                    // It's a file, so delete it
-                    File.Delete(credPath);
-                    Console.WriteLine("token.json file deleted successfully.");
-                }
-                else
-                {
-                    Console.WriteLine("token.json does not exist.");
-                }
+                // It's a directory, so delete its contents and then the directory
+                Directory.Delete(credPath, true);
             }
-            catch (Exception ex)
+            else if (File.Exists(credPath))
             {
-                Console.WriteLine($"Error deleting token.json: {ex.Message}");
-                // You might want to show this message to the user
-                MessageBox.Show($"Error deleting token.json: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // It's a file, so delete it
+                File.Delete(credPath);
+            }
+            else
+            {
             }
         }
         private void btnDN_Click(object sender, System.EventArgs e)

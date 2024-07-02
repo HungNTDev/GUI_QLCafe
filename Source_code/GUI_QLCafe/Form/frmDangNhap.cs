@@ -28,7 +28,7 @@ namespace GUI_QLCafe
             busStaff = new BUS_Staff();
 
             staff.email = txtEmail.Text;
-            staff.passwordStaff = txtPassword.Text;
+            staff.passwordStaff = busStaff.encryption(txtPassword.Text);
 
             if (busStaff.DangNhap(staff))
             {
@@ -89,6 +89,22 @@ namespace GUI_QLCafe
             {
                 picHiddenPassWord.BringToFront();
                 txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void chkGhiNhoTK_CheckedChanged(object sender, System.EventArgs e)
+        {
+            //Lưu email
+            if (chkGhiNhoTK.Checked)
+            {
+                Properties.Settings.Default.SavedEmail = txtEmail.Text;
+                Properties.Settings.Default.Save();
+            }
+            // Xóa email khỏi cài đặt nếu hộp kiểm nhớ email không được chọn
+            else
+            {
+                Properties.Settings.Default.SavedEmail = string.Empty;
+                Properties.Settings.Default.Save();
             }
         }
     }

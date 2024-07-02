@@ -62,7 +62,7 @@
             this.picHiddenPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picHiddenPassWord.Image")));
             this.picHiddenPassWord.ImageRotate = 0F;
             this.picHiddenPassWord.Location = new System.Drawing.Point(772, 311);
-            this.picHiddenPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picHiddenPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.picHiddenPassWord.Name = "picHiddenPassWord";
             this.picHiddenPassWord.Size = new System.Drawing.Size(40, 25);
             this.picHiddenPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -77,7 +77,7 @@
             this.picShowPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picShowPassWord.Image")));
             this.picShowPassWord.ImageRotate = 0F;
             this.picShowPassWord.Location = new System.Drawing.Point(772, 311);
-            this.picShowPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picShowPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.picShowPassWord.Name = "picShowPassWord";
             this.picShowPassWord.Size = new System.Drawing.Size(40, 25);
             this.picShowPassWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -106,7 +106,7 @@
             this.btnDNGoogle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDNGoogle.ImageSize = new System.Drawing.Size(25, 25);
             this.btnDNGoogle.Location = new System.Drawing.Point(508, 488);
-            this.btnDNGoogle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDNGoogle.Margin = new System.Windows.Forms.Padding(2);
             this.btnDNGoogle.Name = "btnDNGoogle";
             this.btnDNGoogle.ShadowDecoration.BorderRadius = 15;
             this.btnDNGoogle.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
@@ -134,7 +134,7 @@
             this.btnDN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnDN.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDN.Location = new System.Drawing.Point(458, 395);
-            this.btnDN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDN.Margin = new System.Windows.Forms.Padding(2);
             this.btnDN.Name = "btnDN";
             this.btnDN.Size = new System.Drawing.Size(363, 47);
             this.btnDN.TabIndex = 4;
@@ -148,12 +148,13 @@
             this.chkGhiNhoTK.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGhiNhoTK.ForeColor = System.Drawing.Color.Black;
             this.chkGhiNhoTK.Location = new System.Drawing.Point(461, 349);
-            this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(2);
             this.chkGhiNhoTK.Name = "chkGhiNhoTK";
             this.chkGhiNhoTK.Size = new System.Drawing.Size(141, 27);
             this.chkGhiNhoTK.TabIndex = 2;
             this.chkGhiNhoTK.Text = "Remember me";
             this.chkGhiNhoTK.UseVisualStyleBackColor = false;
+            this.chkGhiNhoTK.CheckedChanged += new System.EventHandler(this.chkGhiNhoTK_CheckedChanged);
             // 
             // btnQuenMatKhau
             // 
@@ -167,7 +168,7 @@
             this.btnQuenMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnQuenMatKhau.HoverState.FillColor = System.Drawing.Color.White;
             this.btnQuenMatKhau.Location = new System.Drawing.Point(689, 345);
-            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.PressedColor = System.Drawing.Color.White;
             this.btnQuenMatKhau.Size = new System.Drawing.Size(164, 34);
@@ -273,7 +274,7 @@
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox1.Location = new System.Drawing.Point(844, 6);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(26, 22);
             this.guna2ControlBox1.TabIndex = 3;
@@ -284,7 +285,7 @@
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.ImageRotate = 0F;
             this.pbLogo.Location = new System.Drawing.Point(580, 30);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pbLogo.Size = new System.Drawing.Size(116, 112);
@@ -300,7 +301,7 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -9);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(400, 574);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -343,7 +344,7 @@
             this.panelDangNhap.FillColor2 = System.Drawing.Color.White;
             this.panelDangNhap.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.panelDangNhap.Location = new System.Drawing.Point(0, 0);
-            this.panelDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.panelDangNhap.Name = "panelDangNhap";
             this.panelDangNhap.Size = new System.Drawing.Size(878, 556);
             this.panelDangNhap.TabIndex = 3;
@@ -359,7 +360,7 @@
             this.guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox2.Location = new System.Drawing.Point(813, 6);
-            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(26, 22);
             this.guna2ControlBox2.TabIndex = 3;
@@ -377,7 +378,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.panelDangNhap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";

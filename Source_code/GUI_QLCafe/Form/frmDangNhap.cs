@@ -4,9 +4,11 @@ using Google.Apis.Auth.OAuth2;
 using Google.Apis.Oauth2.v2;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.IO;
+using System.Net.Mail;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -28,8 +30,22 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
             DeleteStoredCredentials();
+            this.Load += new System.EventHandler(this.frmDangNhap_Load); // Gắn sự kiện Load
         }
-
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có email đã được lưu không
+            if (Properties.Settings.Default.RememberEmail)
+            {
+                txtEmail.Text = Properties.Settings.Default.SavedEmail;
+                chkGhiNhoTK.Checked = true;
+            }
+            else
+            {
+                txtEmail.Clear();
+                chkGhiNhoTK.Checked = false;
+            }
+        }
         //Xóa tài khoản đã chọn lần trước để đăng nhập
         private void DeleteStoredCredentials()
         {
@@ -49,9 +65,39 @@ namespace GUI_QLCafe
             {
             }
         }
-        private void btnDN_Click(object sender, System.EventArgs e)
+        public bool IsValid(string emailaddress) //kiem tra xem email co hop le khong
         {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+                return true;
 
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void btnDN_Click(object sender, EventArgs e)
+        {
+            if (txtEmail.Text.Trim().Length == 0)
+            {
+                messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+                txtEmail.Focus();
+                return;
+            }
+            else if (!IsValid(txtEmail.Text.Trim()))
+            {
+                messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+                txtEmail.Focus();
+                return;
+            }
+            else if (txtPassword.Text.Trim().Length == 0)
+            {
+                messageDialog.Show("Vui lòng nhập mật khẩu!", "Thông báo");
+                txtPassword.Focus();
+                return;
+            }
             //frmMainQLBH.email = nv.EmailNV;
 
             staff = new DTO_Staff();
@@ -62,16 +108,17 @@ namespace GUI_QLCafe
 
             if (busStaff.DangNhap(staff))
             {
-                if (cknGhiNhoTK.Checked)
+                if (chkGhiNhoTK.Checked)
                 {
                     Properties.Settings.Default.SavedEmail = txtEmail.Text;
                     Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
-                    Properties.Settings.Default.Save();
                 }
                 else
                 {
-                    Properties.Settings.Default.RememberEmail = false;
+                    Properties.Settings.Default.SavedEmail = string.Empty; // Xóa email khi không ghi nhớ
+                    Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
                 }
+                Properties.Settings.Default.Save();
                 //frmMainQLBH mainForm = new frmMainQLBH();
 
                 //login = true;
@@ -82,7 +129,8 @@ namespace GUI_QLCafe
                 //frmMainQLBH.email = nv.EmailNV;
 
                 //frmMainQLBH.profile = vaitro;
-                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //foreach (Form form in Application.OpenForms)
                 //{
@@ -97,7 +145,7 @@ namespace GUI_QLCafe
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageDialog.Show("Email hoặc mật khẩu không đúng!", "Thông báo");
                 txtPassword.Clear();
                 txtPassword.Focus();
             }
@@ -125,17 +173,17 @@ namespace GUI_QLCafe
         private void chkGhiNhoTK_CheckedChanged(object sender, System.EventArgs e)
         {
             //Lưu email
-            if (cknGhiNhoTK.Checked)
+            if (chkGhiNhoTK.Checked)
             {
                 Properties.Settings.Default.SavedEmail = txtEmail.Text;
-                Properties.Settings.Default.Save();
+                Properties.Settings.Default.RememberEmail = true;
             }
-            // Xóa email khỏi cài đặt nếu hộp kiểm nhớ email không được chọn
             else
             {
                 Properties.Settings.Default.SavedEmail = string.Empty;
-                Properties.Settings.Default.Save();
+                Properties.Settings.Default.RememberEmail = false;
             }
+            Properties.Settings.Default.Save();
         }
 
         private void btnDNGoogle_Click(object sender, System.EventArgs e)
@@ -183,7 +231,7 @@ namespace GUI_QLCafe
                     //frmMainQLBH.session = 1;
                     //frmMainQLBH.email = nv.EmailNV;
 
-                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //messageDialog.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //foreach (Form form in Application.OpenForms)
                     //{
@@ -198,7 +246,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messageDialog.Show("Đăng nhập thất bại!", "Thông báo");
                 }
             }
         }

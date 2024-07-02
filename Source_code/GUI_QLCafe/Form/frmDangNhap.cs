@@ -249,5 +249,10 @@ namespace GUI_QLCafe
                 }
             }
         }
+
+        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

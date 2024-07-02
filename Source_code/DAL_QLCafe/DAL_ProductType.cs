@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL_QLCafe
 {
-    public class DAL_Voucher: DBConnect
+    public class DAL_ProductType: DBConnect
     {
         public DataTable get()
         {
@@ -34,7 +34,7 @@ namespace DAL_QLCafe
                 }
             }
         }
-        public bool insert(DTO_Voucher obj)
+        public bool insert(DTO_ProductType obj)
         {
             try
             {
@@ -42,10 +42,7 @@ namespace DAL_QLCafe
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
-                    cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
-                    cmd.Parameters.AddWithValue("@StatusVoucher", obj.StatusVoucher);
+                    cmd.Parameters.AddWithValue("@NamePT", obj.NamePT);
 
                     conn.Open();
 
@@ -64,7 +61,39 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public bool update(DTO_Voucher obj)
+        public bool delete(DTO_Staff staff)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("DeleteVoucher", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@FullName", staff.FullName);
+                    cmd.Parameters.AddWithValue("@ImageStaff", staff.ImageStaff);
+                    cmd.Parameters.AddWithValue("@Email", staff.Email);
+                    cmd.Parameters.AddWithValue("@PasswordStaff", staff.PasswordStaff);
+                    cmd.Parameters.AddWithValue("@RoleStaff", staff.RoleStaff);
+                    cmd.Parameters.AddWithValue("@StatusStaff", staff.StatusStaff);
+
+                    conn.Open();
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+        public bool update(DTO_ProductType obj)
         {
             try
             {
@@ -73,41 +102,8 @@ namespace DAL_QLCafe
                     cmd.CommandType = CommandType.StoredProcedure;
 
 
-
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
-                    cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
-                    cmd.Parameters.AddWithValue("@StatusVoucher", obj.StatusVoucher);
-
-                    conn.Open();
-
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-            return false;
-        }
-        public bool delete(DTO_Voucher obj)
-        {
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand("InsertVoucher", conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
-                    cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
-                    cmd.Parameters.AddWithValue("@StatusVoucher", obj.StatusVoucher);
+                    cmd.Parameters.AddWithValue("@IdPT", obj.IdPT);
+                    cmd.Parameters.AddWithValue("@NamePT", obj.NamePT);
 
                     conn.Open();
 

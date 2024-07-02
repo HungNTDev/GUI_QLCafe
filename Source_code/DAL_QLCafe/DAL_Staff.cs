@@ -19,9 +19,10 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    int result = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    return result > 0; //nếu result > 0 thì trả về true và ngược lại
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
                 }
             }
             finally
@@ -31,6 +32,7 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+            return false;
         }
         public bool quenMK(string email)
         {
@@ -42,9 +44,10 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@email", email);
                     conn.Open();
 
-                    int result = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    return result > 0; //nếu result > 0 thì trả về true và ngược lại
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
                 }
             }
             finally
@@ -54,7 +57,10 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+            return false;
         }
+
+        //Lấy mk để kiểm tra mật khẩu cũ có đúng không? (Cho chức năng đổi mật khẩu)
         public DataTable layMK(string email)
         {
             try
@@ -79,6 +85,8 @@ namespace DAL_QLCafe
                 }
             }
         }
+
+
         public bool capNhatMK(string email, string matkhau)
         {
             try
@@ -92,9 +100,10 @@ namespace DAL_QLCafe
                     conn.Open();
 
 
-                    int result = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    return result > 0; //nếu result > 0 thì trả về true và ngược lại
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
                 }
             }
             finally
@@ -104,6 +113,7 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+            return false;
         }
         public DataTable vaiTro(string email)
         {
@@ -164,10 +174,11 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-
-                    int result = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    return result == 1; //nếu result > 0 thì trả về true và ngược lại
+                    int count = (int)cmd.ExecuteScalar();
+                    if (count == 1)
+                    {
+                        return true;
+                    }
                 }
             }
             finally
@@ -177,6 +188,7 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+            return false;
         }
         public DataTable get()
         {
@@ -218,9 +230,10 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    int result = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    return result > 0; //nếu result > 0 thì trả về true và ngược lại
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
                 }
             }
             finally
@@ -230,6 +243,34 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+            return false;
+        }
+        public bool delete(DTO_Staff staff)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertStaff", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@IdStaff", staff.IdStaff);
+
+                    conn.Open();
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
         }
         public bool update(DTO_Staff staff)
         {
@@ -250,9 +291,11 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    int result = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    return result > 0; //nếu result > 0 thì trả về true và ngược lại
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
                 }
             }
             finally
@@ -262,6 +305,7 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+            return false;
         }
         public DataTable search(string keyword, string column)
         {

@@ -74,7 +74,7 @@
             this.btnChangePassword.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnChangePassword.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnChangePassword.Location = new System.Drawing.Point(458, 470);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(363, 47);
             this.btnChangePassword.TabIndex = 10;
@@ -87,7 +87,7 @@
             this.picBackground.Image = ((System.Drawing.Image)(resources.GetObject("picBackground.Image")));
             this.picBackground.ImageRotate = 0F;
             this.picBackground.Location = new System.Drawing.Point(-1, -9);
-            this.picBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBackground.Margin = new System.Windows.Forms.Padding(2);
             this.picBackground.Name = "picBackground";
             this.picBackground.Size = new System.Drawing.Size(400, 574);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@
             this.lbOldPassword.Location = new System.Drawing.Point(454, 199);
             this.lbOldPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbOldPassword.Name = "lbOldPassword";
-            this.lbOldPassword.Size = new System.Drawing.Size(116, 25);
+            this.lbOldPassword.Size = new System.Drawing.Size(95, 21);
             this.lbOldPassword.TabIndex = 6;
             this.lbOldPassword.Text = "Mật khẩu cũ";
             // 
@@ -140,7 +140,7 @@
             this.lbEmail.Location = new System.Drawing.Point(455, 125);
             this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(58, 25);
+            this.lbEmail.Size = new System.Drawing.Size(48, 21);
             this.lbEmail.TabIndex = 6;
             this.lbEmail.Text = "Email";
             // 
@@ -180,7 +180,7 @@
             this.lblText.Location = new System.Drawing.Point(452, 56);
             this.lblText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(293, 42);
+            this.lblText.Size = new System.Drawing.Size(255, 37);
             this.lblText.TabIndex = 4;
             this.lblText.Text = "Thay đổi mật khẩu";
             // 
@@ -195,7 +195,7 @@
             this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
             this.cbMinimize.Location = new System.Drawing.Point(813, 6);
-            this.cbMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(26, 22);
             this.cbMinimize.TabIndex = 3;
@@ -210,7 +210,7 @@
             this.cbClose.HoverState.FillColor = System.Drawing.Color.White;
             this.cbClose.IconColor = System.Drawing.Color.Black;
             this.cbClose.Location = new System.Drawing.Point(844, 6);
-            this.cbClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(2);
             this.cbClose.Name = "cbClose";
             this.cbClose.Size = new System.Drawing.Size(26, 22);
             this.cbClose.TabIndex = 3;
@@ -237,7 +237,7 @@
             this.panelDoiMatKhau.FillColor2 = System.Drawing.Color.White;
             this.panelDoiMatKhau.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.panelDoiMatKhau.Location = new System.Drawing.Point(0, 0);
-            this.panelDoiMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDoiMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.panelDoiMatKhau.Name = "panelDoiMatKhau";
             this.panelDoiMatKhau.Size = new System.Drawing.Size(878, 556);
             this.panelDoiMatKhau.TabIndex = 5;
@@ -250,7 +250,7 @@
             this.shapeLine.LineStartCap = System.Drawing.Drawing2D.LineCap.Round;
             this.shapeLine.LineThickness = 1;
             this.shapeLine.Location = new System.Drawing.Point(410, 95);
-            this.shapeLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.shapeLine.Margin = new System.Windows.Forms.Padding(2);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
             this.shapeLine.Rotate = 0F;
@@ -268,9 +268,9 @@
             this.chkShowPassword.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkShowPassword.ForeColor = System.Drawing.Color.Black;
             this.chkShowPassword.Location = new System.Drawing.Point(681, 419);
-            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(2);
             this.chkShowPassword.Name = "chkShowPassword";
-            this.chkShowPassword.Size = new System.Drawing.Size(141, 27);
+            this.chkShowPassword.Size = new System.Drawing.Size(124, 24);
             this.chkShowPassword.TabIndex = 11;
             this.chkShowPassword.Text = "Hiện mật khẩu";
             this.chkShowPassword.UseVisualStyleBackColor = false;
@@ -283,7 +283,7 @@
             this.lbRetypePass.Location = new System.Drawing.Point(455, 345);
             this.lbRetypePass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRetypePass.Name = "lbRetypePass";
-            this.lbRetypePass.Size = new System.Drawing.Size(166, 25);
+            this.lbRetypePass.Size = new System.Drawing.Size(137, 21);
             this.lbRetypePass.TabIndex = 6;
             this.lbRetypePass.Text = "Nhập lại mật khẩu";
             // 
@@ -295,7 +295,7 @@
             this.lbNewPassword.Location = new System.Drawing.Point(456, 273);
             this.lbNewPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNewPassword.Name = "lbNewPassword";
-            this.lbNewPassword.Size = new System.Drawing.Size(128, 25);
+            this.lbNewPassword.Size = new System.Drawing.Size(107, 21);
             this.lbNewPassword.TabIndex = 6;
             this.lbNewPassword.Text = "Mật khẩu mới";
             // 
@@ -359,7 +359,7 @@
             this.Controls.Add(this.picBackground);
             this.Controls.Add(this.panelDoiMatKhau);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDoiMatKhau";

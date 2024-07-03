@@ -12,6 +12,17 @@ namespace GUI_QLCafe
 {
     public partial class frmMainQLCF : Form
     {
+        //tình trạng login
+        public static int session = 0; 
+        public static int profile = 0;
+
+        //kiểm tra vai trò sau đăng nhập
+        public static string role { get; set; }
+        // vai trò 0 là nv
+        // vai tro 1 là quản trị
+
+        frmDangNhap dn;
+
         public frmMainQLCF()
         {
             InitializeComponent();

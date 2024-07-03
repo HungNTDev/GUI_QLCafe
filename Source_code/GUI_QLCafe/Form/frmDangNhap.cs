@@ -123,7 +123,7 @@ namespace GUI_QLCafe
                 //login = true;
 
                 DataTable dt = busStaff.VaiTro(staff.email);
-                //frmMainQLBH.vaiTro = dt.Rows[0]["VaiTro"].ToString();//Lưu vai trò
+                frmMainQLCF.role = dt.Rows[0]["VaiTro"].ToString();//Lưu vai trò
                 //frmMainQLBH.session = 1;
                 //frmMainQLBH.email = nv.EmailNV;
 

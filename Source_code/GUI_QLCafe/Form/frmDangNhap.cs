@@ -185,25 +185,25 @@ namespace GUI_QLCafe
             Properties.Settings.Default.Save();
         }
 
-        private void btnDNGoogle_Click(object sender, System.EventArgs e)
+        private async void btnDNGoogle_Click(object sender, System.EventArgs e)
         {
             UserCredential credential;
 
-
-            //Tạo thư mục + file để lưu thông tin đăng nhập
-            string credPath = "token.json";
+            // Path to the client_secrets.json file in the output directory
+            string credPath = Path.Combine(Application.StartupPath, "Resources", "client_secrets.json");
+            string tokenPath = Path.Combine(Application.StartupPath, "token.json");
 
             // Delete the stored credentials if they exist
             DeleteStoredCredentials();
 
-            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(credPath, FileMode.Open, FileAccess.Read))
             {
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.FromStream(stream).Secrets,
                     Scopes,
                     "user",
                     CancellationToken.None,
-                    new FileDataStore(credPath, true)).Result;
+                    new FileDataStore(tokenPath, true));
             }
 
             var oauth2Service = new Oauth2Service(new BaseClientService.Initializer()
@@ -212,8 +212,8 @@ namespace GUI_QLCafe
                 ApplicationName = ApplicationName,
             });
 
-            //Lấy email
-            var userInfo = oauth2Service.Userinfo.Get().Execute();
+            // Get email
+            var userInfo = await oauth2Service.Userinfo.Get().ExecuteAsync();
 
             if (userInfo != null && !string.IsNullOrEmpty(userInfo.Email))
             {
@@ -240,7 +240,6 @@ namespace GUI_QLCafe
                     //        break;
                     //    }
                     //}
-
                     this.Close();
                 }
                 else

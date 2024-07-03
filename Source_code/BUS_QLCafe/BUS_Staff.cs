@@ -1,13 +1,8 @@
 ﻿using DAL_QLCafe;
 using DTO_QLCafe;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS_QLCafe
 {
@@ -41,6 +36,11 @@ namespace BUS_QLCafe
         public bool CapNhatMK(string email, string matkhau)
         {
             return dal.capNhatMK(email, matkhau);
+        }
+
+        public bool updateNewMK(string email, string matkhaucu, string matkhaumoi)
+        {
+            return dal.UpdateMK(email, matkhaucu, matkhaumoi);
         }
         public DataTable VaiTro(string email)
         {

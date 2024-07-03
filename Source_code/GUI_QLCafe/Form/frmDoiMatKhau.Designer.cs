@@ -79,6 +79,7 @@
             this.btnChangePassword.Size = new System.Drawing.Size(363, 47);
             this.btnChangePassword.TabIndex = 10;
             this.btnChangePassword.Text = "Thay đổi";
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // picBackground
             // 
@@ -166,7 +167,6 @@
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtEmail.PlaceholderText = "user@example.com";
-            this.txtEmail.ReadOnly = true;
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(363, 37);
             this.txtEmail.TabIndex = 5;
@@ -241,6 +241,7 @@
             this.panelDoiMatKhau.Name = "panelDoiMatKhau";
             this.panelDoiMatKhau.Size = new System.Drawing.Size(878, 556);
             this.panelDoiMatKhau.TabIndex = 5;
+            this.panelDoiMatKhau.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDoiMatKhau_Paint);
             // 
             // shapeLine
             // 
@@ -274,6 +275,7 @@
             this.chkShowPassword.TabIndex = 11;
             this.chkShowPassword.Text = "Hiện mật khẩu";
             this.chkShowPassword.UseVisualStyleBackColor = false;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // lbRetypePass
             // 
@@ -350,6 +352,7 @@
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.Size = new System.Drawing.Size(363, 37);
             this.txtNewPassword.TabIndex = 5;
+            this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
             // frmDoiMatKhau
             // 

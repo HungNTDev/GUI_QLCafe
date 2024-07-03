@@ -1,11 +1,10 @@
 ﻿using DTO_QLCafe;
-using System;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace DAL_QLCafe
 {
-    public class DAL_Staff: DBConnect
+    public class DAL_Staff : DBConnect
     {
         public bool dangNhap(DTO_Staff staff)
         {
@@ -86,16 +85,43 @@ namespace DAL_QLCafe
             }
         }
 
-
-        public bool capNhatMK(string email, string matkhau)
+        public bool UpdateMK(string email, string matkhaucu, string matkhaumoi)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("CapNhatMK", conn))
+                using (SqlCommand cmd = new SqlCommand("ChangePass", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@matkhau", matkhau);
+                    cmd.Parameters.AddWithValue("@opwd", matkhaucu);
+                    cmd.Parameters.AddWithValue("@npwd", matkhaumoi);
+
+                    conn.Open();
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+        public bool capNhatMK(string email, string matkhaumoi)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("NewPass", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@pass", matkhaumoi);
 
                     conn.Open();
 

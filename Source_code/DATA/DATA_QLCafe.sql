@@ -125,3 +125,19 @@ as
 begin
 	SELECT COUNT(email) FROM nhanvien WHERE email = @Email
 end
+
+	-- Thay đổi mật khẩu
+create procedure ChangePass (@email nvarchar(50),
+                                  @opwd nvarchar(50),
+								  @npwd nvarchar(50))
+as
+  declare @op nvarchar(50)
+  select @op = PasswordStaff from Staff where Email = @email
+  if @op = @opwd
+  begin
+       update Staff set PasswordStaff = @npwd where Email = @email
+	   return 1
+  end
+  else 
+       return -1
+go

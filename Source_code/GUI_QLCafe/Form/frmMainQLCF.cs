@@ -15,6 +15,8 @@ namespace GUI_QLCafe
         //tình trạng login
         public static int session = 0; 
         public static int profile = 0;
+        public static string email;
+
 
         //kiểm tra vai trò sau đăng nhập
         public static string role { get; set; }
@@ -35,7 +37,19 @@ namespace GUI_QLCafe
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToShortTimeString();
         }
-
+        public void PhanQuyen()
+        {
+            btnQLNhanVien.Visible = false;
+            btnThongKe.Visible = false;
+            if (session == 1)
+            {
+                if (role == "1")
+                {
+                    btnQLNhanVien.Visible = true;
+                    btnThongKe.Visible = true;
+                }
+            }
+        }
         bool quanlyExpand = false;  
         private void quanlyTransition_Tick(object sender, EventArgs e)
         {
@@ -207,9 +221,13 @@ namespace GUI_QLCafe
 
         private void picHam_Click(object sender, EventArgs e)
         {
+            
             sidebarTransition.Start();
         }
+        private void btnQLBan_Click(object sender, EventArgs e)
+        {
 
+        }
 
     }
 }

@@ -55,15 +55,16 @@
             // 
             this.loadingTransition.Enabled = true;
             this.loadingTransition.Interval = 1000;
+            this.loadingTransition.Tick += new System.EventHandler(this.loadingTransition_Tick);
             // 
             // wpLoading
             // 
             this.wpLoading.AutoStart = true;
             this.wpLoading.BackColor = System.Drawing.Color.Transparent;
-            this.wpLoading.CircleSize = 2F;
+            this.wpLoading.CircleSize = 1F;
             this.wpLoading.Location = new System.Drawing.Point(56, 28);
             this.wpLoading.Name = "wpLoading";
-            this.wpLoading.NumberOfCircles = 10;
+            this.wpLoading.NumberOfCircles = 15;
             this.wpLoading.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.wpLoading.Size = new System.Drawing.Size(261, 242);
             this.wpLoading.TabIndex = 0;
@@ -82,6 +83,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoading";
             this.TopMost = true;
+            this.TransparencyKey = System.Drawing.Color.White;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLoading_FormClosing);
+            this.Load += new System.EventHandler(this.frmLoading_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 

@@ -12,6 +12,16 @@ namespace GUI_QLCafe
 {
     public partial class frmMainQLCF : Form
     {
+        public static int session = 0; //tình trạng login
+        public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
+        // vai trò 0 là nv
+        // vai tro 1 là quản trị
+
+        public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
+
+        //Tạo form đăng nhập
+        frmDangNhap dn;
+        
         public frmMainQLCF()
         {
             InitializeComponent();
@@ -25,6 +35,21 @@ namespace GUI_QLCafe
             lbGio.Text = DateTime.Now.ToShortTimeString();
         }
 
+        public void PhanQuyen()
+        {
+            lblEmail.Text = email;
+
+            btnQLNhanVien.Enabled = false;
+            btnThongKe.Enabled = false;
+            if (session == 1)
+            {
+                if (role == "1")
+                {
+                    btnQLNhanVien.Enabled = true;
+                    btnThongKe.Enabled = true;
+                }
+            }
+        }
         bool quanlyExpand = false;  
         private void quanlyTransition_Tick(object sender, EventArgs e)
         {
@@ -207,6 +232,11 @@ namespace GUI_QLCafe
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

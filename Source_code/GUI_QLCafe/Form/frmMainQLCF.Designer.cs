@@ -63,27 +63,27 @@
             this.btnThongKeSLSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.panelThongKeSLHoaDon = new System.Windows.Forms.Panel();
             this.btnThongKeSLHoaDon = new Guna.UI2.WinForms.Guna2Button();
+            this.flpHeThong = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHeThong = new System.Windows.Forms.Panel();
             this.btnHeThong = new Guna.UI2.WinForms.Guna2Button();
-            this.panelHuongDan = new System.Windows.Forms.Panel();
-            this.btnHuongDan = new Guna.UI2.WinForms.Guna2Button();
-            this.eMainQLCF = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.quanlyTransition = new System.Windows.Forms.Timer(this.components);
-            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
-            this.thongkeTransition = new System.Windows.Forms.Timer(this.components);
-            this.panelDangXuat = new System.Windows.Forms.Panel();
-            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
-            this.flpHuongDan = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.huongdanTransition = new System.Windows.Forms.Timer(this.components);
-            this.flpHeThong = new System.Windows.Forms.FlowLayoutPanel();
             this.panelDangNhap = new System.Windows.Forms.Panel();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.panelDoiMatKhau = new System.Windows.Forms.Panel();
             this.btnDoiMatKhau = new Guna.UI2.WinForms.Guna2Button();
+            this.flpHuongDan = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelHuongDan = new System.Windows.Forms.Panel();
+            this.btnHuongDan = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelDangXuat = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
+            this.eMainQLCF = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.quanlyTransition = new System.Windows.Forms.Timer(this.components);
+            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.thongkeTransition = new System.Windows.Forms.Timer(this.components);
+            this.huongdanTransition = new System.Windows.Forms.Timer(this.components);
             this.hethongTransition = new System.Windows.Forms.Timer(this.components);
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
@@ -101,15 +101,15 @@
             this.panelThongKe.SuspendLayout();
             this.panelThongKeSLSanPham.SuspendLayout();
             this.panelThongKeSLHoaDon.SuspendLayout();
-            this.panelHeThong.SuspendLayout();
-            this.panelHuongDan.SuspendLayout();
-            this.panelDangXuat.SuspendLayout();
-            this.flpHuongDan.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.flpHeThong.SuspendLayout();
+            this.panelHeThong.SuspendLayout();
             this.panelDangNhap.SuspendLayout();
             this.panelDoiMatKhau.SuspendLayout();
+            this.flpHuongDan.SuspendLayout();
+            this.panelHuongDan.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelDangXuat.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -234,24 +234,30 @@
             // 
             // btnMenu
             // 
+            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnMenu.CausesValidation = false;
+            this.btnMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnMenu.FillColor = System.Drawing.Color.Transparent;
             this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnMenu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnMenu.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenu.ImageOffset = new System.Drawing.Point(35, 0);
             this.btnMenu.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnMenu.Location = new System.Drawing.Point(0, -16);
+            this.btnMenu.Location = new System.Drawing.Point(-30, -16);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(345, 76);
+            this.btnMenu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnMenu.Size = new System.Drawing.Size(357, 76);
             this.btnMenu.TabIndex = 3;
-            this.btnMenu.Text = "          Menu";
+            this.btnMenu.Text = "                 Menu";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // flpSidebar
             // 
@@ -294,23 +300,27 @@
             // 
             // btnQuanLy
             // 
+            this.btnQuanLy.CausesValidation = false;
+            this.btnQuanLy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnQuanLy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQuanLy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuanLy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQuanLy.FillColor = System.Drawing.Color.Transparent;
             this.btnQuanLy.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLy.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnQuanLy.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLy.Image")));
             this.btnQuanLy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQuanLy.ImageOffset = new System.Drawing.Point(35, 0);
             this.btnQuanLy.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnQuanLy.Location = new System.Drawing.Point(-3, -16);
+            this.btnQuanLy.Location = new System.Drawing.Point(-33, -14);
             this.btnQuanLy.Name = "btnQuanLy";
-            this.btnQuanLy.Size = new System.Drawing.Size(348, 76);
+            this.btnQuanLy.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnQuanLy.Size = new System.Drawing.Size(357, 73);
             this.btnQuanLy.TabIndex = 3;
-            this.btnQuanLy.Text = "          Quản lý";
+            this.btnQuanLy.Text = "                 Quản lý";
             this.btnQuanLy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
             // 
@@ -523,13 +533,14 @@
             this.btnThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThongKe.ImageSize = new System.Drawing.Size(25, 25);
             this.btnThongKe.Location = new System.Drawing.Point(0, -16);
             this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnThongKe.Size = new System.Drawing.Size(345, 76);
             this.btnThongKe.TabIndex = 3;
             this.btnThongKe.Text = "          Thống kê";
@@ -596,6 +607,17 @@
             this.btnThongKeSLHoaDon.Text = "          Thống kê SL hóa đơn";
             this.btnThongKeSLHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // flpHeThong
+            // 
+            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpHeThong.Controls.Add(this.panelHeThong);
+            this.flpHeThong.Controls.Add(this.panelDangNhap);
+            this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
+            this.flpHeThong.Location = new System.Drawing.Point(3, 156);
+            this.flpHeThong.Name = "flpHeThong";
+            this.flpHeThong.Size = new System.Drawing.Size(300, 45);
+            this.flpHeThong.TabIndex = 4;
+            // 
             // panelHeThong
             // 
             this.panelHeThong.Controls.Add(this.btnHeThong);
@@ -614,186 +636,19 @@
             this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnHeThong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnHeThong.Image = ((System.Drawing.Image)(resources.GetObject("btnHeThong.Image")));
             this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.ImageSize = new System.Drawing.Size(25, 25);
             this.btnHeThong.Location = new System.Drawing.Point(0, -16);
             this.btnHeThong.Name = "btnHeThong";
+            this.btnHeThong.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnHeThong.Size = new System.Drawing.Size(345, 76);
             this.btnHeThong.TabIndex = 3;
             this.btnHeThong.Text = "          Hệ thống";
             this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
-            // 
-            // panelHuongDan
-            // 
-            this.panelHuongDan.Controls.Add(this.btnHuongDan);
-            this.panelHuongDan.Location = new System.Drawing.Point(3, 3);
-            this.panelHuongDan.Name = "panelHuongDan";
-            this.panelHuongDan.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelHuongDan.Size = new System.Drawing.Size(300, 45);
-            this.panelHuongDan.TabIndex = 2;
-            // 
-            // btnHuongDan
-            // 
-            this.btnHuongDan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHuongDan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHuongDan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHuongDan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDan.Image")));
-            this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHuongDan.Location = new System.Drawing.Point(0, -16);
-            this.btnHuongDan.Name = "btnHuongDan";
-            this.btnHuongDan.Size = new System.Drawing.Size(345, 76);
-            this.btnHuongDan.TabIndex = 3;
-            this.btnHuongDan.Text = "          Hướng dẫn";
-            this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
-            // 
-            // eMainQLCF
-            // 
-            this.eMainQLCF.BorderRadius = 20;
-            this.eMainQLCF.TargetControl = this;
-            // 
-            // quanlyTransition
-            // 
-            this.quanlyTransition.Interval = 10;
-            this.quanlyTransition.Tick += new System.EventHandler(this.quanlyTransition_Tick);
-            // 
-            // sidebarTransition
-            // 
-            this.sidebarTransition.Interval = 10;
-            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
-            // 
-            // thongkeTransition
-            // 
-            this.thongkeTransition.Interval = 10;
-            this.thongkeTransition.Tick += new System.EventHandler(this.thongkeTransition_Tick);
-            // 
-            // panelDangXuat
-            // 
-            this.panelDangXuat.Controls.Add(this.btnDangXuat);
-            this.panelDangXuat.Location = new System.Drawing.Point(3, 258);
-            this.panelDangXuat.Name = "panelDangXuat";
-            this.panelDangXuat.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelDangXuat.Size = new System.Drawing.Size(300, 45);
-            this.panelDangXuat.TabIndex = 2;
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
-            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangXuat.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangXuat.Location = new System.Drawing.Point(0, -16);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(345, 76);
-            this.btnDangXuat.TabIndex = 3;
-            this.btnDangXuat.Text = "          Đăng xuất";
-            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // flpHuongDan
-            // 
-            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.flpHuongDan.Controls.Add(this.panelHuongDan);
-            this.flpHuongDan.Controls.Add(this.panel1);
-            this.flpHuongDan.Controls.Add(this.panel2);
-            this.flpHuongDan.Location = new System.Drawing.Point(3, 207);
-            this.flpHuongDan.Name = "flpHuongDan";
-            this.flpHuongDan.Size = new System.Drawing.Size(300, 45);
-            this.flpHuongDan.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Location = new System.Drawing.Point(3, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(300, 45);
-            this.panel1.TabIndex = 2;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button1.Location = new System.Drawing.Point(0, -16);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(345, 76);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "          Hướng dẫn sử dụng PM";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.guna2Button2);
-            this.panel2.Location = new System.Drawing.Point(3, 105);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(300, 45);
-            this.panel2.TabIndex = 2;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(0, -16);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(345, 76);
-            this.guna2Button2.TabIndex = 3;
-            this.guna2Button2.Text = "          Giới thiệu phần mềm";
-            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // huongdanTransition
-            // 
-            this.huongdanTransition.Interval = 10;
-            this.huongdanTransition.Tick += new System.EventHandler(this.huongdanTransition_Tick);
-            // 
-            // flpHeThong
-            // 
-            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.flpHeThong.Controls.Add(this.panelHeThong);
-            this.flpHeThong.Controls.Add(this.panelDangNhap);
-            this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
-            this.flpHeThong.Location = new System.Drawing.Point(3, 156);
-            this.flpHeThong.Name = "flpHeThong";
-            this.flpHeThong.Size = new System.Drawing.Size(300, 45);
-            this.flpHeThong.TabIndex = 4;
             // 
             // panelDangNhap
             // 
@@ -855,6 +710,167 @@
             this.btnDoiMatKhau.Text = "          Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // flpHuongDan
+            // 
+            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpHuongDan.Controls.Add(this.panelHuongDan);
+            this.flpHuongDan.Controls.Add(this.panel1);
+            this.flpHuongDan.Controls.Add(this.panel2);
+            this.flpHuongDan.Location = new System.Drawing.Point(3, 207);
+            this.flpHuongDan.Name = "flpHuongDan";
+            this.flpHuongDan.Size = new System.Drawing.Size(300, 45);
+            this.flpHuongDan.TabIndex = 3;
+            // 
+            // panelHuongDan
+            // 
+            this.panelHuongDan.Controls.Add(this.btnHuongDan);
+            this.panelHuongDan.Location = new System.Drawing.Point(3, 3);
+            this.panelHuongDan.Name = "panelHuongDan";
+            this.panelHuongDan.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelHuongDan.Size = new System.Drawing.Size(300, 45);
+            this.panelHuongDan.TabIndex = 2;
+            // 
+            // btnHuongDan
+            // 
+            this.btnHuongDan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuongDan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuongDan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHuongDan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDan.Image")));
+            this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHuongDan.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHuongDan.Location = new System.Drawing.Point(0, -16);
+            this.btnHuongDan.Name = "btnHuongDan";
+            this.btnHuongDan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnHuongDan.Size = new System.Drawing.Size(345, 76);
+            this.btnHuongDan.TabIndex = 3;
+            this.btnHuongDan.Text = "          Hướng dẫn";
+            this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Location = new System.Drawing.Point(3, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panel1.Size = new System.Drawing.Size(300, 45);
+            this.panel1.TabIndex = 2;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button1.Location = new System.Drawing.Point(0, -16);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(345, 76);
+            this.guna2Button1.TabIndex = 3;
+            this.guna2Button1.Text = "          Hướng dẫn sử dụng PM";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.guna2Button2);
+            this.panel2.Location = new System.Drawing.Point(3, 105);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(300, 45);
+            this.panel2.TabIndex = 2;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button2.Location = new System.Drawing.Point(0, -16);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(345, 76);
+            this.guna2Button2.TabIndex = 3;
+            this.guna2Button2.Text = "          Giới thiệu phần mềm";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // panelDangXuat
+            // 
+            this.panelDangXuat.Controls.Add(this.btnDangXuat);
+            this.panelDangXuat.Location = new System.Drawing.Point(3, 258);
+            this.panelDangXuat.Name = "panelDangXuat";
+            this.panelDangXuat.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelDangXuat.Size = new System.Drawing.Size(300, 45);
+            this.panelDangXuat.TabIndex = 2;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
+            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.ImageOffset = new System.Drawing.Point(7, 0);
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, -16);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnDangXuat.Size = new System.Drawing.Size(345, 76);
+            this.btnDangXuat.TabIndex = 3;
+            this.btnDangXuat.Text = "          Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
+            // eMainQLCF
+            // 
+            this.eMainQLCF.BorderRadius = 20;
+            this.eMainQLCF.TargetControl = this;
+            // 
+            // quanlyTransition
+            // 
+            this.quanlyTransition.Interval = 10;
+            this.quanlyTransition.Tick += new System.EventHandler(this.quanlyTransition_Tick);
+            // 
+            // sidebarTransition
+            // 
+            this.sidebarTransition.Interval = 10;
+            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
+            // 
+            // thongkeTransition
+            // 
+            this.thongkeTransition.Interval = 10;
+            this.thongkeTransition.Tick += new System.EventHandler(this.thongkeTransition_Tick);
+            // 
+            // huongdanTransition
+            // 
+            this.huongdanTransition.Interval = 10;
+            this.huongdanTransition.Tick += new System.EventHandler(this.huongdanTransition_Tick);
+            // 
             // hethongTransition
             // 
             this.hethongTransition.Interval = 10;
@@ -890,15 +906,15 @@
             this.panelThongKe.ResumeLayout(false);
             this.panelThongKeSLSanPham.ResumeLayout(false);
             this.panelThongKeSLHoaDon.ResumeLayout(false);
-            this.panelHeThong.ResumeLayout(false);
-            this.panelHuongDan.ResumeLayout(false);
-            this.panelDangXuat.ResumeLayout(false);
-            this.flpHuongDan.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.flpHeThong.ResumeLayout(false);
+            this.panelHeThong.ResumeLayout(false);
             this.panelDangNhap.ResumeLayout(false);
             this.panelDoiMatKhau.ResumeLayout(false);
+            this.flpHuongDan.ResumeLayout(false);
+            this.panelHuongDan.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panelDangXuat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -199,6 +199,14 @@ namespace GUI_QLCafe
             sidebarTransition.Start();
         }
 
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

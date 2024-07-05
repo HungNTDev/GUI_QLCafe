@@ -47,8 +47,8 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelDangNhap = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.eDangNhap = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.eDangNhap = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picHiddenPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -175,6 +175,7 @@
             this.btnQuenMatKhau.Size = new System.Drawing.Size(186, 31);
             this.btnQuenMatKhau.TabIndex = 3;
             this.btnQuenMatKhau.Text = "Quên mật khẩu?";
+            this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click);
             // 
             // lblText1
             // 
@@ -198,6 +199,7 @@
             this.lbPassword.Size = new System.Drawing.Size(93, 28);
             this.lbPassword.TabIndex = 6;
             this.lbPassword.Text = "Password";
+            this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
             // 
             // txtPassword
             // 
@@ -224,6 +226,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(484, 46);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lbEmail
             // 
@@ -235,6 +238,7 @@
             this.lbEmail.Size = new System.Drawing.Size(59, 28);
             this.lbEmail.TabIndex = 6;
             this.lbEmail.Text = "Email";
+            this.lbEmail.Click += new System.EventHandler(this.lbEmail_Click);
             // 
             // txtEmail
             // 
@@ -261,6 +265,7 @@
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(484, 46);
             this.txtEmail.TabIndex = 0;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // cbClose
             // 
@@ -276,6 +281,7 @@
             this.cbClose.Name = "cbClose";
             this.cbClose.Size = new System.Drawing.Size(35, 27);
             this.cbClose.TabIndex = 3;
+            this.cbClose.Click += new System.EventHandler(this.cbClose_Click);
             // 
             // picLogo
             // 
@@ -291,6 +297,7 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             this.picLogo.UseTransparentBackground = true;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // picBackground
             // 
@@ -317,6 +324,7 @@
             this.lbText0.Size = new System.Drawing.Size(312, 45);
             this.lbText0.TabIndex = 4;
             this.lbText0.Text = "Chào mừng trở lại!";
+            this.lbText0.Click += new System.EventHandler(this.lbText0_Click);
             // 
             // panelDangNhap
             // 
@@ -345,7 +353,6 @@
             this.panelDangNhap.Name = "panelDangNhap";
             this.panelDangNhap.Size = new System.Drawing.Size(1171, 684);
             this.panelDangNhap.TabIndex = 3;
-            this.panelDangNhap.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDangNhap_Paint);
             // 
             // cbMinimize
             // 
@@ -362,11 +369,7 @@
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(35, 27);
             this.cbMinimize.TabIndex = 3;
-            // 
-            // eDangNhap
-            // 
-            this.eDangNhap.BorderRadius = 20;
-            this.eDangNhap.TargetControl = this;
+            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
             // 
             // messageDialog
             // 
@@ -376,6 +379,11 @@
             this.messageDialog.Parent = this;
             this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.messageDialog.Text = null;
+            // 
+            // eDangNhap
+            // 
+            this.eDangNhap.BorderRadius = 20;
+            this.eDangNhap.TargetControl = this;
             // 
             // frmDangNhap
             // 
@@ -418,7 +426,7 @@
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2GradientPanel panelDangNhap;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
-        private Guna.UI2.WinForms.Guna2Elipse eDangNhap;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
+        private Guna.UI2.WinForms.Guna2Elipse eDangNhap;
     }
 }

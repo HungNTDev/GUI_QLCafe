@@ -12,19 +12,16 @@ namespace GUI_QLCafe
 {
     public partial class frmMainQLCF : Form
     {
-        //tình trạng login
-        public static int session = 0; 
-        public static int profile = 0;
-        public static string email;
-
-
-        //kiểm tra vai trò sau đăng nhập
-        public static string role { get; set; }
+        public static int session = 0; //tình trạng login
+        public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
         // vai trò 0 là nv
         // vai tro 1 là quản trị
 
-        frmDangNhap dn;
+        public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
 
+        //Tạo form đăng nhập
+        frmDangNhap dn;
+        
         public frmMainQLCF()
         {
             InitializeComponent();
@@ -37,13 +34,15 @@ namespace GUI_QLCafe
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToShortTimeString();
         }
+
         public void PhanQuyen()
         {
+            lblEmail.Text = email;
+
             btnQLNhanVien.Enabled = false;
             btnThongKe.Enabled = false;
             if (session == 1)
             {
-                txtTT.Text = email;
                 if (role == "1")
                 {
                     btnQLNhanVien.Enabled = true;
@@ -222,8 +221,17 @@ namespace GUI_QLCafe
 
         private void picHam_Click(object sender, EventArgs e)
         {
-            
             sidebarTransition.Start();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)

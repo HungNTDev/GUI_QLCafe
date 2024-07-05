@@ -47,8 +47,8 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelDangNhap = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.eDangNhap = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.eDangNhap = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picHiddenPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPassWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -106,12 +106,12 @@
             this.btnDNGoogle.Image = ((System.Drawing.Image)(resources.GetObject("btnDNGoogle.Image")));
             this.btnDNGoogle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDNGoogle.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDNGoogle.Location = new System.Drawing.Point(508, 489);
+            this.btnDNGoogle.Location = new System.Drawing.Point(510, 487);
             this.btnDNGoogle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDNGoogle.Name = "btnDNGoogle";
             this.btnDNGoogle.ShadowDecoration.BorderRadius = 15;
             this.btnDNGoogle.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDNGoogle.Size = new System.Drawing.Size(263, 47);
+            this.btnDNGoogle.Size = new System.Drawing.Size(265, 47);
             this.btnDNGoogle.TabIndex = 5;
             this.btnDNGoogle.Text = "Đăng nhập với GOOGLE";
             this.btnDNGoogle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -168,13 +168,14 @@
             this.btnQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.btnQuenMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnQuenMatKhau.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Location = new System.Drawing.Point(675, 348);
+            this.btnQuenMatKhau.Location = new System.Drawing.Point(668, 348);
             this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuenMatKhau.Name = "btnQuenMatKhau";
             this.btnQuenMatKhau.PressedColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Size = new System.Drawing.Size(165, 25);
+            this.btnQuenMatKhau.Size = new System.Drawing.Size(172, 25);
             this.btnQuenMatKhau.TabIndex = 3;
             this.btnQuenMatKhau.Text = "Quên mật khẩu?";
+            this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click);
             // 
             // lblText1
             // 
@@ -200,6 +201,7 @@
             this.lbPassword.Size = new System.Drawing.Size(91, 25);
             this.lbPassword.TabIndex = 6;
             this.lbPassword.Text = "Password";
+            this.lbPassword.Click += new System.EventHandler(this.lbPassword_Click);
             // 
             // txtPassword
             // 
@@ -226,6 +228,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(363, 37);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lbEmail
             // 
@@ -238,6 +241,7 @@
             this.lbEmail.Size = new System.Drawing.Size(58, 25);
             this.lbEmail.TabIndex = 6;
             this.lbEmail.Text = "Email";
+            this.lbEmail.Click += new System.EventHandler(this.lbEmail_Click);
             // 
             // txtEmail
             // 
@@ -264,6 +268,7 @@
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(363, 37);
             this.txtEmail.TabIndex = 0;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // cbClose
             // 
@@ -279,13 +284,14 @@
             this.cbClose.Name = "cbClose";
             this.cbClose.Size = new System.Drawing.Size(26, 22);
             this.cbClose.TabIndex = 3;
+            this.cbClose.Click += new System.EventHandler(this.cbClose_Click);
             // 
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(578, 20);
+            this.picLogo.Location = new System.Drawing.Point(580, 30);
             this.picLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picLogo.Name = "picLogo";
             this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -294,6 +300,7 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             this.picLogo.UseTransparentBackground = true;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // picBackground
             // 
@@ -315,12 +322,13 @@
             this.lbText0.BackColor = System.Drawing.Color.Transparent;
             this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lbText0.Location = new System.Drawing.Point(499, 140);
+            this.lbText0.Location = new System.Drawing.Point(503, 150);
             this.lbText0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbText0.Name = "lbText0";
             this.lbText0.Size = new System.Drawing.Size(295, 42);
             this.lbText0.TabIndex = 4;
             this.lbText0.Text = "Chào mừng trở lại!";
+            this.lbText0.Click += new System.EventHandler(this.lbText0_Click);
             // 
             // panelDangNhap
             // 
@@ -349,7 +357,6 @@
             this.panelDangNhap.Name = "panelDangNhap";
             this.panelDangNhap.Size = new System.Drawing.Size(878, 556);
             this.panelDangNhap.TabIndex = 3;
-            this.panelDangNhap.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDangNhap_Paint);
             // 
             // cbMinimize
             // 
@@ -366,11 +373,7 @@
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(26, 22);
             this.cbMinimize.TabIndex = 3;
-            // 
-            // eDangNhap
-            // 
-            this.eDangNhap.BorderRadius = 20;
-            this.eDangNhap.TargetControl = this;
+            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
             // 
             // messageDialog
             // 
@@ -380,6 +383,11 @@
             this.messageDialog.Parent = this;
             this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.messageDialog.Text = null;
+            // 
+            // eDangNhap
+            // 
+            this.eDangNhap.BorderRadius = 20;
+            this.eDangNhap.TargetControl = this;
             // 
             // frmDangNhap
             // 
@@ -422,7 +430,7 @@
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2GradientPanel panelDangNhap;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
-        private Guna.UI2.WinForms.Guna2Elipse eDangNhap;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
+        private Guna.UI2.WinForms.Guna2Elipse eDangNhap;
     }
 }

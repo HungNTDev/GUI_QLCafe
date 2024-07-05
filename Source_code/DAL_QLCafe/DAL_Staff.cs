@@ -44,7 +44,7 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@email", email);
                     conn.Open();
 
-                    if (cmd.ExecuteNonQuery() > 0)
+                    if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
                     {
                         return true;
                     }
@@ -99,7 +99,7 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    if (cmd.ExecuteNonQuery() > 0)
+                    if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
                     {
                         return true;
                     }

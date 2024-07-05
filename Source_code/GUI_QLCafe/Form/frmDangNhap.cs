@@ -257,44 +257,11 @@ namespace GUI_QLCafe
             
         }
 
-        private void picLogo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbMinimize_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbClose_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void lbText0_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lbEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

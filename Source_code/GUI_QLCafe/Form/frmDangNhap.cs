@@ -118,29 +118,26 @@ namespace GUI_QLCafe
                     Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
                 }
                 Properties.Settings.Default.Save();
-                //frmMainQLBH mainForm = new frmMainQLBH();
 
-                //login = true;
+                frmMainQLCF mainform = new frmMainQLCF();
+
 
                 DataTable dt = busStaff.VaiTro(staff.email);
-                //frmMainQLBH.vaiTro = dt.Rows[0]["VaiTro"].ToString();//Lưu vai trò
-                //frmMainQLBH.session = 1;
-                //frmMainQLBH.email = nv.EmailNV;
+                frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
+                frmMainQLCF.session = 1;
+                frmMainQLCF.email = staff.email;
 
-                //frmMainQLBH.profile = vaitro;
+                mainform.Show();
 
-                //MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //foreach (Form form in Application.OpenForms)
-                //{
-                //    if (form is frmMainQLBH)
-                //    {
-                //        ((frmMainQLBH)form).HienMenu();
-                //        break;
-                //    }
-                //}
-
-                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is frmMainQLCF)
+                    {
+                        ((frmMainQLCF)form).PhanQuyen();
+                        break;
+                    }
+                }
+                this.Hide();
             }
             else
             {
@@ -225,22 +222,38 @@ namespace GUI_QLCafe
 
                 if (busStaff.KiemTraEmail(staff.email)) // Adjust this method to check only the email if necessary
                 {
+
+                    if (chkGhiNhoTK.Checked)
+                    {
+                        Properties.Settings.Default.SavedEmail = txtEmail.Text;
+                        Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.SavedEmail = string.Empty; // Xóa email khi không ghi nhớ
+                        Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
+                    }
+                    Properties.Settings.Default.Save();
+
+                    frmMainQLCF mainform = new frmMainQLCF();
+
+
                     DataTable dt = busStaff.VaiTro(staff.email);
-                    //frmMainQLBH.vaiTro = dt.Rows[0]["VaiTro"].ToString();
-                    //frmMainQLBH.session = 1;
-                    //frmMainQLBH.email = nv.EmailNV;
+                    frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
+                    frmMainQLCF.session = 1;
+                    frmMainQLCF.email = staff.email;
 
-                    //messageDialog.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mainform.Show();
 
-                    //foreach (Form form in Application.OpenForms)
-                    //{
-                    //    if (form is frmMainQLBH)
-                    //    {
-                    //        ((frmMainQLBH)form).HienMenu();
-                    //        break;
-                    //    }
-                    //}
-                    this.Close();
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form is frmMainQLCF)
+                        {
+                            ((frmMainQLCF)form).PhanQuyen();
+                            break;
+                        }
+                    }
+                    this.Hide();
                 }
                 else
                 {

@@ -4,6 +4,6 @@ namespace DAL_QLCafe
 {
     public class DBConnect
     {
-        protected SqlConnection conn = new SqlConnection("DESKTOP-T731SJL\\TUANHUNG; database=QL_Cafe; integrated security=true");
+        protected SqlConnection conn = new SqlConnection("server=CHIBAO\\SQLEXPRESS; database=QL_Cafe; integrated security=true");
     }
 }

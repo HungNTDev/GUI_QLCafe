@@ -39,14 +39,15 @@ namespace GUI_QLCafe
         }
         public void PhanQuyen()
         {
-            btnQLNhanVien.Visible = false;
-            btnThongKe.Visible = false;
+            btnQLNhanVien.Enabled = false;
+            btnThongKe.Enabled = false;
             if (session == 1)
             {
+                txtTT.Text = email;
                 if (role == "1")
                 {
-                    btnQLNhanVien.Visible = true;
-                    btnThongKe.Visible = true;
+                    btnQLNhanVien.Enabled = true;
+                    btnThongKe.Enabled = true;
                 }
             }
         }
@@ -224,10 +225,10 @@ namespace GUI_QLCafe
             
             sidebarTransition.Start();
         }
-        private void btnQLBan_Click(object sender, EventArgs e)
+
+        private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
-
     }
 }

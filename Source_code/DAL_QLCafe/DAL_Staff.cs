@@ -1,4 +1,5 @@
 ﻿using DTO_QLCafe;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -18,7 +19,7 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    if (cmd.ExecuteNonQuery() > 0)
+                    if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
                     {
                         return true;
                     }

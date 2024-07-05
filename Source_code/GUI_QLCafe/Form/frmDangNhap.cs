@@ -77,78 +77,80 @@ namespace GUI_QLCafe
                 return false;
             }
         }
-        private void btnDN_Click(object sender, EventArgs e)
-        {
-            if (txtEmail.Text.Trim().Length == 0)
+            private void btnDN_Click(object sender, EventArgs e)
             {
-                messageDialog.Show("Vui lòng nhập email!", "Thông báo");
-                txtEmail.Focus();
-                return;
-            }
-            else if (!IsValid(txtEmail.Text.Trim()))
-            {
-                messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
-                txtEmail.Focus();
-                return;
-            }
-            else if (txtPassword.Text.Trim().Length == 0)
-            {
-                messageDialog.Show("Vui lòng nhập mật khẩu!", "Thông báo");
-                txtPassword.Focus();
-                return;
-            }
-            //frmMainQLBH.email = nv.EmailNV;
-
-            staff = new DTO_Staff();
-            busStaff = new BUS_Staff();
-
-            staff.email = txtEmail.Text;
-            staff.passwordStaff = busStaff.encryption(txtPassword.Text);
-
-            if (busStaff.DangNhap(staff))
-            {
-                if (chkGhiNhoTK.Checked)
+                if (txtEmail.Text.Trim().Length == 0)
                 {
-                    Properties.Settings.Default.SavedEmail = txtEmail.Text;
-                    Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
+                    messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+                    txtEmail.Focus();
+                    return;
+                }
+                else if (!IsValid(txtEmail.Text.Trim()))
+                {
+                    messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+                    txtEmail.Focus();
+                    return;
+                }
+                else if (txtPassword.Text.Trim().Length == 0)
+                {
+                    messageDialog.Show("Vui lòng nhập mật khẩu!", "Thông báo");
+                    txtPassword.Focus();
+                    return;
+                }
+                //frmMainQLBH.email = nv.EmailNV;
+
+                staff = new DTO_Staff();
+                busStaff = new BUS_Staff();
+
+                staff.email = txtEmail.Text;
+                staff.passwordStaff = busStaff.encryption(txtPassword.Text);
+
+                if (busStaff.DangNhap(staff))
+                {
+                    if (chkGhiNhoTK.Checked)
+                    {
+                        Properties.Settings.Default.SavedEmail = txtEmail.Text;
+                        Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.SavedEmail = string.Empty; // Xóa email khi không ghi nhớ
+                        Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
+                    }
+                    Properties.Settings.Default.Save();
+
+                    frmMainQLCF mainForm = new frmMainQLCF();
+
+                    //login = true;
+
+                    DataTable dt = busStaff.VaiTro(staff.email);
+                    frmMainQLCF.role = dt.Rows[0]["RoleStaff"].ToString();//Lưu vai trò
+                    frmMainQLCF.session = 1;
+                    frmMainQLCF.email = staff.email;
+
+                    frmMainQLCF.profile = role;
+                    
+                    mainForm.Show();
+
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form is frmMainQLCF)
+                        {
+                            ((frmMainQLCF)form).PhanQuyen();
+                            break;
+                        }
+                    }
+
+                    this.Hide();
+
                 }
                 else
                 {
-                    Properties.Settings.Default.SavedEmail = string.Empty; // Xóa email khi không ghi nhớ
-                    Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
+                    messageDialog.Show("Email hoặc mật khẩu không đúng!", "Thông báo");
+                    txtPassword.Clear();
+                    txtPassword.Focus();
                 }
-                Properties.Settings.Default.Save();
-
-                frmMainQLCF mainForm = new frmMainQLCF();
-
-                //login = true;
-
-                DataTable dt = busStaff.VaiTro(staff.email);
-                frmMainQLCF.role = dt.Rows[0]["RoleStaff"].ToString();//Lưu vai trò
-                frmMainQLCF.session = 1;
-                frmMainQLCF.email = staff.email;
-
-                frmMainQLCF.profile = role;
-
-                foreach (Form form in Application.OpenForms)
-                {
-                    if (form is frmMainQLCF)
-                    {
-                        ((frmMainQLCF)form).PhanQuyen();
-                        break;
-                    }
-                }
-
-                this.Close();
-
             }
-            else
-            {
-                messageDialog.Show("Email hoặc mật khẩu không đúng!", "Thông báo");
-                txtPassword.Clear();
-                txtPassword.Focus();
-            }
-        }
 
         private void picHiddenPassWord_Click(object sender, System.EventArgs e)
         {

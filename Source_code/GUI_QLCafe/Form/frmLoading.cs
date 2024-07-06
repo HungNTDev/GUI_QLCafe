@@ -29,7 +29,9 @@ namespace GUI_QLCafe
                 loadingTransition.Stop();
                 // Khởi tạo con trỏ cửa sổ
                 IntPtr hWnd = IntPtr.Zero;
+                // Tìm handlde của cửa sổ đăng nhập
                 hWnd = AutoControl.FindWindowHandle(null, "Đăng nhập");
+                // Đưa cửa sổ đăng nhập lên trước
                 AutoControl.BringToFront(hWnd);
             }
         }
@@ -38,16 +40,25 @@ namespace GUI_QLCafe
         {
             Thread thread = new Thread(() =>
             {
-            Thread.Sleep(1000);
-            frmDangNhap frmDangNhap = new frmDangNhap();
-            frmDangNhap.ShowDialog();
+                // Mô phỏng quá trình tải dữ liệu
+                Thread.Sleep(1000);
+
+                // Cập nhật trạng thái sau khi tải xong
+                Status = 1;
+
+                // Hiện form DangNhap
+                frmDangNhap frmDangNhap = new frmDangNhap();
+                frmDangNhap.ShowDialog();
             });  
+            // Đặt trạng thái apartment củ luồng là STA
             thread.SetApartmentState(ApartmentState.STA);   
+            // Bắt đầu luồng
             thread.Start();
         }
 
         private void frmLoading_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Hủy sự kiện đóng form
             e.Cancel = true;    
         }
     }

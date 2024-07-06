@@ -11,19 +11,19 @@ namespace DAL_QLCafe
         {
             try
             {
+
                 using (SqlCommand cmd = new SqlCommand("DangNhap", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@email", staff.Email);
                     cmd.Parameters.AddWithValue("@password", staff.PasswordStaff);
-
                     conn.Open();
 
                     if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
-                    {
+
                         return true;
-                    }
                 }
+
             }
             finally
             {
@@ -362,3 +362,4 @@ namespace DAL_QLCafe
         }
     }
 }
+

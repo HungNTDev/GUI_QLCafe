@@ -267,7 +267,7 @@ namespace GUI_QLCafe
         {
             frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();
             frmQuenMatKhau.Show();
-            
+
         }
 
         private void cbClose_Click(object sender, EventArgs e)
@@ -275,6 +275,9 @@ namespace GUI_QLCafe
             Application.Exit();
         }
 
+        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

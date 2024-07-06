@@ -262,7 +262,6 @@ namespace GUI_QLCafe
             }
         }
 
-
         private void btnQuenMatKhau_Click(object sender, EventArgs e)
         {
             frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();

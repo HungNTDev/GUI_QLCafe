@@ -219,24 +219,11 @@ namespace GUI_QLCafe
             }
         }
 
-        private void picHam_Click(object sender, EventArgs e)
-        {
-            sidebarTransition.Start();
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDangXuat_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }

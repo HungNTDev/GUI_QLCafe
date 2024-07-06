@@ -58,7 +58,7 @@
             // 
             // picHiddenPassWord
             // 
-            this.picHiddenPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picHiddenPassWord.BackColor = System.Drawing.Color.White;
             this.picHiddenPassWord.BorderRadius = 10;
             this.picHiddenPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picHiddenPassWord.Image")));
             this.picHiddenPassWord.ImageRotate = 0F;
@@ -73,7 +73,7 @@
             // 
             // picShowPassWord
             // 
-            this.picShowPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picShowPassWord.BackColor = System.Drawing.Color.White;
             this.picShowPassWord.BorderRadius = 10;
             this.picShowPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picShowPassWord.Image")));
             this.picShowPassWord.ImageRotate = 0F;
@@ -132,12 +132,13 @@
             this.btnDN.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDN.ForeColor = System.Drawing.Color.White;
             this.btnDN.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnDN.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDN.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnDN.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnDN.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDN.Location = new System.Drawing.Point(611, 486);
             this.btnDN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDN.Name = "btnDN";
+            this.btnDN.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnDN.Size = new System.Drawing.Size(484, 58);
             this.btnDN.TabIndex = 4;
             this.btnDN.Text = "ĐĂNG NHẬP";
@@ -152,9 +153,9 @@
             this.chkGhiNhoTK.Location = new System.Drawing.Point(615, 430);
             this.chkGhiNhoTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGhiNhoTK.Name = "chkGhiNhoTK";
-            this.chkGhiNhoTK.Size = new System.Drawing.Size(115, 29);
+            this.chkGhiNhoTK.Size = new System.Drawing.Size(147, 29);
             this.chkGhiNhoTK.TabIndex = 2;
-            this.chkGhiNhoTK.Text = "Nhớ email";
+            this.chkGhiNhoTK.Text = "Nhớ mật khẩu";
             this.chkGhiNhoTK.UseVisualStyleBackColor = false;
             this.chkGhiNhoTK.CheckedChanged += new System.EventHandler(this.chkGhiNhoTK_CheckedChanged);
             // 
@@ -211,7 +212,6 @@
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
@@ -225,8 +225,6 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(484, 46);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lbEmail
             // 
@@ -250,7 +248,6 @@
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
@@ -316,7 +313,7 @@
             this.lbText0.BackColor = System.Drawing.Color.Transparent;
             this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lbText0.Location = new System.Drawing.Point(671, 185);
+            this.lbText0.Location = new System.Drawing.Point(690, 177);
             this.lbText0.Name = "lbText0";
             this.lbText0.Size = new System.Drawing.Size(312, 45);
             this.lbText0.TabIndex = 4;

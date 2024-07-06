@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BUS_ProductType.cs" />
     <Compile Include="BUS_Staff.cs" />
+    <Compile Include="BUS_TableCF.cs" />
     <Compile Include="BUS_Voucher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

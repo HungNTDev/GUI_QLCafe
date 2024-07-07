@@ -343,6 +343,7 @@
             this.shapeLine.Text = "guna2Shapes1";
             this.shapeLine.UseTransparentBackground = true;
             this.shapeLine.Zoom = 80;
+            this.shapeLine.Click += new System.EventHandler(this.shapeLine_Click);
             // 
             // lblText
             // 

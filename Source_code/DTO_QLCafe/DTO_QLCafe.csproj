@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_Payment.cs" />
+    <Compile Include="DTO_Product.cs" />
     <Compile Include="DTO_ProductType.cs" />
     <Compile Include="DTO_Staff.cs" />
     <Compile Include="DTO_TableCF.cs" />

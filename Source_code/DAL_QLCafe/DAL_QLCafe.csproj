@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Bill.cs" />
+    <Compile Include="DAL_DetailBill.cs" />
     <Compile Include="DAL_Payment.cs" />
     <Compile Include="DAL_Product.cs" />
     <Compile Include="DAL_ProductType.cs" />

@@ -186,3 +186,8 @@ as
 begin
 	update Staff set PasswordStaff = @password where Email = @email
 end
+
+-- Xử lí bàn (Lý Bảo Hoàng) --
+/*Danh sách bàn*/
+create or alter proc TableList as
+	select * from TableCF

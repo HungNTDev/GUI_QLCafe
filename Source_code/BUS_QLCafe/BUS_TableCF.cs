@@ -16,13 +16,15 @@ namespace BUS_QLCafe
             return dal.insert(obj);
         }
 
-        public bool update(DTO_TableCF obj) { return dal.update(obj); }
+        public bool update(DTO_TableCF obj)
+        {
+            return dal.update(obj);
+        }
 
-        public bool delete(DTO_TableCF obj)
+        public bool delete(string obj)
         {
             return dal.delete(obj);
         }
-
 
         public DataTable search(string keyword, string column)
         {

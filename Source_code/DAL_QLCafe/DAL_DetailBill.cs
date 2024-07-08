@@ -108,15 +108,15 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public DataTable search(DTO_DetailBill obj)
+        public DataTable search(string obj)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand("SearchDetailBill", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@IdBill", obj.IdBill);
-                    cmd.Parameters.AddWithValue("@IdProduct", obj.IdProduct);
+                    cmd.Parameters.AddWithValue("@IdBill", obj);
+
                     conn.Open();
                     DataTable dtDetailBill = new DataTable();
                     dtDetailBill.Load(cmd.ExecuteReader());

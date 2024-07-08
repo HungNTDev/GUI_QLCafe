@@ -90,17 +90,14 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public bool delete(DTO_TableCF obj)
+        public bool delete(string id)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand("DeleteTableCF", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
-                    cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
-                    cmd.Parameters.AddWithValue("@StatusTable", obj.StatusTable);
+                    cmd.Parameters.AddWithValue("@IdTable", id);
 
                     conn.Open();
 

@@ -27,7 +27,7 @@ namespace BUS_QLCafe
             return dal.delete(obj);
         }
 
-        public DataTable search(DTO_DetailBill obj)
+        public DataTable search(string obj)
         {
             return dal.search(obj);
         }

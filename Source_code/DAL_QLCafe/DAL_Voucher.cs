@@ -1,15 +1,10 @@
 ﻿using DTO_QLCafe;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DAL_QLCafe
 {
-    public class DAL_Voucher: DBConnect
+    public class DAL_Voucher : DBConnect
     {
         public DataTable get()
         {
@@ -21,9 +16,9 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    DataTable dtNhanVien = new DataTable();
-                    dtNhanVien.Load(cmd.ExecuteReader());
-                    return dtNhanVien;
+                    DataTable dtVoucher = new DataTable();
+                    dtVoucher.Load(cmd.ExecuteReader());
+                    return dtVoucher;
                 }
             }
             finally
@@ -72,8 +67,6 @@ namespace DAL_QLCafe
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-
-
                     cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
                     cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
                     cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
@@ -96,19 +89,15 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public bool delete(DTO_Voucher obj)
+        public bool delete(string id)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertVoucher", conn))
+                using (SqlCommand cmd = new SqlCommand("DeleteVoucher", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
-                    cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
-                    cmd.Parameters.AddWithValue("@StatusVoucher", obj.StatusVoucher);
-
+                    cmd.Parameters.AddWithValue("@IdVoucher", id);
                     conn.Open();
 
                     if (cmd.ExecuteNonQuery() > 0)
@@ -139,9 +128,9 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    DataTable dtNhanVien = new DataTable();
-                    dtNhanVien.Load(cmd.ExecuteReader());
-                    return dtNhanVien;
+                    DataTable dtVoucher = new DataTable();
+                    dtVoucher.Load(cmd.ExecuteReader());
+                    return dtVoucher;
                 }
             }
             finally

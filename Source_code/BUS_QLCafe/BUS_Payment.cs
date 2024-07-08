@@ -21,7 +21,7 @@ namespace BUS_QLCafe
             return dal.update(obj);
         }
 
-        public bool delete(DTO_Payment obj)
+        public bool delete(string obj)
         {
             return dal.delete(obj);
         }

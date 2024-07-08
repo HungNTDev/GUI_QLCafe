@@ -90,7 +90,7 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public bool delete(DTO_Payment obj)
+        public bool delete(string id)
         {
             try
             {
@@ -98,10 +98,7 @@ namespace DAL_QLCafe
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
-                    cmd.Parameters.AddWithValue("@TypePayment", obj.TypePayment);
-                    cmd.Parameters.AddWithValue("@StatusPayment", obj.StatusPayment);
-
+                    cmd.Parameters.AddWithValue("@IdPayment", id);
                     conn.Open();
 
                     if (cmd.ExecuteNonQuery() > 0)

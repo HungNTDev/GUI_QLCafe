@@ -14,5 +14,10 @@ namespace GUI_QLCafe
         {
 
         }
+
+        private void panelQuenMatKhau_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

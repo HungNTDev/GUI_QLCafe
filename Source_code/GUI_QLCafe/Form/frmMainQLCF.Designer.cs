@@ -42,6 +42,8 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
             this.flpSidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flpQuanLy = new System.Windows.Forms.FlowLayoutPanel();
             this.panelQuanLy = new System.Windows.Forms.Panel();
             this.btnQuanLy = new Guna.UI2.WinForms.Guna2Button();
@@ -92,6 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.flpSidebar.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.flpQuanLy.SuspendLayout();
             this.panelQuanLy.SuspendLayout();
             this.panelQLBan.SuspendLayout();
@@ -182,7 +186,7 @@
             this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.cbMinimize.FillColor = System.Drawing.Color.White;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1039, 0);
+            this.cbMinimize.Location = new System.Drawing.Point(1039, -2);
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(55, 41);
             this.cbMinimize.TabIndex = 1;
@@ -226,8 +230,9 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Location = new System.Drawing.Point(3, 3);
+            this.panelMenu.Location = new System.Drawing.Point(3, 220);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.panelMenu.Size = new System.Drawing.Size(300, 45);
@@ -262,6 +267,7 @@
             // flpSidebar
             // 
             this.flpSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpSidebar.Controls.Add(this.panel3);
             this.flpSidebar.Controls.Add(this.panelMenu);
             this.flpSidebar.Controls.Add(this.flpQuanLy);
             this.flpSidebar.Controls.Add(this.flpThongKe);
@@ -274,9 +280,30 @@
             this.flpSidebar.Size = new System.Drawing.Size(300, 662);
             this.flpSidebar.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Violet;
+            this.panel3.Controls.Add(this.guna2PictureBox1);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(297, 211);
+            this.panel3.TabIndex = 5;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Wheat;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-27, -13);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(333, 246);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // flpQuanLy
             // 
-            this.flpQuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpQuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpQuanLy.Controls.Add(this.panelQuanLy);
             this.flpQuanLy.Controls.Add(this.panelQLBan);
             this.flpQuanLy.Controls.Add(this.panelQLVoucher);
@@ -284,7 +311,7 @@
             this.flpQuanLy.Controls.Add(this.panelQLNhanVien);
             this.flpQuanLy.Controls.Add(this.panelQLSanPham);
             this.flpQuanLy.Controls.Add(this.panelQLThanhToan);
-            this.flpQuanLy.Location = new System.Drawing.Point(3, 54);
+            this.flpQuanLy.Location = new System.Drawing.Point(3, 271);
             this.flpQuanLy.Name = "flpQuanLy";
             this.flpQuanLy.Size = new System.Drawing.Size(300, 45);
             this.flpQuanLy.TabIndex = 3;
@@ -306,7 +333,7 @@
             this.btnQuanLy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQuanLy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuanLy.FillColor = System.Drawing.Color.Transparent;
+            this.btnQuanLy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnQuanLy.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLy.ForeColor = System.Drawing.Color.White;
             this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
@@ -339,7 +366,7 @@
             this.btnQLBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQLBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQLBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnQLBan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLBan.ForeColor = System.Drawing.Color.White;
             this.btnQLBan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -369,7 +396,7 @@
             this.btnQLVoucher.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQLVoucher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLVoucher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLVoucher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQLVoucher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnQLVoucher.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLVoucher.ForeColor = System.Drawing.Color.White;
             this.btnQLVoucher.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -399,7 +426,7 @@
             this.btnQLHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQLHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQLHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnQLHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnQLHoaDon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -429,7 +456,7 @@
             this.btnQLNhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQLNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQLNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnQLNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQLNhanVien.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -443,6 +470,7 @@
             this.btnQLNhanVien.TabIndex = 3;
             this.btnQLNhanVien.Text = "          Quản lý nhân viên";
             this.btnQLNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
             // panelQLSanPham
             // 
@@ -459,7 +487,7 @@
             this.btnQLSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQLSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQLSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnQLSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLSanPham.ForeColor = System.Drawing.Color.White;
             this.btnQLSanPham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -489,7 +517,7 @@
             this.btnQLThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQLThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQLThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQLThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnQLThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnQLThanhToan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -506,13 +534,13 @@
             // 
             // flpThongKe
             // 
-            this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpThongKe.Controls.Add(this.panelThongKe);
             this.flpThongKe.Controls.Add(this.panelThongKeSLSanPham);
             this.flpThongKe.Controls.Add(this.panelThongKeSLHoaDon);
-            this.flpThongKe.Location = new System.Drawing.Point(3, 105);
+            this.flpThongKe.Location = new System.Drawing.Point(3, 322);
             this.flpThongKe.Name = "flpThongKe";
-            this.flpThongKe.Size = new System.Drawing.Size(308, 45);
+            this.flpThongKe.Size = new System.Drawing.Size(300, 45);
             this.flpThongKe.TabIndex = 3;
             // 
             // panelThongKe
@@ -541,7 +569,7 @@
             this.btnThongKe.Location = new System.Drawing.Point(0, -16);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnThongKe.Size = new System.Drawing.Size(345, 76);
+            this.btnThongKe.Size = new System.Drawing.Size(324, 76);
             this.btnThongKe.TabIndex = 3;
             this.btnThongKe.Text = "          Thống kê";
             this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -562,7 +590,7 @@
             this.btnThongKeSLSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThongKeSLSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThongKeSLSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKeSLSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKeSLSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnThongKeSLSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKeSLSanPham.ForeColor = System.Drawing.Color.White;
             this.btnThongKeSLSanPham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -592,7 +620,7 @@
             this.btnThongKeSLHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThongKeSLHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThongKeSLHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKeSLHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKeSLHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnThongKeSLHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKeSLHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnThongKeSLHoaDon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -609,11 +637,11 @@
             // 
             // flpHeThong
             // 
-            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpHeThong.Controls.Add(this.panelHeThong);
             this.flpHeThong.Controls.Add(this.panelDangNhap);
             this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
-            this.flpHeThong.Location = new System.Drawing.Point(3, 156);
+            this.flpHeThong.Location = new System.Drawing.Point(3, 373);
             this.flpHeThong.Name = "flpHeThong";
             this.flpHeThong.Size = new System.Drawing.Size(300, 45);
             this.flpHeThong.TabIndex = 4;
@@ -665,7 +693,7 @@
             this.btnDangNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDangNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
             this.btnDangNhap.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -695,7 +723,7 @@
             this.btnDoiMatKhau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDoiMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDoiMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDoiMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDoiMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
             this.btnDoiMatKhau.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -712,11 +740,11 @@
             // 
             // flpHuongDan
             // 
-            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpHuongDan.Controls.Add(this.panelHuongDan);
             this.flpHuongDan.Controls.Add(this.panel1);
             this.flpHuongDan.Controls.Add(this.panel2);
-            this.flpHuongDan.Location = new System.Drawing.Point(3, 207);
+            this.flpHuongDan.Location = new System.Drawing.Point(3, 424);
             this.flpHuongDan.Name = "flpHuongDan";
             this.flpHuongDan.Size = new System.Drawing.Size(300, 45);
             this.flpHuongDan.TabIndex = 3;
@@ -768,7 +796,7 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -798,7 +826,7 @@
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -816,7 +844,7 @@
             // panelDangXuat
             // 
             this.panelDangXuat.Controls.Add(this.btnDangXuat);
-            this.panelDangXuat.Location = new System.Drawing.Point(3, 258);
+            this.panelDangXuat.Location = new System.Drawing.Point(3, 475);
             this.panelDangXuat.Name = "panelDangXuat";
             this.panelDangXuat.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.panelDangXuat.Size = new System.Drawing.Size(300, 45);
@@ -904,6 +932,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.flpSidebar.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.flpQuanLy.ResumeLayout(false);
             this.panelQuanLy.ResumeLayout(false);
             this.panelQLBan.ResumeLayout(false);
@@ -988,5 +1018,7 @@
         private System.Windows.Forms.Label lblEmail;
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
+        private System.Windows.Forms.Panel panel3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

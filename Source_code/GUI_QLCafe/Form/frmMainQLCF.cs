@@ -21,10 +21,19 @@ namespace GUI_QLCafe
 
         //Tạo form đăng nhập
         frmDangNhap dn;
-        
+
         public frmMainQLCF()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+        }
+
+        public void AddControls(Form form)
+        {
+            panelBody.Controls.Clear();
+            form.Dock = DockStyle.Fill;
+            form.TopLevel = false;
+            panelBody.Controls.Add(form);
+            form.Show();
         }
 
         private void frmMainQLCF_Load(object sender, EventArgs e)
@@ -60,7 +69,7 @@ namespace GUI_QLCafe
                 flpQuanLy.Height += 15;
                 
                 // Nếu chiều cao đạt 300
-                if (flpQuanLy.Height >= 300)
+                if (flpQuanLy.Height >= 372)
                 {
                     quanlyTransition.Stop(); // Dừng timer
                     quanlyExpand = true; // Mở rộng
@@ -224,6 +233,9 @@ namespace GUI_QLCafe
             Application.Exit();
         }
 
-
+        private void btnQLNhanVien_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmQLNhanVien());
+        }
     }
 }

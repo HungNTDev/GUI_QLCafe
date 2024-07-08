@@ -30,5 +30,10 @@ namespace BUS_QLCafe
         {
             return dal.search(keyword, column);
         }
+
+        public DataTable TableList()
+        {
+            return dal.TableList();
+        }
     }
 }

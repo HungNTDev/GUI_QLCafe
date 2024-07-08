@@ -142,12 +142,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\AddForm\frmAddNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\AddForm\frmAddNhanVien.Designer.cs">
-      <DependentUpon>frmAddNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,62 +172,23 @@
     <Compile Include="Form\frmLoading.Designer.cs">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ViewForm\frmQLNhanVien.cs">
+    <Compile Include="Form\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ViewForm\frmQLNhanVien.Designer.cs">
-      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLBan.Designer.cs">
-      <DependentUpon>frmQLBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLHoaDon.Designer.cs">
-      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLSanPham.Designer.cs">
-      <DependentUpon>frmQLSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLThanhToan.Designer.cs">
-      <DependentUpon>frmQLThanhToan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLVoucher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ViewForm\frmQLVoucher.Designer.cs">
-      <DependentUpon>frmQLVoucher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\AddForm\frmAddSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\AddForm\frmAddSanPham.Designer.cs">
-      <DependentUpon>frmAddSanPham.cs</DependentUpon>
+    <Compile Include="Form\frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="Form\AddForm\frmAddNhanVien.resx">
-      <DependentUpon>frmAddNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\ViewForm\frmQLNhanVien.resx">
-      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmMainQLCF.resx">
       <DependentUpon>frmMainQLCF.cs</DependentUpon>

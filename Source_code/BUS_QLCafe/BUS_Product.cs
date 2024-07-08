@@ -1,24 +1,23 @@
 ﻿using DAL_QLCafe;
 using DTO_QLCafe;
 using System.Data;
-
 namespace BUS_QLCafe
 {
-    public class BUS_ProductType
+    public class BUS_Product
     {
-        DAL_ProductType dal = new DAL_ProductType();
+        DAL_Product dal = new DAL_Product();
 
         public DataTable get()
         {
             return dal.get();
         }
 
-        public bool insert(DTO_ProductType obj)
+        public bool insert(DTO_Product obj)
         {
             return dal.insert(obj);
         }
 
-        public bool update(DTO_ProductType obj)
+        public bool update(DTO_Product obj)
         {
             return dal.update(obj);
         }

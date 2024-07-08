@@ -101,7 +101,39 @@ insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',1,0),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',0,0)
 go
-
+	
+insert into TableCF (IdTable, NameTable, StatusTable) values
+('B01',N'Bàn 1',0),
+('B02',N'Bàn 2',0),
+('B03',N'Bàn 3',0),
+('B04',N'Bàn 4',0),
+('B05',N'Bàn 5',0),
+('B06',N'Bàn 6',0),
+('B07',N'Bàn 7',0),
+('B08',N'Bàn 8',0),
+('B09',N'Bàn 9',0),
+('B10',N'Bàn 10',0),
+('B11',N'Bàn 11',0),
+('B12',N'Bàn 12',0),
+('B13',N'Bàn 13',0),
+('B14',N'Bàn 14',0),
+('B15',N'Bàn 15',0),
+('B16',N'Bàn 16',0),
+('B17',N'Bàn 17',0),
+('B18',N'Bàn 18',0),
+('B19',N'Bàn 19',0),
+('B20',N'Bàn 20',0),
+('B21',N'Bàn 21',0),
+('B22',N'Bàn 22',0),
+('B23',N'Bàn 23',0),
+('B24',N'Bàn 24',0),
+('B25',N'Bàn 25',0),
+('B26',N'Bàn 26',0),
+('B27',N'Bàn 27',0),
+('B28',N'Bàn 28',0),
+('B29',N'Bàn 29',0),
+('B30',N'Bàn 30',0)
+	
 update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
 go

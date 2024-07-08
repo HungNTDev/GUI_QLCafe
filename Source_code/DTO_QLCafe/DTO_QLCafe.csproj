@@ -47,8 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO_Bill.cs" />
+    <Compile Include="DTO_DetailBill.cs" />
+    <Compile Include="DTO_Payment.cs" />
+    <Compile Include="DTO_Product.cs" />
     <Compile Include="DTO_ProductType.cs" />
     <Compile Include="DTO_Staff.cs" />
+    <Compile Include="DTO_TableCF.cs" />
     <Compile Include="DTO_Voucher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

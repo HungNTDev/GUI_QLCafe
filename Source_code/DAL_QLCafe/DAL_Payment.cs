@@ -4,21 +4,21 @@ using System.Data.SqlClient;
 
 namespace DAL_QLCafe
 {
-    public class DAL_Voucher : DBConnect
+    public class DAL_Payment : DBConnect
     {
         public DataTable get()
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("GetVoucher", conn))
+                using (SqlCommand cmd = new SqlCommand("GetPayment", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     conn.Open();
 
-                    DataTable dtVoucher = new DataTable();
-                    dtVoucher.Load(cmd.ExecuteReader());
-                    return dtVoucher;
+                    DataTable dtPayment = new DataTable();
+                    dtPayment.Load(cmd.ExecuteReader());
+                    return dtPayment;
                 }
             }
             finally
@@ -29,18 +29,18 @@ namespace DAL_QLCafe
                 }
             }
         }
-        public bool insert(DTO_Voucher obj)
+
+        public bool insert(DTO_Payment obj)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertVoucher", conn))
+                using (SqlCommand cmd = new SqlCommand("InsertPayment", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
-                    cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
-                    cmd.Parameters.AddWithValue("@StatusVoucher", obj.StatusVoucher);
+                    cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
+                    cmd.Parameters.AddWithValue("@TypePayment", obj.TypePayment);
+                    cmd.Parameters.AddWithValue("@StatusPayment", obj.StatusPayment);
 
                     conn.Open();
 
@@ -59,18 +59,18 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public bool update(DTO_Voucher obj)
+
+        public bool update(DTO_Payment obj)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UpdateVoucher", conn))
+                using (SqlCommand cmd = new SqlCommand("UpdatePayment", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@NameVoucher", obj.NameVoucher);
-                    cmd.Parameters.AddWithValue("@PercentVoucher", obj.PercentVoucher);
-                    cmd.Parameters.AddWithValue("@StatusVoucher", obj.StatusVoucher);
+                    cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
+                    cmd.Parameters.AddWithValue("@TypePayment", obj.TypePayment);
+                    cmd.Parameters.AddWithValue("@StatusPayment", obj.StatusPayment);
 
                     conn.Open();
 
@@ -89,15 +89,16 @@ namespace DAL_QLCafe
             }
             return false;
         }
+
         public bool delete(string id)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("DeleteVoucher", conn))
+                using (SqlCommand cmd = new SqlCommand("DeletePayment", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdVoucher", id);
+                    cmd.Parameters.AddWithValue("@IdPayment", id);
                     conn.Open();
 
                     if (cmd.ExecuteNonQuery() > 0)
@@ -115,11 +116,12 @@ namespace DAL_QLCafe
             }
             return false;
         }
+
         public DataTable search(string keyword, string column)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SearchVoucher", conn))
+                using (SqlCommand cmd = new SqlCommand("SearchPayment", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -128,9 +130,9 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    DataTable dtVoucher = new DataTable();
-                    dtVoucher.Load(cmd.ExecuteReader());
-                    return dtVoucher;
+                    DataTable dtPayment = new DataTable();
+                    dtPayment.Load(cmd.ExecuteReader());
+                    return dtPayment;
                 }
             }
             finally

@@ -219,14 +219,13 @@
             this.txtPassword.Location = new System.Drawing.Point(611, 374);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPassword.PlaceholderText = "Ít nhất 8 ký tự";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(484, 46);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lbEmail
             // 
@@ -349,6 +348,7 @@
             this.panelDangNhap.Name = "panelDangNhap";
             this.panelDangNhap.Size = new System.Drawing.Size(1171, 684);
             this.panelDangNhap.TabIndex = 3;
+            this.panelDangNhap.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDangNhap_Paint);
             // 
             // cbMinimize
             // 

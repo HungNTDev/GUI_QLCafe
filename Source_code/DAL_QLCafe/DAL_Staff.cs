@@ -16,13 +16,11 @@ namespace DAL_QLCafe
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@email", staff.Email);
                     cmd.Parameters.AddWithValue("@password", staff.PasswordStaff);
-
                     conn.Open();
 
                     if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
-                    {
+
                         return true;
-                    }
                 }
             }
             finally
@@ -153,7 +151,6 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-
                     DataTable dtNhanVien = new DataTable();
                     dtNhanVien.Load(cmd.ExecuteReader());
                     return dtNhanVien;
@@ -272,7 +269,7 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public bool delete(DTO_Staff staff)
+        public bool delete(string id)
         {
             try
             {
@@ -280,7 +277,7 @@ namespace DAL_QLCafe
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdStaff", staff.IdStaff);
+                    cmd.Parameters.AddWithValue("@IdStaff", id);
 
                     conn.Open();
 
@@ -341,7 +338,6 @@ namespace DAL_QLCafe
                 using (SqlCommand cmd = new SqlCommand("SearchStaff", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
 
@@ -362,3 +358,4 @@ namespace DAL_QLCafe
         }
     }
 }
+

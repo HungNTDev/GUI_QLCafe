@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainQLCF));
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtLogo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.lbGio = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -85,8 +86,9 @@
             this.thongkeTransition = new System.Windows.Forms.Timer(this.components);
             this.huongdanTransition = new System.Windows.Forms.Timer(this.components);
             this.hethongTransition = new System.Windows.Forms.Timer(this.components);
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.flpSidebar.SuspendLayout();
@@ -115,8 +117,8 @@
             // 
             // panelHeader
             // 
+            this.panelHeader.Controls.Add(this.picLogo);
             this.panelHeader.Controls.Add(this.lblEmail);
-            this.panelHeader.Controls.Add(this.txtLogo);
             this.panelHeader.Controls.Add(this.lbGio);
             this.panelHeader.Controls.Add(this.lbNgay);
             this.panelHeader.Controls.Add(this.cbMinimize);
@@ -129,39 +131,36 @@
             this.panelHeader.Size = new System.Drawing.Size(1223, 52);
             this.panelHeader.TabIndex = 0;
             // 
-            // txtLogo
+            // picLogo
             // 
-            this.txtLogo.BackColor = System.Drawing.Color.Transparent;
-            this.txtLogo.BorderThickness = 0;
-            this.txtLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtLogo.DefaultText = "";
-            this.txtLogo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLogo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLogo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLogo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLogo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLogo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogo.ForeColor = System.Drawing.Color.Black;
-            this.txtLogo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLogo.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtLogo.IconLeft")));
-            this.txtLogo.Location = new System.Drawing.Point(252, 6);
-            this.txtLogo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtLogo.Name = "txtLogo";
-            this.txtLogo.PasswordChar = '\0';
-            this.txtLogo.PlaceholderText = "";
-            this.txtLogo.ReadOnly = true;
-            this.txtLogo.SelectedText = "";
-            this.txtLogo.Size = new System.Drawing.Size(30, 35);
-            this.txtLogo.TabIndex = 3;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.ImageRotate = 0F;
+            this.picLogo.Location = new System.Drawing.Point(257, 13);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(26, 24);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(289, 18);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(14, 23);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = ".";
             // 
             // lbGio
             // 
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.Black;
-            this.lbGio.Location = new System.Drawing.Point(167, 14);
+            this.lbGio.Location = new System.Drawing.Point(167, 18);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(35, 21);
+            this.lbGio.Size = new System.Drawing.Size(36, 23);
             this.lbGio.TabIndex = 3;
             this.lbGio.Text = "Giờ";
             // 
@@ -170,9 +169,9 @@
             this.lbNgay.AutoSize = true;
             this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
-            this.lbNgay.Location = new System.Drawing.Point(70, 14);
+            this.lbNgay.Location = new System.Drawing.Point(70, 18);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(48, 21);
+            this.lbNgay.Size = new System.Drawing.Size(51, 23);
             this.lbNgay.TabIndex = 3;
             this.lbNgay.Text = "Ngày";
             // 
@@ -200,7 +199,6 @@
             this.picHam.TabIndex = 1;
             this.picHam.TabStop = false;
             this.picHam.UseTransparentBackground = true;
-            this.picHam.Click += new System.EventHandler(this.picHam_Click);
             // 
             // cbMaximize
             // 
@@ -260,7 +258,6 @@
             this.btnMenu.TabIndex = 3;
             this.btnMenu.Text = "                 Menu";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // flpSidebar
             // 
@@ -515,7 +512,7 @@
             this.flpThongKe.Controls.Add(this.panelThongKeSLHoaDon);
             this.flpThongKe.Location = new System.Drawing.Point(3, 105);
             this.flpThongKe.Name = "flpThongKe";
-            this.flpThongKe.Size = new System.Drawing.Size(300, 45);
+            this.flpThongKe.Size = new System.Drawing.Size(308, 45);
             this.flpThongKe.TabIndex = 3;
             // 
             // panelThongKe
@@ -847,7 +844,6 @@
             this.btnDangXuat.TabIndex = 3;
             this.btnDangXuat.Text = "          Đăng xuất";
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // eMainQLCF
             // 
@@ -879,22 +875,20 @@
             this.hethongTransition.Interval = 10;
             this.hethongTransition.Tick += new System.EventHandler(this.hethongTransition_Tick);
             // 
-            // lblEmail
+            // panelBody
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(289, 14);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(17, 21);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "*";
+            this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBody.Location = new System.Drawing.Point(300, 52);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.Size = new System.Drawing.Size(923, 662);
+            this.panelBody.TabIndex = 2;
             // 
             // frmMainQLCF
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1223, 714);
+            this.Controls.Add(this.panelBody);
             this.Controls.Add(this.flpSidebar);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -906,6 +900,7 @@
             this.Load += new System.EventHandler(this.frmMainQLCF_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.flpSidebar.ResumeLayout(false);
@@ -946,7 +941,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpSidebar;
         private System.Windows.Forms.Label lbGio;
         private System.Windows.Forms.Label lbNgay;
-        private Guna.UI2.WinForms.Guna2TextBox txtLogo;
         private Guna.UI2.WinForms.Guna2Elipse eMainQLCF;
         private System.Windows.Forms.FlowLayoutPanel flpQuanLy;
         private System.Windows.Forms.Panel panelThongKe;
@@ -992,5 +986,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDoiMatKhau;
         private System.Windows.Forms.Timer hethongTransition;
         private System.Windows.Forms.Label lblEmail;
+        private Guna.UI2.WinForms.Guna2PictureBox picLogo;
+        private Guna.UI2.WinForms.Guna2Panel panelBody;
     }
 }

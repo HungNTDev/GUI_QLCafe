@@ -1,4 +1,5 @@
 ﻿using BUS_QLCafe;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -87,10 +88,71 @@ namespace GUI_QLCafe
             }
         }
 
+        //Phương thức kiểm tra độ mạnh của mật khẩu
+        public string CheckPasswordStrength(string password)
+        {
+            int score = 0;
+
+            if(password.Length > 8)
+            {
+                score++;
+            }
+            if(System.Text.RegularExpressions.Regex.IsMatch(password, @"[A-Z]"))
+            {
+                score++;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(password, @"[a-z]"))
+            {
+                score++;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(password, @"[0-9]"))
+            {
+                score++;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(password, @"[\W_]"))
+            {
+                score++;
+            }
+
+            switch (score)
+            {
+                default:
+                    return "Mật khẩu rất yếu";
+                case 1:
+                    return "Mật khẩu yếu";
+                case 2:
+                    return "Mật khẩu trung bình";
+                case 3:
+                    return "Mật khẩu mạnh";
+                case 4:
+                    return "Mật khẩu rất mạnh";
+            }
+        }
+
         private void txtNewPassword_TextChanged(object sender, System.EventArgs e)
         {
+            string password = txtNewPassword.Text;
+            string strength = CheckPasswordStrength(password);  
+            lbPasswordStrength.Text = strength; 
 
-
+            switch (strength)
+            {
+                default:
+                    lbPasswordStrength.ForeColor = Color.DarkRed;
+                    break;
+                case "Mật khẩu yếu":
+                    lbPasswordStrength.ForeColor = Color.Red;
+                    break;
+                case "Mật khẩu trung bình":
+                    lbPasswordStrength.ForeColor = Color.Orange;
+                    break;
+                case "Mật khẩu mạnh":
+                    lbPasswordStrength.ForeColor= Color.LightGreen;
+                    break;
+                case "Mật khẩu rất mạnh":
+                    lbPasswordStrength.ForeColor = Color.Green;
+                    break;
+            }
         }
 
     }

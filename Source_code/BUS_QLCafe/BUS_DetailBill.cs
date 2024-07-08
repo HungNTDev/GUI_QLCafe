@@ -1,24 +1,23 @@
 ﻿using DAL_QLCafe;
 using DTO_QLCafe;
 using System.Data;
-
 namespace BUS_QLCafe
 {
-    public class BUS_ProductType
+    public class BUS_DetailBill
     {
-        DAL_ProductType dal = new DAL_ProductType();
+        DAL_DetailBill dal = new DAL_DetailBill();
 
         public DataTable get()
         {
             return dal.get();
         }
 
-        public bool insert(DTO_ProductType obj)
+        public bool insert(DTO_DetailBill obj)
         {
             return dal.insert(obj);
         }
 
-        public bool update(DTO_ProductType obj)
+        public bool update(DTO_DetailBill obj)
         {
             return dal.update(obj);
         }
@@ -28,9 +27,10 @@ namespace BUS_QLCafe
             return dal.delete(obj);
         }
 
-        public DataTable search(string keyword, string column)
+        public DataTable search(string obj)
         {
-            return dal.search(keyword, column);
+            return dal.search(obj);
         }
+
     }
 }

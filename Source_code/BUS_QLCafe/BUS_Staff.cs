@@ -70,6 +70,10 @@ namespace BUS_QLCafe
         {
             return dal.update(staff);
         }
+        public bool delete(string id)
+        {
+            return dal.delete(id);
+        }
         public DataTable search(string keyword, string column)
         {
             return dal.search(keyword, column);

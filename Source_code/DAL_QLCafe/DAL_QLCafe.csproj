@@ -47,8 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Bill.cs" />
+    <Compile Include="DAL_DetailBill.cs" />
+    <Compile Include="DAL_Payment.cs" />
+    <Compile Include="DAL_Product.cs" />
     <Compile Include="DAL_ProductType.cs" />
     <Compile Include="DAL_Staff.cs" />
+    <Compile Include="DAL_TableCF.cs" />
     <Compile Include="DAL_Voucher.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

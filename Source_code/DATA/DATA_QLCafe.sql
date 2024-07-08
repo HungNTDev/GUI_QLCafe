@@ -5,7 +5,7 @@ Id              int identity(1,1) not null ,
 IdStaff         nvarchar(20) not null,
 FullName        nvarchar(50) not null,
 ImageStaff      nvarchar(500) not null,
-Email           nvarchar(50) not null,
+Email           nvarchar(50) unique not null,
 PasswordStaff   nvarchar(50) not null,
 RoleStaff       int not null,
 StatusStaff     int not null,
@@ -138,6 +138,8 @@ update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
 go
 
+
+--Đăng nhập
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
 as
 begin
@@ -145,6 +147,7 @@ select * from staff where email = @Email and PasswordStaff = @password
 end
 go
 
+--Lấy vai trò
 create proc VaiTro (@email nvarchar(50))
 as
 begin
@@ -152,6 +155,8 @@ begin
 end
 go
 
+
+--Kiểm tra email có trong db hay không
 create proc KiemTraEmail(@email nvarchar(50))
 as
 begin
@@ -173,3 +178,11 @@ as
   else 
        return -1
 go
+
+
+--Quên mật khẩu
+create proc NewPass (@email nvarchar(50), @password nvarchar(50))
+as
+begin
+	update Staff set PasswordStaff = @password where Email = @email
+end

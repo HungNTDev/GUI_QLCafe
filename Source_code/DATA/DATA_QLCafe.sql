@@ -173,3 +173,8 @@ as
   else 
        return -1
 go
+
+-- Xử lí bàn (Lý Bảo Hoàng) --
+/*Danh sách bàn*/
+create or alter proc TableList as
+	select * from TableCF

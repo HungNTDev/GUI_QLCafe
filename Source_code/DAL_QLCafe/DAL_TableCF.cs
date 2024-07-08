@@ -1,5 +1,6 @@
 ﻿using DTO_QLCafe;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace DAL_QLCafe
@@ -128,6 +129,31 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
 
+                    conn.Open();
+
+                    DataTable dtTableCF = new DataTable();
+                    dtTableCF.Load(cmd.ExecuteReader());
+                    return dtTableCF;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+
+        //Load danh sách bàn
+        public DataTable TableList()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand ("TableList", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
                     conn.Open();
 
                     DataTable dtTableCF = new DataTable();

@@ -237,5 +237,15 @@ namespace GUI_QLCafe
         {
             AddControls(new frmQLNhanVien());
         }
+
+        private void picHam_Click(object sender, EventArgs e)
+        {
+            sidebarTransition.Start();
+        }
+
+        private void btnQLSanPham_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmQLSanPham());
+        }
     }
 }

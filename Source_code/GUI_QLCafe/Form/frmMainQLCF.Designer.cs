@@ -203,6 +203,7 @@
             this.picHam.TabIndex = 1;
             this.picHam.TabStop = false;
             this.picHam.UseTransparentBackground = true;
+            this.picHam.Click += new System.EventHandler(this.picHam_Click);
             // 
             // cbMaximize
             // 
@@ -291,6 +292,7 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Wheat;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
@@ -501,6 +503,7 @@
             this.btnQLSanPham.TabIndex = 3;
             this.btnQLSanPham.Text = "          Quản lý sản phẩm";
             this.btnQLSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLSanPham.Click += new System.EventHandler(this.btnQLSanPham_Click);
             // 
             // panelQLThanhToan
             // 

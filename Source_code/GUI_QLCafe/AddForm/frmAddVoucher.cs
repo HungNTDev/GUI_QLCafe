@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_QLCafe
 {
-    public partial class test : Form
+    public partial class frmAddVoucher : Form
     {
-        public test()
+        public frmAddVoucher()
         {
             InitializeComponent();
         }

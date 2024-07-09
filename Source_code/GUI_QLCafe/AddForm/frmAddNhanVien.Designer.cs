@@ -47,7 +47,7 @@
             this.txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbDiaChi = new System.Windows.Forms.Label();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
-            this.picHinhAnh = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picNhanVien = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMoHinh = new Guna.UI2.WinForms.Guna2Button();
             this.txtDuongDan = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.gbVaiTro.SuspendLayout();
             this.gbTinhTrang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinhAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -318,16 +318,16 @@
             this.txtDiaChi.Size = new System.Drawing.Size(626, 71);
             this.txtDiaChi.TabIndex = 9;
             // 
-            // picHinhAnh
+            // picNhanVien
             // 
-            this.picHinhAnh.BorderRadius = 5;
-            this.picHinhAnh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.picHinhAnh.ImageRotate = 0F;
-            this.picHinhAnh.Location = new System.Drawing.Point(497, 84);
-            this.picHinhAnh.Name = "picHinhAnh";
-            this.picHinhAnh.Size = new System.Drawing.Size(173, 198);
-            this.picHinhAnh.TabIndex = 10;
-            this.picHinhAnh.TabStop = false;
+            this.picNhanVien.BorderRadius = 5;
+            this.picNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.picNhanVien.ImageRotate = 0F;
+            this.picNhanVien.Location = new System.Drawing.Point(497, 84);
+            this.picNhanVien.Name = "picNhanVien";
+            this.picNhanVien.Size = new System.Drawing.Size(173, 198);
+            this.picNhanVien.TabIndex = 10;
+            this.picNhanVien.TabStop = false;
             // 
             // btnMoHinh
             // 
@@ -410,7 +410,7 @@
             this.ClientSize = new System.Drawing.Size(714, 595);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnMoHinh);
-            this.Controls.Add(this.picHinhAnh);
+            this.Controls.Add(this.picNhanVien);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtDuongDan);
             this.Controls.Add(this.txtTenNhanVien);
@@ -434,7 +434,7 @@
             this.gbVaiTro.PerformLayout();
             this.gbTinhTrang.ResumeLayout(false);
             this.gbTinhTrang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinhAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,7 +459,7 @@
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private System.Windows.Forms.Label lbDiaChi;
-        private Guna.UI2.WinForms.Guna2PictureBox picHinhAnh;
+        private Guna.UI2.WinForms.Guna2PictureBox picNhanVien;
         private Guna.UI2.WinForms.Guna2Button btnMoHinh;
         private Guna.UI2.WinForms.Guna2TextBox txtDuongDan;
         private Guna.UI2.WinForms.Guna2Button btnLuu;

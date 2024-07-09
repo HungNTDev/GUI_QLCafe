@@ -16,5 +16,11 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmAddSanPham frmAddSanPham = new frmAddSanPham();
+            frmAddSanPham.ShowDialog();
+        }
     }
 }

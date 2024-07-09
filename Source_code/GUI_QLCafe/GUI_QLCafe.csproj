@@ -142,6 +142,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddForm\frmAddNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\frmAddNhanVien.Designer.cs">
+      <DependentUpon>frmAddNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForm\frmAddSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\frmAddSanPham.Designer.cs">
+      <DependentUpon>frmAddSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,43 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Test\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmQLBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmQLBan.Designer.cs">
+      <DependentUpon>frmQLBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmQLHoaDon.cs" />
+    <Compile Include="ViewForm\frmQLHoaDon.Designer.cs">
+      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmQLNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmQLNhanVien.Designer.cs">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmQLSanPham.cs" />
+    <Compile Include="ViewForm\frmQLSanPham.Designer.cs">
+      <DependentUpon>frmQLSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmQLThanhToan.cs" />
+    <Compile Include="ViewForm\frmQLThanhToan.Designer.cs">
+      <DependentUpon>frmQLThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmQLVoucher.cs" />
+    <Compile Include="ViewForm\frmQLVoucher.Designer.cs">
+      <DependentUpon>frmQLVoucher.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddForm\frmAddNhanVien.resx">
+      <DependentUpon>frmAddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +257,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewForm\frmQLNhanVien.resx">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

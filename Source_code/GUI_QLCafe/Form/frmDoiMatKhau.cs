@@ -138,7 +138,7 @@ namespace GUI_QLCafe
             switch (strength)
             {
                 default:
-                    lbPasswordStrength.ForeColor = Color.DarkRed;
+                    lbPasswordStrength.ForeColor = Color.Red;
                     break;
                 case "Mật khẩu yếu":
                     lbPasswordStrength.ForeColor = Color.Red;

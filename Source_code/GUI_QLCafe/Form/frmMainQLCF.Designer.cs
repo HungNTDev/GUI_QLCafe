@@ -153,7 +153,7 @@
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(289, 18);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(14, 23);
+            this.lblEmail.Size = new System.Drawing.Size(12, 19);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = ".";
             // 
@@ -164,7 +164,7 @@
             this.lbGio.ForeColor = System.Drawing.Color.Black;
             this.lbGio.Location = new System.Drawing.Point(167, 18);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(36, 23);
+            this.lbGio.Size = new System.Drawing.Size(32, 19);
             this.lbGio.TabIndex = 3;
             this.lbGio.Text = "Giờ";
             // 
@@ -175,7 +175,7 @@
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
             this.lbNgay.Location = new System.Drawing.Point(70, 18);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(51, 23);
+            this.lbNgay.Size = new System.Drawing.Size(42, 19);
             this.lbNgay.TabIndex = 3;
             this.lbNgay.Text = "Ngày";
             // 
@@ -913,6 +913,7 @@
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(923, 662);
             this.panelBody.TabIndex = 2;
+            this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint);
             // 
             // frmMainQLCF
             // 

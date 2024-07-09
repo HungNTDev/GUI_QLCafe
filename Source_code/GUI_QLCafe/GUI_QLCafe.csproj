@@ -205,7 +205,9 @@
     <Compile Include="ViewForm\frmQLBan.Designer.cs">
       <DependentUpon>frmQLBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewForm\frmQLHoaDon.cs" />
+    <Compile Include="ViewForm\frmQLHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewForm\frmQLHoaDon.Designer.cs">
       <DependentUpon>frmQLHoaDon.cs</DependentUpon>
     </Compile>
@@ -215,15 +217,21 @@
     <Compile Include="ViewForm\frmQLNhanVien.Designer.cs">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewForm\frmQLSanPham.cs" />
+    <Compile Include="ViewForm\frmQLSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewForm\frmQLSanPham.Designer.cs">
       <DependentUpon>frmQLSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewForm\frmQLThanhToan.cs" />
+    <Compile Include="ViewForm\frmQLThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewForm\frmQLThanhToan.Designer.cs">
       <DependentUpon>frmQLThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewForm\frmQLVoucher.cs" />
+    <Compile Include="ViewForm\frmQLVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewForm\frmQLVoucher.Designer.cs">
       <DependentUpon>frmQLVoucher.cs</DependentUpon>
     </Compile>

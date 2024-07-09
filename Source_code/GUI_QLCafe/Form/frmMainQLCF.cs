@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -21,7 +14,7 @@ namespace GUI_QLCafe
 
         //Tạo form đăng nhập
         frmDangNhap dn;
-        
+
         public frmMainQLCF()
         {
             InitializeComponent();
@@ -50,15 +43,15 @@ namespace GUI_QLCafe
                 }
             }
         }
-        bool quanlyExpand = false;  
+        bool quanlyExpand = false;
         private void quanlyTransition_Tick(object sender, EventArgs e)
         {
             // Nếu chưa mở rộng
-            if (quanlyExpand == false) 
+            if (quanlyExpand == false)
             {
                 // Tăng chiều cao lên 5
                 flpQuanLy.Height += 15;
-                
+
                 // Nếu chiều cao đạt 300
                 if (flpQuanLy.Height >= 300)
                 {
@@ -69,10 +62,10 @@ namespace GUI_QLCafe
             else
             {
                 // Giảm chiều cao xuống 5
-                flpQuanLy.Height -= 15; 
+                flpQuanLy.Height -= 15;
 
                 // Nếu chiều cao nhỏ hơn hoặc bằng 45
-                if(flpQuanLy.Height <= 45)
+                if (flpQuanLy.Height <= 45)
                 {
                     quanlyTransition.Stop(); // Dừng timer
                     quanlyExpand = false; // Thu gọn
@@ -89,13 +82,13 @@ namespace GUI_QLCafe
         private void thongkeTransition_Tick(object sender, EventArgs e)
         {
             // Nếu chưa mở rộng
-            if(thongkeExpand == false)
+            if (thongkeExpand == false)
             {
                 // Tăng chiều cao lên 5
-                flpThongKe.Height += 15; 
+                flpThongKe.Height += 15;
 
                 // Nếu chiều cao đạt 300
-                if(flpThongKe.Height >= 162)
+                if (flpThongKe.Height >= 162)
                 {
                     thongkeTransition.Stop(); // Dừng timer
                     thongkeExpand = true; // Mở rộng
@@ -104,10 +97,10 @@ namespace GUI_QLCafe
             else
             {
                 // Giảm chiều cao xuống 5
-                flpThongKe.Height -= 15; 
+                flpThongKe.Height -= 15;
 
                 // Nếu chiều cao nhỏ hơn hoặc bằng 45
-                if(flpThongKe.Height <= 45)
+                if (flpThongKe.Height <= 45)
                 {
                     thongkeTransition.Stop(); // Dừng timer
                     thongkeExpand = false; // Thu gọn
@@ -151,7 +144,7 @@ namespace GUI_QLCafe
         }
         private void btnHuongDan_Click(object sender, EventArgs e)
         {
-            huongdanTransition.Start(); 
+            huongdanTransition.Start();
         }
 
         bool hethongExpand = false;
@@ -199,7 +192,7 @@ namespace GUI_QLCafe
                 flpSidebar.Width -= 10;
 
                 // Nếu chiều rộng nhỏ hơn hoặc bằng 61
-                if(flpSidebar.Width <= 61)
+                if (flpSidebar.Width <= 61)
                 {
                     sidebarExpand = false; // Thu gọn
                     sidebarTransition.Stop(); // Dừng timer
@@ -211,7 +204,7 @@ namespace GUI_QLCafe
                 flpSidebar.Width += 10;
 
                 // Nếu chiều rộng đạt tới 300
-                if(flpSidebar.Width >= 300)
+                if (flpSidebar.Width >= 300)
                 {
                     sidebarExpand = true; // Mở rộng
                     sidebarTransition.Stop(); // Dừng timer
@@ -224,6 +217,9 @@ namespace GUI_QLCafe
             Application.Exit();
         }
 
+        private void panelBody_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using DTO_QLCafe;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace DAL_QLCafe
@@ -151,7 +150,7 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand ("TableList", conn))
+                using (SqlCommand cmd = new SqlCommand("TableList", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     conn.Open();

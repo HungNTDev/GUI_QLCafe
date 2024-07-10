@@ -42,7 +42,7 @@
             this.rdoHoatDong = new System.Windows.Forms.RadioButton();
             this.rdoNgungHoatDong = new System.Windows.Forms.RadioButton();
             this.gbVaiTro = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.gbTinhTrang = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.gbTrangThai = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbDiaChi = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.gbVaiTro.SuspendLayout();
-            this.gbTinhTrang.SuspendLayout();
+            this.gbTrangThai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,21 +215,21 @@
             this.gbVaiTro.TabIndex = 8;
             this.gbVaiTro.Text = "Vai trò";
             // 
-            // gbTinhTrang
+            // gbTrangThai
             // 
-            this.gbTinhTrang.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.gbTinhTrang.BorderRadius = 5;
-            this.gbTinhTrang.Controls.Add(this.rdoHoatDong);
-            this.gbTinhTrang.Controls.Add(this.rdoNgungHoatDong);
-            this.gbTinhTrang.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.gbTinhTrang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTinhTrang.ForeColor = System.Drawing.Color.White;
-            this.gbTinhTrang.Location = new System.Drawing.Point(267, 241);
-            this.gbTinhTrang.Name = "gbTinhTrang";
-            this.gbTinhTrang.Size = new System.Drawing.Size(201, 125);
-            this.gbTinhTrang.TabIndex = 8;
-            this.gbTinhTrang.Text = "Tình trạng";
-            this.gbTinhTrang.Click += new System.EventHandler(this.gbTinhTrang_Click);
+            this.gbTrangThai.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.gbTrangThai.BorderRadius = 5;
+            this.gbTrangThai.Controls.Add(this.rdoHoatDong);
+            this.gbTrangThai.Controls.Add(this.rdoNgungHoatDong);
+            this.gbTrangThai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.gbTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbTrangThai.ForeColor = System.Drawing.Color.White;
+            this.gbTrangThai.Location = new System.Drawing.Point(267, 241);
+            this.gbTrangThai.Name = "gbTrangThai";
+            this.gbTrangThai.Size = new System.Drawing.Size(201, 125);
+            this.gbTrangThai.TabIndex = 8;
+            this.gbTrangThai.Text = "Trạng thái";
+            this.gbTrangThai.Click += new System.EventHandler(this.gbTinhTrang_Click);
             // 
             // txtEmail
             // 
@@ -415,7 +415,7 @@
             this.Controls.Add(this.txtDuongDan);
             this.Controls.Add(this.txtTenNhanVien);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.gbTinhTrang);
+            this.Controls.Add(this.gbTrangThai);
             this.Controls.Add(this.gbVaiTro);
             this.Controls.Add(this.lbEmailNhanVien);
             this.Controls.Add(this.lbDiaChi);
@@ -432,8 +432,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.gbVaiTro.ResumeLayout(false);
             this.gbVaiTro.PerformLayout();
-            this.gbTinhTrang.ResumeLayout(false);
-            this.gbTinhTrang.PerformLayout();
+            this.gbTrangThai.ResumeLayout(false);
+            this.gbTrangThai.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -452,7 +452,7 @@
         private System.Windows.Forms.Label lbEmailNhanVien;
         private System.Windows.Forms.Label lbTenNhanVien;
         private Guna.UI2.WinForms.Guna2GroupBox gbVaiTro;
-        private Guna.UI2.WinForms.Guna2GroupBox gbTinhTrang;
+        private Guna.UI2.WinForms.Guna2GroupBox gbTrangThai;
         private Guna.UI2.WinForms.Guna2TextBox txtTenNhanVien;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;

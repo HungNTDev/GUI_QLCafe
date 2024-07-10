@@ -16,5 +16,16 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
+
+        private void frmQLVoucher_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmAddVoucher frmAddVoucher = new frmAddVoucher();
+            frmAddVoucher.ShowDialog();
+        }
     }
 }

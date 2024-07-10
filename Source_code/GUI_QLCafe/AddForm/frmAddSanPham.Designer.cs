@@ -41,16 +41,16 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMoHinh = new Guna.UI2.WinForms.Guna2Button();
             this.lbGia = new System.Windows.Forms.Label();
             this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbVND = new System.Windows.Forms.Label();
-            this.cbTinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbTinhTrang = new System.Windows.Forms.Label();
+            this.cbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbTrangThai = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLuu
@@ -242,17 +242,17 @@
             this.cbClose.Size = new System.Drawing.Size(62, 39);
             this.cbClose.TabIndex = 4;
             // 
-            // guna2Panel1
+            // panelHeader
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Panel1.Controls.Add(this.lbText0);
-            this.guna2Panel1.Controls.Add(this.picLogo);
-            this.guna2Panel1.Controls.Add(this.cbClose);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(678, 62);
-            this.guna2Panel1.TabIndex = 13;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.Controls.Add(this.lbText0);
+            this.panelHeader.Controls.Add(this.picLogo);
+            this.panelHeader.Controls.Add(this.cbClose);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(678, 62);
+            this.panelHeader.TabIndex = 13;
             // 
             // btnMoHinh
             // 
@@ -322,37 +322,37 @@
             this.lbVND.TabIndex = 16;
             this.lbVND.Text = "VND";
             // 
-            // cbTinhTrang
+            // cbTrangThai
             // 
-            this.cbTinhTrang.BackColor = System.Drawing.Color.Transparent;
-            this.cbTinhTrang.BorderColor = System.Drawing.Color.Silver;
-            this.cbTinhTrang.BorderRadius = 5;
-            this.cbTinhTrang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTinhTrang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTinhTrang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTinhTrang.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.cbTinhTrang.ForeColor = System.Drawing.Color.Black;
-            this.cbTinhTrang.ItemHeight = 30;
-            this.cbTinhTrang.Items.AddRange(new object[] {
+            this.cbTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbTrangThai.BorderColor = System.Drawing.Color.Silver;
+            this.cbTrangThai.BorderRadius = 5;
+            this.cbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.cbTrangThai.ForeColor = System.Drawing.Color.Black;
+            this.cbTrangThai.ItemHeight = 30;
+            this.cbTrangThai.Items.AddRange(new object[] {
             "Có",
             "Không có"});
-            this.cbTinhTrang.Location = new System.Drawing.Point(41, 360);
-            this.cbTinhTrang.Name = "cbTinhTrang";
-            this.cbTinhTrang.Size = new System.Drawing.Size(343, 36);
-            this.cbTinhTrang.TabIndex = 26;
+            this.cbTrangThai.Location = new System.Drawing.Point(41, 360);
+            this.cbTrangThai.Name = "cbTrangThai";
+            this.cbTrangThai.Size = new System.Drawing.Size(343, 36);
+            this.cbTrangThai.TabIndex = 26;
             // 
-            // lbTinhTrang
+            // lbTrangThai
             // 
-            this.lbTinhTrang.AutoSize = true;
-            this.lbTinhTrang.BackColor = System.Drawing.Color.White;
-            this.lbTinhTrang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTinhTrang.ForeColor = System.Drawing.Color.Black;
-            this.lbTinhTrang.Location = new System.Drawing.Point(39, 329);
-            this.lbTinhTrang.Name = "lbTinhTrang";
-            this.lbTinhTrang.Size = new System.Drawing.Size(101, 28);
-            this.lbTinhTrang.TabIndex = 16;
-            this.lbTinhTrang.Text = "Tình trạng";
+            this.lbTrangThai.AutoSize = true;
+            this.lbTrangThai.BackColor = System.Drawing.Color.White;
+            this.lbTrangThai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrangThai.ForeColor = System.Drawing.Color.Black;
+            this.lbTrangThai.Location = new System.Drawing.Point(39, 329);
+            this.lbTrangThai.Name = "lbTrangThai";
+            this.lbTrangThai.Size = new System.Drawing.Size(98, 28);
+            this.lbTrangThai.TabIndex = 16;
+            this.lbTrangThai.Text = "Trạng thái";
             // 
             // frmAddSanPham
             // 
@@ -360,7 +360,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(678, 524);
-            this.Controls.Add(this.cbTinhTrang);
+            this.Controls.Add(this.cbTrangThai);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.picSanPham);
             this.Controls.Add(this.txtDuongDan);
@@ -368,10 +368,10 @@
             this.Controls.Add(this.txtMaSanPham);
             this.Controls.Add(this.lbMaSanPham);
             this.Controls.Add(this.lbVND);
-            this.Controls.Add(this.lbTinhTrang);
+            this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.lbGia);
             this.Controls.Add(this.lbTenSanPham);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnMoHinh);
             this.Controls.Add(this.txtGia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -380,8 +380,8 @@
             this.Text = "frmAddSanPham";
             ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +397,7 @@
         private System.Windows.Forms.Label lbMaSanPham;
         private System.Windows.Forms.Label lbTenSanPham;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddNhanVien;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
@@ -405,7 +405,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtGia;
         private System.Windows.Forms.Label lbGia;
         private System.Windows.Forms.Label lbVND;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTinhTrang;
-        private System.Windows.Forms.Label lbTinhTrang;
+        private Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
+        private System.Windows.Forms.Label lbTrangThai;
     }
 }

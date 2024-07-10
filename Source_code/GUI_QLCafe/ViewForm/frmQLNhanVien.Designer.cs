@@ -42,7 +42,7 @@
             this.dgvTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
@@ -167,7 +167,7 @@
             this.dgvTenNhanVien,
             this.dgvDiaChi,
             this.dgvVaiTro,
-            this.dgvTinhTrang,
+            this.dgvTrangThai,
             this.dgvHinhAnh,
             this.dgvSua,
             this.dgvXoa});
@@ -239,12 +239,12 @@
             this.dgvVaiTro.Name = "dgvVaiTro";
             this.dgvVaiTro.ReadOnly = true;
             // 
-            // dgvTinhTrang
+            // dgvTrangThai
             // 
-            this.dgvTinhTrang.HeaderText = "Tình trạng";
-            this.dgvTinhTrang.MinimumWidth = 6;
-            this.dgvTinhTrang.Name = "dgvTinhTrang";
-            this.dgvTinhTrang.ReadOnly = true;
+            this.dgvTrangThai.HeaderText = "Trạng thái";
+            this.dgvTrangThai.MinimumWidth = 6;
+            this.dgvTrangThai.Name = "dgvTrangThai";
+            this.dgvTrangThai.ReadOnly = true;
             // 
             // dgvHinhAnh
             // 
@@ -309,7 +309,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvVaiTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvHinhAnh;
         private System.Windows.Forms.DataGridViewImageColumn dgvSua;
         private System.Windows.Forms.DataGridViewImageColumn dgvXoa;

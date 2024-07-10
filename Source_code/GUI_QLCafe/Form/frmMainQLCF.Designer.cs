@@ -69,8 +69,6 @@
             this.flpHeThong = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHeThong = new System.Windows.Forms.Panel();
             this.btnHeThong = new Guna.UI2.WinForms.Guna2Button();
-            this.panelDangNhap = new System.Windows.Forms.Panel();
-            this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.panelDoiMatKhau = new System.Windows.Forms.Panel();
             this.btnDoiMatKhau = new Guna.UI2.WinForms.Guna2Button();
             this.flpHuongDan = new System.Windows.Forms.FlowLayoutPanel();
@@ -89,6 +87,7 @@
             this.huongdanTransition = new System.Windows.Forms.Timer(this.components);
             this.hethongTransition = new System.Windows.Forms.Timer(this.components);
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.picBackGround = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
@@ -110,13 +109,14 @@
             this.panelThongKeSLHoaDon.SuspendLayout();
             this.flpHeThong.SuspendLayout();
             this.panelHeThong.SuspendLayout();
-            this.panelDangNhap.SuspendLayout();
             this.panelDoiMatKhau.SuspendLayout();
             this.flpHuongDan.SuspendLayout();
             this.panelHuongDan.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelDangXuat.SuspendLayout();
+            this.panelBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -153,7 +153,7 @@
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(289, 18);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(12, 19);
+            this.lblEmail.Size = new System.Drawing.Size(14, 23);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = ".";
             // 
@@ -164,7 +164,7 @@
             this.lbGio.ForeColor = System.Drawing.Color.Black;
             this.lbGio.Location = new System.Drawing.Point(167, 18);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(32, 19);
+            this.lbGio.Size = new System.Drawing.Size(36, 23);
             this.lbGio.TabIndex = 3;
             this.lbGio.Text = "Giờ";
             // 
@@ -175,7 +175,7 @@
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
             this.lbNgay.Location = new System.Drawing.Point(70, 18);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(42, 19);
+            this.lbNgay.Size = new System.Drawing.Size(51, 23);
             this.lbNgay.TabIndex = 3;
             this.lbNgay.Text = "Ngày";
             // 
@@ -190,6 +190,7 @@
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(55, 41);
             this.cbMinimize.TabIndex = 1;
+            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
             // 
             // picHam
             // 
@@ -412,6 +413,7 @@
             this.btnQLVoucher.TabIndex = 3;
             this.btnQLVoucher.Text = "          Quản lý voucher";
             this.btnQLVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLVoucher.Click += new System.EventHandler(this.btnQLVoucher_Click);
             // 
             // panelQLHoaDon
             // 
@@ -642,7 +644,6 @@
             // 
             this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpHeThong.Controls.Add(this.panelHeThong);
-            this.flpHeThong.Controls.Add(this.panelDangNhap);
             this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
             this.flpHeThong.Location = new System.Drawing.Point(3, 373);
             this.flpHeThong.Name = "flpHeThong";
@@ -681,40 +682,10 @@
             this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
             // 
-            // panelDangNhap
-            // 
-            this.panelDangNhap.Controls.Add(this.btnDangNhap);
-            this.panelDangNhap.Location = new System.Drawing.Point(3, 54);
-            this.panelDangNhap.Name = "panelDangNhap";
-            this.panelDangNhap.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelDangNhap.Size = new System.Drawing.Size(300, 45);
-            this.panelDangNhap.TabIndex = 2;
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnDangNhap.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
-            this.btnDangNhap.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangNhap.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangNhap.Location = new System.Drawing.Point(0, -16);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(345, 76);
-            this.btnDangNhap.TabIndex = 3;
-            this.btnDangNhap.Text = "          Đăng nhập";
-            this.btnDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // panelDoiMatKhau
             // 
             this.panelDoiMatKhau.Controls.Add(this.btnDoiMatKhau);
-            this.panelDoiMatKhau.Location = new System.Drawing.Point(3, 105);
+            this.panelDoiMatKhau.Location = new System.Drawing.Point(3, 54);
             this.panelDoiMatKhau.Name = "panelDoiMatKhau";
             this.panelDoiMatKhau.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.panelDoiMatKhau.Size = new System.Drawing.Size(300, 45);
@@ -908,12 +879,24 @@
             // 
             // panelBody
             // 
+            this.panelBody.Controls.Add(this.picBackGround);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(300, 52);
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(923, 662);
             this.panelBody.TabIndex = 2;
-            this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint);
+            // 
+            // picBackGround
+            // 
+            this.picBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBackGround.Image = ((System.Drawing.Image)(resources.GetObject("picBackGround.Image")));
+            this.picBackGround.ImageRotate = 0F;
+            this.picBackGround.Location = new System.Drawing.Point(0, 0);
+            this.picBackGround.Name = "picBackGround";
+            this.picBackGround.Size = new System.Drawing.Size(923, 662);
+            this.picBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackGround.TabIndex = 0;
+            this.picBackGround.TabStop = false;
             // 
             // frmMainQLCF
             // 
@@ -952,13 +935,14 @@
             this.panelThongKeSLHoaDon.ResumeLayout(false);
             this.flpHeThong.ResumeLayout(false);
             this.panelHeThong.ResumeLayout(false);
-            this.panelDangNhap.ResumeLayout(false);
             this.panelDoiMatKhau.ResumeLayout(false);
             this.flpHuongDan.ResumeLayout(false);
             this.panelHuongDan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelDangXuat.ResumeLayout(false);
+            this.panelBody.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1014,8 +998,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Timer huongdanTransition;
         private System.Windows.Forms.FlowLayoutPanel flpHeThong;
-        private System.Windows.Forms.Panel panelDangNhap;
-        private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private System.Windows.Forms.Panel panelDoiMatKhau;
         private Guna.UI2.WinForms.Guna2Button btnDoiMatKhau;
         private System.Windows.Forms.Timer hethongTransition;
@@ -1024,5 +1006,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picBackGround;
     }
 }

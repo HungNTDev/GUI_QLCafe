@@ -66,7 +66,7 @@ namespace GUI_QLCafe
             if (quanlyExpand == false) 
             {
                 // Tăng chiều cao lên 5
-                flpQuanLy.Height += 15;
+                flpQuanLy.Height += 20;
                 
                 // Nếu chiều cao đạt 300
                 if (flpQuanLy.Height >= 372)
@@ -78,7 +78,7 @@ namespace GUI_QLCafe
             else
             {
                 // Giảm chiều cao xuống 5
-                flpQuanLy.Height -= 15; 
+                flpQuanLy.Height -= 20; 
 
                 // Nếu chiều cao nhỏ hơn hoặc bằng 45
                 if(flpQuanLy.Height <= 45)
@@ -173,7 +173,7 @@ namespace GUI_QLCafe
                 flpHeThong.Height += 15;
 
                 // Nếu chiều cao đạt 300
-                if (flpHeThong.Height >= 165)
+                if (flpHeThong.Height >= 110)
                 {
                     hethongTransition.Stop(); // Dừng timer
                     hethongExpand = true; // Mở rộng
@@ -205,7 +205,7 @@ namespace GUI_QLCafe
             if (sidebarExpand)
             {
                 // Giảm chiều rộng xuống 5
-                flpSidebar.Width -= 10;
+                flpSidebar.Width -= 20;
 
                 // Nếu chiều rộng nhỏ hơn hoặc bằng 61
                 if(flpSidebar.Width <= 61)
@@ -217,7 +217,7 @@ namespace GUI_QLCafe
             else
             {
                 // Tăng chiều rộng lên 5
-                flpSidebar.Width += 10;
+                flpSidebar.Width += 20;
 
                 // Nếu chiều rộng đạt tới 300
                 if(flpSidebar.Width >= 300)
@@ -233,19 +233,29 @@ namespace GUI_QLCafe
             Application.Exit();
         }
 
+        private void picHam_Click(object sender, EventArgs e)
+        {
+            //sidebarTransition.Start();
+        }
+
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
             AddControls(new frmQLNhanVien());
         }
 
-        private void picHam_Click(object sender, EventArgs e)
-        {
-            sidebarTransition.Start();
-        }
-
         private void btnQLSanPham_Click(object sender, EventArgs e)
         {
             AddControls(new frmQLSanPham());
+        }
+
+        private void btnQLVoucher_Click(object sender, EventArgs e)
+        {
+            AddControls( new frmQLVoucher());  
+        }
+
+        private void cbMinimize_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

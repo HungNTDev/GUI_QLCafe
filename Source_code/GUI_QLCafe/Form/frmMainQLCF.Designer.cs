@@ -913,7 +913,7 @@
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(923, 662);
             this.panelBody.TabIndex = 2;
-            this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint);
+            //this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint);
             // 
             // frmMainQLCF
             // 

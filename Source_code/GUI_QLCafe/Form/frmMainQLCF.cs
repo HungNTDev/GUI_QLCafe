@@ -39,9 +39,9 @@ namespace GUI_QLCafe
         private void frmMainQLCF_Load(object sender, EventArgs e)
         {
             // Hiển thị ngày trên lbNgay
-            lbNgay.Text = DateTime.Now.ToShortDateString();
+            lbNgay.Text = DateTime.Now.ToLongDateString();
             // Hiển thị giờ trên lbGio
-            lbGio.Text = DateTime.Now.ToShortTimeString();
+            lbGio.Text = DateTime.Now.ToLongTimeString();
         }
 
         public void PhanQuyen()
@@ -248,12 +248,18 @@ namespace GUI_QLCafe
             AddControls(new frmQLSanPham());
         }
 
-        private void btnQLVoucher_Click(object sender, EventArgs e)
+        private void btnQLVoucher_Click_1(object sender, EventArgs e)
         {
-            AddControls( new frmQLVoucher());  
+            AddControls(new frmQLVoucher());
         }
 
-        private void cbMinimize_Click(object sender, EventArgs e)
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+           frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
+            frmDoiMatKhau.ShowDialog();
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
         {
 
         }

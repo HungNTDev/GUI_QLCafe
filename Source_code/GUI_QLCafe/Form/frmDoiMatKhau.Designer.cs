@@ -48,6 +48,7 @@
             this.lbNewPassword = new System.Windows.Forms.Label();
             this.txtRetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.bfDoiMatKhau = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panelDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
@@ -185,31 +186,29 @@
             // 
             this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMinimize.BorderRadius = 5;
             this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.cbMinimize.FillColor = System.Drawing.Color.White;
             this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
+            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.Silver;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1084, 7);
+            this.cbMinimize.Location = new System.Drawing.Point(1073, 0);
             this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(35, 27);
+            this.cbMinimize.Size = new System.Drawing.Size(46, 34);
             this.cbMinimize.TabIndex = 3;
             // 
             // cbClose
             // 
             this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.BorderRadius = 5;
             this.cbClose.FillColor = System.Drawing.Color.White;
             this.cbClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.White;
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Silver;
             this.cbClose.IconColor = System.Drawing.Color.Black;
-            this.cbClose.Location = new System.Drawing.Point(1125, 7);
+            this.cbClose.Location = new System.Drawing.Point(1125, 0);
             this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbClose.Name = "cbClose";
-            this.cbClose.Size = new System.Drawing.Size(35, 27);
+            this.cbClose.Size = new System.Drawing.Size(46, 34);
             this.cbClose.TabIndex = 3;
             // 
             // panelDoiMatKhau
@@ -359,6 +358,16 @@
             this.txtNewPassword.TabIndex = 5;
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
+            // bfDoiMatKhau
+            // 
+            this.bfDoiMatKhau.AnimateWindow = true;
+            this.bfDoiMatKhau.AnimationInterval = 250;
+            this.bfDoiMatKhau.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
+            this.bfDoiMatKhau.BorderRadius = 20;
+            this.bfDoiMatKhau.ContainerControl = this;
+            this.bfDoiMatKhau.DockIndicatorTransparencyValue = 0.6D;
+            this.bfDoiMatKhau.TransparentWhileDrag = true;
+            // 
             // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,5 +406,6 @@
         private System.Windows.Forms.CheckBox chkShowPassword;
         private Guna.UI2.WinForms.Guna2Shapes shapeLine;
         private System.Windows.Forms.Label lbPasswordStrength;
+        private Guna.UI2.WinForms.Guna2BorderlessForm bfDoiMatKhau;
     }
 }

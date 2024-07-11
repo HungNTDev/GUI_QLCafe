@@ -58,7 +58,7 @@
             // 
             // picHiddenPassWord
             // 
-            this.picHiddenPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picHiddenPassWord.BackColor = System.Drawing.Color.White;
             this.picHiddenPassWord.BorderRadius = 10;
             this.picHiddenPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picHiddenPassWord.Image")));
             this.picHiddenPassWord.ImageRotate = 0F;
@@ -73,7 +73,7 @@
             // 
             // picShowPassWord
             // 
-            this.picShowPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picShowPassWord.BackColor = System.Drawing.Color.White;
             this.picShowPassWord.BorderRadius = 10;
             this.picShowPassWord.Image = ((System.Drawing.Image)(resources.GetObject("picShowPassWord.Image")));
             this.picShowPassWord.ImageRotate = 0F;
@@ -97,24 +97,22 @@
             this.btnDNGoogle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDNGoogle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDNGoogle.FillColor = System.Drawing.Color.Transparent;
-            this.btnDNGoogle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDNGoogle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnDNGoogle.ForeColor = System.Drawing.Color.Black;
             this.btnDNGoogle.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDNGoogle.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnDNGoogle.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDNGoogle.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnDNGoogle.Image = ((System.Drawing.Image)(resources.GetObject("btnDNGoogle.Image")));
-            this.btnDNGoogle.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDNGoogle.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDNGoogle.Location = new System.Drawing.Point(680, 599);
+            this.btnDNGoogle.Location = new System.Drawing.Point(668, 599);
             this.btnDNGoogle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDNGoogle.Name = "btnDNGoogle";
             this.btnDNGoogle.ShadowDecoration.BorderRadius = 15;
             this.btnDNGoogle.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDNGoogle.Size = new System.Drawing.Size(353, 58);
+            this.btnDNGoogle.Size = new System.Drawing.Size(391, 58);
             this.btnDNGoogle.TabIndex = 5;
             this.btnDNGoogle.Text = "Đăng nhập với GOOGLE";
-            this.btnDNGoogle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDNGoogle.Click += new System.EventHandler(this.btnDNGoogle_Click);
             // 
             // btnDN
@@ -142,6 +140,7 @@
             this.btnDN.TabIndex = 4;
             this.btnDN.Text = "ĐĂNG NHẬP";
             this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
+            this.btnDN.Enter += new System.EventHandler(this.btnDN_Click);
             // 
             // chkGhiNhoTK
             // 
@@ -211,7 +210,6 @@
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
@@ -249,7 +247,6 @@
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
@@ -268,15 +265,14 @@
             // 
             this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.BorderRadius = 5;
             this.cbClose.FillColor = System.Drawing.Color.White;
             this.cbClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.White;
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Silver;
             this.cbClose.IconColor = System.Drawing.Color.Black;
-            this.cbClose.Location = new System.Drawing.Point(1125, 7);
+            this.cbClose.Location = new System.Drawing.Point(1125, 0);
             this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbClose.Name = "cbClose";
-            this.cbClose.Size = new System.Drawing.Size(35, 27);
+            this.cbClose.Size = new System.Drawing.Size(46, 34);
             this.cbClose.TabIndex = 3;
             this.cbClose.Click += new System.EventHandler(this.cbClose_Click);
             // 
@@ -354,17 +350,17 @@
             // 
             this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMinimize.BorderRadius = 5;
             this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.cbMinimize.FillColor = System.Drawing.Color.White;
             this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1084, 7);
+            this.cbMinimize.Location = new System.Drawing.Point(1074, 0);
             this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(35, 27);
+            this.cbMinimize.Size = new System.Drawing.Size(46, 34);
             this.cbMinimize.TabIndex = 3;
+            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
             // 
             // messageDialog
             // 
@@ -372,7 +368,7 @@
             this.messageDialog.Caption = "Thông báo";
             this.messageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
             this.messageDialog.Parent = this;
-            this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.messageDialog.Text = null;
             // 
             // eDangNhap

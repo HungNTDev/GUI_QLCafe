@@ -178,9 +178,9 @@
             this.lbTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
             this.lbTenKhuyenMai.Location = new System.Drawing.Point(39, 166);
             this.lbTenKhuyenMai.Name = "lbTenKhuyenMai";
-            this.lbTenKhuyenMai.Size = new System.Drawing.Size(145, 28);
+            this.lbTenKhuyenMai.Size = new System.Drawing.Size(146, 28);
             this.lbTenKhuyenMai.TabIndex = 45;
-            this.lbTenKhuyenMai.Text = "Mã khuyến mãi";
+            this.lbTenKhuyenMai.Text = "Tên khuyến mãi";
             // 
             // btnLuu
             // 
@@ -249,6 +249,7 @@
             // 
             this.bfAddNhanVien.AnimateWindow = true;
             this.bfAddNhanVien.AnimationInterval = 250;
+            this.bfAddNhanVien.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
             this.bfAddNhanVien.BorderRadius = 20;
             this.bfAddNhanVien.ContainerControl = this;
             this.bfAddNhanVien.DockIndicatorTransparencyValue = 0.6D;

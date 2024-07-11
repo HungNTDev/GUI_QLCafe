@@ -156,7 +156,7 @@ namespace DAL_QLCafe
                     conn.Open();
 
                     DataTable dtTableCF = new DataTable();
-                    dtTableCF.Load(cmd.ExecuteReader());
+                    //dtTableCF.Load(cmd.ExecuteReader());
                     return dtTableCF;
                 }
             }

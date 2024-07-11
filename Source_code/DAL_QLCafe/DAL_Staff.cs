@@ -120,7 +120,7 @@ namespace DAL_QLCafe
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", matkhaumoi);
+                    cmd.Parameters.AddWithValue("@password", matkhaumoi);
 
                     conn.Open();
 

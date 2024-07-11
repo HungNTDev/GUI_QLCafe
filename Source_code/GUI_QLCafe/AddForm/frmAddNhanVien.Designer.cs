@@ -115,6 +115,7 @@
             // 
             this.bfAddNhanVien.AnimateWindow = true;
             this.bfAddNhanVien.AnimationInterval = 250;
+            this.bfAddNhanVien.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
             this.bfAddNhanVien.BorderRadius = 20;
             this.bfAddNhanVien.ContainerControl = this;
             this.bfAddNhanVien.DockIndicatorTransparencyValue = 0.6D;
@@ -229,7 +230,6 @@
             this.gbTrangThai.Size = new System.Drawing.Size(201, 125);
             this.gbTrangThai.TabIndex = 8;
             this.gbTrangThai.Text = "Trạng thái";
-            this.gbTrangThai.Click += new System.EventHandler(this.gbTinhTrang_Click);
             // 
             // txtEmail
             // 
@@ -401,6 +401,7 @@
             this.btnLuu.Size = new System.Drawing.Size(626, 57);
             this.btnLuu.TabIndex = 12;
             this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmAddNhanVien
             // 
@@ -426,7 +427,6 @@
             this.Name = "frmAddNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.frmAddNhanVien_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

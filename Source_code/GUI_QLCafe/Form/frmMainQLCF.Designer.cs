@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainQLCF));
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picLogo0 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lbGio = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
             this.flpSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picLogo1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flpQuanLy = new System.Windows.Forms.FlowLayoutPanel();
             this.panelQuanLy = new System.Windows.Forms.Panel();
             this.btnQuanLy = new Guna.UI2.WinForms.Guna2Button();
@@ -69,8 +69,6 @@
             this.flpHeThong = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHeThong = new System.Windows.Forms.Panel();
             this.btnHeThong = new Guna.UI2.WinForms.Guna2Button();
-            this.panelDangNhap = new System.Windows.Forms.Panel();
-            this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.panelDoiMatKhau = new System.Windows.Forms.Panel();
             this.btnDoiMatKhau = new Guna.UI2.WinForms.Guna2Button();
             this.flpHuongDan = new System.Windows.Forms.FlowLayoutPanel();
@@ -89,13 +87,15 @@
             this.huongdanTransition = new System.Windows.Forms.Timer(this.components);
             this.hethongTransition = new System.Windows.Forms.Timer(this.components);
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.picBackGround = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.flpSidebar.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.flpQuanLy.SuspendLayout();
             this.panelQuanLy.SuspendLayout();
             this.panelQLBan.SuspendLayout();
@@ -110,18 +110,20 @@
             this.panelThongKeSLHoaDon.SuspendLayout();
             this.flpHeThong.SuspendLayout();
             this.panelHeThong.SuspendLayout();
-            this.panelDangNhap.SuspendLayout();
             this.panelDoiMatKhau.SuspendLayout();
             this.flpHuongDan.SuspendLayout();
             this.panelHuongDan.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelDangXuat.SuspendLayout();
+            this.panelBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
-            this.panelHeader.Controls.Add(this.picLogo);
+            this.panelHeader.Controls.Add(this.shapeLine);
+            this.panelHeader.Controls.Add(this.picLogo0);
             this.panelHeader.Controls.Add(this.lblEmail);
             this.panelHeader.Controls.Add(this.lbGio);
             this.panelHeader.Controls.Add(this.lbNgay);
@@ -135,47 +137,48 @@
             this.panelHeader.Size = new System.Drawing.Size(1223, 52);
             this.panelHeader.TabIndex = 0;
             // 
-            // picLogo
+            // picLogo0
             // 
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(257, 13);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(26, 24);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
+            this.picLogo0.Image = ((System.Drawing.Image)(resources.GetObject("picLogo0.Image")));
+            this.picLogo0.ImageRotate = 0F;
+            this.picLogo0.Location = new System.Drawing.Point(302, 9);
+            this.picLogo0.Name = "picLogo0";
+            this.picLogo0.Size = new System.Drawing.Size(26, 24);
+            this.picLogo0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo0.TabIndex = 2;
+            this.picLogo0.TabStop = false;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(289, 18);
+            this.lblEmail.Location = new System.Drawing.Point(334, 15);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(12, 19);
+            this.lblEmail.Size = new System.Drawing.Size(26, 28);
             this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = ".";
+            this.lblEmail.Text = "+";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // lbGio
             // 
             this.lbGio.AutoSize = true;
-            this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.Black;
-            this.lbGio.Location = new System.Drawing.Point(167, 18);
+            this.lbGio.Location = new System.Drawing.Point(167, 14);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(32, 19);
+            this.lbGio.Size = new System.Drawing.Size(43, 28);
             this.lbGio.TabIndex = 3;
             this.lbGio.Text = "Giờ";
             // 
             // lbNgay
             // 
             this.lbNgay.AutoSize = true;
-            this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
-            this.lbNgay.Location = new System.Drawing.Point(70, 18);
+            this.lbNgay.Location = new System.Drawing.Point(70, 14);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(42, 19);
+            this.lbNgay.Size = new System.Drawing.Size(59, 28);
             this.lbNgay.TabIndex = 3;
             this.lbNgay.Text = "Ngày";
             // 
@@ -284,24 +287,24 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Violet;
-            this.panel3.Controls.Add(this.guna2PictureBox1);
+            this.panel3.Controls.Add(this.picLogo1);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(297, 211);
             this.panel3.TabIndex = 5;
             // 
-            // guna2PictureBox1
+            // picLogo1
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Wheat;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-27, -13);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(333, 246);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
+            this.picLogo1.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo1.FillColor = System.Drawing.Color.Wheat;
+            this.picLogo1.Image = ((System.Drawing.Image)(resources.GetObject("picLogo1.Image")));
+            this.picLogo1.ImageRotate = 0F;
+            this.picLogo1.Location = new System.Drawing.Point(-27, -13);
+            this.picLogo1.Name = "picLogo1";
+            this.picLogo1.Size = new System.Drawing.Size(333, 246);
+            this.picLogo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo1.TabIndex = 0;
+            this.picLogo1.TabStop = false;
             // 
             // flpQuanLy
             // 
@@ -412,6 +415,7 @@
             this.btnQLVoucher.TabIndex = 3;
             this.btnQLVoucher.Text = "          Quản lý voucher";
             this.btnQLVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLVoucher.Click += new System.EventHandler(this.btnQLVoucher_Click_1);
             // 
             // panelQLHoaDon
             // 
@@ -642,7 +646,6 @@
             // 
             this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpHeThong.Controls.Add(this.panelHeThong);
-            this.flpHeThong.Controls.Add(this.panelDangNhap);
             this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
             this.flpHeThong.Location = new System.Drawing.Point(3, 373);
             this.flpHeThong.Name = "flpHeThong";
@@ -681,40 +684,10 @@
             this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
             // 
-            // panelDangNhap
-            // 
-            this.panelDangNhap.Controls.Add(this.btnDangNhap);
-            this.panelDangNhap.Location = new System.Drawing.Point(3, 54);
-            this.panelDangNhap.Name = "panelDangNhap";
-            this.panelDangNhap.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelDangNhap.Size = new System.Drawing.Size(300, 45);
-            this.panelDangNhap.TabIndex = 2;
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnDangNhap.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
-            this.btnDangNhap.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangNhap.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangNhap.Location = new System.Drawing.Point(0, -16);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(345, 76);
-            this.btnDangNhap.TabIndex = 3;
-            this.btnDangNhap.Text = "          Đăng nhập";
-            this.btnDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // panelDoiMatKhau
             // 
             this.panelDoiMatKhau.Controls.Add(this.btnDoiMatKhau);
-            this.panelDoiMatKhau.Location = new System.Drawing.Point(3, 105);
+            this.panelDoiMatKhau.Location = new System.Drawing.Point(3, 54);
             this.panelDoiMatKhau.Name = "panelDoiMatKhau";
             this.panelDoiMatKhau.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.panelDoiMatKhau.Size = new System.Drawing.Size(300, 45);
@@ -740,6 +713,7 @@
             this.btnDoiMatKhau.TabIndex = 3;
             this.btnDoiMatKhau.Text = "          Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // flpHuongDan
             // 
@@ -908,12 +882,43 @@
             // 
             // panelBody
             // 
+            this.panelBody.Controls.Add(this.picBackGround);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(300, 52);
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(923, 662);
             this.panelBody.TabIndex = 2;
-            //this.panelBody.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBody_Paint);
+            // 
+            // picBackGround
+            // 
+            this.picBackGround.BackColor = System.Drawing.Color.Transparent;
+            this.picBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBackGround.FillColor = System.Drawing.Color.Black;
+            this.picBackGround.Image = ((System.Drawing.Image)(resources.GetObject("picBackGround.Image")));
+            this.picBackGround.ImageRotate = 0F;
+            this.picBackGround.Location = new System.Drawing.Point(0, 0);
+            this.picBackGround.Name = "picBackGround";
+            this.picBackGround.Size = new System.Drawing.Size(923, 662);
+            this.picBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackGround.TabIndex = 0;
+            this.picBackGround.TabStop = false;
+            this.picBackGround.UseTransparentBackground = true;
+            // 
+            // shapeLine
+            // 
+            this.shapeLine.BorderColor = System.Drawing.Color.Black;
+            this.shapeLine.BorderThickness = 1;
+            this.shapeLine.FillColor = System.Drawing.Color.Black;
+            this.shapeLine.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.shapeLine.Location = new System.Drawing.Point(266, 9);
+            this.shapeLine.Name = "shapeLine";
+            this.shapeLine.PolygonSkip = 1;
+            this.shapeLine.Rotate = 0F;
+            this.shapeLine.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.shapeLine.Size = new System.Drawing.Size(24, 28);
+            this.shapeLine.TabIndex = 5;
+            this.shapeLine.Text = "guna2Shapes1";
+            this.shapeLine.Zoom = 80;
             // 
             // frmMainQLCF
             // 
@@ -932,12 +937,12 @@
             this.Load += new System.EventHandler(this.frmMainQLCF_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.flpSidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).EndInit();
             this.flpQuanLy.ResumeLayout(false);
             this.panelQuanLy.ResumeLayout(false);
             this.panelQLBan.ResumeLayout(false);
@@ -952,13 +957,14 @@
             this.panelThongKeSLHoaDon.ResumeLayout(false);
             this.flpHeThong.ResumeLayout(false);
             this.panelHeThong.ResumeLayout(false);
-            this.panelDangNhap.ResumeLayout(false);
             this.panelDoiMatKhau.ResumeLayout(false);
             this.flpHuongDan.ResumeLayout(false);
             this.panelHuongDan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panelDangXuat.ResumeLayout(false);
+            this.panelBody.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -995,8 +1001,6 @@
         private Guna.UI2.WinForms.Guna2Button btnQLSanPham;
         private System.Windows.Forms.Panel panelQLThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnQLThanhToan;
-        private System.Windows.Forms.Panel panelHuongDan;
-        private Guna.UI2.WinForms.Guna2Button btnHuongDan;
         private System.Windows.Forms.Timer quanlyTransition;
         private System.Windows.Forms.Timer sidebarTransition;
         private System.Windows.Forms.FlowLayoutPanel flpThongKe;
@@ -1007,22 +1011,24 @@
         private System.Windows.Forms.Timer thongkeTransition;
         private System.Windows.Forms.Panel panelDangXuat;
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
-        private System.Windows.Forms.FlowLayoutPanel flpHuongDan;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Timer huongdanTransition;
         private System.Windows.Forms.FlowLayoutPanel flpHeThong;
-        private System.Windows.Forms.Panel panelDangNhap;
-        private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private System.Windows.Forms.Panel panelDoiMatKhau;
         private Guna.UI2.WinForms.Guna2Button btnDoiMatKhau;
         private System.Windows.Forms.Timer hethongTransition;
         private System.Windows.Forms.Label lblEmail;
-        private Guna.UI2.WinForms.Guna2PictureBox picLogo;
+        private Guna.UI2.WinForms.Guna2PictureBox picLogo0;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picLogo1;
+        private System.Windows.Forms.FlowLayoutPanel flpHuongDan;
+        private System.Windows.Forms.Panel panelHuongDan;
+        private Guna.UI2.WinForms.Guna2Button btnHuongDan;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2PictureBox picBackGround;
+        private Guna.UI2.WinForms.Guna2Shapes shapeLine;
     }
 }

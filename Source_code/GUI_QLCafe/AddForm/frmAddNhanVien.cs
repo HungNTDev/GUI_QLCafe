@@ -17,14 +17,15 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        private void frmAddNhanVien_Load(object sender, EventArgs e)
+        public void Nofication(string msg)
         {
-
+            frmNotification notification = new frmNotification();       
+            frmNotification.showNotfication(msg);
         }
 
-        private void gbTinhTrang_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-
+            this.Nofication("Save successfully!");
         }
     }
 }

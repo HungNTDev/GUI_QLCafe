@@ -7,19 +7,22 @@ namespace DAL_QLCafe
 {
     public class DAL_Staff : DBConnect
     {
+        SqlConnection conn;
+
         public bool dangNhap(DTO_Staff staff)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("DangNhap", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
+
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DangNhap";
                     cmd.Parameters.AddWithValue("@email", staff.Email);
                     cmd.Parameters.AddWithValue("@password", staff.PasswordStaff);
                     conn.Open();
-
                     if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
-
                         return true;
                 }
             }
@@ -36,16 +39,15 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("QuenMK", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "QuenMK";
                     cmd.Parameters.AddWithValue("@email", email);
                     conn.Open();
-
                     if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
-                    {
                         return true;
-                    }
                 }
             }
             finally
@@ -63,13 +65,14 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("LayMK", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "LayMK";
                     cmd.Parameters.AddWithValue("@email", email);
 
                     conn.Open();
-
                     DataTable dtNhanVien = new DataTable();
                     dtNhanVien.Load(cmd.ExecuteReader());
                     return dtNhanVien;
@@ -88,15 +91,15 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("ChangePass", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "ChangePass";
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@opwd", matkhaucu);
                     cmd.Parameters.AddWithValue("@npwd", matkhaumoi);
-
                     conn.Open();
-
                     if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
                     {
                         return true;
@@ -116,19 +119,20 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("NewPass", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "NewPass";
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@password", matkhaumoi);
-
+                    cmd.Parameters.AddWithValue("@pass", matkhaumoi);
                     conn.Open();
-
 
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
                     }
+
                 }
             }
             finally
@@ -144,11 +148,12 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("VaiTro", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "VaiTro";
                     cmd.Parameters.AddWithValue("@email", email);
-
                     conn.Open();
 
                     DataTable dtNhanVien = new DataTable();
@@ -168,12 +173,12 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("LayID", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "LayID";
                     conn.Open();
-
                     DataTable dtNhanVien = new DataTable();
                     dtNhanVien.Load(cmd.ExecuteReader());
                     return dtNhanVien;
@@ -191,11 +196,12 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("KiemTraEmail", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "KiemTraEmail";
                     cmd.Parameters.AddWithValue("@email", email);
-
                     conn.Open();
 
                     int count = (int)cmd.ExecuteScalar();
@@ -218,10 +224,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("GetStaff", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "GetStaff";
                     conn.Open();
 
                     DataTable dtNhanVien = new DataTable();
@@ -241,10 +248,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertStaff", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "InsertStaff";
                     cmd.Parameters.AddWithValue("@FullName", staff.FullName);
                     cmd.Parameters.AddWithValue("@ImageStaff", staff.ImageStaff);
                     cmd.Parameters.AddWithValue("@Email", staff.Email);
@@ -273,14 +281,13 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertStaff", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "DeleteStaff";
                     cmd.Parameters.AddWithValue("@IdStaff", id);
-
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -300,11 +307,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UpdateStaff", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
-
+                    cmd.CommandText = "UpdateStaff";
                     cmd.Parameters.AddWithValue("@IdStaff", staff.IdStaff);
                     cmd.Parameters.AddWithValue("@FullName", staff.FullName);
                     cmd.Parameters.AddWithValue("@ImageStaff", staff.ImageStaff);
@@ -335,14 +342,14 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SearchStaff", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "SearchStaff";
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
-
                     conn.Open();
-
                     DataTable dtNhanVien = new DataTable();
                     dtNhanVien.Load(cmd.ExecuteReader());
                     return dtNhanVien;

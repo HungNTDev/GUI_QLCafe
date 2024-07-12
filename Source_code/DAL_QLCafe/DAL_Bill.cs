@@ -5,13 +5,16 @@ namespace DAL_QLCafe
 {
     public class DAL_Bill : DBConnect
     {
+        SqlConnection conn;
         public DataTable get()
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("GetBill", conn))
+                using (SqlConnection conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetBill";
                     conn.Open();
                     DataTable dtBill = new DataTable();
                     dtBill.Load(cmd.ExecuteReader());
@@ -31,9 +34,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertBill", conn))
+                using (SqlConnection conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertBill";
                     cmd.Parameters.AddWithValue("@IdBill", obj.IdBill);
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
@@ -50,7 +55,9 @@ namespace DAL_QLCafe
             finally
             {
                 if (conn.State == ConnectionState.Open)
-                { conn.Close(); }
+                {
+                    conn.Close();
+                }
             }
             return false;
         }
@@ -59,9 +66,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UpdateBill", conn))
+                using (SqlConnection conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateBill";
                     cmd.Parameters.AddWithValue("@IdBill", obj.IdBill);
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
@@ -87,9 +96,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("DeleteBill", conn))
+                using (SqlConnection conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteBill";
                     cmd.Parameters.AddWithValue("@IdBill", id);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
@@ -109,9 +120,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SearchBill", conn))
+                using (SqlConnection conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "SearchBill";
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
                     conn.Open();

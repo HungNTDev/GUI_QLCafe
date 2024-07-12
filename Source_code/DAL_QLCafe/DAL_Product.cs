@@ -5,12 +5,14 @@ namespace DAL_QLCafe
 {
     public class DAL_Product : DBConnect
     {
+        SqlConnection conn;
         public DataTable get()
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("GetProduct", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand("GetProduct", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     conn.Open();
                     DataTable dtProduct = new DataTable();
@@ -31,9 +33,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertProduct", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertProduct";
                     cmd.Parameters.AddWithValue("@IdProduct", obj.IdProduct);
                     cmd.Parameters.AddWithValue("@NameProduct", obj.NameProduct);
                     cmd.Parameters.AddWithValue("@Price", obj.Price);
@@ -47,6 +51,7 @@ namespace DAL_QLCafe
                     {
                         return true;
                     }
+
                 }
             }
             finally
@@ -63,9 +68,11 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UpdateProduct", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateProduct";
                     cmd.Parameters.AddWithValue("@IdProduct", obj.IdProduct);
                     cmd.Parameters.AddWithValue("@NameProduct", obj.NameProduct);
                     cmd.Parameters.AddWithValue("@Price", obj.Price);
@@ -80,6 +87,7 @@ namespace DAL_QLCafe
                         return true;
                     }
                 }
+
             }
             finally
             {
@@ -95,12 +103,12 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("DeleteProduct", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteProduct";
                     cmd.Parameters.AddWithValue("@IdProduct", id);
-
-
                     conn.Open();
 
                     if (cmd.ExecuteNonQuery() > 0)
@@ -123,15 +131,14 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SearchProduct", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "SearchProduct";
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
-
                     conn.Open();
-
                     DataTable dtProduct = new DataTable();
                     dtProduct.Load(cmd.ExecuteReader());
                     return dtProduct;

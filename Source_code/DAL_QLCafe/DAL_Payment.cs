@@ -6,19 +6,21 @@ namespace DAL_QLCafe
 {
     public class DAL_Payment : DBConnect
     {
+        SqlConnection conn;
         public DataTable get()
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("GetPayment", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "GetPayment";
                     conn.Open();
-
                     DataTable dtPayment = new DataTable();
                     dtPayment.Load(cmd.ExecuteReader());
                     return dtPayment;
+
                 }
             }
             finally
@@ -34,16 +36,15 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertPayment", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "InsertPayment";
                     cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
                     cmd.Parameters.AddWithValue("@TypePayment", obj.TypePayment);
                     cmd.Parameters.AddWithValue("@StatusPayment", obj.StatusPayment);
-
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -64,16 +65,15 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UpdatePayment", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "UpdatePayment";
                     cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
                     cmd.Parameters.AddWithValue("@TypePayment", obj.TypePayment);
                     cmd.Parameters.AddWithValue("@StatusPayment", obj.StatusPayment);
-
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -94,13 +94,13 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("DeletePayment", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "DeletePayment";
                     cmd.Parameters.AddWithValue("@IdPayment", id);
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -121,15 +121,14 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SearchPayment", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "SearchPayment";
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
-
                     conn.Open();
-
                     DataTable dtPayment = new DataTable();
                     dtPayment.Load(cmd.ExecuteReader());
                     return dtPayment;

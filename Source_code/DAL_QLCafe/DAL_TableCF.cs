@@ -6,16 +6,17 @@ namespace DAL_QLCafe
 {
     public class DAL_TableCF : DBConnect
     {
+        SqlConnection conn;
         public DataTable get()
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("GetTableCF", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.CommandText = "GetTableCF";
                     conn.Open();
-
                     DataTable dtTableCF = new DataTable();
                     dtTableCF.Load(cmd.ExecuteReader());
                     return dtTableCF;
@@ -34,16 +35,17 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("InsertTableCF", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertTableCF";
 
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
                     cmd.Parameters.AddWithValue("@StatusTable", obj.StatusTable);
 
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -64,16 +66,16 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UpdateTableCF", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateTableCF";
 
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
                     cmd.Parameters.AddWithValue("@StatusTable", obj.StatusTable);
-
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -94,13 +96,13 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("DeleteTableCF", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteTableCF";
                     cmd.Parameters.AddWithValue("@IdTable", id);
-
                     conn.Open();
-
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         return true;
@@ -121,15 +123,15 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SearchTableCF", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "SearchTableCF";
 
                     cmd.Parameters.AddWithValue("@keyword", keyword);
                     cmd.Parameters.AddWithValue("@column", column);
-
                     conn.Open();
-
                     DataTable dtTableCF = new DataTable();
                     dtTableCF.Load(cmd.ExecuteReader());
                     return dtTableCF;
@@ -150,13 +152,16 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("TableList", conn))
+                using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "TableList";
+
                     conn.Open();
 
                     DataTable dtTableCF = new DataTable();
-                    //dtTableCF.Load(cmd.ExecuteReader());
+                    dtTableCF.Load(cmd.ExecuteReader());
                     return dtTableCF;
                 }
             }

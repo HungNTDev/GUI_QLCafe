@@ -273,5 +273,10 @@ namespace GUI_QLCafe
 
             timer_ThoiGian.Start();
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmHoaDon());
+        }
     }
 }

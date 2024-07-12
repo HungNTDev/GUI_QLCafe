@@ -18,7 +18,7 @@ namespace GUI_QLCafe
 
         private void LoadTable()
         {
-            //flpTable.Controls.Clear();
+            flpTable.Controls.Clear();    
             for (int i = 0; i < busTB.TableList().Rows.Count; i++)
             {
                 Guna2Button btn = new Guna2Button();
@@ -40,7 +40,7 @@ namespace GUI_QLCafe
                 {
                     btn.BackColor = Color.AntiqueWhite;
                 }
-                //flpTable.Controls.Add(btn);
+                flpTable.Controls.Add(btn);
             }
         }
 
@@ -60,6 +60,21 @@ namespace GUI_QLCafe
         }
 
         private void btnBan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelFooter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picLogo_Click(object sender, EventArgs e)
         {
 
         }

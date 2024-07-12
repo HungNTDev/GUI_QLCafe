@@ -172,7 +172,7 @@
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(501, 18);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(25, 25);
+            this.lblEmail.Size = new System.Drawing.Size(26, 28);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "+";
             this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
@@ -184,7 +184,7 @@
             this.lbGio.ForeColor = System.Drawing.Color.Black;
             this.lbGio.Location = new System.Drawing.Point(267, 14);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(42, 25);
+            this.lbGio.Size = new System.Drawing.Size(43, 28);
             this.lbGio.TabIndex = 3;
             this.lbGio.Text = "Giờ";
             // 
@@ -195,7 +195,7 @@
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
             this.lbNgay.Location = new System.Drawing.Point(70, 14);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(58, 25);
+            this.lbNgay.Size = new System.Drawing.Size(59, 28);
             this.lbNgay.TabIndex = 3;
             this.lbNgay.Text = "Ngày";
             // 
@@ -284,6 +284,7 @@
             this.btnMenu.TabIndex = 3;
             this.btnMenu.Text = "                 Menu";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // flpSidebar
             // 

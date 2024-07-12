@@ -5,7 +5,7 @@ Id              int identity(1,1) not null ,
 IdStaff         nvarchar(20) not null,
 FullName        nvarchar(50) not null,
 ImageStaff      nvarchar(500) not null,
-Email           nvarchar(50) unique not null,
+Email           nvarchar(50) not null,
 PasswordStaff   nvarchar(50) not null,
 RoleStaff       int not null,
 StatusStaff     int not null,
@@ -162,7 +162,7 @@ go
 create proc KiemTraEmail(@email nvarchar(50))
 as
 begin
-	SELECT COUNT(email) FROM nhanvien WHERE email = @Email
+	SELECT COUNT(email) FROM staff WHERE email = @Email
 end
 
 	-- Thay đổi mật khẩu

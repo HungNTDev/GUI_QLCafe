@@ -162,7 +162,7 @@ go
 create proc KiemTraEmail(@email nvarchar(50))
 as
 begin
-	SELECT COUNT(email) FROM nhanvien WHERE email = @Email
+	SELECT COUNT(email) FROM staff WHERE email = @Email
 end
 
 	-- Thay đổi mật khẩu

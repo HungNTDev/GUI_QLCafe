@@ -16,7 +16,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
-
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "DangNhap";
                     cmd.Parameters.AddWithValue("@email", staff.Email);
@@ -35,6 +35,8 @@ namespace DAL_QLCafe
             }
             return false;
         }
+
+
         public bool quenMK(string email)
         {
             try
@@ -42,6 +44,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "QuenMK";
                     cmd.Parameters.AddWithValue("@email", email);
@@ -68,6 +71,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "LayMK";
                     cmd.Parameters.AddWithValue("@email", email);
@@ -94,6 +98,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "ChangePass";
                     cmd.Parameters.AddWithValue("@email", email);
@@ -122,7 +127,9 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.CommandText = "NewPass";
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@pass", matkhaumoi);
@@ -151,6 +158,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "VaiTro";
                     cmd.Parameters.AddWithValue("@email", email);
@@ -176,6 +184,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "LayID";
                     conn.Open();
@@ -199,6 +208,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "KiemTraEmail";
                     cmd.Parameters.AddWithValue("@email", email);
@@ -227,6 +237,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "GetStaff";
                     conn.Open();
@@ -251,6 +262,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "InsertStaff";
                     cmd.Parameters.AddWithValue("@FullName", staff.FullName);
@@ -284,6 +296,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "DeleteStaff";
                     cmd.Parameters.AddWithValue("@IdStaff", id);
@@ -310,6 +323,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateStaff";
                     cmd.Parameters.AddWithValue("@IdStaff", staff.IdStaff);
@@ -345,6 +359,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "SearchStaff";
                     cmd.Parameters.AddWithValue("@keyword", keyword);

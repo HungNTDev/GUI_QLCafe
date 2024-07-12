@@ -1,4 +1,5 @@
 ﻿using DTO_QLCafe;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -7,6 +8,10 @@ namespace DAL_QLCafe
     public class DAL_TableCF : DBConnect
     {
         SqlConnection conn;
+        SqlDataAdapter adt;
+        DataTable dt;
+
+
         public DataTable get()
         {
             try
@@ -154,15 +159,18 @@ namespace DAL_QLCafe
             {
                 using (conn = new SqlConnection(_conn))
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "TableList";
-
-                    conn.Open();
-
-                    DataTable dtTableCF = new DataTable();
-                    dtTableCF.Load(cmd.ExecuteReader());
-                    return dtTableCF;
+                    conn.Open ();
+                    //SqlCommand cmd = new SqlCommand();
+                    //cmd.Connection = conn;
+                    //cmd.CommandType = CommandType.StoredProcedure ;
+                    //cmd.CommandText = "TableList";
+                    //DataTable dtListCF = new DataTable();
+                    //return dtListCF;
+                    string Query = "TableList";
+                    adt = new SqlDataAdapter(Query, _conn);
+                    dt = new DataTable();
+                    adt.Fill(dt);
+                    return dt;
                 }
             }
             finally

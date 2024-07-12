@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainQLCF));
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.picLogo0 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lbGio = new System.Windows.Forms.Label();
@@ -88,7 +89,6 @@
             this.hethongTransition = new System.Windows.Forms.Timer(this.components);
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.picBackGround = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
@@ -136,6 +136,22 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1223, 52);
             this.panelHeader.TabIndex = 0;
+            // 
+            // shapeLine
+            // 
+            this.shapeLine.BorderColor = System.Drawing.Color.Black;
+            this.shapeLine.BorderThickness = 1;
+            this.shapeLine.FillColor = System.Drawing.Color.Black;
+            this.shapeLine.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.shapeLine.Location = new System.Drawing.Point(266, 9);
+            this.shapeLine.Name = "shapeLine";
+            this.shapeLine.PolygonSkip = 1;
+            this.shapeLine.Rotate = 0F;
+            this.shapeLine.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.shapeLine.Size = new System.Drawing.Size(24, 28);
+            this.shapeLine.TabIndex = 5;
+            this.shapeLine.Text = "guna2Shapes1";
+            this.shapeLine.Zoom = 80;
             // 
             // picLogo0
             // 
@@ -903,22 +919,6 @@
             this.picBackGround.TabIndex = 0;
             this.picBackGround.TabStop = false;
             this.picBackGround.UseTransparentBackground = true;
-            // 
-            // shapeLine
-            // 
-            this.shapeLine.BorderColor = System.Drawing.Color.Black;
-            this.shapeLine.BorderThickness = 1;
-            this.shapeLine.FillColor = System.Drawing.Color.Black;
-            this.shapeLine.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.shapeLine.Location = new System.Drawing.Point(266, 9);
-            this.shapeLine.Name = "shapeLine";
-            this.shapeLine.PolygonSkip = 1;
-            this.shapeLine.Rotate = 0F;
-            this.shapeLine.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.shapeLine.Size = new System.Drawing.Size(24, 28);
-            this.shapeLine.TabIndex = 5;
-            this.shapeLine.Text = "guna2Shapes1";
-            this.shapeLine.Zoom = 80;
             // 
             // frmMainQLCF
             // 

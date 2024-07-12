@@ -117,6 +117,7 @@
             this.chkShowPassword.TabIndex = 23;
             this.chkShowPassword.Text = "Hiện mật khẩu";
             this.chkShowPassword.UseVisualStyleBackColor = false;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // lbRetypePass
             // 

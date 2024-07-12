@@ -173,5 +173,19 @@ namespace GUI_QLCafe
                 }
             }
         }
+
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowPassword.Checked == true)
+            {
+                txtNewPassword.PasswordChar = '\0';
+                txtRetypePassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtNewPassword.PasswordChar = '*';
+                txtRetypePassword.PasswordChar = '*';
+            }
+        }
     }
 }

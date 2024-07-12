@@ -36,9 +36,9 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lbGioRa = new System.Windows.Forms.Label();
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThemMon = new Guna.UI2.WinForms.Guna2Button();
             this.btnBan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemMon = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.lvHoaDon = new System.Windows.Forms.ListView();
             this.chTenMon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -121,29 +121,30 @@
             this.panelFooter.Size = new System.Drawing.Size(601, 171);
             this.panelFooter.TabIndex = 3;
             // 
-            // btnThanhToan
+            // btnBan
             // 
-            this.btnThanhToan.BorderColor = System.Drawing.Color.White;
-            this.btnThanhToan.BorderRadius = 10;
-            this.btnThanhToan.BorderThickness = 1;
-            this.btnThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(25, 97);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnThanhToan.Size = new System.Drawing.Size(172, 48);
-            this.btnThanhToan.TabIndex = 1;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.btnBan.BorderColor = System.Drawing.Color.White;
+            this.btnBan.BorderRadius = 10;
+            this.btnBan.BorderThickness = 1;
+            this.btnBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnBan.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan.ForeColor = System.Drawing.Color.White;
+            this.btnBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnBan.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnBan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnBan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnBan.Image = ((System.Drawing.Image)(resources.GetObject("btnBan.Image")));
+            this.btnBan.Location = new System.Drawing.Point(406, 97);
+            this.btnBan.Name = "btnBan";
+            this.btnBan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnBan.Size = new System.Drawing.Size(172, 48);
+            this.btnBan.TabIndex = 1;
+            this.btnBan.Text = "Bàn";
+            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
             // 
             // btnThemMon
             // 
@@ -157,6 +158,7 @@
             this.btnThemMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThemMon.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemMon.ForeColor = System.Drawing.Color.White;
+            this.btnThemMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThemMon.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThemMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThemMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
@@ -169,29 +171,30 @@
             this.btnThemMon.Text = "Thêm món";
             this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
-            // btnBan
+            // btnThanhToan
             // 
-            this.btnBan.BorderColor = System.Drawing.Color.White;
-            this.btnBan.BorderRadius = 10;
-            this.btnBan.BorderThickness = 1;
-            this.btnBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnBan.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBan.ForeColor = System.Drawing.Color.White;
-            this.btnBan.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnBan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnBan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnBan.Image = ((System.Drawing.Image)(resources.GetObject("btnBan.Image")));
-            this.btnBan.Location = new System.Drawing.Point(406, 97);
-            this.btnBan.Name = "btnBan";
-            this.btnBan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnBan.Size = new System.Drawing.Size(172, 48);
-            this.btnBan.TabIndex = 1;
-            this.btnBan.Text = "Bàn";
-            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
+            this.btnThanhToan.BorderColor = System.Drawing.Color.White;
+            this.btnThanhToan.BorderRadius = 10;
+            this.btnThanhToan.BorderThickness = 1;
+            this.btnThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
+            this.btnThanhToan.Location = new System.Drawing.Point(25, 97);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnThanhToan.Size = new System.Drawing.Size(172, 48);
+            this.btnThanhToan.TabIndex = 1;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // lvHoaDon
             // 

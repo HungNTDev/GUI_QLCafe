@@ -263,5 +263,15 @@ namespace GUI_QLCafe
         {
 
         }
+
+        private void timer_ThoiGian_Tick(object sender, EventArgs e)
+        {
+            // Hiển thị ngày trên lbNgay
+            lbNgay.Text = DateTime.Now.ToLongDateString();
+            // Hiển thị giờ trên lbGio
+            lbGio.Text = DateTime.Now.ToLongTimeString();
+
+            timer_ThoiGian.Start();
+        }
     }
 }

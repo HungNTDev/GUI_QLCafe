@@ -184,11 +184,11 @@
     <Compile Include="Form\frmLoading.Designer.cs">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmHoaDon.cs">
+    <Compile Include="ViewForm\frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmHoaDon.Designer.cs">
-      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    <Compile Include="ViewForm\frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="AddForm\frmAddVoucher.cs">
       <SubType>Form</SubType>
@@ -201,6 +201,12 @@
     </Compile>
     <Compile Include="ControlForm\frmNotification.Designer.cs">
       <DependentUpon>frmNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -259,8 +265,8 @@
     <EmbeddedResource Include="Form\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmHoaDon.resx">
-      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="ViewForm\frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmMainQLCF.resx">
       <DependentUpon>frmMainQLCF.cs</DependentUpon>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

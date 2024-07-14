@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMatKhau));
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelQuenMatKhau = new Guna.UI2.WinForms.Guna2Panel();
@@ -377,6 +378,7 @@
             this.Controls.Add(this.cbClose);
             this.Controls.Add(this.panelQuenMatKhau);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

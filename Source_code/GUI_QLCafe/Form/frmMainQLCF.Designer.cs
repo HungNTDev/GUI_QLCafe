@@ -38,7 +38,6 @@
             this.lbNgay = new System.Windows.Forms.Label();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.picHam = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cbMaximize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
@@ -130,7 +129,6 @@
             this.panelHeader.Controls.Add(this.lbNgay);
             this.panelHeader.Controls.Add(this.cbMinimize);
             this.panelHeader.Controls.Add(this.picHam);
-            this.panelHeader.Controls.Add(this.cbMaximize);
             this.panelHeader.Controls.Add(this.cbClose);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -144,7 +142,7 @@
             this.shapeLine.BorderThickness = 1;
             this.shapeLine.FillColor = System.Drawing.Color.Black;
             this.shapeLine.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.shapeLine.Location = new System.Drawing.Point(433, 12);
+            this.shapeLine.Location = new System.Drawing.Point(374, 12);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
             this.shapeLine.Rotate = 0F;
@@ -158,7 +156,7 @@
             // 
             this.picLogo0.Image = ((System.Drawing.Image)(resources.GetObject("picLogo0.Image")));
             this.picLogo0.ImageRotate = 0F;
-            this.picLogo0.Location = new System.Drawing.Point(469, 12);
+            this.picLogo0.Location = new System.Drawing.Point(415, 12);
             this.picLogo0.Name = "picLogo0";
             this.picLogo0.Size = new System.Drawing.Size(26, 24);
             this.picLogo0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +168,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(501, 18);
+            this.lblEmail.Location = new System.Drawing.Point(447, 18);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(26, 28);
             this.lblEmail.TabIndex = 4;
@@ -182,7 +180,7 @@
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.Black;
-            this.lbGio.Location = new System.Drawing.Point(267, 14);
+            this.lbGio.Location = new System.Drawing.Point(267, 17);
             this.lbGio.Name = "lbGio";
             this.lbGio.Size = new System.Drawing.Size(43, 28);
             this.lbGio.TabIndex = 3;
@@ -193,7 +191,7 @@
             this.lbNgay.AutoSize = true;
             this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
-            this.lbNgay.Location = new System.Drawing.Point(70, 14);
+            this.lbNgay.Location = new System.Drawing.Point(70, 17);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(59, 28);
             this.lbNgay.TabIndex = 3;
@@ -206,7 +204,7 @@
             this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.cbMinimize.FillColor = System.Drawing.Color.White;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1039, -2);
+            this.cbMinimize.Location = new System.Drawing.Point(1100, -5);
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(55, 41);
             this.cbMinimize.TabIndex = 1;
@@ -224,18 +222,6 @@
             this.picHam.TabStop = false;
             this.picHam.UseTransparentBackground = true;
             this.picHam.Click += new System.EventHandler(this.picHam_Click);
-            // 
-            // cbMaximize
-            // 
-            this.cbMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMaximize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.cbMaximize.FillColor = System.Drawing.Color.White;
-            this.cbMaximize.IconColor = System.Drawing.Color.Black;
-            this.cbMaximize.Location = new System.Drawing.Point(1100, 0);
-            this.cbMaximize.Name = "cbMaximize";
-            this.cbMaximize.Size = new System.Drawing.Size(55, 39);
-            this.cbMaximize.TabIndex = 1;
             // 
             // cbClose
             // 
@@ -271,8 +257,9 @@
             this.btnMenu.FillColor = System.Drawing.Color.Transparent;
             this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnMenu.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnMenu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnMenu.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenu.ImageOffset = new System.Drawing.Point(35, 0);
@@ -282,7 +269,7 @@
             this.btnMenu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnMenu.Size = new System.Drawing.Size(357, 76);
             this.btnMenu.TabIndex = 3;
-            this.btnMenu.Text = "                 Menu";
+            this.btnMenu.Text = "                  POS";
             this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
@@ -304,7 +291,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Violet;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.picLogo1);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -359,8 +346,9 @@
             this.btnQuanLy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnQuanLy.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuanLy.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnQuanLy.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnQuanLy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQuanLy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLy.Image")));
             this.btnQuanLy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuanLy.ImageOffset = new System.Drawing.Point(35, 0);
@@ -586,8 +574,9 @@
             this.btnThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKe.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThongKe.ImageSize = new System.Drawing.Size(25, 25);
@@ -596,7 +585,7 @@
             this.btnThongKe.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnThongKe.Size = new System.Drawing.Size(324, 76);
             this.btnThongKe.TabIndex = 3;
-            this.btnThongKe.Text = "          Thống kê";
+            this.btnThongKe.Text = "         Thống kê";
             this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
@@ -688,8 +677,9 @@
             this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnHeThong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHeThong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnHeThong.Image = ((System.Drawing.Image)(resources.GetObject("btnHeThong.Image")));
             this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.ImageSize = new System.Drawing.Size(25, 25);
@@ -698,7 +688,7 @@
             this.btnHeThong.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnHeThong.Size = new System.Drawing.Size(345, 76);
             this.btnHeThong.TabIndex = 3;
-            this.btnHeThong.Text = "          Hệ thống";
+            this.btnHeThong.Text = "         Hệ thống";
             this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
             // 
@@ -762,8 +752,9 @@
             this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuongDan.ForeColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHuongDan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDan.Image")));
             this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHuongDan.ImageSize = new System.Drawing.Size(25, 25);
@@ -772,7 +763,7 @@
             this.btnHuongDan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnHuongDan.Size = new System.Drawing.Size(345, 76);
             this.btnHuongDan.TabIndex = 3;
-            this.btnHuongDan.Text = "          Hướng dẫn";
+            this.btnHuongDan.Text = "         Hướng dẫn";
             this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
             // 
@@ -854,8 +845,9 @@
             this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDangXuat.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.ImageOffset = new System.Drawing.Point(7, 0);
@@ -867,6 +859,7 @@
             this.btnDangXuat.TabIndex = 3;
             this.btnDangXuat.Text = "          Đăng xuất";
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // eMainQLCF
             // 
@@ -936,6 +929,7 @@
             this.Controls.Add(this.flpSidebar);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainQLCF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainQLCF";
@@ -982,7 +976,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox picHam;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
-        private Guna.UI2.WinForms.Guna2ControlBox cbMaximize;
         private System.Windows.Forms.Panel panelMenu;
         private Guna.UI2.WinForms.Guna2Button btnMenu;
         private System.Windows.Forms.FlowLayoutPanel flpSidebar;

@@ -41,11 +41,11 @@
             // lbMsg
             // 
             this.lbMsg.AutoSize = true;
-            this.lbMsg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMsg.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMsg.ForeColor = System.Drawing.Color.White;
-            this.lbMsg.Location = new System.Drawing.Point(66, 27);
+            this.lbMsg.Location = new System.Drawing.Point(66, 37);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(127, 28);
+            this.lbMsg.Size = new System.Drawing.Size(152, 31);
             this.lbMsg.TabIndex = 0;
             this.lbMsg.Text = "Message Text";
             this.lbMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,7 +55,7 @@
             this.picSuccess.BackColor = System.Drawing.Color.Transparent;
             this.picSuccess.Image = ((System.Drawing.Image)(resources.GetObject("picSuccess.Image")));
             this.picSuccess.ImageRotate = 0F;
-            this.picSuccess.Location = new System.Drawing.Point(26, 24);
+            this.picSuccess.Location = new System.Drawing.Point(26, 36);
             this.picSuccess.Name = "picSuccess";
             this.picSuccess.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picSuccess.Size = new System.Drawing.Size(34, 32);
@@ -75,7 +75,7 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(315, 1);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(342, 1);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.PressedColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.Size = new System.Drawing.Size(54, 37);
@@ -93,8 +93,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(373, 81);
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ClientSize = new System.Drawing.Size(400, 101);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.picSuccess);
             this.Controls.Add(this.lbMsg);

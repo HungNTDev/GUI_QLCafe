@@ -276,7 +276,13 @@ namespace GUI_QLCafe
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            AddControls(new frmHoaDon());
+            AddControls(new frmPOS());
+        }
+
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -10,22 +10,25 @@ using System.Windows.Forms;
 
 namespace GUI_QLCafe
 {
-    public partial class frmAddSanPham : Form
+    public partial class frmMenu : Form
     {
-        public frmAddSanPham()
+        public frmMenu()
         {
             InitializeComponent();
         }
 
-        public void Nofication(string msg)
+        private void btnDel_Click(object sender, EventArgs e)
         {
-            frmNotification notification = new frmNotification();
-            frmNotification.showNotfication(msg);
+
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void paneText_Paint(object sender, PaintEventArgs e)
         {
-            this.Nofication("Save successfully!");
+
+        }
+
+        private void tp_NuocEp_Click(object sender, EventArgs e)
+        {
 
         }
     }

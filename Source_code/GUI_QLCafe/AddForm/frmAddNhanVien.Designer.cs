@@ -321,7 +321,7 @@
             // picNhanVien
             // 
             this.picNhanVien.BorderRadius = 5;
-            this.picNhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.picNhanVien.FillColor = System.Drawing.Color.DodgerBlue;
             this.picNhanVien.ImageRotate = 0F;
             this.picNhanVien.Location = new System.Drawing.Point(497, 84);
             this.picNhanVien.Name = "picNhanVien";

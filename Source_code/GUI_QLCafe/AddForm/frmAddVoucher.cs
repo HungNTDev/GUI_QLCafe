@@ -16,5 +16,17 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
+
+        public void Nofication(string msg)
+        {
+            frmNotification notification = new frmNotification();
+            frmNotification.showNotfication(msg);
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            this.Nofication("Save successfully!");
+
+        }
     }
 }

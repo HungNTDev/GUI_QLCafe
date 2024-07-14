@@ -3,14 +3,15 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ZedGraph;
 
 namespace GUI_QLCafe
 {
-    public partial class frmHoaDon : Form
+    public partial class frmPOS : Form
     {
         BUS_TableCF busTB = new BUS_TableCF();
 
-        public frmHoaDon()
+        public frmPOS()
         {
             InitializeComponent();
             LoadTable();
@@ -22,61 +23,36 @@ namespace GUI_QLCafe
             for (int i = 0; i < busTB.TableList().Rows.Count; i++)
             {
                 Guna2Button btn = new Guna2Button();
+                btn.Margin = new Padding(10);
                 btn.Width = 100;
                 btn.Height = 90;
-                btn.BorderThickness = 1;
-                btn.BorderRadius = 2;
-                btn.FillColor = Color.White;
-                btn.ForeColor = Color.Black;
+                btn.BorderThickness = 2;
+                btn.BorderColor = Color.White;
+                btn.BorderRadius = 5;
+                btn.FillColor = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+                btn.ForeColor = Color.White;
+                btn.Font = new Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btn.HoverState.FillColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+                btn.HoverState.ForeColor = Color.White;
+                btn.HoverState.BorderColor = Color.Transparent;
+                flpTable.AutoScroll = true;
                 //btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + busTB.TableList().Rows[i][2].ToString();
                 //btn.Click += btn_Click;
                 btn.Tag = busTB.TableList().Rows[i][0].ToString();
                 if (busTB.TableList().Rows[i][2].ToString() == "0")
                 {
                     btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + "Trống";
-                    btn.BackColor = Color.White;
                 }
                 else
                 {
-                    btn.BackColor = Color.AntiqueWhite;
+                    btn.BorderColor = Color.Gray;
+                    btn.BackColor = Color.WhiteSmoke;
+                    btn.ForeColor = Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167))))); 
                 }
                 flpTable.Controls.Add(btn);
             }
         }
 
-        private void frmHoaDon_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThemMon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelFooter_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void picLogo_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -41,7 +41,7 @@ namespace GUI_QLCafe
                 {
                     notification.Name = fname;
                     notification.x = Screen.PrimaryScreen.WorkingArea.Width - notification.Width + 10;
-                    notification.y = Screen.PrimaryScreen.WorkingArea.Height - notification.Height * i - 5 * i - 27;
+                    notification.y = Screen.PrimaryScreen.WorkingArea.Height - notification.Height * i - 5 * i - 40;
                     notification.Location = new Point(notification.x, notification.y);
                     break;
                 }
@@ -59,7 +59,7 @@ namespace GUI_QLCafe
             switch (this.action)
             {
                 case enmAction.wait:
-                    noficationTransition.Interval = 2000;
+                    noficationTransition.Interval = 3000;
                     action = enmAction.close;
                     break;
                 case enmAction.start:

@@ -78,11 +78,12 @@
             this.btnLuu.Size = new System.Drawing.Size(597, 57);
             this.btnLuu.TabIndex = 25;
             this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // picSanPham
             // 
             this.picSanPham.BorderRadius = 5;
-            this.picSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.picSanPham.FillColor = System.Drawing.Color.DodgerBlue;
             this.picSanPham.ImageRotate = 0F;
             this.picSanPham.Location = new System.Drawing.Point(428, 86);
             this.picSanPham.Name = "picSanPham";

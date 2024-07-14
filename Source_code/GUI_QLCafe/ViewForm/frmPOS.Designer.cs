@@ -1,6 +1,6 @@
 ﻿namespace GUI_QLCafe
 {
-    partial class frmHoaDon
+    partial class frmPOS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHoaDon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.lbTenBan = new System.Windows.Forms.Label();
             this.lbGioVao = new System.Windows.Forms.Label();
             this.lbThanhTien = new System.Windows.Forms.Label();
@@ -44,40 +43,39 @@
             this.chSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chThanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bfHoaDon = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.paneText = new Guna.UI2.WinForms.Guna2Panel();
             this.lbText0 = new System.Windows.Forms.Label();
-            this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelAside = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
+            this.paneText.SuspendLayout();
+            this.panelAside.SuspendLayout();
+            this.panelBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTenBan
             // 
             this.lbTenBan.AutoSize = true;
-            this.lbTenBan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenBan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenBan.ForeColor = System.Drawing.Color.White;
             this.lbTenBan.Location = new System.Drawing.Point(21, 15);
             this.lbTenBan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbTenBan.Name = "lbTenBan";
-            this.lbTenBan.Size = new System.Drawing.Size(83, 28);
+            this.lbTenBan.Size = new System.Drawing.Size(103, 31);
             this.lbTenBan.TabIndex = 0;
             this.lbTenBan.Text = "Tên bàn:";
             // 
             // lbGioVao
             // 
             this.lbGioVao.AutoSize = true;
-            this.lbGioVao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGioVao.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGioVao.ForeColor = System.Drawing.Color.White;
             this.lbGioVao.Location = new System.Drawing.Point(20, 57);
             this.lbGioVao.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbGioVao.Name = "lbGioVao";
-            this.lbGioVao.Size = new System.Drawing.Size(84, 28);
+            this.lbGioVao.Size = new System.Drawing.Size(101, 31);
             this.lbGioVao.TabIndex = 0;
             this.lbGioVao.Text = "Giờ vào:";
             // 
@@ -94,39 +92,43 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelHeader.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelHeader.Controls.Add(this.lbTenBan);
             this.panelHeader.Controls.Add(this.lbGioRa);
             this.panelHeader.Controls.Add(this.lbGioVao);
-            this.panelHeader.Location = new System.Drawing.Point(3, 0);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(558, 146);
+            this.panelHeader.Size = new System.Drawing.Size(595, 146);
             this.panelHeader.TabIndex = 2;
             // 
             // lbGioRa
             // 
             this.lbGioRa.AutoSize = true;
-            this.lbGioRa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGioRa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGioRa.ForeColor = System.Drawing.Color.White;
-            this.lbGioRa.Location = new System.Drawing.Point(21, 98);
+            this.lbGioRa.Location = new System.Drawing.Point(21, 95);
             this.lbGioRa.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbGioRa.Name = "lbGioRa";
-            this.lbGioRa.Size = new System.Drawing.Size(69, 28);
+            this.lbGioRa.Size = new System.Drawing.Size(84, 31);
             this.lbGioRa.TabIndex = 0;
             this.lbGioRa.Text = "Giờ ra:";
             // 
             // panelFooter
             // 
             this.panelFooter.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelFooter.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.panelFooter.BorderThickness = 2;
             this.panelFooter.Controls.Add(this.btnBan);
             this.panelFooter.Controls.Add(this.btnThemMon);
             this.panelFooter.Controls.Add(this.btnThanhToan);
             this.panelFooter.Controls.Add(this.lbThanhTien);
-            this.panelFooter.Location = new System.Drawing.Point(3, 546);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 580);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(558, 171);
+            this.panelFooter.Size = new System.Drawing.Size(595, 171);
             this.panelFooter.TabIndex = 3;
-            this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // btnBan
             // 
@@ -151,7 +153,6 @@
             this.btnBan.Size = new System.Drawing.Size(160, 48);
             this.btnBan.TabIndex = 1;
             this.btnBan.Text = "Bàn";
-            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
             // 
             // btnThemMon
             // 
@@ -176,7 +177,6 @@
             this.btnThemMon.Size = new System.Drawing.Size(160, 48);
             this.btnThemMon.TabIndex = 1;
             this.btnThemMon.Text = "Thêm món";
-            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // btnThanhToan
             // 
@@ -201,29 +201,30 @@
             this.btnThanhToan.Size = new System.Drawing.Size(160, 48);
             this.btnThanhToan.TabIndex = 1;
             this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // lvHoaDon
             // 
+            this.lvHoaDon.BackColor = System.Drawing.Color.White;
+            this.lvHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chTenMon,
             this.chSoLuong,
             this.chDonGia,
             this.chThanhTien});
+            this.lvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.HideSelection = false;
-            this.lvHoaDon.Location = new System.Drawing.Point(3, 144);
+            this.lvHoaDon.Location = new System.Drawing.Point(0, 146);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(558, 396);
+            this.lvHoaDon.Size = new System.Drawing.Size(595, 434);
             this.lvHoaDon.TabIndex = 4;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
-            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.lvHoaDon_SelectedIndexChanged);
             // 
             // chTenMon
             // 
             this.chTenMon.Text = "Tên món";
-            this.chTenMon.Width = 130;
+            this.chTenMon.Width = 190;
             // 
             // chSoLuong
             // 
@@ -235,39 +236,35 @@
             // 
             this.chDonGia.Text = "Đơn giá";
             this.chDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chDonGia.Width = 150;
+            this.chDonGia.Width = 135;
             // 
             // chThanhTien
             // 
             this.chThanhTien.Text = "Thành tiền";
             this.chThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chThanhTien.Width = 170;
-            // 
-            // bfHoaDon
-            // 
-            this.bfHoaDon.ContainerControl = this;
-            this.bfHoaDon.DockIndicatorTransparencyValue = 0.6D;
-            this.bfHoaDon.TransparentWhileDrag = true;
+            this.chThanhTien.Width = 155;
             // 
             // flpTable
             // 
             this.flpTable.AutoScroll = true;
-            this.flpTable.BackColor = System.Drawing.Color.White;
-            this.flpTable.Location = new System.Drawing.Point(33, 91);
+            this.flpTable.BackColor = System.Drawing.SystemColors.Control;
+            this.flpTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpTable.Location = new System.Drawing.Point(0, 0);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(548, 699);
+            this.flpTable.Size = new System.Drawing.Size(595, 751);
             this.flpTable.TabIndex = 6;
             // 
-            // guna2Panel1
+            // paneText
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Panel1.Controls.Add(this.lbText0);
-            this.guna2Panel1.Controls.Add(this.picLogo);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1190, 85);
-            this.guna2Panel1.TabIndex = 7;
+            this.paneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.paneText.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.paneText.BorderThickness = 2;
+            this.paneText.Controls.Add(this.lbText0);
+            this.paneText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneText.Location = new System.Drawing.Point(0, 0);
+            this.paneText.Name = "paneText";
+            this.paneText.Size = new System.Drawing.Size(1190, 51);
+            this.paneText.TabIndex = 7;
             // 
             // lbText0
             // 
@@ -275,60 +272,54 @@
             this.lbText0.BackColor = System.Drawing.Color.Transparent;
             this.lbText0.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText0.ForeColor = System.Drawing.Color.White;
-            this.lbText0.Location = new System.Drawing.Point(93, 22);
+            this.lbText0.Location = new System.Drawing.Point(181, 4);
             this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(274, 50);
+            this.lbText0.Size = new System.Drawing.Size(328, 50);
             this.lbText0.TabIndex = 11;
-            this.lbText0.Text = "Danh sách bàn";
+            this.lbText0.Text = "DANH SÁCH BÀN";
             // 
-            // picLogo
+            // panelAside
             // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(12, 11);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picLogo.Size = new System.Drawing.Size(75, 68);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 12;
-            this.picLogo.TabStop = false;
-            this.picLogo.UseTransparentBackground = true;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
+            this.panelAside.Controls.Add(this.lvHoaDon);
+            this.panelAside.Controls.Add(this.panelHeader);
+            this.panelAside.Controls.Add(this.panelFooter);
+            this.panelAside.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelAside.Location = new System.Drawing.Point(595, 51);
+            this.panelAside.Name = "panelAside";
+            this.panelAside.Size = new System.Drawing.Size(595, 751);
+            this.panelAside.TabIndex = 8;
             // 
-            // guna2Panel2
+            // panelBody
             // 
-            this.guna2Panel2.Controls.Add(this.lvHoaDon);
-            this.guna2Panel2.Controls.Add(this.panelHeader);
-            this.guna2Panel2.Controls.Add(this.panelFooter);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel2.Location = new System.Drawing.Point(629, 85);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(561, 717);
-            this.guna2Panel2.TabIndex = 8;
+            this.panelBody.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.panelBody.BorderThickness = 2;
+            this.panelBody.Controls.Add(this.flpTable);
+            this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBody.Location = new System.Drawing.Point(0, 51);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.Size = new System.Drawing.Size(595, 751);
+            this.panelBody.TabIndex = 9;
             // 
-            // frmHoaDon
+            // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 802);
-            this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.flpTable);
+            this.Controls.Add(this.panelBody);
+            this.Controls.Add(this.panelAside);
+            this.Controls.Add(this.paneText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmHoaDon";
+            this.Name = "frmPOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHoaDon";
-            this.Load += new System.EventHandler(this.frmHoaDon_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
+            this.paneText.ResumeLayout(false);
+            this.paneText.PerformLayout();
+            this.panelAside.ResumeLayout(false);
+            this.panelBody.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,11 +340,10 @@
         private System.Windows.Forms.ColumnHeader chSoLuong;
         private System.Windows.Forms.ColumnHeader chDonGia;
         private System.Windows.Forms.ColumnHeader chThanhTien;
-        private Guna.UI2.WinForms.Guna2BorderlessForm bfHoaDon;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel paneText;
         private System.Windows.Forms.Label lbText0;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel panelAside;
+        private Guna.UI2.WinForms.Guna2Panel panelBody;
     }
 }

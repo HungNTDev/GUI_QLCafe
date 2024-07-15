@@ -44,6 +44,7 @@ namespace GUI_QLCafe
                 txtEmail.Clear();
                 chkGhiNhoTK.Checked = false;
             }
+
         }
         //Xóa tài khoản đã chọn lần trước để đăng nhập
         private void DeleteStoredCredentials()
@@ -120,23 +121,14 @@ namespace GUI_QLCafe
                 Properties.Settings.Default.Save();
 
                 frmMainQLCF mainform = new frmMainQLCF();
-
+                frmLoading frmLoading = new frmLoading();
 
                 DataTable dt = busStaff.VaiTro(staff.email);
                 frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
                 frmMainQLCF.session = 1;
                 frmMainQLCF.email = staff.email;
 
-                mainform.Show();
-
-                foreach (Form form in Application.OpenForms)
-                {
-                    if (form is frmMainQLCF)
-                    {
-                        ((frmMainQLCF)form).PhanQuyen();
-                        break;
-                    }
-                }
+                frmLoading.Show();
                 this.Hide();
             }
             else
@@ -262,26 +254,15 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnQuenMatKhau_Click(object sender, EventArgs e)
-        {
-            frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();
-            frmQuenMatKhau.Show();
-
-        }
-
         private void cbClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
+        private void lkQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-        }
-
-        private void cbMinimize_Click(object sender, EventArgs e)
-        {
-
+            frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();
+            frmQuenMatKhau.Show();
         }
     }
 }

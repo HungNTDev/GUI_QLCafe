@@ -42,12 +42,13 @@ namespace GUI_QLCafe
             lbNgay.Text = DateTime.Now.ToLongDateString();
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToLongTimeString();
+            PhanQuyen();
         }
 
         public void PhanQuyen()
         {
-            lblEmail.Text = email;
 
+            lblEmail.Text = email;
             btnQLNhanVien.Enabled = false;
             btnThongKe.Enabled = false;
             if (session == 1)
@@ -173,7 +174,7 @@ namespace GUI_QLCafe
                 flpHeThong.Height += 15;
 
                 // Nếu chiều cao đạt 300
-                if (flpHeThong.Height >= 110)
+                if (flpHeThong.Height >= 105)
                 {
                     hethongTransition.Stop(); // Dừng timer
                     hethongExpand = true; // Mở rộng
@@ -208,7 +209,7 @@ namespace GUI_QLCafe
                 flpSidebar.Width -= 20;
 
                 // Nếu chiều rộng nhỏ hơn hoặc bằng 61
-                if(flpSidebar.Width <= 61)
+                if(flpSidebar.Width <= 54)
                 {
                     sidebarExpand = false; // Thu gọn
                     sidebarTransition.Stop(); // Dừng timer
@@ -238,6 +239,11 @@ namespace GUI_QLCafe
             //sidebarTransition.Start();
         }
 
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmPOS());
+        }
+
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
             AddControls(new frmQLNhanVien());
@@ -259,11 +265,6 @@ namespace GUI_QLCafe
             frmDoiMatKhau.ShowDialog();
         }
 
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
             // Hiển thị ngày trên lbNgay
@@ -274,15 +275,5 @@ namespace GUI_QLCafe
             timer_ThoiGian.Start();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            AddControls(new frmPOS());
-        }
-
-
-        private void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

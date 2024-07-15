@@ -178,12 +178,19 @@
     <Compile Include="Form\frmQuenMatKhau.Designer.cs">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmLoading.cs">
+    <Compile Include="ControlForm\frmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmLoading.Designer.cs">
+    <Compile Include="ControlForm\frmLoading.Designer.cs">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForm\frmAddBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\frmAddBan.Designer.cs">
+      <DependentUpon>frmAddBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ProgressReport.cs" />
     <Compile Include="ViewForm\frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,7 +217,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
+    <Compile Include="Class\Settings.cs" />
     <Compile Include="ViewForm\frmQLBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +272,9 @@
     <EmbeddedResource Include="Form\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddForm\frmAddBan.resx">
+      <DependentUpon>frmAddBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,7 +284,7 @@
     <EmbeddedResource Include="Form\frmQuenMatKhau.resx">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmLoading.resx">
+    <EmbeddedResource Include="ControlForm\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmMenu.resx">
@@ -289,6 +299,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewForm\frmQLBan.resx">
+      <DependentUpon>frmQLBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>

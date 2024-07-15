@@ -17,6 +17,16 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            lbNameTable.Text = "Tên bàn: " + frmPOS.NameTable;
+        }
+
+        void LoadMenu()
+        {
+
+        }
+
         private void btnDel_Click(object sender, EventArgs e)
         {
 
@@ -31,5 +41,7 @@ namespace GUI_QLCafe
         {
 
         }
+
+        
     }
 }

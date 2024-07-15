@@ -181,5 +181,29 @@ namespace DAL_QLCafe
                 }
             }
         }
+
+        //Thông tin bàn
+        public DataTable TableInfo(DTO_Bill bill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    conn.Open();
+                    string Query = "exec TableInfo @IdTable = '"+bill.IdTable+"'";
+                    adt = new SqlDataAdapter(Query, _conn);
+                    dt = new DataTable();
+                    adt.Fill(dt);
+                    return dt;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

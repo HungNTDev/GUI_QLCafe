@@ -1,4 +1,5 @@
 ﻿using BUS_QLCafe;
+using DTO_QLCafe;
 using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
@@ -10,6 +11,12 @@ namespace GUI_QLCafe
     public partial class frmPOS : Form
     {
         BUS_TableCF busTB = new BUS_TableCF();
+        DTO_Bill billDTO = new DTO_Bill();
+        frmMenu menu = new frmMenu();
+
+        public static string NameTable;
+        public static string idTable;
+
 
         public frmPOS()
         {
@@ -37,7 +44,7 @@ namespace GUI_QLCafe
                 btn.HoverState.BorderColor = Color.Transparent;
                 flpTable.AutoScroll = true;
                 //btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + busTB.TableList().Rows[i][2].ToString();
-                //btn.Click += btn_Click;
+                btn.Click += btn_Click;
                 btn.Tag = busTB.TableList().Rows[i][0].ToString();
                 if (busTB.TableList().Rows[i][2].ToString() == "0")
                 {
@@ -53,6 +60,13 @@ namespace GUI_QLCafe
             }
         }
 
-
+        private void btn_Click (object sender, EventArgs e)
+        {
+            Guna2Button btn = (Guna2Button)sender;
+            billDTO.idTable = btn.Tag.ToString();
+            idTable = billDTO.idTable;
+            NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
+            menu.ShowDialog();
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace BUS_QLCafe
         {
             return dal.TableList();
         }
+
+        public DataTable TableInfo(DTO_Bill bill)
+        {
+            return dal.TableInfo(bill);
+        }
     }
 }

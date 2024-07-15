@@ -52,7 +52,6 @@
             this.flp_SinhTo = new System.Windows.Forms.FlowLayoutPanel();
             this.tp_NuocEp = new System.Windows.Forms.TabPage();
             this.flp_NuocEp = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.paneText.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -83,7 +82,6 @@
             this.paneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.paneText.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.paneText.BorderThickness = 2;
-            this.paneText.Controls.Add(this.cbClose);
             this.paneText.Controls.Add(this.lbText0);
             this.paneText.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneText.Location = new System.Drawing.Point(0, 0);
@@ -378,20 +376,6 @@
             this.flp_NuocEp.Size = new System.Drawing.Size(873, 710);
             this.flp_NuocEp.TabIndex = 0;
             // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbClose.ForeColor = System.Drawing.Color.White;
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
-            this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(1320, 1);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(62, 39);
-            this.cbClose.TabIndex = 12;
-            // 
             // frmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -404,6 +388,7 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.paneText.ResumeLayout(false);
             this.paneText.PerformLayout();
             this.panelFooter.ResumeLayout(false);
@@ -443,6 +428,5 @@
         private System.Windows.Forms.FlowLayoutPanel flp_Tra;
         private System.Windows.Forms.FlowLayoutPanel flp_SinhTo;
         private System.Windows.Forms.FlowLayoutPanel flp_NuocEp;
-        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
     }
 }

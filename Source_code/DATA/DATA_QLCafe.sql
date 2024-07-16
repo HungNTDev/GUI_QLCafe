@@ -195,3 +195,64 @@ end
 /*Danh sách bàn*/
 create or alter proc TableList as
 	select * from TableCF
+	-- Xử lý bàn
+create or alter proc TableList as
+	select * from TableCF
+
+/*Thông tin bàn*/
+create or alter proc TableInfo (@IdTable nvarchar(10)) as
+	select * from TableCF where IdTable = @IdTable
+
+/*Load menu (hien danh sach thuc an theo loai)*/
+create or alter proc ListMenu (@IdPT nvarchar(10)) as
+	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT
+
+/*Thông tin đồ ăn*/
+create or alter proc TagProduct (@IdProduct nvarchar(20)) as
+	select NameProduct, Price, IdProduct from Product where IdProduct = @IdProduct
+
+-- Lấy danh sách nhân viên
+create proc GetStaff
+as
+begin
+	select IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff from staff
+end
+
+-- Thêm nhân viên
+create proc InsertStaff
+(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(50), 
+@Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
+as
+begin
+	
+	Insert into Staff (IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff) 
+	values (@Id, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
+
+end
+
+
+-- Sửa nhân viên
+create proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(50), 
+@Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
+as
+begin
+
+	Update Staff 
+	Set 
+	IdStaff = @Id, FullName = @FullName, 
+	ImageStaff = @ImageStaff, 
+	PasswordStaff = @Password, Email = @Email, 
+	RoleStaff = @Role, StatusStaff = @Status
+	where IdStaff = @Id
+
+end
+
+-- Xóa nhân viên
+
+create proc DeleteStaff (@Id nvarchar(20))
+as
+begin
+	
+	Delete from Staff where IdStaff = @Id
+
+end

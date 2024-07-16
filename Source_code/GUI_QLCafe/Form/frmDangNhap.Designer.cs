@@ -35,7 +35,6 @@
             this.btnDNGoogle = new Guna.UI2.WinForms.Guna2Button();
             this.btnDN = new Guna.UI2.WinForms.Guna2Button();
             this.chkGhiNhoTK = new System.Windows.Forms.CheckBox();
-            this.btnQuenMatKhau = new Guna.UI2.WinForms.Guna2Button();
             this.lblText1 = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -46,6 +45,7 @@
             this.picBackground = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelDangNhap = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lkQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.eDangNhap = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -156,25 +156,6 @@
             this.chkGhiNhoTK.Text = "Nhớ email";
             this.chkGhiNhoTK.UseVisualStyleBackColor = false;
             this.chkGhiNhoTK.CheckedChanged += new System.EventHandler(this.chkGhiNhoTK_CheckedChanged);
-            // 
-            // btnQuenMatKhau
-            // 
-            this.btnQuenMatKhau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuenMatKhau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuenMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQuenMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuenMatKhau.FillColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.btnQuenMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnQuenMatKhau.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Location = new System.Drawing.Point(891, 428);
-            this.btnQuenMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnQuenMatKhau.Name = "btnQuenMatKhau";
-            this.btnQuenMatKhau.PressedColor = System.Drawing.Color.White;
-            this.btnQuenMatKhau.Size = new System.Drawing.Size(229, 31);
-            this.btnQuenMatKhau.TabIndex = 3;
-            this.btnQuenMatKhau.Text = "Quên mật khẩu?";
-            this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click);
             // 
             // lblText1
             // 
@@ -320,12 +301,12 @@
             // panelDangNhap
             // 
             this.panelDangNhap.BackColor = System.Drawing.Color.Transparent;
+            this.panelDangNhap.Controls.Add(this.lkQuenMatKhau);
             this.panelDangNhap.Controls.Add(this.picHiddenPassWord);
             this.panelDangNhap.Controls.Add(this.picShowPassWord);
             this.panelDangNhap.Controls.Add(this.btnDNGoogle);
             this.panelDangNhap.Controls.Add(this.btnDN);
             this.panelDangNhap.Controls.Add(this.chkGhiNhoTK);
-            this.panelDangNhap.Controls.Add(this.btnQuenMatKhau);
             this.panelDangNhap.Controls.Add(this.lblText1);
             this.panelDangNhap.Controls.Add(this.lbPassword);
             this.panelDangNhap.Controls.Add(this.txtPassword);
@@ -344,7 +325,23 @@
             this.panelDangNhap.Name = "panelDangNhap";
             this.panelDangNhap.Size = new System.Drawing.Size(1171, 684);
             this.panelDangNhap.TabIndex = 3;
-            this.panelDangNhap.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDangNhap_Paint);
+            // 
+            // lkQuenMatKhau
+            // 
+            this.lkQuenMatKhau.AccessibleName = "";
+            this.lkQuenMatKhau.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lkQuenMatKhau.AutoSize = true;
+            this.lkQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkQuenMatKhau.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lkQuenMatKhau.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.lkQuenMatKhau.Location = new System.Drawing.Point(949, 434);
+            this.lkQuenMatKhau.Name = "lkQuenMatKhau";
+            this.lkQuenMatKhau.Size = new System.Drawing.Size(142, 25);
+            this.lkQuenMatKhau.TabIndex = 13;
+            this.lkQuenMatKhau.TabStop = true;
+            this.lkQuenMatKhau.Tag = "";
+            this.lkQuenMatKhau.Text = "Quên mật khẩu?";
+            this.lkQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkQuenMatKhau_LinkClicked);
             // 
             // cbMinimize
             // 
@@ -360,7 +357,6 @@
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(46, 34);
             this.cbMinimize.TabIndex = 3;
-            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
             // 
             // messageDialog
             // 
@@ -406,7 +402,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDNGoogle;
         private Guna.UI2.WinForms.Guna2Button btnDN;
         private System.Windows.Forms.CheckBox chkGhiNhoTK;
-        private Guna.UI2.WinForms.Guna2Button btnQuenMatKhau;
         private System.Windows.Forms.Label lblText1;
         private System.Windows.Forms.Label lbPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
@@ -420,5 +415,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
         private Guna.UI2.WinForms.Guna2Elipse eDangNhap;
+        private System.Windows.Forms.LinkLabel lkQuenMatKhau;
     }
 }

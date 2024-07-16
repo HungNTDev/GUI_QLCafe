@@ -147,10 +147,10 @@
             this.btnBan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnBan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnBan.Image = ((System.Drawing.Image)(resources.GetObject("btnBan.Image")));
-            this.btnBan.Location = new System.Drawing.Point(384, 97);
+            this.btnBan.Location = new System.Drawing.Point(403, 97);
             this.btnBan.Name = "btnBan";
             this.btnBan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnBan.Size = new System.Drawing.Size(160, 48);
+            this.btnBan.Size = new System.Drawing.Size(178, 48);
             this.btnBan.TabIndex = 1;
             this.btnBan.Text = "Bàn";
             // 
@@ -171,10 +171,10 @@
             this.btnThemMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThemMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
-            this.btnThemMon.Location = new System.Drawing.Point(202, 97);
+            this.btnThemMon.Location = new System.Drawing.Point(214, 97);
             this.btnThemMon.Name = "btnThemMon";
             this.btnThemMon.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnThemMon.Size = new System.Drawing.Size(160, 48);
+            this.btnThemMon.Size = new System.Drawing.Size(178, 48);
             this.btnThemMon.TabIndex = 1;
             this.btnThemMon.Text = "Thêm món";
             // 
@@ -195,10 +195,10 @@
             this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(20, 97);
+            this.btnThanhToan.Location = new System.Drawing.Point(25, 97);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnThanhToan.Size = new System.Drawing.Size(160, 48);
+            this.btnThanhToan.Size = new System.Drawing.Size(178, 48);
             this.btnThanhToan.TabIndex = 1;
             this.btnThanhToan.Text = "Thanh toán";
             // 

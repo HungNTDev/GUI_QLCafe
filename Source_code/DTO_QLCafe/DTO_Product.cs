@@ -63,6 +63,14 @@
             this.idPT = idPT;
         }
 
+        public DTO_Product(string idProduct, string nameProduct, float price, string imageProduct, int statusProduct)
+        {
+            this.idProduct = idProduct;
+            this.nameProduct = nameProduct;
+            this.price = price;
+            this.imageProduct = imageProduct;
+            this.statusProduct = statusProduct;
+        }
     }
 
 }

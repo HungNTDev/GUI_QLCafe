@@ -42,7 +42,7 @@
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.txtTenKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMaKhuyenMai = new System.Windows.Forms.Label();
-            this.bfAddNhanVien = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.bfAddVoucher = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.txtMaKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -246,15 +246,15 @@
             this.lbMaKhuyenMai.TabIndex = 42;
             this.lbMaKhuyenMai.Text = "Mã khuyến mãi";
             // 
-            // bfAddNhanVien
+            // bfAddVoucher
             // 
-            this.bfAddNhanVien.AnimateWindow = true;
-            this.bfAddNhanVien.AnimationInterval = 250;
-            this.bfAddNhanVien.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
-            this.bfAddNhanVien.BorderRadius = 20;
-            this.bfAddNhanVien.ContainerControl = this;
-            this.bfAddNhanVien.DockIndicatorTransparencyValue = 0.6D;
-            this.bfAddNhanVien.TransparentWhileDrag = true;
+            this.bfAddVoucher.AnimateWindow = true;
+            this.bfAddVoucher.AnimationInterval = 250;
+            this.bfAddVoucher.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
+            this.bfAddVoucher.BorderRadius = 10;
+            this.bfAddVoucher.ContainerControl = this;
+            this.bfAddVoucher.DockIndicatorTransparencyValue = 0.6D;
+            this.bfAddVoucher.TransparentWhileDrag = true;
             // 
             // txtMaKhuyenMai
             // 
@@ -323,7 +323,7 @@
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKhuyenMai;
         private System.Windows.Forms.Label lbMaKhuyenMai;
-        private Guna.UI2.WinForms.Guna2BorderlessForm bfAddNhanVien;
+        private Guna.UI2.WinForms.Guna2BorderlessForm bfAddVoucher;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhuyenMai;
     }
 }

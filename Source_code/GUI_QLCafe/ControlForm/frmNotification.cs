@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_QLCafe.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,8 +29,14 @@ namespace GUI_QLCafe
             wait, start, close
         }
 
+        // Xác định kiểu thông báo
+        public enum enumType
+        {
+            Success, Failed, Warning, Infomation
+        }
+
         // Phương thức tĩnh để hiển thị thông báo với nội dung truyền vào
-        public static void showNotfication(string msg)
+        public static void showNotfication(string msg, enumType type)
         {
             frmNotification notification = new frmNotification();
             notification.Opacity = 0.0;
@@ -46,12 +53,33 @@ namespace GUI_QLCafe
                 {
                     notification.Name = fname;
                     notification.x = Screen.PrimaryScreen.WorkingArea.Width - notification.Width + 10;
-                    notification.y = Screen.PrimaryScreen.WorkingArea.Height - notification.Height * i - 5 * i - 40;
+                    notification.y = Screen.PrimaryScreen.WorkingArea.Height - notification.Height * i - 5 * i - 37;
                     notification.Location = new Point(notification.x, notification.y);
                     break;
                 }
             }
             notification.x = Screen.PrimaryScreen.WorkingArea.Width - notification.Width - 5;
+
+            switch (type)
+            {
+                case enumType.Success:
+                    notification.picNofication.Image = Resources.Success;
+                    notification.BackColor = Color.MediumSeaGreen;
+                break;
+                case enumType.Failed:
+                    notification.picNofication.Image = Resources.Failed;
+                    notification.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+                    break;
+                case enumType.Warning:
+                    notification.picNofication.Image = Resources.warning;
+                    notification.BackColor = Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(0)))));
+                    break;
+                case enumType.Infomation:
+                    notification.picNofication.Image = Resources.information;
+                    notification.BackColor = Color.DodgerBlue;
+                    break;
+            }
+            
             notification.lbMsg.Text = msg;
             notification.Show();
             notification.action = enmAction.start;

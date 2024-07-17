@@ -242,12 +242,6 @@
     <Compile Include="ViewForm\frmQLSanPham.Designer.cs">
       <DependentUpon>frmQLSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewForm\frmQLThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewForm\frmQLThanhToan.Designer.cs">
-      <DependentUpon>frmQLThanhToan.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewForm\frmQLVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,9 +292,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ViewForm\frmQLBan.resx">
       <DependentUpon>frmQLBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmQLHoaDon.resx">
+      <DependentUpon>frmQLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmQLNhanVien.resx">
       <DependentUpon>frmQLNhanVien.cs</DependentUpon>
@@ -351,7 +349,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icon\Failed.png" />
+    <None Include="Icon\Success.png" />
+    <None Include="Icon\warning.png" />
+    <None Include="Icon\information.png" />
     <Content Include="License-LGPL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Product\" />
+    <Folder Include="Images\Staff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

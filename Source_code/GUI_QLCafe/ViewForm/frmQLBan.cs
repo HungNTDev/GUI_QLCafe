@@ -16,5 +16,16 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddBan frmAddBan = new frmAddBan();
+            frmAddBan.ShowDialog(); 
+        }
+
+        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

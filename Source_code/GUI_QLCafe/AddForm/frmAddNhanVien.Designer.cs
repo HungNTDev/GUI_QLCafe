@@ -117,7 +117,7 @@
             this.bfAddNhanVien.AnimateWindow = true;
             this.bfAddNhanVien.AnimationInterval = 250;
             this.bfAddNhanVien.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
-            this.bfAddNhanVien.BorderRadius = 20;
+            this.bfAddNhanVien.BorderRadius = 10;
             this.bfAddNhanVien.ContainerControl = this;
             this.bfAddNhanVien.DockIndicatorTransparencyValue = 0.6D;
             this.bfAddNhanVien.TransparentWhileDrag = true;

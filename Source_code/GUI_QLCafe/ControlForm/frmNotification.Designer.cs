@@ -29,40 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNotification));
             this.lbMsg = new System.Windows.Forms.Label();
-            this.picSuccess = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.noficationTransition = new System.Windows.Forms.Timer(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.bfNotfication = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.picSuccess)).BeginInit();
+            this.picNofication = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picNofication)).BeginInit();
             this.SuspendLayout();
             // 
             // lbMsg
             // 
             this.lbMsg.AutoSize = true;
-            this.lbMsg.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMsg.ForeColor = System.Drawing.Color.White;
-            this.lbMsg.Location = new System.Drawing.Point(66, 37);
+            this.lbMsg.Location = new System.Drawing.Point(66, 35);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(152, 31);
+            this.lbMsg.Size = new System.Drawing.Size(154, 31);
             this.lbMsg.TabIndex = 0;
             this.lbMsg.Text = "Message Text";
             this.lbMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picSuccess
-            // 
-            this.picSuccess.BackColor = System.Drawing.Color.Transparent;
-            this.picSuccess.Image = ((System.Drawing.Image)(resources.GetObject("picSuccess.Image")));
-            this.picSuccess.ImageRotate = 0F;
-            this.picSuccess.Location = new System.Drawing.Point(26, 36);
-            this.picSuccess.Name = "picSuccess";
-            this.picSuccess.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picSuccess.Size = new System.Drawing.Size(34, 32);
-            this.picSuccess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSuccess.TabIndex = 2;
-            this.picSuccess.TabStop = false;
-            this.picSuccess.UseTransparentBackground = true;
             // 
             // noficationTransition
             // 
@@ -89,19 +74,33 @@
             this.bfNotfication.ShadowColor = System.Drawing.Color.Transparent;
             this.bfNotfication.TransparentWhileDrag = true;
             // 
+            // picNofication
+            // 
+            this.picNofication.BackColor = System.Drawing.Color.Transparent;
+            this.picNofication.Image = global::GUI_QLCafe.Properties.Resources.information;
+            this.picNofication.ImageRotate = 0F;
+            this.picNofication.Location = new System.Drawing.Point(26, 34);
+            this.picNofication.Name = "picNofication";
+            this.picNofication.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picNofication.Size = new System.Drawing.Size(34, 32);
+            this.picNofication.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNofication.TabIndex = 2;
+            this.picNofication.TabStop = false;
+            this.picNofication.UseTransparentBackground = true;
+            // 
             // frmNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(400, 101);
+            this.ClientSize = new System.Drawing.Size(400, 100);
             this.Controls.Add(this.guna2ControlBox1);
-            this.Controls.Add(this.picSuccess);
+            this.Controls.Add(this.picNofication);
             this.Controls.Add(this.lbMsg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNotification";
             this.Text = "frmNotification";
-            ((System.ComponentModel.ISupportInitialize)(this.picSuccess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNofication)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,9 +109,9 @@
         #endregion
 
         private System.Windows.Forms.Label lbMsg;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox picSuccess;
         private System.Windows.Forms.Timer noficationTransition;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox picNofication;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfNotfication;
     }
 }

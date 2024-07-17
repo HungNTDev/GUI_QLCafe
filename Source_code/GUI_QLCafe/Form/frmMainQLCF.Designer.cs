@@ -134,6 +134,7 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1223, 52);
             this.panelHeader.TabIndex = 0;
+            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // shapeLine
             // 
@@ -319,6 +320,7 @@
             this.btnDangXuat.TabIndex = 3;
             this.btnDangXuat.Text = "          Đăng xuất";
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // flpHuongDan
             // 

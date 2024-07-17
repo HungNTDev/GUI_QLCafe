@@ -102,7 +102,9 @@ insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',1,0),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',0,0),
 ('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',1,1)
+	
 update Staff set RoleStaff = 1 where IdStaff = 'NV3'
+	
 ('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
 go
@@ -143,6 +145,46 @@ update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
 go
 
+--Thêm loại sản phẩm--
+insert into ProductType (IdPT, NamePT, StatusPT) values
+('TEA',N'Trà',1),
+('CFE',N'Cà phê',1),
+('STO',N'Sinh tố',1),
+('JUC',N'Nước ép',1)
+
+
+--Thêm sản phẩm--
+/*Trà*/
+insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
+	('TEA1', N'Hồng trà đặc cam', 65000, 'picAdd', 1, 'TEA'),
+	('TEA2', N'Trà lại đặc thơm', 50000, 'picAdd', 1, 'TEA'),
+	('TEA3', N'Hồng trà chanh', 45000, 'picAdd', 1, 'TEA'),
+	('TEA4', N'Hồng trà sữa', 50000, 'picAdd', 1, 'TEA'),
+	('TEA5', N'Trà sữa Truyền Thuyết', 50000, 'picAdd', 1, 'TEA')
+
+/*Cà phê*/
+insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
+	('CFE1', N'Cà phê Cappuchino', 35000, 'picAdd', 1, 'CFE'),
+	('CFE2', N'Cà phê Expresso', 30000, 'picAdd', 1, 'CFE'),
+	('CFE3', N'Cà phê kem tươi', 40000, 'picAdd', 1, 'CFE'),
+	('CFE4', N'Cà phê Vanilla', 40000, 'picAdd', 1, 'CFE'),
+	('CFE5', N'Cà phê Caramel ', 40000, 'picAdd', 1, 'CFE')
+
+/*Sinh tố*/
+insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
+	('STO1', N'Sinh tố dâu', 55000, 'picAdd', 1, 'STO'),
+	('STO2', N'Sinh tố chanh', 45000, 'picAdd', 1, 'STO'),
+	('STO3', N'Sinh tố xoài', 50000, 'picAdd', 1, 'STO'),
+	('STO4', N'Sinh tố trái cây nhiệt đới', 55000, 'picAdd', 1, 'STO'),
+	('STO5', N'Sinh tố cà rốt', 40000, 'picAdd', 1, 'STO')
+
+/*Nước ép*/
+insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
+	('JUC1', N'Dâu ép', 55000, 'picAdd', 1, 'JUC'),
+	('JUC2', N'Táo ép', 40000, 'picAdd', 1, 'JUC'),
+	('JUC3', N'Táo và dâu ép i', 50000, 'picAdd', 1, 'JUC'),
+	('JUC4', N'Thơm ép', 55000, 'picAdd', 1, 'JUC'),
+	('JUC5', N'Bưởi ép', 40000, 'picAdd', 1, 'JUC')
 
 --Đăng nhập
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
@@ -171,7 +213,7 @@ end
 	-- Thay đổi mật khẩu
 create procedure ChangePass (@email nvarchar(50),
                                   @opwd nvarchar(50),
-								  @npwd nvarchar(50))
+				  @npwd nvarchar(50))
 as
   declare @op nvarchar(50)
   select @op = PasswordStaff from Staff where Email = @email
@@ -196,15 +238,108 @@ end
 /*Danh sách bàn*/
 create or alter proc TableList as
 	select * from TableCF
+	-- Xử lý bàn
+create or alter proc TableList as
+	select * from TableCF
 
 /*Thông tin bàn*/
 create or alter proc TableInfo (@IdTable nvarchar(10)) as
 	select * from TableCF where IdTable = @IdTable
 
-/*Load menu*/
+/*Load menu (hien danh sach thuc an theo loai)*/
 create or alter proc ListMenu (@IdPT nvarchar(10)) as
 	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT
 
 /*Thông tin đồ ăn*/
 create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select NameProduct, Price, IdProduct from Product where IdProduct = @IdProduct
+
+-- Lấy danh sách nhân viên
+create proc GetStaff
+as
+begin
+	select IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff from staff
+end
+
+-- Thêm nhân viên
+create proc InsertStaff
+(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(50), 
+@Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
+as
+begin
+	
+	Insert into Staff (IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff) 
+	values (@Id, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
+
+end
+
+
+-- Sửa nhân viên
+create proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(50), 
+@Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
+as
+begin
+
+	Update Staff 
+	Set 
+	IdStaff = @Id, FullName = @FullName, 
+	ImageStaff = @ImageStaff, 
+	PasswordStaff = @Password, Email = @Email, 
+	RoleStaff = @Role, StatusStaff = @Status
+	where IdStaff = @Id
+
+end
+
+-- Xóa nhân viên
+
+create proc DeleteStaff (@Id nvarchar(20))
+as
+begin
+	
+	Delete from Staff where IdStaff = @Id
+
+end
+
+-- Danh sách sản phẩm
+create proc GetProduct
+as 
+  begin 
+      select IdProduct, NameProduct, Price, ImageProduct, StatusProduct from Product
+ end 
+
+ -- Thêm sản phẩm
+
+ create proc InsertProduct (@idProduct nvarchar(20),
+                            @nameProduct nvarchar(100),
+							@price float,
+							@imageProduct nvarchar(500),
+							@statusProduct int,
+							@idpt nvarchar(10))
+as 
+  begin
+       insert into Product  (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT )
+	   values 
+	   (@idProduct, @nameProduct, @price, @imageProduct, @statusProduct, @idpt)
+  end
+
+-- Sửa sản phẩm
+  create proc UpdateProduct (@idProduct nvarchar(20),
+                            @nameProduct nvarchar(100),
+							@price float,
+							@imageProduct nvarchar(500),
+							@statusProduct int,
+							@idpt nvarchar(10))
+as 
+ begin 
+     update Product set
+	 NameProduct= @nameProduct, Price = @price, ImageProduct= @imageProduct, IdPT=@idpt
+	 where IdProduct=@idProduct
+end
+
+-- Xóa sửa phẩm
+create proc DeleteProcduct (@id nvarchar(20))
+as
+  begin 
+      update Product set StatusProduct = 0 
+	  where IdProduct = @id
+end

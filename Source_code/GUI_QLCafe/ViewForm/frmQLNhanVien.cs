@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS_QLCafe;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,31 +18,24 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        public void Nofication(string msg)
-        {
-            frmNotification notification = new frmNotification();
-            //frmNotification.showNotfication(msg);
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmAddNhanVien frmAddNhanVien = new frmAddNhanVien();
             frmAddNhanVien.ShowDialog();
         }
 
-        private void dgvDanhSachNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
-            if(dgvDanhSachNhanVien.CurrentCell.OwningColumn.Name == "dgvEdit")
-            {
-                frmAddNhanVien frmAddNhanVien = new frmAddNhanVien();
-                frmAddNhanVien.ShowDialog();
+            LoadGridView_NhanVien();
+        }
+        BUS_Staff busNhanVien = new BUS_Staff();
+        private void LoadGridView_NhanVien()
+        {
+            dgvDanhSachNhanVien.DataSource = busNhanVien.get();
+        }
+        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-                this.Nofication("Save successfully!");
-            }
-            if(dgvDanhSachNhanVien.CurrentCell.OwningColumn.Name == "dgvDel")
-            {
-                this.Nofication("Delete successfully!");
-            }
         }
     }
 }

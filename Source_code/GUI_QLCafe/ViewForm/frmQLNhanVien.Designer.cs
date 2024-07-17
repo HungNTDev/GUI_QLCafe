@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThem = new Guna.UI2.WinForms.Guna2ImageButton();
             this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.lbDanhSachSanPham = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@
             this.lbDanhSachSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.lbDanhSachSanPham.Location = new System.Drawing.Point(35, 9);
             this.lbDanhSachSanPham.Name = "lbDanhSachSanPham";
-            this.lbDanhSachSanPham.Size = new System.Drawing.Size(412, 54);
+            this.lbDanhSachSanPham.Size = new System.Drawing.Size(378, 50);
             this.lbDanhSachSanPham.TabIndex = 12;
             this.lbDanhSachSanPham.Text = "Danh sách nhân viên";
             // 
@@ -152,7 +153,8 @@
             this.dgvDanhSachNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvDanhSachNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -185,6 +187,8 @@
             this.dgvDanhSachNhanVien.ReadOnly = true;
             this.dgvDanhSachNhanVien.RowHeadersVisible = false;
             this.dgvDanhSachNhanVien.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.70909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDanhSachNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachNhanVien.RowTemplate.Height = 24;
             this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1109, 433);
             this.dgvDanhSachNhanVien.TabIndex = 15;
@@ -213,6 +217,8 @@
             // 
             // dgvEmail
             // 
+            this.dgvEmail.DataPropertyName = "Email";
+            this.dgvEmail.FillWeight = 51.13974F;
             this.dgvEmail.HeaderText = "Email";
             this.dgvEmail.MinimumWidth = 6;
             this.dgvEmail.Name = "dgvEmail";
@@ -220,6 +226,8 @@
             // 
             // dgvTenNhanVien
             // 
+            this.dgvTenNhanVien.DataPropertyName = "FullName";
+            this.dgvTenNhanVien.FillWeight = 116.545F;
             this.dgvTenNhanVien.HeaderText = "Tên nhân viên";
             this.dgvTenNhanVien.MinimumWidth = 6;
             this.dgvTenNhanVien.Name = "dgvTenNhanVien";
@@ -227,6 +235,8 @@
             // 
             // dgvDiaChi
             // 
+            this.dgvDiaChi.DataPropertyName = "PasswordStaff";
+            this.dgvDiaChi.FillWeight = 80.86765F;
             this.dgvDiaChi.HeaderText = "Địa chỉ";
             this.dgvDiaChi.MinimumWidth = 6;
             this.dgvDiaChi.Name = "dgvDiaChi";
@@ -234,6 +244,8 @@
             // 
             // dgvVaiTro
             // 
+            this.dgvVaiTro.DataPropertyName = "RoleStaff";
+            this.dgvVaiTro.FillWeight = 89.62247F;
             this.dgvVaiTro.HeaderText = "Vai trò";
             this.dgvVaiTro.MinimumWidth = 6;
             this.dgvVaiTro.Name = "dgvVaiTro";
@@ -241,6 +253,8 @@
             // 
             // dgvTrangThai
             // 
+            this.dgvTrangThai.DataPropertyName = "StatusStaff";
+            this.dgvTrangThai.FillWeight = 130.5635F;
             this.dgvTrangThai.HeaderText = "Trạng thái";
             this.dgvTrangThai.MinimumWidth = 6;
             this.dgvTrangThai.Name = "dgvTrangThai";
@@ -248,6 +262,8 @@
             // 
             // dgvHinhAnh
             // 
+            this.dgvHinhAnh.DataPropertyName = "ImageStaff";
+            this.dgvHinhAnh.FillWeight = 131.2615F;
             this.dgvHinhAnh.HeaderText = "Hình ảnh";
             this.dgvHinhAnh.MinimumWidth = 6;
             this.dgvHinhAnh.Name = "dgvHinhAnh";

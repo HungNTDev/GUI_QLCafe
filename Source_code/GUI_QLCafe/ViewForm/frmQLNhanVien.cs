@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS_QLCafe;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,9 +26,13 @@ namespace GUI_QLCafe
 
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
-
+            LoadGridView_NhanVien();
         }
-
+        BUS_Staff busNhanVien = new BUS_Staff();
+        private void LoadGridView_NhanVien()
+        {
+            dgvDanhSachNhanVien.DataSource = busNhanVien.get();
+        }
         private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

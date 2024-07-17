@@ -353,5 +353,9 @@
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Product\" />
+    <Folder Include="Images\Staff\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

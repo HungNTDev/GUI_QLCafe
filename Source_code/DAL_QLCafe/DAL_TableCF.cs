@@ -1,5 +1,4 @@
 ﻿using DTO_QLCafe;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -159,7 +158,7 @@ namespace DAL_QLCafe
             {
                 using (conn = new SqlConnection(_conn))
                 {
-                    conn.Open ();
+                    conn.Open();
                     //SqlCommand cmd = new SqlCommand();
                     //cmd.Connection = conn;
                     //cmd.CommandType = CommandType.StoredProcedure ;
@@ -190,7 +189,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     conn.Open();
-                    string Query = "exec TableInfo @IdTable = '"+bill.IdTable+"'";
+                    string Query = "exec TableInfo @IdTable = '" + bill.IdTable + "'";
                     adt = new SqlDataAdapter(Query, _conn);
                     dt = new DataTable();
                     adt.Fill(dt);

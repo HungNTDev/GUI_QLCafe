@@ -93,11 +93,11 @@ namespace GUI_QLCafe
         {
             int score = 0;
 
-            if(password.Length > 8)
+            if (password.Length > 8)
             {
                 score++;
             }
-            if(System.Text.RegularExpressions.Regex.IsMatch(password, @"[A-Z]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(password, @"[A-Z]"))
             {
                 score++;
             }
@@ -132,8 +132,8 @@ namespace GUI_QLCafe
         private void txtNewPassword_TextChanged(object sender, System.EventArgs e)
         {
             string password = txtNewPassword.Text;
-            string strength = CheckPasswordStrength(password);  
-            lbPasswordStrength.Text = strength; 
+            string strength = CheckPasswordStrength(password);
+            lbPasswordStrength.Text = strength;
 
             switch (strength)
             {
@@ -147,7 +147,7 @@ namespace GUI_QLCafe
                     lbPasswordStrength.ForeColor = Color.Orange;
                     break;
                 case "Mật khẩu mạnh":
-                    lbPasswordStrength.ForeColor= Color.LightGreen;
+                    lbPasswordStrength.ForeColor = Color.LightGreen;
                     break;
                 case "Mật khẩu rất mạnh":
                     lbPasswordStrength.ForeColor = Color.Green;
@@ -155,5 +155,9 @@ namespace GUI_QLCafe
             }
         }
 
+        private void lbPasswordStrength_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

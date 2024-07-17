@@ -145,6 +145,7 @@ update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
 go
 
+--Thêm loại sản phẩm--
 insert into ProductType (IdPT, NamePT, StatusPT) values
 ('TEA',N'Trà',1),
 ('CFE',N'Cà phê',1),

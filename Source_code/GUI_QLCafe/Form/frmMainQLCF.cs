@@ -39,7 +39,7 @@ namespace GUI_QLCafe
         private void frmMainQLCF_Load(object sender, EventArgs e)
         {
             // Hiển thị ngày trên lbNgay
-            lbNgay.Text = DateTime.Now.ToLongDateString();
+            lbNgay.Text = DateTime.Now.ToShortDateString();
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToLongTimeString();
             PhanQuyen();
@@ -268,7 +268,7 @@ namespace GUI_QLCafe
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
             // Hiển thị ngày trên lbNgay
-            lbNgay.Text = DateTime.Now.ToLongDateString();
+            lbNgay.Text = DateTime.Now.ToShortDateString();
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToLongTimeString();
 

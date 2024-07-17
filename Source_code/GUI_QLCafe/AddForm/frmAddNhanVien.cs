@@ -19,11 +19,11 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        public void Nofication(string msg)
-        {
-            frmNotification notification = new frmNotification();       
-            frmNotification.showNotfication(msg);
-        }
+        //public void Nofication(string msg)
+        //{
+        //    frmNotification notification = new frmNotification();       
+        //    frmNotification.showNotfication(msg);
+        //}
         public bool IsValid(string emailaddress) //kiem tra xem email co hop le khong
         {
             try
@@ -69,7 +69,6 @@ namespace GUI_QLCafe
             {
                 messageDialog.Show("Vui lòng chọn vai trò!", "Thông báo");
             }
-            this.Nofication("Save successfully!");
         }
     }
 }

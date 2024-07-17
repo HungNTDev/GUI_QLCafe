@@ -135,7 +135,7 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@password", matkhaumoi);
                     conn.Open();
 
-                    if (cmd.ExecuteNonQuery() > 0)
+                    if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
                     {
                         return true;
                     }

@@ -45,8 +45,6 @@
             this.gbTrangThai = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbDiaChi = new System.Windows.Forms.Label();
-            this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.picNhanVien = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMoHinh = new Guna.UI2.WinForms.Guna2Button();
             this.txtDuongDan = new Guna.UI2.WinForms.Guna2TextBox();
@@ -79,7 +77,7 @@
             this.lbText0.ForeColor = System.Drawing.Color.White;
             this.lbText0.Location = new System.Drawing.Point(101, 12);
             this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(282, 38);
+            this.lbText0.Size = new System.Drawing.Size(301, 41);
             this.lbText0.TabIndex = 10;
             this.lbText0.Text = "Thông tin nhân viên";
             // 
@@ -130,7 +128,7 @@
             this.lbEmailNhanVien.ForeColor = System.Drawing.Color.Black;
             this.lbEmailNhanVien.Location = new System.Drawing.Point(39, 84);
             this.lbEmailNhanVien.Name = "lbEmailNhanVien";
-            this.lbEmailNhanVien.Size = new System.Drawing.Size(58, 25);
+            this.lbEmailNhanVien.Size = new System.Drawing.Size(59, 28);
             this.lbEmailNhanVien.TabIndex = 2;
             this.lbEmailNhanVien.Text = "Email";
             // 
@@ -142,7 +140,7 @@
             this.lbTenNhanVien.ForeColor = System.Drawing.Color.Black;
             this.lbTenNhanVien.Location = new System.Drawing.Point(39, 160);
             this.lbTenNhanVien.Name = "lbTenNhanVien";
-            this.lbTenNhanVien.Size = new System.Drawing.Size(129, 25);
+            this.lbTenNhanVien.Size = new System.Drawing.Size(130, 28);
             this.lbTenNhanVien.TabIndex = 3;
             this.lbTenNhanVien.Text = "Tên nhân viên";
             // 
@@ -154,7 +152,7 @@
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
             this.rdoQuanTri.Location = new System.Drawing.Point(8, 47);
             this.rdoQuanTri.Name = "rdoQuanTri";
-            this.rdoQuanTri.Size = new System.Drawing.Size(85, 25);
+            this.rdoQuanTri.Size = new System.Drawing.Size(94, 27);
             this.rdoQuanTri.TabIndex = 2;
             this.rdoQuanTri.TabStop = true;
             this.rdoQuanTri.Text = "Quản trị";
@@ -168,7 +166,7 @@
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
             this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
             this.rdoNhanVien.Name = "rdoNhanVien";
-            this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
+            this.rdoNhanVien.Size = new System.Drawing.Size(109, 27);
             this.rdoNhanVien.TabIndex = 2;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân viên";
@@ -182,7 +180,7 @@
             this.rdoHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoHoatDong.Location = new System.Drawing.Point(8, 47);
             this.rdoHoatDong.Name = "rdoHoatDong";
-            this.rdoHoatDong.Size = new System.Drawing.Size(101, 25);
+            this.rdoHoatDong.Size = new System.Drawing.Size(113, 27);
             this.rdoHoatDong.TabIndex = 2;
             this.rdoHoatDong.TabStop = true;
             this.rdoHoatDong.Text = "Hoạt động";
@@ -196,7 +194,7 @@
             this.rdoNgungHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoNgungHoatDong.Location = new System.Drawing.Point(8, 85);
             this.rdoNgungHoatDong.Name = "rdoNgungHoatDong";
-            this.rdoNgungHoatDong.Size = new System.Drawing.Size(151, 25);
+            this.rdoNgungHoatDong.Size = new System.Drawing.Size(169, 27);
             this.rdoNgungHoatDong.TabIndex = 2;
             this.rdoNgungHoatDong.TabStop = true;
             this.rdoNgungHoatDong.Text = "Ngừng hoạt động";
@@ -282,43 +280,6 @@
             this.txtTenNhanVien.Size = new System.Drawing.Size(424, 34);
             this.txtTenNhanVien.TabIndex = 9;
             // 
-            // lbDiaChi
-            // 
-            this.lbDiaChi.AutoSize = true;
-            this.lbDiaChi.BackColor = System.Drawing.Color.White;
-            this.lbDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.lbDiaChi.Location = new System.Drawing.Point(39, 373);
-            this.lbDiaChi.Name = "lbDiaChi";
-            this.lbDiaChi.Size = new System.Drawing.Size(70, 25);
-            this.lbDiaChi.TabIndex = 3;
-            this.lbDiaChi.Text = "Địa chỉ";
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.BackColor = System.Drawing.Color.Transparent;
-            this.txtDiaChi.BorderColor = System.Drawing.Color.Silver;
-            this.txtDiaChi.BorderRadius = 5;
-            this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiaChi.DefaultText = "";
-            this.txtDiaChi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDiaChi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDiaChi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiaChi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiaChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtDiaChi.Location = new System.Drawing.Point(44, 406);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.PasswordChar = '\0';
-            this.txtDiaChi.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtDiaChi.PlaceholderText = "";
-            this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(626, 71);
-            this.txtDiaChi.TabIndex = 9;
-            // 
             // picNhanVien
             // 
             this.picNhanVien.BorderRadius = 5;
@@ -395,7 +356,7 @@
             this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(44, 498);
+            this.btnLuu.Location = new System.Drawing.Point(44, 411);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -408,28 +369,26 @@
             // 
             this.messageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
             this.messageDialog.Caption = null;
-            this.messageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.messageDialog.Parent = null;
-            this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.messageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.messageDialog.Parent = this;
+            this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.messageDialog.Text = null;
             // 
             // frmAddNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(714, 595);
+            this.ClientSize = new System.Drawing.Size(714, 508);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnMoHinh);
             this.Controls.Add(this.picNhanVien);
-            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtDuongDan);
             this.Controls.Add(this.txtTenNhanVien);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.gbTrangThai);
             this.Controls.Add(this.gbVaiTro);
             this.Controls.Add(this.lbEmailNhanVien);
-            this.Controls.Add(this.lbDiaChi);
             this.Controls.Add(this.lbTenNhanVien);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -467,8 +426,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
         private System.Windows.Forms.Label lbText0;
-        private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
-        private System.Windows.Forms.Label lbDiaChi;
         private Guna.UI2.WinForms.Guna2PictureBox picNhanVien;
         private Guna.UI2.WinForms.Guna2Button btnMoHinh;
         private Guna.UI2.WinForms.Guna2TextBox txtDuongDan;

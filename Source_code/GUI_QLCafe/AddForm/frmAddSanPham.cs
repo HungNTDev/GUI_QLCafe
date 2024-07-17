@@ -19,10 +19,11 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        public void Nofication(string msg)
+        // phương thức này dùng để gọi Notfication khi thêm thành công
+        public void Nofication(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
-            //frmNotification.showNotfication(msg);
+            frmNotification.showNotfication(msg, type);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -31,25 +32,25 @@ namespace GUI_QLCafe
             bool isInt = float.TryParse(txtGia.Text.Trim(), out gia);
             if (txtMaSanPham.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập mã sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageDialog.Show("Vui lòng nhập mã sản phẩm!", "Thông báo");
                 txtMaSanPham.Focus();
                 return;
             }
             else if (txtTenSanPham.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập tên sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageDialog.Show("Vui lòng nhập tên sản phẩm!", "Thông báo");
                 txtTenSanPham.Focus();
                 return;
             }
             else if (!isInt || float.Parse(txtGia.Text) <= 0)
             {
-                MessageBox.Show("Gia sẽ số ngữc nhất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageDialog.Show("Vui lòng nhập giá!", "Thông báo");
                 txtGia.Focus();
                 return;
             }
             else if (cbTrangThai.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lý chọn trang thái sẽ chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
                 cbTrangThai.Focus();
                 return;
             }
@@ -58,22 +59,15 @@ namespace GUI_QLCafe
                 DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, float.Parse(txtGia.Text), fileSavePath, int.Parse(cbTrangThai.Text), fileName);
                 if (busproduct.insert(product))
                 {
-                    MessageBox.Show("Thêm sản phẩm thành công");
                     File.Copy(fileAddress, fileSavePath, true);
-                    this.Nofication("Save successfully!");
+                    this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sản phẩm thất bại");
-                    this.Nofication("Save failed!");
+                    this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
                 }
             }
-        }
-
-        private void frmAddSanPham_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnMoHinh_Click(object sender, EventArgs e)

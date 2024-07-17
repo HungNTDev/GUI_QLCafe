@@ -288,7 +288,6 @@
             this.lbPasswordStrength.Size = new System.Drawing.Size(17, 21);
             this.lbPasswordStrength.TabIndex = 6;
             this.lbPasswordStrength.Text = " .";
-            this.lbPasswordStrength.Click += new System.EventHandler(this.lbPasswordStrength_Click);
             // 
             // lbRetypePass
             // 

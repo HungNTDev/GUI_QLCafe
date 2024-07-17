@@ -16,16 +16,15 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
-
-        public void Nofication(string msg)
+        // phương thức này dùng để gọi Notfication khi thêm thành công
+        public void Nofication(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
-            //frmNotification.showNotfication(msg);
+            frmNotification.showNotfication(msg, type);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            this.Nofication("Save successfully!");
 
         }
     }

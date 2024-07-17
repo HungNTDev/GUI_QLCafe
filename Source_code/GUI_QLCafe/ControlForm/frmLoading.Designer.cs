@@ -28,37 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoading));
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
-            this.progressBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.lbStatus = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbText = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelFooter.SuspendLayout();
+            this.lbText1 = new System.Windows.Forms.Label();
+            this.pbLoading = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.time_Loading = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
             // 
-            this.panelFooter.Controls.Add(this.progressBar);
-            this.panelFooter.Location = new System.Drawing.Point(0, 429);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 432);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(790, 21);
+            this.panelFooter.Size = new System.Drawing.Size(790, 18);
             this.panelFooter.TabIndex = 0;
-            // 
-            // progressBar
-            // 
-            this.progressBar.BackColor = System.Drawing.Color.Transparent;
-            this.progressBar.Location = new System.Drawing.Point(0, 0);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.ProgressColor = System.Drawing.Color.LightGreen;
-            this.progressBar.ProgressColor2 = System.Drawing.Color.Lime;
-            this.progressBar.Size = new System.Drawing.Size(790, 21);
-            this.progressBar.TabIndex = 4;
-            this.progressBar.Text = "guna2ProgressBar1";
-            this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.progressBar.Value = 5;
             // 
             // lbStatus
             // 
@@ -67,9 +55,9 @@
             this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbStatus.Location = new System.Drawing.Point(2, 403);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(285, 25);
+            this.lbStatus.Size = new System.Drawing.Size(260, 25);
             this.lbStatus.TabIndex = 3;
-            this.lbStatus.Text = "Đang tải dữ liệu, vui lòng chờ...0%\r\n";
+            this.lbStatus.Text = "Đang tải dữ liệu, vui lòng chờ...\r\n";
             // 
             // picLogo
             // 
@@ -101,27 +89,43 @@
             this.lbText.TabIndex = 3;
             this.lbText.Text = "Coffee Shop Management System";
             // 
-            // label1
+            // lbText1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbText1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(206, 240);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(485, 70);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "-Freshly Brewed, Just for You-\r\n\r\n";
+            this.lbText1.AutoSize = true;
+            this.lbText1.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbText1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbText1.Location = new System.Drawing.Point(206, 240);
+            this.lbText1.Name = "lbText1";
+            this.lbText1.Size = new System.Drawing.Size(485, 70);
+            this.lbText1.TabIndex = 3;
+            this.lbText1.Text = "-Freshly Brewed, Just for You-\r\n\r\n";
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.FillColor = System.Drawing.Color.LightGreen;
+            this.pbLoading.FillColor2 = System.Drawing.Color.Lime;
+            this.pbLoading.Location = new System.Drawing.Point(0, 432);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(40, 18);
+            this.pbLoading.TabIndex = 6;
+            // 
+            // time_Loading
+            // 
+            this.time_Loading.Enabled = true;
+            this.time_Loading.Interval = 15;
+            this.time_Loading.Tick += new System.EventHandler(this.time_Loading_Tick);
             // 
             // frmLoading
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(790, 450);
+            this.Controls.Add(this.pbLoading);
             this.Controls.Add(this.lbStatus);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbText1);
             this.Controls.Add(this.lbText);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.panelFooter);
@@ -133,7 +137,6 @@
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.frmLoading_Load);
-            this.panelFooter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,9 +146,10 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Panel panelFooter;
         private System.Windows.Forms.Label lbStatus;
-        private Guna.UI2.WinForms.Guna2ProgressBar progressBar;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
         private System.Windows.Forms.Label lbText;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbText1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pbLoading;
+        private System.Windows.Forms.Timer time_Loading;
     }
 }

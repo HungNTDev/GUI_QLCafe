@@ -41,7 +41,6 @@ namespace GUI_QLCafe
             }
             else
             {
-                txtEmail.Clear();
                 chkGhiNhoTK.Checked = false;
             }
 
@@ -129,6 +128,16 @@ namespace GUI_QLCafe
                 frmMainQLCF.email = staff.email;
 
                 frmLoading.Show();
+
+                //foreach (Form form in Application.OpenForms)
+                //{
+                //    if (form is frmMainQLCF)
+                //    {
+                //        ((frmMainQLCF)form).PhanQuyen();
+                //        break;
+                //    }
+                //}
+
                 this.Hide();
             }
             else

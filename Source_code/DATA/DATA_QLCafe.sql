@@ -196,3 +196,15 @@ end
 /*Danh sách bàn*/
 create or alter proc TableList as
 	select * from TableCF
+
+/*Thông tin bàn*/
+create or alter proc TableInfo (@IdTable nvarchar(10)) as
+	select * from TableCF where IdTable = @IdTable
+
+/*Load menu*/
+create or alter proc ListMenu (@IdPT nvarchar(10)) as
+	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT
+
+/*Thông tin đồ ăn*/
+create or alter proc TagProduct (@IdProduct nvarchar(20)) as
+	select NameProduct, Price, IdProduct from Product where IdProduct = @IdProduct

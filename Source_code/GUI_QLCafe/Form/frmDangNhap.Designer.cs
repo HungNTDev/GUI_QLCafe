@@ -250,10 +250,10 @@
             this.cbClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClose.HoverState.FillColor = System.Drawing.Color.Silver;
             this.cbClose.IconColor = System.Drawing.Color.Black;
-            this.cbClose.Location = new System.Drawing.Point(1125, 0);
+            this.cbClose.Location = new System.Drawing.Point(1102, 0);
             this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbClose.Name = "cbClose";
-            this.cbClose.Size = new System.Drawing.Size(46, 34);
+            this.cbClose.Size = new System.Drawing.Size(69, 40);
             this.cbClose.TabIndex = 3;
             this.cbClose.Click += new System.EventHandler(this.cbClose_Click);
             // 
@@ -352,10 +352,10 @@
             this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1074, 0);
+            this.cbMinimize.Location = new System.Drawing.Point(1026, 0);
             this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(46, 34);
+            this.cbMinimize.Size = new System.Drawing.Size(69, 40);
             this.cbMinimize.TabIndex = 3;
             // 
             // messageDialog
@@ -384,7 +384,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDangNhap";
+            this.Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)(this.picHiddenPassWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPassWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

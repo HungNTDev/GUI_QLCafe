@@ -38,8 +38,6 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblText = new System.Windows.Forms.Label();
-            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelDoiMatKhau = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
@@ -49,6 +47,8 @@
             this.txtRetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.bfDoiMatKhau = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panelDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
@@ -182,38 +182,11 @@
             this.lblText.TabIndex = 4;
             this.lblText.Text = "Thay đổi mật khẩu";
             // 
-            // cbMinimize
-            // 
-            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.cbMinimize.FillColor = System.Drawing.Color.White;
-            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1073, 0);
-            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(46, 34);
-            this.cbMinimize.TabIndex = 3;
-            // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.FillColor = System.Drawing.Color.White;
-            this.cbClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.cbClose.IconColor = System.Drawing.Color.Black;
-            this.cbClose.Location = new System.Drawing.Point(1125, 0);
-            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.Size = new System.Drawing.Size(46, 34);
-            this.cbClose.TabIndex = 3;
-            // 
             // panelDoiMatKhau
             // 
             this.panelDoiMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.panelDoiMatKhau.Controls.Add(this.cbMinimize);
+            this.panelDoiMatKhau.Controls.Add(this.cbClose);
             this.panelDoiMatKhau.Controls.Add(this.shapeLine);
             this.panelDoiMatKhau.Controls.Add(this.chkShowPassword);
             this.panelDoiMatKhau.Controls.Add(this.btnChangePassword);
@@ -227,8 +200,6 @@
             this.panelDoiMatKhau.Controls.Add(this.lbEmail);
             this.panelDoiMatKhau.Controls.Add(this.txtEmail);
             this.panelDoiMatKhau.Controls.Add(this.lblText);
-            this.panelDoiMatKhau.Controls.Add(this.cbMinimize);
-            this.panelDoiMatKhau.Controls.Add(this.cbClose);
             this.panelDoiMatKhau.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDoiMatKhau.FillColor = System.Drawing.Color.White;
             this.panelDoiMatKhau.FillColor2 = System.Drawing.Color.White;
@@ -368,6 +339,35 @@
             this.bfDoiMatKhau.DockIndicatorTransparencyValue = 0.6D;
             this.bfDoiMatKhau.TransparentWhileDrag = true;
             // 
+            // cbMinimize
+            // 
+            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.cbMinimize.FillColor = System.Drawing.Color.White;
+            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
+            this.cbMinimize.IconColor = System.Drawing.Color.Black;
+            this.cbMinimize.Location = new System.Drawing.Point(1026, 0);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMinimize.Name = "cbMinimize";
+            this.cbMinimize.Size = new System.Drawing.Size(69, 40);
+            this.cbMinimize.TabIndex = 13;
+            // 
+            // cbClose
+            // 
+            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClose.BackColor = System.Drawing.Color.Transparent;
+            this.cbClose.FillColor = System.Drawing.Color.White;
+            this.cbClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Silver;
+            this.cbClose.IconColor = System.Drawing.Color.Black;
+            this.cbClose.Location = new System.Drawing.Point(1102, 0);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClose.Name = "cbClose";
+            this.cbClose.Size = new System.Drawing.Size(69, 40);
+            this.cbClose.TabIndex = 14;
+            // 
             // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -380,7 +380,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDoiMatKhau";
+            this.Text = "Đổi mật khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.panelDoiMatKhau.ResumeLayout(false);
             this.panelDoiMatKhau.PerformLayout();
@@ -397,8 +397,6 @@
         private System.Windows.Forms.Label lbEmail;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label lblText;
-        private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
-        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
         private Guna.UI2.WinForms.Guna2Elipse eDoiMatKhau;
         private System.Windows.Forms.Label lbNewPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtNewPassword;
@@ -408,5 +406,7 @@
         private Guna.UI2.WinForms.Guna2Shapes shapeLine;
         private System.Windows.Forms.Label lbPasswordStrength;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfDoiMatKhau;
+        private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
+        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
     }
 }

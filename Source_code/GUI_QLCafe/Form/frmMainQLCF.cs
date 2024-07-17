@@ -49,8 +49,8 @@ namespace GUI_QLCafe
         {
 
             lblEmail.Text = email;
-            btnQLNhanVien.Enabled = false;
-            btnThongKe.Enabled = false;
+            //btnQLNhanVien.Enabled = false;
+            //btnThongKe.Enabled = false;
             if (session == 1)
             {
                 if (role == "1")
@@ -70,7 +70,7 @@ namespace GUI_QLCafe
                 flpQuanLy.Height += 20;
                 
                 // Nếu chiều cao đạt 300
-                if (flpQuanLy.Height >= 372)
+                if (flpQuanLy.Height >= 310)
                 {
                     quanlyTransition.Stop(); // Dừng timer
                     quanlyExpand = true; // Mở rộng
@@ -254,9 +254,19 @@ namespace GUI_QLCafe
             AddControls(new frmQLSanPham());
         }
 
+        private void btnQLBan_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmQLBan());    
+        }
+
         private void btnQLVoucher_Click_1(object sender, EventArgs e)
         {
             AddControls(new frmQLVoucher());
+        }
+
+        private void btnQLHoaDon_Click_1(object sender, EventArgs e)
+        {
+            AddControls(new frmQLHoaDon());
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
@@ -274,6 +284,7 @@ namespace GUI_QLCafe
 
             timer_ThoiGian.Start();
         }
+
 
     }
 }

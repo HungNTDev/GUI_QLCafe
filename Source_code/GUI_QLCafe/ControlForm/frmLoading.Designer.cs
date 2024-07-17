@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoading));
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbStatus = new System.Windows.Forms.Label();
             this.progressBar = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,17 +47,6 @@
             this.panelFooter.Size = new System.Drawing.Size(790, 21);
             this.panelFooter.TabIndex = 0;
             // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbStatus.Location = new System.Drawing.Point(2, 403);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(285, 25);
-            this.lbStatus.TabIndex = 3;
-            this.lbStatus.Text = "Đang tải dữ liệu, vui lòng chờ...0%\r\n";
-            // 
             // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.Color.Transparent;
@@ -70,6 +59,17 @@
             this.progressBar.Text = "guna2ProgressBar1";
             this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.progressBar.Value = 5;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbStatus.Location = new System.Drawing.Point(2, 403);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(285, 25);
+            this.lbStatus.TabIndex = 3;
+            this.lbStatus.Text = "Đang tải dữ liệu, vui lòng chờ...0%\r\n";
             // 
             // picLogo
             // 
@@ -126,9 +126,10 @@
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.panelFooter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLoading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "6";
+            this.Text = "Holiday Coffee";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.frmLoading_Load);

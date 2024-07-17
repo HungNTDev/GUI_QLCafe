@@ -37,7 +37,7 @@
             this.txtMaSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMaSanPham = new System.Windows.Forms.Label();
             this.lbTenSanPham = new System.Windows.Forms.Label();
-            this.bfAddNhanVien = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.bfAddSanPham = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.lbText0 = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -193,15 +193,15 @@
             this.lbTenSanPham.TabIndex = 16;
             this.lbTenSanPham.Text = "Tên sản phẩm";
             // 
-            // bfAddNhanVien
+            // bfAddSanPham
             // 
-            this.bfAddNhanVien.AnimateWindow = true;
-            this.bfAddNhanVien.AnimationInterval = 250;
-            this.bfAddNhanVien.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
-            this.bfAddNhanVien.BorderRadius = 20;
-            this.bfAddNhanVien.ContainerControl = this;
-            this.bfAddNhanVien.DockIndicatorTransparencyValue = 0.6D;
-            this.bfAddNhanVien.TransparentWhileDrag = true;
+            this.bfAddSanPham.AnimateWindow = true;
+            this.bfAddSanPham.AnimationInterval = 250;
+            this.bfAddSanPham.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
+            this.bfAddSanPham.BorderRadius = 10;
+            this.bfAddSanPham.ContainerControl = this;
+            this.bfAddSanPham.DockIndicatorTransparencyValue = 0.6D;
+            this.bfAddSanPham.TransparentWhileDrag = true;
             // 
             // lbText0
             // 
@@ -398,7 +398,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaSanPham;
         private System.Windows.Forms.Label lbMaSanPham;
         private System.Windows.Forms.Label lbTenSanPham;
-        private Guna.UI2.WinForms.Guna2BorderlessForm bfAddNhanVien;
+        private Guna.UI2.WinForms.Guna2BorderlessForm bfAddSanPham;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;

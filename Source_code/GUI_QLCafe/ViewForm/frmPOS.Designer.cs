@@ -82,11 +82,11 @@
             // lbThanhTien
             // 
             this.lbThanhTien.AutoSize = true;
-            this.lbThanhTien.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThanhTien.ForeColor = System.Drawing.Color.White;
+            this.lbThanhTien.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThanhTien.ForeColor = System.Drawing.Color.Cyan;
             this.lbThanhTien.Location = new System.Drawing.Point(18, 20);
             this.lbThanhTien.Name = "lbThanhTien";
-            this.lbThanhTien.Size = new System.Drawing.Size(158, 38);
+            this.lbThanhTien.Size = new System.Drawing.Size(193, 46);
             this.lbThanhTien.TabIndex = 0;
             this.lbThanhTien.Text = "Thành tiền:";
             // 

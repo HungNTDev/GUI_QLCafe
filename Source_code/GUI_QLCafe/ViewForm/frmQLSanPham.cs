@@ -22,5 +22,10 @@ namespace GUI_QLCafe
             frmAddSanPham frmAddSanPham = new frmAddSanPham();
             frmAddSanPham.ShowDialog();
         }
+
+        private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

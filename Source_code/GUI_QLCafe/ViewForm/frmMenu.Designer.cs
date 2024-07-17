@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbText0 = new System.Windows.Forms.Label();
             this.paneText = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.lbNameTable = new System.Windows.Forms.Label();
             this.panelAside = new Guna.UI2.WinForms.Guna2Panel();
             this.ListOrder_dgv = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.tc_Menu = new Guna.UI2.WinForms.Guna2TabControl();
             this.tp_CaPhe = new System.Windows.Forms.TabPage();
@@ -50,19 +52,17 @@
             this.flp_SinhTo = new System.Windows.Forms.FlowLayoutPanel();
             this.tp_NuocEp = new System.Windows.Forms.TabPage();
             this.flp_NuocEp = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.paneText.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListOrder_dgv)).BeginInit();
+            this.panelHeader.SuspendLayout();
             this.panelBody.SuspendLayout();
             this.tc_Menu.SuspendLayout();
             this.tp_CaPhe.SuspendLayout();
             this.tp_Tra.SuspendLayout();
             this.tp_SinhTo.SuspendLayout();
             this.tp_NuocEp.SuspendLayout();
-            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbText0
@@ -90,6 +90,20 @@
             this.paneText.Size = new System.Drawing.Size(1383, 58);
             this.paneText.TabIndex = 10;
             this.paneText.Paint += new System.Windows.Forms.PaintEventHandler(this.paneText_Paint);
+            // 
+            // cbClose
+            // 
+            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClose.BackColor = System.Drawing.Color.Transparent;
+            this.cbClose.BorderRadius = 5;
+            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.cbClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
+            this.cbClose.IconColor = System.Drawing.Color.White;
+            this.cbClose.Location = new System.Drawing.Point(1288, 8);
+            this.cbClose.Name = "cbClose";
+            this.cbClose.Size = new System.Drawing.Size(88, 39);
+            this.cbClose.TabIndex = 13;
             // 
             // panelFooter
             // 
@@ -156,12 +170,12 @@
             // lbNameTable
             // 
             this.lbNameTable.AutoSize = true;
-            this.lbNameTable.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameTable.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameTable.ForeColor = System.Drawing.Color.White;
-            this.lbNameTable.Location = new System.Drawing.Point(16, 15);
+            this.lbNameTable.Location = new System.Drawing.Point(6, 12);
             this.lbNameTable.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbNameTable.Name = "lbNameTable";
-            this.lbNameTable.Size = new System.Drawing.Size(136, 41);
+            this.lbNameTable.Size = new System.Drawing.Size(168, 50);
             this.lbNameTable.TabIndex = 0;
             this.lbNameTable.Text = "Tên bàn:";
             // 
@@ -178,26 +192,26 @@
             // 
             // ListOrder_dgv
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.ListOrder_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListOrder_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.ListOrder_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ListOrder_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.ListOrder_dgv.ColumnHeadersHeight = 4;
             this.ListOrder_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListOrder_dgv.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListOrder_dgv.DefaultCellStyle = dataGridViewCellStyle12;
             this.ListOrder_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListOrder_dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ListOrder_dgv.Location = new System.Drawing.Point(0, 66);
@@ -228,6 +242,17 @@
             this.ListOrder_dgv.ThemeStyle.RowsStyle.Height = 24;
             this.ListOrder_dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ListOrder_dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelHeader.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.panelHeader.Controls.Add(this.lbNameTable);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(496, 66);
+            this.panelHeader.TabIndex = 2;
             // 
             // panelBody
             // 
@@ -299,7 +324,7 @@
             this.tp_Tra.Location = new System.Drawing.Point(4, 44);
             this.tp_Tra.Name = "tp_Tra";
             this.tp_Tra.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Tra.Size = new System.Drawing.Size(879, 716);
+            this.tp_Tra.Size = new System.Drawing.Size(879, 709);
             this.tp_Tra.TabIndex = 1;
             this.tp_Tra.Text = "TRÀ";
             // 
@@ -309,7 +334,7 @@
             this.flp_Tra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_Tra.Location = new System.Drawing.Point(3, 3);
             this.flp_Tra.Name = "flp_Tra";
-            this.flp_Tra.Size = new System.Drawing.Size(873, 710);
+            this.flp_Tra.Size = new System.Drawing.Size(873, 703);
             this.flp_Tra.TabIndex = 0;
             // 
             // tp_SinhTo
@@ -319,7 +344,7 @@
             this.tp_SinhTo.Location = new System.Drawing.Point(4, 44);
             this.tp_SinhTo.Name = "tp_SinhTo";
             this.tp_SinhTo.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_SinhTo.Size = new System.Drawing.Size(879, 716);
+            this.tp_SinhTo.Size = new System.Drawing.Size(879, 709);
             this.tp_SinhTo.TabIndex = 2;
             this.tp_SinhTo.Text = "SINH TỐ";
             // 
@@ -329,7 +354,7 @@
             this.flp_SinhTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_SinhTo.Location = new System.Drawing.Point(3, 3);
             this.flp_SinhTo.Name = "flp_SinhTo";
-            this.flp_SinhTo.Size = new System.Drawing.Size(873, 710);
+            this.flp_SinhTo.Size = new System.Drawing.Size(873, 703);
             this.flp_SinhTo.TabIndex = 0;
             // 
             // tp_NuocEp
@@ -339,7 +364,7 @@
             this.tp_NuocEp.Location = new System.Drawing.Point(4, 44);
             this.tp_NuocEp.Name = "tp_NuocEp";
             this.tp_NuocEp.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_NuocEp.Size = new System.Drawing.Size(879, 716);
+            this.tp_NuocEp.Size = new System.Drawing.Size(879, 709);
             this.tp_NuocEp.TabIndex = 3;
             this.tp_NuocEp.Text = "NƯỚC ÉP";
             this.tp_NuocEp.Click += new System.EventHandler(this.tp_NuocEp_Click);
@@ -350,33 +375,8 @@
             this.flp_NuocEp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_NuocEp.Location = new System.Drawing.Point(3, 3);
             this.flp_NuocEp.Name = "flp_NuocEp";
-            this.flp_NuocEp.Size = new System.Drawing.Size(873, 710);
+            this.flp_NuocEp.Size = new System.Drawing.Size(873, 703);
             this.flp_NuocEp.TabIndex = 0;
-            // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.BorderRadius = 5;
-            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.cbClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
-            this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(1288, 8);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.Size = new System.Drawing.Size(88, 39);
-            this.cbClose.TabIndex = 13;
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panelHeader.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.panelHeader.Controls.Add(this.lbNameTable);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(496, 66);
-            this.panelHeader.TabIndex = 2;
             // 
             // frmMenu
             // 
@@ -397,14 +397,14 @@
             this.panelFooter.ResumeLayout(false);
             this.panelAside.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ListOrder_dgv)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.panelBody.ResumeLayout(false);
             this.tc_Menu.ResumeLayout(false);
             this.tp_CaPhe.ResumeLayout(false);
             this.tp_Tra.ResumeLayout(false);
             this.tp_SinhTo.ResumeLayout(false);
             this.tp_NuocEp.ResumeLayout(false);
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -33,12 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLBan));
             this.dgvDanhSachNhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
@@ -69,12 +66,9 @@
             this.dgvDanhSachNhanVien.ColumnHeadersHeight = 45;
             this.dgvDanhSachNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDanhSachNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvEmail,
-            this.dgvTenNhanVien,
-            this.dgvDiaChi,
-            this.dgvVaiTro,
+            this.dgvMaBan,
+            this.dgvTenBan,
             this.dgvTrangThai,
-            this.dgvHinhAnh,
             this.dgvSua,
             this.dgvXoa});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -86,7 +80,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(43, 175);
+            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(43, 174);
             this.dgvDanhSachNhanVien.Name = "dgvDanhSachNhanVien";
             this.dgvDanhSachNhanVien.ReadOnly = true;
             this.dgvDanhSachNhanVien.RowHeadersVisible = false;
@@ -115,34 +109,21 @@
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.Height = 24;
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDanhSachNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachNhanVien_CellContentClick);
             // 
-            // dgvEmail
+            // dgvMaBan
             // 
-            this.dgvEmail.HeaderText = "Email";
-            this.dgvEmail.MinimumWidth = 6;
-            this.dgvEmail.Name = "dgvEmail";
-            this.dgvEmail.ReadOnly = true;
+            this.dgvMaBan.HeaderText = "Mã bàn";
+            this.dgvMaBan.MinimumWidth = 6;
+            this.dgvMaBan.Name = "dgvMaBan";
+            this.dgvMaBan.ReadOnly = true;
             // 
-            // dgvTenNhanVien
+            // dgvTenBan
             // 
-            this.dgvTenNhanVien.HeaderText = "Tên nhân viên";
-            this.dgvTenNhanVien.MinimumWidth = 6;
-            this.dgvTenNhanVien.Name = "dgvTenNhanVien";
-            this.dgvTenNhanVien.ReadOnly = true;
-            // 
-            // dgvDiaChi
-            // 
-            this.dgvDiaChi.HeaderText = "Địa chỉ";
-            this.dgvDiaChi.MinimumWidth = 6;
-            this.dgvDiaChi.Name = "dgvDiaChi";
-            this.dgvDiaChi.ReadOnly = true;
-            // 
-            // dgvVaiTro
-            // 
-            this.dgvVaiTro.HeaderText = "Vai trò";
-            this.dgvVaiTro.MinimumWidth = 6;
-            this.dgvVaiTro.Name = "dgvVaiTro";
-            this.dgvVaiTro.ReadOnly = true;
+            this.dgvTenBan.HeaderText = "Tên bàn";
+            this.dgvTenBan.MinimumWidth = 6;
+            this.dgvTenBan.Name = "dgvTenBan";
+            this.dgvTenBan.ReadOnly = true;
             // 
             // dgvTrangThai
             // 
@@ -150,13 +131,6 @@
             this.dgvTrangThai.MinimumWidth = 6;
             this.dgvTrangThai.Name = "dgvTrangThai";
             this.dgvTrangThai.ReadOnly = true;
-            // 
-            // dgvHinhAnh
-            // 
-            this.dgvHinhAnh.HeaderText = "Hình ảnh";
-            this.dgvHinhAnh.MinimumWidth = 6;
-            this.dgvHinhAnh.Name = "dgvHinhAnh";
-            this.dgvHinhAnh.ReadOnly = true;
             // 
             // dgvSua
             // 
@@ -193,7 +167,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(996, 90);
+            this.btnTimKiem.Location = new System.Drawing.Point(996, 89);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnTimKiem.Size = new System.Drawing.Size(156, 40);
@@ -217,12 +191,12 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(582, 90);
+            this.txtTimKiem.Location = new System.Drawing.Point(582, 89);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtTimKiem.PlaceholderText = "Nhập tên nhân viên để tìm kiếm";
+            this.txtTimKiem.PlaceholderText = "Nhập mã bàn để tìm kiếm";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.Size = new System.Drawing.Size(407, 40);
             this.txtTimKiem.TabIndex = 19;
@@ -233,7 +207,7 @@
             this.lbDanhSachSanPham.BackColor = System.Drawing.Color.Transparent;
             this.lbDanhSachSanPham.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDanhSachSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lbDanhSachSanPham.Location = new System.Drawing.Point(35, 9);
+            this.lbDanhSachSanPham.Location = new System.Drawing.Point(35, 8);
             this.lbDanhSachSanPham.Name = "lbDanhSachSanPham";
             this.lbDanhSachSanPham.Size = new System.Drawing.Size(299, 54);
             this.lbDanhSachSanPham.TabIndex = 18;
@@ -247,7 +221,7 @@
             this.shapeLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.shapeLine.BorderThickness = 1;
             this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.shapeLine.Location = new System.Drawing.Point(-99, 142);
+            this.shapeLine.Location = new System.Drawing.Point(-99, 141);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
             this.shapeLine.Rotate = 0F;
@@ -267,16 +241,17 @@
             this.btnThem.ImageRotate = 0F;
             this.btnThem.ImageSize = new System.Drawing.Size(55, 55);
             this.btnThem.IndicateFocus = true;
-            this.btnThem.Location = new System.Drawing.Point(44, 75);
+            this.btnThem.Location = new System.Drawing.Point(44, 74);
             this.btnThem.Name = "btnThem";
             this.btnThem.PressedState.ImageSize = new System.Drawing.Size(55, 55);
             this.btnThem.Size = new System.Drawing.Size(55, 55);
             this.btnThem.TabIndex = 16;
+            this.btnThem.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmQLBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 733);
             this.Controls.Add(this.dgvDanhSachNhanVien);
             this.Controls.Add(this.btnTimKiem);
@@ -296,18 +271,15 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvDanhSachNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvVaiTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvHinhAnh;
-        private System.Windows.Forms.DataGridViewImageColumn dgvSua;
-        private System.Windows.Forms.DataGridViewImageColumn dgvXoa;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private System.Windows.Forms.Label lbDanhSachSanPham;
         private Guna.UI2.WinForms.Guna2Shapes shapeLine;
         private Guna.UI2.WinForms.Guna2ImageButton btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThai;
+        private System.Windows.Forms.DataGridViewImageColumn dgvSua;
+        private System.Windows.Forms.DataGridViewImageColumn dgvXoa;
     }
 }

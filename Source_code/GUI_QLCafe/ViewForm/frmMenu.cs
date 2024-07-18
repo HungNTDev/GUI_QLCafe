@@ -55,8 +55,8 @@ namespace GUI_QLCafe
                 btn.BorderRadius = 2;
                 btn.Text = productBUS.LoadMenu(productDTO).Rows[i][1].ToString() + Environment.NewLine + productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
                 btn.Font = new Font(btn.Font.FontFamily, 15);
-                //btn.Image = Image.FromFile(saveDirectory + menuBUS.LoadMenu(menuDTO).Rows[i][3].ToString());
-                btn.ImageSize = new Size(45, 45);
+                btn.Image = Image.FromFile(saveDirectory + productBUS.LoadMenu(productDTO).Rows[i][3].ToString());
+                btn.ImageSize = new Size(75, 75);
                 btn.ImageAlign = HorizontalAlignment.Left;
                 btn.TextAlign = HorizontalAlignment.Right;
                 btn.Tag = productBUS.LoadMenu(productDTO).Rows[i][0].ToString();

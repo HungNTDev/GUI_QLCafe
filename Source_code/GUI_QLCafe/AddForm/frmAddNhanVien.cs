@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace GUI_QLCafe
 {
@@ -20,9 +12,9 @@ namespace GUI_QLCafe
         }
 
         // phương thức này dùng để gọi Notfication khi thêm thành công
-        public void Nofication(string msg,frmNotification.enumType type)
+        public void Nofication(string msg, frmNotification.enumType type)
         {
-            frmNotification notification = new frmNotification();       
+            frmNotification notification = new frmNotification();
             frmNotification.showNotfication(msg, type);
         }
 

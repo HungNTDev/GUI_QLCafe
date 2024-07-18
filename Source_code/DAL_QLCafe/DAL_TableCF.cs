@@ -158,18 +158,14 @@ namespace DAL_QLCafe
             {
                 using (conn = new SqlConnection(_conn))
                 {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "TableList";
                     conn.Open();
-                    //SqlCommand cmd = new SqlCommand();
-                    //cmd.Connection = conn;
-                    //cmd.CommandType = CommandType.StoredProcedure ;
-                    //cmd.CommandText = "TableList";
-                    //DataTable dtListCF = new DataTable();
-                    //return dtListCF;
-                    string Query = "TableList";
-                    adt = new SqlDataAdapter(Query, _conn);
-                    dt = new DataTable();
-                    adt.Fill(dt);
-                    return dt;
+                    DataTable dtListCF = new DataTable();
+                    dtListCF.Load(cmd.ExecuteReader());
+                    return dtListCF;
                 }
             }
             finally
@@ -188,12 +184,21 @@ namespace DAL_QLCafe
             {
                 using (conn = new SqlConnection(_conn))
                 {
+                    //conn.Open();
+                    //string Query = "exec TableInfo @IdTable = '" + bill.IdTable + "'";
+                    //adt = new SqlDataAdapter(Query, _conn);
+                    //dt = new DataTable();
+                    //adt.Fill(dt);
+                    //return dt;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "TableInfo";
+                    cmd.Parameters.AddWithValue("IdTable", bill.idTable);
                     conn.Open();
-                    string Query = "exec TableInfo @IdTable = '" + bill.IdTable + "'";
-                    adt = new SqlDataAdapter(Query, _conn);
-                    dt = new DataTable();
-                    adt.Fill(dt);
-                    return dt;
+                    DataTable dtListCF = new DataTable();
+                    dtListCF.Load(cmd.ExecuteReader());
+                    return dtListCF;
                 }
             }
             finally

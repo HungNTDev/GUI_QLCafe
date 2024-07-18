@@ -31,5 +31,11 @@ namespace BUS_QLCafe
         {
             return dal.search(keyword, column);
         }
+
+        //Danh sach thuc pham
+        public DataTable LoadMenu(DTO_Product product)
+        {
+            return dal.LoadMenu(product);
+        }
     }
 }

@@ -152,5 +152,33 @@ namespace DAL_QLCafe
                 }
             }
         }
+
+        //Danh sách sản phẩm
+        public DataTable LoadMenu(DTO_Product product)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "ListMenu";
+                    cmd.Parameters.AddWithValue("@idPT", product.idPT);
+                    conn.Open();
+                    DataTable dtMenu = new DataTable();
+                    dtMenu.Load(cmd.ExecuteReader());
+                    return dtMenu;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
     }
 }

@@ -28,6 +28,8 @@ namespace GUI_QLCafe
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
             LoadGridView_SanPham();
+            //dgvDanhSachSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
     }
 }

@@ -147,17 +147,18 @@
             // 
             this.dgvDanhSachNhanVien.AllowUserToAddRows = false;
             this.dgvDanhSachNhanVien.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDanhSachNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -214,48 +215,58 @@
             // 
             // dgvEmail
             // 
+            this.dgvEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvEmail.DataPropertyName = "Email";
             this.dgvEmail.FillWeight = 51.13974F;
             this.dgvEmail.HeaderText = "Email";
-            this.dgvEmail.MinimumWidth = 6;
+            this.dgvEmail.MinimumWidth = 300;
             this.dgvEmail.Name = "dgvEmail";
             this.dgvEmail.ReadOnly = true;
+            this.dgvEmail.Width = 300;
             // 
             // dgvTenNhanVien
             // 
+            this.dgvTenNhanVien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvTenNhanVien.DataPropertyName = "FullName";
             this.dgvTenNhanVien.FillWeight = 116.545F;
             this.dgvTenNhanVien.HeaderText = "Tên nhân viên";
-            this.dgvTenNhanVien.MinimumWidth = 6;
+            this.dgvTenNhanVien.MinimumWidth = 200;
             this.dgvTenNhanVien.Name = "dgvTenNhanVien";
             this.dgvTenNhanVien.ReadOnly = true;
+            this.dgvTenNhanVien.Width = 200;
             // 
             // dgvVaiTro
             // 
+            this.dgvVaiTro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvVaiTro.DataPropertyName = "RoleStaff";
             this.dgvVaiTro.FillWeight = 89.62247F;
             this.dgvVaiTro.HeaderText = "Vai trò";
-            this.dgvVaiTro.MinimumWidth = 6;
+            this.dgvVaiTro.MinimumWidth = 100;
             this.dgvVaiTro.Name = "dgvVaiTro";
             this.dgvVaiTro.ReadOnly = true;
+            this.dgvVaiTro.Width = 125;
             // 
             // dgvTrangThai
             // 
+            this.dgvTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvTrangThai.DataPropertyName = "StatusStaff";
             this.dgvTrangThai.FillWeight = 130.5635F;
             this.dgvTrangThai.HeaderText = "Trạng thái";
-            this.dgvTrangThai.MinimumWidth = 6;
+            this.dgvTrangThai.MinimumWidth = 150;
             this.dgvTrangThai.Name = "dgvTrangThai";
             this.dgvTrangThai.ReadOnly = true;
+            this.dgvTrangThai.Width = 150;
             // 
             // dgvHinhAnh
             // 
+            this.dgvHinhAnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvHinhAnh.DataPropertyName = "ImageStaff";
             this.dgvHinhAnh.FillWeight = 131.2615F;
             this.dgvHinhAnh.HeaderText = "Hình ảnh";
-            this.dgvHinhAnh.MinimumWidth = 6;
+            this.dgvHinhAnh.MinimumWidth = 150;
             this.dgvHinhAnh.Name = "dgvHinhAnh";
             this.dgvHinhAnh.ReadOnly = true;
+            this.dgvHinhAnh.Width = 150;
             // 
             // dgvSua
             // 
@@ -263,10 +274,10 @@
             this.dgvSua.FillWeight = 50F;
             this.dgvSua.HeaderText = "";
             this.dgvSua.Image = ((System.Drawing.Image)(resources.GetObject("dgvSua.Image")));
-            this.dgvSua.MinimumWidth = 50;
+            this.dgvSua.MinimumWidth = 70;
             this.dgvSua.Name = "dgvSua";
             this.dgvSua.ReadOnly = true;
-            this.dgvSua.Width = 50;
+            this.dgvSua.Width = 70;
             // 
             // dgvXoa
             // 
@@ -274,10 +285,10 @@
             this.dgvXoa.FillWeight = 50F;
             this.dgvXoa.HeaderText = "";
             this.dgvXoa.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoa.Image")));
-            this.dgvXoa.MinimumWidth = 50;
+            this.dgvXoa.MinimumWidth = 70;
             this.dgvXoa.Name = "dgvXoa";
             this.dgvXoa.ReadOnly = true;
-            this.dgvXoa.Width = 50;
+            this.dgvXoa.Width = 70;
             // 
             // frmQLNhanVien
             // 

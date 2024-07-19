@@ -16,19 +16,14 @@ namespace GUI_QLCafe
             frmAddNhanVien frmAddNhanVien = new frmAddNhanVien();
             frmAddNhanVien.ShowDialog();
         }
-
-        private void frmQLNhanVien_Load(object sender, EventArgs e)
-        {
-            LoadGridView_NhanVien();
-        }
         BUS_Staff busNhanVien = new BUS_Staff();
         private void LoadGridView_NhanVien()
         {
             dgvDanhSachNhanVien.DataSource = busNhanVien.get();
         }
-        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
-
+            LoadGridView_NhanVien();
         }
     }
 }

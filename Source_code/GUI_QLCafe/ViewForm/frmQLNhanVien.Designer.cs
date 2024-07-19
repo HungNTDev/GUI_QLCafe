@@ -92,7 +92,7 @@
             this.lbDanhSachSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.lbDanhSachSanPham.Location = new System.Drawing.Point(35, 9);
             this.lbDanhSachSanPham.Name = "lbDanhSachSanPham";
-            this.lbDanhSachSanPham.Size = new System.Drawing.Size(412, 54);
+            this.lbDanhSachSanPham.Size = new System.Drawing.Size(378, 50);
             this.lbDanhSachSanPham.TabIndex = 12;
             this.lbDanhSachSanPham.Text = "Danh sách nhân viên";
             // 
@@ -294,6 +294,7 @@
             this.Name = "frmQLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLNhanVien";
+            this.Load += new System.EventHandler(this.frmQLNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -118,7 +118,7 @@ namespace GUI_QLCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            if(role == "1")
+            if (role == "1")
                 thongkeTransition.Start();
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Thông báo");
@@ -294,5 +294,9 @@ namespace GUI_QLCafe
             }
         }
 
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

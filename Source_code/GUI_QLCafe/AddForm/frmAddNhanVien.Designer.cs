@@ -77,7 +77,7 @@
             this.lbText0.ForeColor = System.Drawing.Color.White;
             this.lbText0.Location = new System.Drawing.Point(101, 12);
             this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(282, 38);
+            this.lbText0.Size = new System.Drawing.Size(244, 32);
             this.lbText0.TabIndex = 10;
             this.lbText0.Text = "Thông tin nhân viên";
             // 
@@ -128,7 +128,7 @@
             this.lbEmailNhanVien.ForeColor = System.Drawing.Color.Black;
             this.lbEmailNhanVien.Location = new System.Drawing.Point(39, 84);
             this.lbEmailNhanVien.Name = "lbEmailNhanVien";
-            this.lbEmailNhanVien.Size = new System.Drawing.Size(58, 25);
+            this.lbEmailNhanVien.Size = new System.Drawing.Size(48, 21);
             this.lbEmailNhanVien.TabIndex = 2;
             this.lbEmailNhanVien.Text = "Email";
             // 
@@ -140,7 +140,7 @@
             this.lbTenNhanVien.ForeColor = System.Drawing.Color.Black;
             this.lbTenNhanVien.Location = new System.Drawing.Point(39, 160);
             this.lbTenNhanVien.Name = "lbTenNhanVien";
-            this.lbTenNhanVien.Size = new System.Drawing.Size(129, 25);
+            this.lbTenNhanVien.Size = new System.Drawing.Size(105, 21);
             this.lbTenNhanVien.TabIndex = 3;
             this.lbTenNhanVien.Text = "Tên nhân viên";
             // 
@@ -152,7 +152,7 @@
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
             this.rdoQuanTri.Location = new System.Drawing.Point(8, 47);
             this.rdoQuanTri.Name = "rdoQuanTri";
-            this.rdoQuanTri.Size = new System.Drawing.Size(85, 25);
+            this.rdoQuanTri.Size = new System.Drawing.Size(78, 23);
             this.rdoQuanTri.TabIndex = 2;
             this.rdoQuanTri.TabStop = true;
             this.rdoQuanTri.Text = "Quản trị";
@@ -166,7 +166,7 @@
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
             this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
             this.rdoNhanVien.Name = "rdoNhanVien";
-            this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
+            this.rdoNhanVien.Size = new System.Drawing.Size(89, 23);
             this.rdoNhanVien.TabIndex = 2;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân viên";
@@ -180,7 +180,7 @@
             this.rdoHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoHoatDong.Location = new System.Drawing.Point(8, 47);
             this.rdoHoatDong.Name = "rdoHoatDong";
-            this.rdoHoatDong.Size = new System.Drawing.Size(101, 25);
+            this.rdoHoatDong.Size = new System.Drawing.Size(93, 23);
             this.rdoHoatDong.TabIndex = 2;
             this.rdoHoatDong.TabStop = true;
             this.rdoHoatDong.Text = "Hoạt động";
@@ -194,7 +194,7 @@
             this.rdoNgungHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoNgungHoatDong.Location = new System.Drawing.Point(8, 85);
             this.rdoNgungHoatDong.Name = "rdoNgungHoatDong";
-            this.rdoNgungHoatDong.Size = new System.Drawing.Size(151, 25);
+            this.rdoNgungHoatDong.Size = new System.Drawing.Size(137, 23);
             this.rdoNgungHoatDong.TabIndex = 2;
             this.rdoNgungHoatDong.TabStop = true;
             this.rdoNgungHoatDong.Text = "Ngừng hoạt động";
@@ -309,7 +309,6 @@
             this.btnMoHinh.Size = new System.Drawing.Size(173, 35);
             this.btnMoHinh.TabIndex = 11;
             this.btnMoHinh.Text = "Mở hình";
-            this.btnMoHinh.Click += new System.EventHandler(this.btnMoHinh_Click);
             // 
             // txtDuongDan
             // 
@@ -377,7 +376,7 @@
             // 
             // frmAddNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(714, 508);
@@ -397,6 +396,7 @@
             this.Name = "frmAddNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.frmAddNhanVien_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

@@ -85,7 +85,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(44, 152);
+            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(44, 103);
             this.dgvDanhSachNhanVien.Name = "dgvDanhSachNhanVien";
             this.dgvDanhSachNhanVien.ReadOnly = true;
             this.dgvDanhSachNhanVien.RowHeadersVisible = false;
@@ -192,7 +192,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(997, 78);
+            this.btnTimKiem.Location = new System.Drawing.Point(997, 29);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnTimKiem.Size = new System.Drawing.Size(156, 40);
@@ -216,7 +216,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(583, 78);
+            this.txtTimKiem.Location = new System.Drawing.Point(583, 29);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
@@ -232,7 +232,7 @@
             this.lbDanhSachSanPham.BackColor = System.Drawing.Color.Transparent;
             this.lbDanhSachSanPham.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDanhSachSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lbDanhSachSanPham.Location = new System.Drawing.Point(33, 66);
+            this.lbDanhSachSanPham.Location = new System.Drawing.Point(33, 17);
             this.lbDanhSachSanPham.Name = "lbDanhSachSanPham";
             this.lbDanhSachSanPham.Size = new System.Drawing.Size(449, 62);
             this.lbDanhSachSanPham.TabIndex = 18;
@@ -246,7 +246,7 @@
             this.shapeLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.shapeLine.BorderThickness = 1;
             this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.shapeLine.Location = new System.Drawing.Point(-98, 119);
+            this.shapeLine.Location = new System.Drawing.Point(-98, 70);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
             this.shapeLine.Rotate = 0F;

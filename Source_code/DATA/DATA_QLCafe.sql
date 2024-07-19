@@ -176,7 +176,7 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 	('STO1', N'Sinh tố dâu', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
 	('STO2', N'Sinh tố chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
 	('STO3', N'Sinh tố xoài', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
-	('STO4', N'Sinh tố trái cây nhiệt đới', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
+	('STO4', N'Sinh tố nhiệt đới', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
 	('STO5', N'Sinh tố cà rốt', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO')
 
 /*Nước ép*/

@@ -191,7 +191,7 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
 as
 begin
-select * from staff where email = @Email and PasswordStaff = @password
+	select * from staff where email = @Email and PasswordStaff = @password and StatusStaff = 1;
 end
 go
 
@@ -259,7 +259,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 create proc GetStaff
 as
 begin
-	select Email, FullName, RoleStaff, StatusStaff, ImageStaff from staff where StatusStaff = 1;
+	select Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = 1;
 end
 
 -- Thêm nhân viên
@@ -268,9 +268,24 @@ create proc InsertStaff
 @Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
 as
 begin
-	
+	DECLARE @IdStaff VARCHAR(20);
+	DECLARE @stt INT;
+	SELECT @stt = ISNULL(MAX(ID),0) + 1 FROM Staff
+	SELECT @IdStaff = 'NV' + RIGHT(CAST (@stt AS VARCHAR(4)), 4)
+
+	DECLARE @PASSWORD nvarchar(50)
+
+	if (@Role = 1)
+		begin
+			Set @PASSWORD = '196145663720616991136127245362061123820032'
+		end
+	else
+		begin
+			Set @PASSWORD = '196145663720616991136127245362061123820032'
+		end
+
 	Insert into Staff (IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff) 
-	values (@Id, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
+	values (@IdStaff, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
 
 end
 

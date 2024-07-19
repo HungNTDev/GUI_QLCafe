@@ -66,18 +66,36 @@ namespace GUI_QLCafe
             }
             else
             {
+                // Đường dẫn thư mục gốc của dự án
+                string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
+
+                // Tạo thư mục nếu chưa có
+                if (!Directory.Exists(saveDirectory))
+                {
+                    Directory.CreateDirectory(saveDirectory);
+                }
+
+
+                // Đường dẫn ảnh
+                string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                string fileName = Path.GetFileName(fileAddress);
+                string fileSavePath = Path.Combine(saveDirectory, fileName);
+
                 try
                 {
+                    // Copy the image to the specified directory
+                    File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
 
+                    // Update txtHinh to point to the new location
+                    txtDuongDan.Text = fileSavePath;
 
                     DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
                         gia, fileSavePath, trangthai, guna2TextBox1.Text);
 
                     if (busproduct.insert(product))
                     {
-                        File.Copy(fileAddress, fileSavePath, true);
                         this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        this.Close();
                     }
                     else
                     {
@@ -86,10 +104,12 @@ namespace GUI_QLCafe
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex.Message);
+                    messageDialog.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
                 }
+
             }
         }
+
 
         private void btnMoHinh_Click(object sender, EventArgs e)
         {
@@ -101,20 +121,15 @@ namespace GUI_QLCafe
                 dlgopen.Title = "Chọn ảnh minh họa cho sản phẩm";
                 if (dlgopen.ShowDialog() == DialogResult.OK)
                 {
-                    fileAddress = dlgopen.FileName;
-                    fileName = Path.GetFileName(dlgopen.FileName);
+                    fileAddress = dlgopen.FileName; // Lấy đường dẫn ảnh
+                    picSanPham.Image = Image.FromFile(fileAddress);
+                    fileName = Path.GetFileName(dlgopen.FileName); // Tên ảnh
+
                     string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                    fileSavePath = Path.Combine(saveDirectory, "img", fileName);
 
-                    // Sao chép tệp tin vào thư mục đích trước khi sử dụng trong PictureBox
-                    File.Copy(fileAddress, fileSavePath, true);
-
-                    // Sử dụng FileStream để mở ảnh từ tệp tin đích
-                    using (FileStream fs = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
-                    {
-                        picSanPham.Image = Image.FromStream(fs);
-
-                    }
+                    fileSavePath = saveDirectory + "\\img\\" + fileName; //combine with file name
+                    /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
+                    txtDuongDan.Text = fileAddress;
                 }
 
 

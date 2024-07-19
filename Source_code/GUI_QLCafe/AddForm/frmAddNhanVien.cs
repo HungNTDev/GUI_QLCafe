@@ -1,10 +1,10 @@
-﻿using System;
+﻿using BUS_QLCafe;
+using DTO_QLCafe;
+using System;
+using System.Drawing;
 using System.IO;
 using System.Net.Mail;
 using System.Windows.Forms;
-using System.Drawing;
-using BUS_QLCafe;
-using DTO_QLCafe;
 
 namespace GUI_QLCafe
 {
@@ -92,8 +92,8 @@ namespace GUI_QLCafe
             else
             {
                 // Đường dẫn thư mục gốc của dự án
-                    string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-                    string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
+                string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
 
                 // Tạo thư mục nếu chưa có
                 if (!Directory.Exists(saveDirectory))
@@ -115,7 +115,7 @@ namespace GUI_QLCafe
                     // Update txtHinh to point to the new location
                     txtDuongDan.Text = fileSavePath;
 
-                    DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text,txtEmail.Text, role, status);
+                    DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
 
                     if (busNhanVien.insert(staff))
                     {
@@ -126,11 +126,11 @@ namespace GUI_QLCafe
                         this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
                     }
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     messageDialog.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
                 }
-                
+
             }
 
         }
@@ -154,6 +154,11 @@ namespace GUI_QLCafe
                 /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
                 txtDuongDan.Text = fileAddress;
             }
+        }
+
+        private void frmAddNhanVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -259,7 +259,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 create proc GetStaff
 as
 begin
-	select Email, FullName, RoleStaff, StatusStaff, ImageStaff from staff
+	select Email, FullName, RoleStaff, StatusStaff, ImageStaff from staff where StatusStaff = 1;
 end
 
 -- Thêm nhân viên
@@ -283,7 +283,7 @@ begin
 
 	Update Staff 
 	Set 
-	IdStaff = @Id, FullName = @FullName, 
+	FullName = @FullName, 
 	ImageStaff = @ImageStaff, 
 	PasswordStaff = @Password, Email = @Email, 
 	RoleStaff = @Role, StatusStaff = @Status

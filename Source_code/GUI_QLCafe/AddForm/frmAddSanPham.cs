@@ -117,7 +117,7 @@ namespace GUI_QLCafe
 
                 if (dlgopen.ShowDialog() == DialogResult.OK)
                 {
-                    picSanPham.Image = Image.FromFile(dlgopen.FileName);
+                    //picSanPham.Image = Image.FromFile(dlgopen.FileName);
 
                 }
             }

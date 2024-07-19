@@ -39,7 +39,7 @@ namespace GUI_QLCafe
                 btn.FillColor = Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
                 btn.ForeColor = Color.White;
                 btn.Font = new Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btn.HoverState.FillColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+                btn.HoverState.FillColor = Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
                 btn.HoverState.ForeColor = Color.White;
                 btn.HoverState.BorderColor = Color.Transparent;
                 flpTable.AutoScroll = true;
@@ -54,7 +54,7 @@ namespace GUI_QLCafe
                 {
                     btn.BorderColor = Color.Gray;
                     btn.BackColor = Color.WhiteSmoke;
-                    btn.ForeColor = Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167))))); 
+                    btn.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126))))); 
                 }
                 flpTable.Controls.Add(btn);
             }

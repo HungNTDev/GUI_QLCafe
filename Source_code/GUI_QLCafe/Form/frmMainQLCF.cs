@@ -274,12 +274,12 @@ namespace GUI_QLCafe
 
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
-            //// Hiển thị ngày trên lbNgay
-            //lbNgay.Text = DateTime.Now.ToShortDateString();
-            //// Hiển thị giờ trên lbGio
-            //lbGio.Text = DateTime.Now.ToLongTimeString();
+            // Hiển thị ngày trên lbNgay
+            lbNgay.Text = DateTime.Now.ToShortDateString();
+            // Hiển thị giờ trên lbGio
+            lbGio.Text = DateTime.Now.ToLongTimeString();
 
-            //timer_ThoiGian.Start();
+            timer_ThoiGian.Start();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -294,5 +294,9 @@ namespace GUI_QLCafe
             }
         }
 
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

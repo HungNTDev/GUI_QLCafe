@@ -92,6 +92,7 @@
             this.picSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picSanPham.Name = "picSanPham";
             this.picSanPham.Size = new System.Drawing.Size(211, 220);
+            this.picSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSanPham.TabIndex = 23;
             this.picSanPham.TabStop = false;
             // 

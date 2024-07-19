@@ -1,6 +1,7 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -98,28 +99,25 @@ namespace GUI_QLCafe
                 dlgopen.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
                 dlgopen.FilterIndex = 2;
                 dlgopen.Title = "Chọn ảnh minh họa cho sản phẩm";
-                //if (dlgopen.ShowDialog() == DialogResult.OK)
-                //{
-                //    fileAddress = dlgopen.FileName;
-                //    fileName = Path.GetFileName(dlgopen.FileName);
-                //    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                //    fileSavePath = Path.Combine(saveDirectory, "img", fileName);
-
-                //    // Sao chép tệp tin vào thư mục đích trước khi sử dụng trong PictureBox
-                //    File.Copy(fileAddress, fileSavePath, true);
-
-                //    // Sử dụng FileStream để mở ảnh từ tệp tin đích
-                //    using (FileStream fs = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
-                //    {
-                //        picSanPham.Image = Image.FromStream(fs);
-                //    }
-                //}
-
                 if (dlgopen.ShowDialog() == DialogResult.OK)
                 {
-                    picSanPham.Image = Image.FromFile(dlgopen.FileName);
+                    fileAddress = dlgopen.FileName;
+                    fileName = Path.GetFileName(dlgopen.FileName);
+                    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    fileSavePath = Path.Combine(saveDirectory, "img", fileName);
 
+                    // Sao chép tệp tin vào thư mục đích trước khi sử dụng trong PictureBox
+                    File.Copy(fileAddress, fileSavePath, true);
+
+                    // Sử dụng FileStream để mở ảnh từ tệp tin đích
+                    using (FileStream fs = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
+                    {
+                        picSanPham.Image = Image.FromStream(fs);
+
+                    }
                 }
+
+
             }
             catch (Exception ex)
             {

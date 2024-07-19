@@ -84,7 +84,7 @@ namespace GUI_QLCafe
             }
             else if (txtDuongDan.Text.Trim().Length == 0) // phải nhập hình
             {
-                MessageBox.Show("Vui lòng chọn hình", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageDialog.Show("Vui lòng chọn hình", "Thông Báo");
                 return;
             }
 

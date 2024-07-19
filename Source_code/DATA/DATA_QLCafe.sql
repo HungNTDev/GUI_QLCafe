@@ -152,39 +152,40 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('STO',N'Sinh tố',1),
 ('JUC',N'Nước ép',1)
 
+delete from Product
 
 --Thêm sản phẩm--
 /*Trà*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('TEA1', N'Hồng trà đặc cam', 65000, 'picAdd', 1, 'TEA'),
-	('TEA2', N'Trà lại đặc thơm', 50000, 'picAdd', 1, 'TEA'),
-	('TEA3', N'Hồng trà chanh', 45000, 'picAdd', 1, 'TEA'),
-	('TEA4', N'Hồng trà sữa', 50000, 'picAdd', 1, 'TEA'),
-	('TEA5', N'Trà sữa Truyền Thuyết', 50000, 'picAdd', 1, 'TEA')
+	('TEA1', N'Hồng trà đặc cam', 65000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
+	('TEA2', N'Trà lại đặc thơm', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
+	('TEA3', N'Hồng trà chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
+	('TEA4', N'Hồng trà sữa', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
+	('TEA5', N'Trà sữa Truyền Thống', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA')
 
 /*Cà phê*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('CFE1', N'Cà phê Cappuchino', 35000, 'picAdd', 1, 'CFE'),
-	('CFE2', N'Cà phê Expresso', 30000, 'picAdd', 1, 'CFE'),
-	('CFE3', N'Cà phê kem tươi', 40000, 'picAdd', 1, 'CFE'),
-	('CFE4', N'Cà phê Vanilla', 40000, 'picAdd', 1, 'CFE'),
-	('CFE5', N'Cà phê Caramel ', 40000, 'picAdd', 1, 'CFE')
+	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
+	('CFE2', N'Cà phê Expresso', 30000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
+	('CFE3', N'Cà phê kem tươi', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
+	('CFE4', N'Cà phê Vanilla', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
+	('CFE5', N'Cà phê Caramel ', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE')
 
 /*Sinh tố*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('STO1', N'Sinh tố dâu', 55000, 'picAdd', 1, 'STO'),
-	('STO2', N'Sinh tố chanh', 45000, 'picAdd', 1, 'STO'),
-	('STO3', N'Sinh tố xoài', 50000, 'picAdd', 1, 'STO'),
-	('STO4', N'Sinh tố trái cây nhiệt đới', 55000, 'picAdd', 1, 'STO'),
-	('STO5', N'Sinh tố cà rốt', 40000, 'picAdd', 1, 'STO')
+	('STO1', N'Sinh tố dâu', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
+	('STO2', N'Sinh tố chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
+	('STO3', N'Sinh tố xoài', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
+	('STO4', N'Sinh tố trái cây nhiệt đới', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
+	('STO5', N'Sinh tố cà rốt', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO')
 
 /*Nước ép*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('JUC1', N'Dâu ép', 55000, 'picAdd', 1, 'JUC'),
-	('JUC2', N'Táo ép', 40000, 'picAdd', 1, 'JUC'),
-	('JUC3', N'Táo và dâu ép i', 50000, 'picAdd', 1, 'JUC'),
-	('JUC4', N'Thơm ép', 55000, 'picAdd', 1, 'JUC'),
-	('JUC5', N'Bưởi ép', 40000, 'picAdd', 1, 'JUC')
+	('JUC1', N'Dâu ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
+	('JUC2', N'Táo ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
+	('JUC3', N'Táo và dâu ép i', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
+	('JUC4', N'Thơm ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
+	('JUC5', N'Bưởi ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC')
 
 --Đăng nhập
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))

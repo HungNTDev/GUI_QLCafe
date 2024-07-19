@@ -40,10 +40,8 @@ namespace GUI_QLCafe
 
         public void PhanQuyen()
         {
-
             lblEmail.Text = email;
-            btnQLNhanVien.Enabled = false;
-            btnThongKe.Enabled = false;
+
             if (session == 1)
             {
                 if (role == "1")
@@ -63,7 +61,7 @@ namespace GUI_QLCafe
                 flpQuanLy.Height += 20;
 
                 // Nếu chiều cao đạt 300
-                if (flpQuanLy.Height >= 372)
+                if (flpQuanLy.Height >= 310)
                 {
                     quanlyTransition.Stop(); // Dừng timer
                     quanlyExpand = true; // Mở rộng
@@ -120,7 +118,10 @@ namespace GUI_QLCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            thongkeTransition.Start();
+            if(role == "1")
+                thongkeTransition.Start();
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Thông báo");
         }
 
         bool huongdanExpand = false;
@@ -239,7 +240,10 @@ namespace GUI_QLCafe
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLNhanVien());
+            if (role == "1")
+                AddControls(new frmQLNhanVien());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Cảnh báo");
         }
 
         private void btnQLSanPham_Click(object sender, EventArgs e)
@@ -258,6 +262,16 @@ namespace GUI_QLCafe
             frmDoiMatKhau.ShowDialog();
         }
 
+        private void btnQLHoaDon_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmQLHoaDon());
+        }
+
+        private void btnQLBan_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmQLBan());
+        }
+
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
             // Hiển thị ngày trên lbNgay
@@ -268,17 +282,17 @@ namespace GUI_QLCafe
             timer_ThoiGian.Start();
         }
 
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            session = 0;
-            frmDangNhap dangNhap = new frmDangNhap();
-            dangNhap.ShowDialog();
-            this.Close();
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dl == DialogResult.Yes)
+            {
+                session = 0;
+                this.Hide();
+                frmDangNhap dangNhap = new frmDangNhap();
+                dangNhap.Show();
+            }
         }
+
     }
 }

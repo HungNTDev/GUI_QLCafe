@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbText0 = new System.Windows.Forms.Label();
             this.paneText = new Guna.UI2.WinForms.Guna2Panel();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -44,13 +44,13 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.tc_Menu = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tp_CaPhe = new System.Windows.Forms.TabPage();
+            this.CFE = new System.Windows.Forms.TabPage();
             this.flp_CaPhe = new System.Windows.Forms.FlowLayoutPanel();
-            this.tp_Tra = new System.Windows.Forms.TabPage();
+            this.TEA = new System.Windows.Forms.TabPage();
             this.flp_Tra = new System.Windows.Forms.FlowLayoutPanel();
-            this.tp_SinhTo = new System.Windows.Forms.TabPage();
+            this.STO = new System.Windows.Forms.TabPage();
             this.flp_SinhTo = new System.Windows.Forms.FlowLayoutPanel();
-            this.tp_NuocEp = new System.Windows.Forms.TabPage();
+            this.JUC = new System.Windows.Forms.TabPage();
             this.flp_NuocEp = new System.Windows.Forms.FlowLayoutPanel();
             this.paneText.SuspendLayout();
             this.panelFooter.SuspendLayout();
@@ -59,10 +59,10 @@
             this.panelHeader.SuspendLayout();
             this.panelBody.SuspendLayout();
             this.tc_Menu.SuspendLayout();
-            this.tp_CaPhe.SuspendLayout();
-            this.tp_Tra.SuspendLayout();
-            this.tp_SinhTo.SuspendLayout();
-            this.tp_NuocEp.SuspendLayout();
+            this.CFE.SuspendLayout();
+            this.TEA.SuspendLayout();
+            this.STO.SuspendLayout();
+            this.JUC.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbText0
@@ -192,26 +192,26 @@
             // 
             // ListOrder_dgv
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.ListOrder_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListOrder_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.ListOrder_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ListOrder_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ListOrder_dgv.ColumnHeadersHeight = 4;
             this.ListOrder_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListOrder_dgv.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListOrder_dgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.ListOrder_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListOrder_dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ListOrder_dgv.Location = new System.Drawing.Point(0, 66);
@@ -267,10 +267,10 @@
             // 
             // tc_Menu
             // 
-            this.tc_Menu.Controls.Add(this.tp_CaPhe);
-            this.tc_Menu.Controls.Add(this.tp_Tra);
-            this.tc_Menu.Controls.Add(this.tp_SinhTo);
-            this.tc_Menu.Controls.Add(this.tp_NuocEp);
+            this.tc_Menu.Controls.Add(this.CFE);
+            this.tc_Menu.Controls.Add(this.TEA);
+            this.tc_Menu.Controls.Add(this.STO);
+            this.tc_Menu.Controls.Add(this.JUC);
             this.tc_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tc_Menu.ItemSize = new System.Drawing.Size(180, 40);
             this.tc_Menu.Location = new System.Drawing.Point(0, 0);
@@ -296,17 +296,18 @@
             this.tc_Menu.TabIndex = 0;
             this.tc_Menu.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.tc_Menu.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            this.tc_Menu.Click += new System.EventHandler(this.tc_Menu_Click);
             // 
-            // tp_CaPhe
+            // CFE
             // 
-            this.tp_CaPhe.BackColor = System.Drawing.SystemColors.Control;
-            this.tp_CaPhe.Controls.Add(this.flp_CaPhe);
-            this.tp_CaPhe.Location = new System.Drawing.Point(4, 44);
-            this.tp_CaPhe.Name = "tp_CaPhe";
-            this.tp_CaPhe.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_CaPhe.Size = new System.Drawing.Size(879, 709);
-            this.tp_CaPhe.TabIndex = 0;
-            this.tp_CaPhe.Text = "CÀ PHÊ";
+            this.CFE.BackColor = System.Drawing.SystemColors.Control;
+            this.CFE.Controls.Add(this.flp_CaPhe);
+            this.CFE.Location = new System.Drawing.Point(4, 44);
+            this.CFE.Name = "CFE";
+            this.CFE.Padding = new System.Windows.Forms.Padding(3);
+            this.CFE.Size = new System.Drawing.Size(879, 709);
+            this.CFE.TabIndex = 0;
+            this.CFE.Text = "CÀ PHÊ";
             // 
             // flp_CaPhe
             // 
@@ -317,16 +318,16 @@
             this.flp_CaPhe.Size = new System.Drawing.Size(873, 703);
             this.flp_CaPhe.TabIndex = 1;
             // 
-            // tp_Tra
+            // TEA
             // 
-            this.tp_Tra.BackColor = System.Drawing.SystemColors.Control;
-            this.tp_Tra.Controls.Add(this.flp_Tra);
-            this.tp_Tra.Location = new System.Drawing.Point(4, 44);
-            this.tp_Tra.Name = "tp_Tra";
-            this.tp_Tra.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Tra.Size = new System.Drawing.Size(879, 709);
-            this.tp_Tra.TabIndex = 1;
-            this.tp_Tra.Text = "TRÀ";
+            this.TEA.BackColor = System.Drawing.SystemColors.Control;
+            this.TEA.Controls.Add(this.flp_Tra);
+            this.TEA.Location = new System.Drawing.Point(4, 44);
+            this.TEA.Name = "TEA";
+            this.TEA.Padding = new System.Windows.Forms.Padding(3);
+            this.TEA.Size = new System.Drawing.Size(879, 709);
+            this.TEA.TabIndex = 1;
+            this.TEA.Text = "TRÀ";
             // 
             // flp_Tra
             // 
@@ -337,16 +338,16 @@
             this.flp_Tra.Size = new System.Drawing.Size(873, 703);
             this.flp_Tra.TabIndex = 0;
             // 
-            // tp_SinhTo
+            // STO
             // 
-            this.tp_SinhTo.BackColor = System.Drawing.SystemColors.Control;
-            this.tp_SinhTo.Controls.Add(this.flp_SinhTo);
-            this.tp_SinhTo.Location = new System.Drawing.Point(4, 44);
-            this.tp_SinhTo.Name = "tp_SinhTo";
-            this.tp_SinhTo.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_SinhTo.Size = new System.Drawing.Size(879, 709);
-            this.tp_SinhTo.TabIndex = 2;
-            this.tp_SinhTo.Text = "SINH TỐ";
+            this.STO.BackColor = System.Drawing.SystemColors.Control;
+            this.STO.Controls.Add(this.flp_SinhTo);
+            this.STO.Location = new System.Drawing.Point(4, 44);
+            this.STO.Name = "STO";
+            this.STO.Padding = new System.Windows.Forms.Padding(3);
+            this.STO.Size = new System.Drawing.Size(879, 709);
+            this.STO.TabIndex = 2;
+            this.STO.Text = "SINH TỐ";
             // 
             // flp_SinhTo
             // 
@@ -357,17 +358,17 @@
             this.flp_SinhTo.Size = new System.Drawing.Size(873, 703);
             this.flp_SinhTo.TabIndex = 0;
             // 
-            // tp_NuocEp
+            // JUC
             // 
-            this.tp_NuocEp.BackColor = System.Drawing.SystemColors.Control;
-            this.tp_NuocEp.Controls.Add(this.flp_NuocEp);
-            this.tp_NuocEp.Location = new System.Drawing.Point(4, 44);
-            this.tp_NuocEp.Name = "tp_NuocEp";
-            this.tp_NuocEp.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_NuocEp.Size = new System.Drawing.Size(879, 709);
-            this.tp_NuocEp.TabIndex = 3;
-            this.tp_NuocEp.Text = "NƯỚC ÉP";
-            this.tp_NuocEp.Click += new System.EventHandler(this.tp_NuocEp_Click);
+            this.JUC.BackColor = System.Drawing.SystemColors.Control;
+            this.JUC.Controls.Add(this.flp_NuocEp);
+            this.JUC.Location = new System.Drawing.Point(4, 44);
+            this.JUC.Name = "JUC";
+            this.JUC.Padding = new System.Windows.Forms.Padding(3);
+            this.JUC.Size = new System.Drawing.Size(879, 709);
+            this.JUC.TabIndex = 3;
+            this.JUC.Text = "NƯỚC ÉP";
+            this.JUC.Click += new System.EventHandler(this.tp_NuocEp_Click);
             // 
             // flp_NuocEp
             // 
@@ -401,10 +402,10 @@
             this.panelHeader.PerformLayout();
             this.panelBody.ResumeLayout(false);
             this.tc_Menu.ResumeLayout(false);
-            this.tp_CaPhe.ResumeLayout(false);
-            this.tp_Tra.ResumeLayout(false);
-            this.tp_SinhTo.ResumeLayout(false);
-            this.tp_NuocEp.ResumeLayout(false);
+            this.CFE.ResumeLayout(false);
+            this.TEA.ResumeLayout(false);
+            this.STO.ResumeLayout(false);
+            this.JUC.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -421,10 +422,10 @@
         private Guna.UI2.WinForms.Guna2DataGridView ListOrder_dgv;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private Guna.UI2.WinForms.Guna2TabControl tc_Menu;
-        private System.Windows.Forms.TabPage tp_CaPhe;
-        private System.Windows.Forms.TabPage tp_Tra;
-        private System.Windows.Forms.TabPage tp_SinhTo;
-        private System.Windows.Forms.TabPage tp_NuocEp;
+        private System.Windows.Forms.TabPage CFE;
+        private System.Windows.Forms.TabPage TEA;
+        private System.Windows.Forms.TabPage STO;
+        private System.Windows.Forms.TabPage JUC;
         private System.Windows.Forms.FlowLayoutPanel flp_CaPhe;
         private System.Windows.Forms.FlowLayoutPanel flp_Tra;
         private System.Windows.Forms.FlowLayoutPanel flp_SinhTo;

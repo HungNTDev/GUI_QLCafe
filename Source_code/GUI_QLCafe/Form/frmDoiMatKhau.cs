@@ -109,7 +109,7 @@ namespace GUI_QLCafe
             {
                 score++;
             }
-            if (System.Text.RegularExpressions.Regex.IsMatch(password, @"[\W_]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(password, @"[@]"))
             {
                 score++;
             }
@@ -155,9 +155,6 @@ namespace GUI_QLCafe
             }
         }
 
-        private void lbPasswordStrength_Click(object sender, System.EventArgs e)
-        {
 
-        }
     }
 }

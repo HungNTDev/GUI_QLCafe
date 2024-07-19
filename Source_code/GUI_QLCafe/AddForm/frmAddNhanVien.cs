@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace GUI_QLCafe
 {
@@ -19,11 +11,13 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        //public void Nofication(string msg)
-        //{
-        //    frmNotification notification = new frmNotification();       
-        //    frmNotification.showNotfication(msg);
-        //}
+        // phương thức này dùng để gọi Notfication khi thêm thành công
+        public void Nofication(string msg, frmNotification.enumType type)
+        {
+            frmNotification notification = new frmNotification();
+            frmNotification.showNotfication(msg, type);
+        }
+
         public bool IsValid(string emailaddress) //kiem tra xem email co hop le khong
         {
             try
@@ -69,6 +63,19 @@ namespace GUI_QLCafe
             {
                 messageDialog.Show("Vui lòng chọn vai trò!", "Thông báo");
             }
+
+            // Nếu thêm nhân viên thành công thì hiện cái Nofication lên không thì ngược lại
+            //if()
+            //{
+            //    this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+            //}
+            //else
+            //{
+            //    this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+            //}
+
         }
+
+
     }
 }

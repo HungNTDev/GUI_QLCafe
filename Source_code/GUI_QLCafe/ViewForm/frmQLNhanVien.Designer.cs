@@ -41,7 +41,6 @@
             this.dgvDanhSachNhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgvEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,7 +92,7 @@
             this.lbDanhSachSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.lbDanhSachSanPham.Location = new System.Drawing.Point(35, 9);
             this.lbDanhSachSanPham.Name = "lbDanhSachSanPham";
-            this.lbDanhSachSanPham.Size = new System.Drawing.Size(378, 50);
+            this.lbDanhSachSanPham.Size = new System.Drawing.Size(412, 54);
             this.lbDanhSachSanPham.TabIndex = 12;
             this.lbDanhSachSanPham.Text = "Danh sách nhân viên";
             // 
@@ -167,7 +166,6 @@
             this.dgvDanhSachNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvEmail,
             this.dgvTenNhanVien,
-            this.dgvDiaChi,
             this.dgvVaiTro,
             this.dgvTrangThai,
             this.dgvHinhAnh,
@@ -213,7 +211,6 @@
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.Height = 24;
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvDanhSachNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachNhanVien_CellClick);
             // 
             // dgvEmail
             // 
@@ -232,15 +229,6 @@
             this.dgvTenNhanVien.MinimumWidth = 6;
             this.dgvTenNhanVien.Name = "dgvTenNhanVien";
             this.dgvTenNhanVien.ReadOnly = true;
-            // 
-            // dgvDiaChi
-            // 
-            this.dgvDiaChi.DataPropertyName = "PasswordStaff";
-            this.dgvDiaChi.FillWeight = 80.86765F;
-            this.dgvDiaChi.HeaderText = "Địa chỉ";
-            this.dgvDiaChi.MinimumWidth = 6;
-            this.dgvDiaChi.Name = "dgvDiaChi";
-            this.dgvDiaChi.ReadOnly = true;
             // 
             // dgvVaiTro
             // 
@@ -321,7 +309,6 @@
         public Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvVaiTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvHinhAnh;

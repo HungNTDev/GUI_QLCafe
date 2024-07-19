@@ -31,13 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainQLCF));
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
-            this.picLogo0 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.line = new System.Windows.Forms.Label();
+            this.pblogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lbGio = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.picHam = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.quanlyTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
@@ -81,16 +80,14 @@
             this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.panelQLSanPham = new System.Windows.Forms.Panel();
             this.btnQLSanPham = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLThanhToan = new System.Windows.Forms.Panel();
-            this.btnQLThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.picLogo1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flpSidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).BeginInit();
             this.panelDangXuat.SuspendLayout();
@@ -112,7 +109,6 @@
             this.panelQLHoaDon.SuspendLayout();
             this.panelQLNhanVien.SuspendLayout();
             this.panelQLSanPham.SuspendLayout();
-            this.panelQLThanhToan.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
@@ -121,65 +117,58 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Controls.Add(this.shapeLine);
-            this.panelHeader.Controls.Add(this.picLogo0);
+            this.panelHeader.Controls.Add(this.line);
+            this.panelHeader.Controls.Add(this.pblogo);
             this.panelHeader.Controls.Add(this.lblEmail);
             this.panelHeader.Controls.Add(this.lbGio);
             this.panelHeader.Controls.Add(this.lbNgay);
             this.panelHeader.Controls.Add(this.cbMinimize);
-            this.panelHeader.Controls.Add(this.picHam);
             this.panelHeader.Controls.Add(this.cbClose);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1223, 52);
+            this.panelHeader.Size = new System.Drawing.Size(1338, 52);
             this.panelHeader.TabIndex = 0;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
-            // shapeLine
+            // line
             // 
-            this.shapeLine.BorderColor = System.Drawing.Color.Black;
-            this.shapeLine.BorderThickness = 1;
-            this.shapeLine.FillColor = System.Drawing.Color.Black;
-            this.shapeLine.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.shapeLine.Location = new System.Drawing.Point(374, 12);
-            this.shapeLine.Name = "shapeLine";
-            this.shapeLine.PolygonSkip = 1;
-            this.shapeLine.Rotate = 0F;
-            this.shapeLine.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.shapeLine.Size = new System.Drawing.Size(24, 28);
-            this.shapeLine.TabIndex = 5;
-            this.shapeLine.Text = "guna2Shapes1";
-            this.shapeLine.Zoom = 80;
+            this.line.AutoSize = true;
+            this.line.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.line.Location = new System.Drawing.Point(147, 3);
+            this.line.Name = "line";
+            this.line.Size = new System.Drawing.Size(17, 25);
+            this.line.TabIndex = 8;
+            this.line.Text = "|";
             // 
-            // picLogo0
+            // pblogo
             // 
-            this.picLogo0.Image = ((System.Drawing.Image)(resources.GetObject("picLogo0.Image")));
-            this.picLogo0.ImageRotate = 0F;
-            this.picLogo0.Location = new System.Drawing.Point(415, 12);
-            this.picLogo0.Name = "picLogo0";
-            this.picLogo0.Size = new System.Drawing.Size(26, 24);
-            this.picLogo0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo0.TabIndex = 2;
-            this.picLogo0.TabStop = false;
+            this.pblogo.Image = ((System.Drawing.Image)(resources.GetObject("pblogo.Image")));
+            this.pblogo.ImageRotate = 0F;
+            this.pblogo.Location = new System.Drawing.Point(18, 7);
+            this.pblogo.Name = "pblogo";
+            this.pblogo.Size = new System.Drawing.Size(39, 36);
+            this.pblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pblogo.TabIndex = 7;
+            this.pblogo.TabStop = false;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(447, 18);
+            this.lblEmail.Location = new System.Drawing.Point(62, 25);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(26, 28);
+            this.lblEmail.Size = new System.Drawing.Size(20, 28);
             this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "+";
+            this.lblEmail.Text = "-";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbGio
             // 
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.Black;
-            this.lbGio.Location = new System.Drawing.Point(267, 17);
+            this.lbGio.Location = new System.Drawing.Point(160, 4);
             this.lbGio.Name = "lbGio";
             this.lbGio.Size = new System.Drawing.Size(43, 28);
             this.lbGio.TabIndex = 3;
@@ -190,7 +179,7 @@
             this.lbNgay.AutoSize = true;
             this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
-            this.lbNgay.Location = new System.Drawing.Point(70, 17);
+            this.lbNgay.Location = new System.Drawing.Point(62, 4);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(59, 28);
             this.lbNgay.TabIndex = 3;
@@ -203,24 +192,10 @@
             this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.cbMinimize.FillColor = System.Drawing.Color.White;
             this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1093, 0);
+            this.cbMinimize.Location = new System.Drawing.Point(1208, 0);
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(62, 39);
             this.cbMinimize.TabIndex = 1;
-            // 
-            // picHam
-            // 
-            this.picHam.BackColor = System.Drawing.Color.Transparent;
-            this.picHam.Image = ((System.Drawing.Image)(resources.GetObject("picHam.Image")));
-            this.picHam.ImageRotate = 0F;
-            this.picHam.Location = new System.Drawing.Point(11, 9);
-            this.picHam.Name = "picHam";
-            this.picHam.Size = new System.Drawing.Size(50, 35);
-            this.picHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picHam.TabIndex = 1;
-            this.picHam.TabStop = false;
-            this.picHam.UseTransparentBackground = true;
-            this.picHam.Click += new System.EventHandler(this.picHam_Click);
             // 
             // cbClose
             // 
@@ -229,7 +204,7 @@
             this.cbClose.FillColor = System.Drawing.Color.White;
             this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
             this.cbClose.IconColor = System.Drawing.Color.Black;
-            this.cbClose.Location = new System.Drawing.Point(1161, 0);
+            this.cbClose.Location = new System.Drawing.Point(1276, 0);
             this.cbClose.Name = "cbClose";
             this.cbClose.Size = new System.Drawing.Size(62, 39);
             this.cbClose.TabIndex = 1;
@@ -265,7 +240,7 @@
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(300, 52);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(923, 662);
+            this.panelBody.Size = new System.Drawing.Size(1038, 662);
             this.panelBody.TabIndex = 2;
             // 
             // picBackGround
@@ -277,7 +252,7 @@
             this.picBackGround.ImageRotate = 0F;
             this.picBackGround.Location = new System.Drawing.Point(0, 0);
             this.picBackGround.Name = "picBackGround";
-            this.picBackGround.Size = new System.Drawing.Size(923, 662);
+            this.picBackGround.Size = new System.Drawing.Size(1038, 662);
             this.picBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackGround.TabIndex = 0;
             this.picBackGround.TabStop = false;
@@ -614,7 +589,6 @@
             this.flpQuanLy.Controls.Add(this.panelQLHoaDon);
             this.flpQuanLy.Controls.Add(this.panelQLNhanVien);
             this.flpQuanLy.Controls.Add(this.panelQLSanPham);
-            this.flpQuanLy.Controls.Add(this.panelQLThanhToan);
             this.flpQuanLy.Location = new System.Drawing.Point(3, 271);
             this.flpQuanLy.Name = "flpQuanLy";
             this.flpQuanLy.Size = new System.Drawing.Size(300, 45);
@@ -685,6 +659,7 @@
             this.btnQLBan.TabIndex = 3;
             this.btnQLBan.Text = "          Quản lý bàn";
             this.btnQLBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLBan.Click += new System.EventHandler(this.btnQLBan_Click);
             // 
             // panelQLVoucher
             // 
@@ -746,6 +721,7 @@
             this.btnQLHoaDon.TabIndex = 3;
             this.btnQLHoaDon.Text = "          Quản lý hóa đơn";
             this.btnQLHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLHoaDon.Click += new System.EventHandler(this.btnQLHoaDon_Click);
             // 
             // panelQLNhanVien
             // 
@@ -808,36 +784,6 @@
             this.btnQLSanPham.Text = "          Quản lý sản phẩm";
             this.btnQLSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLSanPham.Click += new System.EventHandler(this.btnQLSanPham_Click);
-            // 
-            // panelQLThanhToan
-            // 
-            this.panelQLThanhToan.Controls.Add(this.btnQLThanhToan);
-            this.panelQLThanhToan.Location = new System.Drawing.Point(3, 312);
-            this.panelQLThanhToan.Name = "panelQLThanhToan";
-            this.panelQLThanhToan.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelQLThanhToan.Size = new System.Drawing.Size(330, 45);
-            this.panelQLThanhToan.TabIndex = 2;
-            // 
-            // btnQLThanhToan
-            // 
-            this.btnQLThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQLThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btnQLThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnQLThanhToan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnQLThanhToan.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnQLThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnQLThanhToan.Image")));
-            this.btnQLThanhToan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLThanhToan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnQLThanhToan.Location = new System.Drawing.Point(0, -16);
-            this.btnQLThanhToan.Name = "btnQLThanhToan";
-            this.btnQLThanhToan.Size = new System.Drawing.Size(345, 76);
-            this.btnQLThanhToan.TabIndex = 3;
-            this.btnQLThanhToan.Text = "          Quản lý thanh toán";
-            this.btnQLThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panelMenu
             // 
@@ -915,11 +861,20 @@
             this.flpSidebar.Size = new System.Drawing.Size(300, 662);
             this.flpSidebar.TabIndex = 1;
             // 
+            // messageDialog
+            // 
+            this.messageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.messageDialog.Caption = null;
+            this.messageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.messageDialog.Parent = this;
+            this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.messageDialog.Text = null;
+            // 
             // frmMainQLCF
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1223, 714);
+            this.ClientSize = new System.Drawing.Size(1338, 714);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.flpSidebar);
             this.Controls.Add(this.panelHeader);
@@ -933,8 +888,7 @@
             this.Load += new System.EventHandler(this.frmMainQLCF_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).EndInit();
             this.panelDangXuat.ResumeLayout(false);
@@ -956,7 +910,6 @@
             this.panelQLHoaDon.ResumeLayout(false);
             this.panelQLNhanVien.ResumeLayout(false);
             this.panelQLSanPham.ResumeLayout(false);
-            this.panelQLThanhToan.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).EndInit();
@@ -968,7 +921,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
-        private Guna.UI2.WinForms.Guna2PictureBox picHam;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
         private System.Windows.Forms.Label lbGio;
@@ -979,10 +931,8 @@
         private System.Windows.Forms.Timer huongdanTransition;
         private System.Windows.Forms.Timer hethongTransition;
         private System.Windows.Forms.Label lblEmail;
-        private Guna.UI2.WinForms.Guna2PictureBox picLogo0;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private Guna.UI2.WinForms.Guna2PictureBox picBackGround;
-        private Guna.UI2.WinForms.Guna2Shapes shapeLine;
         private System.Windows.Forms.Timer timer_ThoiGian;
         private System.Windows.Forms.FlowLayoutPanel flpSidebar;
         private System.Windows.Forms.Panel panelLogo;
@@ -1002,8 +952,6 @@
         private Guna.UI2.WinForms.Guna2Button btnQLNhanVien;
         private System.Windows.Forms.Panel panelQLSanPham;
         private Guna.UI2.WinForms.Guna2Button btnQLSanPham;
-        private System.Windows.Forms.Panel panelQLThanhToan;
-        private Guna.UI2.WinForms.Guna2Button btnQLThanhToan;
         private System.Windows.Forms.FlowLayoutPanel flpThongKe;
         private System.Windows.Forms.Panel panelThongKe;
         private Guna.UI2.WinForms.Guna2Button btnThongKe;
@@ -1025,5 +973,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Panel panelDangXuat;
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
+        private Guna.UI2.WinForms.Guna2PictureBox pblogo;
+        private System.Windows.Forms.Label line;
+        private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
     }
 }

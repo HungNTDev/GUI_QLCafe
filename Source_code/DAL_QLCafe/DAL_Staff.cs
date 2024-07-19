@@ -268,9 +268,8 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@FullName", staff.FullName);
                     cmd.Parameters.AddWithValue("@ImageStaff", staff.ImageStaff);
                     cmd.Parameters.AddWithValue("@Email", staff.Email);
-                    cmd.Parameters.AddWithValue("@PasswordStaff", staff.PasswordStaff);
-                    cmd.Parameters.AddWithValue("@RoleStaff", staff.RoleStaff);
-                    cmd.Parameters.AddWithValue("@StatusStaff", staff.StatusStaff);
+                    cmd.Parameters.AddWithValue("@Role", staff.RoleStaff);
+                    cmd.Parameters.AddWithValue("@Status", staff.StatusStaff);
 
                     conn.Open();
 

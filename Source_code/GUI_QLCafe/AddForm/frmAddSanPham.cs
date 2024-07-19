@@ -1,9 +1,9 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
 using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+
 namespace GUI_QLCafe
 {
     public partial class frmAddSanPham : Form
@@ -29,7 +29,10 @@ namespace GUI_QLCafe
         private void btnLuu_Click(object sender, EventArgs e)
         {
             float gia;
-            bool isInt = float.TryParse(txtGia.Text.Trim(), out gia);
+            bool isfloat = float.TryParse(txtGia.Text.Trim(), out gia);
+            int trangthai;
+            bool isInt = int.TryParse(cbTrangThai.SelectedItem?.ToString(), out trangthai);
+
             if (txtMaSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng nhập mã sản phẩm!", "Thông báo");
@@ -42,30 +45,47 @@ namespace GUI_QLCafe
                 txtTenSanPham.Focus();
                 return;
             }
-            else if (!isInt || float.Parse(txtGia.Text) <= 0)
+            else if (!isfloat || gia < 0)
             {
                 messageDialog.Show("Vui lòng nhập giá!", "Thông báo");
                 txtGia.Focus();
                 return;
             }
-            else if (cbTrangThai.SelectedIndex == -1)
+            else if (cbTrangThai.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
                 cbTrangThai.Focus();
                 return;
             }
+            else if (guna2TextBox1.Text.Trim().Length == 0)
+            {
+                messageDialog.Show("Vui mới chọn loại cho sản phẩm!", " 😀 báo");
+                guna2TextBox1.Focus();
+                return;
+            }
             else
             {
-                DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, float.Parse(txtGia.Text), fileSavePath, int.Parse(cbTrangThai.Text), fileName);
-                if (busproduct.insert(product))
+                try
                 {
-                    File.Copy(fileAddress, fileSavePath, true);
-                    this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                    this.Close();
+
+
+                    DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
+                        gia, fileSavePath, trangthai, guna2TextBox1.Text);
+
+                    if (busproduct.insert(product))
+                    {
+                        File.Copy(fileAddress, fileSavePath, true);
+                        this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                    MessageBox.Show("Error" + ex.Message);
                 }
             }
         }
@@ -78,19 +98,43 @@ namespace GUI_QLCafe
                 dlgopen.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
                 dlgopen.FilterIndex = 2;
                 dlgopen.Title = "Chọn ảnh minh họa cho sản phẩm";
+                //if (dlgopen.ShowDialog() == DialogResult.OK)
+                //{
+                //    fileAddress = dlgopen.FileName;
+                //    fileName = Path.GetFileName(dlgopen.FileName);
+                //    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                //    fileSavePath = Path.Combine(saveDirectory, "img", fileName);
+
+                //    // Sao chép tệp tin vào thư mục đích trước khi sử dụng trong PictureBox
+                //    File.Copy(fileAddress, fileSavePath, true);
+
+                //    // Sử dụng FileStream để mở ảnh từ tệp tin đích
+                //    using (FileStream fs = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
+                //    {
+                //        picSanPham.Image = Image.FromStream(fs);
+                //    }
+                //}
+
                 if (dlgopen.ShowDialog() == DialogResult.OK)
                 {
-                    fileAddress = dlgopen.FileName;
-                    picSanPham.Image = Image.FromFile(fileAddress);
-                    fileName = Path.GetFileName(dlgopen.FileName);
-                    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                    fileSavePath = saveDirectory + "\\Images\\" + fileName;
+                    picSanPham.Image = Image.FromFile(dlgopen.FileName);
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message);
             }
+        }
+
+        private void frmAddSanPham_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

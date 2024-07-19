@@ -76,6 +76,9 @@ namespace GUI_QLCafe
 
         }
 
+        private void frmAddNhanVien_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DTO_QLCafe;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL_QLCafe
@@ -36,6 +37,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "InsertProduct";
                     cmd.Parameters.AddWithValue("@IdProduct", obj.IdProduct);
@@ -47,7 +49,7 @@ namespace DAL_QLCafe
 
                     conn.Open();
 
-                    if (cmd.ExecuteNonQuery() > 0)
+                    if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
                     {
                         return true;
                     }
@@ -71,6 +73,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateProduct";
                     cmd.Parameters.AddWithValue("@IdProduct", obj.IdProduct);
@@ -106,6 +109,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "DeleteProduct";
                     cmd.Parameters.AddWithValue("@IdProduct", id);
@@ -134,6 +138,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "SearchProduct";
                     cmd.Parameters.AddWithValue("@keyword", keyword);

@@ -118,7 +118,7 @@ namespace GUI_QLCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            if(role == "1")
+            if (role == "1")
                 thongkeTransition.Start();
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Thông báo");
@@ -274,12 +274,12 @@ namespace GUI_QLCafe
 
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
-            // Hiển thị ngày trên lbNgay
-            lbNgay.Text = DateTime.Now.ToShortDateString();
-            // Hiển thị giờ trên lbGio
-            lbGio.Text = DateTime.Now.ToLongTimeString();
+            //// Hiển thị ngày trên lbNgay
+            //lbNgay.Text = DateTime.Now.ToShortDateString();
+            //// Hiển thị giờ trên lbGio
+            //lbGio.Text = DateTime.Now.ToLongTimeString();
 
-            timer_ThoiGian.Start();
+            //timer_ThoiGian.Start();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

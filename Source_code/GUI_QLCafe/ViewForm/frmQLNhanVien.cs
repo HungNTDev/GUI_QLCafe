@@ -27,15 +27,14 @@ namespace GUI_QLCafe
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
             LoadGridView_NhanVien();
+            dgvDanhSachNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
         BUS_Staff busNhanVien = new BUS_Staff();
         private void LoadGridView_NhanVien()
         {
             dgvDanhSachNhanVien.DataSource = busNhanVien.get();
         }
-        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
     }
 }

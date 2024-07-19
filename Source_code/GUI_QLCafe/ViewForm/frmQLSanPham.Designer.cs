@@ -52,7 +52,7 @@
             // 
             this.dgvDanhSachSanPham.AllowUserToAddRows = false;
             this.dgvDanhSachSanPham.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -211,35 +211,40 @@
             // 
             // dgvMaSanPham
             // 
-            this.dgvMaSanPham.HeaderText = "Mã sản phẩm";
+            this.dgvMaSanPham.DataPropertyName = "IdProduct";
+            this.dgvMaSanPham.HeaderText = "IdProduct";
             this.dgvMaSanPham.MinimumWidth = 6;
             this.dgvMaSanPham.Name = "dgvMaSanPham";
             this.dgvMaSanPham.ReadOnly = true;
             // 
             // dgvTenSanPham
             // 
-            this.dgvTenSanPham.HeaderText = "Tên sản phẩm";
+            this.dgvTenSanPham.DataPropertyName = "NameProduct";
+            this.dgvTenSanPham.HeaderText = "NameProduct";
             this.dgvTenSanPham.MinimumWidth = 6;
             this.dgvTenSanPham.Name = "dgvTenSanPham";
             this.dgvTenSanPham.ReadOnly = true;
             // 
             // dgvGia
             // 
-            this.dgvGia.HeaderText = "Giá";
+            this.dgvGia.DataPropertyName = "Price";
+            this.dgvGia.HeaderText = "Price";
             this.dgvGia.MinimumWidth = 6;
             this.dgvGia.Name = "dgvGia";
             this.dgvGia.ReadOnly = true;
             // 
             // dgvTrangThai
             // 
-            this.dgvTrangThai.HeaderText = "Trạng thái";
+            this.dgvTrangThai.DataPropertyName = "StatusProduct";
+            this.dgvTrangThai.HeaderText = "StatusProduct";
             this.dgvTrangThai.MinimumWidth = 6;
             this.dgvTrangThai.Name = "dgvTrangThai";
             this.dgvTrangThai.ReadOnly = true;
             // 
             // dgvHinhAnh
             // 
-            this.dgvHinhAnh.HeaderText = "Hình ảnh";
+            this.dgvHinhAnh.DataPropertyName = "ImageProduct";
+            this.dgvHinhAnh.HeaderText = "ImageProduct";
             this.dgvHinhAnh.MinimumWidth = 6;
             this.dgvHinhAnh.Name = "dgvHinhAnh";
             this.dgvHinhAnh.ReadOnly = true;
@@ -280,6 +285,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQLSanPham";
             this.Text = "frmQLSanPham";
+            this.Load += new System.EventHandler(this.frmQLSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

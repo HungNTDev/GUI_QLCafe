@@ -28,10 +28,6 @@ namespace GUI_QLCafe
         {
             dgvDanhSachNhanVien.DataSource = busNhanVien.get();
         }
-        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {

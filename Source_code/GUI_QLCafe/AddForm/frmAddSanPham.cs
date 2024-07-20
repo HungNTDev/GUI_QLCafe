@@ -3,7 +3,6 @@ using DTO_QLCafe;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -28,17 +27,13 @@ namespace GUI_QLCafe
             frmNotification.showNotfication(msg, type);
         }
 
-        public string id = "";
-        private async void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             float gia;
             bool isfloat = float.TryParse(txtGia.Text.Trim(), out gia);
-            int trangthai = 0;
+            int trangthai;
+            bool isInt = int.TryParse(cbTrangThai.SelectedItem?.ToString(), out trangthai);
 
-            if (rdoCo.Checked)
-            {
-                trangthai = 1;
-            }
             if (txtMaSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng nhập mã sản phẩm!", "Thông báo");
@@ -57,66 +52,64 @@ namespace GUI_QLCafe
                 txtGia.Focus();
                 return;
             }
-            else if (rdoCo.Checked == false && rdoKhong.Checked == false)
+            else if (cbTrangThai.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
+                cbTrangThai.Focus();
                 return;
             }
-            else if (txtLoaiSanPham.Text.Trim().Length == 0)
+            else if (guna2TextBox1.Text.Trim().Length == 0)
             {
-                messageDialog.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo");
-                txtLoaiSanPham.Focus();
+                messageDialog.Show("Vui mới chọn loại cho sản phẩm!", " 😀 báo");
+                guna2TextBox1.Focus();
                 return;
             }
             else
             {
+                // Đường dẫn thư mục gốc của dự án
+                string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
+
+                // Tạo thư mục nếu chưa có
+                if (!Directory.Exists(saveDirectory))
+                {
+                    Directory.CreateDirectory(saveDirectory);
+                }
+
+
+                // Đường dẫn ảnh
+                string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                string fileName = Path.GetFileName(fileAddress);
+                string fileSavePath = Path.Combine(saveDirectory, fileName);
+
                 try
                 {
-                    DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, txtLoaiSanPham.Text);
+                    // Copy the image to the specified directory
+                    File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
 
-                    if (string.IsNullOrEmpty(id))
+                    // Update txtHinh to point to the new location
+                    txtDuongDan.Text = fileSavePath;
+
+                    DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
+                        gia, fileSavePath, trangthai, guna2TextBox1.Text);
+
+                    if (busproduct.insert(product))
                     {
-                        if (busproduct.insert(product))
-                        {
-                            File.Copy(fileAddress, fileSavePath, true);
-                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                            if (this.Owner is frmQLSanPham frm)
-                            {
-                                frm.LoadGridView_SanPham();
-                            }
-                            await Task.Delay(3000);
-                            this.Close();
-                        }
-                        else
-                        {
-                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
-                        }
+                        this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
                     }
                     else
                     {
-                        product.IdProduct = id;
-                        if (busproduct.update(product))
-                        {
-                            if (txtDuongDan.Text != checkUrlImage)
-                            {
-                                File.Copy(fileAddress, fileSavePath, true);
-                            }
-                            this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
-                            await Task.Delay(3000);
-                            this.Close();
-                        }
-                        else
-                        {
-                            this.Nofication("Cập nhật thất bại :(", frmNotification.enumType.Failed);
-                        }
+                        this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex.Message);
+                    messageDialog.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
                 }
+
             }
         }
+
 
         private void btnMoHinh_Click(object sender, EventArgs e)
         {
@@ -128,21 +121,18 @@ namespace GUI_QLCafe
                 dlgopen.Title = "Chọn ảnh minh họa cho sản phẩm";
                 if (dlgopen.ShowDialog() == DialogResult.OK)
                 {
-                    fileAddress = dlgopen.FileName;
-                    fileName = Path.GetFileName(dlgopen.FileName);
+                    fileAddress = dlgopen.FileName; // Lấy đường dẫn ảnh
+                    picSanPham.Image = Image.FromFile(fileAddress);
+                    fileName = Path.GetFileName(dlgopen.FileName); // Tên ảnh
+
                     string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                    fileSavePath = Path.Combine(saveDirectory, "img", fileName);
 
-                    // Sao chép tệp tin vào thư mục đích trước khi sử dụng trong PictureBox
-                    File.Copy(fileAddress, fileSavePath, true);
-
-                    // Sử dụng FileStream để mở ảnh từ tệp tin đích
-                    using (FileStream fs = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
-                    {
-                        picSanPham.Image = Image.FromStream(fs);
-
-                    }
+                    fileSavePath = saveDirectory + "\\img\\" + fileName; //combine with file name
+                    /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
+                    txtDuongDan.Text = fileAddress;
                 }
+
+
             }
             catch (Exception ex)
             {
@@ -150,9 +140,14 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void frmAddSanPham_Load(object sender, EventArgs e)
         {
-          this.Close();
+
+        }
+
+        private void cbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

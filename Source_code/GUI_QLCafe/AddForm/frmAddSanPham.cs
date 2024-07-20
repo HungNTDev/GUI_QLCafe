@@ -3,6 +3,7 @@ using DTO_QLCafe;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -27,13 +28,17 @@ namespace GUI_QLCafe
             frmNotification.showNotfication(msg, type);
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        public string id = "";
+        private async void btnLuu_Click(object sender, EventArgs e)
         {
             float gia;
             bool isfloat = float.TryParse(txtGia.Text.Trim(), out gia);
-            int trangthai;
-            bool isInt = int.TryParse(cbTrangThai.SelectedItem?.ToString(), out trangthai);
+            int trangthai = 0;
 
+            if (rdoCo.Checked)
+            {
+                trangthai = 1;
+            }
             if (txtMaSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng nhập mã sản phẩm!", "Thông báo");
@@ -52,36 +57,58 @@ namespace GUI_QLCafe
                 txtGia.Focus();
                 return;
             }
-            else if (cbTrangThai.Text.Trim().Length == 0)
+            else if (rdoCo.Checked == false && rdoKhong.Checked == false)
             {
                 messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
-                cbTrangThai.Focus();
                 return;
             }
-            else if (guna2TextBox1.Text.Trim().Length == 0)
+            else if (txtLoaiSanPham.Text.Trim().Length == 0)
             {
-                messageDialog.Show("Vui mới chọn loại cho sản phẩm!", " 😀 báo");
-                guna2TextBox1.Focus();
+                messageDialog.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo");
+                txtLoaiSanPham.Focus();
                 return;
             }
             else
             {
                 try
                 {
+                    DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, txtLoaiSanPham.Text);
 
-
-                    DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
-                        gia, fileSavePath, trangthai, guna2TextBox1.Text);
-
-                    if (busproduct.insert(product))
+                    if (string.IsNullOrEmpty(id))
                     {
-                        File.Copy(fileAddress, fileSavePath, true);
-                        this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        this.Close();
+                        if (busproduct.insert(product))
+                        {
+                            File.Copy(fileAddress, fileSavePath, true);
+                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            if (this.Owner is frmQLSanPham frm)
+                            {
+                                frm.LoadGridView_SanPham();
+                            }
+                            await Task.Delay(3000);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        }
                     }
                     else
                     {
-                        this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        product.IdProduct = id;
+                        if (busproduct.update(product))
+                        {
+                            if (txtDuongDan.Text != checkUrlImage)
+                            {
+                                File.Copy(fileAddress, fileSavePath, true);
+                            }
+                            this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
+                            await Task.Delay(3000);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Nofication("Cập nhật thất bại :(", frmNotification.enumType.Failed);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -116,8 +143,6 @@ namespace GUI_QLCafe
 
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -125,14 +150,9 @@ namespace GUI_QLCafe
             }
         }
 
-        private void frmAddSanPham_Load(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+          this.Close();
         }
     }
 }

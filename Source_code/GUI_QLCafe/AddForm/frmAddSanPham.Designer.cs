@@ -459,7 +459,6 @@
             this.btnThoat.Size = new System.Drawing.Size(683, 65);
             this.btnThoat.TabIndex = 25;
             this.btnThoat.Text = "THOÁT";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmAddSanPham
             // 

@@ -39,7 +39,6 @@ namespace GUI_QLCafe
             {
                 frmAddSanPham frmAddSanPham = new frmAddSanPham();
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
-                frmAddSanPham.Owner = this; 
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);

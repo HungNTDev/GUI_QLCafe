@@ -74,9 +74,9 @@ namespace BUS_QLCafe
         {
             return dal.delete(id);
         }
-        public DataTable search(string keyword, string column)
+        public DataTable search(string column, string value)
         {
-            return dal.search(keyword, column);
+            return dal.search(column, value);
         }
     }
 }

@@ -25,5 +25,10 @@ namespace GUI_QLCafe
         {
             LoadGridView_NhanVien();
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            dgvDanhSachNhanVien.DataSource=busNhanVien.search("StatusStaff", txtTimKiem.Text);
+        }
     }
 }

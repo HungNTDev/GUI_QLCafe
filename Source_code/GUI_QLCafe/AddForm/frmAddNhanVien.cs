@@ -93,7 +93,7 @@ namespace GUI_QLCafe
             {
                 // Đường dẫn thư mục gốc của dự án
                 string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-                string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
+                string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
 
                 // Tạo thư mục nếu chưa có
                 if (!Directory.Exists(saveDirectory))

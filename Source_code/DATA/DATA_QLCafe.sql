@@ -316,6 +316,24 @@ begin
 
 end
 
+--Tìm kiếm nhân viên
+alter proc SearchStaff (@column varchar(30), @value nvarchar(100))
+as
+begin
+	SELECT Email, FullName, RoleStaff, StatusStaff, ImageStaff
+    FROM Staff
+    WHERE
+        CASE @column
+            WHEN 'Email' THEN Email
+            WHEN 'FullName' THEN FullName
+            WHEN 'RoleStaff' THEN RoleStaff -- Assuming RoleStaff is an integer or similar
+            WHEN 'StatusStaff' THEN StatusStaff -- Assuming StatusStaff is an integer or similar
+            WHEN 'ImageStaff' THEN ImageStaff
+        END LIKE N'%' + @value + '%'
+        AND StatusStaff = 1;
+end
+
+
 -- Danh sách sản phẩm
 create proc GetProduct
 as 

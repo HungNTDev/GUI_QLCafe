@@ -135,8 +135,24 @@ namespace GUI_QLCafe
 
         }
 
+        private void frmAddNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // Đường dẫn thư mục gốc của dự án
+            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
+
+            MessageBox.Show(projectDirectory);
+            MessageBox.Show(saveDirectory);
+        }
+
         private void btnMoHinh_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*";
             ofd.FilterIndex = 2;
@@ -154,11 +170,6 @@ namespace GUI_QLCafe
                 /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
                 txtDuongDan.Text = fileAddress;
             }
-        }
-
-        private void frmAddNhanVien_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

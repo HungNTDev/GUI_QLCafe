@@ -3,6 +3,7 @@ using DTO_QLCafe;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -27,12 +28,17 @@ namespace GUI_QLCafe
             frmNotification.showNotfication(msg, type);
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        public string id = "";
+        private async void btnLuu_Click(object sender, EventArgs e)
         {
             float gia;
             bool isfloat = float.TryParse(txtGia.Text.Trim(), out gia);
-            int trangthai;
-            bool isInt = int.TryParse(cbTrangThai.SelectedItem?.ToString(), out trangthai);
+            int trangthai = 0;
+
+            if (rdoCo.Checked)
+            {
+                trangthai = 1;
+            }
 
             if (txtMaSanPham.Text.Trim().Length == 0)
             {
@@ -52,16 +58,15 @@ namespace GUI_QLCafe
                 txtGia.Focus();
                 return;
             }
-            else if (cbTrangThai.Text.Trim().Length == 0)
+            else if (rdoCo.Checked == false && rdoKhong.Checked == false)
             {
                 messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
-                cbTrangThai.Focus();
                 return;
             }
-            else if (guna2TextBox1.Text.Trim().Length == 0)
+            else if (txtLoaiSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui mới chọn loại cho sản phẩm!", " 😀 báo");
-                guna2TextBox1.Focus();
+                txtLoaiSanPham.Focus();
                 return;
             }
             else
@@ -82,6 +87,8 @@ namespace GUI_QLCafe
                 string fileName = Path.GetFileName(fileAddress);
                 string fileSavePath = Path.Combine(saveDirectory, fileName);
 
+                DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, txtLoaiSanPham.Text);
+
                 try
                 {
                     // Copy the image to the specified directory
@@ -90,6 +97,34 @@ namespace GUI_QLCafe
                     // Update txtHinh to point to the new location
                     txtDuongDan.Text = fileSavePath;
 
+                    if (string.IsNullOrEmpty(id))
+                    {
+                        if (busproduct.insert(product))
+                        {
+                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            await Task.Delay(3000);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        }
+                    }
+                    else
+                    {
+                        product.IdProduct = id;
+                        if (busproduct.update(product))
+                        {
+                            if (txtDuongDan.Text != checkUrlImage)
+                            {
+                                File.Copy(fileAddress, fileSavePath, true);
+                            }
+                            this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
+                            await Task.Delay(3000);
+                            this.Close();
+                        }
+                    }
+                }
                     DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
                         gia, fileSavePath, trangthai, guna2TextBox1.Text);
 

@@ -76,12 +76,12 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateProduct";
-                    cmd.Parameters.AddWithValue("@IdProduct", obj.IdProduct);
-                    cmd.Parameters.AddWithValue("@NameProduct", obj.NameProduct);
-                    cmd.Parameters.AddWithValue("@Price", obj.Price);
-                    cmd.Parameters.AddWithValue("@ImageProduct", obj.ImageProduct);
-                    cmd.Parameters.AddWithValue("@StatusProduct", obj.StatusProduct);
-                    cmd.Parameters.AddWithValue("@IdPT", obj.IdPT);
+                    cmd.Parameters.AddWithValue("@idProduct", obj.IdProduct);
+                    cmd.Parameters.AddWithValue("@nameProduct", obj.NameProduct);
+                    cmd.Parameters.AddWithValue("@price", obj.Price);
+                    cmd.Parameters.AddWithValue("@imageProduct", obj.ImageProduct);
+                    cmd.Parameters.AddWithValue("@statusProduct", obj.StatusProduct);
+                    cmd.Parameters.AddWithValue("@idpt", obj.IdPT);
 
                     conn.Open();
 
@@ -89,8 +89,12 @@ namespace DAL_QLCafe
                     {
                         return true;
                     }
+                    
                 }
-
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
             }
             finally
             {
@@ -111,8 +115,8 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "DeleteProduct";
-                    cmd.Parameters.AddWithValue("@IdProduct", id);
+                    cmd.CommandText = "DeleteProcduct";
+                    cmd.Parameters.AddWithValue("@id", id);
                     conn.Open();
 
                     if (cmd.ExecuteNonQuery() > 0)

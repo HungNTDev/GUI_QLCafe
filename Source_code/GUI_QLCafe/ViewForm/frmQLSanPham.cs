@@ -48,7 +48,7 @@ namespace GUI_QLCafe
                 frmAddSanPham.ShowDialog();
                 LoadGridView_SanPham();
             }
-            else if(dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
+            else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
                 string maSanPham = Convert.ToString((dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value));
                 if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -67,6 +67,11 @@ namespace GUI_QLCafe
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

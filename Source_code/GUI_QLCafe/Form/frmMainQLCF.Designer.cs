@@ -136,7 +136,7 @@
             this.line.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.line.Location = new System.Drawing.Point(147, 3);
             this.line.Name = "line";
-            this.line.Size = new System.Drawing.Size(17, 25);
+            this.line.Size = new System.Drawing.Size(13, 20);
             this.line.TabIndex = 8;
             this.line.Text = "|";
             // 
@@ -158,7 +158,7 @@
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(62, 25);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(20, 28);
+            this.lblEmail.Size = new System.Drawing.Size(16, 21);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "-";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,7 +171,7 @@
             this.lbGio.ForeColor = System.Drawing.Color.Black;
             this.lbGio.Location = new System.Drawing.Point(160, 4);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(43, 28);
+            this.lbGio.Size = new System.Drawing.Size(35, 21);
             this.lbGio.TabIndex = 3;
             this.lbGio.Text = "Giờ";
             // 
@@ -182,7 +182,7 @@
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
             this.lbNgay.Location = new System.Drawing.Point(62, 4);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(59, 28);
+            this.lbNgay.Size = new System.Drawing.Size(48, 21);
             this.lbNgay.TabIndex = 3;
             this.lbNgay.Text = "Ngày";
             // 
@@ -258,6 +258,7 @@
             this.picBackGround.TabIndex = 0;
             this.picBackGround.TabStop = false;
             this.picBackGround.UseTransparentBackground = true;
+            this.picBackGround.Click += new System.EventHandler(this.picBackGround_Click);
             // 
             // timer_ThoiGian
             // 

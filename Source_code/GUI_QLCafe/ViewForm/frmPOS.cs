@@ -4,7 +4,6 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using ZedGraph;
 
 namespace GUI_QLCafe
 {
@@ -26,7 +25,7 @@ namespace GUI_QLCafe
 
         private void LoadTable()
         {
-            flpTable.Controls.Clear();    
+            flpTable.Controls.Clear();
             for (int i = 0; i < busTB.TableList().Rows.Count; i++)
             {
                 Guna2Button btn = new Guna2Button();
@@ -54,19 +53,24 @@ namespace GUI_QLCafe
                 {
                     btn.BorderColor = Color.Gray;
                     btn.BackColor = Color.WhiteSmoke;
-                    btn.ForeColor = Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167))))); 
+                    btn.ForeColor = Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
                 }
                 flpTable.Controls.Add(btn);
             }
         }
 
-        private void btn_Click (object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
             Guna2Button btn = (Guna2Button)sender;
             billDTO.idTable = btn.Tag.ToString();
             idTable = billDTO.idTable;
             NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
             menu.ShowDialog();
+        }
+
+        private void flpTable_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

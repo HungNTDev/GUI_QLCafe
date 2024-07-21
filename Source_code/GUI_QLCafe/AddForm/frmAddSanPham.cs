@@ -68,7 +68,7 @@ namespace GUI_QLCafe
             {
                 // Đường dẫn thư mục gốc của dự án
                 string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-                string saveDirectory = Path.Combine(projectDirectory, "img", "Staff");
+                string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Product");
 
                 // Tạo thư mục nếu chưa có
                 if (!Directory.Exists(saveDirectory))
@@ -96,6 +96,7 @@ namespace GUI_QLCafe
                     if (busproduct.insert(product))
                     {
                         this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                        this.Close();
                     }
                     else
                     {
@@ -127,7 +128,7 @@ namespace GUI_QLCafe
 
                     string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
 
-                    fileSavePath = saveDirectory + "\\img\\" + fileName; //combine with file name
+                    fileSavePath = saveDirectory + "\\img\\" + "\\products\\" + fileName; //combine with file name
                     /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
                     txtDuongDan.Text = fileAddress;
                 }

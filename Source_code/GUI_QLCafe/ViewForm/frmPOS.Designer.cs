@@ -86,7 +86,7 @@
             this.lbThanhTien.ForeColor = System.Drawing.Color.Cyan;
             this.lbThanhTien.Location = new System.Drawing.Point(18, 20);
             this.lbThanhTien.Name = "lbThanhTien";
-            this.lbThanhTien.Size = new System.Drawing.Size(193, 46);
+            this.lbThanhTien.Size = new System.Drawing.Size(187, 45);
             this.lbThanhTien.TabIndex = 0;
             this.lbThanhTien.Text = "Thành tiền:";
             // 
@@ -253,6 +253,7 @@
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(595, 751);
             this.flpTable.TabIndex = 6;
+            this.flpTable.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTable_Paint);
             // 
             // paneText
             // 

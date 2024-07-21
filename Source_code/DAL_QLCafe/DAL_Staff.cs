@@ -306,6 +306,10 @@ namespace DAL_QLCafe
                     }
                 }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
             finally
             {
                 if (conn.State == ConnectionState.Open)

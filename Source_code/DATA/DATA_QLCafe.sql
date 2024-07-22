@@ -258,15 +258,15 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select * from Staff
 
 -- Lấy danh sách nhân viên
-alter proc GetStaff
+ALTER proc GetStaff (@status int)
 as
 begin
-	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = 1;
+	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
 end
 
 
 --Thêm NV
-ALTER proc [dbo].[InsertStaff]
+ALTER proc InsertStaff
 (@FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
 as
 begin
@@ -317,58 +317,63 @@ begin
 
 end
 
---Tìm kiếm nhân viên (chỉ tìm được theo cột, chưa tìm tất cả nếu combobox rỗng)
-alter proc SearchStaff (@column varchar(30), @value nvarchar(100))
-as
-begin
-	SELECT Email, FullName, RoleStaff, StatusStaff, ImageStaff
-    FROM Staff
-    WHERE
-        CASE @column
-			WHEN 'IdStaff' THEN IdStaff
-            WHEN 'Email' THEN Email
-            WHEN 'FullName' THEN FullName
-            WHEN 'RoleStaff' THEN RoleStaff -- Assuming RoleStaff is an integer or similar
-            WHEN 'StatusStaff' THEN StatusStaff -- Assuming StatusStaff is an integer or similar
-            WHEN 'ImageStaff' THEN ImageStaff
-        END LIKE N'%' + @value + '%'
-        AND StatusStaff = 1;
-end
-
-
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
-alter proc SearchStaff (@column varchar(30), @value nvarchar(100))
+ALTER proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
 as
 begin
-	
-	if @column = 'rong'
-		begin
-			select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-			FROM Staff
-			WHERE Email like '%'+@value+'%' or
-				  FullName like '%'+@value+'%' or
-				  RoleStaff like '%'+@value+'%' or
-				  ImageStaff like '%'+@value+'%'
-				  AND StatusStaff = 1;
-		end
+	if @status = 1
+		if @column = 'rong'
+			begin
+				select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+				FROM Staff
+				WHERE 
+					IdStaff like '%'+@value+'%' or
+					Email like '%'+@value+'%' or
+					FullName like '%'+@value+'%' or
+					RoleStaff like '%'+@value+'%'
+					and StatusStaff = 1;
+			end
+		else
+			begin
+				select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+				FROM Staff
+				WHERE
+					CASE @column
+						WHEN 'IdStaff' THEN IdStaff
+						WHEN 'Email' THEN Email
+						WHEN 'FullName' THEN FullName
+						WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(2)) -- Assuming RoleStaff is an integer or similar
+					END LIKE N'%' + @value + '%'
+					AND StatusStaff = 1;
+			end
 	else
 		begin
-			select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-			FROM Staff
-			WHERE
-				CASE @column
-					WHEN 'IdStaff' THEN IdStaff
-					WHEN 'Email' THEN Email
-					WHEN 'FullName' THEN FullName
-					WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(100)) -- Assuming RoleStaff is an integer or similar
-					WHEN 'ImageStaff' THEN ImageStaff
-				END LIKE N'%' + @value + '%'
-				AND StatusStaff = 1;
+			if @column = 'rong'
+				begin
+					select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+					FROM Staff
+					WHERE 
+						IdStaff like '%'+@value+'%' or
+						Email like '%'+@value+'%' or
+						FullName like '%'+@value+'%' or
+						RoleStaff like '%'+@value+'%'
+						and StatusStaff = 0;
+				end
+			else
+				begin
+					select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+					FROM Staff
+					WHERE
+						CASE @column
+							WHEN 'IdStaff' THEN IdStaff
+							WHEN 'Email' THEN Email
+							WHEN 'FullName' THEN FullName
+							WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(2)) -- Assuming RoleStaff is an integer or similar
+						END LIKE N'%' + @value + '%'
+						AND StatusStaff = 0;
+				end
 		end
-	
 end
-
-exec SearchStaff 'rong', 'bao'
 
 -- Danh sách sản phẩm
 create proc GetProduct

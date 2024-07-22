@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Collections, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Collections.5.0.0\lib\net40\Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV, Version=4.9.0.5494, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <HintPath>packages\Emgu.CV.4.9.0.5494\lib\netstandard2.0\Emgu.CV.dll</HintPath>
     </Reference>
@@ -86,8 +89,15 @@
     <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
     </Reference>
+    <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
@@ -191,6 +201,11 @@
       <DependentUpon>frmAddBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\ProgressReport.cs" />
+    <Compile Include="ThongTinSanPham.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForm\frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +337,14 @@
     <None Include="Resources\client_secrets.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="ThongTinSanPham.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThongTinSanPham.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThongTinSanPham.dbml.layout">
+      <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -365,6 +388,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\Staff\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

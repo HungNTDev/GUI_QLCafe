@@ -262,5 +262,36 @@ namespace DAL_QLCafe
                 }
             }
         }
+
+        public DataTable GetPage(int PageIndex)
+        {
+            try
+            {
+
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetProductPage";
+                    cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", 5);
+                    cmd.Parameters.Add("@RecordCount", SqlDbType.Int);
+                    cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;
+                    conn.Open();
+                    DataTable db = new DataTable();
+                    db.Load(cmd.ExecuteReader());
+                    int recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
+                    return db;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

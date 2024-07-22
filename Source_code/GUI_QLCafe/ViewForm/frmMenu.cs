@@ -94,6 +94,9 @@ namespace GUI_QLCafe
 
         }
 
+        private void flp_CaPhe_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

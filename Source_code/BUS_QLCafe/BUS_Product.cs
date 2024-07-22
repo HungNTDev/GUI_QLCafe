@@ -47,5 +47,10 @@ namespace BUS_QLCafe
         {
             return dal.ListType(obj);
         }
+
+        public DataTable Page(int obj)
+        {
+            return dal.GetPage(obj);
+        }
     }
 }

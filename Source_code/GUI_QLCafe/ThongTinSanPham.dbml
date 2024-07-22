@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_CAFE" Class="ThongTinSanPhamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T731SJL\TUANHUNG;Initial Catalog=QL_CAFE;Integrated Security=True;Encrypt=False" SettingsObjectName="GUI_QLCafe.Properties.Settings" SettingsPropertyName="QL_CAFEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bill" Member="Bills">
+    <Type Name="Bill">
+      <Column Name="IdBill" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPayment" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdTable" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IdStaff" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdVoucher" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusBill" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_DetailBill" Member="DetailBills" ThisKey="IdBill" OtherKey="IdBill" Type="DetailBill" />
+      <Association Name="Payment_Bill" Member="Payment" ThisKey="IdPayment" OtherKey="IdPayment" Type="Payment" IsForeignKey="true" />
+      <Association Name="Staff_Bill" Member="Staff" ThisKey="IdStaff" OtherKey="IdStaff" Type="Staff" IsForeignKey="true" />
+      <Association Name="TableCF_Bill" Member="TableCF" ThisKey="IdTable" OtherKey="IdTable" Type="TableCF" IsForeignKey="true" />
+      <Association Name="Voucher_Bill" Member="Voucher" ThisKey="IdVoucher" OtherKey="IdVoucher" Type="Voucher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailBill" Member="DetailBills">
+    <Type Name="DetailBill">
+      <Column Name="IdBill" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdProduct" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_DetailBill" Member="Bill" ThisKey="IdBill" OtherKey="IdBill" Type="Bill" IsForeignKey="true" />
+      <Association Name="Product_DetailBill" Member="Product" ThisKey="IdProduct" OtherKey="IdProduct" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="IdPayment" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TypePayment" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusPayment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Payment_Bill" Member="Bills" ThisKey="IdPayment" OtherKey="IdPayment" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="IdProduct" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameProduct" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ImageProduct" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusProduct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPT" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Product_DetailBill" Member="DetailBills" ThisKey="IdProduct" OtherKey="IdProduct" Type="DetailBill" />
+      <Association Name="ProductType_Product" Member="ProductType" ThisKey="IdPT" OtherKey="IdPT" Type="ProductType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductType" Member="ProductTypes">
+    <Type Name="ProductType">
+      <Column Name="IdPT" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NamePT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusPT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProductType_Product" Member="Products" ThisKey="IdPT" OtherKey="IdPT" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff" Member="Staffs">
+    <Type Name="Staff">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdStaff" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageStaff" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordStaff" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleStaff" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusStaff" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Staff_Bill" Member="Bills" ThisKey="IdStaff" OtherKey="IdStaff" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableCF" Member="TableCFs">
+    <Type Name="TableCF">
+      <Column Name="IdTable" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameTable" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TableCF_Bill" Member="Bills" ThisKey="IdTable" OtherKey="IdTable" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Voucher" Member="Vouchers">
+    <Type Name="Voucher">
+      <Column Name="IdVoucher" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameVoucher" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PercentVoucher" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusVoucher" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Voucher_Bill" Member="Bills" ThisKey="IdVoucher" OtherKey="IdVoucher" Type="Bill" />
+    </Type>
+  </Table>
+</Database>

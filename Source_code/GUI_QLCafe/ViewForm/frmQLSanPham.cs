@@ -1,17 +1,23 @@
 ﻿using BUS_QLCafe;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
-
 namespace GUI_QLCafe
 {
     public partial class frmQLSanPham : Form
     {
         BUS_Product busSanPham = new BUS_Product();
+
+
+        int pageNumber = 1;
+        int numberRecord = 5;
+
         public frmQLSanPham()
         {
             InitializeComponent();
+            dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
         }
-
         public void Nofication(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
@@ -68,33 +74,45 @@ namespace GUI_QLCafe
             }
         }
 
+        List<Product> LoadRecord(int page, int recordNum)
+        {
+            List<Product> result = new List<Product>();
+
+            using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+            {
+                result = db.Products.Skip((page - 1) * recordNum).Take(numberRecord).ToList();
+            }
+            return result;
+        }
+
         private void btnPrev_Click(object sender, EventArgs e)
         {
-
-
+            if (pageNumber - 1 > 0)
+            {
+                pageNumber--;
+                dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            }
         }
 
         private void LoadCombobox_Loai()
         {
-
-            cboLoai.DataSource = busSanPham.LoadIDPT();
-            cboLoai.ValueMember = "IdPT";
-            cboLoai.DisplayMember = "IdPT";
-
+            //cboLoai.DataSource = busSanPham.LoadIDPT();
+            //cboLoai.ValueMember = "IdPT";
+            //cboLoai.DisplayMember = "IdPT";
         }
 
         private void cboLoai_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string id = cboLoai.SelectedValue.ToString();
+            //string id = cboLoai.SelectedValue.ToString();
 
-            if (id == "")
-            {
-                LoadGridView_SanPham();
-            }
-            else
-            {
-                dgvDanhSachSanPham.DataSource = busSanPham.ListType(id);
-            }
+            //if (id == "")
+            //{
+            //    LoadGridView_SanPham();
+            //}
+            //else
+            //{
+            //    dgvDanhSachSanPham.DataSource = busSanPham.ListType(id);
+            //}
         }
 
         private void btn_First_Click(object sender, EventArgs e)
@@ -104,6 +122,16 @@ namespace GUI_QLCafe
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            int totalrecord = 0;
+            using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+            {
+                totalrecord = db.Products.Count();
+            }
+            if (pageNumber - 1 <= totalrecord / numberRecord)
+            {
+                pageNumber++;
+                dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            }
 
         }
 
@@ -111,5 +139,7 @@ namespace GUI_QLCafe
         {
 
         }
+
+
     }
 }

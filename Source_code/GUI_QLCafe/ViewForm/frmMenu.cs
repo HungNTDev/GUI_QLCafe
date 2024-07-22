@@ -2,13 +2,7 @@
 using DTO_QLCafe;
 using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -100,6 +94,9 @@ namespace GUI_QLCafe
 
         }
 
-        
+        private void flp_CaPhe_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

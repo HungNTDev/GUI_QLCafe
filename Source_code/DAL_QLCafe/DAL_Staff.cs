@@ -307,7 +307,7 @@ namespace DAL_QLCafe
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
             }

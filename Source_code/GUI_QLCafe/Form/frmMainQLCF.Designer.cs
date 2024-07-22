@@ -258,6 +258,7 @@
             this.picBackGround.TabIndex = 0;
             this.picBackGround.TabStop = false;
             this.picBackGround.UseTransparentBackground = true;
+            this.picBackGround.Click += new System.EventHandler(this.picBackGround_Click);
             // 
             // timer_ThoiGian
             // 
@@ -884,7 +885,6 @@
             this.Name = "frmMainQLCF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainQLCF";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainQLCF_FormClosed);
             this.Load += new System.EventHandler(this.frmMainQLCF_Load);
             this.panelHeader.ResumeLayout(false);

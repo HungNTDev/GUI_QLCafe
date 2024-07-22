@@ -262,6 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQLBan";
             this.Text = "frmQLBan";
+            this.Load += new System.EventHandler(this.frmQLBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

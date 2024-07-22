@@ -46,5 +46,16 @@ namespace GUI_QLCafe.Properties {
                 this["RememberEmail"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-T731SJL\\TUANHUNG;Initial Catalog=QL_CAFE;Integrated Security=" +
+            "True;Encrypt=False")]
+        public string QL_CAFEConnectionString {
+            get {
+                return ((string)(this["QL_CAFEConnectionString"]));
+            }
+        }
     }
 }

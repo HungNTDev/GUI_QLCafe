@@ -298,5 +298,10 @@ namespace GUI_QLCafe
         {
 
         }
+
+        private void picBackGround_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

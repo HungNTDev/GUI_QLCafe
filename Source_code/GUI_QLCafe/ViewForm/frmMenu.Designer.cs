@@ -317,6 +317,7 @@
             this.flp_CaPhe.Name = "flp_CaPhe";
             this.flp_CaPhe.Size = new System.Drawing.Size(873, 703);
             this.flp_CaPhe.TabIndex = 1;
+            this.flp_CaPhe.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_CaPhe_Paint);
             // 
             // TEA
             // 

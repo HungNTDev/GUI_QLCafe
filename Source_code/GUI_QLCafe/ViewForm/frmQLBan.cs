@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -20,10 +13,15 @@ namespace GUI_QLCafe
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddBan frmAddBan = new frmAddBan();
-            frmAddBan.ShowDialog(); 
+            frmAddBan.ShowDialog();
         }
 
         private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmQLBan_Load(object sender, EventArgs e)
         {
 
         }

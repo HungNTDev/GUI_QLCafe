@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
 using System.Drawing;
+using System.Data.Common;
 
 namespace GUI_QLCafe
 {
@@ -21,10 +22,13 @@ namespace GUI_QLCafe
             Reload();
         }
         BUS_Staff busNhanVien = new BUS_Staff();
+        private int status = 1;
         private void LoadGridView_NhanVien()
         {
-            dgvDanhSachNhanVien.DataSource = busNhanVien.get();
+            cboStatus.SelectedIndex = status - 1;
+            dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
         }
+
         public void Reload()
         {
             LoadGridView_NhanVien();
@@ -39,11 +43,17 @@ namespace GUI_QLCafe
             string column = "";
             if (txtTimKiem.Text.Trim().Length == 0)
             {
+                Notification("Nhập nội dung cần tìm!", frmNotification.enumType.Failed);
+                return;
+            }
+
+            if (cboTim.SelectedIndex == -1)
+            {
                 column = "rong";
             }
             else
             {
-                switch (cboTim.SelectedIndex) 
+                switch (cboTim.SelectedIndex)
                 {
                     case 0:
                         column = "IdStaff";
@@ -57,13 +67,12 @@ namespace GUI_QLCafe
                     case 3:
                         column = "RoleStaff";
                         break;
-                    case 4:
-                        column = "StatusStaff";
-                        break;
                 }
             }
-            dgvDanhSachNhanVien.DataSource = busNhanVien.search(column, txtTimKiem.Text);
-            messageDialog.Show(column);
+            messageDialog.Show(status.ToString() + column + txtTimKiem.Text);
+
+            dgvDanhSachNhanVien.DataSource = busNhanVien.search(column, txtTimKiem.Text, status);
+            
         }
         private string saveDirectory;
         private string relativePath;
@@ -124,7 +133,7 @@ namespace GUI_QLCafe
             }
         }
         // phương thức này dùng để gọi Notfication khi thêm thành công
-        public void Nofication(string msg, frmNotification.enumType type)
+        public void Notification(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
             frmNotification.showNotfication(msg, type);
@@ -147,7 +156,7 @@ namespace GUI_QLCafe
             }
             else
             {
-                Nofication("Vui lòng chọn nhân viên cần sửa!", frmNotification.enumType.Success);
+                Notification("Vui lòng chọn nhân viên cần sửa!", frmNotification.enumType.Failed);
                 return;
             }
         }
@@ -163,6 +172,23 @@ namespace GUI_QLCafe
             {
                 txtTimKiem.PlaceholderText = $"Nhập {cboTim.SelectedItem.ToString().Substring(0,1).ToLower()}" +
                     $"{cboTim.SelectedItem.ToString().Substring(1)} cần tìm";
+            }
+        }
+
+        private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboStatus.SelectedItem != null)
+            {
+                switch (cboStatus.SelectedIndex)
+                {
+                    case 0:
+                        status = 1;
+                        break;
+                    case 1:
+                        status = 0;
+                        break;
+                }
+                dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
             }
         }
     }

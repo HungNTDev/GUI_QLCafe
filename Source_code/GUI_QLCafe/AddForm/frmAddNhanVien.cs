@@ -139,13 +139,14 @@ namespace GUI_QLCafe
 
                         if (busNhanVien.insert(staff))
                         {
-                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            
                             frmQLNhanVien qlnv = new frmQLNhanVien();
                             qlnv.Reload();
+                            Nofication("Thêm thành công!", frmNotification.enumType.Success);
                         }
                         else
                         {
-                            this.Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                            Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
                             return;
                         }
                     }

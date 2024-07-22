@@ -40,12 +40,6 @@
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.dgvDanhSachNhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.IdStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboTim = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnSua = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,6 +56,13 @@
             this.txtDuongDan = new Guna.UI2.WinForms.Guna2TextBox();
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.cboStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.IdStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).BeginInit();
             this.gbTrangThai.SuspendLayout();
             this.gbVaiTro.SuspendLayout();
@@ -79,7 +80,7 @@
             this.btnThem.ImageRotate = 0F;
             this.btnThem.ImageSize = new System.Drawing.Size(55, 55);
             this.btnThem.IndicateFocus = true;
-            this.btnThem.Location = new System.Drawing.Point(92, 666);
+            this.btnThem.Location = new System.Drawing.Point(92, 733);
             this.btnThem.Name = "btnThem";
             this.btnThem.PressedState.ImageSize = new System.Drawing.Size(55, 55);
             this.btnThem.Size = new System.Drawing.Size(55, 55);
@@ -94,7 +95,7 @@
             this.shapeLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.shapeLine.BorderThickness = 1;
             this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.shapeLine.Location = new System.Drawing.Point(-102, 238);
+            this.shapeLine.Location = new System.Drawing.Point(-96, 238);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
             this.shapeLine.Rotate = 0F;
@@ -133,7 +134,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(737, 676);
+            this.txtTimKiem.Location = new System.Drawing.Point(737, 743);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
@@ -156,7 +157,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(1022, 676);
+            this.btnTimKiem.Location = new System.Drawing.Point(1022, 743);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnTimKiem.Size = new System.Drawing.Size(156, 36);
@@ -201,7 +202,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(44, 271);
+            this.dgvDanhSachNhanVien.Location = new System.Drawing.Point(44, 313);
             this.dgvDanhSachNhanVien.Name = "dgvDanhSachNhanVien";
             this.dgvDanhSachNhanVien.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -218,7 +219,7 @@
             this.dgvDanhSachNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDanhSachNhanVien.RowTemplate.Height = 24;
             this.dgvDanhSachNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1109, 369);
+            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1109, 394);
             this.dgvDanhSachNhanVien.TabIndex = 15;
             this.dgvDanhSachNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachNhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -243,61 +244,6 @@
             this.dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDanhSachNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachNhanVien_CellClick);
             // 
-            // IdStaff
-            // 
-            this.IdStaff.DataPropertyName = "IdStaff";
-            this.IdStaff.HeaderText = "Mã nhân viên";
-            this.IdStaff.MinimumWidth = 6;
-            this.IdStaff.Name = "IdStaff";
-            this.IdStaff.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.FillWeight = 51.13974F;
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 300;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.FillWeight = 116.545F;
-            this.FullName.HeaderText = "Tên nhân viên";
-            this.FullName.MinimumWidth = 200;
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            // 
-            // RoleStaff
-            // 
-            this.RoleStaff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.RoleStaff.DataPropertyName = "RoleStaff";
-            this.RoleStaff.FillWeight = 89.62247F;
-            this.RoleStaff.HeaderText = "Vai trò";
-            this.RoleStaff.MinimumWidth = 100;
-            this.RoleStaff.Name = "RoleStaff";
-            this.RoleStaff.ReadOnly = true;
-            // 
-            // ImageStaff
-            // 
-            this.ImageStaff.DataPropertyName = "ImageStaff";
-            this.ImageStaff.HeaderText = "Hình ảnh";
-            this.ImageStaff.MinimumWidth = 6;
-            this.ImageStaff.Name = "ImageStaff";
-            this.ImageStaff.ReadOnly = true;
-            this.ImageStaff.Visible = false;
-            // 
-            // StatusStaff
-            // 
-            this.StatusStaff.DataPropertyName = "StatusStaff";
-            this.StatusStaff.HeaderText = "Trạng thái";
-            this.StatusStaff.MinimumWidth = 6;
-            this.StatusStaff.Name = "StatusStaff";
-            this.StatusStaff.ReadOnly = true;
-            // 
             // cboTim
             // 
             this.cboTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -315,9 +261,8 @@
             "Mã nhân viên",
             "Email",
             "Tên nhân viên",
-            "Vai trò",
-            "Trạng thái"});
-            this.cboTim.Location = new System.Drawing.Point(532, 676);
+            "Vai trò"});
+            this.cboTim.Location = new System.Drawing.Point(532, 743);
             this.cboTim.Name = "cboTim";
             this.cboTim.Size = new System.Drawing.Size(198, 36);
             this.cboTim.TabIndex = 16;
@@ -334,7 +279,7 @@
             this.btnSua.ImageRotate = 45F;
             this.btnSua.ImageSize = new System.Drawing.Size(55, 55);
             this.btnSua.IndicateFocus = true;
-            this.btnSua.Location = new System.Drawing.Point(157, 666);
+            this.btnSua.Location = new System.Drawing.Point(157, 733);
             this.btnSua.Name = "btnSua";
             this.btnSua.PressedState.ImageSize = new System.Drawing.Size(55, 55);
             this.btnSua.Size = new System.Drawing.Size(55, 55);
@@ -358,7 +303,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtEmail.Location = new System.Drawing.Point(216, 113);
+            this.txtEmail.Location = new System.Drawing.Point(218, 60);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -374,7 +319,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 15.70909F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lblEmail.Location = new System.Drawing.Point(39, 113);
+            this.lblEmail.Location = new System.Drawing.Point(41, 60);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(76, 32);
             this.lblEmail.TabIndex = 20;
@@ -386,7 +331,7 @@
             this.lblTen.BackColor = System.Drawing.Color.Transparent;
             this.lblTen.Font = new System.Drawing.Font("Segoe UI", 15.70909F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lblTen.Location = new System.Drawing.Point(39, 206);
+            this.lblTen.Location = new System.Drawing.Point(41, 153);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(173, 32);
             this.lblTen.TabIndex = 22;
@@ -409,7 +354,7 @@
             this.txtTen.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.txtTen.ForeColor = System.Drawing.Color.Black;
             this.txtTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTen.Location = new System.Drawing.Point(216, 206);
+            this.txtTen.Location = new System.Drawing.Point(218, 153);
             this.txtTen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -430,7 +375,7 @@
             this.gbTrangThai.Enabled = false;
             this.gbTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTrangThai.ForeColor = System.Drawing.Color.White;
-            this.gbTrangThai.Location = new System.Drawing.Point(699, 113);
+            this.gbTrangThai.Location = new System.Drawing.Point(685, 60);
             this.gbTrangThai.Name = "gbTrangThai";
             this.gbTrangThai.Size = new System.Drawing.Size(201, 125);
             this.gbTrangThai.TabIndex = 25;
@@ -475,7 +420,7 @@
             this.gbVaiTro.Enabled = false;
             this.gbVaiTro.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbVaiTro.ForeColor = System.Drawing.Color.White;
-            this.gbVaiTro.Location = new System.Drawing.Point(476, 113);
+            this.gbVaiTro.Location = new System.Drawing.Point(478, 60);
             this.gbVaiTro.Name = "gbVaiTro";
             this.gbVaiTro.Size = new System.Drawing.Size(201, 125);
             this.gbVaiTro.TabIndex = 26;
@@ -571,18 +516,95 @@
             this.btnLamMoi.ImageRotate = 45F;
             this.btnLamMoi.ImageSize = new System.Drawing.Size(55, 55);
             this.btnLamMoi.IndicateFocus = true;
-            this.btnLamMoi.Location = new System.Drawing.Point(218, 666);
+            this.btnLamMoi.Location = new System.Drawing.Point(218, 733);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.PressedState.ImageSize = new System.Drawing.Size(55, 55);
             this.btnLamMoi.Size = new System.Drawing.Size(55, 55);
             this.btnLamMoi.TabIndex = 29;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
+            // cboStatus
+            // 
+            this.cboStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboStatus.ItemHeight = 30;
+            this.cboStatus.Items.AddRange(new object[] {
+            "Hoạt động",
+            "Ngừng hoạt động"});
+            this.cboStatus.Location = new System.Drawing.Point(942, 271);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(211, 36);
+            this.cboStatus.TabIndex = 30;
+            this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cboStatus_SelectedIndexChanged);
+            // 
+            // IdStaff
+            // 
+            this.IdStaff.DataPropertyName = "IdStaff";
+            this.IdStaff.HeaderText = "Mã nhân viên";
+            this.IdStaff.MinimumWidth = 6;
+            this.IdStaff.Name = "IdStaff";
+            this.IdStaff.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.FillWeight = 51.13974F;
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 300;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.FillWeight = 116.545F;
+            this.FullName.HeaderText = "Tên nhân viên";
+            this.FullName.MinimumWidth = 200;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            // 
+            // RoleStaff
+            // 
+            this.RoleStaff.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.RoleStaff.DataPropertyName = "RoleStaff";
+            this.RoleStaff.FillWeight = 89.62247F;
+            this.RoleStaff.HeaderText = "Vai trò";
+            this.RoleStaff.MinimumWidth = 100;
+            this.RoleStaff.Name = "RoleStaff";
+            this.RoleStaff.ReadOnly = true;
+            // 
+            // ImageStaff
+            // 
+            this.ImageStaff.DataPropertyName = "ImageStaff";
+            this.ImageStaff.HeaderText = "Hình ảnh";
+            this.ImageStaff.MinimumWidth = 6;
+            this.ImageStaff.Name = "ImageStaff";
+            this.ImageStaff.ReadOnly = true;
+            this.ImageStaff.Visible = false;
+            // 
+            // StatusStaff
+            // 
+            this.StatusStaff.DataPropertyName = "StatusStaff";
+            this.StatusStaff.HeaderText = "Trạng thái";
+            this.StatusStaff.MinimumWidth = 6;
+            this.StatusStaff.Name = "StatusStaff";
+            this.StatusStaff.ReadOnly = true;
+            this.StatusStaff.Visible = false;
+            // 
             // frmQLNhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1190, 733);
+            this.ClientSize = new System.Drawing.Size(1190, 800);
+            this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.picNhanVien);
             this.Controls.Add(this.txtDuongDan);
@@ -638,12 +660,13 @@
         private Guna.UI2.WinForms.Guna2PictureBox picNhanVien;
         private Guna.UI2.WinForms.Guna2TextBox txtDuongDan;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
+        public Guna.UI2.WinForms.Guna2ImageButton btnLamMoi;
+        private Guna.UI2.WinForms.Guna2ComboBox cboStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdStaff;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleStaff;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImageStaff;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusStaff;
-        public Guna.UI2.WinForms.Guna2ImageButton btnLamMoi;
     }
 }

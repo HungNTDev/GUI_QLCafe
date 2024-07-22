@@ -58,9 +58,9 @@ namespace BUS_QLCafe
         {
             return dal.kiemtraEmail(email);
         }
-        public DataTable get()
+        public DataTable get(int status)
         {
-            return dal.get();
+            return dal.get(status);
         }
         public bool insert(DTO_Staff staff)
         {
@@ -74,9 +74,9 @@ namespace BUS_QLCafe
         {
             return dal.delete(id);
         }
-        public DataTable search(string column, string value)
+        public DataTable search(string column, string value, int status)
         {
-            return dal.search(column, value);
+            return dal.search(column, value, status);
         }
     }
 }

@@ -230,7 +230,7 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public DataTable get()
+        public DataTable get(int status)
         {
             try
             {
@@ -240,6 +240,7 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "GetStaff";
+                    cmd.Parameters.AddWithValue("@Status", status);
                     conn.Open();
 
                     DataTable dtNhanVien = new DataTable();
@@ -354,7 +355,7 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public DataTable search(string column, string value)
+        public DataTable search(string column, string value, int status)
         {
             try
             {
@@ -366,6 +367,7 @@ namespace DAL_QLCafe
                     cmd.CommandText = "SearchStaff";
                     cmd.Parameters.AddWithValue("@column", column);
                     cmd.Parameters.AddWithValue("@value", value);
+                    cmd.Parameters.AddWithValue("@status", status);
                     conn.Open();
                     DataTable dtNhanVien = new DataTable();
                     dtNhanVien.Load(cmd.ExecuteReader());

@@ -319,7 +319,7 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public bool update(DTO_Staff staff)
+        public bool update(DTO_Staff staff, string id)
         {
             try
             {
@@ -329,13 +329,12 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateStaff";
-                    cmd.Parameters.AddWithValue("@IdStaff", staff.IdStaff);
+                    cmd.Parameters.AddWithValue("@Id", id);
                     cmd.Parameters.AddWithValue("@FullName", staff.FullName);
                     cmd.Parameters.AddWithValue("@ImageStaff", staff.ImageStaff);
                     cmd.Parameters.AddWithValue("@Email", staff.Email);
-                    cmd.Parameters.AddWithValue("@PasswordStaff", staff.PasswordStaff);
-                    cmd.Parameters.AddWithValue("@RoleStaff", staff.RoleStaff);
-                    cmd.Parameters.AddWithValue("@StatusStaff", staff.StatusStaff);
+                    cmd.Parameters.AddWithValue("@Role", staff.RoleStaff);
+                    cmd.Parameters.AddWithValue("@Status", staff.StatusStaff);
 
                     conn.Open();
 

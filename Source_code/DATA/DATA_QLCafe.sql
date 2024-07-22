@@ -1,4 +1,4 @@
-﻿create database QL_Cafe;
+﻿5create database QL_Cafe;
 use QL_Cafe;
 create table Staff(
 Id              int identity(1,1) not null ,
@@ -255,17 +255,19 @@ create or alter proc ListMenu (@IdPT nvarchar(10)) as
 create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select NameProduct, Price, IdProduct from Product where IdProduct = @IdProduct
 
+	select * from Staff
+
 -- Lấy danh sách nhân viên
-create proc GetStaff
+alter proc GetStaff
 as
 begin
-	select Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = 1;
+	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = 1;
 end
 
--- Thêm nhân viên
-create proc InsertStaff
-(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(50), 
-@Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
+
+--Thêm NV
+ALTER proc [dbo].[InsertStaff]
+(@FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
 as
 begin
 	DECLARE @IdStaff VARCHAR(20);
@@ -286,22 +288,21 @@ begin
 
 	Insert into Staff (IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff) 
 	values (@IdStaff, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
-
 end
 
 
 -- Sửa nhân viên
-create proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(50), 
-@Password nvarchar(50), @Email nvarchar(50), @Role int, @Status int)
+alter proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
 as
 begin
 
 	Update Staff 
-	Set 
+	Set
 	FullName = @FullName, 
-	ImageStaff = @ImageStaff, 
-	PasswordStaff = @Password, Email = @Email, 
-	RoleStaff = @Role, StatusStaff = @Status
+	ImageStaff = @ImageStaff,
+	Email = @Email, 
+	RoleStaff = @Role, 
+	StatusStaff = @Status
 	where IdStaff = @Id
 
 end
@@ -316,7 +317,7 @@ begin
 
 end
 
---Tìm kiếm nhân viên
+--Tìm kiếm nhân viên (chỉ tìm được theo cột, chưa tìm tất cả nếu combobox rỗng)
 alter proc SearchStaff (@column varchar(30), @value nvarchar(100))
 as
 begin
@@ -324,6 +325,7 @@ begin
     FROM Staff
     WHERE
         CASE @column
+			WHEN 'IdStaff' THEN IdStaff
             WHEN 'Email' THEN Email
             WHEN 'FullName' THEN FullName
             WHEN 'RoleStaff' THEN RoleStaff -- Assuming RoleStaff is an integer or similar
@@ -333,6 +335,40 @@ begin
         AND StatusStaff = 1;
 end
 
+
+--Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
+alter proc SearchStaff (@column varchar(30), @value nvarchar(100))
+as
+begin
+	
+	if @column = 'rong'
+		begin
+			select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+			FROM Staff
+			WHERE Email like '%'+@value+'%' or
+				  FullName like '%'+@value+'%' or
+				  RoleStaff like '%'+@value+'%' or
+				  ImageStaff like '%'+@value+'%'
+				  AND StatusStaff = 1;
+		end
+	else
+		begin
+			select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+			FROM Staff
+			WHERE
+				CASE @column
+					WHEN 'IdStaff' THEN IdStaff
+					WHEN 'Email' THEN Email
+					WHEN 'FullName' THEN FullName
+					WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(100)) -- Assuming RoleStaff is an integer or similar
+					WHEN 'ImageStaff' THEN ImageStaff
+				END LIKE N'%' + @value + '%'
+				AND StatusStaff = 1;
+		end
+	
+end
+
+exec SearchStaff 'rong', 'bao'
 
 -- Danh sách sản phẩm
 create proc GetProduct

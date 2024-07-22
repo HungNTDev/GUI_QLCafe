@@ -13,17 +13,7 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
-
-        private void shapeLine_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelQuenMatKhau_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        public string email;
         BUS_Staff busNV = new BUS_Staff();
         string maXacNhan;
         private void btnGui_Click(object sender, EventArgs e)

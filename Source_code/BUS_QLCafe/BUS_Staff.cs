@@ -66,9 +66,9 @@ namespace BUS_QLCafe
         {
             return dal.insert(staff);
         }
-        public bool update(DTO_Staff staff)
+        public bool update(DTO_Staff staff, string id)
         {
-            return dal.update(staff);
+            return dal.update(staff, id);
         }
         public bool delete(string id)
         {

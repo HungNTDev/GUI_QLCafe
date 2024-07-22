@@ -73,7 +73,7 @@ namespace GUI_QLCafe
             }
 
             string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-            string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Product");
+            string saveDirectory = Path.Combine("img", "Product");
 
             if (!Directory.Exists(saveDirectory))
             {
@@ -173,11 +173,22 @@ namespace GUI_QLCafe
 
                     fileName = Path.GetFileName(dlgopen.FileName); // Tên ảnh
 
-                    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                    fileSavePath = Path.Combine(saveDirectory, "img", "Product", fileName); // Tạo đường dẫn để lưu file vào thư mục của project
+                    //string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    fileSavePath = Path.Combine("img", "Product", fileName);
+                    // Tạo đường dẫn để lưu file vào thư mục của project
 
                     txtDuongDan.Text = fileAddress;
                 }
+
+                //OpenFileDialog ofd = new OpenFileDialog();
+                //ofd.Title = "Chọn file hình";
+                //ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                //if (ofd.ShowDialog() == DialogResult.OK)
+                //{
+                //    txtDuongDan.Text = @"\" + ofd.FileName.ToString().Substring(ofd.FileName.ToString().LastIndexOf("img") + 3);
+                //    picSanPham.Image = Image.FromFile(Application.StartupPath + txtDuongDan.Text);
+
+                //}
             }
             catch (Exception ex)
             {
@@ -198,6 +209,11 @@ namespace GUI_QLCafe
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmAddSanPham_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

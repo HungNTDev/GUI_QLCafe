@@ -30,6 +30,28 @@ namespace DAL_QLCafe
             }
         }
 
+        public DataTable getType()
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand("GetProduct", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
+                    DataTable dtProduct = new DataTable();
+                    dtProduct.Load(cmd.ExecuteReader());
+                    return dtProduct;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
         public bool insert(DTO_Product obj)
         {
             try
@@ -89,7 +111,7 @@ namespace DAL_QLCafe
                     {
                         return true;
                     }
-                    
+
                 }
             }
             catch (Exception e)
@@ -189,5 +211,56 @@ namespace DAL_QLCafe
             }
         }
 
+        public DataTable LoadIDPT()
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "LoadIDPT";
+                    conn.Open();
+                    DataTable dtIDPT = new DataTable();
+                    dtIDPT.Load(cmd.ExecuteReader());
+                    return dtIDPT;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public DataTable ListType(string type)
+        {
+            try
+            {
+                DataTable db = new DataTable();
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "ListType";
+                    cmd.Parameters.AddWithValue("@IdPT", type);
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(db);
+                    return db;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

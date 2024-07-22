@@ -37,5 +37,15 @@ namespace BUS_QLCafe
         {
             return dal.LoadMenu(product);
         }
+
+        public DataTable LoadIDPT()
+        {
+            return dal.LoadIDPT();
+        }
+
+        public DataTable ListType(string obj)
+        {
+            return dal.ListType(obj);
+        }
     }
 }

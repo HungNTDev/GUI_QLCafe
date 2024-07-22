@@ -22,6 +22,7 @@ namespace GUI_QLCafe
         {
             frmAddSanPham frmAddSanPham = new frmAddSanPham();
             frmAddSanPham.ShowDialog();
+            LoadGridView_SanPham();
         }
         public void LoadGridView_SanPham()
         {
@@ -31,6 +32,7 @@ namespace GUI_QLCafe
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
             LoadGridView_SanPham();
+            LoadCombobox_Loai();
         }
 
         private void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -69,9 +71,43 @@ namespace GUI_QLCafe
         private void btnPrev_Click(object sender, EventArgs e)
         {
 
+
         }
 
-        private void cboLoai_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadCombobox_Loai()
+        {
+
+            cboLoai.DataSource = busSanPham.LoadIDPT();
+            cboLoai.ValueMember = "IdPT";
+            cboLoai.DisplayMember = "IdPT";
+
+        }
+
+        private void cboLoai_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string id = cboLoai.SelectedValue.ToString();
+
+            if (id == "")
+            {
+                LoadGridView_SanPham();
+            }
+            else
+            {
+                dgvDanhSachSanPham.DataSource = busSanPham.ListType(id);
+            }
+        }
+
+        private void btn_First_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Last_Click(object sender, EventArgs e)
         {
 
         }

@@ -499,6 +499,7 @@
             this.Name = "frmAddSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddSanPham";
+            this.Load += new System.EventHandler(this.frmAddSanPham_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelHeader.ResumeLayout(false);

@@ -270,8 +270,32 @@ namespace GUI_QLCafe
 
         private void lkQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();
-            frmQuenMatKhau.Show();
+            if (txtEmail.Text.Trim().Length == 0)
+            {
+                messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+                txtEmail.Focus();
+                return;
+            }
+            else if (!IsValid(txtEmail.Text))
+            {
+                messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+                txtEmail.Focus();
+                return;
+            }
+            else if (!busStaff.KiemTraEmail(txtEmail.Text)) 
+            {
+                messageDialog.Show("Email không tồn tại trong hệ thống!", "Thông báo");
+                txtEmail.Focus();
+                return;
+            }
+            else
+            {
+                frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();
+
+                frmQuenMatKhau.email = txtEmail.Text;
+                frmQuenMatKhau.Show();
+            }
+            
         }
     }
 }

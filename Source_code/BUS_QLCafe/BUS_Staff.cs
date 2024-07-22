@@ -58,25 +58,25 @@ namespace BUS_QLCafe
         {
             return dal.kiemtraEmail(email);
         }
-        public DataTable get()
+        public DataTable get(int status)
         {
-            return dal.get();
+            return dal.get(status);
         }
         public bool insert(DTO_Staff staff)
         {
             return dal.insert(staff);
         }
-        public bool update(DTO_Staff staff)
+        public bool update(DTO_Staff staff, string id)
         {
-            return dal.update(staff);
+            return dal.update(staff, id);
         }
         public bool delete(string id)
         {
             return dal.delete(id);
         }
-        public DataTable search(string keyword, string column)
+        public DataTable search(string column, string value, int status)
         {
-            return dal.search(keyword, column);
+            return dal.search(column, value, status);
         }
     }
 }

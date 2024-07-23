@@ -201,6 +201,9 @@
       <DependentUpon>frmAddBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\ProgressReport.cs" />
+    <Compile Include="ThongTinSanPham.cs">
+      <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinSanPham.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

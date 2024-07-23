@@ -117,6 +117,7 @@
             this.chkShowPassword.TabIndex = 23;
             this.chkShowPassword.Text = "Hiện mật khẩu";
             this.chkShowPassword.UseVisualStyleBackColor = false;
+            this.chkShowPassword.Visible = false;
             this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // lbRetypePass
@@ -130,6 +131,7 @@
             this.lbRetypePass.Size = new System.Drawing.Size(166, 25);
             this.lbRetypePass.TabIndex = 21;
             this.lbRetypePass.Text = "Nhập lại mật khẩu";
+            this.lbRetypePass.Visible = false;
             // 
             // lbNewPassword
             // 
@@ -142,6 +144,7 @@
             this.lbNewPassword.Size = new System.Drawing.Size(128, 25);
             this.lbNewPassword.TabIndex = 22;
             this.lbNewPassword.Text = "Mật khẩu mới";
+            this.lbNewPassword.Visible = false;
             // 
             // txtRetypePassword
             // 
@@ -167,6 +170,7 @@
             this.txtRetypePassword.SelectedText = "";
             this.txtRetypePassword.Size = new System.Drawing.Size(361, 37);
             this.txtRetypePassword.TabIndex = 19;
+            this.txtRetypePassword.Visible = false;
             // 
             // txtNewPassword
             // 
@@ -192,6 +196,7 @@
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.Size = new System.Drawing.Size(360, 37);
             this.txtNewPassword.TabIndex = 20;
+            this.txtNewPassword.Visible = false;
             // 
             // lbMaXacNhan
             // 
@@ -204,6 +209,7 @@
             this.lbMaXacNhan.Size = new System.Drawing.Size(120, 25);
             this.lbMaXacNhan.TabIndex = 18;
             this.lbMaXacNhan.Text = "Mã xác nhận";
+            this.lbMaXacNhan.Visible = false;
             // 
             // lbEmail
             // 
@@ -241,7 +247,7 @@
             this.btnGui.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnGui.Size = new System.Drawing.Size(361, 47);
             this.btnGui.TabIndex = 17;
-            this.btnGui.Text = "GỬI MÃ XÁC NHẬN";
+            this.btnGui.Text = "GỬI MẬT KHẨU MỚI";
             this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
             // btnCapNhat
@@ -269,6 +275,7 @@
             this.btnCapNhat.Size = new System.Drawing.Size(361, 47);
             this.btnCapNhat.TabIndex = 17;
             this.btnCapNhat.Text = "CẬP NHẬT";
+            this.btnCapNhat.Visible = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // txtMaXacNhan
@@ -295,6 +302,7 @@
             this.txtMaXacNhan.SelectedText = "";
             this.txtMaXacNhan.Size = new System.Drawing.Size(361, 37);
             this.txtMaXacNhan.TabIndex = 16;
+            this.txtMaXacNhan.Visible = false;
             // 
             // txtEmail
             // 

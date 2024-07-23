@@ -49,7 +49,7 @@ namespace GUI_QLCafe
 
         }
         //Xóa tài khoản đã chọn lần trước để đăng nhập
-        
+
         public bool IsValid(string emailaddress) //kiem tra xem email co hop le khong
         {
             try
@@ -83,56 +83,60 @@ namespace GUI_QLCafe
                 txtPassword.Focus();
                 return;
             }
-            //frmMainQLBH.email = nv.EmailNV;
-
-            staff = new DTO_Staff();
-            busStaff = new BUS_Staff();
-
-            staff.email = txtEmail.Text;
-            staff.passwordStaff = busStaff.encryption(txtPassword.Text);
-
-            if (busStaff.DangNhap(staff))
+            else
             {
-                if (chkGhiNhoTK.Checked)
+                //frmMainQLBH.email = nv.EmailNV;
+
+                staff = new DTO_Staff();
+                busStaff = new BUS_Staff();
+
+                staff.email = txtEmail.Text;
+                staff.passwordStaff = busStaff.encryption(txtPassword.Text);
+
+                if (busStaff.DangNhap(staff))
                 {
-                    Properties.Settings.Default.SavedEmail = txtEmail.Text;
-                    Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
+                    if (chkGhiNhoTK.Checked)
+                    {
+                        Properties.Settings.Default.SavedEmail = txtEmail.Text;
+                        Properties.Settings.Default.RememberEmail = true; // Lưu trạng thái của checkbox
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.SavedEmail = string.Empty; // Xóa email khi không ghi nhớ
+                        Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
+                    }
+                    Properties.Settings.Default.Save();
+
+                    frmMainQLCF mainform = new frmMainQLCF();
+                    frmLoading frmLoading = new frmLoading();
+
+                    DataTable dt = busStaff.VaiTro(staff.email);
+                    frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
+                    frmMainQLCF.session = 1;
+                    frmMainQLCF.email = staff.email;
+
+                    frmLoading.Show();
+
+                    //foreach (Form form in Application.OpenForms)
+                    //{
+                    //    if (form is frmMainQLCF)
+                    //    {
+                    //        ((frmMainQLCF)form).PhanQuyen();
+                    //        break;
+                    //    }
+                    //}
+
+                    this.Hide();
                 }
                 else
                 {
-                    Properties.Settings.Default.SavedEmail = string.Empty; // Xóa email khi không ghi nhớ
-                    Properties.Settings.Default.RememberEmail = false; // Lưu trạng thái của checkbox
+                    messageDialog.Show("Đăng nhập thất bại!", "Thông báo");
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+                    return;
                 }
-                Properties.Settings.Default.Save();
-
-                frmMainQLCF mainform = new frmMainQLCF();
-                frmLoading frmLoading = new frmLoading();
-
-                DataTable dt = busStaff.VaiTro(staff.email);
-                frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
-                frmMainQLCF.session = 1;
-                frmMainQLCF.email = staff.email;
-
-                frmLoading.Show();
-
-                //foreach (Form form in Application.OpenForms)
-                //{
-                //    if (form is frmMainQLCF)
-                //    {
-                //        ((frmMainQLCF)form).PhanQuyen();
-                //        break;
-                //    }
-                //}
-
-                this.Hide();
             }
-            else
-            {
-                messageDialog.Show("Đăng nhập thất bại!", "Thông báo");
-                txtPassword.Clear();
-                txtPassword.Focus();
-                return;
-            }
+            
         }
 
         private void picHiddenPassWord_Click(object sender, System.EventArgs e)
@@ -383,6 +387,11 @@ namespace GUI_QLCafe
             //Enabling SSL (Secure Sockets Layer, encyription) is reqiured by most email providers to send mail
             client.EnableSsl = true;
             client.Send(Msg); // Send our email.
+
+        }
+
+        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

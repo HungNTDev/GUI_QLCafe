@@ -132,7 +132,7 @@ namespace DAL_QLCafe
 
                     cmd.CommandText = "NewPass";
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@password", matkhaumoi);
+                    cmd.Parameters.AddWithValue("@pass", matkhaumoi);
                     conn.Open();
 
                     if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
@@ -215,7 +215,7 @@ namespace DAL_QLCafe
                     conn.Open();
 
                     int count = (int)cmd.ExecuteScalar();
-                    if (count == 1)
+                    if (Convert.ToInt16(count) > 0)
                     {
                         return true;
                     }

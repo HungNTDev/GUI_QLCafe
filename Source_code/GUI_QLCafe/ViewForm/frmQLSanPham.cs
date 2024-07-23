@@ -140,6 +140,21 @@ namespace GUI_QLCafe
 
         }
 
+        private void dgvDanhSachSanPham_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                // Ghi lại chi tiết lỗi
+                Console.WriteLine("Lỗi DataGridView: " + e.Exception.Message);
 
+                // Đánh dấu lỗi là đã được xử lý
+                e.ThrowException = false;
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi cho người dùng (nếu cần)
+                MessageBox.Show("Đã xảy ra lỗi khi xử lý dữ liệu trong DataGridView." + ex.Message);
+            }
+        }
     }
 }

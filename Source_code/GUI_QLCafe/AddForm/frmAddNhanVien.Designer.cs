@@ -50,6 +50,7 @@
             this.txtDuongDan = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.gbVaiTro.SuspendLayout();
@@ -77,7 +78,7 @@
             this.lbText0.ForeColor = System.Drawing.Color.White;
             this.lbText0.Location = new System.Drawing.Point(101, 12);
             this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(282, 38);
+            this.lbText0.Size = new System.Drawing.Size(301, 41);
             this.lbText0.TabIndex = 10;
             this.lbText0.Text = "Thông tin nhân viên";
             // 
@@ -128,7 +129,7 @@
             this.lbEmailNhanVien.ForeColor = System.Drawing.Color.Black;
             this.lbEmailNhanVien.Location = new System.Drawing.Point(39, 84);
             this.lbEmailNhanVien.Name = "lbEmailNhanVien";
-            this.lbEmailNhanVien.Size = new System.Drawing.Size(58, 25);
+            this.lbEmailNhanVien.Size = new System.Drawing.Size(59, 28);
             this.lbEmailNhanVien.TabIndex = 2;
             this.lbEmailNhanVien.Text = "Email";
             // 
@@ -140,7 +141,7 @@
             this.lbTenNhanVien.ForeColor = System.Drawing.Color.Black;
             this.lbTenNhanVien.Location = new System.Drawing.Point(39, 160);
             this.lbTenNhanVien.Name = "lbTenNhanVien";
-            this.lbTenNhanVien.Size = new System.Drawing.Size(129, 25);
+            this.lbTenNhanVien.Size = new System.Drawing.Size(130, 28);
             this.lbTenNhanVien.TabIndex = 3;
             this.lbTenNhanVien.Text = "Tên nhân viên";
             // 
@@ -152,7 +153,7 @@
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
             this.rdoQuanTri.Location = new System.Drawing.Point(8, 47);
             this.rdoQuanTri.Name = "rdoQuanTri";
-            this.rdoQuanTri.Size = new System.Drawing.Size(85, 25);
+            this.rdoQuanTri.Size = new System.Drawing.Size(94, 27);
             this.rdoQuanTri.TabIndex = 2;
             this.rdoQuanTri.TabStop = true;
             this.rdoQuanTri.Text = "Quản trị";
@@ -166,7 +167,7 @@
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
             this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
             this.rdoNhanVien.Name = "rdoNhanVien";
-            this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
+            this.rdoNhanVien.Size = new System.Drawing.Size(109, 27);
             this.rdoNhanVien.TabIndex = 2;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân viên";
@@ -180,7 +181,7 @@
             this.rdoHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoHoatDong.Location = new System.Drawing.Point(8, 47);
             this.rdoHoatDong.Name = "rdoHoatDong";
-            this.rdoHoatDong.Size = new System.Drawing.Size(101, 25);
+            this.rdoHoatDong.Size = new System.Drawing.Size(113, 27);
             this.rdoHoatDong.TabIndex = 2;
             this.rdoHoatDong.TabStop = true;
             this.rdoHoatDong.Text = "Hoạt động";
@@ -194,7 +195,7 @@
             this.rdoNgungHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoNgungHoatDong.Location = new System.Drawing.Point(8, 85);
             this.rdoNgungHoatDong.Name = "rdoNgungHoatDong";
-            this.rdoNgungHoatDong.Size = new System.Drawing.Size(151, 25);
+            this.rdoNgungHoatDong.Size = new System.Drawing.Size(169, 27);
             this.rdoNgungHoatDong.TabIndex = 2;
             this.rdoNgungHoatDong.TabStop = true;
             this.rdoNgungHoatDong.Text = "Ngừng hoạt động";
@@ -376,12 +377,39 @@
             this.messageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.messageDialog.Text = null;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.BorderColor = System.Drawing.Color.Gray;
+            this.btnThoat.BorderRadius = 15;
+            this.btnThoat.BorderThickness = 1;
+            this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThoat.FillColor = System.Drawing.Color.White;
+            this.btnThoat.FocusedColor = System.Drawing.Color.Black;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(44, 510);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(626, 57);
+            this.btnThoat.TabIndex = 31;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmAddNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(714, 508);
+            this.ClientSize = new System.Drawing.Size(714, 603);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnMoHinh);
             this.Controls.Add(this.picNhanVien);
@@ -433,5 +461,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDuongDan;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
     }
 }

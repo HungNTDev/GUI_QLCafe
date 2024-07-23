@@ -44,6 +44,7 @@
             this.lbMaKhuyenMai = new System.Windows.Forms.Label();
             this.bfAddVoucher = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.txtMaKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -281,12 +282,39 @@
             this.txtMaKhuyenMai.Size = new System.Drawing.Size(343, 36);
             this.txtMaKhuyenMai.TabIndex = 48;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.BorderColor = System.Drawing.Color.Gray;
+            this.btnThoat.BorderRadius = 15;
+            this.btnThoat.BorderThickness = 1;
+            this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThoat.FillColor = System.Drawing.Color.White;
+            this.btnThoat.FocusedColor = System.Drawing.Color.Black;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(44, 365);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(713, 57);
+            this.btnThoat.TabIndex = 51;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmAddVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 368);
+            this.ClientSize = new System.Drawing.Size(800, 455);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.cbTrangThai);
             this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.lbPhanTramKM);
@@ -325,5 +353,6 @@
         private System.Windows.Forms.Label lbMaKhuyenMai;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddVoucher;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhuyenMai;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
     }
 }

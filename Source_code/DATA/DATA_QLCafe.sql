@@ -379,7 +379,7 @@ end
 create proc GetProduct
 as 
   begin 
-      select IdProduct, NameProduct, Price, ImageProduct, StatusProduct from Product
+      select IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT from Product
  end 
 
  -- Thêm sản phẩm

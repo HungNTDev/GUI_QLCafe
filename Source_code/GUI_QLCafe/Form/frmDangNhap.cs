@@ -49,7 +49,7 @@ namespace GUI_QLCafe
 
         }
         //Xóa tài khoản đã chọn lần trước để đăng nhập
-        
+
         public bool IsValid(string emailaddress) //kiem tra xem email co hop le khong
         {
             try
@@ -387,6 +387,11 @@ namespace GUI_QLCafe
             //Enabling SSL (Secure Sockets Layer, encyription) is reqiured by most email providers to send mail
             client.EnableSsl = true;
             client.Send(Msg); // Send our email.
+
+        }
+
+        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

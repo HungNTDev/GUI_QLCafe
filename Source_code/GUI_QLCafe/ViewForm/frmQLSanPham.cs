@@ -119,7 +119,7 @@ namespace GUI_QLCafe
 
         private void LoadData()
         {
-            using (SqlConnection conn = new SqlConnection("Data source=BLVCKHEVRT;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-T731SJL\\TUANHUNG;Initial Catalog=QL_Cafe;Integrated Security=True"))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);
@@ -134,7 +134,7 @@ namespace GUI_QLCafe
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dgvDanhSachSanPham.DataSource = dt;
-                lbTotalRows.Text = totalRows.ToString(); 
+                lbTotalRows.Text = totalRows.ToString();
             }
         }
 
@@ -145,12 +145,12 @@ namespace GUI_QLCafe
             //    pageNumber--;
             //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
             //}
-            
-            if(currentPageIndex > 1)
+
+            if (currentPageIndex > 1)
             {
                 currentPageIndex--;
-                LoadData(); 
-                lbCurrentPage.Text = currentPageIndex.ToString();   
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
 
@@ -167,11 +167,11 @@ namespace GUI_QLCafe
             //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
             //}
 
-            if(currentPageIndex < totalPages)
+            if (currentPageIndex < totalPages)
             {
                 currentPageIndex++;
                 LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();   
+                lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
 
@@ -179,14 +179,14 @@ namespace GUI_QLCafe
         {
             currentPageIndex = 1;
             LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();  
+            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = totalPages;
             LoadData();
-            lbCurrentPage.Text= currentPageIndex.ToString();    
+            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void dgvDanhSachSanPham_DataError(object sender, DataGridViewDataErrorEventArgs e)

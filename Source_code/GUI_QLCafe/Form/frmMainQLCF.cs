@@ -258,8 +258,8 @@ namespace GUI_QLCafe
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
-            frmDoiMatKhau.ShowDialog();
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email);
+            frmDoiMatKhau.Show();
         }
 
         private void btnQLHoaDon_Click(object sender, EventArgs e)

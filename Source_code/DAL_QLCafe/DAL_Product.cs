@@ -267,7 +267,6 @@ namespace DAL_QLCafe
         {
             try
             {
-
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
@@ -292,6 +291,65 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+        }
+
+        public DataTable GetPagedProduct(int PageIndex, int PageSize)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using(conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetPagedProduct";
+                    cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", PageSize);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    da.Fill(dt);
+
+                    if(dt.Rows.Count == 0)
+                    {
+                        Console.WriteLine("Không có dữ liệu được trả về từ proc");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return dt;
+        }
+
+        public int GetTotalProductCount()
+        {
+            int totalProductCount = 0;
+            try
+            {
+                using(conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetTotalProductCount";
+                    conn.Open();    
+                    totalProductCount = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            return totalProductCount;
         }
     }
 }

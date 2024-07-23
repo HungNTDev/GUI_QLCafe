@@ -1,6 +1,8 @@
 ﻿using BUS_QLCafe;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 namespace GUI_QLCafe
@@ -38,7 +40,10 @@ namespace GUI_QLCafe
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
             LoadGridView_SanPham();
-            LoadCombobox_Loai();
+            //LoadCombobox_Loai();
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -85,14 +90,6 @@ namespace GUI_QLCafe
             return result;
         }
 
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            if (pageNumber - 1 > 0)
-            {
-                pageNumber--;
-                dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
-            }
-        }
 
         private void LoadCombobox_Loai()
         {
@@ -115,29 +112,81 @@ namespace GUI_QLCafe
             //}
         }
 
-        private void btn_First_Click(object sender, EventArgs e)
-        {
+        private const int PageSize = 10;
+        private int currentPageIndex = 1;
+        private int totalPages = 0;
+        private int totalRows = 0;
 
+        private void LoadData()
+        {
+            using (SqlConnection conn = new SqlConnection("Data source=BLVCKHEVRT;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);
+                totalRows = (int)cmd.ExecuteScalar();
+
+                // Tính toán tổng số trang dựa trên tổng số bản gì và kích thước trang
+                totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
+                lbTotalPage.Text = totalPages.ToString();
+
+                // Sử dụng OFFSET để bỏ qua một số bản ghi và FETCH NEXT để lấy một số bản ghi tiếp theo
+                SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM Product ORDER BY IdProduct OFFSET {(currentPageIndex - 1) * PageSize} ROWS FETCH NEXT {PageSize} ROWS ONLY", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvDanhSachSanPham.DataSource = dt;
+                lbTotalRows.Text = totalRows.ToString(); 
+            }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            //if (pageNumber - 1 > 0)
+            //{
+            //    pageNumber--;
+            //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //}
+            
+            if(currentPageIndex > 1)
+            {
+                currentPageIndex--;
+                LoadData(); 
+                lbCurrentPage.Text = currentPageIndex.ToString();   
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int totalrecord = 0;
-            using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
-            {
-                totalrecord = db.Products.Count();
-            }
-            if (pageNumber - 1 <= totalrecord / numberRecord)
-            {
-                pageNumber++;
-                dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
-            }
+            //int totalrecord = 0;
+            //using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+            //{
+            //    totalrecord = db.Products.Count();
+            //}
+            //if (pageNumber - 1 <= totalrecord / numberRecord)
+            //{
+            //    pageNumber++;
+            //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //}
 
+            if(currentPageIndex < totalPages)
+            {
+                currentPageIndex++;
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();   
+            }
         }
 
-        private void btn_Last_Click(object sender, EventArgs e)
+        private void btnFirstPage_Click(object sender, EventArgs e)
         {
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();  
+        }
 
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            currentPageIndex = totalPages;
+            LoadData();
+            lbCurrentPage.Text= currentPageIndex.ToString();    
         }
 
 

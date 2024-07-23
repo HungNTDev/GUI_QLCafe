@@ -72,17 +72,17 @@ namespace GUI_QLCafe
                 return;
             }
 
-            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            //string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
 
-            string saveDirectory = Path.Combine("img", "Product");
+            string saveDirectory = Path.Combine("\\img\\", "\\Product\\", fileName);
 
             if (!Directory.Exists(saveDirectory))
             {
                 Directory.CreateDirectory(saveDirectory);
             }
 
-            string fileName = Path.GetFileName(fileAddress);
-            string fileSavePath = Path.Combine(saveDirectory, fileName);
+            //string fileName = Path.GetFileName(fileAddress);
+
 
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, txtLoaiSanPham.Text);
@@ -164,12 +164,12 @@ namespace GUI_QLCafe
                     // Đọc ảnh vào MemoryStream và gán cho PictureBox
                     using (FileStream fs = new FileStream(fileAddress, FileMode.Open, FileAccess.Read))
                     {
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            fs.CopyTo(ms);
-                            ms.Position = 0;
-                            picSanPham.Image = Image.FromStream(ms);
-                        }
+                        MemoryStream ms = new MemoryStream();
+
+                        fs.CopyTo(ms);
+                        ms.Position = 0;
+                        picSanPham.Image = Image.FromStream(ms);
+
                     }
 
                     fileName = Path.GetFileName(dlgopen.FileName); // Tên ảnh
@@ -179,6 +179,13 @@ namespace GUI_QLCafe
                     // Tạo đường dẫn để lưu file vào thư mục của project
 
                     txtDuongDan.Text = fileAddress;
+
+                    //fileAddress = dlgopen.FileName;
+                    //picSanPham.Image = Image.FromFile(fileAddress);
+                    //fileName = Path.GetFileName(dlgopen.FileName);
+                    //saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    //fileSavePath = Path.Combine(saveDirectory, "\\img\\", "\\Product\\", fileName);
+                    //txtDuongDan.Text = "\\img\\" + "\\Product\\" + fileName;
                 }
             }
             catch (Exception ex)

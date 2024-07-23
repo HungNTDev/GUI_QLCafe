@@ -3,6 +3,7 @@ using DTO_QLCafe;
 using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -31,6 +32,7 @@ namespace GUI_QLCafe
         private void LoadMenu(string categoryID)
         {
             string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+
             flp_CaPhe.Controls.Clear();
             flp_NuocEp.Controls.Clear();
             flp_SinhTo.Controls.Clear();
@@ -47,9 +49,27 @@ namespace GUI_QLCafe
                 //btn.Click += btn_Click;
                 btn.BorderThickness = 1;
                 btn.BorderRadius = 2;
-                btn.Text = productBUS.LoadMenu(productDTO).Rows[i][1].ToString() + Environment.NewLine + productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
+                btn.Text = productBUS.LoadMenu(productDTO).Rows[i][1].ToString() + Environment.NewLine +
+                    productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
                 btn.Font = new Font(btn.Font.FontFamily, 15);
-                btn.Image = Image.FromFile(saveDirectory + productBUS.LoadMenu(productDTO).Rows[i][3].ToString());
+
+                try
+                {
+
+                    string filename = productBUS.LoadMenu(productDTO).Rows[i][3].ToString();
+
+                    string imagepath = Path.Combine(saveDirectory, filename);
+
+                    Console.WriteLine(imagepath);
+
+
+                    btn.Image = Image.FromFile(imagepath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi " + ex.Message);
+                }
+
                 btn.ImageSize = new Size(75, 75);
                 btn.ImageAlign = HorizontalAlignment.Left;
                 btn.TextAlign = HorizontalAlignment.Right;

@@ -14,7 +14,7 @@
         <elementListCompartment Id="79c4f333-94fb-4c1f-8bf2-fa7efc0f3891" absoluteBounds="8.765, 4.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.6875 : 2.4631982421875); (9.6875 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.6875 : 2.4631982421875); (9.6875 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/Bill/Bill_DetailBill" />
       <nodes>
         <classShapeMoniker Id="bc0fee32-5a83-4a88-94e6-23563bbb33c9" />
@@ -27,7 +27,7 @@
         <elementListCompartment Id="aec5cd49-047c-4b1e-a412-9b6218bf8c11" absoluteBounds="5.265, 5.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.25 : 5.31814697265625); (8.5 : 5.31814697265625); (8.5 : 4.25); (8.57291666666667 : 4.25 : JumpStart); (8.73958333333333 : 4.25 : JumpEnd); (9.124998 : 4.25); (9.124998 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.25 : 5.31814697265625); (8.5 : 5.31814697265625); (8.5 : 4.25); (8.57291666666667 : 4.25 : JumpStart); (8.73958333333333 : 4.25 : JumpEnd); (9.124998 : 4.25); (9.124998 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/Payment/Payment_Bill" />
       <nodes>
         <classShapeMoniker Id="5a1476ea-251a-4233-a236-52de9a019497" />
@@ -40,7 +40,7 @@
         <elementListCompartment Id="f25f290c-8c8b-4bce-870a-0f91410c38a1" absoluteBounds="6.14, 2.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.125 : 4.0881982421875); (8.43041349662374 : 4.28942994581841 : JumpStart); (8.56958650337626 : 4.38112864793159 : JumpEnd); (8.58666349662374 : 4.39238038527153 : JumpStart); (8.72583650337626 : 4.48407908738471 : JumpEnd); (8.75 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.125 : 4.0881982421875); (8.75 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/Product/Product_DetailBill" />
       <nodes>
         <classShapeMoniker Id="3ac02ca3-fdc5-4f56-8fe1-ba2dc4cdd00c" />
@@ -53,7 +53,7 @@
         <elementListCompartment Id="5a327269-2576-4e8b-aa4f-fe3b4ec9abd3" absoluteBounds="2.7649999999999997, 2.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.75 : 3.06814697265625); (6.125 : 3.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 3.06814697265625); (6.125 : 3.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/ProductType/ProductType_Product" />
       <nodes>
         <classShapeMoniker Id="6b0574fc-8cfa-49f4-9103-dcab25d4ff61" />
@@ -66,7 +66,7 @@
         <elementListCompartment Id="d281b507-892f-4fd4-9e3d-437135f901e7" absoluteBounds="2.39, 4.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.375 : 6.2444482421875); (8.65625 : 6.2444482421875); (8.65625 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.375 : 6.2444482421875); (8.65625 : 6.2444482421875); (8.65625 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/Staff/Staff_Bill" />
       <nodes>
         <classShapeMoniker Id="e103219b-b74f-4dfb-9724-50844d11dd22" />
@@ -79,7 +79,7 @@
         <elementListCompartment Id="ee62ad52-e447-4c58-9725-fdb859cf6c48" absoluteBounds="5.0150000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7 : 1.09375); (8.625 : 1.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 1.09375); (8.625 : 1.09375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/TableCF/TableCF_Bill" />
       <nodes>
         <classShapeMoniker Id="75214c1b-4223-47c5-89df-6a6f1ba17e42" />
@@ -92,7 +92,7 @@
         <elementListCompartment Id="8fa020db-d843-4e8a-87ed-bfff63a7c406" absoluteBounds="0.64000000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.625 : 1.0937505); (4.9375 : 1.0937505); (4.9375 : 0.4375); (9.625 : 0.4375); (9.625 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 1.0937505); (4.9375 : 1.0937505); (4.9375 : 0.4375); (9.625 : 0.4375); (9.625 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ThongTinSanPhamDataContext/Voucher/Voucher_Bill" />
       <nodes>
         <classShapeMoniker Id="e8835c01-f5c5-4195-af32-9e317c70c205" />

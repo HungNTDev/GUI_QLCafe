@@ -41,9 +41,9 @@ namespace GUI_QLCafe
         {
             LoadGridView_SanPham();
             //LoadCombobox_Loai();
-            //currentPageIndex = 1;
-            //LoadData();
-            //lbCurrentPage.Text = currentPageIndex.ToString();
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -56,9 +56,8 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
-                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvHinhAnh"].Value);
                 frmAddSanPham.rdoCo.Checked = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) ? true : false;
-                frmAddSanPham.cbLoaiSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvIdPT"].Value.ToString().Trim());
+                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvHinhAnh"].Value);
                 frmAddSanPham.ShowDialog();
                 LoadGridView_SanPham();
             }
@@ -113,82 +112,98 @@ namespace GUI_QLCafe
             //}
         }
 
-        //private const int PageSize = 10;
-        //private int currentPageIndex = 1;
-        //private int totalPages = 0;
-        //private int totalRows = 0;
+        private const int PageSize = 10;
+        private int currentPageIndex = 1;
+        private int totalPages = 0;
+        private int totalRows = 0;
 
-        //private void LoadData()
-        //{
-        //    using (SqlConnection conn = new SqlConnection("Data source=BLVCKHEVRT;Initial Catalog=QL_Cafe;Integrated Security=True"))
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);
-        //        totalRows = (int)cmd.ExecuteScalar();
+        private void LoadData()
+        {
+            using (SqlConnection conn = new SqlConnection("Data source=BLVCKHEVRT;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);
+                totalRows = (int)cmd.ExecuteScalar();
 
-        //        // Tính toán tổng số trang dựa trên tổng số bản gì và kích thước trang
-        //        totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
-        //        lbTotalPage.Text = totalPages.ToString();
+                // Tính toán tổng số trang dựa trên tổng số bản gì và kích thước trang
+                totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
+                lbTotalPage.Text = totalPages.ToString();
 
-        //        // Sử dụng OFFSET để bỏ qua một số bản ghi và FETCH NEXT để lấy một số bản ghi tiếp theo
-        //        SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM Product ORDER BY IdProduct OFFSET {(currentPageIndex - 1) * PageSize} ROWS FETCH NEXT {PageSize} ROWS ONLY", conn);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-        //        dgvDanhSachSanPham.DataSource = dt;
-        //        lbTotalRows.Text = totalRows.ToString(); 
-        //    }
-        //}
+                // Sử dụng OFFSET để bỏ qua một số bản ghi và FETCH NEXT để lấy một số bản ghi tiếp theo
+                SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM Product ORDER BY IdProduct OFFSET {(currentPageIndex - 1) * PageSize} ROWS FETCH NEXT {PageSize} ROWS ONLY", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvDanhSachSanPham.DataSource = dt;
+                lbTotalRows.Text = totalRows.ToString(); 
+            }
+        }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            if (pageNumber - 1 > 0)
-            {
-                pageNumber--;
-                dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
-            }
-
-            //if(currentPageIndex > 1)
+            //if (pageNumber - 1 > 0)
             //{
-            //    currentPageIndex--;
-            //    LoadData(); 
-            //    lbCurrentPage.Text = currentPageIndex.ToString();   
+            //    pageNumber--;
+            //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
             //}
+            
+            if(currentPageIndex > 1)
+            {
+                currentPageIndex--;
+                LoadData(); 
+                lbCurrentPage.Text = currentPageIndex.ToString();   
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            int totalrecord = 0;
-            using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
-            {
-                totalrecord = db.Products.Count();
-            }
-            if (pageNumber - 1 <= totalrecord / numberRecord)
-            {
-                pageNumber++;
-                dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
-            }
-
-            //if(currentPageIndex < totalPages)
+            //int totalrecord = 0;
+            //using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
             //{
-            //    currentPageIndex++;
-            //    LoadData();
-            //    lbCurrentPage.Text = currentPageIndex.ToString();   
+            //    totalrecord = db.Products.Count();
             //}
+            //if (pageNumber - 1 <= totalrecord / numberRecord)
+            //{
+            //    pageNumber++;
+            //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //}
+
+            if(currentPageIndex < totalPages)
+            {
+                currentPageIndex++;
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();   
+            }
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
-            //currentPageIndex = 1;
-            //LoadGridView_SanPham();
-            //lbCurrentPage.Text = currentPageIndex.ToString();  
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();  
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
-            //currentPageIndex = totalPages;
-            //LoadData();
-            //lbCurrentPage.Text= currentPageIndex.ToString();    
+            currentPageIndex = totalPages;
+            LoadData();
+            lbCurrentPage.Text= currentPageIndex.ToString();    
         }
 
+        private void dgvDanhSachSanPham_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                // Ghi lại chi tiết lỗi
+                Console.WriteLine("Lỗi DataGridView: " + e.Exception.Message);
+
+                // Đánh dấu lỗi là đã được xử lý
+                e.ThrowException = false;
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi cho người dùng (nếu cần)
+                MessageBox.Show("Đã xảy ra lỗi khi xử lý dữ liệu trong DataGridView." + ex.Message);
+            }
+        }
     }
 }

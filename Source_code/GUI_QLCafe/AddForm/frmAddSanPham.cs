@@ -58,7 +58,7 @@ namespace GUI_QLCafe
                 messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtLoaiSanPham.Text))
+            if (cbLoaiSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo");
                 txtLoaiSanPham.Focus();
@@ -194,24 +194,10 @@ namespace GUI_QLCafe
             }
         }
 
-        private void frmAddSanPham_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void frmAddSanPham_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

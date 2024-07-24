@@ -1,9 +1,8 @@
 ﻿using BUS_QLCafe;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 namespace GUI_QLCafe
 {
@@ -14,6 +13,11 @@ namespace GUI_QLCafe
 
         int pageNumber = 1;
         int numberRecord = 5;
+
+        private const int PageSize = 10;
+        private int currentPageIndex = 1;
+        private int totalPages = 0;
+        private int totalRows = 0;
 
         public frmQLSanPham()
         {
@@ -39,10 +43,10 @@ namespace GUI_QLCafe
 
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
-            LoadGridView_SanPham();
+            //LoadGridView_SanPham();
             //LoadCombobox_Loai();
-            currentPageIndex = 1;
             LoadData();
+            currentPageIndex = 1;
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
@@ -51,15 +55,17 @@ namespace GUI_QLCafe
             if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvSua")
             {
                 frmAddSanPham frmAddSanPham = new frmAddSanPham();
+
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
                 frmAddSanPham.rdoCo.Checked = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) ? true : false;
-                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvHinhAnh"].Value);
+                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["ImagePath"].Value);
                 frmAddSanPham.ShowDialog();
-                LoadGridView_SanPham();
+                LoadData();
+
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
@@ -112,29 +118,94 @@ namespace GUI_QLCafe
             //}
         }
 
-        private const int PageSize = 10;
-        private int currentPageIndex = 1;
-        private int totalPages = 0;
-        private int totalRows = 0;
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public Image ByteArrayToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void LoadHinhAnh(DataTable dt)
+        {
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = dt;
+
+            //DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            //imageColumn.HeaderText = "Hình ảnh";
+            //imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //imageColumn.Name = "ImageColumn";
+            //dgvDanhSachSanPham.Columns.Add(imageColumn);
+
+            //// Đặt DataSource của DataGridView
+            //dgvDanhSachSanPham.DataSource = bs;
+
+            //foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
+            //{
+            //    if (row.Cells["ImagePath"].Value != DBNull.Value)
+            //    {
+            //        byte[] imageBytes = (byte[])row.Cells["ImagePath"].Value;
+            //        Image image = ByteArrayToImage(imageBytes);
+            //        row.Cells["ImageColumn"].Value = image;
+            //    }
+            //}
+            //if (dt.Rows.Count > 0)
+            //{
+            //    foreach (DataRow dataRow in dt.Rows)
+            //    {
+            //        string imagePath = dataRow["ImageProduct"].ToString();
+
+            //        if (File.Exists(imagePath))
+            //        {
+            //            using (Image imageProduct = Image.FromFile(imagePath))
+            //            {
+            //                dataRow["ImageProduct"] = ImageToByteArray(imageProduct);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            //ataRow["ImageProduct"] = DBNull.Value;
+            //        }
+            //    }
+            //}
+        }
 
         private void LoadData()
         {
-            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-QIE438C\\MAYAO;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);
-                totalRows = (int)cmd.ExecuteScalar();
-
-                // Tính toán tổng số trang dựa trên tổng số bản gì và kích thước trang
+                totalRows = busSanPham.GetTotalProductCount();
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
                 lbTotalPage.Text = totalPages.ToString();
 
-                // Sử dụng OFFSET để bỏ qua một số bản ghi và FETCH NEXT để lấy một số bản ghi tiếp theo
-                SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM Product ORDER BY IdProduct OFFSET {(currentPageIndex - 1) * PageSize} ROWS FETCH NEXT {PageSize} ROWS ONLY", conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = busSanPham.GetPageProduct(currentPageIndex, PageSize);
                 dgvDanhSachSanPham.DataSource = dt;
+
+                dgvDanhSachSanPham.Refresh();
                 lbTotalRows.Text = totalRows.ToString();
+
+                LoadHinhAnh(dt);
+                foreach (DataGridViewColumn column in dgvDanhSachSanPham.Columns)
+                {
+                    if (column.Name == "ProductImage" && column is DataGridViewImageColumn)
+                    {
+                        DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)column;
+                        imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -211,7 +282,7 @@ namespace GUI_QLCafe
 
         }
 
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sp = txtTimKiem.Text;
             DataTable dt = busSanPham.search(sp);
@@ -221,19 +292,15 @@ namespace GUI_QLCafe
                 dgvDanhSachSanPham.Columns[0].HeaderText = "IdProduct";
                 dgvDanhSachSanPham.Columns[1].HeaderText = "NameProduct";
                 dgvDanhSachSanPham.Columns[2].HeaderText = "Price";
-                dgvDanhSachSanPham.Columns[3].HeaderText = "ImageProduct";
-                dgvDanhSachSanPham.Columns[4].HeaderText = "StatusProduct";
+                dgvDanhSachSanPham.Columns[3].HeaderText = "ImagePath";
+                dgvDanhSachSanPham.Columns[4].HeaderText = "Status";
                 dgvDanhSachSanPham.Columns[5].HeaderText = "IdPT";
             }
+
             else
             {
-                //MessageBox.Show("Không tìm thấy sản phẩm");
+                MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

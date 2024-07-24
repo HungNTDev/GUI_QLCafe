@@ -318,7 +318,7 @@ begin
 end
 
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
-ALTER proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
+create proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
 as
 begin
 	if @status = 1
@@ -418,14 +418,23 @@ as
 	  where IdProduct = @id
 end
 
-/*Xử lí xem bill và thêm bill*/
---Lấy thông tin bàn có bill--
-create or alter proc BillInfo (@IdTable nvarchar(10))
+
+-- Xử lý phân trang sản phẩm <Thanh>
+-- Lấy trang
+create proc GetPagedProduct
+@PageIndex int,
+@PageSize int
 as
-	select Product.NameProduct, DetailBill.Amount, Product.price, DetailBill.TotalPrice from DetailBill
-	join Bill on Bill.IdBill = DetailBill.IdBill
-	join Product on Product.IdProduct = DetailBill.IdProduct
-	where Bill.idTable = @IdTable
+	begin
+		select * from Product order by IdProduct offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+
+-- Lấy tổng số sản phẩm 
+create proc GetTotalProductCount as select count(*) from Product
+
+SELECT TOP 10 * FROM Product;
 
 --Thêm bill--
 CREATE OR ALTER PROCEDURE AddingBill(
@@ -470,12 +479,3 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
-
---Test--
-exec AddingBill 'B01', 'NV1'
-exec AddingDetailBill 'bill1', 'TEA1', 2, 130000
-exec AddingDetailBill 'bill1', 'CFE1', 1, 35000
-exec AddingDetailBill 'B01', 'CFE2', 1, 30000
-
-select * from Bill
-select * from DetailBill

@@ -34,9 +34,10 @@
             this.lbTrangThai = new System.Windows.Forms.Label();
             this.lbPhanTramKM = new System.Windows.Forms.Label();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lbText0 = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.txtPhanTramKM = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbTenKhuyenMai = new System.Windows.Forms.Label();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
@@ -96,14 +97,46 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.Controls.Add(this.cbMinimize);
+            this.panelHeader.Controls.Add(this.cbClose);
             this.panelHeader.Controls.Add(this.lbText0);
             this.panelHeader.Controls.Add(this.picLogo);
-            this.panelHeader.Controls.Add(this.cbClose);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(800, 62);
             this.panelHeader.TabIndex = 41;
+            // 
+            // cbMinimize
+            // 
+            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.cbMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.cbMinimize.IconColor = System.Drawing.Color.White;
+            this.cbMinimize.Location = new System.Drawing.Point(636, 0);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMinimize.Name = "cbMinimize";
+            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
+            this.cbMinimize.TabIndex = 12;
+            // 
+            // cbClose
+            // 
+            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClose.BackColor = System.Drawing.Color.Transparent;
+            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.cbClose.ForeColor = System.Drawing.Color.White;
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
+            this.cbClose.IconColor = System.Drawing.Color.White;
+            this.cbClose.Location = new System.Drawing.Point(721, 0);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClose.Name = "cbClose";
+            this.cbClose.PressedColor = System.Drawing.Color.White;
+            this.cbClose.Size = new System.Drawing.Size(79, 40);
+            this.cbClose.TabIndex = 11;
             // 
             // lbText0
             // 
@@ -131,20 +164,6 @@
             this.picLogo.TabIndex = 10;
             this.picLogo.TabStop = false;
             this.picLogo.UseTransparentBackground = true;
-            // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbClose.ForeColor = System.Drawing.Color.White;
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
-            this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(739, 0);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(62, 39);
-            this.cbClose.TabIndex = 4;
             // 
             // txtPhanTramKM
             // 
@@ -345,7 +364,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
-        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
         private Guna.UI2.WinForms.Guna2TextBox txtPhanTramKM;
         private System.Windows.Forms.Label lbTenKhuyenMai;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
@@ -354,5 +372,7 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddVoucher;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhuyenMai;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
+        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
+        private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
     }
 }

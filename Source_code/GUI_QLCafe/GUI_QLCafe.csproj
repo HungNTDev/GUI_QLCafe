@@ -201,11 +201,11 @@
       <DependentUpon>frmAddBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\ProgressReport.cs" />
-    <Compile Include="ViewForm\frmDetail.cs">
+    <Compile Include="AddForm\frmAddDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewForm\frmDetail.Designer.cs">
-      <DependentUpon>frmDetail.cs</DependentUpon>
+    <Compile Include="AddForm\frmAddDetail.Designer.cs">
+      <DependentUpon>frmAddDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongTinSanPham.cs">
       <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
@@ -293,8 +293,8 @@
     <EmbeddedResource Include="AddForm\frmAddBan.resx">
       <DependentUpon>frmAddBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewForm\frmDetail.resx">
-      <DependentUpon>frmDetail.cs</DependentUpon>
+    <EmbeddedResource Include="AddForm\frmAddDetail.resx">
+      <DependentUpon>frmAddDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
@@ -332,6 +332,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmQLSanPham.resx">
       <DependentUpon>frmQLSanPham.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmQLVoucher.resx">
       <DependentUpon>frmQLVoucher.cs</DependentUpon>

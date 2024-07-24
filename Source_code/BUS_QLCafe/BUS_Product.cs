@@ -66,7 +66,7 @@ namespace BUS_QLCafe
         //Lấy thông tin sản phẩm
         public DataTable TagProduct(DTO_Product product)
         {
-            return dal.TagProduct(product); 
+            return dal.TagProduct(product);
         }
     }
 }

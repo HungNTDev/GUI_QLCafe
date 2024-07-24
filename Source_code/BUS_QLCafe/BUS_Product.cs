@@ -55,7 +55,7 @@ namespace BUS_QLCafe
 
         public DataTable GetPageProduct(int pageIndex, int pageSize)
         {
-            return dal.GetPagedProduct(pageIndex, pageSize);    
+            return dal.GetPagedProduct(pageIndex, pageSize);
         }
 
         public int GetTotalProductCount()

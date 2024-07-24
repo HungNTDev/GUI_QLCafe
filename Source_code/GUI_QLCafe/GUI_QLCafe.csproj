@@ -379,6 +379,15 @@
     <None Include="Icon\Success.png" />
     <None Include="Icon\warning.png" />
     <None Include="Icon\information.png" />
+    <Content Include="img\Product\download %2814%29.jpg" />
+    <Content Include="img\Product\download %2815%29.jpg" />
+    <Content Include="img\Product\download %2816%29.jpg" />
+    <Content Include="img\Product\download %2817%29.jpg" />
+    <Content Include="img\Product\download %2818%29.jpg" />
+    <Content Include="img\Product\download %2819%29.jpg" />
+    <Content Include="img\Product\download %2820%29.jpg" />
+    <Content Include="img\Product\download %2821%29.jpg" />
+    <Content Include="img\Product\tralipton.jpg" />
     <Content Include="img\Product\cach-lam-ca-phe-da-bao-frappuccino-thom-beo-mat-lanh-nhu-starbucks-tai-nha-202111031405246034.jpg" />
     <Content Include="img\Product\d5cb1aa5e36899-cphvanillaphclong.png" />
     <Content Include="img\Product\download %281%29.jpg" />

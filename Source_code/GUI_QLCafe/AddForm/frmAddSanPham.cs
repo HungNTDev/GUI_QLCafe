@@ -61,11 +61,10 @@ namespace GUI_QLCafe
             if (cbLoaiSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo");
-<<<<<<< HEAD
+
                 cbLoaiSanPham.Focus();
-=======
-                //.Focus();
->>>>>>> 98389ac58b28a3c4092fccb3dd065dd3dc85bc31
+
+
                 return;
             }
 
@@ -89,11 +88,7 @@ namespace GUI_QLCafe
 
 
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
-<<<<<<< HEAD
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
-=======
-                txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
->>>>>>> 98389ac58b28a3c4092fccb3dd065dd3dc85bc31
 
             try
             {

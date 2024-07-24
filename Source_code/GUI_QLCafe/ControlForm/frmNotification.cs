@@ -1,12 +1,6 @@
 ﻿using GUI_QLCafe.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -44,12 +38,12 @@ namespace GUI_QLCafe
             string fname;
 
             // Tìm vị trí thông báo trên màn hình
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 fname = "notfication" + i.ToString();
                 frmNotification frmNotification = (frmNotification)Application.OpenForms[fname];
-                
-                if(frmNotification == null)
+
+                if (frmNotification == null)
                 {
                     notification.Name = fname;
                     notification.x = Screen.PrimaryScreen.WorkingArea.Width - notification.Width + 10;
@@ -65,7 +59,7 @@ namespace GUI_QLCafe
                 case enumType.Success:
                     notification.picNofication.Image = Resources.Success;
                     notification.BackColor = Color.MediumSeaGreen;
-                break;
+                    break;
                 case enumType.Failed:
                     notification.picNofication.Image = Resources.Failed;
                     notification.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -79,12 +73,12 @@ namespace GUI_QLCafe
                     notification.BackColor = Color.DodgerBlue;
                     break;
             }
-            
+
             notification.lbMsg.Text = msg;
             notification.Show();
             notification.action = enmAction.start;
             notification.noficationTransition.Interval = 1;
-            notification.noficationTransition.Start();  
+            notification.noficationTransition.Start();
         }
 
         // Sự kiện để điều khiển quá trình hiển thị thông báo
@@ -99,16 +93,16 @@ namespace GUI_QLCafe
                 case enmAction.start:
                     noficationTransition.Interval = 1;
                     this.Opacity += 0.1; // Tăng dần độ mờ
-                    if(this.x < this.Location.X)
+                    if (this.x < this.Location.X)
                     {
                         this.Left--; // Di chuyển sang trái
                     }
                     else
                     {
-                        if(this.Opacity == 1.0)
-                        { 
+                        if (this.Opacity == 1.0)
+                        {
                             // Khi đạt độ mờ tối da, chuyển sang trạng thái đọi
-                            action = enmAction.wait;   
+                            action = enmAction.wait;
                         }
                     }
                     break;
@@ -116,7 +110,7 @@ namespace GUI_QLCafe
                     noficationTransition.Interval = 1;
                     this.Opacity -= 0.1; // giảm độ mờ
                     this.Left -= 3; // di chuyển từ trái sang phải
-                    if(base.Opacity == 0.0)
+                    if (base.Opacity == 0.0)
                     {
                         base.Close(); // Đóng form khi độ mờ bằng 0
                     }

@@ -102,7 +102,6 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@nameProduct", obj.NameProduct);
                     cmd.Parameters.AddWithValue("@price", obj.Price);
                     cmd.Parameters.AddWithValue("@imageProduct", obj.ImageProduct);
-                    cmd.Parameters.AddWithValue("@statusProduct", obj.StatusProduct);
                     cmd.Parameters.AddWithValue("@idpt", obj.IdPT);
 
                     conn.Open();
@@ -298,7 +297,7 @@ namespace DAL_QLCafe
             DataTable dt = new DataTable();
             try
             {
-                using(conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
@@ -310,7 +309,7 @@ namespace DAL_QLCafe
                     conn.Open();
                     da.Fill(dt);
 
-                    if(dt.Rows.Count == 0)
+                    if (dt.Rows.Count == 0)
                     {
                         Console.WriteLine("Không có dữ liệu được trả về từ proc");
                     }
@@ -335,13 +334,13 @@ namespace DAL_QLCafe
             int totalProductCount = 0;
             try
             {
-                using(conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "GetTotalProductCount";
-                    conn.Open();    
+                    conn.Open();
                     totalProductCount = (int)cmd.ExecuteScalar();
                 }
             }

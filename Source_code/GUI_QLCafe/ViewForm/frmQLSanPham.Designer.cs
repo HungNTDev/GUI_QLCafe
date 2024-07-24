@@ -134,6 +134,7 @@
             this.dgvDanhSachSanPham.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDanhSachSanPham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDanhSachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellClick);
+            this.dgvDanhSachSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellContentClick);
             this.dgvDanhSachSanPham.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDanhSachSanPham_DataError);
             // 
             // dgvMaSanPham
@@ -273,7 +274,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.label1.Location = new System.Drawing.Point(35, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 54);
+            this.label1.Size = new System.Drawing.Size(326, 45);
             this.label1.TabIndex = 18;
             this.label1.Text = "Danh sách sản phẩm";
             // 
@@ -384,7 +385,7 @@
             this.lbtotalRow.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbtotalRow.Location = new System.Drawing.Point(38, 29);
             this.lbtotalRow.Name = "lbtotalRow";
-            this.lbtotalRow.Size = new System.Drawing.Size(131, 31);
+            this.lbtotalRow.Size = new System.Drawing.Size(107, 25);
             this.lbtotalRow.TabIndex = 23;
             this.lbtotalRow.Text = "Total Rows:";
             // 
@@ -395,7 +396,7 @@
             this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbTotalRows.Location = new System.Drawing.Point(175, 29);
             this.lbTotalRows.Name = "lbTotalRows";
-            this.lbTotalRows.Size = new System.Drawing.Size(30, 31);
+            this.lbTotalRows.Size = new System.Drawing.Size(25, 25);
             this.lbTotalRows.TabIndex = 23;
             this.lbTotalRows.Text = "+";
             this.lbTotalRows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -408,7 +409,7 @@
             this.lbCurrentPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbCurrentPage.Location = new System.Drawing.Point(556, 769);
             this.lbCurrentPage.Name = "lbCurrentPage";
-            this.lbCurrentPage.Size = new System.Drawing.Size(27, 31);
+            this.lbCurrentPage.Size = new System.Drawing.Size(23, 25);
             this.lbCurrentPage.TabIndex = 23;
             this.lbCurrentPage.Text = "0";
             // 
@@ -420,7 +421,7 @@
             this.lbPageLine.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbPageLine.Location = new System.Drawing.Point(589, 769);
             this.lbPageLine.Name = "lbPageLine";
-            this.lbPageLine.Size = new System.Drawing.Size(24, 31);
+            this.lbPageLine.Size = new System.Drawing.Size(20, 25);
             this.lbPageLine.TabIndex = 23;
             this.lbPageLine.Text = "/";
             // 
@@ -432,7 +433,7 @@
             this.lbTotalPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbTotalPage.Location = new System.Drawing.Point(619, 769);
             this.lbTotalPage.Name = "lbTotalPage";
-            this.lbTotalPage.Size = new System.Drawing.Size(27, 31);
+            this.lbTotalPage.Size = new System.Drawing.Size(23, 25);
             this.lbTotalPage.TabIndex = 23;
             this.lbTotalPage.Text = "0";
             // 

@@ -62,20 +62,16 @@ namespace GUI_QLCafe
             for (int i = 0; i < productBUS.LoadMenu(productDTO).Rows.Count; i++)
             {
                 Guna2Button btn = new Guna2Button();
-                btn.Width = 300;
-                btn.Height = 150;
-                btn.BorderRadius = 5;
-                btn.BorderThickness = 2;
-                btn.Margin = new Padding(10);
+                //Button btn = new Button();
+                btn.Width = 280;
+                btn.Height = 100;
                 btn.FillColor = Color.White;
                 btn.ForeColor = Color.Black;
-                btn.BorderColor = Color.MediumSeaGreen;
-                btn.BackColor = Color.LightGray;
-                btn.Font = new Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                btn.HoverState.FillColor = Color.LightGray;
                 btn.Click += btn_Click;
+                btn.BorderThickness = 1;
+                btn.BorderRadius = 2;
                 btn.Text = productBUS.LoadMenu(productDTO).Rows[i][1].ToString() + Environment.NewLine +
-                productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
+                    productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
                 btn.Font = new Font(btn.Font.FontFamily, 15);
 
                 try
@@ -87,6 +83,7 @@ namespace GUI_QLCafe
 
                     Console.WriteLine(imagepath);
 
+
                     btn.Image = Image.FromFile(imagepath);
                 }
                 catch (Exception ex)
@@ -94,7 +91,7 @@ namespace GUI_QLCafe
                     MessageBox.Show("Lỗi " + ex.Message);
                 }
 
-                btn.ImageSize = new Size(100, 100);
+                btn.ImageSize = new Size(75, 75);
                 btn.ImageAlign = HorizontalAlignment.Left;
                 btn.TextAlign = HorizontalAlignment.Right;
                 btn.Tag = productBUS.LoadMenu(productDTO).Rows[i][0].ToString();
@@ -202,10 +199,28 @@ namespace GUI_QLCafe
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (ListOrder_dgv.SelectedRows.Count > 0)
+            try
             {
-                ListOrder_dgv.Rows.Remove(ListOrder_dgv.SelectedRows[0]);
-            }
+                if(ListOrder_dgv.SelectedRows.Count > 0)
+                {
+                    ListOrder_dgv.Rows.RemoveAt(ListOrder_dgv.SelectedRows[0].Index);
+                }
+            }catch
+            { }
         }
+
+        private void paneText_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tp_NuocEp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        
     }
 }

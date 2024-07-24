@@ -23,9 +23,10 @@ namespace GUI_QLCafe
         }
         BUS_Staff busNhanVien = new BUS_Staff();
         private int status = 1;
+
         private void LoadGridView_NhanVien()
         {
-            cboStatus.SelectedIndex = status - 1;
+            cboStatus.SelectedIndex = 1-status;
             dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
         }
 
@@ -69,7 +70,6 @@ namespace GUI_QLCafe
                         break;
                 }
             }
-            messageDialog.Show(status.ToString() + column + txtTimKiem.Text);
 
             dgvDanhSachNhanVien.DataSource = busNhanVien.search(column, txtTimKiem.Text, status);
             
@@ -163,6 +163,16 @@ namespace GUI_QLCafe
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            txtEmail.Clear();
+            txtTen.Clear();
+            txtTimKiem.Clear();
+            txtDuongDan.Clear();
+            picNhanVien.Image = null;
+            rdoHoatDong.Checked = false;
+            rdoNgungHoatDong.Checked = false;
+            rdoNhanVien.Checked = false;
+            rdoQuanTri.Checked = false;
+
             LoadGridView_NhanVien();
         }
 
@@ -177,6 +187,16 @@ namespace GUI_QLCafe
 
         private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtEmail.Clear();
+            txtTen.Clear();
+            txtTimKiem.Clear();
+            txtDuongDan.Clear();
+            picNhanVien.Image = null;
+            rdoHoatDong.Checked = false;
+            rdoNgungHoatDong.Checked = false;
+            rdoNhanVien.Checked = false;
+            rdoQuanTri.Checked = false;
+
             if (cboStatus.SelectedItem != null)
             {
                 switch (cboStatus.SelectedIndex)

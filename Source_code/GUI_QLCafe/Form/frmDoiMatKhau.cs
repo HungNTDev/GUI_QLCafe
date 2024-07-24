@@ -6,15 +6,15 @@ namespace GUI_QLCafe
 {
     public partial class frmDoiMatKhau : Form
     {
-        //string stremail; // nhận email từ frmMain
+        string stremail; // nhận email từ frmMain
         BUS_Staff busStaff = new BUS_Staff();
         //frmDangNhap dn = new frmDangNhap();
-        public frmDoiMatKhau() // thêm tham số string email vào
+        public frmDoiMatKhau(string email) // thêm tham số string email vào
         {
             InitializeComponent();
-            // stremail = email;
-            // txtEmail.Text = stremail;
-            // txtEmail.Enabled = false;
+            stremail = email;
+            txtEmail.Text = stremail;
+            txtEmail.Enabled = false;
         }
 
         private void panelDoiMatKhau_Paint(object sender, PaintEventArgs e)
@@ -45,7 +45,7 @@ namespace GUI_QLCafe
             else
             {
                 if (MessageBox.Show("Bạn chắc chắn muốn đổi mật khẩu", "Thông báo", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Error) == DialogResult.Yes)
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string matkhaumoi = busStaff.encryption(txtNewPassword.Text);
                     string matkhaucu = busStaff.encryption(txtOldPassword.Text);
@@ -53,7 +53,9 @@ namespace GUI_QLCafe
                     if (busStaff.updateNewMK(txtEmail.Text, matkhaucu, matkhaumoi))
                     {
                         MessageBox.Show("Cập nhật mật khẩu thành công, bạn cần phải đăng nhập lại");
-                        this.Close();
+                        this.Hide();
+                        frmDangNhap dangnhap = new frmDangNhap();
+                        dangnhap.Show();
                     }
                     else
                     {

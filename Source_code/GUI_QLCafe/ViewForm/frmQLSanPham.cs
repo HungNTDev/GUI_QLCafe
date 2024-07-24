@@ -1,10 +1,8 @@
 ﻿using BUS_QLCafe;
 using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 namespace GUI_QLCafe
 {
@@ -120,7 +118,7 @@ namespace GUI_QLCafe
 
         private byte[] ImageToByteArray(Image image)
         {
-            using(MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
                 image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 return ms.ToArray();
@@ -146,9 +144,9 @@ namespace GUI_QLCafe
 
                     if (File.Exists(imagePath))
                     {
-                        using(Image imageProduct = Image.FromFile(imagePath))
+                        using (Image imageProduct = Image.FromFile(imagePath))
                         {
-                            dataRow["ImageProduct"] =ImageToByteArray(imageProduct);
+                            dataRow["ImageProduct"] = ImageToByteArray(imageProduct);
                         }
                     }
                     else
@@ -174,9 +172,9 @@ namespace GUI_QLCafe
                 lbTotalRows.Text = totalRows.ToString();
 
                 LoadHinhAnh(dt);
-                foreach(DataGridViewColumn column in dgvDanhSachSanPham.Columns)
+                foreach (DataGridViewColumn column in dgvDanhSachSanPham.Columns)
                 {
-                    if(column.Name == "ProductImage" && column is DataGridViewImageColumn)
+                    if (column.Name == "ProductImage" && column is DataGridViewImageColumn)
                     {
                         DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)column;
                         imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_QLCafe
 {
-    public partial class frmDetail : Form
+    public partial class frmAddDetail : Form
     {
-        public frmDetail()
+        public frmAddDetail()
         {
             InitializeComponent();
         }
@@ -25,13 +25,16 @@ namespace GUI_QLCafe
             txtName.Text = frmMenu.nameProduct;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             Status = 1;
             Amount = Convert.ToInt32(nudAmount.Value.ToString());
             this.Close();
         }
 
-        
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

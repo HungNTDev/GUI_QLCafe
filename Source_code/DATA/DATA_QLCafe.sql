@@ -417,3 +417,65 @@ as
       update Product set StatusProduct = 0 
 	  where IdProduct = @id
 end
+
+
+-- Xử lý phân trang sản phẩm <Thanh>
+-- Lấy trang
+create proc GetPagedProduct
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from Product order by IdProduct offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+
+-- Lấy tổng số sản phẩm 
+create proc GetTotalProductCount as select count(*) from Product
+
+SELECT TOP 10 * FROM Product;
+
+--Thêm bill--
+CREATE OR ALTER PROCEDURE AddingBill(
+    @IdTable NVARCHAR(10),
+    @IdStaff NVARCHAR(10)
+)
+AS
+BEGIN
+    DECLARE @IdBill INT;
+
+    -- Lấy giá trị lớn nhất của IdBill từ bảng Bill
+    SELECT @IdBill = MAX(CAST(SUBSTRING(IdBill, 5, LEN(IdBill) - 4) AS INT))
+    FROM Bill;
+
+    -- Nếu không có bản ghi nào trong bảng Bill, đặt giá trị ban đầu cho @IdBill
+    IF @IdBill IS NULL
+    BEGIN
+        SET @IdBill = 0;
+    END
+
+    -- Tăng giá trị của @IdBill lên 1
+    SET @IdBill = @IdBill + 1;
+
+    -- Thêm bản ghi mới vào bảng Bill
+    INSERT INTO Bill (IdBill, IdPayment, IdTable, IdStaff, IdVoucher, StatusBill)
+    VALUES ('bill' + CAST(@IdBill AS NVARCHAR(10)), NULL, @IdTable, @IdStaff, NULL, 1);
+
+    -- Cập nhật trạng thái của bàn trong bảng TableCF
+    UPDATE TableCF
+    SET StatusTable = 1
+    WHERE IdTable = @IdTable;
+END;
+
+
+--Thêm DetailBill--
+create or alter proc AddingDetailBill(
+	@IdTable nvarchar(10),
+	@IdProduct nvarchar(20),
+	@Amount int,
+	@TotalPrice float)
+as
+			DECLARE @ID nvarchar(10)
+			set @ID = (select IdBill from Bill where IdTable = @IdTable)
+	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)

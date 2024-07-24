@@ -63,16 +63,20 @@ namespace GUI_QLCafe
             for (int i = 0; i < productBUS.LoadMenu(productDTO).Rows.Count; i++)
             {
                 Guna2Button btn = new Guna2Button();
-                //Button btn = new Button();
-                btn.Width = 280;
-                btn.Height = 100;
+                btn.Width = 300;
+                btn.Height = 150;
+                btn.BorderRadius = 5;
+                btn.BorderThickness = 2;
+                btn.Margin = new Padding(10);
                 btn.FillColor = Color.White;
                 btn.ForeColor = Color.Black;
+                btn.BorderColor = Color.MediumSeaGreen;
+                btn.BackColor = Color.LightGray;
+                btn.Font = new Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                btn.HoverState.FillColor = Color.LightGray;
                 btn.Click += btn_Click;
-                btn.BorderThickness = 1;
-                btn.BorderRadius = 2;
                 btn.Text = productBUS.LoadMenu(productDTO).Rows[i][1].ToString() + Environment.NewLine +
-                    productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
+                productBUS.LoadMenu(productDTO).Rows[i][2].ToString() + " VND";
                 btn.Font = new Font(btn.Font.FontFamily, 15);
 
                 try
@@ -84,7 +88,6 @@ namespace GUI_QLCafe
 
                     Console.WriteLine(imagepath);
 
-
                     btn.Image = Image.FromFile(imagepath);
                 }
                 catch (Exception ex)
@@ -92,7 +95,7 @@ namespace GUI_QLCafe
                     MessageBox.Show("Lỗi " + ex.Message);
                 }
 
-                btn.ImageSize = new Size(75, 75);
+                btn.ImageSize = new Size(100, 100);
                 btn.ImageAlign = HorizontalAlignment.Left;
                 btn.TextAlign = HorizontalAlignment.Right;
                 btn.Tag = productBUS.LoadMenu(productDTO).Rows[i][0].ToString();
@@ -123,37 +126,37 @@ namespace GUI_QLCafe
 
         private void btn_Click (object sender, EventArgs e)
         {
-            frmDetail detail = new frmDetail();
+            frmAddDetail detail = new frmAddDetail();
             Guna2Button btn = (Guna2Button)sender;
             productDTO.IdProduct = btn.Tag.ToString();
             nameProduct = productBUS.TagProduct(productDTO).Rows[0][0].ToString();
             detail.ShowDialog();
-            if (frmDetail.Status == 1)
+            if (frmAddDetail.Status == 1)
             {
                 for (int i = 0; i < ListOrder_dgv.Rows.Count; i++)
                 {
                     if (ListOrder_dgv.Rows[i].Cells[0].Value == null)
                     {
-                        frmDetail.Status = 1;
+                        frmAddDetail.Status = 1;
                     }
                     else if (nameProduct == ListOrder_dgv.Rows[i].Cells[0].Value.ToString())
                     {
-                        ListOrder_dgv.Rows[i].Cells[1].Value = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString()) + frmDetail.Amount;
+                        ListOrder_dgv.Rows[i].Cells[1].Value = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString()) + frmAddDetail.Amount;
                         ListOrder_dgv.Rows[i].Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][2].ToString()) * Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value);
                         ListOrder_dgv.Update();
-                        frmDetail.Status = 0;
+                        frmAddDetail.Status = 0;
                         break;
                     }
                 }
-                if (frmDetail.Status == 1)
+                if (frmAddDetail.Status == 1)
                 {
                     DataGridViewRow row = (DataGridViewRow)ListOrder_dgv.Rows[0].Clone();
                     row.Cells[0].Value = productBUS.TagProduct(productDTO).Rows[0][0].ToString();
-                    row.Cells[1].Value = frmDetail.Amount;
-                    row.Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * frmDetail.Amount;
+                    row.Cells[1].Value = frmAddDetail.Amount;
+                    row.Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * frmAddDetail.Amount;
                     row.Cells[3].Value = productDTO.idProduct;
                     ListOrder_dgv.Rows.Add(row);
-                    frmDetail.Status = 0;
+                    frmAddDetail.Status = 0;
                 }
             }
         }
@@ -198,25 +201,7 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void paneText_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tp_NuocEp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flp_CaPhe_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         
     }

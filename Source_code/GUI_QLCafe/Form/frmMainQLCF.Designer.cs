@@ -884,7 +884,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainQLCF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMainQLCF";
+            this.Text = "Holiday Coffee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainQLCF_FormClosed);
             this.Load += new System.EventHandler(this.frmMainQLCF_Load);

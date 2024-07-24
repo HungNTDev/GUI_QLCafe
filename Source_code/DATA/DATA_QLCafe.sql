@@ -258,7 +258,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select * from Staff
 
 -- Lấy danh sách nhân viên
-create proc GetStaff (@status int)
+ALTER proc GetStaff (@status int)
 as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
@@ -398,10 +398,11 @@ as
   end
 
 -- Sửa sản phẩm
-alter proc UpdateProduct (@idProduct nvarchar(20),
+  create proc UpdateProduct (@idProduct nvarchar(20),
                             @nameProduct nvarchar(100),
 							@price float,
 							@imageProduct nvarchar(500),
+							@statusProduct int,
 							@idpt nvarchar(10))
 as 
  begin 
@@ -418,64 +419,19 @@ as
 	  where IdProduct = @id
 end
 
-/*Xử lí xem bill và thêm bill*/
---Lấy thông tin bàn có bill--
-create or alter proc BillInfo (@IdTable nvarchar(10))
+-- Xử lý phân trang sản phẩm <Thanh>
+-- Lấy trang
+create proc GetPagedProduct
+@PageIndex int,
+@PageSize int
 as
-	select Product.NameProduct, DetailBill.Amount, Product.price, DetailBill.TotalPrice from DetailBill
-	join Bill on Bill.IdBill = DetailBill.IdBill
-	join Product on Product.IdProduct = DetailBill.IdProduct
-	where Bill.idTable = @IdTable
+	begin
+		select * from Product order by IdProduct offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
 
---Thêm bill--
-CREATE OR ALTER PROCEDURE AddingBill(
-    @IdTable NVARCHAR(10),
-    @IdStaff NVARCHAR(10)
-)
-AS
-BEGIN
-    DECLARE @IdBill INT;
+EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
 
-    -- Lấy giá trị lớn nhất của IdBill từ bảng Bill
-    SELECT @IdBill = MAX(CAST(SUBSTRING(IdBill, 5, LEN(IdBill) - 4) AS INT))
-    FROM Bill;
+-- Lấy tổng số sản phẩm 
+create proc GetTotalProductCount as select count(*) from Product
 
-    -- Nếu không có bản ghi nào trong bảng Bill, đặt giá trị ban đầu cho @IdBill
-    IF @IdBill IS NULL
-    BEGIN
-        SET @IdBill = 0;
-    END
-
-    -- Tăng giá trị của @IdBill lên 1
-    SET @IdBill = @IdBill + 1;
-
-    -- Thêm bản ghi mới vào bảng Bill
-    INSERT INTO Bill (IdBill, IdPayment, IdTable, IdStaff, IdVoucher, StatusBill)
-    VALUES ('bill' + CAST(@IdBill AS NVARCHAR(10)), NULL, @IdTable, @IdStaff, NULL, 1);
-
-    -- Cập nhật trạng thái của bàn trong bảng TableCF
-    UPDATE TableCF
-    SET StatusTable = 1
-    WHERE IdTable = @IdTable;
-END;
-
-
---Thêm DetailBill--
-create or alter proc AddingDetailBill(
-	@IdTable nvarchar(10),
-	@IdProduct nvarchar(20),
-	@Amount int,
-	@TotalPrice float)
-as
-			DECLARE @ID nvarchar(10)
-			set @ID = (select IdBill from Bill where IdTable = @IdTable)
-	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
-
---Test--
-exec AddingBill 'B01', 'NV1'
-exec AddingDetailBill 'bill1', 'TEA1', 2, 130000
-exec AddingDetailBill 'bill1', 'CFE1', 1, 35000
-exec AddingDetailBill 'B01', 'CFE2', 1, 30000
-
-select * from Bill
-select * from DetailBill
+SELECT TOP 10 * FROM Product;

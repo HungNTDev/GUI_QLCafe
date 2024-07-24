@@ -1,9 +1,7 @@
 ﻿using BUS_QLCafe;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Windows.Forms;
 namespace GUI_QLCafe
 {
@@ -119,7 +117,7 @@ namespace GUI_QLCafe
 
         private void LoadData()
         {
-            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-QIE438C\\MAYAO;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-T731SJL\\TUANHUNG;Initial Catalog=QL_Cafe;Integrated Security=True"))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);

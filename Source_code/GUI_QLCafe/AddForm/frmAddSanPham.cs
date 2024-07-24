@@ -88,7 +88,7 @@ namespace GUI_QLCafe
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
-                //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
+            //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
 
             try
             {

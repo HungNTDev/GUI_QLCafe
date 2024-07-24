@@ -173,6 +173,8 @@ namespace GUI_QLCafe
             rdoNhanVien.Checked = false;
             rdoQuanTri.Checked = false;
 
+            selected = false;
+
             LoadGridView_NhanVien();
         }
 

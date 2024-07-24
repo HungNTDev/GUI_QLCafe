@@ -134,7 +134,7 @@
             // 
             this.line.AutoSize = true;
             this.line.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line.Location = new System.Drawing.Point(147, 3);
+            this.line.Location = new System.Drawing.Point(170, 6);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(17, 25);
             this.line.TabIndex = 8;
@@ -169,7 +169,7 @@
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.Black;
-            this.lbGio.Location = new System.Drawing.Point(160, 4);
+            this.lbGio.Location = new System.Drawing.Point(212, 3);
             this.lbGio.Name = "lbGio";
             this.lbGio.Size = new System.Drawing.Size(43, 28);
             this.lbGio.TabIndex = 3;
@@ -180,7 +180,7 @@
             this.lbNgay.AutoSize = true;
             this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.Black;
-            this.lbNgay.Location = new System.Drawing.Point(62, 4);
+            this.lbNgay.Location = new System.Drawing.Point(63, 3);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(59, 28);
             this.lbNgay.TabIndex = 3;

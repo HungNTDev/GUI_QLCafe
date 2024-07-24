@@ -318,7 +318,7 @@ begin
 end
 
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
-ALTER proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
+create proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
 as
 begin
 	if @status = 1

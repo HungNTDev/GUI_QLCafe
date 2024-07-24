@@ -121,22 +121,22 @@ namespace GUI_QLCafe
                 else
                 {
                     product.IdProduct = id;
-                    if (busproduct.update(product))
+                    if (MessageBox.Show("Bạn có chắc muốn sửa dữ liệu không", "Confirm",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (txtDuongDan.Text != checkUrlImage)
+                        if (busproduct.update(product))
                         {
-                            if (File.Exists(fileSavePath))
+                            if (txtDuongDan.Text != checkUrlImage)
                             {
-                                File.Delete(fileSavePath);
+                                if (File.Exists(txtDuongDan.Text))
+                                {
+                                    File.Delete(txtDuongDan.Text);
+                                }
                             }
                             File.Copy(fileAddress, fileSavePath, true);
+                            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
                         }
-                        this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Nofication("Cập nhật thất bại :(", frmNotification.enumType.Failed);
                     }
                 }
             }

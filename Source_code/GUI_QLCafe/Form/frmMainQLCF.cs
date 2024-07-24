@@ -74,8 +74,6 @@ namespace GUI_QLCafe
             // Check if the email and role have changed
             if (email == emailAfter && role != roleAfter)
             {
-                MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return true;
             }
             return false;
@@ -83,8 +81,6 @@ namespace GUI_QLCafe
         public void PhanQuyen()
         {
             frmQLNhanVien qlnv = new frmQLNhanVien();
-            qlnv.currentRole = role;
-            qlnv.currentEmail = email;
 
             lblEmail.Text = email;
 

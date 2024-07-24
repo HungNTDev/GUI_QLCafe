@@ -156,7 +156,7 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
             try
             {
@@ -166,8 +166,8 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "SearchProduct";
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
-                    cmd.Parameters.AddWithValue("@column", column);
+                    cmd.Parameters.AddWithValue("@value", keyword);
+
                     conn.Open();
                     DataTable dtProduct = new DataTable();
                     dtProduct.Load(cmd.ExecuteReader());

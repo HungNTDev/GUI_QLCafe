@@ -69,9 +69,19 @@ namespace GUI_QLCafe
             lbGio.Text = DateTime.Now.ToLongTimeString();
             PhanQuyen();
         }
-
+        public bool checkStatus(string emailAfter, string roleAfter)
+        {
+            // Check if the email and role have changed
+            if (email == emailAfter && role != roleAfter)
+            {
+                return true;
+            }
+            return false;
+        }
         public void PhanQuyen()
         {
+            frmQLNhanVien qlnv = new frmQLNhanVien();
+
             lblEmail.Text = email;
 
             if (session == 1)

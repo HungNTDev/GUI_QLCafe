@@ -33,7 +33,6 @@ namespace GUI_QLCafe
             InitializeComponent();
             DeleteStoredCredentials();
             this.Load += new System.EventHandler(this.frmDangNhap_Load); // Gắn sự kiện Load
-            this.AcceptButton = btnDN;
         }
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
@@ -68,24 +67,26 @@ namespace GUI_QLCafe
         {
             if (txtEmail.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
             else if (!IsValid(txtEmail.Text.Trim()))
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
             else if (txtPassword.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Focus();
                 return;
             }
             else
             {
+                //frmMainQLBH.email = nv.EmailNV;
+
                 staff = new DTO_Staff();
                 busStaff = new BUS_Staff();
 
@@ -115,6 +116,15 @@ namespace GUI_QLCafe
                     frmMainQLCF.email = staff.email;
 
                     frmLoading.Show();
+
+                    //foreach (Form form in Application.OpenForms)
+                    //{
+                    //    if (form is frmMainQLCF)
+                    //    {
+                    //        ((frmMainQLCF)form).PhanQuyen();
+                    //        break;
+                    //    }
+                    //}
 
                     this.Hide();
                 }
@@ -259,7 +269,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    messageDialog.Show("Đăng nhập thất bại!", "Thông báo");
                 }
             }
         }
@@ -377,6 +387,11 @@ namespace GUI_QLCafe
             //Enabling SSL (Secure Sockets Layer, encyription) is reqiured by most email providers to send mail
             client.EnableSsl = true;
             client.Send(Msg); // Send our email.
+
+        }
+
+        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

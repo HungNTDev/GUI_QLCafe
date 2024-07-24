@@ -85,10 +85,13 @@ namespace GUI_QLCafe
 
             //string fileName = Path.GetFileName(fileAddress);
 
+
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
-            //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
+            //DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
+
+                //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
 
             try
             {
@@ -121,22 +124,22 @@ namespace GUI_QLCafe
                 else
                 {
                     product.IdProduct = id;
-                    if (MessageBox.Show("Bạn có chắc muốn sửa dữ liệu không", "Confirm",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (busproduct.update(product))
                     {
-                        if (busproduct.update(product))
+                        if (txtDuongDan.Text != checkUrlImage)
                         {
-                            if (txtDuongDan.Text != checkUrlImage)
+                            if (File.Exists(fileSavePath))
                             {
-                                if (File.Exists(txtDuongDan.Text))
-                                {
-                                    File.Delete(txtDuongDan.Text);
-                                }
+                                File.Delete(fileSavePath);
                             }
                             File.Copy(fileAddress, fileSavePath, true);
-                            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
                         }
+                        this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Nofication("Cập nhật thất bại :(", frmNotification.enumType.Failed);
                     }
                 }
             }

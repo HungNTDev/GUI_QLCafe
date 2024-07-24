@@ -125,6 +125,8 @@ namespace GUI_QLCafe
 
             busNV.CapNhatMK(txtEmail.Text, busNV.encryption(matKhau));
         }
+
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (chucnang == "luu")
@@ -141,85 +143,92 @@ namespace GUI_QLCafe
                 }
                 if (txtEmail.Text.Trim().Length == 0)
                 {
-                    messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmail.Focus();
                     return;
                 }
                 else if (!IsValid(txtEmail.Text.Trim()))
                 {
-                    messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmail.Focus();
                     return;
                 }
                 else if (txtTenNhanVien.Text.Trim().Length == 0)
                 {
-                    messageDialog.Show("Vui lòng nhập tên nhân viên!", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtTenNhanVien.Focus();
                     return;
                 }
                 else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false)
                 {
-                    messageDialog.Show("Vui lòng chọn vai trò!", "Thông báo");
+                    MessageBox.Show("Vui lòng chọn vai trò!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false)
                 {
-                    messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
+                    MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else if (txtDuongDan.Text.Trim().Length == 0) // phải nhập hình
                 {
-                    messageDialog.Show("Vui lòng chọn hình", "Thông Báo");
+                    MessageBox.Show("Vui lòng chọn hình", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
                 //Nếu thêm nhân viên thành công thì hiện cái Nofication lên không thì ngược lại
                 else
                 {
-                    // Đường dẫn thư mục gốc của dự án
-                    string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-                    string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
-
-                    // Tạo thư mục nếu chưa có
-                    if (!Directory.Exists(saveDirectory))
+                    if (busNhanVien.KiemTraEmail(txtEmail.Text))
                     {
-                        Directory.CreateDirectory(saveDirectory);
+                        MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Focus();
+                        return;
                     }
-
-
-                    // Đường dẫn ảnh
-                    string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
-                    string fileName = Path.GetFileName(fileAddress);
-                    string fileSavePath = Path.Combine(saveDirectory, fileName);
-
-                    try
+                    else
                     {
-                        
+                        // Đường dẫn thư mục gốc của dự án
+                        string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                        string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
 
-                        DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
-
-                        if (busNhanVien.insert(staff))
+                        // Tạo thư mục nếu chưa có
+                        if (!Directory.Exists(saveDirectory))
                         {
-                            // Copy the image to the specified directory
-                            File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
-
-                            // Update txtHinh to point to the new location
-                            txtDuongDan.Text = fileSavePath;
-                            frmQLNhanVien qlnv = new frmQLNhanVien();
-                            qlnv.Reload();
-                            guiMK();
-                            Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            Directory.CreateDirectory(saveDirectory);
                         }
-                        else
+
+
+                        // Đường dẫn ảnh
+                        string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                        string fileName = Path.GetFileName(fileAddress);
+                        string fileSavePath = Path.Combine(saveDirectory, fileName);
+
+                        try
+                        {
+                            guiMK();
+                            DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
+
+                            if (busNhanVien.insert(staff))
+                            {
+                                // Copy the image to the specified directory
+                                File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
+
+                                // Update txtHinh to point to the new location
+                                txtDuongDan.Text = fileSavePath;
+
+                                frmQLNhanVien qlnv = new frmQLNhanVien();
+                                qlnv.Reload();
+                                Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            }
+                            else
+                            {
+                                Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
                         {
                             Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
                             return;
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        messageDialog.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
-                        return;
                     }
 
                 }
@@ -238,89 +247,112 @@ namespace GUI_QLCafe
                 }
                 if (txtEmail.Text.Trim().Length == 0)
                 {
-                    messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmail.Focus();
                     return;
                 }
                 else if (!IsValid(txtEmail.Text.Trim()))
                 {
-                    messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmail.Focus();
                     return;
                 }
                 else if (txtTenNhanVien.Text.Trim().Length == 0)
                 {
-                    messageDialog.Show("Vui lòng nhập tên nhân viên!", "Thông báo");
+                    MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtTenNhanVien.Focus();
                     return;
                 }
                 else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false)
                 {
-                    messageDialog.Show("Vui lòng chọn vai trò!", "Thông báo");
+                    MessageBox.Show("Vui lòng chọn vai trò!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false)
                 {
-                    messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
+                    MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else if (txtDuongDan.Text.Trim().Length == 0) // phải nhập hình
                 {
-                    messageDialog.Show("Vui lòng chọn hình", "Thông Báo");
+                    MessageBox.Show("Vui lòng chọn hình", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 else
                 {
-                    // Đường dẫn thư mục gốc của dự án
-                    string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-                    string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
-
-                    // Tạo thư mục nếu chưa có
-                    if (!Directory.Exists(saveDirectory))
+                    //Nếu email mới khác với email hiện tại, kiểm tra xem email mới có tồn tại trong hệ thống hay không
+                    if (txtEmail.Text != email && busNhanVien.KiemTraEmail(txtEmail.Text))
                     {
-                        Directory.CreateDirectory(saveDirectory);
-                    }
-
-
-                    // Đường dẫn ảnh
-                    string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
-                    string fileName = Path.GetFileName(fileAddress);
-                    string fileSavePath = Path.Combine(saveDirectory, fileName);
-
-
-
-                    // Kiểm tra xem hình đã tồn tại trong thư mục staff hay chưa
-                    if (!File.Exists(fileSavePath))
-                    {
-                        try
-                        {
-                            File.Copy(fileAddress, fileSavePath, true); // Sao chép hình vào thư mục Images nếu chưa tồn tại
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-
-                    // Update txtHinh to point to the new location
-                    txtDuongDan.Text = fileSavePath;
-
-                    DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
-
-                    if (busNhanVien.update(staff, id))
-                    {   
-                        frmQLNhanVien qlnv = new frmQLNhanVien();
-                        qlnv.Reload();
-                        this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
+                        MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmail.Focus();
+                        return;
                     }
                     else
                     {
-                        this.Nofication("Sửa thất bại!", frmNotification.enumType.Failed);
-                        return;
+                    if (MessageBox.Show("Chắc chắn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                            // Đường dẫn thư mục gốc của dự án
+                            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                            string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
+
+                            // Tạo thư mục nếu chưa có
+                            if (!Directory.Exists(saveDirectory))
+                            {
+                                Directory.CreateDirectory(saveDirectory);
+                            }
+
+
+                            // Đường dẫn ảnh
+                            string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                            string fileName = Path.GetFileName(fileAddress);
+                            string fileSavePath = Path.Combine(saveDirectory, fileName);
+
+
+
+                            // Kiểm tra xem hình đã tồn tại trong thư mục staff hay chưa
+                            if (!File.Exists(fileSavePath))
+                            {
+                                try
+                                {
+                                    File.Copy(fileAddress, fileSavePath, true); // Sao chép hình vào thư mục Images nếu chưa tồn tại
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+
+                            // Update txtHinh to point to the new location
+                            txtDuongDan.Text = fileSavePath;
+
+                            DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
+
+                            if (busNhanVien.update(staff, id))
+                            {
+                                frmMainQLCF ql = new frmMainQLCF();
+
+                                this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
+
+
+                                bool changes = ql.checkStatus(txtEmail.Text, role.ToString());
+
+                                if (changes)
+                                {
+                                    MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    this.Hide();
+                                    ql.Close();
+                                }
+                            }
+                            else
+                            {
+                                this.Nofication("Sửa thất bại!", frmNotification.enumType.Failed);
+                                return;
+                            }
+                        }
                     }
-                    
+
                 }
             }
         }
@@ -451,7 +483,7 @@ namespace GUI_QLCafe
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*";
             ofd.FilterIndex = 2;
-            ofd.Title = "Chọn ảnh của sản phẩm";
+            ofd.Title = "Chọn ảnh của nhân viên";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {

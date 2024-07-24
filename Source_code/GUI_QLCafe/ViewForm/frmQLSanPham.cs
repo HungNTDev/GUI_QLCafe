@@ -210,5 +210,30 @@ namespace GUI_QLCafe
         {
 
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string sp = txtTimKiem.Text;
+            DataTable dt = busSanPham.search(sp);
+            if (dt.Rows.Count > 0)
+            {
+                dgvDanhSachSanPham.DataSource = dt;
+                dgvDanhSachSanPham.Columns[0].HeaderText = "IdProduct";
+                dgvDanhSachSanPham.Columns[1].HeaderText = "NameProduct";
+                dgvDanhSachSanPham.Columns[2].HeaderText = "Price";
+                dgvDanhSachSanPham.Columns[3].HeaderText = "ImageProduct";
+                dgvDanhSachSanPham.Columns[4].HeaderText = "StatusProduct";
+                dgvDanhSachSanPham.Columns[5].HeaderText = "IdPT";
+            }
+            else
+            {
+                //MessageBox.Show("Không tìm thấy sản phẩm");
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

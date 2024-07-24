@@ -64,11 +64,6 @@ namespace GUI_QLCafe
 
                 cbLoaiSanPham.Focus();
 
-<<<<<<< HEAD
-=======
-                //.Focus();
->>>>>>> 24d1e9416ea6dfd0ce3ad0e4fa4e57f28cdc8099
-
                 return;
             }
 
@@ -91,15 +86,10 @@ namespace GUI_QLCafe
             //string fileName = Path.GetFileName(fileAddress);
 
 
-<<<<<<< HEAD
+
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
-=======
-            DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
-                //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
-
->>>>>>> 24d1e9416ea6dfd0ce3ad0e4fa4e57f28cdc8099
 
             try
             {

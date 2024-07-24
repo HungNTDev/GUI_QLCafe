@@ -23,6 +23,7 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
             //dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //this.IsMdiContainer = true;
         }
         public void Nofication(string msg, frmNotification.enumType type)
         {
@@ -30,10 +31,54 @@ namespace GUI_QLCafe
             frmNotification.showNotfication(msg, type);
         }
 
+        //private void ActiveChildForm(string name)
+        //{
+        //    foreach (Form frm in this.MdiChildren)
+        //    {
+        //        if (frm.Name == name)
+        //        {
+        //            frm.Activate();
+        //            break;
+        //        }
+        //    }
+        //}
+
+        //private bool CheckExistForm(string name)
+        //{
+        //    bool check = false;
+        //    foreach (Form frm in this.MdiChildren)
+        //    {
+        //        if (frm.Name == name)
+        //        {
+        //            check = true;
+        //            break;
+        //        }
+        //    }
+        //    return check;
+        //}
+
+
+        //private void frmAddSanPham_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    this.Refresh();
+        //    frmQLSanPham_Load(sender, e);
+        //}
+
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmAddSanPham frmAddSanPham = new frmAddSanPham();
-            frmAddSanPham.ShowDialog();
+            //if (CheckExistForm("frmAddSanPham"))
+            //{
+            //    AddSanPham.MdiParent = this;
+            //    AddSanPham.Show();
+            //    AddSanPham.FormClosed += new FormClosedEventHandler(frmAddSanPham_FormClosed);
+            //}
+            //else
+            //{
+            //    ActiveChildForm("frmAddSanPham");
+            //}
+            frmAddSanPham AddSanPham = new frmAddSanPham();
+            AddSanPham.ShowDialog();
             LoadGridView_SanPham();
         }
         public void LoadGridView_SanPham()
@@ -302,5 +347,6 @@ namespace GUI_QLCafe
                 MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
     }
 }

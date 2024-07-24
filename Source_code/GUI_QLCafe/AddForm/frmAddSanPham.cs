@@ -197,5 +197,11 @@ namespace GUI_QLCafe
             this.Close();
         }
 
+
+        private void cbMinimize_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

@@ -41,6 +41,8 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMoHinh = new Guna.UI2.WinForms.Guna2Button();
             this.lbGia = new System.Windows.Forms.Label();
             this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,8 +55,6 @@
             this.messageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.cbLoaiSanPham = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -254,6 +254,38 @@
             this.panelHeader.Size = new System.Drawing.Size(765, 62);
             this.panelHeader.TabIndex = 13;
             // 
+            // cbMinimize
+            // 
+            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.cbMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.cbMinimize.IconColor = System.Drawing.Color.White;
+            this.cbMinimize.Location = new System.Drawing.Point(601, 0);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMinimize.Name = "cbMinimize";
+            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
+            this.cbMinimize.TabIndex = 14;
+            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
+            // 
+            // cbClose
+            // 
+            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClose.BackColor = System.Drawing.Color.Transparent;
+            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.cbClose.ForeColor = System.Drawing.Color.White;
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
+            this.cbClose.IconColor = System.Drawing.Color.White;
+            this.cbClose.Location = new System.Drawing.Point(686, 0);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClose.Name = "cbClose";
+            this.cbClose.PressedColor = System.Drawing.Color.White;
+            this.cbClose.Size = new System.Drawing.Size(79, 40);
+            this.cbClose.TabIndex = 13;
+            // 
             // btnMoHinh
             // 
             this.btnMoHinh.BorderRadius = 5;
@@ -448,37 +480,6 @@
             this.cbLoaiSanPham.Size = new System.Drawing.Size(372, 36);
             this.cbLoaiSanPham.TabIndex = 30;
             this.cbLoaiSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cbMinimize
-            // 
-            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.cbMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbMinimize.IconColor = System.Drawing.Color.White;
-            this.cbMinimize.Location = new System.Drawing.Point(601, 0);
-            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
-            this.cbMinimize.TabIndex = 14;
-            // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbClose.ForeColor = System.Drawing.Color.White;
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
-            this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(686, 0);
-            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(79, 40);
-            this.cbClose.TabIndex = 13;
             // 
             // frmAddSanPham
             // 

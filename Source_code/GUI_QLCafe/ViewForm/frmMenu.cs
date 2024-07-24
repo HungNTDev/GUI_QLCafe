@@ -5,7 +5,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI_QLCafe
 {
@@ -13,10 +12,10 @@ namespace GUI_QLCafe
     {
         DTO_Bill billDTO = new DTO_Bill();
         DTO_Product productDTO = new DTO_Product();
-        DTO_DetailBill detailBillDTO =  new DTO_DetailBill();
+        DTO_DetailBill detailBillDTO = new DTO_DetailBill();
 
         BUS_Product productBUS = new BUS_Product();
-        BUS_TableCF busTB = new BUS_TableCF();  
+        BUS_TableCF busTB = new BUS_TableCF();
         BUS_Staff busStaff = new BUS_Staff();
         BUS_Bill busBill = new BUS_Bill();
         BUS_DetailBill busDetailBill = new BUS_DetailBill();
@@ -124,7 +123,7 @@ namespace GUI_QLCafe
             LoadMenu(categoryID);
         }
 
-        private void btn_Click (object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
             frmAddDetail detail = new frmAddDetail();
             Guna2Button btn = (Guna2Button)sender;
@@ -142,7 +141,7 @@ namespace GUI_QLCafe
                     else if (nameProduct == ListOrder_dgv.Rows[i].Cells[0].Value.ToString())
                     {
                         ListOrder_dgv.Rows[i].Cells[1].Value = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString()) + frmAddDetail.Amount;
-                        ListOrder_dgv.Rows[i].Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][2].ToString()) * Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value);
+                        ListOrder_dgv.Rows[i].Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value);
                         ListOrder_dgv.Update();
                         frmAddDetail.Status = 0;
                         break;
@@ -201,8 +200,12 @@ namespace GUI_QLCafe
             }
         }
 
-
-
-        
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (ListOrder_dgv.SelectedRows.Count > 0)
+            {
+                ListOrder_dgv.Rows.Remove(ListOrder_dgv.SelectedRows[0]);
+            }
+        }
     }
 }

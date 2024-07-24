@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 namespace GUI_QLCafe
 {
@@ -15,10 +18,15 @@ namespace GUI_QLCafe
         int pageNumber = 1;
         int numberRecord = 5;
 
+        private const int PageSize = 10;
+        private int currentPageIndex = 1;
+        private int totalPages = 0;
+        private int totalRows = 0;
+
         public frmQLSanPham()
         {
             InitializeComponent();
-            dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
         }
         public void Nofication(string msg, frmNotification.enumType type)
         {
@@ -39,10 +47,10 @@ namespace GUI_QLCafe
 
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
-            LoadGridView_SanPham();
+            //LoadGridView_SanPham();
             //LoadCombobox_Loai();
-            currentPageIndex = 1;
             LoadData();
+            currentPageIndex = 1;
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
@@ -79,16 +87,16 @@ namespace GUI_QLCafe
             }
         }
 
-        List<Product> LoadRecord(int page, int recordNum)
-        {
-            List<Product> result = new List<Product>();
+        //List<Product> LoadRecord(int page, int recordNum)
+        //{
+        //    List<Product> result = new List<Product>();
 
-            using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
-            {
-                result = db.Products.Skip((page - 1) * recordNum).Take(numberRecord).ToList();
-            }
-            return result;
-        }
+        //    using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+        //    {
+        //        result = db.Products.Skip((page - 1) * recordNum).Take(numberRecord).ToList();
+        //    }
+        //    return result;
+        //}
 
 
         private void LoadCombobox_Loai()
@@ -112,29 +120,74 @@ namespace GUI_QLCafe
             //}
         }
 
-        private const int PageSize = 10;
-        private int currentPageIndex = 1;
-        private int totalPages = 0;
-        private int totalRows = 0;
+        private byte[] ImageToByteArray(Image image)
+        {
+            using(MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public Image ByteArrayToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void LoadHinhAnh(DataTable dt)
+        {
+
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    string imagePath = dataRow["ImageProduct"].ToString();
+
+                    if (File.Exists(imagePath))
+                    {
+                        using(Image imageProduct = Image.FromFile(imagePath))
+                        {
+                            dataRow["ImageProduct"] =ImageToByteArray(imageProduct);
+                        }
+                    }
+                    else
+                    {
+                        //ataRow["ImageProduct"] = DBNull.Value;
+                    }
+                }
+            }
+        }
 
         private void LoadData()
         {
-            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-T731SJL\\TUANHUNG;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);
-                totalRows = (int)cmd.ExecuteScalar();
-
-                // Tính toán tổng số trang dựa trên tổng số bản gì và kích thước trang
+                totalRows = busSanPham.GetTotalProductCount();
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
                 lbTotalPage.Text = totalPages.ToString();
 
-                // Sử dụng OFFSET để bỏ qua một số bản ghi và FETCH NEXT để lấy một số bản ghi tiếp theo
-                SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM Product ORDER BY IdProduct OFFSET {(currentPageIndex - 1) * PageSize} ROWS FETCH NEXT {PageSize} ROWS ONLY", conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = busSanPham.GetPageProduct(currentPageIndex, PageSize);
                 dgvDanhSachSanPham.DataSource = dt;
+
+                dgvDanhSachSanPham.Refresh();
                 lbTotalRows.Text = totalRows.ToString();
+
+                LoadHinhAnh(dt);
+                foreach(DataGridViewColumn column in dgvDanhSachSanPham.Columns)
+                {
+                    if(column.Name == "ProductImage" && column is DataGridViewImageColumn)
+                    {
+                        DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)column;
+                        imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -204,6 +257,11 @@ namespace GUI_QLCafe
                 // Hiển thị thông báo lỗi cho người dùng (nếu cần)
                 MessageBox.Show("Đã xảy ra lỗi khi xử lý dữ liệu trong DataGridView." + ex.Message);
             }
+        }
+
+        private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

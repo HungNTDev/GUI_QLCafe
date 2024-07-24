@@ -418,3 +418,20 @@ as
       update Product set StatusProduct = 0 
 	  where IdProduct = @id
 end
+
+-- Xử lý phân trang sản phẩm <Thanh>
+-- Lấy trang
+create proc GetPagedProduct
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from Product order by IdProduct offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+
+-- Lấy tổng số sản phẩm 
+create proc GetTotalProductCount as select count(*) from Product
+
+SELECT TOP 10 * FROM Product;

@@ -10,6 +10,10 @@ namespace GUI_QLCafe
 {
     public partial class frmQLNhanVien : Form
     {
+        public string currentEmail;
+        public string currentRole;
+        public string emailAfter;
+        public string roleAfter;
         public frmQLNhanVien()
         {
             InitializeComponent();
@@ -32,8 +36,29 @@ namespace GUI_QLCafe
 
         public void Reload()
         {
+            txtEmail.Clear();
+            txtTen.Clear();
+            txtTimKiem.Clear();
+            txtDuongDan.Clear();
+            picNhanVien.Image = null;
+            rdoHoatDong.Checked = false;
+            rdoNgungHoatDong.Checked = false;
+            rdoNhanVien.Checked = false;
+            rdoQuanTri.Checked = false;
+
+            selected = false;
+
+            // Check if the email and role have changed
+            if (currentEmail == emailAfter && currentRole != roleAfter)
+            {
+                MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Implement your logout logic here, if needed
+            }
+
+
             LoadGridView_NhanVien();
         }
+        
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
             Reload();

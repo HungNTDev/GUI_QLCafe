@@ -67,19 +67,19 @@ namespace GUI_QLCafe
         {
             if (txtEmail.Text.Trim().Length == 0)
             {
-                messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
             else if (!IsValid(txtEmail.Text.Trim()))
             {
-                messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
             else if (txtPassword.Text.Trim().Length == 0)
             {
-                messageDialog.Show("Vui lòng nhập mật khẩu!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Focus();
                 return;
             }
@@ -130,7 +130,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    messageDialog.Show("Đăng nhập thất bại!", "Thông báo");
+                    MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtPassword.Clear();
                     txtPassword.Focus();
                     return;

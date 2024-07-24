@@ -37,9 +37,23 @@ namespace GUI_QLCafe
             lbGio.Text = DateTime.Now.ToLongTimeString();
             PhanQuyen();
         }
+        public bool checkStatus(string emailAfter, string roleAfter)
+        {
+            // Check if the email and role have changed
+            if (email == emailAfter && role != roleAfter)
+            {
+                MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                return true;
+            }
+            return false;
+        }
         public void PhanQuyen()
         {
+            frmQLNhanVien qlnv = new frmQLNhanVien();
+            qlnv.currentRole = role;
+            qlnv.currentEmail = email;
+
             lblEmail.Text = email;
 
             if (session == 1)

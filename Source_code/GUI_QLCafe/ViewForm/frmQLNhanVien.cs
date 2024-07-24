@@ -1,19 +1,13 @@
 ﻿using BUS_QLCafe;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using TheArtOfDevHtmlRenderer.Adapters;
-using System.Drawing;
-using System.Data.Common;
 
 namespace GUI_QLCafe
 {
     public partial class frmQLNhanVien : Form
     {
-        public string currentEmail;
-        public string currentRole;
-        public string emailAfter;
-        public string roleAfter;
         public frmQLNhanVien()
         {
             InitializeComponent();
@@ -21,7 +15,7 @@ namespace GUI_QLCafe
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmAddNhanVien frmAddNV = new frmAddNhanVien("","luu", null, null, 0, 0, null, "");
+            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
             frmAddNV.ShowDialog();
             Reload();
         }
@@ -30,7 +24,9 @@ namespace GUI_QLCafe
 
         private void LoadGridView_NhanVien()
         {
-            cboStatus.SelectedIndex = 1-status;
+
+
+            cboStatus.SelectedIndex = 1 - status;
             dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
         }
 
@@ -47,18 +43,8 @@ namespace GUI_QLCafe
             rdoQuanTri.Checked = false;
 
             selected = false;
-
-            // Check if the email and role have changed
-            if (currentEmail == emailAfter && currentRole != roleAfter)
-            {
-                MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // Implement your logout logic here, if needed
-            }
-
-
             LoadGridView_NhanVien();
         }
-        
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
             Reload();
@@ -97,7 +83,7 @@ namespace GUI_QLCafe
             }
 
             dgvDanhSachNhanVien.DataSource = busNhanVien.search(column, txtTimKiem.Text, status);
-            
+
         }
         private string saveDirectory;
         private string relativePath;
@@ -207,7 +193,7 @@ namespace GUI_QLCafe
         {
             if (cboTim.SelectedItem != null)
             {
-                txtTimKiem.PlaceholderText = $"Nhập {cboTim.SelectedItem.ToString().Substring(0,1).ToLower()}" +
+                txtTimKiem.PlaceholderText = $"Nhập {cboTim.SelectedItem.ToString().Substring(0, 1).ToLower()}" +
                     $"{cboTim.SelectedItem.ToString().Substring(1)} cần tìm";
             }
         }

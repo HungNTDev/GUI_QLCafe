@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbText0 = new System.Windows.Forms.Label();
             this.paneText = new Guna.UI2.WinForms.Guna2Panel();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -89,7 +91,6 @@
             this.paneText.Name = "paneText";
             this.paneText.Size = new System.Drawing.Size(1383, 58);
             this.paneText.TabIndex = 10;
-            this.paneText.Paint += new System.Windows.Forms.PaintEventHandler(this.paneText_Paint);
             // 
             // cbClose
             // 
@@ -141,7 +142,6 @@
             this.btnDel.Size = new System.Drawing.Size(220, 48);
             this.btnDel.TabIndex = 1;
             this.btnDel.Text = "Xóa món";
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -197,13 +197,13 @@
             this.ListOrder_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ListOrder_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ListOrder_dgv.ColumnHeadersHeight = 4;
+            this.ListOrder_dgv.ColumnHeadersHeight = 40;
             this.ListOrder_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -217,9 +217,22 @@
             this.ListOrder_dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ListOrder_dgv.Location = new System.Drawing.Point(0, 66);
             this.ListOrder_dgv.Name = "ListOrder_dgv";
+            this.ListOrder_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ListOrder_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ListOrder_dgv.RowHeadersVisible = false;
-            this.ListOrder_dgv.RowHeadersWidth = 51;
-            this.ListOrder_dgv.RowTemplate.Height = 24;
+            this.ListOrder_dgv.RowHeadersWidth = 50;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.ListOrder_dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.ListOrder_dgv.RowTemplate.Height = 40;
             this.ListOrder_dgv.Size = new System.Drawing.Size(496, 604);
             this.ListOrder_dgv.TabIndex = 4;
             this.ListOrder_dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -234,13 +247,13 @@
             this.ListOrder_dgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOrder_dgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.ListOrder_dgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.ListOrder_dgv.ThemeStyle.HeaderStyle.Height = 4;
+            this.ListOrder_dgv.ThemeStyle.HeaderStyle.Height = 40;
             this.ListOrder_dgv.ThemeStyle.ReadOnly = false;
             this.ListOrder_dgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.ListOrder_dgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.ListOrder_dgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOrder_dgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.ListOrder_dgv.ThemeStyle.RowsStyle.Height = 24;
+            this.ListOrder_dgv.ThemeStyle.RowsStyle.Height = 40;
             this.ListOrder_dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ListOrder_dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
@@ -318,7 +331,6 @@
             this.flp_CaPhe.Name = "flp_CaPhe";
             this.flp_CaPhe.Size = new System.Drawing.Size(873, 703);
             this.flp_CaPhe.TabIndex = 1;
-            this.flp_CaPhe.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_CaPhe_Paint);
             // 
             // TEA
             // 
@@ -370,7 +382,6 @@
             this.JUC.Size = new System.Drawing.Size(879, 709);
             this.JUC.TabIndex = 3;
             this.JUC.Text = "NƯỚC ÉP";
-            this.JUC.Click += new System.EventHandler(this.tp_NuocEp_Click);
             // 
             // flp_NuocEp
             // 

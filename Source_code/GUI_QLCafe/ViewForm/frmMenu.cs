@@ -139,7 +139,7 @@ namespace GUI_QLCafe
                     else if (nameProduct == ListOrder_dgv.Rows[i].Cells[0].Value.ToString())
                     {
                         ListOrder_dgv.Rows[i].Cells[1].Value = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString()) + frmDetail.Amount;
-                        ListOrder_dgv.Rows[i].Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][2].ToString()) * Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value);
+                        ListOrder_dgv.Rows[i].Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value);
                         ListOrder_dgv.Update();
                         frmDetail.Status = 0;
                         break;
@@ -200,7 +200,14 @@ namespace GUI_QLCafe
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if(ListOrder_dgv.SelectedRows.Count > 0)
+                {
+                    ListOrder_dgv.Rows.RemoveAt(ListOrder_dgv.SelectedRows[0].Index);
+                }
+            }catch
+            { }
         }
 
         private void paneText_Paint(object sender, PaintEventArgs e)

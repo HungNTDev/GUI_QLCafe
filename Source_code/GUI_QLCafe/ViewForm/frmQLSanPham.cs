@@ -55,15 +55,17 @@ namespace GUI_QLCafe
             if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvSua")
             {
                 frmAddSanPham frmAddSanPham = new frmAddSanPham();
+
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
                 frmAddSanPham.rdoCo.Checked = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) ? true : false;
-                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvHinhAnh"].Value);
+                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["ImagePath"].Value);
                 frmAddSanPham.ShowDialog();
-                LoadGridView_SanPham();
+                LoadData();
+
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
@@ -135,26 +137,46 @@ namespace GUI_QLCafe
 
         private void LoadHinhAnh(DataTable dt)
         {
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = dt;
 
-            if (dt.Rows.Count > 0)
-            {
-                foreach (DataRow dataRow in dt.Rows)
-                {
-                    string imagePath = dataRow["ImageProduct"].ToString();
+            //DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            //imageColumn.HeaderText = "Hình ảnh";
+            //imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //imageColumn.Name = "ImageColumn";
+            //dgvDanhSachSanPham.Columns.Add(imageColumn);
 
-                    if (File.Exists(imagePath))
-                    {
-                        using (Image imageProduct = Image.FromFile(imagePath))
-                        {
-                            dataRow["ImageProduct"] = ImageToByteArray(imageProduct);
-                        }
-                    }
-                    else
-                    {
-                        //ataRow["ImageProduct"] = DBNull.Value;
-                    }
-                }
-            }
+            //// Đặt DataSource của DataGridView
+            //dgvDanhSachSanPham.DataSource = bs;
+
+            //foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
+            //{
+            //    if (row.Cells["ImagePath"].Value != DBNull.Value)
+            //    {
+            //        byte[] imageBytes = (byte[])row.Cells["ImagePath"].Value;
+            //        Image image = ByteArrayToImage(imageBytes);
+            //        row.Cells["ImageColumn"].Value = image;
+            //    }
+            //}
+            //if (dt.Rows.Count > 0)
+            //{
+            //    foreach (DataRow dataRow in dt.Rows)
+            //    {
+            //        string imagePath = dataRow["ImageProduct"].ToString();
+
+            //        if (File.Exists(imagePath))
+            //        {
+            //            using (Image imageProduct = Image.FromFile(imagePath))
+            //            {
+            //                dataRow["ImageProduct"] = ImageToByteArray(imageProduct);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            //ataRow["ImageProduct"] = DBNull.Value;
+            //        }
+            //    }
+            //}
         }
 
         private void LoadData()
@@ -258,6 +280,27 @@ namespace GUI_QLCafe
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string sp = txtTimKiem.Text;
+            DataTable dt = busSanPham.search(sp);
+            if (dt.Rows.Count > 0)
+            {
+                dgvDanhSachSanPham.DataSource = dt;
+                dgvDanhSachSanPham.Columns[0].HeaderText = "IdProduct";
+                dgvDanhSachSanPham.Columns[1].HeaderText = "NameProduct";
+                dgvDanhSachSanPham.Columns[2].HeaderText = "Price";
+                dgvDanhSachSanPham.Columns[3].HeaderText = "ImagePath";
+                dgvDanhSachSanPham.Columns[4].HeaderText = "Status";
+                dgvDanhSachSanPham.Columns[5].HeaderText = "IdPT";
+            }
+
+            else
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

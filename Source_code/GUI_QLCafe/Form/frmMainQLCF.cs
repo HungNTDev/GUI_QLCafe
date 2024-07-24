@@ -46,6 +46,12 @@ namespace GUI_QLCafe
                 }
             }
         }
+
+        public void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Refresh();
+            frmMainQLCF_Load(sender, e);
+        }
         public void AddControls(Form form)
         {
             panelBody.Controls.Clear();

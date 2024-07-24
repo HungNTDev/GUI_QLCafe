@@ -64,7 +64,7 @@ namespace GUI_QLCafe
                 frmAddSanPham.rdoCo.Checked = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) ? true : false;
                 frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["ImagePath"].Value);
                 frmAddSanPham.ShowDialog();
-                LoadGridView_SanPham();
+                LoadData();
 
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
@@ -299,7 +299,7 @@ namespace GUI_QLCafe
 
             else
             {
-                MessageBox.Show("Không tỉm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

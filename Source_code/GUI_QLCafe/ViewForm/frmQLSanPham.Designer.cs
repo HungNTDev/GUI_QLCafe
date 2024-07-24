@@ -98,7 +98,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 175);
+            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 169);
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
             this.dgvDanhSachSanPham.ReadOnly = true;
             this.dgvDanhSachSanPham.RowHeadersVisible = false;

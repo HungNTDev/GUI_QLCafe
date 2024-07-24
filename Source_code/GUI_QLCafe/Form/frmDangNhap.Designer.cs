@@ -202,7 +202,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPassword.PlaceholderText = "Ít nhất 8 ký tự";
+            this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(484, 46);
             this.txtPassword.TabIndex = 1;

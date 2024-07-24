@@ -18,8 +18,34 @@ namespace GUI_QLCafe
         public frmMainQLCF()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
+        private bool CheckExistForm(string name)
+        {
+            bool check = false;
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name == name)
+                {
+                    check = true;
+                    break;
+                }
+            }
+            return check;
+        }
+
+        private void ActiveChildForm(string name)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name == name)
+                {
+                    frm.Activate();
+                    break;
+                }
+            }
+        }
         public void AddControls(Form form)
         {
             panelBody.Controls.Clear();

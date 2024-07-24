@@ -258,7 +258,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select * from Staff
 
 -- Lấy danh sách nhân viên
-ALTER proc GetStaff (@status int)
+create proc GetStaff (@status int)
 as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
@@ -398,11 +398,10 @@ as
   end
 
 -- Sửa sản phẩm
-  create proc UpdateProduct (@idProduct nvarchar(20),
+alter proc UpdateProduct (@idProduct nvarchar(20),
                             @nameProduct nvarchar(100),
 							@price float,
 							@imageProduct nvarchar(500),
-							@statusProduct int,
 							@idpt nvarchar(10))
 as 
  begin 
@@ -418,20 +417,3 @@ as
       update Product set StatusProduct = 0 
 	  where IdProduct = @id
 end
-
--- Xử lý phân trang sản phẩm <Thanh>
--- Lấy trang
-create proc GetPagedProduct
-@PageIndex int,
-@PageSize int
-as
-	begin
-		select * from Product order by IdProduct offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
-	end
-
-EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
-
--- Lấy tổng số sản phẩm 
-create proc GetTotalProductCount as select count(*) from Product
-
-SELECT TOP 10 * FROM Product;

@@ -201,11 +201,12 @@ namespace GUI_QLCafe
         {
             try
             {
-                if(ListOrder_dgv.SelectedRows.Count > 0)
+                if (ListOrder_dgv.SelectedRows.Count > 0)
                 {
                     ListOrder_dgv.Rows.RemoveAt(ListOrder_dgv.SelectedRows[0].Index);
                 }
-            }catch
+            }
+            catch
             { }
         }
 
@@ -221,6 +222,6 @@ namespace GUI_QLCafe
 
 
 
-        
+
     }
 }

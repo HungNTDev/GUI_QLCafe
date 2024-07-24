@@ -350,5 +350,18 @@ namespace DAL_QLCafe
             }
             return totalProductCount;
         }
+
+        //Lấy thông tin sản phẩm
+        public DataTable TagProduct(DTO_Product product)
+        {
+            using (conn = new SqlConnection(_conn))
+            {
+                string Query = @"exec TagProduct @IdProduct = '" + product.IdProduct + "'";
+                SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                return dt;
+            }
+        }
     }
 }

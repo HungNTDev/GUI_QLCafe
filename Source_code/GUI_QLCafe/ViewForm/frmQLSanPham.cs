@@ -18,7 +18,7 @@ namespace GUI_QLCafe
         public frmQLSanPham()
         {
             InitializeComponent();
-            dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
         }
         public void Nofication(string msg, frmNotification.enumType type)
         {
@@ -79,16 +79,16 @@ namespace GUI_QLCafe
             }
         }
 
-        List<Product> LoadRecord(int page, int recordNum)
-        {
-            List<Product> result = new List<Product>();
+        //List<Product> LoadRecord(int page, int recordNum)
+        //{
+        //    List<Product> result = new List<Product>();
 
-            using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
-            {
-                result = db.Products.Skip((page - 1) * recordNum).Take(numberRecord).ToList();
-            }
-            return result;
-        }
+        //    using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+        //    {
+        //        result = db.Products.Skip((page - 1) * recordNum).Take(numberRecord).ToList();
+        //    }
+        //    return result;
+        //}
 
 
         private void LoadCombobox_Loai()
@@ -119,7 +119,7 @@ namespace GUI_QLCafe
 
         private void LoadData()
         {
-            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-T731SJL\\TUANHUNG;Initial Catalog=QL_Cafe;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection("Data source=DESKTOP-QIE438C\\MAYAO;Initial Catalog=QL_Cafe;Integrated Security=True"))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Product", conn);

@@ -141,5 +141,72 @@ namespace DAL_QLCafe
                 }
             }
         }
+
+        //Xem thông tin bill dựa trên bàn
+        public DataTable BillInfo(DTO_Bill bill)
+        {
+            //try
+            //{
+            //    using (SqlConnection conn = new SqlConnection(_conn))
+            //    {
+            //        SqlCommand cmd = new SqlCommand();
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.CommandText = "BillInfo";
+            //        cmd.Parameters.AddWithValue("@IdTable", bill.idTable);
+            //        conn.Open();
+            //        DataTable dtBill = new DataTable();
+            //        dtBill.Load(cmd.ExecuteReader());
+            //        return dtBill;
+            //    }
+            //}
+            //finally
+            //{
+            //    if (conn.State == ConnectionState.Open)
+            //    {
+            //        conn.Close();
+            //    }
+            //}
+
+            using (SqlConnection Connection = new SqlConnection(_conn))
+            {
+                string Query = @"exec BillInfo @idTable = '" + bill.IdTable + "'";
+                SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                return dt;
+            }
+        }
+
+        //Thêm bill
+        public bool AddingBill(DTO_Bill bill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "AddingBill";
+                    cmd.Parameters.AddWithValue("@IdStaff", bill.idStaff);
+                    cmd.Parameters.AddWithValue("@IdTable", bill.IdTable);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+
+        
     }
 }

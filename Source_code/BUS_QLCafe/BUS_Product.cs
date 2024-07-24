@@ -62,5 +62,11 @@ namespace BUS_QLCafe
         {
             return dal.GetTotalProductCount();
         }
+
+        //Lấy thông tin sản phẩm
+        public DataTable TagProduct(DTO_Product product)
+        {
+            return dal.TagProduct(product); 
+        }
     }
 }

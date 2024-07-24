@@ -180,34 +180,39 @@ namespace DAL_QLCafe
         //Thông tin bàn
         public DataTable TableInfo(DTO_Bill bill)
         {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    //conn.Open();
-                    //string Query = "exec TableInfo @IdTable = '" + bill.IdTable + "'";
-                    //adt = new SqlDataAdapter(Query, _conn);
-                    //dt = new DataTable();
-                    //adt.Fill(dt);
-                    //return dt;
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "TableInfo";
-                    cmd.Parameters.AddWithValue("IdTable", bill.idTable);
-                    conn.Open();
-                    DataTable dtListCF = new DataTable();
-                    dtListCF.Load(cmd.ExecuteReader());
-                    return dtListCF;
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
+            //    try
+            //    {
+            //        using (conn = new SqlConnection(_conn))
+            //        {
+            //            conn.Open();
+            //            //string Query = "exec TableInfo @IdTable = '" + bill.IdTable + "'";
+            //            //adt = new SqlDataAdapter(Query, _conn);
+            //            //dt = new DataTable();
+            //            //adt.Fill(dt);
+            //            //return dt;
+            //            //SqlCommand cmd = new SqlCommand();
+            //            //cmd.Connection = conn;
+            //            //cmd.CommandType = CommandType.StoredProcedure;
+            //            //cmd.CommandText = "TableInfo";
+            //            //cmd.Parameters.AddWithValue("IdTable", bill.idTable);
+            //            //conn.Open();
+            //            //DataTable dtListCF = new DataTable();
+            //            //dtListCF.Load(cmd.ExecuteReader());
+            //            //return dtListCF;
+            //        }
+            //    }
+            //    finally
+            //    {
+            //        if (conn.State == ConnectionState.Open)
+            //        {
+            //            conn.Close();
+            //        }
+            //    }
+            string Query = "exec TableInfo @IdTable = '" + bill.IdTable + "'";
+            adt = new SqlDataAdapter(Query, _conn);
+            dt = new DataTable();
+            adt.Fill(dt);
+            return dt;
         }
     }
 }

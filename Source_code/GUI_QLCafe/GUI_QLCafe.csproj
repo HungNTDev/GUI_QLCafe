@@ -201,6 +201,12 @@
       <DependentUpon>frmAddBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\ProgressReport.cs" />
+    <Compile Include="ViewForm\frmDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmDetail.Designer.cs">
+      <DependentUpon>frmDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinSanPham.cs">
       <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\frmAddBan.resx">
       <DependentUpon>frmAddBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmDetail.resx">
+      <DependentUpon>frmDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>

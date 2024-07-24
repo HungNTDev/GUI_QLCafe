@@ -31,5 +31,17 @@ namespace BUS_QLCafe
         {
             return dal.search(keyword, column);
         }
+
+        //Xem thông tin bill
+        public DataTable BillInfo(DTO_Bill bill)
+        {
+            return dal.BillInfo(bill);
+        }
+
+        //Thêm bill
+        public bool AddingBill(DTO_Bill bill)
+        {
+            return dal.AddingBill(bill);
+        }
     }
 }

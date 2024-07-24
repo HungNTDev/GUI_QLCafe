@@ -27,9 +27,9 @@ namespace BUS_QLCafe
             return dal.delete(obj);
         }
 
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
-            return dal.search(keyword, column);
+            return dal.search(keyword);
         }
 
         //Danh sach thuc pham
@@ -55,12 +55,18 @@ namespace BUS_QLCafe
 
         public DataTable GetPageProduct(int pageIndex, int pageSize)
         {
-            return dal.GetPagedProduct(pageIndex, pageSize);    
+            return dal.GetPagedProduct(pageIndex, pageSize);
         }
 
         public int GetTotalProductCount()
         {
             return dal.GetTotalProductCount();
+        }
+
+        //Lấy thông tin sản phẩm
+        public DataTable TagProduct(DTO_Product product)
+        {
+            return dal.TagProduct(product); 
         }
     }
 }

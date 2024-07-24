@@ -102,7 +102,6 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@nameProduct", obj.NameProduct);
                     cmd.Parameters.AddWithValue("@price", obj.Price);
                     cmd.Parameters.AddWithValue("@imageProduct", obj.ImageProduct);
-                    cmd.Parameters.AddWithValue("@statusProduct", obj.StatusProduct);
                     cmd.Parameters.AddWithValue("@idpt", obj.IdPT);
 
                     conn.Open();
@@ -157,7 +156,7 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
             try
             {
@@ -167,8 +166,8 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "SearchProduct";
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
-                    cmd.Parameters.AddWithValue("@column", column);
+                    cmd.Parameters.AddWithValue("@value", keyword);
+
                     conn.Open();
                     DataTable dtProduct = new DataTable();
                     dtProduct.Load(cmd.ExecuteReader());
@@ -298,7 +297,7 @@ namespace DAL_QLCafe
             DataTable dt = new DataTable();
             try
             {
-                using(conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
@@ -310,7 +309,7 @@ namespace DAL_QLCafe
                     conn.Open();
                     da.Fill(dt);
 
-                    if(dt.Rows.Count == 0)
+                    if (dt.Rows.Count == 0)
                     {
                         Console.WriteLine("Không có dữ liệu được trả về từ proc");
                     }
@@ -335,13 +334,13 @@ namespace DAL_QLCafe
             int totalProductCount = 0;
             try
             {
-                using(conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "GetTotalProductCount";
-                    conn.Open();    
+                    conn.Open();
                     totalProductCount = (int)cmd.ExecuteScalar();
                 }
             }
@@ -350,6 +349,19 @@ namespace DAL_QLCafe
                 Console.WriteLine("Error: " + e.Message);
             }
             return totalProductCount;
+        }
+
+        //Lấy thông tin sản phẩm
+        public DataTable TagProduct(DTO_Product product)
+        {
+            using (conn = new SqlConnection(_conn))
+            {
+                string Query = @"exec TagProduct @IdProduct = '" + product.IdProduct + "'";
+                SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                return dt;
+            }
         }
     }
 }

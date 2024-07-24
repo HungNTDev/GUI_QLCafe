@@ -201,6 +201,12 @@
       <DependentUpon>frmAddBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\ProgressReport.cs" />
+    <Compile Include="ViewForm\frmDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmDetail.Designer.cs">
+      <DependentUpon>frmDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinSanPham.cs">
       <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\frmAddBan.resx">
       <DependentUpon>frmAddBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmDetail.resx">
+      <DependentUpon>frmDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
@@ -379,7 +388,30 @@
     <None Include="Icon\Success.png" />
     <None Include="Icon\warning.png" />
     <None Include="Icon\information.png" />
+    <Content Include="img\Product\download %2814%29.jpg" />
+    <Content Include="img\Product\download %2815%29.jpg" />
+    <Content Include="img\Product\download %2816%29.jpg" />
+    <Content Include="img\Product\download %2817%29.jpg" />
+    <Content Include="img\Product\download %2818%29.jpg" />
+    <Content Include="img\Product\download %2819%29.jpg" />
+    <Content Include="img\Product\download %2820%29.jpg" />
+    <Content Include="img\Product\download %2821%29.jpg" />
+    <Content Include="img\Product\tralipton.jpg" />
+    <Content Include="img\Product\cach-lam-ca-phe-da-bao-frappuccino-thom-beo-mat-lanh-nhu-starbucks-tai-nha-202111031405246034.jpg" />
+    <Content Include="img\Product\d5cb1aa5e36899-cphvanillaphclong.png" />
+    <Content Include="img\Product\download %281%29.jpg" />
+    <Content Include="img\Product\download %2810%29.jpg" />
+    <Content Include="img\Product\download %2811%29.jpg" />
+    <Content Include="img\Product\download %2812%29.jpg" />
+    <Content Include="img\Product\download %2813%29.jpg" />
+    <Content Include="img\Product\download %282%29.jpg" />
     <Content Include="img\Product\download %283%29.jpg" />
+    <Content Include="img\Product\download %284%29.jpg" />
+    <Content Include="img\Product\download %285%29.jpg" />
+    <Content Include="img\Product\download %286%29.jpg" />
+    <Content Include="img\Product\download %287%29.jpg" />
+    <Content Include="img\Product\download %288%29.jpg" />
+    <Content Include="img\Product\download %289%29.jpg" />
     <Content Include="img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg" />
     <Content Include="License-LGPL.txt" />
   </ItemGroup>

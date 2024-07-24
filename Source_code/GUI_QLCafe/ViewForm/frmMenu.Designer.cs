@@ -166,6 +166,7 @@
             this.btnAdd.Size = new System.Drawing.Size(220, 48);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm món";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbNameTable
             // 

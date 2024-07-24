@@ -48,6 +48,7 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelAside = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbThuNgan = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.paneText.SuspendLayout();
@@ -94,13 +95,14 @@
             // 
             this.panelHeader.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panelHeader.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.panelHeader.Controls.Add(this.lbThuNgan);
             this.panelHeader.Controls.Add(this.lbTenBan);
             this.panelHeader.Controls.Add(this.lbGioRa);
             this.panelHeader.Controls.Add(this.lbGioVao);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(595, 146);
+            this.panelHeader.Size = new System.Drawing.Size(595, 186);
             this.panelHeader.TabIndex = 2;
             // 
             // lbGioRa
@@ -214,9 +216,9 @@
             this.lvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.HideSelection = false;
-            this.lvHoaDon.Location = new System.Drawing.Point(0, 146);
+            this.lvHoaDon.Location = new System.Drawing.Point(0, 186);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(595, 434);
+            this.lvHoaDon.Size = new System.Drawing.Size(595, 394);
             this.lvHoaDon.TabIndex = 4;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
@@ -301,6 +303,18 @@
             this.panelBody.Size = new System.Drawing.Size(595, 751);
             this.panelBody.TabIndex = 9;
             // 
+            // lbThuNgan
+            // 
+            this.lbThuNgan.AutoSize = true;
+            this.lbThuNgan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThuNgan.ForeColor = System.Drawing.Color.White;
+            this.lbThuNgan.Location = new System.Drawing.Point(21, 136);
+            this.lbThuNgan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbThuNgan.Name = "lbThuNgan";
+            this.lbThuNgan.Size = new System.Drawing.Size(127, 31);
+            this.lbThuNgan.TabIndex = 1;
+            this.lbThuNgan.Text = "Thu ngân: ";
+            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -346,5 +360,6 @@
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2Panel panelAside;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
+        private System.Windows.Forms.Label lbThuNgan;
     }
 }

@@ -61,7 +61,9 @@ namespace GUI_QLCafe
             if (cbLoaiSanPham.Text.Trim().Length == 0)
             {
                 messageDialog.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo");
-                //.Focus();
+
+                cbLoaiSanPham.Focus();
+
                 return;
             }
 
@@ -83,9 +85,10 @@ namespace GUI_QLCafe
 
             //string fileName = Path.GetFileName(fileAddress);
 
-
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
-                txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
+                txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
+
+                //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
 
             try
             {
@@ -180,12 +183,7 @@ namespace GUI_QLCafe
 
                     txtDuongDan.Text = fileAddress;
 
-                    //fileAddress = dlgopen.FileName;
-                    //picSanPham.Image = Image.FromFile(fileAddress);
-                    //fileName = Path.GetFileName(dlgopen.FileName);
-                    //saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                    //fileSavePath = Path.Combine(saveDirectory, "\\img\\", "\\Product\\", fileName);
-                    //txtDuongDan.Text = "\\img\\" + "\\Product\\" + fileName;
+
                 }
             }
             catch (Exception ex)

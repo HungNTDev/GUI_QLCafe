@@ -194,17 +194,17 @@ namespace GUI_QLCafe
 
                     try
                     {
-                        // Copy the image to the specified directory
-                        File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
-
-                        // Update txtHinh to point to the new location
-                        txtDuongDan.Text = fileSavePath;
+                        
 
                         DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
 
                         if (busNhanVien.insert(staff))
                         {
-                            
+                            // Copy the image to the specified directory
+                            File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
+
+                            // Update txtHinh to point to the new location
+                            txtDuongDan.Text = fileSavePath;
                             frmQLNhanVien qlnv = new frmQLNhanVien();
                             qlnv.Reload();
                             guiMK();

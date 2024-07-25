@@ -230,6 +230,53 @@ namespace DAL_QLCafe
             }
             return false;
         }
+        public DataTable GetPagedStaff(int PageIndex, int PageSize, int status)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand("GetPagedStaff", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pageNumber", PageIndex);
+                    cmd.Parameters.AddWithValue("@pageSize", PageSize);
+                    cmd.Parameters.AddWithValue("@status", status);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            return dt;
+        }
+
+        public int GetTotalStaffCount(int status)
+        {
+            int totalProductCount = 0;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand("GetTotalStaffCount", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@status", status);
+
+                    conn.Open();
+                    totalProductCount = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+
+            return totalProductCount;
+        }
         public DataTable get(int status)
         {
             try
@@ -289,37 +336,6 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public bool delete(string id)
-        {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "DeleteStaff";
-                    cmd.Parameters.AddWithValue("@IdStaff", id);
-                    conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: " + e.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-            return false;
-        }
         public bool update(DTO_Staff staff, string id)
         {
             try
@@ -355,23 +371,53 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public DataTable search(string column, string value, int status)
+        public DataTable search(string column, string value, int status, int pageNumber, int pageSize, out int totalRows, out int totalPages)
         {
+            totalRows = 0;
+            totalPages = 0;
+
             try
             {
                 using (conn = new SqlConnection(_conn))
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "SearchStaff";
-                    cmd.Parameters.AddWithValue("@column", column);
-                    cmd.Parameters.AddWithValue("@value", value);
-                    cmd.Parameters.AddWithValue("@status", status);
-                    conn.Open();
-                    DataTable dtNhanVien = new DataTable();
-                    dtNhanVien.Load(cmd.ExecuteReader());
-                    return dtNhanVien;
+                    using (SqlCommand cmd = new SqlCommand("SearchStaff", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Add input parameters
+                        cmd.Parameters.AddWithValue("@column", column);
+                        cmd.Parameters.AddWithValue("@value", value);
+                        cmd.Parameters.AddWithValue("@status", status);
+                        cmd.Parameters.AddWithValue("@pageNumber", pageNumber);
+                        cmd.Parameters.AddWithValue("@pageSize", pageSize);
+
+                        // Add output parameters
+                        SqlParameter totalRowsParam = new SqlParameter("@totalRows", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(totalRowsParam);
+
+                        SqlParameter totalPagesParam = new SqlParameter("@totalPages", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(totalPagesParam);
+
+                        // Open connection and execute query
+                        conn.Open();
+                        DataTable dtNhanVien = new DataTable();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            dtNhanVien.Load(reader);
+                        }
+
+                        // Retrieve output parameter values
+                        totalRows = (int)totalRowsParam.Value;
+                        totalPages = (int)totalPagesParam.Value;
+
+                        return dtNhanVien;
+                    }
                 }
             }
             finally
@@ -382,6 +428,7 @@ namespace DAL_QLCafe
                 }
             }
         }
+
     }
 }
 

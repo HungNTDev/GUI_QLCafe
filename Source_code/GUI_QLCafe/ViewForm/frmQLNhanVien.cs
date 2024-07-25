@@ -1,6 +1,8 @@
 ﻿using BUS_QLCafe;
 using System;
+using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -11,16 +13,57 @@ namespace GUI_QLCafe
         public frmQLNhanVien()
         {
             InitializeComponent();
+            originalImage = picNhanVien.Image;
         }
+        private Image originalImage;
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
-            frmAddNV.ShowDialog();
-            Reload();
-        }
         BUS_Staff busNhanVien = new BUS_Staff();
         private int status = 1;
+
+
+
+
+        int pageNumber = 1;
+        int numberRecord = 5;
+
+        private const int PageSize = 10;
+        private int currentPageIndex = 1;
+        private int totalPages = 0;
+        private int totalRows = 0;
+        private void LoadData(int status)
+        {
+            try
+            {
+                txtEmail.Clear();
+                txtTen.Clear();
+                txtTimKiem.Clear();
+                txtDuongDan.Clear();
+                picNhanVien.Image = originalImage;
+                rdoHoatDong.Checked = false;
+                rdoNgungHoatDong.Checked = false;
+                rdoNhanVien.Checked = false;
+                rdoQuanTri.Checked = false;
+
+                selected = false;
+
+                cboStatus.SelectedIndex = 1 - status;
+
+                totalRows = busNhanVien.GetTotalStaffCount(status);
+                totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
+                lbTotalPage.Text = totalPages.ToString();
+
+                DataTable dt = busNhanVien.GetPageStaff(currentPageIndex, PageSize, status);
+                dgvDanhSachNhanVien.DataSource = dt;
+
+                dgvDanhSachNhanVien.Refresh();
+                lbTotalRows.Text = totalRows.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
 
         private void LoadGridView_NhanVien()
         {
@@ -36,7 +79,7 @@ namespace GUI_QLCafe
             txtTen.Clear();
             txtTimKiem.Clear();
             txtDuongDan.Clear();
-            picNhanVien.Image = null;
+            picNhanVien.Image = originalImage;
             rdoHoatDong.Checked = false;
             rdoNgungHoatDong.Checked = false;
             rdoNhanVien.Checked = false;
@@ -47,12 +90,21 @@ namespace GUI_QLCafe
         }
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
-            Reload();
+            //Reload();
+
+            currentPageIndex = 1;
+            lbCurrentPage.Text = currentPageIndex.ToString();
+            LoadData(status);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            currentPageIndex = 1; // Start at the first page
             string column = "";
+            int pageSize = 10; // Set the page size (number of rows per page)
+            int totalRows;
+            int totalPages;
+
             if (txtTimKiem.Text.Trim().Length == 0)
             {
                 Notification("Nhập nội dung cần tìm!", frmNotification.enumType.Failed);
@@ -82,7 +134,15 @@ namespace GUI_QLCafe
                 }
             }
 
-            dgvDanhSachNhanVien.DataSource = busNhanVien.search(column, txtTimKiem.Text, status);
+            // Call the search function with pagination parameters
+            var result = busNhanVien.search(column, txtTimKiem.Text, status, currentPageIndex, pageSize, out totalRows, out totalPages);
+
+            dgvDanhSachNhanVien.DataSource = result;
+
+            // Update pagination controls or display relevant information
+            lbTotalRows.Text = totalRows.ToString();
+            lbTotalPage.Text = totalPages.ToString();
+            lbCurrentPage.Text = currentPageIndex.ToString();
 
         }
         private string saveDirectory;
@@ -104,7 +164,7 @@ namespace GUI_QLCafe
                 txtEmail.Text = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
                 txtDuongDan.Text = dgvDanhSachNhanVien.CurrentRow.Cells["ImageStaff"].Value.ToString();
 
-                if (int.Parse(dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString()) == 1)
+                if (dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString() == "Quản trị")
                 {
                     rdoQuanTri.Checked = true;
                 }
@@ -140,7 +200,7 @@ namespace GUI_QLCafe
             }
             else
             {
-                messageDialog.Show("Bảng trống", "Thông Báo");
+                MessageBox.Show("Bảng trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         // phương thức này dùng để gọi Notfication khi thêm thành công
@@ -150,7 +210,55 @@ namespace GUI_QLCafe
             frmNotification.showNotfication(msg, type);
         }
         private bool selected;
-        private void btnSua_Click(object sender, EventArgs e)
+
+        private void cboTim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTim.SelectedItem != null)
+            {
+                txtTimKiem.PlaceholderText = $"Nhập {cboTim.SelectedItem.ToString().Substring(0, 1).ToLower()}" +
+                    $"{cboTim.SelectedItem.ToString().Substring(1)} cần tìm";
+            }
+        }
+
+        private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtEmail.Clear();
+            txtTen.Clear();
+            txtTimKiem.Clear();
+            txtDuongDan.Clear();
+            picNhanVien.Image = originalImage;
+            rdoHoatDong.Checked = false;
+            rdoNgungHoatDong.Checked = false;
+            rdoNhanVien.Checked = false;
+            rdoQuanTri.Checked = false;
+
+            if (cboStatus.SelectedItem != null)
+            {
+                switch (cboStatus.SelectedIndex)
+                {
+                    case 0:
+                        status = 1;
+                        break;
+                    case 1:
+                        status = 0;
+                        break;
+                }
+
+                // Update totalRows and totalPages based on the new status
+                currentPageIndex = 1; // Reset to the first page when changing status
+                LoadData(status); // Load data based on the new status
+                lbCurrentPage.Text = currentPageIndex.ToString();
+            }
+        }
+
+        private void btnThe_Click(object sender, EventArgs e)
+        {
+            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
+            frmAddNV.ShowDialog();
+            Reload();
+        }
+
+        private void btnSu_Click(object sender, EventArgs e)
         {
             if (selected)
             {
@@ -172,13 +280,14 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        private void btnLamMo_Click(object sender, EventArgs e)
         {
+
             txtEmail.Clear();
             txtTen.Clear();
             txtTimKiem.Clear();
             txtDuongDan.Clear();
-            picNhanVien.Image = null;
+            picNhanVien.Image = originalImage;
             rdoHoatDong.Checked = false;
             rdoNgungHoatDong.Checked = false;
             rdoNhanVien.Checked = false;
@@ -186,42 +295,40 @@ namespace GUI_QLCafe
 
             selected = false;
 
-            LoadGridView_NhanVien();
+            LoadData(status);
         }
 
-        private void cboTim_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnFirstPage_Click(object sender, EventArgs e)
         {
-            if (cboTim.SelectedItem != null)
+            currentPageIndex = 1;
+            LoadData(status);
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            currentPageIndex = totalPages;
+            LoadData(status);
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPageIndex > 1)
             {
-                txtTimKiem.PlaceholderText = $"Nhập {cboTim.SelectedItem.ToString().Substring(0, 1).ToLower()}" +
-                    $"{cboTim.SelectedItem.ToString().Substring(1)} cần tìm";
+                currentPageIndex--;
+                LoadData(status);
+                lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
 
-        private void cboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            txtEmail.Clear();
-            txtTen.Clear();
-            txtTimKiem.Clear();
-            txtDuongDan.Clear();
-            picNhanVien.Image = null;
-            rdoHoatDong.Checked = false;
-            rdoNgungHoatDong.Checked = false;
-            rdoNhanVien.Checked = false;
-            rdoQuanTri.Checked = false;
-
-            if (cboStatus.SelectedItem != null)
+            if (currentPageIndex < totalPages)
             {
-                switch (cboStatus.SelectedIndex)
-                {
-                    case 0:
-                        status = 1;
-                        break;
-                    case 1:
-                        status = 0;
-                        break;
-                }
-                dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
+                currentPageIndex++;
+                LoadData(status);
+                lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
     }

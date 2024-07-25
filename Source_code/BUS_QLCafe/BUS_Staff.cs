@@ -58,6 +58,15 @@ namespace BUS_QLCafe
         {
             return dal.kiemtraEmail(email);
         }
+        public DataTable GetPageStaff(int pageIndex, int pageSize, int status)
+        {
+            return dal.GetPagedStaff(pageIndex, pageSize, status);
+        }
+
+        public int GetTotalStaffCount(int status)
+        {
+            return dal.GetTotalStaffCount(status);
+        }
         public DataTable get(int status)
         {
             return dal.get(status);
@@ -70,13 +79,10 @@ namespace BUS_QLCafe
         {
             return dal.update(staff, id);
         }
-        public bool delete(string id)
+        public DataTable search(string column, string value, int status, int pageNumber, int pageSize, out int totalRows, out int totalPages)
         {
-            return dal.delete(id);
-        }
-        public DataTable search(string column, string value, int status)
-        {
-            return dal.search(column, value, status);
+            // Call the DAL search method
+            return dal.search(column, value, status, pageNumber, pageSize, out totalRows, out totalPages);
         }
     }
 }

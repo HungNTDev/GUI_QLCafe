@@ -131,10 +131,10 @@ namespace GUI_QLCafe
         {
             if (chucnang == "luu")
             {
-                int role = 0; //vai tro nhan vien
+                string role = ""; //vai tro nhan vien
                 if (rdoQuanTri.Checked)
                 {
-                    role = 1;
+                    role = "Quản trị";
                 }
                 int status = 0; //ngung hoat dong
                 if (rdoHoatDong.Checked)
@@ -226,7 +226,8 @@ namespace GUI_QLCafe
                         }
                         catch (Exception ex)
                         {
-                            Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                            MessageBox.Show(ex.ToString());
+                            //Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
                             return;
                         }
                     }
@@ -235,10 +236,10 @@ namespace GUI_QLCafe
             }
             else
             {
-                int role = 0; //vai tro nhan vien
+                string role = ""; //vai tro nhan vien
                 if (rdoQuanTri.Checked)
                 {
-                    role = 1;
+                    role = "Quản trị";
                 }
                 int status = 0; //ngung hoat dong
                 if (rdoHoatDong.Checked)
@@ -338,12 +339,12 @@ namespace GUI_QLCafe
 
                                 bool changes = ql.checkStatus(txtEmail.Text, role.ToString());
 
-                                if (changes)
-                                {
-                                    MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    this.Hide();
-                                    ql.Close();
-                                }
+                                //if (changes)
+                                //{
+                                //    MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                //    this.Hide();
+                                //    ql.Close();
+                                //}
                             }
                             else
                             {

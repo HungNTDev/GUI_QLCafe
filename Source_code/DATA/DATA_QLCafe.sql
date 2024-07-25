@@ -275,6 +275,34 @@ begin
 end
 go
 
+-- Xử lý phân trang nhân viên
+-- Lấy trang
+create PROCEDURE GetPagedStaff
+    @pageNumber INT,
+    @pageSize INT,
+    @status INT
+AS
+BEGIN
+    DECLARE @startRow INT;
+    SET @startRow = (@pageNumber - 1) * @pageSize;
+
+    SELECT IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+    FROM Staff
+    WHERE StatusStaff = @status
+    ORDER BY IdStaff
+    OFFSET @startRow ROWS
+    FETCH NEXT @pageSize ROWS ONLY;
+END
+
+-- Lấy tổng số nhân viên 
+create PROCEDURE GetTotalStaffCount
+    @status INT
+AS
+BEGIN
+    SELECT COUNT(*)
+    FROM Staff
+    WHERE StatusStaff = @status;
+END 
 
 --Thêm NV
 ALTER proc InsertStaff
@@ -331,63 +359,73 @@ end
 go
 
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
-create proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
-as
-begin
-	if @status = 1
-		if @column = 'rong'
-			begin
-				select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-				FROM Staff
-				WHERE 
-					IdStaff like '%'+@value+'%' or
-					Email like '%'+@value+'%' or
-					FullName like '%'+@value+'%' or
-					RoleStaff like '%'+@value+'%'
-					and StatusStaff = 1;
-			end
-		else
-			begin
-				select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-				FROM Staff
-				WHERE
-					CASE @column
-						WHEN 'IdStaff' THEN IdStaff
-						WHEN 'Email' THEN Email
-						WHEN 'FullName' THEN FullName
-						WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(2)) -- Assuming RoleStaff is an integer or similar
-					END LIKE N'%' + @value + '%'
-					AND StatusStaff = 1;
-			end
-	else
-		begin
-			if @column = 'rong'
-				begin
-					select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-					FROM Staff
-					WHERE 
-						IdStaff like '%'+@value+'%' or
-						Email like '%'+@value+'%' or
-						FullName like '%'+@value+'%' or
-						RoleStaff like '%'+@value+'%'
-						and StatusStaff = 0;
-				end
-			else
-				begin
-					select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-					FROM Staff
-					WHERE
-						CASE @column
-							WHEN 'IdStaff' THEN IdStaff
-							WHEN 'Email' THEN Email
-							WHEN 'FullName' THEN FullName
-							WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(2)) -- Assuming RoleStaff is an integer or similar
-						END LIKE N'%' + @value + '%'
-						AND StatusStaff = 0;
-				end
-		end
-end
-go
+create PROCEDURE SearchStaff
+    @column VARCHAR(30),
+    @value NVARCHAR(100),
+    @status INT,
+    @pageNumber INT,
+    @pageSize INT,
+    @totalRows INT OUTPUT,
+    @totalPages INT OUTPUT
+AS
+BEGIN
+    -- Declare variables for pagination
+    DECLARE @offset INT, @fetch INT;
+
+    -- Calculate offset and fetch values
+    SET @offset = (@pageNumber - 1) * @pageSize;
+    SET @fetch = @pageSize;
+
+    -- Get total rows
+    SELECT @totalRows = COUNT(*)
+    FROM Staff
+    WHERE 
+        -- Ensure that StatusStaff is filtered correctly
+        StatusStaff = @status AND
+        (   -- Apply search condition based on the column parameter
+            (@column = 'rong' AND 
+             (IdStaff LIKE '%' + @value + '%' OR
+              Email LIKE '%' + @value + '%' OR
+              FullName LIKE '%' + @value + '%' OR
+              RoleStaff LIKE '%' + @value + '%'))
+            OR
+            (@column <> 'rong' AND 
+             CASE @column
+                WHEN 'IdStaff' THEN IdStaff
+                WHEN 'Email' THEN Email
+                WHEN 'FullName' THEN FullName
+                WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(50)) -- Adjust size if needed
+             END LIKE '%' + @value + '%')
+        );
+
+    -- Calculate total pages
+    SET @totalPages = CEILING(CAST(@totalRows AS FLOAT) / @pageSize);
+
+    -- Get paginated data
+    SELECT IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+    FROM Staff
+    WHERE 
+        -- Ensure that StatusStaff is filtered correctly
+        StatusStaff = @status AND
+        (   -- Apply search condition based on the column parameter
+            (@column = 'rong' AND 
+             (IdStaff LIKE '%' + @value + '%' OR
+              Email LIKE '%' + @value + '%' OR
+              FullName LIKE '%' + @value + '%' OR
+              RoleStaff LIKE '%' + @value + '%'))
+            OR
+            (@column <> 'rong' AND 
+             CASE @column
+                WHEN 'IdStaff' THEN IdStaff
+                WHEN 'Email' THEN Email
+                WHEN 'FullName' THEN FullName
+                WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(50)) -- Adjust size if needed
+             END LIKE '%' + @value + '%')
+        )
+    ORDER BY IdStaff -- Adjust this as needed
+    OFFSET @offset ROWS
+    FETCH NEXT @fetch ROWS ONLY;
+END
 
 -- Danh sách sản phẩm
 create proc GetProduct
@@ -435,6 +473,8 @@ as
 	  where IdProduct = @id
 end
 go
+
+
 
 -- Xử lý phân trang sản phẩm <Thanh>
 -- Lấy trang

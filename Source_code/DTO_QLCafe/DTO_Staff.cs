@@ -7,7 +7,7 @@
         public string imageStaff { get; set; }
         public string email { get; set; }
         public string passwordStaff { get; set; }
-        public int roleStaff { get; set; }
+        public string roleStaff { get; set; }
         public int statusStaff { get; set; }
 
         public string IdStaff
@@ -36,7 +36,7 @@
             get { return passwordStaff; }
             set { passwordStaff = value; }
         }
-        public int RoleStaff
+        public string RoleStaff
         {
             get { return roleStaff; }
             set { roleStaff = value; }
@@ -46,7 +46,7 @@
             get { return statusStaff; }
             set { statusStaff = value; }
         }
-        public DTO_Staff(string fullName, string imageStaff, string email, int roleStaff, int statusStaff)
+        public DTO_Staff(string fullName, string imageStaff, string email, string roleStaff, int statusStaff)
         {
             this.fullName = fullName;
             this.imageStaff = imageStaff;

@@ -433,6 +433,9 @@ as
 end
 
 
+-- Tìm kiếm sản phẩm
+create proc SearchPr
+
 -- Xử lý phân trang sản phẩm <Thanh>
 -- Lấy trang
 create proc GetPagedProduct

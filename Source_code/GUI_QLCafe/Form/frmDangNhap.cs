@@ -33,6 +33,7 @@ namespace GUI_QLCafe
             InitializeComponent();
             DeleteStoredCredentials();
             this.Load += new System.EventHandler(this.frmDangNhap_Load); // Gắn sự kiện Load
+            this.AcceptButton = btnDN;
         }
         private void frmDangNhap_Load(object sender, EventArgs e)
         {

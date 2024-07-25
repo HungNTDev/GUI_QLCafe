@@ -210,21 +210,13 @@ namespace GUI_QLCafe
             { }
         }
 
-        private void paneText_Paint(object sender, PaintEventArgs e)
+        private void cbClose_Click(object sender, EventArgs e)
         {
-
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dl == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
-
-        private void tp_NuocEp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flp_CaPhe_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
     }
 }

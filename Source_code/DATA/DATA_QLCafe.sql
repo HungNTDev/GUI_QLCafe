@@ -1,4 +1,4 @@
-﻿5create database QL_Cafe;
+﻿create database QL_Cafe;
 use QL_Cafe;
 create table Staff(
 Id              int identity(1,1) not null ,
@@ -11,6 +11,9 @@ RoleStaff       int not null,
 StatusStaff     int not null,
 Primary key (IdStaff)
 )
+
+ALTER TABLE Staff
+ALTER COLUMN RoleStaff  nvarchar(50)
 
 create table Voucher(
 IdVoucher  nvarchar(10) not null,
@@ -98,12 +101,12 @@ add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
 
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
-('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',1,0),
-('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',1,0),
-('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',0,0),
-('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',1,1)
-	
-update Staff set RoleStaff = 1 where IdStaff = 'NV3'
+('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản lý',0),
+('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản lý',0),
+('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',N'Nhân viên',0),
+('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Quản lý',1)
+
+update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV2'
 	
 ('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 

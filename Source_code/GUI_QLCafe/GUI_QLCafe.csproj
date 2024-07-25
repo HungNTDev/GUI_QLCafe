@@ -207,6 +207,12 @@
     <Compile Include="AddForm\frmAddDetail.Designer.cs">
       <DependentUpon>frmAddDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForm\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinSanPham.cs">
       <DependentUpon>ThongTinSanPham.dbml</DependentUpon>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\frmAddDetail.resx">
       <DependentUpon>frmAddDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>

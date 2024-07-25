@@ -58,7 +58,7 @@ namespace GUI_QLCafe
             {
                 case enumType.Success:
                     notification.picNofication.Image = Resources.Success;
-                    notification.BackColor = Color.DodgerBlue;
+                    notification.BackColor = Color.MediumSeaGreen;
                     break;
                 case enumType.Failed:
                     notification.picNofication.Image = Resources.Failed;

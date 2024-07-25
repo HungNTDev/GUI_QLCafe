@@ -101,14 +101,13 @@ add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
 
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
-('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản lý',0),
-('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản lý',0),
+('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',0),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',N'Nhân viên',0),
-('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Quản lý',1)
+('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Quản trị',1),
+('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',0),
+('NV5',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
 update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV2'
-	
-('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
 go
 	
@@ -215,9 +214,10 @@ begin
 end
 
 	-- Thay đổi mật khẩu
-create procedure ChangePass (@email nvarchar(50),
-                                  @opwd nvarchar(50),
-				  @npwd nvarchar(50))
+create procedure ChangePass(
+@email nvarchar(50),
+@opwd nvarchar(50),
+@npwd nvarchar(50))
 as
   declare @op nvarchar(50)
   select @op = PasswordStaff from Staff where Email = @email
@@ -321,65 +321,76 @@ begin
 end
 
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
-create proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
-as
-begin
-	if @status = 1
-		if @column = 'rong'
-			begin
-				select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-				FROM Staff
-				WHERE 
-					IdStaff like '%'+@value+'%' or
-					Email like '%'+@value+'%' or
-					FullName like '%'+@value+'%' or
-					RoleStaff like '%'+@value+'%'
-					and StatusStaff = 1;
-			end
-		else
-			begin
-				select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-				FROM Staff
-				WHERE
-					CASE @column
-						WHEN 'IdStaff' THEN IdStaff
-						WHEN 'Email' THEN Email
-						WHEN 'FullName' THEN FullName
-						WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(2)) -- Assuming RoleStaff is an integer or similar
-					END LIKE N'%' + @value + '%'
-					AND StatusStaff = 1;
-			end
-	else
-		begin
-			if @column = 'rong'
-				begin
-					select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-					FROM Staff
-					WHERE 
-						IdStaff like '%'+@value+'%' or
-						Email like '%'+@value+'%' or
-						FullName like '%'+@value+'%' or
-						RoleStaff like '%'+@value+'%'
-						and StatusStaff = 0;
-				end
-			else
-				begin
-					select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-					FROM Staff
-					WHERE
-						CASE @column
-							WHEN 'IdStaff' THEN IdStaff
-							WHEN 'Email' THEN Email
-							WHEN 'FullName' THEN FullName
-							WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(2)) -- Assuming RoleStaff is an integer or similar
-						END LIKE N'%' + @value + '%'
-						AND StatusStaff = 0;
-				end
-		end
-end
+alter PROCEDURE SearchStaff
+    @column VARCHAR(30),
+    @value NVARCHAR(100),
+    @status INT,
+    @pageNumber INT,
+    @pageSize INT,
+    @totalRows INT OUTPUT,
+    @totalPages INT OUTPUT
+AS
+BEGIN
+    -- Declare variables for pagination
+    DECLARE @offset INT, @fetch INT;
+
+    -- Calculate offset and fetch values
+    SET @offset = (@pageNumber - 1) * @pageSize;
+    SET @fetch = @pageSize;
+
+    -- Get total rows
+    SELECT @totalRows = COUNT(*)
+    FROM Staff
+    WHERE 
+        -- Ensure that StatusStaff is filtered correctly
+        StatusStaff = @status AND
+        (   -- Apply search condition based on the column parameter
+            (@column = 'rong' AND 
+             (IdStaff LIKE '%' + @value + '%' OR
+              Email LIKE '%' + @value + '%' OR
+              FullName LIKE '%' + @value + '%' OR
+              RoleStaff LIKE '%' + @value + '%'))
+            OR
+            (@column <> 'rong' AND 
+             CASE @column
+                WHEN 'IdStaff' THEN IdStaff
+                WHEN 'Email' THEN Email
+                WHEN 'FullName' THEN FullName
+                WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(50)) -- Adjust size if needed
+             END LIKE '%' + @value + '%')
+        );
+
+    -- Calculate total pages
+    SET @totalPages = CEILING(CAST(@totalRows AS FLOAT) / @pageSize);
+
+    -- Get paginated data
+    SELECT IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+    FROM Staff
+    WHERE 
+        -- Ensure that StatusStaff is filtered correctly
+        StatusStaff = @status AND
+        (   -- Apply search condition based on the column parameter
+            (@column = 'rong' AND 
+             (IdStaff LIKE '%' + @value + '%' OR
+              Email LIKE '%' + @value + '%' OR
+              FullName LIKE '%' + @value + '%' OR
+              RoleStaff LIKE '%' + @value + '%'))
+            OR
+            (@column <> 'rong' AND 
+             CASE @column
+                WHEN 'IdStaff' THEN IdStaff
+                WHEN 'Email' THEN Email
+                WHEN 'FullName' THEN FullName
+                WHEN 'RoleStaff' THEN CAST(RoleStaff AS NVARCHAR(50)) -- Adjust size if needed
+             END LIKE '%' + @value + '%')
+        )
+    ORDER BY IdStaff -- Adjust this as needed
+    OFFSET @offset ROWS
+    FETCH NEXT @fetch ROWS ONLY;
+END
 
 -- Danh sách sản phẩm
-create proc GetProduct
+create or alter proc GetProduct
 as 
   begin 
       select IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT from Product
@@ -471,7 +482,6 @@ BEGIN
     WHERE IdTable = @IdTable;
 END;
 
-
 --Thêm DetailBill--
 create or alter proc AddingDetailBill(
 	@IdTable nvarchar(10),
@@ -482,3 +492,32 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
+
+-- Xử lý phân trang nhân viên
+-- Lấy trang
+create PROCEDURE GetPagedStaff
+    @pageNumber INT,
+    @pageSize INT,
+    @status INT
+AS
+BEGIN
+    DECLARE @startRow INT; 
+    SET @startRow = (@pageNumber - 1) * @pageSize;
+
+    SELECT IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+    FROM Staff
+    WHERE StatusStaff = @status
+    ORDER BY IdStaff
+    OFFSET @startRow ROWS
+    FETCH NEXT @pageSize ROWS ONLY;
+END
+
+-- Lấy tổng số nhân viên 
+create PROCEDURE GetTotalStaffCount
+    @status INT
+AS
+BEGIN
+    SELECT COUNT(*)
+    FROM Staff
+    WHERE StatusStaff = @status;
+END

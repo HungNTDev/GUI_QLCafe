@@ -21,6 +21,23 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
+
+        private void frmAddSanPham_Load(object sender, EventArgs e)
+        {
+            if(formMode == FormMode.Them)
+            {
+                lbText0.Text = "THÊM THÔNG TIN SẢN PHẨM";
+            }
+            if (formMode == FormMode.Sua)
+            {
+                lbText0.Text = "CẬP NHẬT THÔNG TIN SẢN PHẨM";
+            }
+            txtDuongDan.Enabled = false;
+        }
+
         // phương thức này dùng để gọi Notfication khi thêm thành công
         public void Nofication(string msg, frmNotification.enumType type)
         {
@@ -62,9 +79,7 @@ namespace GUI_QLCafe
             if (cbLoaiSanPham.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 cbLoaiSanPham.Focus();
-
                 return;
             }
 
@@ -85,7 +100,6 @@ namespace GUI_QLCafe
             }
 
             //string fileName = Path.GetFileName(fileAddress);
-
 
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
@@ -109,16 +123,19 @@ namespace GUI_QLCafe
 
                 txtDuongDan.Text = fileSavePath;
 
-                if (string.IsNullOrEmpty(id))
+                if(formMode == FormMode.Them)
                 {
-                    if (busproduct.insert(product))
+                    if (string.IsNullOrEmpty(id))
                     {
-                        this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        if (busproduct.insert(product))
+                        {
+                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        }
                     }
                 }
                 else
@@ -195,13 +212,6 @@ namespace GUI_QLCafe
             {
                 this.Close();
             }
-        }
-
-
-        private void cbMinimize_Click(object sender, EventArgs e)
-        {
-
-
         }
     }
 }

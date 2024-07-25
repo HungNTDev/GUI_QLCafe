@@ -269,7 +269,6 @@
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(79, 40);
             this.cbMinimize.TabIndex = 14;
-            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click);
             // 
             // cbClose
             // 
@@ -522,7 +521,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2PictureBox picSanPham;
         private System.Windows.Forms.Label lbMaSanPham;
         private System.Windows.Forms.Label lbTenSanPham;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddSanPham;
@@ -547,5 +545,6 @@
         public Guna.UI2.WinForms.Guna2ComboBox cbLoaiSanPham;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
+        public Guna.UI2.WinForms.Guna2PictureBox picSanPham;
     }
 }

@@ -1,6 +1,5 @@
 ﻿create database QL_Cafe;
 use QL_Cafe;
-
 create table Staff(
 Id              int identity(1,1) not null ,
 IdStaff         nvarchar(20) not null,
@@ -8,10 +7,13 @@ FullName        nvarchar(50) not null,
 ImageStaff      nvarchar(500) not null,
 Email           nvarchar(50) not null,
 PasswordStaff   nvarchar(50) not null,
-RoleStaff       nvarchar(50) not null,
+RoleStaff       int not null,
 StatusStaff     int not null,
 Primary key (IdStaff)
 )
+
+ALTER TABLE Staff
+ALTER COLUMN RoleStaff  nvarchar(50)
 
 create table Voucher(
 IdVoucher  nvarchar(10) not null,
@@ -102,11 +104,11 @@ insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff
 ('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản lý',0),
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản lý',0),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',N'Nhân viên',0),
-('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Nhân viên',1)
-	
-update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV3'
-	
+('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Quản lý',1)
 
+update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV2'
+	
+('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
 go
 	
@@ -187,7 +189,6 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 	('JUC3', N'Táo và dâu ép i', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
 	('JUC4', N'Thơm ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
 	('JUC5', N'Bưởi ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC')
-go
 
 --Đăng nhập
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
@@ -212,7 +213,6 @@ as
 begin
 	SELECT COUNT(email) FROM staff WHERE email = @Email
 end
-go
 
 	-- Thay đổi mật khẩu
 create procedure ChangePass (@email nvarchar(50),
@@ -237,35 +237,28 @@ as
 begin
 	update Staff set PasswordStaff = @password where Email = @email
 end
-go
 
 -- Xử lí bàn (Lý Bảo Hoàng) --
 /*Danh sách bàn*/
 create or alter proc TableList as
 	select * from TableCF
-	go
-
 	-- Xử lý bàn
 create or alter proc TableList as
 	select * from TableCF
-	go
 
 /*Thông tin bàn*/
 create or alter proc TableInfo (@IdTable nvarchar(10)) as
 	select * from TableCF where IdTable = @IdTable
-	go
 
 /*Load menu (hien danh sach thuc an theo loai)*/
 create or alter proc ListMenu (@IdPT nvarchar(10)) as
 	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT
-	go
 
 /*Thông tin đồ ăn*/
 create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select NameProduct, Price, IdProduct from Product where IdProduct = @IdProduct
 
 	select * from Staff
-	go
 
 -- Lấy danh sách nhân viên
 create proc GetStaff (@status int)
@@ -273,12 +266,11 @@ as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
 end
-go
 
 
 --Thêm NV
 ALTER proc InsertStaff
-(@FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role nvarchar(50), @Status int)
+(@FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
 as
 begin
 	DECLARE @IdStaff VARCHAR(20);
@@ -300,10 +292,10 @@ begin
 	Insert into Staff (IdStaff, FullName, ImageStaff, PasswordStaff, Email, RoleStaff, StatusStaff) 
 	values (@IdStaff, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
 end
-go
+
 
 -- Sửa nhân viên
-create proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role nvarchar(50), @Status int)
+alter proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
 as
 begin
 
@@ -317,7 +309,6 @@ begin
 	where IdStaff = @Id
 
 end
-go
 
 -- Xóa nhân viên
 
@@ -328,7 +319,6 @@ begin
 	Delete from Staff where IdStaff = @Id
 
 end
-go
 
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
 create proc SearchStaff (@column varchar(30), @value nvarchar(100), @status int)
@@ -387,7 +377,6 @@ begin
 				end
 		end
 end
-go
 
 -- Danh sách sản phẩm
 create proc GetProduct
@@ -395,7 +384,6 @@ as
   begin 
       select IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT from Product
  end 
- go
 
  -- Thêm sản phẩm
 
@@ -411,10 +399,9 @@ as
 	   values 
 	   (@idProduct, @nameProduct, @price, @imageProduct, @statusProduct, @idpt)
   end
-  go
 
 -- Sửa sản phẩm
-create proc UpdateProduct (@idProduct nvarchar(20),
+alter proc UpdateProduct (@idProduct nvarchar(20),
                             @nameProduct nvarchar(100),
 							@price float,
 							@imageProduct nvarchar(500),
@@ -425,7 +412,6 @@ as
 	 NameProduct= @nameProduct, Price = @price, ImageProduct= @imageProduct, IdPT=@idpt
 	 where IdProduct=@idProduct
 end
-go
 
 -- Xóa sửa phẩm
 create proc DeleteProcduct (@id nvarchar(20))
@@ -434,7 +420,7 @@ as
       update Product set StatusProduct = 0 
 	  where IdProduct = @id
 end
-go
+
 
 -- Tìm kiếm sản phẩm
 create proc SearchPr
@@ -450,13 +436,11 @@ as
 	end
 
 EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
-go
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalProductCount as select count(*) from Product
 
 SELECT TOP 10 * FROM Product;
-go
 
 --Thêm bill--
 CREATE OR ALTER PROCEDURE AddingBill(
@@ -489,7 +473,7 @@ BEGIN
     SET StatusTable = 1
     WHERE IdTable = @IdTable;
 END;
-go
+
 
 --Thêm DetailBill--
 create or alter proc AddingDetailBill(
@@ -501,4 +485,3 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
-	go

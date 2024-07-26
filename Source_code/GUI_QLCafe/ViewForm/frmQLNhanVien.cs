@@ -1,19 +1,23 @@
 ﻿using BUS_QLCafe;
+using DTO_QLCafe;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
 {
     public partial class frmQLNhanVien : Form
     {
-        public frmQLNhanVien()
+        private frmMainQLCF mainForm;
+        public frmQLNhanVien(frmMainQLCF mainForm)
         {
             InitializeComponent();
             originalImage = picNhanVien.Image;
+            this.mainForm = mainForm;
         }
         private Image originalImage;
 
@@ -21,6 +25,10 @@ namespace GUI_QLCafe
         private int status = 1;
 
 
+        string checkImgUrl; //Kiểm tra ảnh
+        string fileName; //tên file
+        string fileSavePath; //vị trí lưu
+        string fileAddress;
 
 
         int pageNumber = 1;
@@ -38,11 +46,30 @@ namespace GUI_QLCafe
                 txtTen.Clear();
                 txtTimKiem.Clear();
                 txtDuongDan.Clear();
+
+
+                btnMoHinh.Enabled = false;
+
                 picNhanVien.Image = originalImage;
                 rdoHoatDong.Checked = false;
                 rdoNgungHoatDong.Checked = false;
                 rdoNhanVien.Checked = false;
                 rdoQuanTri.Checked = false;
+
+                rdoHoatDong.Enabled = false;
+                rdoHoatDong.Checked = false;
+
+                rdoNgungHoatDong.Enabled = false;
+                rdoNgungHoatDong.Checked = false;
+
+                rdoNhanVien.Enabled = false;
+                rdoNhanVien.Checked = false;
+
+                rdoQuanTri.Enabled = false;
+                rdoQuanTri.Checked = false;
+
+                txtEmail.Enabled = false;
+                txtTen.Enabled = false;
 
                 selected = false;
 
@@ -67,8 +94,6 @@ namespace GUI_QLCafe
 
         private void LoadGridView_NhanVien()
         {
-
-
             cboStatus.SelectedIndex = 1 - status;
             dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
         }
@@ -79,11 +104,33 @@ namespace GUI_QLCafe
             txtTen.Clear();
             txtTimKiem.Clear();
             txtDuongDan.Clear();
+
+
+            btnMoHinh.Enabled = false;
+
             picNhanVien.Image = originalImage;
             rdoHoatDong.Checked = false;
             rdoNgungHoatDong.Checked = false;
             rdoNhanVien.Checked = false;
             rdoQuanTri.Checked = false;
+
+
+            rdoHoatDong.Enabled = false;
+            rdoHoatDong.Checked = false;
+
+            rdoNgungHoatDong.Enabled = false;
+            rdoNgungHoatDong.Checked = false;
+
+            rdoNhanVien.Enabled = false;
+            rdoNhanVien.Checked = false;
+
+            rdoQuanTri.Enabled=false;
+            rdoQuanTri.Checked = false;
+
+            txtEmail.Enabled = false;
+            txtTen.Enabled = false;
+
+            btnSu.Enabled = false;
 
             selected = false;
             LoadGridView_NhanVien();
@@ -99,6 +146,8 @@ namespace GUI_QLCafe
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            btnSu.Enabled=false;
+
             currentPageIndex = 1; // Start at the first page
             string column = "";
             int pageSize = 10; // Set the page size (number of rows per page)
@@ -156,9 +205,15 @@ namespace GUI_QLCafe
             {
                 txtTen.Enabled = true;
                 txtEmail.Enabled = true;
-                gbTrangThai.Enabled = true;
-                gbVaiTro.Enabled = true;
+                btnSu.Enabled = true;
+                btnMoHinh.Enabled = true;
 
+                txtEmail.Enabled = true;
+                txtTen.Enabled = true;
+                rdoHoatDong.Enabled = true;
+                rdoNgungHoatDong.Enabled=true;
+                rdoNhanVien.Enabled = true;
+                rdoQuanTri.Enabled= true;
 
                 txtTen.Text = dgvDanhSachNhanVien.CurrentRow.Cells["FullName"].Value.ToString();
                 txtEmail.Text = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
@@ -232,6 +287,9 @@ namespace GUI_QLCafe
             rdoNhanVien.Checked = false;
             rdoQuanTri.Checked = false;
 
+
+            btnSu.Enabled = false;
+
             if (cboStatus.SelectedItem != null)
             {
                 switch (cboStatus.SelectedIndex)
@@ -253,11 +311,28 @@ namespace GUI_QLCafe
 
         private void btnThe_Click(object sender, EventArgs e)
         {
-            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
+            frmAddNhanVien frmAddNV = new frmAddNhanVien(/*"", "luu", null, null, 0, 0, null, ""*/);
             frmAddNV.ShowDialog();
-            Reload();
+            LoadData(status);
         }
+        public void Nofication(string msg, frmNotification.enumType type)
+        {
+            frmNotification notification = new frmNotification();
+            frmNotification.showNotfication(msg, type);
+        }
+        public bool IsValid(string emailaddress) //kiem tra xem email co hop le khong
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+                return true;
 
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         private void btnSu_Click(object sender, EventArgs e)
         {
             if (selected)
@@ -265,13 +340,137 @@ namespace GUI_QLCafe
                 string id = dgvDanhSachNhanVien.CurrentRow.Cells["IdStaff"].Value.ToString();
                 string email = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
                 string fullname = dgvDanhSachNhanVien.CurrentRow.Cells["FullName"].Value.ToString();
-                int role = int.Parse(dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString());
-                int status = int.Parse(dgvDanhSachNhanVien.CurrentRow.Cells["StatusStaff"].Value.ToString());
                 string image = dgvDanhSachNhanVien.CurrentRow.Cells["ImageStaff"].Value.ToString();
 
-                frmAddNhanVien frmAddNV = new frmAddNhanVien(id, "sua", email, fullname, role, status, image, saveDirectory);
-                frmAddNV.ShowDialog();
-                Reload();
+                string role = "Nhân viên"; //vai tro nhan vien
+                int status = 0; //ngung hoat dong
+
+                //frmAddNhanVien frmAddNV = new frmAddNhanVien(id, "sua", email, fullname, role, status, image, saveDirectory);
+                //frmAddNV.ShowDialog();
+                //Reload();
+
+                if (rdoQuanTri.Checked)
+                {
+                    role = "Quản trị";
+                }
+                if (rdoHoatDong.Checked)
+                {
+                    status = 1;
+                }
+
+
+                if (txtEmail.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    return;
+                }
+                else if (!IsValid(txtEmail.Text.Trim()))
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    return;
+                }
+                else if (txtTen.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtTen.Focus();
+                    return;
+                }
+                else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false)
+                {
+                    MessageBox.Show("Vui lòng chọn vai trò!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false)
+                {
+                    MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (txtDuongDan.Text.Trim().Length == 0) // phải nhập hình
+                {
+                    MessageBox.Show("Vui lòng chọn hình", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                //Nếu email mới khác với email hiện tại, kiểm tra xem email mới có tồn tại trong hệ thống hay không
+                else if (txtEmail.Text != email && busNhanVien.KiemTraEmail(txtEmail.Text))
+                {
+                    MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    return;
+                }
+                else
+                {
+                    if (MessageBox.Show("Chắc chắn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        // Đường dẫn thư mục gốc của dự án
+                        string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                        string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
+
+                        // Tạo thư mục nếu chưa có
+                        if (!Directory.Exists(saveDirectory))
+                        {
+                            Directory.CreateDirectory(saveDirectory);
+                        }
+
+
+                        // Đường dẫn ảnh
+                        string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                        string fileName = Path.GetFileName(fileAddress);
+                        string fileSavePath = Path.Combine(saveDirectory, fileName);
+
+
+
+                        // Kiểm tra xem hình đã tồn tại trong thư mục staff hay chưa
+                        if (!File.Exists(fileSavePath))
+                        {
+                            try
+                            {
+                                File.Copy(fileAddress, fileSavePath, true); // Sao chép hình vào thư mục Images nếu chưa tồn tại
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+
+                        // Update txtHinh to point to the new location
+                        txtDuongDan.Text = fileSavePath;
+
+                        DTO_Staff staff = new DTO_Staff(txtTen.Text, txtDuongDan.Text, txtEmail.Text, role, status);
+
+                        if (busNhanVien.update(staff, id))
+                        {
+                            frmMainQLCF ql = new frmMainQLCF();
+
+                            this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
+
+                            // Call checkStatus on the main form
+                            if (this.mainForm != null)
+                            {
+                                this.mainForm.checkStatus(txtEmail.Text, role);
+                            }
+                            LoadData(status);
+
+                            
+
+                            //if (changes)
+                            //{
+                            //    MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //    this.Hide();
+                            //    ql.Close();
+                            //}
+                        }
+                        else
+                        {
+                            this.Nofication("Sửa thất bại!", frmNotification.enumType.Failed);
+                            return;
+                        }
+                    }
+                }
+
+                
             }
             else
             {
@@ -288,13 +487,25 @@ namespace GUI_QLCafe
             txtTimKiem.Clear();
             txtDuongDan.Clear();
             picNhanVien.Image = originalImage;
+
+            rdoHoatDong.Enabled = false;
             rdoHoatDong.Checked = false;
+
+            rdoNgungHoatDong.Enabled = false;
             rdoNgungHoatDong.Checked = false;
+
+            rdoNhanVien.Enabled = false;
             rdoNhanVien.Checked = false;
+
+            rdoNhanVien.Enabled = false;
             rdoQuanTri.Checked = false;
+            
+            txtEmail.Enabled = false;
+            txtTen.Enabled = false;
+
+            btnSu.Enabled = false;
 
             selected = false;
-
             LoadData(status);
         }
 
@@ -330,6 +541,32 @@ namespace GUI_QLCafe
                 LoadData(status);
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
+        }
+
+        private void btnMoHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*";
+            ofd.FilterIndex = 2;
+            ofd.Title = "Chọn ảnh của nhân viên";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                fileAddress = ofd.FileName; // Lấy đường dẫn ảnh
+                picNhanVien.Image = Image.FromFile(fileAddress);
+                fileName = Path.GetFileName(ofd.FileName); // Tên ảnh
+
+                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+
+                fileSavePath = saveDirectory + "\\img\\" + fileName; //combine with file name
+                /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
+                txtDuongDan.Text = fileAddress;
+            }
+        }
+
+        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

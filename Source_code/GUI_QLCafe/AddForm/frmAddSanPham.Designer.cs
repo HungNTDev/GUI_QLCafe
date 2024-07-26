@@ -270,7 +270,6 @@
             this.cbMinimize.Name = "cbMinimize";
             this.cbMinimize.Size = new System.Drawing.Size(79, 39);
             this.cbMinimize.TabIndex = 14;
-            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click_1);
             // 
             // cbClose
             // 

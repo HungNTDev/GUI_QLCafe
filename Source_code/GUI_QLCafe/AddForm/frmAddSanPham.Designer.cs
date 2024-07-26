@@ -55,6 +55,7 @@
             this.messageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.cbLoaiSanPham = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbtagname = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -91,7 +92,6 @@
             // picSanPham
             // 
             this.picSanPham.BorderRadius = 5;
-            this.picSanPham.FillColor = System.Drawing.Color.DodgerBlue;
             this.picSanPham.ImageRotate = 0F;
             this.picSanPham.Location = new System.Drawing.Point(456, 86);
             this.picSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -100,6 +100,7 @@
             this.picSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSanPham.TabIndex = 23;
             this.picSanPham.TabStop = false;
+            this.picSanPham.Tag = "";
             // 
             // txtDuongDan
             // 
@@ -144,7 +145,7 @@
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSanPham.ForeColor = System.Drawing.Color.Black;
             this.txtTenSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTenSanPham.Location = new System.Drawing.Point(44, 195);
+            this.txtTenSanPham.Location = new System.Drawing.Point(44, 194);
             this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.PasswordChar = '\0';
@@ -267,8 +268,9 @@
             this.cbMinimize.Location = new System.Drawing.Point(601, 0);
             this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
+            this.cbMinimize.Size = new System.Drawing.Size(79, 39);
             this.cbMinimize.TabIndex = 14;
+            this.cbMinimize.Click += new System.EventHandler(this.cbMinimize_Click_1);
             // 
             // cbClose
             // 
@@ -278,11 +280,11 @@
             this.cbClose.ForeColor = System.Drawing.Color.White;
             this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
             this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(686, 0);
+            this.cbClose.Location = new System.Drawing.Point(685, 0);
             this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbClose.Name = "cbClose";
             this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(79, 40);
+            this.cbClose.Size = new System.Drawing.Size(79, 39);
             this.cbClose.TabIndex = 13;
             // 
             // btnMoHinh
@@ -474,11 +476,23 @@
             "CFE",
             "STO",
             "JUC"});
-            this.cbLoaiSanPham.Location = new System.Drawing.Point(44, 344);
+            this.cbLoaiSanPham.Location = new System.Drawing.Point(44, 345);
+            this.cbLoaiSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoaiSanPham.Name = "cbLoaiSanPham";
             this.cbLoaiSanPham.Size = new System.Drawing.Size(372, 36);
             this.cbLoaiSanPham.TabIndex = 30;
             this.cbLoaiSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbtagname
+            // 
+            this.lbtagname.AutoSize = true;
+            this.lbtagname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtagname.Location = new System.Drawing.Point(559, 239);
+            this.lbtagname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbtagname.Name = "lbtagname";
+            this.lbtagname.Size = new System.Drawing.Size(70, 31);
+            this.lbtagname.TabIndex = 31;
+            this.lbtagname.Text = "Hình";
             // 
             // frmAddSanPham
             // 
@@ -486,6 +500,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(765, 750);
+            this.Controls.Add(this.lbtagname);
             this.Controls.Add(this.cbLoaiSanPham);
             this.Controls.Add(this.gbTrangThai);
             this.Controls.Add(this.label1);
@@ -546,5 +561,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
         public Guna.UI2.WinForms.Guna2PictureBox picSanPham;
+        public System.Windows.Forms.Label lbtagname;
     }
 }

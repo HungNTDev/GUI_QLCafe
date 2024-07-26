@@ -99,7 +99,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 169);
+            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 170);
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
             this.dgvDanhSachSanPham.ReadOnly = true;
             this.dgvDanhSachSanPham.RowHeadersVisible = false;
@@ -287,16 +287,16 @@
             this.lbtotalRow.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbtotalRow.Location = new System.Drawing.Point(38, 8);
             this.lbtotalRow.Name = "lbtotalRow";
-            this.lbtotalRow.Size = new System.Drawing.Size(131, 31);
+            this.lbtotalRow.Size = new System.Drawing.Size(165, 31);
             this.lbtotalRow.TabIndex = 23;
-            this.lbtotalRow.Text = "Total Rows:";
+            this.lbtotalRow.Text = "Tổng số dòng:";
             // 
             // lbTotalRows
             // 
             this.lbTotalRows.AutoSize = true;
             this.lbTotalRows.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbTotalRows.Location = new System.Drawing.Point(152, 9);
+            this.lbTotalRows.Location = new System.Drawing.Point(209, 8);
             this.lbTotalRows.Name = "lbTotalRows";
             this.lbTotalRows.Size = new System.Drawing.Size(30, 31);
             this.lbTotalRows.TabIndex = 23;
@@ -356,12 +356,12 @@
             this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnFirstPage.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnFirstPage.Location = new System.Drawing.Point(374, 39);
+            this.btnFirstPage.Location = new System.Drawing.Point(341, 39);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.PressedColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Size = new System.Drawing.Size(92, 36);
+            this.btnFirstPage.Size = new System.Drawing.Size(125, 36);
             this.btnFirstPage.TabIndex = 22;
-            this.btnFirstPage.Text = "First";
+            this.btnFirstPage.Text = "Trang đầu ";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
             // btnLastPage
@@ -383,9 +383,9 @@
             this.btnLastPage.Location = new System.Drawing.Point(736, 39);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.PressedColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Size = new System.Drawing.Size(92, 36);
+            this.btnLastPage.Size = new System.Drawing.Size(123, 36);
             this.btnLastPage.TabIndex = 22;
-            this.btnLastPage.Text = "Last";
+            this.btnLastPage.Text = "Trang cuối ";
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // guna2Panel1
@@ -428,7 +428,7 @@
             this.btnReload.PressedColor = System.Drawing.Color.Transparent;
             this.btnReload.Size = new System.Drawing.Size(138, 36);
             this.btnReload.TabIndex = 22;
-            this.btnReload.Text = "Reload";
+            this.btnReload.Text = "Tải lại";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // dgvMaSanPham

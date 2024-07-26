@@ -422,7 +422,6 @@
     <Content Include="img\Product\download %287%29.jpg" />
     <Content Include="img\Product\download %288%29.jpg" />
     <Content Include="img\Product\download %289%29.jpg" />
-    <Content Include="img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg" />
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
   <ItemGroup>

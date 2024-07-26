@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -19,9 +18,6 @@ namespace GUI_QLCafe
 
         BUS_Staff busNhanVien = new BUS_Staff();
         private int status = 1;
-
-
-
 
         int pageNumber = 1;
         int numberRecord = 5;
@@ -64,11 +60,8 @@ namespace GUI_QLCafe
             }
         }
 
-
         private void LoadGridView_NhanVien()
         {
-
-
             cboStatus.SelectedIndex = 1 - status;
             dgvDanhSachNhanVien.DataSource = busNhanVien.get(status);
         }

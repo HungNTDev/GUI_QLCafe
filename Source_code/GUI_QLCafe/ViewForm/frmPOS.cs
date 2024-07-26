@@ -4,7 +4,6 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using ZedGraph;
 
 namespace GUI_QLCafe
 {
@@ -34,6 +33,7 @@ namespace GUI_QLCafe
             idTable = billDTO.IdTable;
             lbThuNgan.Text = "Thu ngân : ";
             lbGioVao.Text = "Giờ vào : ";
+            btnThanhToan.Enabled = false;
         }
 
         private void showBill(string id)
@@ -120,6 +120,7 @@ namespace GUI_QLCafe
                 if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2]) != 0)
                 {
                     btnThemMon.Enabled = true;
+                    btnThanhToan.Enabled = true;
                 }
                 LoadTable();
                 showBill(idTable);
@@ -127,6 +128,7 @@ namespace GUI_QLCafe
             else
             {
                 btnThemMon.Enabled = true;
+                btnThanhToan.Enabled = true;
                 showBill(idTable);
             }
 
@@ -135,6 +137,12 @@ namespace GUI_QLCafe
         private void flpTable_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            frmPayment payment = new frmPayment();
+            payment.ShowDialog();
         }
     }
 }

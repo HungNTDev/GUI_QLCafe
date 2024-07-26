@@ -215,6 +215,7 @@
             this.btnThanhToan.Size = new System.Drawing.Size(178, 48);
             this.btnThanhToan.TabIndex = 1;
             this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // lvHoaDon
             // 

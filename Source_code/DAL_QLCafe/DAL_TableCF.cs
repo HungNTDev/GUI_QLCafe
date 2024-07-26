@@ -1,4 +1,5 @@
 ﻿using DTO_QLCafe;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -18,8 +19,9 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "GetTableCF";
+                    cmd.CommandText = "GetTable";
                     conn.Open();
                     DataTable dtTableCF = new DataTable();
                     dtTableCF.Load(cmd.ExecuteReader());
@@ -42,12 +44,13 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "InsertTableCF";
+                    cmd.CommandText = "InsertTable";
 
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
-                    cmd.Parameters.AddWithValue("@StatusTable", obj.StatusTable);
+
 
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
@@ -73,12 +76,13 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "UpdateTableCF";
+                    cmd.CommandText = "UpdateTableCF ";
 
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
-                    cmd.Parameters.AddWithValue("@StatusTable", obj.StatusTable);
+
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
                     {
@@ -103,6 +107,7 @@ namespace DAL_QLCafe
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "DeleteTableCF";
                     cmd.Parameters.AddWithValue("@IdTable", id);
@@ -123,18 +128,17 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
             try
             {
                 using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "SearchTableCF";
-
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
-                    cmd.Parameters.AddWithValue("@column", column);
+                    cmd.CommandText = "SearchTable";
+                    cmd.Parameters.AddWithValue("@value", keyword);
                     conn.Open();
                     DataTable dtTableCF = new DataTable();
                     dtTableCF.Load(cmd.ExecuteReader());
@@ -212,6 +216,43 @@ namespace DAL_QLCafe
             adt = new SqlDataAdapter(Query, _conn);
             dt = new DataTable();
             adt.Fill(dt);
+            return dt;
+        }
+
+        public DataTable GetPagedTable(int PageIndex, int PageSize)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetPagedTable";
+                    cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", PageSize);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    da.Fill(dt);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        Console.WriteLine("Không có dữ liệu được trả về từ proc");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
             return dt;
         }
     }

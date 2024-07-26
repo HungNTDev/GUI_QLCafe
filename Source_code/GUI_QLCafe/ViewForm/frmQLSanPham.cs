@@ -1,5 +1,4 @@
 ﻿using BUS_QLCafe;
-using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -55,8 +54,8 @@ namespace GUI_QLCafe
                 frmAddSanPham frmAddSanPham = new frmAddSanPham();
                 frmAddSanPham.txtMaSanPham.Enabled = false;
                 frmAddSanPham.cbLoaiSanPham.Enabled = false;
-                frmAddSanPham.txtDuongDan.Enabled = false; 
-
+                frmAddSanPham.txtDuongDan.Enabled = false;
+                frmAddSanPham.lbtagname.Visible = false;
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
@@ -80,7 +79,7 @@ namespace GUI_QLCafe
                 }
 
                 frmAddSanPham.ShowDialog();
-                LoadGridView_SanPham();
+                LoadData();
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
@@ -90,7 +89,7 @@ namespace GUI_QLCafe
                     if (busSanPham.delete(maSanPham))
                     {
                         this.Nofication("Xóa thành công!", frmNotification.enumType.Success);
-                        LoadGridView_SanPham();
+                        LoadData();
                     }
                     else
                     {
@@ -249,14 +248,13 @@ namespace GUI_QLCafe
             if (dt.Rows.Count > 0)
             {
                 dgvDanhSachSanPham.DataSource = dt;
-                dgvDanhSachSanPham.Columns[0].HeaderText = "IdProduct";
-                dgvDanhSachSanPham.Columns[1].HeaderText = "NameProduct";
-                dgvDanhSachSanPham.Columns[2].HeaderText = "Price";
-                dgvDanhSachSanPham.Columns[3].HeaderText = "ImagePath";
-                dgvDanhSachSanPham.Columns[4].HeaderText = "Status";
-                dgvDanhSachSanPham.Columns[5].HeaderText = "IdPT";
+                dgvDanhSachSanPham.Columns[2].HeaderText = "Mã sản phẩm";
+                dgvDanhSachSanPham.Columns[3].HeaderText = "Tên sản phẩm";
+                dgvDanhSachSanPham.Columns[4].HeaderText = "Giá";
+                dgvDanhSachSanPham.Columns[5].HeaderText = "Đường dẫn";
+                dgvDanhSachSanPham.Columns[6].HeaderText = "Trạng thái";
+                dgvDanhSachSanPham.Columns[7].HeaderText = "Loại sản phẩm";
             }
-
             else
             {
                 MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -265,7 +263,8 @@ namespace GUI_QLCafe
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            LoadGridView_SanPham();
+            //LoadGridView_SanPham();
+            LoadData();
         }
 
 

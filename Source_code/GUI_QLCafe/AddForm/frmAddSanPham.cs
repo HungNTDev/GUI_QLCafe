@@ -92,7 +92,7 @@ namespace GUI_QLCafe
 
             //DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
-                //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
+            //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
 
             try
             {
@@ -111,14 +111,19 @@ namespace GUI_QLCafe
 
                 if (string.IsNullOrEmpty(id))
                 {
-                    if (busproduct.insert(product))
+                    DialogResult dl = MessageBox.Show("Bạn có muốn lưu không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dl == DialogResult.OK)
                     {
-                        this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        if (busproduct.insert(product))
+                        {
+
+                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        }
                     }
                 }
                 else
@@ -134,12 +139,8 @@ namespace GUI_QLCafe
                             }
                             File.Copy(fileAddress, fileSavePath, true);
                         }
-                        this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
+                        MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
-                    }
-                    else
-                    {
-                        this.Nofication("Cập nhật thất bại :(", frmNotification.enumType.Failed);
                     }
                 }
             }
@@ -180,6 +181,7 @@ namespace GUI_QLCafe
                     // Tạo đường dẫn để lưu file vào thư mục của project
 
                     txtDuongDan.Text = fileAddress;
+                    lbtagname.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -201,6 +203,11 @@ namespace GUI_QLCafe
         private void cbMinimize_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void cbMinimize_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

@@ -39,8 +39,6 @@
             this.txtMaBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMaBan = new System.Windows.Forms.Label();
             this.lbTenBan = new System.Windows.Forms.Label();
-            this.cbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbTrangThai = new System.Windows.Forms.Label();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.bfAddBan = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
@@ -57,8 +55,9 @@
             this.guna2Panel1.Controls.Add(this.picLogo);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(547, 62);
+            this.guna2Panel1.Size = new System.Drawing.Size(410, 50);
             this.guna2Panel1.TabIndex = 1;
             // 
             // cbMinimize
@@ -71,10 +70,10 @@
             this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.cbMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.cbMinimize.IconColor = System.Drawing.Color.White;
-            this.cbMinimize.Location = new System.Drawing.Point(383, 0);
-            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMinimize.Location = new System.Drawing.Point(287, 0);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
+            this.cbMinimize.Size = new System.Drawing.Size(59, 32);
             this.cbMinimize.TabIndex = 14;
             // 
             // cbClose
@@ -85,11 +84,11 @@
             this.cbClose.ForeColor = System.Drawing.Color.White;
             this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
             this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(468, 0);
-            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClose.Location = new System.Drawing.Point(351, 0);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(2);
             this.cbClose.Name = "cbClose";
             this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(79, 40);
+            this.cbClose.Size = new System.Drawing.Size(59, 32);
             this.cbClose.TabIndex = 13;
             // 
             // lbText0
@@ -98,9 +97,10 @@
             this.lbText0.BackColor = System.Drawing.Color.Transparent;
             this.lbText0.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText0.ForeColor = System.Drawing.Color.White;
-            this.lbText0.Location = new System.Drawing.Point(101, 12);
+            this.lbText0.Location = new System.Drawing.Point(76, 10);
+            this.lbText0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(217, 41);
+            this.lbText0.Size = new System.Drawing.Size(175, 32);
             this.lbText0.TabIndex = 10;
             this.lbText0.Text = "Thông tin bàn";
             // 
@@ -109,11 +109,11 @@
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(44, 7);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picLogo.Location = new System.Drawing.Point(33, 6);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picLogo.Name = "picLogo";
             this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picLogo.Size = new System.Drawing.Size(49, 45);
+            this.picLogo.Size = new System.Drawing.Size(37, 37);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 10;
             this.picLogo.TabStop = false;
@@ -134,14 +134,14 @@
             this.txtTenBan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenBan.ForeColor = System.Drawing.Color.Black;
             this.txtTenBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTenBan.Location = new System.Drawing.Point(44, 197);
-            this.txtTenBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenBan.Location = new System.Drawing.Point(33, 160);
+            this.txtTenBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.PasswordChar = '\0';
             this.txtTenBan.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTenBan.PlaceholderText = "";
             this.txtTenBan.SelectedText = "";
-            this.txtTenBan.Size = new System.Drawing.Size(460, 36);
+            this.txtTenBan.Size = new System.Drawing.Size(345, 29);
             this.txtTenBan.TabIndex = 25;
             // 
             // txtMaBan
@@ -159,14 +159,14 @@
             this.txtMaBan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaBan.ForeColor = System.Drawing.Color.Black;
             this.txtMaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtMaBan.Location = new System.Drawing.Point(44, 120);
-            this.txtMaBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaBan.Location = new System.Drawing.Point(33, 98);
+            this.txtMaBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaBan.Name = "txtMaBan";
             this.txtMaBan.PasswordChar = '\0';
             this.txtMaBan.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtMaBan.PlaceholderText = "";
             this.txtMaBan.SelectedText = "";
-            this.txtMaBan.Size = new System.Drawing.Size(460, 36);
+            this.txtMaBan.Size = new System.Drawing.Size(345, 29);
             this.txtMaBan.TabIndex = 26;
             // 
             // lbMaBan
@@ -175,9 +175,10 @@
             this.lbMaBan.BackColor = System.Drawing.Color.White;
             this.lbMaBan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaBan.ForeColor = System.Drawing.Color.Black;
-            this.lbMaBan.Location = new System.Drawing.Point(39, 87);
+            this.lbMaBan.Location = new System.Drawing.Point(29, 71);
+            this.lbMaBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaBan.Name = "lbMaBan";
-            this.lbMaBan.Size = new System.Drawing.Size(78, 28);
+            this.lbMaBan.Size = new System.Drawing.Size(62, 21);
             this.lbMaBan.TabIndex = 23;
             this.lbMaBan.Text = "Mã bàn";
             // 
@@ -187,43 +188,12 @@
             this.lbTenBan.BackColor = System.Drawing.Color.White;
             this.lbTenBan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenBan.ForeColor = System.Drawing.Color.Black;
-            this.lbTenBan.Location = new System.Drawing.Point(39, 163);
+            this.lbTenBan.Location = new System.Drawing.Point(29, 132);
+            this.lbTenBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTenBan.Name = "lbTenBan";
-            this.lbTenBan.Size = new System.Drawing.Size(79, 28);
+            this.lbTenBan.Size = new System.Drawing.Size(63, 21);
             this.lbTenBan.TabIndex = 24;
             this.lbTenBan.Text = "Tên bàn";
-            // 
-            // cbTrangThai
-            // 
-            this.cbTrangThai.BackColor = System.Drawing.Color.Transparent;
-            this.cbTrangThai.BorderColor = System.Drawing.Color.Silver;
-            this.cbTrangThai.BorderRadius = 5;
-            this.cbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.cbTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.cbTrangThai.ItemHeight = 30;
-            this.cbTrangThai.Items.AddRange(new object[] {
-            "Có",
-            "Không có"});
-            this.cbTrangThai.Location = new System.Drawing.Point(44, 276);
-            this.cbTrangThai.Name = "cbTrangThai";
-            this.cbTrangThai.Size = new System.Drawing.Size(460, 36);
-            this.cbTrangThai.TabIndex = 28;
-            // 
-            // lbTrangThai
-            // 
-            this.lbTrangThai.AutoSize = true;
-            this.lbTrangThai.BackColor = System.Drawing.Color.White;
-            this.lbTrangThai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.lbTrangThai.Location = new System.Drawing.Point(42, 245);
-            this.lbTrangThai.Name = "lbTrangThai";
-            this.lbTrangThai.Size = new System.Drawing.Size(98, 28);
-            this.lbTrangThai.TabIndex = 27;
-            this.lbTrangThai.Text = "Trạng thái";
             // 
             // btnLuu
             // 
@@ -243,13 +213,14 @@
             this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(44, 343);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLuu.Location = new System.Drawing.Point(33, 215);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnLuu.Size = new System.Drawing.Size(460, 57);
+            this.btnLuu.Size = new System.Drawing.Size(345, 46);
             this.btnLuu.TabIndex = 29;
             this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // bfAddBan
             // 
@@ -279,30 +250,29 @@
             this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(44, 431);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Location = new System.Drawing.Point(33, 284);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(460, 57);
+            this.btnThoat.Size = new System.Drawing.Size(345, 46);
             this.btnThoat.TabIndex = 30;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmAddBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(547, 522);
+            this.ClientSize = new System.Drawing.Size(410, 369);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.cbTrangThai);
-            this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.txtTenBan);
             this.Controls.Add(this.txtMaBan);
             this.Controls.Add(this.lbMaBan);
             this.Controls.Add(this.lbTenBan);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddBan";
@@ -320,16 +290,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
-        private Guna.UI2.WinForms.Guna2TextBox txtTenBan;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaBan;
         private System.Windows.Forms.Label lbMaBan;
         private System.Windows.Forms.Label lbTenBan;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
-        private System.Windows.Forms.Label lbTrangThai;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddBan;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
+        public Guna.UI2.WinForms.Guna2TextBox txtMaBan;
+        public Guna.UI2.WinForms.Guna2TextBox txtTenBan;
     }
 }

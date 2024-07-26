@@ -107,6 +107,8 @@ insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff
 ('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Quản lý',1)
 
 update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV2'
+
+update Staff set StatusStaff = 1 where IdStaff = 'NV1'
 	
 ('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
@@ -261,7 +263,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select * from Staff
 
 -- Lấy danh sách nhân viên
-create proc GetStaff (@status int)
+alter proc GetStaff (@status int)
 as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
@@ -485,3 +487,55 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
+
+-- Danh sách bàn 
+ALTER proc GetTable as 
+select IdTable, NameTable from TableCF
+
+-- Thêm bàn 
+ALTER proc InsertTable (@idTable nvarchar(10),
+                         @nameTable nvarchar(20)) 
+as 
+  begin 
+       insert into TableCF (IdTable, NameTable, StatusTable) values
+	                       (@idTable, @nameTable, 0)
+  end
+
+  -- Sửa bàn 
+alter proc UpdateTableCF (@idTable nvarchar(10),
+                         @nameTable nvarchar(20)
+						 ) 
+as 
+  begin
+       update TableCF set NameTable=@nameTable
+	   where IdTable = @idTable
+  end
+
+  -- Xóa bàn 
+alter proc DeleteTableCF (@idTable nvarchar(10))
+as 
+   delete  from TableCF where IdTable = @idTable
+
+   -- Tìm bàn
+create proc SearchTable (@value nvarchar(20))
+as 
+  select * from TableCF where IdTable = @value or NameTable like N'%' + @value + '%'
+
+  -- Trang bàn
+ create proc GetPagedTable
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from TableCF order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+-- LoadVoucherCombobox 
+create proc ListVoucher as
+select * from Voucher
+			order by PercentVoucher
+
+-- LoadPayment
+create proc ListPayment as 
+select * from Payment
+             order by IdPayment

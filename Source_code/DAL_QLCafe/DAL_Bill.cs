@@ -207,6 +207,28 @@ namespace DAL_QLCafe
             return false;
         }
 
-        
+        public DataTable ShowVoucher()
+        {
+            using (SqlConnection Connection = new SqlConnection(_conn))
+            {
+                string Query = @"exec ShowVoucher";
+                SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                return dt;
+            }
+        }
+
+        public DataTable ShowPayment()
+        {
+            using (SqlConnection Connection = new SqlConnection(_conn))
+            {
+                string Query = @"exec ShowPayment";
+                SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                return dt;
+            }
+        }
     }
 }

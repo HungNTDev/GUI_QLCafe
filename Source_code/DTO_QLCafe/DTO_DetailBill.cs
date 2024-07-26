@@ -29,7 +29,7 @@
             this.idProduct = idProduct;
             this.totalPrice = totalPrice;
             this.amount = amount;
-            this.price = price;  
+            this.price = price;
         }
     }
 }

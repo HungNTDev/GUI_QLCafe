@@ -43,7 +43,7 @@ namespace GUI_QLCafe
 
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
-            //LoadGridView_SanPham();
+            LoadGridView_SanPham();
             //LoadCombobox_Loai();
             LoadData();
             currentPageIndex = 1;

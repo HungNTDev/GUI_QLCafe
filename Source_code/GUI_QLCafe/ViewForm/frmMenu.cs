@@ -123,37 +123,37 @@ namespace GUI_QLCafe
 
         private void btn_Click (object sender, EventArgs e)
         {
-            frmDetail detail = new frmDetail();
+            frmAddDetail detail = new frmAddDetail();
             Guna2Button btn = (Guna2Button)sender;
             productDTO.IdProduct = btn.Tag.ToString();
             nameProduct = productBUS.TagProduct(productDTO).Rows[0][0].ToString();
             detail.ShowDialog();
-            if (frmDetail.Status == 1)
+            if (frmAddDetail.Status == 1)
             {
                 for (int i = 0; i < ListOrder_dgv.Rows.Count; i++)
                 {
                     if (ListOrder_dgv.Rows[i].Cells[0].Value == null)
                     {
-                        frmDetail.Status = 1;
+                        frmAddDetail.Status = 1;
                     }
                     else if (nameProduct == ListOrder_dgv.Rows[i].Cells[0].Value.ToString())
                     {
-                        ListOrder_dgv.Rows[i].Cells[1].Value = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString()) + frmDetail.Amount;
+                        ListOrder_dgv.Rows[i].Cells[1].Value = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString()) + frmAddDetail.Amount;
                         ListOrder_dgv.Rows[i].Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value);
                         ListOrder_dgv.Update();
-                        frmDetail.Status = 0;
+                        frmAddDetail.Status = 0;
                         break;
                     }
                 }
-                if (frmDetail.Status == 1)
+                if (frmAddDetail.Status == 1)
                 {
                     DataGridViewRow row = (DataGridViewRow)ListOrder_dgv.Rows[0].Clone();
                     row.Cells[0].Value = productBUS.TagProduct(productDTO).Rows[0][0].ToString();
-                    row.Cells[1].Value = frmDetail.Amount;
-                    row.Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * frmDetail.Amount;
+                    row.Cells[1].Value = frmAddDetail.Amount;
+                    row.Cells[2].Value = (float)Convert.ToDouble(productBUS.TagProduct(productDTO).Rows[0][1].ToString()) * frmAddDetail.Amount;
                     row.Cells[3].Value = productDTO.idProduct;
                     ListOrder_dgv.Rows.Add(row);
-                    frmDetail.Status = 0;
+                    frmAddDetail.Status = 0;
                 }
             }
         }
@@ -198,15 +198,16 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
+        private void btnDel_Click_1(object sender, EventArgs e)
         {
             try
             {
-                if(ListOrder_dgv.SelectedRows.Count > 0)
+                if (ListOrder_dgv.SelectedRows.Count > 0)
                 {
                     ListOrder_dgv.Rows.RemoveAt(ListOrder_dgv.SelectedRows[0].Index);
                 }
-            }catch
+            }
+            catch
             { }
         }
 

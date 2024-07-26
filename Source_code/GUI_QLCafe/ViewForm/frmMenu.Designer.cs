@@ -142,6 +142,7 @@
             this.btnDel.Size = new System.Drawing.Size(220, 48);
             this.btnDel.TabIndex = 1;
             this.btnDel.Text = "Xóa món";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click_1);
             // 
             // btnAdd
             // 

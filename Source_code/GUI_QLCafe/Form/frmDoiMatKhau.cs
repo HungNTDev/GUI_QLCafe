@@ -9,12 +9,16 @@ namespace GUI_QLCafe
         string stremail; // nhận email từ frmMain
         BUS_Staff busStaff = new BUS_Staff();
         //frmDangNhap dn = new frmDangNhap();
-        public frmDoiMatKhau(string email) // thêm tham số string email vào
+
+
+        private frmMainQLCF mainForm;
+        public frmDoiMatKhau(string email, frmMainQLCF mainForm) // thêm tham số string email vào
         {
             InitializeComponent();
             stremail = email;
             txtEmail.Text = stremail;
             txtEmail.Enabled = false;
+            this.mainForm = mainForm;
         }
 
         private void panelDoiMatKhau_Paint(object sender, PaintEventArgs e)
@@ -52,10 +56,14 @@ namespace GUI_QLCafe
 
                     if (busStaff.updateNewMK(txtEmail.Text, matkhaucu, matkhaumoi))
                     {
-                        MessageBox.Show("Cập nhật mật khẩu thành công, bạn cần phải đăng nhập lại");
-                        this.Hide();
-                        frmDangNhap dangnhap = new frmDangNhap();
-                        dangnhap.Show();
+                        MessageBox.Show("Cập nhật mật khẩu thành công, bạn cần phải đăng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.Close();
+                        // Call checkStatus on the main form
+                        if (this.mainForm != null)
+                        {
+                            this.mainForm.reLogin();
+                        }
+
                     }
                     else
                     {
@@ -157,6 +165,13 @@ namespace GUI_QLCafe
             }
         }
 
-
+        private void cbClose_Click(object sender, System.EventArgs e)
+        {
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(dl == DialogResult.OK)
+            {
+                this.Close();   
+            }
+        }
     }
 }

@@ -197,7 +197,7 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
+        private void btnDel_Click_1(object sender, EventArgs e)
         {
             try
             {

@@ -187,7 +187,7 @@
             this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
             this.rdoNhanVien.Name = "rdoNhanVien";
             this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
-            this.rdoNhanVien.TabIndex = 2;
+            this.rdoNhanVien.TabIndex = 3;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân viên";
             this.rdoNhanVien.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.rdoHoatDong.Location = new System.Drawing.Point(8, 47);
             this.rdoHoatDong.Name = "rdoHoatDong";
             this.rdoHoatDong.Size = new System.Drawing.Size(101, 25);
-            this.rdoHoatDong.TabIndex = 2;
+            this.rdoHoatDong.TabIndex = 4;
             this.rdoHoatDong.TabStop = true;
             this.rdoHoatDong.Text = "Hoạt động";
             this.rdoHoatDong.UseVisualStyleBackColor = false;
@@ -215,7 +215,7 @@
             this.rdoNgungHoatDong.Location = new System.Drawing.Point(8, 85);
             this.rdoNgungHoatDong.Name = "rdoNgungHoatDong";
             this.rdoNgungHoatDong.Size = new System.Drawing.Size(151, 25);
-            this.rdoNgungHoatDong.TabIndex = 2;
+            this.rdoNgungHoatDong.TabIndex = 5;
             this.rdoNgungHoatDong.TabStop = true;
             this.rdoNgungHoatDong.Text = "Ngừng hoạt động";
             this.rdoNgungHoatDong.UseVisualStyleBackColor = false;
@@ -273,7 +273,7 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(424, 34);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 0;
             // 
             // txtTenNhanVien
             // 
@@ -298,7 +298,7 @@
             this.txtTenNhanVien.PlaceholderText = "";
             this.txtTenNhanVien.SelectedText = "";
             this.txtTenNhanVien.Size = new System.Drawing.Size(424, 34);
-            this.txtTenNhanVien.TabIndex = 9;
+            this.txtTenNhanVien.TabIndex = 1;
             // 
             // picNhanVien
             // 
@@ -326,7 +326,7 @@
             this.btnMoHinh.ForeColor = System.Drawing.Color.White;
             this.btnMoHinh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnMoHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnMoHinh.Image")));
-            this.btnMoHinh.Location = new System.Drawing.Point(497, 331);
+            this.btnMoHinh.Location = new System.Drawing.Point(497, 288);
             this.btnMoHinh.Name = "btnMoHinh";
             this.btnMoHinh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnMoHinh.Size = new System.Drawing.Size(173, 35);
@@ -351,7 +351,7 @@
             this.txtDuongDan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDuongDan.ForeColor = System.Drawing.Color.Black;
             this.txtDuongDan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtDuongDan.Location = new System.Drawing.Point(497, 290);
+            this.txtDuongDan.Location = new System.Drawing.Point(497, 333);
             this.txtDuongDan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDuongDan.Name = "txtDuongDan";
             this.txtDuongDan.PasswordChar = '*';
@@ -361,6 +361,7 @@
             this.txtDuongDan.SelectedText = "";
             this.txtDuongDan.Size = new System.Drawing.Size(173, 33);
             this.txtDuongDan.TabIndex = 9;
+            this.txtDuongDan.Visible = false;
             // 
             // btnLuu
             // 

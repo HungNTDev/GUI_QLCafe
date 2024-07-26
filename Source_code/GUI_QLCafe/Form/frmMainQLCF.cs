@@ -22,6 +22,8 @@ namespace GUI_QLCafe
         }
 
 
+
+
         public void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Refresh();
@@ -45,18 +47,30 @@ namespace GUI_QLCafe
             PhanQuyen();
 
         }
-        public bool checkStatus(string emailAfter, string roleAfter)
+
+        public void reLogin()
         {
-            // Check if the email and role have changed
+            this.Hide();
+            session = 0;
+            frmDangNhap dangNhap = new frmDangNhap();
+            dangNhap.Show();
+        }
+        public void checkStatus(string emailAfter, string roleAfter)
+        {
+
             if (email == emailAfter && role != roleAfter)
             {
-                return true;
+                MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+                reLogin();
             }
-            return false;
+            else
+            {
+                Console.WriteLine("No change or not current user, main form stays open");
+            }
         }
         public void PhanQuyen()
         {
-            frmQLNhanVien qlnv = new frmQLNhanVien();
 
             lblEmail.Text = email;
 
@@ -259,9 +273,9 @@ namespace GUI_QLCafe
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
             if (role == "Quản trị")
-                AddControls(new frmQLNhanVien());
+                AddControls(new frmQLNhanVien(this));
             else
-                messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Cảnh báo");
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLSanPham_Click(object sender, EventArgs e)
@@ -276,7 +290,7 @@ namespace GUI_QLCafe
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email);
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email, this);
             frmDoiMatKhau.Show();
         }
 

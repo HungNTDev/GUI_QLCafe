@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddNhanVien));
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.lbText0 = new System.Windows.Forms.Label();
-            this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.bfAddNhanVien = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.lbEmailNhanVien = new System.Windows.Forms.Label();
             this.lbTenNhanVien = new System.Windows.Forms.Label();
@@ -52,83 +47,15 @@
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lbText0 = new System.Windows.Forms.Label();
             this.gbVaiTro.SuspendLayout();
             this.gbTrangThai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNhanVien)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.guna2Panel1.Controls.Add(this.cbMinimize);
-            this.guna2Panel1.Controls.Add(this.cbClose);
-            this.guna2Panel1.Controls.Add(this.lbText0);
-            this.guna2Panel1.Controls.Add(this.picLogo);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(714, 62);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // cbMinimize
-            // 
-            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.cbMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbMinimize.IconColor = System.Drawing.Color.White;
-            this.cbMinimize.Location = new System.Drawing.Point(550, 0);
-            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
-            this.cbMinimize.TabIndex = 14;
-            // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.cbClose.ForeColor = System.Drawing.Color.White;
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
-            this.cbClose.IconColor = System.Drawing.Color.White;
-            this.cbClose.Location = new System.Drawing.Point(635, 0);
-            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(79, 40);
-            this.cbClose.TabIndex = 13;
-            // 
-            // lbText0
-            // 
-            this.lbText0.AutoSize = true;
-            this.lbText0.BackColor = System.Drawing.Color.Transparent;
-            this.lbText0.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbText0.ForeColor = System.Drawing.Color.White;
-            this.lbText0.Location = new System.Drawing.Point(101, 12);
-            this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(301, 41);
-            this.lbText0.TabIndex = 10;
-            this.lbText0.Text = "Thông tin nhân viên";
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(44, 7);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picLogo.Size = new System.Drawing.Size(49, 45);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 10;
-            this.picLogo.TabStop = false;
-            this.picLogo.UseTransparentBackground = true;
             // 
             // bfAddNhanVien
             // 
@@ -303,7 +230,9 @@
             // picNhanVien
             // 
             this.picNhanVien.BorderRadius = 5;
+            this.picNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picNhanVien.FillColor = System.Drawing.Color.DodgerBlue;
+            this.picNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("picNhanVien.Image")));
             this.picNhanVien.ImageRotate = 0F;
             this.picNhanVien.Location = new System.Drawing.Point(497, 84);
             this.picNhanVien.Name = "picNhanVien";
@@ -422,12 +351,49 @@
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.Controls.Add(this.guna2PictureBox1);
+            this.panelHeader.Controls.Add(this.lbText0);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(714, 81);
+            this.panelHeader.TabIndex = 32;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 81);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 47;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // lbText0
+            // 
+            this.lbText0.AutoSize = true;
+            this.lbText0.BackColor = System.Drawing.Color.Transparent;
+            this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbText0.ForeColor = System.Drawing.Color.White;
+            this.lbText0.Location = new System.Drawing.Point(179, 20);
+            this.lbText0.Name = "lbText0";
+            this.lbText0.Size = new System.Drawing.Size(396, 45);
+            this.lbText0.TabIndex = 10;
+            this.lbText0.Text = "THÔNG TIN NHÂN VIÊN";
+            // 
             // frmAddNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(714, 603);
+            this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnMoHinh);
@@ -439,28 +405,25 @@
             this.Controls.Add(this.gbVaiTro);
             this.Controls.Add(this.lbEmailNhanVien);
             this.Controls.Add(this.lbTenNhanVien);
-            this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.gbVaiTro.ResumeLayout(false);
             this.gbVaiTro.PerformLayout();
             this.gbTrangThai.ResumeLayout(false);
             this.gbTrangThai.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNhanVien)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddNhanVien;
         private System.Windows.Forms.RadioButton rdoQuanTri;
         private System.Windows.Forms.RadioButton rdoNhanVien;
@@ -472,15 +435,14 @@
         private Guna.UI2.WinForms.Guna2GroupBox gbTrangThai;
         private Guna.UI2.WinForms.Guna2TextBox txtTenNhanVien;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
-        private System.Windows.Forms.Label lbText0;
         private Guna.UI2.WinForms.Guna2PictureBox picNhanVien;
         private Guna.UI2.WinForms.Guna2Button btnMoHinh;
         private Guna.UI2.WinForms.Guna2TextBox txtDuongDan;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
-        private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
-        private Guna.UI2.WinForms.Guna2ControlBox cbClose;
+        private Guna.UI2.WinForms.Guna2Panel panelHeader;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label lbText0;
     }
 }

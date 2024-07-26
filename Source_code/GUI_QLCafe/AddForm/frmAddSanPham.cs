@@ -15,9 +15,27 @@ namespace GUI_QLCafe
         string fileName;
         string fileSavePath;
         string fileAddress;
+
         public frmAddSanPham()
         {
             InitializeComponent();
+        }
+
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
+
+        private void frmAddSanPham_Load(object sender, EventArgs e)
+        {
+            if(formMode == FormMode.Them)
+            {
+                lbText0.Text = "THÊM THÔNG TIN SẢN PHẨM";
+            }
+            if (formMode == FormMode.Sua)
+            {
+                lbText0.Text = "CẬP NHẬT THÔNG TIN SẢN PHẨM";
+            }
+            txtDuongDan.Enabled = false;
         }
 
         // phương thức này dùng để gọi Notfication khi thêm thành công
@@ -37,40 +55,38 @@ namespace GUI_QLCafe
             // Kiểm tra các điều kiện
             if (string.IsNullOrWhiteSpace(txtMaSanPham.Text))
             {
-                messageDialog.Show("Vui lòng nhập mã sản phẩm!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập mã sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaSanPham.Focus();
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
             {
-                messageDialog.Show("Vui lòng nhập tên sản phẩm!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập tên sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenSanPham.Focus();
                 return;
             }
             if (!isfloat || gia < 0)
             {
-                messageDialog.Show("Vui lòng nhập giá hợp lệ!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập giá hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtGia.Focus();
                 return;
             }
             if (!rdoCo.Checked && !rdoKhong.Checked)
             {
-                messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (cbLoaiSanPham.Text.Trim().Length == 0)
             {
-                messageDialog.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo");
-
+                MessageBox.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cbLoaiSanPham.Focus();
-
                 return;
             }
 
             string fileAddress = txtDuongDan.Text;
             if (!File.Exists(fileAddress))
             {
-                messageDialog.Show("Tệp không tồn tại: " + fileAddress, "Thông Báo");
+                MessageBox.Show("Tệp không tồn tại: " + fileAddress, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -84,7 +100,6 @@ namespace GUI_QLCafe
             }
 
             //string fileName = Path.GetFileName(fileAddress);
-
 
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
                 txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
@@ -108,17 +123,19 @@ namespace GUI_QLCafe
 
                 txtDuongDan.Text = fileSavePath;
 
-                if (string.IsNullOrEmpty(id))
+                if(formMode == FormMode.Them)
                 {
-                    if (busproduct.insert(product))
+                    if (string.IsNullOrEmpty(id))
                     {
-                        MessageBox.Show("Thêm thành công");
-                        this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        if (busproduct.insert(product))
+                        {
+                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                        }
                     }
                 }
                 else
@@ -147,11 +164,6 @@ namespace GUI_QLCafe
             {
                 messageDialog.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
             }
-        }
-
-        private void picSanPham_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnMoHinh_Click(object sender, EventArgs e)
@@ -185,8 +197,6 @@ namespace GUI_QLCafe
                     // Tạo đường dẫn để lưu file vào thư mục của project
 
                     txtDuongDan.Text = fileAddress;
-
-
                 }
             }
             catch (Exception ex)
@@ -197,8 +207,11 @@ namespace GUI_QLCafe
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            if (dl == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
-
     }
 }

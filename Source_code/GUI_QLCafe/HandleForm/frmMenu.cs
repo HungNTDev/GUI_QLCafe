@@ -5,7 +5,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI_QLCafe
 {
@@ -13,10 +12,10 @@ namespace GUI_QLCafe
     {
         DTO_Bill billDTO = new DTO_Bill();
         DTO_Product productDTO = new DTO_Product();
-        DTO_DetailBill detailBillDTO =  new DTO_DetailBill();
+        DTO_DetailBill detailBillDTO = new DTO_DetailBill();
 
         BUS_Product productBUS = new BUS_Product();
-        BUS_TableCF busTB = new BUS_TableCF();  
+        BUS_TableCF busTB = new BUS_TableCF();
         BUS_Staff busStaff = new BUS_Staff();
         BUS_Bill busBill = new BUS_Bill();
         BUS_DetailBill busDetailBill = new BUS_DetailBill();
@@ -121,7 +120,7 @@ namespace GUI_QLCafe
             LoadMenu(categoryID);
         }
 
-        private void btn_Click (object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
             frmAddDetail detail = new frmAddDetail();
             Guna2Button btn = (Guna2Button)sender;
@@ -221,11 +220,8 @@ namespace GUI_QLCafe
 
         }
 
-        private void flp_CaPhe_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        
+
     }
 }

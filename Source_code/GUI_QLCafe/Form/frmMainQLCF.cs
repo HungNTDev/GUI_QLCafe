@@ -18,34 +18,34 @@ namespace GUI_QLCafe
         public frmMainQLCF()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
+            //this.IsMdiContainer = true;
         }
 
-        private bool CheckExistForm(string name)
-        {
-            bool check = false;
-            foreach (Form frm in this.MdiChildren)
-            {
-                if (frm.Name == name)
-                {
-                    check = true;
-                    break;
-                }
-            }
-            return check;
-        }
+        //private bool CheckExistForm(string name)
+        //{
+        //    bool check = false;
+        //    foreach (Form frm in this.MdiChildren)
+        //    {
+        //        if (frm.Name == name)
+        //        {
+        //            check = true;
+        //            break;
+        //        }
+        //    }
+        //    return check;
+        //}
 
-        private void ActiveChildForm(string name)
-        {
-            foreach (Form frm in this.MdiChildren)
-            {
-                if (frm.Name == name)
-                {
-                    frm.Activate();
-                    break;
-                }
-            }
-        }
+        //private void ActiveChildForm(string name)
+        //{
+        //    foreach (Form frm in this.MdiChildren)
+        //    {
+        //        if (frm.Name == name)
+        //        {
+        //            frm.Activate();
+        //            break;
+        //        }
+        //    }
+        //}
 
         public void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -68,15 +68,26 @@ namespace GUI_QLCafe
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToLongTimeString();
             PhanQuyen();
-        }
 
+        }
+        public bool checkStatus(string emailAfter, string roleAfter)
+        {
+            // Check if the email and role have changed
+            if (email == emailAfter && role != roleAfter)
+            {
+                return true;
+            }
+            return false;
+        }
         public void PhanQuyen()
         {
+            frmQLNhanVien qlnv = new frmQLNhanVien();
+
             lblEmail.Text = email;
 
             if (session == 1)
             {
-                if (role == "1")
+                if (role == "Quản trị")
                 {
                     btnQLNhanVien.Enabled = true;
                     btnThongKe.Enabled = true;
@@ -150,10 +161,10 @@ namespace GUI_QLCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            if (role == "1")
+            if (role == "Quản trị")
                 thongkeTransition.Start();
             else
-                messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Thông báo");
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo");
         }
 
         bool huongdanExpand = false;
@@ -272,7 +283,7 @@ namespace GUI_QLCafe
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
-            if (role == "1")
+            if (role == "Quản trị")
                 AddControls(new frmQLNhanVien());
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Cảnh báo");

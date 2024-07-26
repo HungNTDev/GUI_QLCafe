@@ -1,4 +1,6 @@
-﻿namespace DTO_QLCafe
+﻿using System.IO;
+
+namespace DTO_QLCafe
 {
     public class DTO_Product
     {
@@ -17,7 +19,6 @@
         public string IdProduct
         {
             get { return idProduct; }
-
             set { idProduct = value; }
         }
 

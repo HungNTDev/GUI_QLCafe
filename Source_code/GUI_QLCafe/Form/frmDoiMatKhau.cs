@@ -157,6 +157,13 @@ namespace GUI_QLCafe
             }
         }
 
-
+        private void cbClose_Click(object sender, System.EventArgs e)
+        {
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(dl == DialogResult.OK)
+            {
+                this.Close();   
+            }
+        }
     }
 }

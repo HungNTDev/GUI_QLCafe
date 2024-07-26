@@ -72,6 +72,14 @@ namespace GUI_QLCafe
             PhanQuyen();
 
         }
+
+        public void reLogin()
+        {
+            this.Hide();
+            session = 0;
+            frmDangNhap dangNhap = new frmDangNhap();
+            dangNhap.Show();
+        }
         public void checkStatus(string emailAfter, string roleAfter)
         {
 
@@ -79,10 +87,7 @@ namespace GUI_QLCafe
             {
                 MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 
-                this.Hide();
-                session = 0;
-                frmDangNhap dangNhap = new frmDangNhap();
-                dangNhap.Show();
+                reLogin();
             }
             else
             {
@@ -310,7 +315,7 @@ namespace GUI_QLCafe
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email);
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email, this);
             frmDoiMatKhau.Show();
         }
 

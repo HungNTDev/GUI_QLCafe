@@ -21,6 +21,8 @@ namespace GUI_QLCafe
         private string image;
         private string saveDirectory;
 
+        private Image originalImage;
+
 
         BUS_Staff busNhanVien = new BUS_Staff();
 
@@ -31,6 +33,8 @@ namespace GUI_QLCafe
         public frmAddNhanVien(/*string id, string chucnang, string email, string fullname, int role, int status, string image, string saveDirectory*/)
         {
             InitializeComponent();
+
+            originalImage = picNhanVien.Image;
             //this.id = id;
             //this.chucnang = chucnang;
             //this.email = email;
@@ -141,49 +145,54 @@ namespace GUI_QLCafe
                 {
                     status = 1;
                 }
-                if (txtEmail.Text.Trim().Length == 0)
+            if (txtEmail.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+            else if (!IsValid(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+            else if (txtTenNhanVien.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenNhanVien.Focus();
+                return;
+            }
+            else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn vai trò!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (txtDuongDan.Text.Trim().Length == 0) // phải nhập hình
+            {
+                MessageBox.Show("Vui lòng chọn hình", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //Nếu thêm nhân viên thành công thì hiện cái Nofication lên không thì ngược lại
+            else if (busNhanVien.KiemTraEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+
+            }
+            else
+            {
+                try
                 {
-                    MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtEmail.Focus();
-                    return;
-                }
-                else if (!IsValid(txtEmail.Text.Trim()))
-                {
-                    MessageBox.Show("Vui lòng nhập đúng định dạng email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtEmail.Focus();
-                    return;
-                }
-                else if (txtTenNhanVien.Text.Trim().Length == 0)
-                {
-                    MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtTenNhanVien.Focus();
-                    return;
-                }
-                else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false)
-                {
-                    MessageBox.Show("Vui lòng chọn vai trò!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false)
-                {
-                    MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else if (txtDuongDan.Text.Trim().Length == 0) // phải nhập hình
-                {
-                    MessageBox.Show("Vui lòng chọn hình", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                //Nếu thêm nhân viên thành công thì hiện cái Nofication lên không thì ngược lại
-                else
-                {
-                    if (busNhanVien.KiemTraEmail(txtEmail.Text))
-                    {
-                        MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtEmail.Focus();
-                        return;
-                    }
-                    else
+                    DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
+
+                    if (busNhanVien.insert(staff))
                     {
                         // Đường dẫn thư mục gốc của dự án
                         string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
@@ -200,38 +209,44 @@ namespace GUI_QLCafe
                         string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
                         string fileName = Path.GetFileName(fileAddress);
                         string fileSavePath = Path.Combine(saveDirectory, fileName);
+                        // Copy the image to the specified directory
 
-                        try
+                        // Ensure the image file is released
+                        if (picNhanVien.Image != null)
                         {
-                            guiMK();
-                            DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
-
-                            if (busNhanVien.insert(staff))
-                            {
-                                // Copy the image to the specified directory
-                                File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
-
-                                // Update txtHinh to point to the new location
-                                txtDuongDan.Text = fileSavePath;
-
-                                //frmQLNhanVien qlnv = new frmQLNhanVien();
-                                //qlnv.Reload();
-                                Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                            }
-                            else
-                            {
-                                Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
-                                return;
-                            }
+                            picNhanVien.Image.Dispose();
+                            picNhanVien.Image = originalImage;
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString());
-                            //Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
-                            return;
-                        }
+
+                        File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
+
+                        // Update txtHinh to point to the new location
+                        txtDuongDan.Text = fileSavePath;
+
+                        //frmQLNhanVien qlnv = new frmQLNhanVien();
+                        //qlnv.Reload();
+                        Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                        guiMK();
+                        txtEmail.Clear();
+                        txtTenNhanVien.Clear();
+                        rdoHoatDong.Checked = false;
+                        rdoNgungHoatDong.Checked = false;
+                        rdoNhanVien.Checked = false;
+                        rdoQuanTri.Checked = false;
                     }
-
+                    else
+                    {
+                        Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    //Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                    return;
+                }
+            }
             //    }
             //}
             //else
@@ -355,7 +370,7 @@ namespace GUI_QLCafe
                 //    }
 
                 //}
-            }
+            
         }
         public void Load()
         {
@@ -481,6 +496,7 @@ namespace GUI_QLCafe
         private void btnMoHinh_Click(object sender, EventArgs e)
         {
 
+            
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*";
             ofd.FilterIndex = 2;
@@ -489,13 +505,19 @@ namespace GUI_QLCafe
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 fileAddress = ofd.FileName; // Lấy đường dẫn ảnh
-                picNhanVien.Image = Image.FromFile(fileAddress);
+
+                // Load the image from the file
+                using (Image originalImage = Image.FromFile(fileAddress))
+                {
+                    // Clone the image to release the file handle
+                    picNhanVien.Image = (Image)originalImage.Clone();
+                }
+
                 fileName = Path.GetFileName(ofd.FileName); // Tên ảnh
 
                 saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                fileSavePath = Path.Combine(saveDirectory, "img", fileName); // Tạo đường dẫn để lưu file vào thư mục của project
 
-                fileSavePath = saveDirectory + "\\img\\" + fileName; //combine with file name
-                /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
                 txtDuongDan.Text = fileAddress;
             }
         }

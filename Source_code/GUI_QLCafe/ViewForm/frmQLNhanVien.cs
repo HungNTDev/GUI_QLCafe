@@ -18,7 +18,14 @@ namespace GUI_QLCafe
             InitializeComponent();
             originalImage = picNhanVien.Image;
             this.mainForm = mainForm;
+
+            // Initialize the ComboBox items
+            cboStatus.Items.Clear();
+            cboStatus.Items.Add("Hoạt động"); // Corresponds to status = 1
+            cboStatus.Items.Add("Ngừng hoạt động"); // Corresponds to status = 0
         }
+
+
         private Image originalImage;
 
         BUS_Staff busNhanVien = new BUS_Staff();
@@ -72,6 +79,20 @@ namespace GUI_QLCafe
                 txtTen.Enabled = false;
 
                 selected = false;
+
+
+                if (cboStatus.SelectedItem != null)
+                {
+                    switch (cboStatus.SelectedIndex)
+                    {
+                        case 0:
+                            status = 1;
+                            break;
+                        case 1:
+                            status = 0;
+                            break;
+                    }
+                }
 
                 cboStatus.SelectedIndex = 1 - status;
 
@@ -451,6 +472,7 @@ namespace GUI_QLCafe
                             {
                                 this.mainForm.checkStatus(txtEmail.Text, role);
                             }
+
                             LoadData(status);
 
                             

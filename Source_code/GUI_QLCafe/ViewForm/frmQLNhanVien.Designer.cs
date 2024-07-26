@@ -548,9 +548,6 @@
             this.cboStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboStatus.ItemHeight = 30;
-            this.cboStatus.Items.AddRange(new object[] {
-            "Hoạt động",
-            "Ngừng hoạt động"});
             this.cboStatus.Location = new System.Drawing.Point(961, 271);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(192, 36);

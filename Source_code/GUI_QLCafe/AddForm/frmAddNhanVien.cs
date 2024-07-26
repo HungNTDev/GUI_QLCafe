@@ -308,8 +308,8 @@ namespace GUI_QLCafe
                     }
                     else
                     {
-                    if (MessageBox.Show("Chắc chắn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
+                        if (MessageBox.Show("Chắc chắn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
                             // Đường dẫn thư mục gốc của dự án
                             string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
                             string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");

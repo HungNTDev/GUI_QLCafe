@@ -105,6 +105,7 @@
             this.cbClose.Name = "cbClose";
             this.cbClose.Size = new System.Drawing.Size(88, 39);
             this.cbClose.TabIndex = 13;
+            //this.cbClose.Click += new System.EventHandler(this.cbClose_Click);
             // 
             // panelFooter
             // 

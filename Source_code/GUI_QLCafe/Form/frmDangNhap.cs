@@ -33,7 +33,13 @@ namespace GUI_QLCafe
             InitializeComponent();
             DeleteStoredCredentials();
             this.Load += new System.EventHandler(this.frmDangNhap_Load); // Gắn sự kiện Load
+            this.FormClosed += new FormClosedEventHandler(frmAddNhanVien_FormClosed);
             this.AcceptButton = btnDN;
+        }
+        private void frmAddNhanVien_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Exit the application
+            Application.Exit();
         }
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
@@ -383,11 +389,6 @@ namespace GUI_QLCafe
             //Enabling SSL (Secure Sockets Layer, encyription) is reqiured by most email providers to send mail
             client.EnableSsl = true;
             client.Send(Msg); // Send our email.
-
-        }
-
-        private void panelDangNhap_Paint(object sender, PaintEventArgs e)
-        {
 
         }
     }

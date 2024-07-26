@@ -60,9 +60,18 @@ IdPayment       nvarchar(20) not null,
 IdTable         nvarchar(10) not null,
 IdStaff         nvarchar(20) not null,
 IdVoucher       nvarchar(10) not null,
+DateCheckIn	datetime,
+DateCheckOut	datetime,
 StatusBill  int not null,
 Primary key (IdBill)
 )
+	
+--Drop detail bill và bill để thêm datecheckin checkout
+alter table DetailBill
+drop constraint fk_b_db
+
+drop table DetailBill
+drop table Bill
 
 create table DetailBill (
 IdBill nvarchar(20) not null,

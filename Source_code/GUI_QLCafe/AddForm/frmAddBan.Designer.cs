@@ -63,6 +63,7 @@
             this.txtTenBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtTenBan.Location = new System.Drawing.Point(44, 197);
             this.txtTenBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenBan.Modified = true;
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.PasswordChar = '\0';
             this.txtTenBan.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -88,6 +89,7 @@
             this.txtMaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtMaBan.Location = new System.Drawing.Point(44, 120);
             this.txtMaBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaBan.Modified = true;
             this.txtMaBan.Name = "txtMaBan";
             this.txtMaBan.PasswordChar = '\0';
             this.txtMaBan.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -288,8 +290,8 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label lbText0;
-        public Guna.UI2.WinForms.Guna2TextBox txtTenBan;
-        public Guna.UI2.WinForms.Guna2TextBox txtMaBan;
         public Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
+        public Guna.UI2.WinForms.Guna2TextBox txtMaBan;
+        public Guna.UI2.WinForms.Guna2TextBox txtTenBan;
     }
 }

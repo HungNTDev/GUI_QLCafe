@@ -36,10 +36,6 @@ namespace GUI_QLCafe
         string fileSavePath; //vị trí lưu
         string fileAddress;
 
-
-        int pageNumber = 1;
-        int numberRecord = 5;
-
         private const int PageSize = 10;
         private int currentPageIndex = 1;
         private int totalPages = 0;
@@ -331,7 +327,7 @@ namespace GUI_QLCafe
 
         private void btnThe_Click(object sender, EventArgs e)
         {
-            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
+            frmAddNhanVien frmAddNV = new frmAddNhanVien();
             frmAddNV.ShowDialog();
             LoadData(status);
         }

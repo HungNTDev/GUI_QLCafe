@@ -1,4 +1,5 @@
 ﻿using BUS_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Data;
 using System.Drawing;
@@ -17,12 +18,16 @@ namespace GUI_QLCafe
         private int totalPages = 0;
         private int totalRows = 0;
 
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Sua }
+
         public frmQLSanPham()
         {
             InitializeComponent();
         }
 
-        public void Nofication(string msg, frmNotification.enumType type)
+        public void Message(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
             frmNotification.showNotfication(msg, type);
@@ -51,11 +56,14 @@ namespace GUI_QLCafe
         {
             if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvSua")
             {
-                frmAddSanPham frmAddSanPham = new frmAddSanPham();
+                frmAddSanPham frmAddSanPham = new frmAddSanPham
+                {
+                    formMode = frmAddSanPham.FormMode.Sua
+                };
                 frmAddSanPham.txtMaSanPham.Enabled = false;
                 frmAddSanPham.cbLoaiSanPham.Enabled = false;
                 frmAddSanPham.txtDuongDan.Enabled = false;
-                frmAddSanPham.lbtagname.Visible = false;
+                
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
@@ -74,26 +82,42 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
                 frmAddSanPham.ShowDialog();
                 LoadData();
             }
+            else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
+            {
+                frmViewSanPham frmViewSanPham = new frmViewSanPham();   
+
+                string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
+                string tenSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
+                string giaSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
+                string duongDan = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
+                bool trangThai = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+                string loaiSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value);
+
+                frmViewSanPham.SetProductInfo(maSanPham, tenSanPham, giaSanPham, duongDan, trangThai, loaiSanPham);
+                frmViewSanPham.ShowDialog();
+            }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
                 string maSanPham = Convert.ToString((dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value));
-                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo", 
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     if (busSanPham.delete(maSanPham))
                     {
-                        this.Nofication("Xóa thành công!", frmNotification.enumType.Success);
+                        this.Message("Xóa thành công!", frmNotification.enumType.Success);
                         LoadData();
                     }
                     else
                     {
-                        this.Nofication("Xóa thất bại!", frmNotification.enumType.Failed);
+                        this.Message("Xóa thất bại!", frmNotification.enumType.Failed);
                     }
                 }
             }
@@ -116,50 +140,6 @@ namespace GUI_QLCafe
             }
         }
 
-        private void LoadHinhAnh(DataTable dt)
-        {
-            //BindingSource bs = new BindingSource();
-            //bs.DataSource = dt;
-
-            //DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            //imageColumn.HeaderText = "Hình ảnh";
-            //imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            //imageColumn.Name = "ImageColumn";
-            //dgvDanhSachSanPham.Columns.Add(imageColumn);
-
-            //// Đặt DataSource của DataGridView
-            //dgvDanhSachSanPham.DataSource = bs;
-
-            //foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
-            //{
-            //    if (row.Cells["ImagePath"].Value != DBNull.Value)
-            //    {
-            //        byte[] imageBytes = (byte[])row.Cells["ImagePath"].Value;
-            //        Image image = ByteArrayToImage(imageBytes);
-            //        row.Cells["ImageColumn"].Value = image;
-            //    }
-            //}
-            //if (dt.Rows.Count > 0)
-            //{
-            //    foreach (DataRow dataRow in dt.Rows)
-            //    {
-            //        string imagePath = dataRow["ImageProduct"].ToString();
-
-            //        if (File.Exists(imagePath))
-            //        {
-            //            using (Image imageProduct = Image.FromFile(imagePath))
-            //            {
-            //                dataRow["ImageProduct"] = ImageToByteArray(imageProduct);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            //ataRow["ImageProduct"] = DBNull.Value;
-            //        }
-            //    }
-            //}
-        }
-
         private void LoadData()
         {
             try
@@ -172,7 +152,7 @@ namespace GUI_QLCafe
                 dgvDanhSachSanPham.DataSource = dt;
 
                 dgvDanhSachSanPham.Refresh();
-                lbTotalRows.Text = totalRows.ToString();
+                lbTotalRows.Text = "Tổng số dòng: " + totalRows.ToString();
 
                 foreach (DataGridViewColumn column in dgvDanhSachSanPham.Columns)
                 {
@@ -187,40 +167,6 @@ namespace GUI_QLCafe
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            if (currentPageIndex > 1)
-            {
-                currentPageIndex--;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            currentPageIndex = 1;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
-        private void btnLastPage_Click(object sender, EventArgs e)
-        {
-            currentPageIndex = totalPages;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void dgvDanhSachSanPham_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -243,29 +189,68 @@ namespace GUI_QLCafe
         private void btnTimKiem_Click_1(object sender, EventArgs e)
         {
             string sp = txtTimKiem.Text;
-            DataTable dt = busSanPham.search(sp);
-            if (dt.Rows.Count > 0)
+            if (string.IsNullOrEmpty(sp))
             {
-                dgvDanhSachSanPham.DataSource = dt;
-                dgvDanhSachSanPham.Columns[2].HeaderText = "Mã sản phẩm";
-                dgvDanhSachSanPham.Columns[3].HeaderText = "Tên sản phẩm";
-                dgvDanhSachSanPham.Columns[4].HeaderText = "Giá";
-                dgvDanhSachSanPham.Columns[5].HeaderText = "Đường dẫn";
-                dgvDanhSachSanPham.Columns[6].HeaderText = "Trạng thái";
-                dgvDanhSachSanPham.Columns[7].HeaderText = "Loại sản phẩm";
+                MessageBox.Show("Vui lòng nhập nội dung cần tìm!", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable dt = busSanPham.search(sp);
+                if (dt.Rows.Count > 0)
+                {
+                    dgvDanhSachSanPham.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
-        private void btnReload_Click(object sender, EventArgs e)
+        private void btnNext_Click_1(object sender, EventArgs e)
         {
-            //LoadGridView_SanPham();
-            LoadData();
+            if (currentPageIndex < totalPages)
+            {
+                currentPageIndex++;
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();
+            }
         }
 
+        private void btnPrev_Click_1(object sender, EventArgs e)
+        {
+            if (currentPageIndex > 1)
+            {
+                currentPageIndex--;
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();
+            }
+        }
 
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            currentPageIndex = totalPages;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            LoadGridView_SanPham();
+        }
+
+        private void panelFooter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

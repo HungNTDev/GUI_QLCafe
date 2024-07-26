@@ -8,10 +8,12 @@ namespace GUI_QLCafe
     public partial class frmQLBan : Form
     {
         BUS_TableCF table = new BUS_TableCF();
+
         private const int PageSize = 10;
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
+
         public frmQLBan()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace GUI_QLCafe
         {
             dgvDSBan.DataSource = table.get();
         }
+
         private void frmQLBan_Load(object sender, EventArgs e)
         {
             LoadPage();
@@ -73,16 +76,25 @@ namespace GUI_QLCafe
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tk = txtTimKiem.Text;
-            DataTable dt = table.search(tk);
-            if (dt.Rows.Count > 0)
+            if (string.IsNullOrEmpty(tk))
             {
-                dgvDSBan.DataSource = dt;
-                dgvDSBan.Columns[2].HeaderText = "Mã bàn";
-                dgvDSBan.Columns[3].HeaderText = "Tên bàn";
+                MessageBox.Show("Vui lòng nhập nội dung cần tìm!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không tìm thấy bàn", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable dt = table.search(tk);
+                if (dt.Rows.Count > 0)
+                {
+                    dgvDSBan.DataSource = dt;
+                    dgvDSBan.Columns[2].HeaderText = "Mã bàn";
+                    dgvDSBan.Columns[3].HeaderText = "Tên bàn";
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy bàn", " Thông báo", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -93,7 +105,7 @@ namespace GUI_QLCafe
                 totalRows = table.get().Rows.Count;
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
                 lbTotalPage.Text = totalPages.ToString();
-                lbTotalRows.Text = totalRows.ToString();
+                lbTotalRows.Text = "Tổng số dòng: " + totalRows.ToString();
 
                 DataTable dt = table.GetPage(currentPageIndex, PageSize);
                 dgvDSBan.DataSource = dt;
@@ -106,14 +118,11 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            LoadPage();
-        }
-
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
-
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -143,14 +152,9 @@ namespace GUI_QLCafe
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
-        private void lbtotalRow_Click(object sender, EventArgs e)
+        private void btnRefesh_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgvDSBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            LoadData();
         }
     }
 }

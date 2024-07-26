@@ -25,9 +25,9 @@ namespace GUI_QLCafe
 
         public enum FormMode { Them, Sua }
 
-        private void frmAddSanPham_Load(object sender, EventArgs e)
+        private void frmAddSanPham_Load_1(object sender, EventArgs e)
         {
-            if(formMode == FormMode.Them)
+            if (formMode == FormMode.Them)
             {
                 lbHeaderText.Text = "THÊM THÔNG TIN SẢN PHẨM";
             }
@@ -39,7 +39,7 @@ namespace GUI_QLCafe
         }
 
         // phương thức này dùng để gọi Notfication khi thêm thành công
-        public void Nofication(string msg, frmNotification.enumType type)
+        public void Message(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
             frmNotification.showNotfication(msg, type);
@@ -129,12 +129,13 @@ namespace GUI_QLCafe
                     {
                         if (busproduct.insert(product))
                         {
-                            this.Nofication("Thêm thành công!", frmNotification.enumType.Success);
+                            MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
                         {
-                            this.Nofication("Thêm thất bại :(", frmNotification.enumType.Failed);
+                            this.Message("Thêm thất bại :(", frmNotification.enumType.Failed);
                         }
                     }
                 }
@@ -151,12 +152,13 @@ namespace GUI_QLCafe
                             }
                             File.Copy(fileAddress, fileSavePath, true);
                         }
-                        this.Nofication("Cập nhật thành công!", frmNotification.enumType.Success);
+                        MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        this.Nofication("Cập nhật thất bại :(", frmNotification.enumType.Failed);
+                        this.Message("Cập nhật thất bại :(", frmNotification.enumType.Failed);
                     }
                 }
             }
@@ -207,7 +209,7 @@ namespace GUI_QLCafe
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dl == DialogResult.OK)
             {
                 this.Close();

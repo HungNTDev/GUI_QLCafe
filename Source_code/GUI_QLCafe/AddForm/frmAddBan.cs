@@ -7,9 +7,11 @@ namespace GUI_QLCafe
 {
     public partial class frmAddBan : Form
     {
-
         BUS_TableCF table = new BUS_TableCF();
 
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
 
         public frmAddBan()
         {
@@ -18,7 +20,14 @@ namespace GUI_QLCafe
 
         private void frmAddBan_Load(object sender, EventArgs e)
         {
-
+            if (formMode == FormMode.Them)
+            {
+                lbHeaderText.Text = "THÊM THÔNG TIN BÀN";
+            }
+            if (formMode == FormMode.Sua)
+            {
+                lbHeaderText.Text = "CẬP NHẬT THÔNG TIN BÀN";
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -29,17 +38,18 @@ namespace GUI_QLCafe
                 this.Close();
             }
         }
+
         public string id = "";
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMaBan.Text))
             {
-                MessageBox.Show("Vui lòng nhập mã bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (string.IsNullOrEmpty(txtTenBan.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -76,14 +86,14 @@ namespace GUI_QLCafe
                     tl.IdTable = id;
                     if (table.update(tl))
                     {
-                        MessageBox.Show("Cap nhap thanh cong", "Thong bao",
+                        MessageBox.Show("Cập nhật thành công", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Cap nhap that bai", "Thong bao",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cập nhật thất bại", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -91,16 +101,6 @@ namespace GUI_QLCafe
             {
                 MessageBox.Show("Lỗi" + ex.Message);
             }
-        }
-
-        private void gbTrangThai_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdoHoatDong_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

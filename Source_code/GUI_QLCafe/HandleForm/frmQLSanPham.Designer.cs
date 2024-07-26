@@ -102,8 +102,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 205);
+            this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 169);
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
             this.dgvDanhSachSanPham.ReadOnly = true;
             this.dgvDanhSachSanPham.RowHeadersVisible = false;
@@ -242,16 +242,16 @@
             this.lbtotalRow.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbtotalRow.Location = new System.Drawing.Point(38, 47);
             this.lbtotalRow.Name = "lbtotalRow";
-            this.lbtotalRow.Size = new System.Drawing.Size(108, 31);
+            this.lbtotalRow.Size = new System.Drawing.Size(131, 31);
             this.lbtotalRow.TabIndex = 23;
-            this.lbtotalRow.Text = "Số dòng:";
+            this.lbtotalRow.Text = "Total Rows:";
             // 
             // lbTotalRows
             // 
             this.lbTotalRows.AutoSize = true;
             this.lbTotalRows.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbTotalRows.Location = new System.Drawing.Point(134, 48);
+            this.lbTotalRows.Location = new System.Drawing.Point(152, 9);
             this.lbTotalRows.Name = "lbTotalRows";
             this.lbTotalRows.Size = new System.Drawing.Size(30, 31);
             this.lbTotalRows.TabIndex = 23;
@@ -339,30 +339,17 @@
             this.btnFirstPage.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnFirstPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
-            this.btnFirstPage.Location = new System.Drawing.Point(315, 39);
+            this.btnFirstPage.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnFirstPage.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnFirstPage.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnFirstPage.Location = new System.Drawing.Point(374, 39);
             this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(151, 36);
-            this.btnFirstPage.TabIndex = 27;
-            this.btnFirstPage.Text = "Trang đầu";
-            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click_1);
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.BorderRadius = 5;
-            this.btnPrev.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrev.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrev.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnPrev.Location = new System.Drawing.Point(472, 39);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(78, 36);
-            this.btnPrev.TabIndex = 27;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click_1);
+            this.btnFirstPage.PressedColor = System.Drawing.Color.Transparent;
+            this.btnFirstPage.Size = new System.Drawing.Size(92, 36);
+            this.btnFirstPage.TabIndex = 22;
+            this.btnFirstPage.Text = "First";
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
             // btnLastPage
             // 
@@ -376,10 +363,11 @@
             this.btnLastPage.ForeColor = System.Drawing.Color.White;
             this.btnLastPage.Location = new System.Drawing.Point(736, 39);
             this.btnLastPage.Name = "btnLastPage";
-            this.btnLastPage.Size = new System.Drawing.Size(151, 36);
-            this.btnLastPage.TabIndex = 27;
-            this.btnLastPage.Text = "Trang cuối";
-            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click_1);
+            this.btnLastPage.PressedColor = System.Drawing.Color.Transparent;
+            this.btnLastPage.Size = new System.Drawing.Size(92, 36);
+            this.btnLastPage.TabIndex = 22;
+            this.btnLastPage.Text = "Last";
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -391,13 +379,28 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.guna2Panel2.Controls.Add(this.lbHeaderText);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1190, 75);
-            this.guna2Panel2.TabIndex = 26;
+            this.btnReload.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnReload.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReload.BorderRadius = 5;
+            this.btnReload.BorderThickness = 1;
+            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReload.FillColor = System.Drawing.Color.Transparent;
+            this.btnReload.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReload.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnReload.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnReload.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnReload.Location = new System.Drawing.Point(44, 39);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.PressedColor = System.Drawing.Color.Transparent;
+            this.btnReload.Size = new System.Drawing.Size(138, 36);
+            this.btnReload.TabIndex = 22;
+            this.btnReload.Text = "Reload";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // dgvMaSanPham
             // 

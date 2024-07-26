@@ -60,9 +60,18 @@ IdPayment       nvarchar(20) not null,
 IdTable         nvarchar(10) not null,
 IdStaff         nvarchar(20) not null,
 IdVoucher       nvarchar(10) not null,
+DateCheckIn	datetime,
+DateCheckOut	datetime,
 StatusBill  int not null,
 Primary key (IdBill)
 )
+	
+--Drop detail bill và bill để thêm datecheckin checkout
+alter table DetailBill
+drop constraint fk_b_db
+
+drop table DetailBill
+drop table Bill
 
 create table DetailBill (
 IdBill nvarchar(20) not null,
@@ -108,6 +117,8 @@ insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff
 ('NV5',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
 update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV2'
+	
+('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
 
 go
 	
@@ -261,7 +272,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select * from Staff
 
 -- Lấy danh sách nhân viên
-create proc GetStaff (@status int)
+alter proc GetStaff (@status int)
 as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
@@ -495,32 +506,3 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
-
--- Xử lý phân trang nhân viên
--- Lấy trang
-create PROCEDURE GetPagedStaff
-    @pageNumber INT,
-    @pageSize INT,
-    @status INT
-AS
-BEGIN
-    DECLARE @startRow INT; 
-    SET @startRow = (@pageNumber - 1) * @pageSize;
-
-    SELECT IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
-    FROM Staff
-    WHERE StatusStaff = @status
-    ORDER BY IdStaff
-    OFFSET @startRow ROWS
-    FETCH NEXT @pageSize ROWS ONLY;
-END
-
--- Lấy tổng số nhân viên 
-create PROCEDURE GetTotalStaffCount
-    @status INT
-AS
-BEGIN
-    SELECT COUNT(*)
-    FROM Staff
-    WHERE StatusStaff = @status;
-END

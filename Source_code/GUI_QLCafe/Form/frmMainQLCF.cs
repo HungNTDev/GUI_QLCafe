@@ -61,7 +61,7 @@ namespace GUI_QLCafe
             if (email == emailAfter && role != roleAfter)
             {
                 MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+
                 reLogin();
             }
             else
@@ -273,7 +273,7 @@ namespace GUI_QLCafe
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
             if (role == "Quản trị")
-                AddControls(new frmQLNhanVien(this));
+                AddControls(new frmQLNhanVien());
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }

@@ -34,6 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLSanPham));
             this.dgvDanhSachSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvMaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDuongDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvXem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbHeaderText = new System.Windows.Forms.Label();
@@ -51,18 +60,8 @@
             this.btnLastPage = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dgvMaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDuongDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvXem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).BeginInit();
             this.panelFooter.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDanhSachSanPham
@@ -102,7 +101,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 169);
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
             this.dgvDanhSachSanPham.ReadOnly = true;
@@ -139,6 +138,98 @@
             this.dgvDanhSachSanPham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDanhSachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellClick);
             this.dgvDanhSachSanPham.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDanhSachSanPham_DataError);
+            // 
+            // dgvMaSanPham
+            // 
+            this.dgvMaSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvMaSanPham.DataPropertyName = "IdProduct";
+            this.dgvMaSanPham.HeaderText = "Mã sản phẩm";
+            this.dgvMaSanPham.MinimumWidth = 170;
+            this.dgvMaSanPham.Name = "dgvMaSanPham";
+            this.dgvMaSanPham.ReadOnly = true;
+            this.dgvMaSanPham.Width = 170;
+            // 
+            // dgvTenSanPham
+            // 
+            this.dgvTenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvTenSanPham.DataPropertyName = "NameProduct";
+            this.dgvTenSanPham.HeaderText = "Tên sản phẩm";
+            this.dgvTenSanPham.MinimumWidth = 200;
+            this.dgvTenSanPham.Name = "dgvTenSanPham";
+            this.dgvTenSanPham.ReadOnly = true;
+            this.dgvTenSanPham.Width = 200;
+            // 
+            // dgvGia
+            // 
+            this.dgvGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvGia.DataPropertyName = "Price";
+            this.dgvGia.HeaderText = "Giá";
+            this.dgvGia.MinimumWidth = 150;
+            this.dgvGia.Name = "dgvGia";
+            this.dgvGia.ReadOnly = true;
+            this.dgvGia.Width = 150;
+            // 
+            // dgvDuongDan
+            // 
+            this.dgvDuongDan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDuongDan.DataPropertyName = "ImageProduct";
+            this.dgvDuongDan.HeaderText = "Đường dẫn";
+            this.dgvDuongDan.MinimumWidth = 200;
+            this.dgvDuongDan.Name = "dgvDuongDan";
+            this.dgvDuongDan.ReadOnly = true;
+            this.dgvDuongDan.Width = 200;
+            // 
+            // dgvTrangThai
+            // 
+            this.dgvTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvTrangThai.DataPropertyName = "StatusProduct";
+            this.dgvTrangThai.HeaderText = "Trạng thái";
+            this.dgvTrangThai.MinimumWidth = 150;
+            this.dgvTrangThai.Name = "dgvTrangThai";
+            this.dgvTrangThai.ReadOnly = true;
+            this.dgvTrangThai.Width = 150;
+            // 
+            // dgvMaLoai
+            // 
+            this.dgvMaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvMaLoai.DataPropertyName = "IdPT";
+            this.dgvMaLoai.HeaderText = "Mã loại";
+            this.dgvMaLoai.MinimumWidth = 100;
+            this.dgvMaLoai.Name = "dgvMaLoai";
+            this.dgvMaLoai.ReadOnly = true;
+            this.dgvMaLoai.Width = 125;
+            // 
+            // dgvSua
+            // 
+            this.dgvSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSua.FillWeight = 50F;
+            this.dgvSua.HeaderText = "";
+            this.dgvSua.Image = ((System.Drawing.Image)(resources.GetObject("dgvSua.Image")));
+            this.dgvSua.MinimumWidth = 60;
+            this.dgvSua.Name = "dgvSua";
+            this.dgvSua.ReadOnly = true;
+            this.dgvSua.Width = 60;
+            // 
+            // dgvXem
+            // 
+            this.dgvXem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXem.HeaderText = "";
+            this.dgvXem.Image = ((System.Drawing.Image)(resources.GetObject("dgvXem.Image")));
+            this.dgvXem.MinimumWidth = 60;
+            this.dgvXem.Name = "dgvXem";
+            this.dgvXem.ReadOnly = true;
+            this.dgvXem.Width = 60;
+            // 
+            // dgvXoa
+            // 
+            this.dgvXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXoa.FillWeight = 50F;
+            this.dgvXoa.HeaderText = "";
+            this.dgvXoa.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoa.Image")));
+            this.dgvXoa.MinimumWidth = 60;
+            this.dgvXoa.Name = "dgvXoa";
+            this.dgvXoa.ReadOnly = true;
+            this.dgvXoa.Width = 60;
             // 
             // btnTimKiem
             // 
@@ -264,7 +355,7 @@
             this.lbCurrentPage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbCurrentPage.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCurrentPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbCurrentPage.Location = new System.Drawing.Point(564, 762);
+            this.lbCurrentPage.Location = new System.Drawing.Point(563, 42);
             this.lbCurrentPage.Name = "lbCurrentPage";
             this.lbCurrentPage.Size = new System.Drawing.Size(33, 38);
             this.lbCurrentPage.TabIndex = 23;
@@ -276,7 +367,7 @@
             this.lbPageLine.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbPageLine.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPageLine.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbPageLine.Location = new System.Drawing.Point(589, 762);
+            this.lbPageLine.Location = new System.Drawing.Point(589, 40);
             this.lbPageLine.Name = "lbPageLine";
             this.lbPageLine.Size = new System.Drawing.Size(29, 38);
             this.lbPageLine.TabIndex = 23;
@@ -288,7 +379,7 @@
             this.lbTotalPage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbTotalPage.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbTotalPage.Location = new System.Drawing.Point(609, 762);
+            this.lbTotalPage.Location = new System.Drawing.Point(613, 46);
             this.lbTotalPage.Name = "lbTotalPage";
             this.lbTotalPage.Size = new System.Drawing.Size(33, 38);
             this.lbTotalPage.TabIndex = 23;
@@ -300,7 +391,10 @@
             this.panelFooter.BorderRadius = 5;
             this.panelFooter.BorderThickness = 1;
             this.panelFooter.Controls.Add(this.btnNext);
+            this.panelFooter.Controls.Add(this.lbTotalPage);
             this.panelFooter.Controls.Add(this.btnFirstPage);
+            this.panelFooter.Controls.Add(this.lbPageLine);
+            this.panelFooter.Controls.Add(this.lbCurrentPage);
             this.panelFooter.Controls.Add(this.btnPrev);
             this.panelFooter.Controls.Add(this.btnLastPage);
             this.panelFooter.Controls.Add(this.lbTotalRows);
@@ -327,7 +421,6 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(78, 36);
             this.btnNext.TabIndex = 27;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // btnFirstPage
             // 
@@ -350,6 +443,15 @@
             this.btnFirstPage.TabIndex = 22;
             this.btnFirstPage.Text = "First";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Location = new System.Drawing.Point(0, 0);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(180, 45);
+            this.btnPrev.TabIndex = 28;
             // 
             // btnLastPage
             // 
@@ -379,120 +481,10 @@
             // 
             // guna2Panel2
             // 
-            this.btnReload.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnReload.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReload.BorderRadius = 5;
-            this.btnReload.BorderThickness = 1;
-            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReload.FillColor = System.Drawing.Color.Transparent;
-            this.btnReload.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReload.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnReload.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnReload.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnReload.Location = new System.Drawing.Point(44, 39);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.PressedColor = System.Drawing.Color.Transparent;
-            this.btnReload.Size = new System.Drawing.Size(138, 36);
-            this.btnReload.TabIndex = 22;
-            this.btnReload.Text = "Reload";
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // dgvMaSanPham
-            // 
-            this.dgvMaSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvMaSanPham.DataPropertyName = "IdProduct";
-            this.dgvMaSanPham.HeaderText = "Mã sản phẩm";
-            this.dgvMaSanPham.MinimumWidth = 170;
-            this.dgvMaSanPham.Name = "dgvMaSanPham";
-            this.dgvMaSanPham.ReadOnly = true;
-            this.dgvMaSanPham.Width = 170;
-            // 
-            // dgvTenSanPham
-            // 
-            this.dgvTenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvTenSanPham.DataPropertyName = "NameProduct";
-            this.dgvTenSanPham.HeaderText = "Tên sản phẩm";
-            this.dgvTenSanPham.MinimumWidth = 200;
-            this.dgvTenSanPham.Name = "dgvTenSanPham";
-            this.dgvTenSanPham.ReadOnly = true;
-            this.dgvTenSanPham.Width = 200;
-            // 
-            // dgvGia
-            // 
-            this.dgvGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvGia.DataPropertyName = "Price";
-            this.dgvGia.HeaderText = "Giá";
-            this.dgvGia.MinimumWidth = 150;
-            this.dgvGia.Name = "dgvGia";
-            this.dgvGia.ReadOnly = true;
-            this.dgvGia.Width = 150;
-            // 
-            // dgvDuongDan
-            // 
-            this.dgvDuongDan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDuongDan.DataPropertyName = "ImageProduct";
-            this.dgvDuongDan.HeaderText = "Đường dẫn";
-            this.dgvDuongDan.MinimumWidth = 200;
-            this.dgvDuongDan.Name = "dgvDuongDan";
-            this.dgvDuongDan.ReadOnly = true;
-            this.dgvDuongDan.Width = 200;
-            // 
-            // dgvTrangThai
-            // 
-            this.dgvTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvTrangThai.DataPropertyName = "StatusProduct";
-            this.dgvTrangThai.HeaderText = "Trạng thái";
-            this.dgvTrangThai.MinimumWidth = 150;
-            this.dgvTrangThai.Name = "dgvTrangThai";
-            this.dgvTrangThai.ReadOnly = true;
-            this.dgvTrangThai.Width = 150;
-            // 
-            // dgvMaLoai
-            // 
-            this.dgvMaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvMaLoai.DataPropertyName = "IdPT";
-            this.dgvMaLoai.HeaderText = "Mã loại";
-            this.dgvMaLoai.MinimumWidth = 100;
-            this.dgvMaLoai.Name = "dgvMaLoai";
-            this.dgvMaLoai.ReadOnly = true;
-            this.dgvMaLoai.Width = 125;
-            // 
-            // dgvSua
-            // 
-            this.dgvSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSua.FillWeight = 50F;
-            this.dgvSua.HeaderText = "";
-            this.dgvSua.Image = ((System.Drawing.Image)(resources.GetObject("dgvSua.Image")));
-            this.dgvSua.MinimumWidth = 60;
-            this.dgvSua.Name = "dgvSua";
-            this.dgvSua.ReadOnly = true;
-            this.dgvSua.Width = 60;
-            // 
-            // dgvXem
-            // 
-            this.dgvXem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvXem.HeaderText = "";
-            this.dgvXem.Image = ((System.Drawing.Image)(resources.GetObject("dgvXem.Image")));
-            this.dgvXem.MinimumWidth = 60;
-            this.dgvXem.Name = "dgvXem";
-            this.dgvXem.ReadOnly = true;
-            this.dgvXem.Width = 60;
-            // 
-            // dgvXoa
-            // 
-            this.dgvXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvXoa.FillWeight = 50F;
-            this.dgvXoa.HeaderText = "";
-            this.dgvXoa.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoa.Image")));
-            this.dgvXoa.MinimumWidth = 60;
-            this.dgvXoa.Name = "dgvXoa";
-            this.dgvXoa.ReadOnly = true;
-            this.dgvXoa.Width = 60;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(200, 100);
+            this.guna2Panel2.TabIndex = 0;
             // 
             // frmQLSanPham
             // 
@@ -500,9 +492,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 805);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.lbTotalPage);
-            this.Controls.Add(this.lbCurrentPage);
-            this.Controls.Add(this.lbPageLine);
             this.Controls.Add(this.dgvDanhSachSanPham);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
@@ -517,10 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

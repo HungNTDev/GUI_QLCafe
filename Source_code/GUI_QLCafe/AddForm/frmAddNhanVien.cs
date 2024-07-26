@@ -337,8 +337,6 @@ namespace GUI_QLCafe
                                 this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
 
 
-                                bool changes = ql.checkStatus(txtEmail.Text, role.ToString());
-
                                 //if (changes)
                                 //{
                                 //    MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

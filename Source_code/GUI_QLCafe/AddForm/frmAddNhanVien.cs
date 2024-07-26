@@ -21,13 +21,17 @@ namespace GUI_QLCafe
         private string image;
         private string saveDirectory;
 
-
         BUS_Staff busNhanVien = new BUS_Staff();
 
         string checkImgUrl; //Kiểm tra ảnh
         string fileName; //tên file
         string fileSavePath; //vị trí lưu
         string fileAddress;
+
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
+
         public frmAddNhanVien(string id, string chucnang, string email, string fullname, int role, int status, string image, string saveDirectory)
         {
             InitializeComponent();
@@ -40,6 +44,19 @@ namespace GUI_QLCafe
             this.image = image;
             this.saveDirectory = saveDirectory;
             LoadFormData();
+        }
+
+        private void frmAddNhanVien_Load(object sender, EventArgs e)
+        {
+            if (formMode == FormMode.Them)
+            {
+                lbText0.Text = "THÊM THÔNG TIN NHÂN VIÊN";
+            }
+            if (formMode == FormMode.Sua)
+            {
+                lbText0.Text = "CẬP NHẬT THÔNG TIN NHÂN VIÊN";
+            }
+            txtDuongDan.Enabled = false;
         }
 
         // phương thức này dùng để gọi Notfication khi thêm thành công
@@ -361,13 +378,7 @@ namespace GUI_QLCafe
         {
             frmAddNhanVien_Load(this, EventArgs.Empty);
         }
-        private void frmAddNhanVien_Load(object sender, EventArgs e)
-        {
-            //if (chucnang == "sua")
-            //{
-            //    btnLuu.Text = "SỬA";
-            //}
-        }
+
         private void LoadFormData()
         {
 

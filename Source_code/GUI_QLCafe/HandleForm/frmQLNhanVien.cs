@@ -18,18 +18,17 @@ namespace GUI_QLCafe
         private Image originalImage;
 
         BUS_Staff busNhanVien = new BUS_Staff();
+
         private int status = 1;
-
-
-
-
-        int pageNumber = 1;
-        int numberRecord = 5;
-
         private const int PageSize = 10;
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
+
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Sua }
+
         private void LoadData(int status)
         {
             try

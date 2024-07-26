@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bfAddNhanVien.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="guna2PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -811,23 +808,13 @@
         QEBAQEBAQEBAQEBAQEH/2Q==
 </value>
   </data>
-  <data name="btnMoHinh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF8SURBVFhH7ZYv
-        SENBHMff0AlLguKwickoaFKwqKAGsSiIUQSTxaZZ0GASZYhBUJOYLBrEJEuisGKzaVOWDDqcn7v7jefY
-        3un+/MbCPvCB+91x9/3x3na8oEVTkM/nF/EYzz2e4gq2y7b6wIGbWAnXGJfttcNhr/bYyjiQ7bUjB1ZD
-        Chf+6Qx2SWQxLDSKdxyT2BC31jAeJDZEFhpFTmJDZMHHE5r3mJQt9cVGRHOPnTiM+1jufqjWHez5q4ER
-        nMBPW9WfW18Dj/KE0q5UIetrYAt78dtWOtz4GhjFZTdUYz2qgTdswwtb6TEQ1cAZxjFrKx2efX/DJRx3
-        QzX2ohrIYTfu2kqPqagG7mTe3IBafGAiqoEN7HdDNS5tuEEmfjOIa26oxqrElzTwgjG8spUefRJf0sAh
-        JtC8Iy0yEu2QyQJzOOuGamxLtIOJwq89gx14Yis9hiTawUQSp9E8enP5fKEWKYkthgUTPonmCi738VCr
-        RziPMYls0SwEwQ8bSr754cZ/AwAAAABJRU5ErkJggg==
-</value>
-  </data>
+  <metadata name="messageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>329, 17</value>
+  </metadata>
   <data name="picNhanVien.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAG6FJREFUeF7t3SuUXre5BuCwwsBAQ8NAw8DAQsNCw0DDMMNCw0LDQENDw8LAwMLA
+        vgAADr4B6kKxwAAAG6FJREFUeF7t3SuUXre5BuCwwsBAQ8NAw8DAQsNCw0DDMMNCw0LDQENDw8LAwMLA
         0nP0ppnVqZfGc/t/6ZP0PGu9MM7Ys7e2rp++AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -948,7 +935,7 @@
         ANjQN9/8P3uARr59LMn2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="messageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>170, 17</value>
+  <metadata name="bfAddNhanVien.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>488, 17</value>
   </metadata>
 </root>

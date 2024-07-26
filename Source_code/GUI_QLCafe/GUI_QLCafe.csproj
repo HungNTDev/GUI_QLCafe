@@ -368,6 +368,9 @@
     <EmbeddedResource Include="HandleForm\frmQLVoucher.resx">
       <DependentUpon>frmQLVoucher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmViewNhanVien.resx">
+      <DependentUpon>frmViewNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmViewSanPham.resx">
       <DependentUpon>frmViewSanPham.cs</DependentUpon>
     </EmbeddedResource>

@@ -222,11 +222,11 @@
             this.lbText0.BackColor = System.Drawing.Color.Transparent;
             this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText0.ForeColor = System.Drawing.Color.White;
-            this.lbText0.Location = new System.Drawing.Point(179, 20);
+            this.lbText0.Location = new System.Drawing.Point(163, 18);
             this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(388, 45);
+            this.lbText0.Size = new System.Drawing.Size(469, 45);
             this.lbText0.TabIndex = 10;
-            this.lbText0.Text = "THÔNG TIN SẢN PHẨM";
+            this.lbText0.Text = "XEM THÔNG TIN SẢN PHẨM";
             // 
             // bfAddSanPham
             // 

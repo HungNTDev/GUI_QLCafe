@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_QLCafe.ViewForm;
+using System;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe

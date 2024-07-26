@@ -39,6 +39,8 @@
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblText = new System.Windows.Forms.Label();
             this.panelDoiMatKhau = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.lbPasswordStrength = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.txtRetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.bfDoiMatKhau = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panelDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
@@ -211,6 +211,38 @@
             this.panelDoiMatKhau.TabIndex = 5;
             this.panelDoiMatKhau.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDoiMatKhau_Paint);
             // 
+            // cbMinimize
+            // 
+            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.cbMinimize.FillColor = System.Drawing.Color.White;
+            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.Gainsboro;
+            this.cbMinimize.IconColor = System.Drawing.Color.Black;
+            this.cbMinimize.Location = new System.Drawing.Point(1007, 0);
+            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMinimize.Name = "cbMinimize";
+            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
+            this.cbMinimize.TabIndex = 18;
+            // 
+            // cbClose
+            // 
+            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClose.BackColor = System.Drawing.Color.Transparent;
+            this.cbClose.FillColor = System.Drawing.Color.White;
+            this.cbClose.ForeColor = System.Drawing.Color.White;
+            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
+            this.cbClose.IconColor = System.Drawing.Color.Black;
+            this.cbClose.Location = new System.Drawing.Point(1092, 0);
+            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClose.Name = "cbClose";
+            this.cbClose.PressedColor = System.Drawing.Color.White;
+            this.cbClose.Size = new System.Drawing.Size(79, 40);
+            this.cbClose.TabIndex = 17;
+            this.cbClose.Click += new System.EventHandler(this.cbClose_Click);
+            // 
             // shapeLine
             // 
             this.shapeLine.BorderThickness = 1;
@@ -338,37 +370,6 @@
             this.bfDoiMatKhau.ContainerControl = this;
             this.bfDoiMatKhau.DockIndicatorTransparencyValue = 0.6D;
             this.bfDoiMatKhau.TransparentWhileDrag = true;
-            // 
-            // cbMinimize
-            // 
-            this.cbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.cbMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.cbMinimize.FillColor = System.Drawing.Color.White;
-            this.cbMinimize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMinimize.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbMinimize.HoverState.FillColor = System.Drawing.Color.White;
-            this.cbMinimize.IconColor = System.Drawing.Color.Black;
-            this.cbMinimize.Location = new System.Drawing.Point(1007, 0);
-            this.cbMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbMinimize.Name = "cbMinimize";
-            this.cbMinimize.Size = new System.Drawing.Size(79, 40);
-            this.cbMinimize.TabIndex = 18;
-            // 
-            // cbClose
-            // 
-            this.cbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClose.BackColor = System.Drawing.Color.Transparent;
-            this.cbClose.FillColor = System.Drawing.Color.White;
-            this.cbClose.ForeColor = System.Drawing.Color.White;
-            this.cbClose.HoverState.FillColor = System.Drawing.Color.Red;
-            this.cbClose.IconColor = System.Drawing.Color.Black;
-            this.cbClose.Location = new System.Drawing.Point(1092, 0);
-            this.cbClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbClose.Name = "cbClose";
-            this.cbClose.PressedColor = System.Drawing.Color.White;
-            this.cbClose.Size = new System.Drawing.Size(79, 40);
-            this.cbClose.TabIndex = 17;
             // 
             // frmDoiMatKhau
             // 

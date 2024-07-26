@@ -1,5 +1,4 @@
 ﻿using BUS_QLCafe;
-using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -11,8 +10,10 @@ namespace GUI_QLCafe
     {
         BUS_Product busSanPham = new BUS_Product();
 
-        private string saveDirectory;
-        private string relativePath;
+
+        int pageNumber = 1;
+        int numberRecord = 5;
+
         private const int PageSize = 10;
         private int currentPageIndex = 1;
         private int totalPages = 0;
@@ -21,8 +22,8 @@ namespace GUI_QLCafe
         public frmQLSanPham()
         {
             InitializeComponent();
+            //dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
         }
-
         public void Nofication(string msg, frmNotification.enumType type)
         {
             frmNotification notification = new frmNotification();
@@ -43,6 +44,7 @@ namespace GUI_QLCafe
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
             LoadGridView_SanPham();
+            //LoadCombobox_Loai();
             LoadData();
             currentPageIndex = 1;
             lbCurrentPage.Text = currentPageIndex.ToString();
@@ -53,34 +55,17 @@ namespace GUI_QLCafe
             if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvSua")
             {
                 frmAddSanPham frmAddSanPham = new frmAddSanPham();
-                frmAddSanPham.txtMaSanPham.Enabled = false;
-                frmAddSanPham.cbLoaiSanPham.Enabled = false;
-                frmAddSanPham.txtDuongDan.Enabled = false; 
 
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
-                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
                 frmAddSanPham.rdoCo.Checked = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) ? true : false;
-                frmAddSanPham.cbLoaiSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value).Trim();
-
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                relativePath = dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value.ToString();
-                string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\'));
-                if (File.Exists(imagePath))
-                {
-                    frmAddSanPham.picSanPham.Image = Image.FromFile(imagePath);
-                }
-                else
-                {
-                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
+                frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["ImagePath"].Value);
                 frmAddSanPham.ShowDialog();
-                LoadGridView_SanPham();
+                LoadData();
+
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
@@ -98,6 +83,39 @@ namespace GUI_QLCafe
                     }
                 }
             }
+        }
+
+        //List<Product> LoadRecord(int page, int recordNum)
+        //{
+        //    List<Product> result = new List<Product>();
+
+        //    using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+        //    {
+        //        result = db.Products.Skip((page - 1) * recordNum).Take(numberRecord).ToList();
+        //    }
+        //    return result;
+        //}
+
+
+        private void LoadCombobox_Loai()
+        {
+            //cboLoai.DataSource = busSanPham.LoadIDPT();
+            //cboLoai.ValueMember = "IdPT";
+            //cboLoai.DisplayMember = "IdPT";
+        }
+
+        private void cboLoai_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //string id = cboLoai.SelectedValue.ToString();
+
+            //if (id == "")
+            //{
+            //    LoadGridView_SanPham();
+            //}
+            //else
+            //{
+            //    dgvDanhSachSanPham.DataSource = busSanPham.ListType(id);
+            //}
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -193,6 +211,12 @@ namespace GUI_QLCafe
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
+            //if (pageNumber - 1 > 0)
+            //{
+            //    pageNumber--;
+            //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //}
+
             if (currentPageIndex > 1)
             {
                 currentPageIndex--;
@@ -203,6 +227,17 @@ namespace GUI_QLCafe
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            //int totalrecord = 0;
+            //using (ThongTinSanPhamDataContext db = new ThongTinSanPhamDataContext())
+            //{
+            //    totalrecord = db.Products.Count();
+            //}
+            //if (pageNumber - 1 <= totalrecord / numberRecord)
+            //{
+            //    pageNumber++;
+            //    dgvDanhSachSanPham.DataSource = LoadRecord(pageNumber, numberRecord);
+            //}
+
             if (currentPageIndex < totalPages)
             {
                 currentPageIndex++;
@@ -242,7 +277,12 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sp = txtTimKiem.Text;
             DataTable dt = busSanPham.search(sp);
@@ -262,12 +302,5 @@ namespace GUI_QLCafe
                 MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            LoadGridView_SanPham();
-        }
-
-
     }
 }

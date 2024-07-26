@@ -3,7 +3,6 @@ using DTO_QLCafe;
 using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.IO;
 using System.Net.Mail;
 using System.Windows.Forms;
@@ -13,7 +12,7 @@ namespace GUI_QLCafe
     public partial class frmQLNhanVien : Form
     {
         private frmMainQLCF mainForm;
-        public frmQLNhanVien(frmMainQLCF mainForm)
+        public frmQLNhanVien()
         {
             InitializeComponent();
             originalImage = picNhanVien.Image;
@@ -145,7 +144,7 @@ namespace GUI_QLCafe
             rdoNhanVien.Enabled = false;
             rdoNhanVien.Checked = false;
 
-            rdoQuanTri.Enabled=false;
+            rdoQuanTri.Enabled = false;
             rdoQuanTri.Checked = false;
 
             txtEmail.Enabled = false;
@@ -167,7 +166,7 @@ namespace GUI_QLCafe
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            btnSu.Enabled=false;
+            btnSu.Enabled = false;
 
             currentPageIndex = 1; // Start at the first page
             string column = "";
@@ -232,9 +231,9 @@ namespace GUI_QLCafe
                 txtEmail.Enabled = true;
                 txtTen.Enabled = true;
                 rdoHoatDong.Enabled = true;
-                rdoNgungHoatDong.Enabled=true;
+                rdoNgungHoatDong.Enabled = true;
                 rdoNhanVien.Enabled = true;
-                rdoQuanTri.Enabled= true;
+                rdoQuanTri.Enabled = true;
 
                 txtTen.Text = dgvDanhSachNhanVien.CurrentRow.Cells["FullName"].Value.ToString();
                 txtEmail.Text = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
@@ -332,7 +331,7 @@ namespace GUI_QLCafe
 
         private void btnThe_Click(object sender, EventArgs e)
         {
-            frmAddNhanVien frmAddNV = new frmAddNhanVien(/*"", "luu", null, null, 0, 0, null, ""*/);
+            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
             frmAddNV.ShowDialog();
             LoadData(status);
         }
@@ -475,7 +474,7 @@ namespace GUI_QLCafe
 
                             LoadData(status);
 
-                            
+
 
                             //if (changes)
                             //{
@@ -492,7 +491,7 @@ namespace GUI_QLCafe
                     }
                 }
 
-                
+
             }
             else
             {
@@ -521,7 +520,7 @@ namespace GUI_QLCafe
 
             rdoNhanVien.Enabled = false;
             rdoQuanTri.Checked = false;
-            
+
             txtEmail.Enabled = false;
             txtTen.Enabled = false;
 

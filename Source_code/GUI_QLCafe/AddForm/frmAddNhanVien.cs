@@ -495,30 +495,30 @@ namespace GUI_QLCafe
         }
         private void btnMoHinh_Click(object sender, EventArgs e)
         {
-
-            
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*";
-            ofd.FilterIndex = 2;
-            ofd.Title = "Chọn ảnh của nhân viên";
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*",
+                FilterIndex = 2,
+                Title = "Chọn ảnh của nhân viên"
+            };
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                fileAddress = ofd.FileName; // Lấy đường dẫn ảnh
-
-                // Load the image from the file
-                using (Image originalImage = Image.FromFile(fileAddress))
-                {
-                    // Clone the image to release the file handle
-                    picNhanVien.Image = (Image)originalImage.Clone();
-                }
-
-                fileName = Path.GetFileName(ofd.FileName); // Tên ảnh
-
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                fileSavePath = Path.Combine(saveDirectory, "img", fileName); // Tạo đường dẫn để lưu file vào thư mục của project
-
+                fileAddress = ofd.FileName;
                 txtDuongDan.Text = fileAddress;
+
+                // Check if file exists before loading
+                if (File.Exists(fileAddress))
+                {
+                    using (Image img = Image.FromFile(fileAddress))
+                    {
+                        picNhanVien.Image = (Image)img.Clone();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hình ảnh không tồn tại: " + fileAddress, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

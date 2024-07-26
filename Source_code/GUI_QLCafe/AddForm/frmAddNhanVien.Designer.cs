@@ -187,7 +187,7 @@
             this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
             this.rdoNhanVien.Name = "rdoNhanVien";
             this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
-            this.rdoNhanVien.TabIndex = 2;
+            this.rdoNhanVien.TabIndex = 3;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân viên";
             this.rdoNhanVien.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.rdoHoatDong.Location = new System.Drawing.Point(8, 47);
             this.rdoHoatDong.Name = "rdoHoatDong";
             this.rdoHoatDong.Size = new System.Drawing.Size(101, 25);
-            this.rdoHoatDong.TabIndex = 2;
+            this.rdoHoatDong.TabIndex = 4;
             this.rdoHoatDong.TabStop = true;
             this.rdoHoatDong.Text = "Hoạt động";
             this.rdoHoatDong.UseVisualStyleBackColor = false;
@@ -215,7 +215,7 @@
             this.rdoNgungHoatDong.Location = new System.Drawing.Point(8, 85);
             this.rdoNgungHoatDong.Name = "rdoNgungHoatDong";
             this.rdoNgungHoatDong.Size = new System.Drawing.Size(151, 25);
-            this.rdoNgungHoatDong.TabIndex = 2;
+            this.rdoNgungHoatDong.TabIndex = 5;
             this.rdoNgungHoatDong.TabStop = true;
             this.rdoNgungHoatDong.Text = "Ngừng hoạt động";
             this.rdoNgungHoatDong.UseVisualStyleBackColor = false;
@@ -273,7 +273,7 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(424, 34);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 0;
             // 
             // txtTenNhanVien
             // 
@@ -298,7 +298,7 @@
             this.txtTenNhanVien.PlaceholderText = "";
             this.txtTenNhanVien.SelectedText = "";
             this.txtTenNhanVien.Size = new System.Drawing.Size(424, 34);
-            this.txtTenNhanVien.TabIndex = 9;
+            this.txtTenNhanVien.TabIndex = 1;
             // 
             // picNhanVien
             // 

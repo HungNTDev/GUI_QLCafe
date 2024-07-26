@@ -279,11 +279,8 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox txtTenBan;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaBan;
         private System.Windows.Forms.Label lbMaBan;
         private System.Windows.Forms.Label lbTenBan;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
         private System.Windows.Forms.Label lbTrangThai;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddBan;
@@ -291,5 +288,8 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label lbText0;
+        public Guna.UI2.WinForms.Guna2TextBox txtTenBan;
+        public Guna.UI2.WinForms.Guna2TextBox txtMaBan;
+        public Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
     }
 }

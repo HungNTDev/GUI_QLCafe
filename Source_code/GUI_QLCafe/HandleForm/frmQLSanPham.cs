@@ -174,7 +174,6 @@ namespace GUI_QLCafe
                 dgvDanhSachSanPham.Refresh();
                 lbTotalRows.Text = totalRows.ToString();
 
-                LoadHinhAnh(dt);
                 foreach (DataGridViewColumn column in dgvDanhSachSanPham.Columns)
                 {
                     if (column.Name == "ProductImage" && column is DataGridViewImageColumn)

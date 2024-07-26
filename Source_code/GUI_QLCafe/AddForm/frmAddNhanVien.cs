@@ -50,11 +50,11 @@ namespace GUI_QLCafe
         {
             if (formMode == FormMode.Them)
             {
-                lbText0.Text = "THÊM THÔNG TIN NHÂN VIÊN";
+                lbHeaderText.Text = "THÊM THÔNG TIN NHÂN VIÊN";
             }
             if (formMode == FormMode.Sua)
             {
-                lbText0.Text = "CẬP NHẬT THÔNG TIN NHÂN VIÊN";
+                lbHeaderText.Text = "CẬP NHẬT THÔNG TIN NHÂN VIÊN";
             }
             txtDuongDan.Enabled = false;
         }
@@ -352,7 +352,6 @@ namespace GUI_QLCafe
                                 frmMainQLCF ql = new frmMainQLCF();
 
                                 this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
-
 
                                 bool changes = ql.checkStatus(txtEmail.Text, role.ToString());
 

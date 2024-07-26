@@ -59,10 +59,11 @@
             this.btnPrev = new Guna.UI2.WinForms.Guna2Button();
             this.btnLastPage = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblHeaderText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).BeginInit();
             this.panelFooter.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDanhSachSanPham
@@ -102,8 +103,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 169);
+            this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvDanhSachSanPham.Location = new System.Drawing.Point(44, 210);
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
             this.dgvDanhSachSanPham.ReadOnly = true;
             this.dgvDanhSachSanPham.RowHeadersVisible = false;
@@ -245,7 +246,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(997, 118);
+            this.btnTimKiem.Location = new System.Drawing.Point(997, 123);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnTimKiem.Size = new System.Drawing.Size(156, 40);
@@ -270,7 +271,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(502, 118);
+            this.txtTimKiem.Location = new System.Drawing.Point(502, 123);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
@@ -300,7 +301,7 @@
             this.shapeLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.shapeLine.BorderThickness = 1;
             this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.shapeLine.Location = new System.Drawing.Point(-99, 159);
+            this.shapeLine.Location = new System.Drawing.Point(-99, 164);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
             this.shapeLine.Rotate = 0F;
@@ -320,7 +321,7 @@
             this.btnThem.ImageRotate = 0F;
             this.btnThem.ImageSize = new System.Drawing.Size(55, 55);
             this.btnThem.IndicateFocus = true;
-            this.btnThem.Location = new System.Drawing.Point(44, 103);
+            this.btnThem.Location = new System.Drawing.Point(44, 108);
             this.btnThem.Name = "btnThem";
             this.btnThem.PressedState.ImageSize = new System.Drawing.Size(55, 55);
             this.btnThem.Size = new System.Drawing.Size(55, 55);
@@ -332,18 +333,18 @@
             this.lbtotalRow.AutoSize = true;
             this.lbtotalRow.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtotalRow.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbtotalRow.Location = new System.Drawing.Point(38, 47);
+            this.lbtotalRow.Location = new System.Drawing.Point(38, 44);
             this.lbtotalRow.Name = "lbtotalRow";
-            this.lbtotalRow.Size = new System.Drawing.Size(131, 31);
+            this.lbtotalRow.Size = new System.Drawing.Size(108, 31);
             this.lbtotalRow.TabIndex = 23;
-            this.lbtotalRow.Text = "Total Rows:";
+            this.lbtotalRow.Text = "Số dòng:";
             // 
             // lbTotalRows
             // 
             this.lbTotalRows.AutoSize = true;
             this.lbTotalRows.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbTotalRows.Location = new System.Drawing.Point(152, 9);
+            this.lbTotalRows.Location = new System.Drawing.Point(143, 46);
             this.lbTotalRows.Name = "lbTotalRows";
             this.lbTotalRows.Size = new System.Drawing.Size(30, 31);
             this.lbTotalRows.TabIndex = 23;
@@ -419,7 +420,6 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(78, 36);
             this.btnNext.TabIndex = 27;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // btnFirstPage
             // 
@@ -435,13 +435,26 @@
             this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnFirstPage.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnFirstPage.Location = new System.Drawing.Point(374, 39);
+            this.btnFirstPage.Location = new System.Drawing.Point(312, 39);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.PressedColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.Size = new System.Drawing.Size(92, 36);
+            this.btnFirstPage.Size = new System.Drawing.Size(162, 36);
             this.btnFirstPage.TabIndex = 22;
-            this.btnFirstPage.Text = "First";
+            this.btnFirstPage.Text = "Trang đầu";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BorderRadius = 5;
+            this.btnPrev.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
+            this.btnPrev.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnPrev.Location = new System.Drawing.Point(480, 39);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(78, 36);
+            this.btnPrev.TabIndex = 28;
             // 
             // btnLastPage
             // 
@@ -456,9 +469,9 @@
             this.btnLastPage.Location = new System.Drawing.Point(736, 39);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.PressedColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.Size = new System.Drawing.Size(92, 36);
+            this.btnLastPage.Size = new System.Drawing.Size(162, 36);
             this.btnLastPage.TabIndex = 22;
-            this.btnLastPage.Text = "Last";
+            this.btnLastPage.Text = "Trang cuối";
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // dataGridViewTextBoxColumn1
@@ -469,37 +482,33 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 6;
             // 
-            // guna2Panel2
+            // panelHeader
             // 
-            this.btnReload.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnReload.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReload.BorderRadius = 5;
-            this.btnReload.BorderThickness = 1;
-            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReload.FillColor = System.Drawing.Color.Transparent;
-            this.btnReload.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReload.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnReload.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnReload.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnReload.Location = new System.Drawing.Point(44, 39);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.PressedColor = System.Drawing.Color.Transparent;
-            this.btnReload.Size = new System.Drawing.Size(138, 36);
-            this.btnReload.TabIndex = 22;
-            this.btnReload.Text = "Reload";
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            this.panelHeader.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelHeader.Controls.Add(this.lblHeaderText);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1190, 85);
+            this.panelHeader.TabIndex = 0;
+            // 
+            // lblHeaderText
+            // 
+            this.lblHeaderText.AutoSize = true;
+            this.lblHeaderText.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderText.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderText.Location = new System.Drawing.Point(387, 19);
+            this.lblHeaderText.Name = "lblHeaderText";
+            this.lblHeaderText.Size = new System.Drawing.Size(486, 54);
+            this.lblHeaderText.TabIndex = 0;
+            this.lblHeaderText.Text = "DANH SÁCH SẢN PHẨM";
             // 
             // frmQLSanPham
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 805);
-            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.lbTotalPage);
             this.Controls.Add(this.lbCurrentPage);
             this.Controls.Add(this.lbPageLine);
@@ -517,8 +526,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,7 +547,7 @@
         private Guna.UI2.WinForms.Guna2Panel panelFooter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         public Guna.UI2.WinForms.Guna2DataGridView dgvDanhSachSanPham;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2Button btnLastPage;
         private Guna.UI2.WinForms.Guna2Button btnFirstPage;
         private Guna.UI2.WinForms.Guna2Button btnPrev;
@@ -552,5 +561,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dgvSua;
         private System.Windows.Forms.DataGridViewImageColumn dgvXem;
         private System.Windows.Forms.DataGridViewImageColumn dgvXoa;
+        private System.Windows.Forms.Label lblHeaderText;
     }
 }

@@ -21,9 +21,6 @@ namespace GUI_QLCafe
 
         }
 
-
-
-
         public void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Refresh();

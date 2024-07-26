@@ -29,11 +29,11 @@ namespace GUI_QLCafe
         {
             if(formMode == FormMode.Them)
             {
-                lbText0.Text = "THÊM THÔNG TIN SẢN PHẨM";
+                lbHeaderText.Text = "THÊM THÔNG TIN SẢN PHẨM";
             }
             if (formMode == FormMode.Sua)
             {
-                lbText0.Text = "CẬP NHẬT THÔNG TIN SẢN PHẨM";
+                lbHeaderText.Text = "CẬP NHẬT THÔNG TIN SẢN PHẨM";
             }
             txtDuongDan.Enabled = false;
         }

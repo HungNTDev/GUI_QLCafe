@@ -1,4 +1,5 @@
 ﻿using BUS_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Data;
 using System.Drawing;
@@ -17,6 +18,11 @@ namespace GUI_QLCafe
         private int totalPages = 0;
         private int totalRows = 0;
 
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Sua }
+
+        frmAddSanPham frmAddSanPham;
         public frmQLSanPham()
         {
             InitializeComponent();
@@ -96,6 +102,20 @@ namespace GUI_QLCafe
                         this.Nofication("Xóa thất bại!", frmNotification.enumType.Failed);
                     }
                 }
+            }
+            else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
+            {
+                frmViewSanPham frmViewSanPham = new frmViewSanPham();
+
+                string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
+                string tenSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
+                string giaSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
+                string duongDan = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
+                bool trangThai = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+                string loaiSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value);
+
+                frmViewSanPham.SetProductInfo(maSanPham, tenSanPham, giaSanPham, duongDan, trangThai, loaiSanPham);
+                frmViewSanPham.ShowDialog();
             }
         }
 
@@ -191,22 +211,12 @@ namespace GUI_QLCafe
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            if (currentPageIndex > 1)
-            {
-                currentPageIndex--;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
+
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
@@ -266,6 +276,24 @@ namespace GUI_QLCafe
             LoadData();
         }
 
+        private void btnPrev_Click_1(object sender, EventArgs e)
+        {
+            if (currentPageIndex > 1)
+            {
+                currentPageIndex--;
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();
+            }
+        }
 
+        private void btnNext_Click_1(object sender, EventArgs e)
+        {
+            if (currentPageIndex < totalPages)
+            {
+                currentPageIndex++;
+                LoadData();
+                lbCurrentPage.Text = currentPageIndex.ToString();
+            }
+        }
     }
 }

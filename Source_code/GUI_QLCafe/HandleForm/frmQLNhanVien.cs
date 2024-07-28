@@ -331,7 +331,7 @@ namespace GUI_QLCafe
 
         private void btnThe_Click(object sender, EventArgs e)
         {
-            frmAddNhanVien frmAddNV = new frmAddNhanVien("", "luu", null, null, 0, 0, null, "");
+            frmAddNhanVien frmAddNV = new frmAddNhanVien(/*"", "luu", null, null, 0, 0, null, ""*/);
             frmAddNV.ShowDialog();
             LoadData(status);
         }

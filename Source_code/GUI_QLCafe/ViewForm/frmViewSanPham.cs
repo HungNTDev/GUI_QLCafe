@@ -18,6 +18,8 @@ namespace GUI_QLCafe.ViewForm
             txtDuongDan.Enabled = false;
             cbLoaiSanPham.Enabled = false;
             rdoKhong.Enabled = false;
+            txtTenSanPham.Enabled = false;
+            txtGia.Enabled = false;
         }
 
         private void frmViewSanPham_Load(object sender, EventArgs e)

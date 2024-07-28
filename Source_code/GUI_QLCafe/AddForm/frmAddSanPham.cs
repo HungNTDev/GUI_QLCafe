@@ -27,7 +27,7 @@ namespace GUI_QLCafe
 
         private void frmAddSanPham_Load(object sender, EventArgs e)
         {
-            if(formMode == FormMode.Them)
+            if (formMode == FormMode.Them)
             {
                 lbHeaderText.Text = "THÊM THÔNG TIN SẢN PHẨM";
             }
@@ -106,7 +106,7 @@ namespace GUI_QLCafe
 
             //DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
-                //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
+            //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
 
             try
             {
@@ -123,7 +123,7 @@ namespace GUI_QLCafe
 
                 txtDuongDan.Text = fileSavePath;
 
-                if(formMode == FormMode.Them)
+                if (formMode == FormMode.Them)
                 {
                     if (string.IsNullOrEmpty(id))
                     {

@@ -73,7 +73,7 @@ namespace GUI_QLCafe
 
             if (session == 1)
             {
-                if (role == "Quản lí")
+                if (role == "Quản trị")
                 {
                     btnQLNhanVien.Enabled = true;
                     btnThongKe.Enabled = true;
@@ -147,7 +147,7 @@ namespace GUI_QLCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            if (role == "Quản lí")
+            if (role == "Quản trị")
                 thongkeTransition.Start();
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo");
@@ -269,7 +269,7 @@ namespace GUI_QLCafe
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
-            if (role == "Quản lí")
+            if (role == "Quản trị")
                 AddControls(new frmQLNhanVien());
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");

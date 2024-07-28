@@ -179,8 +179,15 @@ namespace GUI_QLCafe
             }
         }
 
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
         private void btnPrev_Click(object sender, EventArgs e)
         {
+
             if (currentPageIndex > 1)
             {
                 currentPageIndex--;
@@ -191,6 +198,7 @@ namespace GUI_QLCafe
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+
             if (currentPageIndex < totalPages)
             {
                 currentPageIndex++;
@@ -198,14 +206,6 @@ namespace GUI_QLCafe
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
-
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            currentPageIndex = 1;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = totalPages;
@@ -252,64 +252,5 @@ namespace GUI_QLCafe
                 }
             }
         }
-
-        private void btnNext_Click_1(object sender, EventArgs e)
-        {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-
-        private void btnPrev_Click_1(object sender, EventArgs e)
-        {
-            if (currentPageIndex > 1)
-            {
-                currentPageIndex--;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            currentPageIndex = 1;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
-        private void btnLastPage_Click(object sender, EventArgs e)
-        {
-        private void btnPrev_Click_1(object sender, EventArgs e)
-        {
-            if (currentPageIndex > 1)
-            {
-                currentPageIndex--;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-            currentPageIndex = totalPages;
-        private void btnNext_Click_1(object sender, EventArgs e)
-        {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-    }
-}
-        }
-
-        private void btnRefesh_Click(object sender, EventArgs e)
-        {
-            LoadGridView_SanPham();
-        }
-
-
     }
 }

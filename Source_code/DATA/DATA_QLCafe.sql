@@ -263,7 +263,7 @@ create or alter proc TableInfo (@IdTable nvarchar(10)) as
 
 /*Load menu (hien danh sach thuc an theo loai)*/
 create or alter proc ListMenu (@IdPT nvarchar(10)) as
-	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT
+	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT and StatusProduct = 1
 
 /*Thông tin đồ ăn*/
 create or alter proc TagProduct (@IdProduct nvarchar(20)) as

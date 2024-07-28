@@ -159,7 +159,7 @@
             this.btnTimKiem.Size = new System.Drawing.Size(156, 40);
             this.btnTimKiem.TabIndex = 20;
             this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
+            //this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
             // 
             // txtTimKiem
             // 
@@ -327,7 +327,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(78, 36);
             this.btnNext.TabIndex = 27;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
+            //this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
             // btnFirstPage
             // 
@@ -344,7 +344,7 @@
             this.btnFirstPage.Size = new System.Drawing.Size(151, 36);
             this.btnFirstPage.TabIndex = 27;
             this.btnFirstPage.Text = "Trang đầu";
-            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click_1);
+            //this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click_1);
             // 
             // btnPrev
             // 
@@ -362,7 +362,7 @@
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(78, 36);
             this.btnPrev.TabIndex = 27;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click_1);
+            //this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click_1);
             // 
             // btnLastPage
             // 
@@ -379,7 +379,7 @@
             this.btnLastPage.Size = new System.Drawing.Size(151, 36);
             this.btnLastPage.TabIndex = 27;
             this.btnLastPage.Text = "Trang cuối";
-            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click_1);
+            //this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click_1);
             // 
             // dataGridViewTextBoxColumn1
             // 

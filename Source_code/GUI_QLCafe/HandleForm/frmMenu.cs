@@ -22,6 +22,7 @@ namespace GUI_QLCafe
 
         public string categoryID = "";
         public static string nameProduct;
+        public static string dateCheckOut;
 
         public frmMenu()
         {
@@ -164,7 +165,8 @@ namespace GUI_QLCafe
                 if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2].ToString()) == 0)
                 {
                     billDTO.IdTable = busTB.TableInfo(billDTO).Rows[0][0].ToString();
-                    billDTO.IdStaff = busStaff.get(1).Rows[0][0].ToString();
+                    billDTO.IdStaff = busStaff.StaffInfo(frmMainQLCF.email).Rows[0][1].ToString();
+                    billDTO.dateCheckIn = DateTime.Now;
                     busBill.AddingBill(billDTO);
                     for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
                     {

@@ -190,6 +190,7 @@ namespace DAL_QLCafe
                     cmd.CommandText = "AddingBill";
                     cmd.Parameters.AddWithValue("@IdStaff", bill.idStaff);
                     cmd.Parameters.AddWithValue("@IdTable", bill.IdTable);
+                    cmd.Parameters.AddWithValue("@DateCheckIn", bill.DateCheckIn);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
                     {

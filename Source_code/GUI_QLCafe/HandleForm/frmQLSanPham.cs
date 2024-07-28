@@ -117,20 +117,6 @@ namespace GUI_QLCafe
                     }
                 }
             }
-            else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
-            {
-                frmViewSanPham frmViewSanPham = new frmViewSanPham();
-
-                string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
-                string tenSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
-                string giaSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
-                string duongDan = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
-                bool trangThai = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
-                string loaiSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value);
-
-                frmViewSanPham.SetProductInfo(maSanPham, tenSanPham, giaSanPham, duongDan, trangThai, loaiSanPham);
-                frmViewSanPham.ShowDialog();
-            }
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -251,6 +237,11 @@ namespace GUI_QLCafe
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            LoadGridView_SanPham();
         }
     }
 }

@@ -36,10 +36,6 @@ namespace GUI_QLCafe
         string fileSavePath; //vị trí lưu
         string fileAddress;
 
-
-        int pageNumber = 1;
-        int numberRecord = 5;
-
         private const int PageSize = 15;
         private int currentPageIndex = 1;
         private int totalPages = 0;

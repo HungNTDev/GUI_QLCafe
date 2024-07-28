@@ -20,6 +20,7 @@ namespace GUI_QLCafe.ViewForm
             cbLoaiSanPham.Enabled = false;
             rdoKhong.Enabled = false;
             rdoCo.Enabled = false;   
+            txtGia.Enabled = false;
         }
 
         private void frmViewSanPham_Load(object sender, EventArgs e)

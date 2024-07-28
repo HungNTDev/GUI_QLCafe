@@ -337,7 +337,6 @@
             this.lvHoaDon.TabIndex = 5;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
-            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.lvHoaDon_SelectedIndexChanged);
             // 
             // chTenMon
             // 

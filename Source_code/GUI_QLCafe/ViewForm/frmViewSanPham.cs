@@ -16,10 +16,10 @@ namespace GUI_QLCafe.ViewForm
         {
             txtMaSanPham.Enabled = false;
             txtDuongDan.Enabled = false;
+            txtTenSanPham.Enabled = false;
             cbLoaiSanPham.Enabled = false;
             rdoKhong.Enabled = false;
-            txtTenSanPham.Enabled = false;
-            txtGia.Enabled = false;
+            rdoCo.Enabled = false;   
         }
 
         private void frmViewSanPham_Load(object sender, EventArgs e)

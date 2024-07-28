@@ -84,5 +84,10 @@ namespace BUS_QLCafe
             // Call the DAL search method
             return dal.search(column, value, status, pageNumber, pageSize, out totalRows, out totalPages);
         }
+
+        public DataTable StaffInfo(string email)
+        {
+            return dal.StaffInfo(email);    
+        }
     }
 }

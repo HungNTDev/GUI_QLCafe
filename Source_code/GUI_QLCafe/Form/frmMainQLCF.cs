@@ -11,6 +11,7 @@ namespace GUI_QLCafe
         // vai tro 1 là quản trị
 
         public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
+        public static string dateTime;
 
         //Tạo form đăng nhập
         frmDangNhap dn;
@@ -42,7 +43,6 @@ namespace GUI_QLCafe
             // Hiển thị giờ trên lbGio
             lbGio.Text = DateTime.Now.ToLongTimeString();
             PhanQuyen();
-
         }
 
         public void reLogin()

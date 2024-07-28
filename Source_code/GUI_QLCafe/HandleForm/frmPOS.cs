@@ -4,6 +4,7 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ZedGraph;
 
 namespace GUI_QLCafe
 {
@@ -15,9 +16,11 @@ namespace GUI_QLCafe
 
         DTO_Bill billDTO = new DTO_Bill();
         frmMenu menu = new frmMenu();
+        frmPayment pay = new frmPayment();
 
         public static string NameTable;
         public static string idTable;
+        public static string dateCheckIn;
 
 
         public frmPOS()
@@ -33,6 +36,7 @@ namespace GUI_QLCafe
             idTable = billDTO.IdTable;
             lbThuNgan.Text = "Thu ngân : ";
             lbGioVao.Text = "Giờ vào : ";
+            lbThanhTien.Text = "Thành tiền : ";
             btnThanhToan.Enabled = false;
         }
 
@@ -45,7 +49,9 @@ namespace GUI_QLCafe
                 {
                     lvHoaDon.Items.Clear();
                     lbTenBan.Text = "Tên : " + busTB.TableInfo(billDTO).Rows[0][1].ToString();
-                    lbThuNgan.Text = "Thu ngân : " + busStaff.get(1).Rows[0][2].ToString();
+                    lbThuNgan.Text = "Thu ngân : " + busStaff.StaffInfo(frmMainQLCF.email).Rows[0][2].ToString();
+                    lbGioVao.Text = "Giờ vào : " + busBill.BillInfo(billDTO).Rows[0][4].ToString();
+                    dateCheckIn = lbGioVao.Text;
                     float total = 0;
                     for (int i = 0; i < busBill.BillInfo(billDTO).Rows.Count; i++)
                     {
@@ -127,8 +133,8 @@ namespace GUI_QLCafe
             }
             else
             {
-                btnThemMon.Enabled = true;
                 btnThanhToan.Enabled = true;
+                btnThemMon.Enabled = true;
                 showBill(idTable);
             }
 
@@ -141,8 +147,9 @@ namespace GUI_QLCafe
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            frmPayment payment = new frmPayment();
-            payment.ShowDialog();
+            pay.ShowDialog();
+            LoadTable();
+            ResetBill();
         }
     }
 }

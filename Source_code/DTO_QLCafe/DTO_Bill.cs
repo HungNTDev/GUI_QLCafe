@@ -1,4 +1,6 @@
-﻿namespace DTO_QLCafe
+﻿using System;
+
+namespace DTO_QLCafe
 {
     public class DTO_Bill
     {
@@ -8,6 +10,8 @@
         public string idPayment;
         public string idStaff;
         public int statusBill;
+        public DateTime dateCheckIn;
+        public DateTime dateCheckOut;
 
         public string IdBill { get => idBill; set => idBill = value; }
         public string IdTable { get => idTable; set => idTable = value; }
@@ -15,10 +19,12 @@
         public string IdPayment { get => idPayment; set => idPayment = value; }
         public string IdStaff { get => idStaff; set => idStaff = value; }
         public int StatusBill { get => statusBill; set => statusBill = value; }
+        public DateTime DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
+        public DateTime DateCheckOut { get => dateCheckOut; set => dateCheckOut = value; }
 
         public DTO_Bill() { }
 
-        public DTO_Bill(string idBill, string idTable, string idVoucher, string idPayment, string idStaff, int statusBill)
+        public DTO_Bill(string idBill, string idTable, string idVoucher, string idPayment, string idStaff, int statusBill, DateTime dateCheckIn, DateTime dateCheckOut)
         {
             this.idBill = idBill;
             this.idTable = idTable;
@@ -26,6 +32,8 @@
             this.idPayment = idPayment;
             this.idStaff = idStaff;
             this.statusBill = statusBill;
+            this.dateCheckIn = dateCheckIn;
+            this.dateCheckOut = dateCheckOut;
         }
     }
 }

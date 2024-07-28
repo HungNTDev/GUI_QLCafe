@@ -30,5 +30,20 @@ namespace BUS_QLCafe
         {
             return dal.search(keyword, column);
         }
+
+        public DataTable ListVoucher()
+        {
+            return dal.ListVoucher();
+        }
+
+        public DataTable ListPayment()
+        {
+            return dal.ListPayment();
+        }
+
+        public bool Payment(DTO_Bill bill)
+        {
+            return dal.Payment(bill);
+        }
     }
 }

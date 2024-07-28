@@ -19,34 +19,8 @@ namespace GUI_QLCafe
         public frmMainQLCF()
         {
             InitializeComponent();
-            //this.IsMdiContainer = true;
+
         }
-
-        //private bool CheckExistForm(string name)
-        //{
-        //    bool check = false;
-        //    foreach (Form frm in this.MdiChildren)
-        //    {
-        //        if (frm.Name == name)
-        //        {
-        //            check = true;
-        //            break;
-        //        }
-        //    }
-        //    return check;
-        //}
-
-        //private void ActiveChildForm(string name)
-        //{
-        //    foreach (Form frm in this.MdiChildren)
-        //    {
-        //        if (frm.Name == name)
-        //        {
-        //            frm.Activate();
-        //            break;
-        //        }
-        //    }
-        //}
 
         public void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -70,18 +44,30 @@ namespace GUI_QLCafe
             lbGio.Text = DateTime.Now.ToLongTimeString();
             PhanQuyen();
         }
-        public bool checkStatus(string emailAfter, string roleAfter)
+
+        public void reLogin()
         {
-            // Check if the email and role have changed
+            this.Hide();
+            session = 0;
+            frmDangNhap dangNhap = new frmDangNhap();
+            dangNhap.Show();
+        }
+        public void checkStatus(string emailAfter, string roleAfter)
+        {
+
             if (email == emailAfter && role != roleAfter)
             {
-                return true;
+                MessageBox.Show("Vai trò của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                reLogin();
             }
-            return false;
+            else
+            {
+                Console.WriteLine("No change or not current user, main form stays open");
+            }
         }
         public void PhanQuyen()
         {
-            frmQLNhanVien qlnv = new frmQLNhanVien();
 
             lblEmail.Text = email;
 
@@ -286,7 +272,7 @@ namespace GUI_QLCafe
             if (role == "Quản trị")
                 AddControls(new frmQLNhanVien());
             else
-                messageDialog.Show("Bạn không có quyền truy cập chức năng này!!", "Cảnh báo");
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLSanPham_Click(object sender, EventArgs e)
@@ -301,7 +287,7 @@ namespace GUI_QLCafe
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email);
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email, this);
             frmDoiMatKhau.Show();
         }
 

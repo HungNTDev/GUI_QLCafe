@@ -139,9 +139,12 @@
             this.cbPhuongThucTT.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbPhuongThucTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbPhuongThucTT.ItemHeight = 30;
-            this.cbPhuongThucTT.Location = new System.Drawing.Point(319, 109);
+            this.cbPhuongThucTT.Items.AddRange(new object[] {
+            "Tiền mặt",
+            "MoMo"});
+            this.cbPhuongThucTT.Location = new System.Drawing.Point(296, 109);
             this.cbPhuongThucTT.Name = "cbPhuongThucTT";
-            this.cbPhuongThucTT.Size = new System.Drawing.Size(178, 36);
+            this.cbPhuongThucTT.Size = new System.Drawing.Size(164, 36);
             this.cbPhuongThucTT.TabIndex = 4;
             // 
             // cbVoucher
@@ -155,18 +158,17 @@
             this.cbVoucher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbVoucher.ItemHeight = 30;
-            this.cbVoucher.Location = new System.Drawing.Point(153, 61);
+            this.cbVoucher.Location = new System.Drawing.Point(120, 61);
             this.cbVoucher.Name = "cbVoucher";
-            this.cbVoucher.Size = new System.Drawing.Size(182, 36);
+            this.cbVoucher.Size = new System.Drawing.Size(164, 36);
             this.cbVoucher.TabIndex = 4;
-            this.cbVoucher.SelectedIndexChanged += new System.EventHandler(this.cbVoucher_SelectedIndexChanged);
             // 
             // lbVoucher
             // 
             this.lbVoucher.AutoSize = true;
             this.lbVoucher.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVoucher.ForeColor = System.Drawing.Color.White;
-            this.lbVoucher.Location = new System.Drawing.Point(348, 66);
+            this.lbVoucher.Location = new System.Drawing.Point(290, 66);
             this.lbVoucher.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbVoucher.Name = "lbVoucher";
             this.lbVoucher.Size = new System.Drawing.Size(75, 31);
@@ -335,6 +337,7 @@
             this.lvHoaDon.TabIndex = 5;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
+            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.lvHoaDon_SelectedIndexChanged);
             // 
             // chTenMon
             // 
@@ -372,7 +375,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPayment";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPayment";
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.panel3.ResumeLayout(false);

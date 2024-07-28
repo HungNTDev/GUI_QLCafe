@@ -26,9 +26,9 @@ namespace BUS_QLCafe
             return dal.delete(obj);
         }
 
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
-            return dal.search(keyword, column);
+            return dal.search(keyword);
         }
 
         public DataTable TableList()
@@ -39,6 +39,11 @@ namespace BUS_QLCafe
         public DataTable TableInfo(DTO_Bill bill)
         {
             return dal.TableInfo(bill);
+        }
+
+        public DataTable GetPage(int page, int pageSize)
+        {
+            return dal.GetPagedTable(page, pageSize);
         }
     }
 }

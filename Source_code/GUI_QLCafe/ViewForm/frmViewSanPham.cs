@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe.ViewForm
@@ -22,8 +16,10 @@ namespace GUI_QLCafe.ViewForm
         {
             txtMaSanPham.Enabled = false;
             txtDuongDan.Enabled = false;
+            txtTenSanPham.Enabled = false;
             cbLoaiSanPham.Enabled = false;
             rdoKhong.Enabled = false;
+            rdoCo.Enabled = false;   
         }
 
         private void frmViewSanPham_Load(object sender, EventArgs e)
@@ -37,7 +33,7 @@ namespace GUI_QLCafe.ViewForm
             txtTenSanPham.Text = tenSanPham;
             txtGia.Text = giaSanPham;
             txtDuongDan.Text = duongDan;
-            rdoCo.Checked = trangThai; 
+            rdoCo.Checked = trangThai;
             cbLoaiSanPham.Text = loaiSanPham;
 
             // Hiển thị hình ảnh

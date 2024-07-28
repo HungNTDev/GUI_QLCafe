@@ -43,5 +43,15 @@ namespace BUS_QLCafe
         {
             return dal.AddingBill(bill);
         }
+
+        public DataTable ShowVoucher()
+        {
+            return dal.ShowVoucher();
+        }
+
+        public DataTable ShowPayment()
+        {
+            return dal.ShowPayment();
+        }
     }
 }

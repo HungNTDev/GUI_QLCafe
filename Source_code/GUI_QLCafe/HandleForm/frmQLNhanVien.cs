@@ -541,6 +541,8 @@ namespace GUI_QLCafe
 
             btnSu.Enabled = false;
 
+            cboTim.SelectedIndex = -1;
+
             selected = false;
             searching = false; // Reset tìm kiếm
             LoadData(status);
@@ -635,6 +637,5 @@ namespace GUI_QLCafe
                 txtDuongDan.Text = fileAddress;
             }
         }
-
     }
 }

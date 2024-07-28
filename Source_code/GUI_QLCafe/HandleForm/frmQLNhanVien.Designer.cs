@@ -540,6 +540,7 @@
             // 
             this.cboStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboStatus.BorderRadius = 5;
             this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -810,6 +811,7 @@
             this.btnMoHinh.Size = new System.Drawing.Size(173, 35);
             this.btnMoHinh.TabIndex = 35;
             this.btnMoHinh.Text = "Mở hình";
+            this.btnMoHinh.Click += new System.EventHandler(this.btnMoHinh_Click);
             // 
             // frmQLNhanVien
             // 

@@ -36,11 +36,7 @@ namespace GUI_QLCafe
         string fileSavePath; //vị trí lưu
         string fileAddress;
 
-
-        int pageNumber = 1;
-        int numberRecord = 5;
-
-        private const int PageSize = 10;
+        private const int PageSize = 15;
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
@@ -97,6 +93,7 @@ namespace GUI_QLCafe
 
                 totalRows = busNhanVien.GetTotalStaffCount(status);
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
+
                 lbTotalPage.Text = totalPages.ToString();
 
                 DataTable dt = busNhanVien.GetPageStaff(currentPageIndex, PageSize, status);
@@ -163,56 +160,66 @@ namespace GUI_QLCafe
             lbCurrentPage.Text = currentPageIndex.ToString();
             LoadData(status);
         }
+        bool searching = false;
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            btnSu.Enabled = false;
-
+            searching = true;
             currentPageIndex = 1; // Start at the first page
-            string column = "";
-            int pageSize = 10; // Set the page size (number of rows per page)
-            int totalRows;
-            int totalPages;
+            PerformSearch();
+        }
+        private void PerformSearch()
+        {
+            try
+            {
+                btnSu.Enabled = false;
 
-            if (txtTimKiem.Text.Trim().Length == 0)
-            {
-                Notification("Nhập nội dung cần tìm!", frmNotification.enumType.Failed);
-                return;
-            }
+                string column = "";
+                int pageSize = 15; // Set the page size (number of rows per page)
 
-            if (cboTim.SelectedIndex == -1)
-            {
-                column = "rong";
-            }
-            else
-            {
-                switch (cboTim.SelectedIndex)
+                if (txtTimKiem.Text.Trim().Length == 0)
                 {
-                    case 0:
-                        column = "IdStaff";
-                        break;
-                    case 1:
-                        column = "Email";
-                        break;
-                    case 2:
-                        column = "FullName";
-                        break;
-                    case 3:
-                        column = "RoleStaff";
-                        break;
+                    Notification("Nhập nội dung cần tìm!", frmNotification.enumType.Failed);
+                    return;
                 }
+
+                if (cboTim.SelectedIndex == -1)
+                {
+                    column = "rong";
+                }
+                else
+                {
+                    switch (cboTim.SelectedIndex)
+                    {
+                        case 0:
+                            column = "IdStaff";
+                            break;
+                        case 1:
+                            column = "Email";
+                            break;
+                        case 2:
+                            column = "FullName";
+                            break;
+                        case 3:
+                            column = "RoleStaff";
+                            break;
+                    }
+                }
+
+                // Call the search function with pagination parameters
+                var result = busNhanVien.search(column, txtTimKiem.Text, status, currentPageIndex, pageSize, out totalRows, out totalPages);
+
+                dgvDanhSachNhanVien.DataSource = result;
+
+                // Update pagination controls or display relevant information
+                lbTotalRows.Text = totalRows.ToString();
+                lbTotalPage.Text = totalPages.ToString();
+                lbCurrentPage.Text = currentPageIndex.ToString();
             }
-
-            // Call the search function with pagination parameters
-            var result = busNhanVien.search(column, txtTimKiem.Text, status, currentPageIndex, pageSize, out totalRows, out totalPages);
-
-            dgvDanhSachNhanVien.DataSource = result;
-
-            // Update pagination controls or display relevant information
-            lbTotalRows.Text = totalRows.ToString();
-            lbTotalPage.Text = totalPages.ToString();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
         private string saveDirectory;
         private string relativePath;
@@ -310,6 +317,9 @@ namespace GUI_QLCafe
 
             btnSu.Enabled = false;
 
+
+
+
             if (cboStatus.SelectedItem != null)
             {
                 switch (cboStatus.SelectedIndex)
@@ -322,9 +332,10 @@ namespace GUI_QLCafe
                         break;
                 }
 
-                // Update totalRows and totalPages based on the new status
-                currentPageIndex = 1; // Reset to the first page when changing status
-                LoadData(status); // Load data based on the new status
+                searching = false; // Reset 
+                // Update số dòng and số trang theo status mới
+                currentPageIndex = 1; // Reset khi đổi status
+                LoadData(status); // Load data 
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
@@ -526,21 +537,41 @@ namespace GUI_QLCafe
 
             btnSu.Enabled = false;
 
+            cboTim.SelectedIndex = -1;
+
             selected = false;
+            searching = false; // Reset tìm kiếm
             LoadData(status);
         }
 
+        
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = 1;
-            LoadData(status);
+            if (!searching)
+            {
+                LoadData(status);
+            }
+            else
+            {
+                PerformSearch();
+            }
+
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = totalPages;
-            LoadData(status);
+            if (!searching)
+            {
+                LoadData(status);
+            }
+            else
+            {
+
+                PerformSearch();
+            }
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
@@ -549,9 +580,19 @@ namespace GUI_QLCafe
             if (currentPageIndex > 1)
             {
                 currentPageIndex--;
-                LoadData(status);
+                if (!searching)
+                {
+                    LoadData(status);
+                }
+                else
+                {
+
+                    PerformSearch();
+                }
+                
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
+            
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -559,7 +600,15 @@ namespace GUI_QLCafe
             if (currentPageIndex < totalPages)
             {
                 currentPageIndex++;
-                LoadData(status);
+                if (!searching)
+                {
+                    LoadData(status);
+                }
+                else
+                {
+
+                    PerformSearch();
+                }
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
@@ -583,11 +632,6 @@ namespace GUI_QLCafe
                 /*Path.Combine(saveDirectory, fileName);*/ // Tạo đường dẫn để lưu file vào thư mục của project
                 txtDuongDan.Text = fileAddress;
             }
-        }
-
-        private void dgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

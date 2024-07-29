@@ -107,7 +107,7 @@
             this.lbDanhSachSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.lbDanhSachSanPham.Location = new System.Drawing.Point(38, 4);
             this.lbDanhSachSanPham.Name = "lbDanhSachSanPham";
-            this.lbDanhSachSanPham.Size = new System.Drawing.Size(327, 45);
+            this.lbDanhSachSanPham.Size = new System.Drawing.Size(378, 50);
             this.lbDanhSachSanPham.TabIndex = 12;
             this.lbDanhSachSanPham.Text = "Danh sách nhân viên";
             // 
@@ -352,7 +352,7 @@
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.lblEmail.Location = new System.Drawing.Point(66, 107);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(66, 30);
+            this.lblEmail.Size = new System.Drawing.Size(76, 32);
             this.lblEmail.TabIndex = 20;
             this.lblEmail.Text = "Email";
             // 
@@ -364,7 +364,7 @@
             this.lblTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.lblTen.Location = new System.Drawing.Point(66, 200);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(150, 30);
+            this.lblTen.Size = new System.Drawing.Size(173, 32);
             this.lblTen.TabIndex = 22;
             this.lblTen.Text = "Tên nhân viên";
             // 
@@ -418,7 +418,7 @@
             this.rdoHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoHoatDong.Location = new System.Drawing.Point(8, 47);
             this.rdoHoatDong.Name = "rdoHoatDong";
-            this.rdoHoatDong.Size = new System.Drawing.Size(93, 23);
+            this.rdoHoatDong.Size = new System.Drawing.Size(101, 25);
             this.rdoHoatDong.TabIndex = 5;
             this.rdoHoatDong.TabStop = true;
             this.rdoHoatDong.Text = "Hoạt động";
@@ -432,7 +432,7 @@
             this.rdoNgungHoatDong.ForeColor = System.Drawing.Color.Black;
             this.rdoNgungHoatDong.Location = new System.Drawing.Point(8, 85);
             this.rdoNgungHoatDong.Name = "rdoNgungHoatDong";
-            this.rdoNgungHoatDong.Size = new System.Drawing.Size(137, 23);
+            this.rdoNgungHoatDong.Size = new System.Drawing.Size(151, 25);
             this.rdoNgungHoatDong.TabIndex = 6;
             this.rdoNgungHoatDong.TabStop = true;
             this.rdoNgungHoatDong.Text = "Ngừng hoạt động";
@@ -462,7 +462,7 @@
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
             this.rdoQuanTri.Location = new System.Drawing.Point(8, 47);
             this.rdoQuanTri.Name = "rdoQuanTri";
-            this.rdoQuanTri.Size = new System.Drawing.Size(78, 23);
+            this.rdoQuanTri.Size = new System.Drawing.Size(85, 25);
             this.rdoQuanTri.TabIndex = 3;
             this.rdoQuanTri.TabStop = true;
             this.rdoQuanTri.Text = "Quản trị";
@@ -476,7 +476,7 @@
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
             this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
             this.rdoNhanVien.Name = "rdoNhanVien";
-            this.rdoNhanVien.Size = new System.Drawing.Size(89, 23);
+            this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
             this.rdoNhanVien.TabIndex = 4;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân viên";
@@ -540,6 +540,7 @@
             // 
             this.cboStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboStatus.BorderRadius = 5;
             this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -607,7 +608,8 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel1.Controls.Add(this.lbTotalPage);
             this.guna2Panel1.Controls.Add(this.lbCurrentPage);
@@ -625,42 +627,46 @@
             // 
             // lbTotalPage
             // 
+            this.lbTotalPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbTotalPage.AutoSize = true;
             this.lbTotalPage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbTotalPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbTotalPage.Location = new System.Drawing.Point(622, 29);
             this.lbTotalPage.Name = "lbTotalPage";
-            this.lbTotalPage.Size = new System.Drawing.Size(23, 25);
+            this.lbTotalPage.Size = new System.Drawing.Size(25, 30);
             this.lbTotalPage.TabIndex = 24;
             this.lbTotalPage.Text = "0";
             // 
             // lbCurrentPage
             // 
+            this.lbCurrentPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbCurrentPage.AutoSize = true;
             this.lbCurrentPage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbCurrentPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCurrentPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbCurrentPage.Location = new System.Drawing.Point(559, 29);
             this.lbCurrentPage.Name = "lbCurrentPage";
-            this.lbCurrentPage.Size = new System.Drawing.Size(23, 25);
+            this.lbCurrentPage.Size = new System.Drawing.Size(25, 30);
             this.lbCurrentPage.TabIndex = 25;
             this.lbCurrentPage.Text = "0";
             // 
             // lbPageLine
             // 
+            this.lbPageLine.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbPageLine.AutoSize = true;
             this.lbPageLine.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbPageLine.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPageLine.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbPageLine.Location = new System.Drawing.Point(592, 29);
             this.lbPageLine.Name = "lbPageLine";
-            this.lbPageLine.Size = new System.Drawing.Size(20, 25);
+            this.lbPageLine.Size = new System.Drawing.Size(22, 30);
             this.lbPageLine.TabIndex = 26;
             this.lbPageLine.Text = "/";
             // 
             // btnLastPage
             // 
+            this.btnLastPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLastPage.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnLastPage.BorderColor = System.Drawing.Color.Transparent;
             this.btnLastPage.BorderRadius = 5;
@@ -686,18 +692,20 @@
             // 
             // lbTotalRows
             // 
+            this.lbTotalRows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTotalRows.AutoSize = true;
             this.lbTotalRows.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbTotalRows.Location = new System.Drawing.Point(145, 29);
             this.lbTotalRows.Name = "lbTotalRows";
-            this.lbTotalRows.Size = new System.Drawing.Size(25, 25);
+            this.lbTotalRows.Size = new System.Drawing.Size(28, 30);
             this.lbTotalRows.TabIndex = 23;
             this.lbTotalRows.Text = "+";
             this.lbTotalRows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnFirstPage
             // 
+            this.btnFirstPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnFirstPage.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnFirstPage.BorderColor = System.Drawing.Color.Transparent;
             this.btnFirstPage.BorderRadius = 5;
@@ -723,17 +731,19 @@
             // 
             // lbtotalRow
             // 
+            this.lbtotalRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbtotalRow.AutoSize = true;
             this.lbtotalRow.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtotalRow.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbtotalRow.Location = new System.Drawing.Point(38, 29);
             this.lbtotalRow.Name = "lbtotalRow";
-            this.lbtotalRow.Size = new System.Drawing.Size(87, 25);
+            this.lbtotalRow.Size = new System.Drawing.Size(101, 30);
             this.lbtotalRow.TabIndex = 23;
             this.lbtotalRow.Text = "Số dòng:";
             // 
             // btnNext
             // 
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnNext.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnNext.BorderColor = System.Drawing.Color.Transparent;
             this.btnNext.BorderRadius = 5;
@@ -758,6 +768,7 @@
             // 
             // btnPrev
             // 
+            this.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPrev.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnPrev.BorderColor = System.Drawing.Color.Transparent;
             this.btnPrev.BorderRadius = 5;
@@ -800,6 +811,7 @@
             this.btnMoHinh.Size = new System.Drawing.Size(173, 35);
             this.btnMoHinh.TabIndex = 35;
             this.btnMoHinh.Text = "Mở hình";
+            this.btnMoHinh.Click += new System.EventHandler(this.btnMoHinh_Click);
             // 
             // frmQLNhanVien
             // 

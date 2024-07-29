@@ -59,7 +59,7 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtMaSanPham.Enabled = false;
                 frmAddSanPham.cbLoaiSanPham.Enabled = false;
                 frmAddSanPham.txtDuongDan.Enabled = false;
-
+                
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
@@ -78,7 +78,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo",
+                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
@@ -88,7 +88,7 @@ namespace GUI_QLCafe
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
             {
-                frmViewSanPham frmViewSanPham = new frmViewSanPham();
+                frmViewSanPham frmViewSanPham = new frmViewSanPham();   
 
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 string tenSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
@@ -103,7 +103,7 @@ namespace GUI_QLCafe
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
                 string maSanPham = Convert.ToString((dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value));
-                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo",
+                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo", 
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     if (busSanPham.delete(maSanPham))
@@ -116,20 +116,6 @@ namespace GUI_QLCafe
                         this.Message("Xóa thất bại!", frmNotification.enumType.Failed);
                     }
                 }
-            }
-            else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
-            {
-                frmViewSanPham frmViewSanPham = new frmViewSanPham();
-
-                string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
-                string tenSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
-                string giaSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
-                string duongDan = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
-                bool trangThai = Convert.ToBoolean(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
-                string loaiSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value);
-
-                frmViewSanPham.SetProductInfo(maSanPham, tenSanPham, giaSanPham, duongDan, trangThai, loaiSanPham);
-                frmViewSanPham.ShowDialog();
             }
         }
 
@@ -179,8 +165,15 @@ namespace GUI_QLCafe
             }
         }
 
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            currentPageIndex = 1;
+            LoadData();
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
         private void btnPrev_Click(object sender, EventArgs e)
         {
+
             if (currentPageIndex > 1)
             {
                 currentPageIndex--;
@@ -191,6 +184,7 @@ namespace GUI_QLCafe
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+
             if (currentPageIndex < totalPages)
             {
                 currentPageIndex++;
@@ -198,14 +192,6 @@ namespace GUI_QLCafe
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
         }
-
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            currentPageIndex = 1;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
         private void btnLastPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = totalPages;
@@ -235,7 +221,7 @@ namespace GUI_QLCafe
             string sp = txtTimKiem.Text;
             if (string.IsNullOrEmpty(sp))
             {
-                MessageBox.Show("Vui lòng nhập nội dung cần tìm!", "Thông báo",
+                MessageBox.Show("Vui lòng nhập nội dung cần tìm!", "Thông báo", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -247,49 +233,10 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo",
+                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void btnFirstPage_Click_1(object sender, EventArgs e)
-        {
-            currentPageIndex = 1;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
-        private void btnPrev_Click_1(object sender, EventArgs e)
-        {
-            if (currentPageIndex > 1)
-            {
-                currentPageIndex--;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-
-        private void btnNext_Click_1(object sender, EventArgs e)
-        {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadData();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
-        }
-
-        private void btnLastPage_Click_1(object sender, EventArgs e)
-        {
-            currentPageIndex = totalPages;
-            LoadData();
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
-        private void lbCurrentPage_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRefesh_Click(object sender, EventArgs e)

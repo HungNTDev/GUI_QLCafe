@@ -71,9 +71,10 @@
             this.panel3.Controls.Add(this.lbTongTien);
             this.panel3.Controls.Add(this.lbTongHoaDon);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 710);
+            this.panel3.Location = new System.Drawing.Point(0, 476);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(683, 298);
+            this.panel3.Size = new System.Drawing.Size(512, 242);
             this.panel3.TabIndex = 1;
             // 
             // btnHuy
@@ -94,10 +95,11 @@
             this.btnHuy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnHuy.Location = new System.Drawing.Point(354, 225);
+            this.btnHuy.Location = new System.Drawing.Point(266, 183);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnHuy.Size = new System.Drawing.Size(317, 50);
+            this.btnHuy.Size = new System.Drawing.Size(238, 41);
             this.btnHuy.TabIndex = 5;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -120,10 +122,11 @@
             this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnThanhToan.Location = new System.Drawing.Point(18, 225);
+            this.btnThanhToan.Location = new System.Drawing.Point(14, 183);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnThanhToan.Size = new System.Drawing.Size(317, 50);
+            this.btnThanhToan.Size = new System.Drawing.Size(238, 41);
             this.btnThanhToan.TabIndex = 5;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
@@ -142,9 +145,10 @@
             this.cbPhuongThucTT.Items.AddRange(new object[] {
             "Tiền mặt",
             "MoMo"});
-            this.cbPhuongThucTT.Location = new System.Drawing.Point(296, 109);
+            this.cbPhuongThucTT.Location = new System.Drawing.Point(222, 89);
+            this.cbPhuongThucTT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbPhuongThucTT.Name = "cbPhuongThucTT";
-            this.cbPhuongThucTT.Size = new System.Drawing.Size(164, 36);
+            this.cbPhuongThucTT.Size = new System.Drawing.Size(124, 36);
             this.cbPhuongThucTT.TabIndex = 4;
             // 
             // cbVoucher
@@ -158,20 +162,22 @@
             this.cbVoucher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbVoucher.ItemHeight = 30;
-            this.cbVoucher.Location = new System.Drawing.Point(120, 61);
+            this.cbVoucher.Location = new System.Drawing.Point(90, 50);
+            this.cbVoucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbVoucher.Name = "cbVoucher";
-            this.cbVoucher.Size = new System.Drawing.Size(164, 36);
+            this.cbVoucher.Size = new System.Drawing.Size(124, 36);
             this.cbVoucher.TabIndex = 4;
+            this.cbVoucher.SelectedIndexChanged += new System.EventHandler(this.cbVoucher_SelectedIndexChanged_1);
             // 
             // lbVoucher
             // 
             this.lbVoucher.AutoSize = true;
             this.lbVoucher.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVoucher.ForeColor = System.Drawing.Color.White;
-            this.lbVoucher.Location = new System.Drawing.Point(290, 66);
-            this.lbVoucher.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbVoucher.Location = new System.Drawing.Point(218, 54);
+            this.lbVoucher.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbVoucher.Name = "lbVoucher";
-            this.lbVoucher.Size = new System.Drawing.Size(75, 31);
+            this.lbVoucher.Size = new System.Drawing.Size(63, 25);
             this.lbVoucher.TabIndex = 3;
             this.lbVoucher.Text = "(0%) :";
             // 
@@ -180,10 +186,10 @@
             this.lbPhuongThucTT.AutoSize = true;
             this.lbPhuongThucTT.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhuongThucTT.ForeColor = System.Drawing.Color.White;
-            this.lbPhuongThucTT.Location = new System.Drawing.Point(11, 109);
-            this.lbPhuongThucTT.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbPhuongThucTT.Location = new System.Drawing.Point(8, 89);
+            this.lbPhuongThucTT.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbPhuongThucTT.Name = "lbPhuongThucTT";
-            this.lbPhuongThucTT.Size = new System.Drawing.Size(284, 31);
+            this.lbPhuongThucTT.Size = new System.Drawing.Size(236, 25);
             this.lbPhuongThucTT.TabIndex = 3;
             this.lbPhuongThucTT.Text = "Phương thức thanh toán:";
             // 
@@ -192,10 +198,10 @@
             this.lbTextVoucher.AutoSize = true;
             this.lbTextVoucher.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextVoucher.ForeColor = System.Drawing.Color.White;
-            this.lbTextVoucher.Location = new System.Drawing.Point(12, 61);
-            this.lbTextVoucher.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbTextVoucher.Location = new System.Drawing.Point(9, 50);
+            this.lbTextVoucher.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTextVoucher.Name = "lbTextVoucher";
-            this.lbTextVoucher.Size = new System.Drawing.Size(102, 31);
+            this.lbTextVoucher.Size = new System.Drawing.Size(86, 25);
             this.lbTextVoucher.TabIndex = 3;
             this.lbTextVoucher.Text = "Voucher";
             // 
@@ -204,10 +210,10 @@
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongTien.ForeColor = System.Drawing.Color.White;
-            this.lbTongTien.Location = new System.Drawing.Point(11, 165);
-            this.lbTongTien.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbTongTien.Location = new System.Drawing.Point(8, 134);
+            this.lbTongTien.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTongTien.Name = "lbTongTien";
-            this.lbTongTien.Size = new System.Drawing.Size(176, 41);
+            this.lbTongTien.Size = new System.Drawing.Size(144, 32);
             this.lbTongTien.TabIndex = 3;
             this.lbTongTien.Text = "Tổng cộng:";
             // 
@@ -216,10 +222,10 @@
             this.lbTongHoaDon.AutoSize = true;
             this.lbTongHoaDon.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lbTongHoaDon.Location = new System.Drawing.Point(12, 11);
-            this.lbTongHoaDon.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbTongHoaDon.Location = new System.Drawing.Point(9, 9);
+            this.lbTongHoaDon.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTongHoaDon.Name = "lbTongHoaDon";
-            this.lbTongHoaDon.Size = new System.Drawing.Size(170, 31);
+            this.lbTongHoaDon.Size = new System.Drawing.Size(143, 25);
             this.lbTongHoaDon.TabIndex = 3;
             this.lbTongHoaDon.Text = "Tổng hóa đơn:";
             // 
@@ -229,8 +235,9 @@
             this.panel1.Controls.Add(this.lbText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(683, 51);
+            this.panel1.Size = new System.Drawing.Size(512, 41);
             this.panel1.TabIndex = 0;
             // 
             // lbText
@@ -238,10 +245,10 @@
             this.lbText.AutoSize = true;
             this.lbText.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.White;
-            this.lbText.Location = new System.Drawing.Point(221, 2);
-            this.lbText.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbText.Location = new System.Drawing.Point(166, 2);
+            this.lbText.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(239, 45);
+            this.lbText.Size = new System.Drawing.Size(197, 37);
             this.lbText.TabIndex = 2;
             this.lbText.Text = "THANH TOÁN";
             // 
@@ -254,9 +261,10 @@
             this.panel2.Controls.Add(this.lbGioRa);
             this.panel2.Controls.Add(this.lbGioVao);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 51);
+            this.panel2.Location = new System.Drawing.Point(0, 41);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(683, 176);
+            this.panel2.Size = new System.Drawing.Size(512, 143);
             this.panel2.TabIndex = 2;
             // 
             // guna2PictureBox1
@@ -264,9 +272,10 @@
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(447, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(335, 0);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(236, 176);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(177, 143);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 6;
             this.guna2PictureBox1.TabStop = false;
@@ -276,10 +285,10 @@
             this.lbThuNgan.AutoSize = true;
             this.lbThuNgan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThuNgan.ForeColor = System.Drawing.Color.White;
-            this.lbThuNgan.Location = new System.Drawing.Point(12, 131);
-            this.lbThuNgan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbThuNgan.Location = new System.Drawing.Point(9, 106);
+            this.lbThuNgan.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbThuNgan.Name = "lbThuNgan";
-            this.lbThuNgan.Size = new System.Drawing.Size(127, 31);
+            this.lbThuNgan.Size = new System.Drawing.Size(107, 25);
             this.lbThuNgan.TabIndex = 5;
             this.lbThuNgan.Text = "Thu ngân: ";
             // 
@@ -288,10 +297,10 @@
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTen.ForeColor = System.Drawing.Color.White;
-            this.lbTen.Location = new System.Drawing.Point(12, 10);
-            this.lbTen.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbTen.Location = new System.Drawing.Point(9, 8);
+            this.lbTen.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(57, 31);
+            this.lbTen.Size = new System.Drawing.Size(48, 25);
             this.lbTen.TabIndex = 2;
             this.lbTen.Text = "Tên:";
             // 
@@ -300,10 +309,10 @@
             this.lbGioRa.AutoSize = true;
             this.lbGioRa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGioRa.ForeColor = System.Drawing.Color.White;
-            this.lbGioRa.Location = new System.Drawing.Point(12, 90);
-            this.lbGioRa.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbGioRa.Location = new System.Drawing.Point(9, 73);
+            this.lbGioRa.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbGioRa.Name = "lbGioRa";
-            this.lbGioRa.Size = new System.Drawing.Size(84, 31);
+            this.lbGioRa.Size = new System.Drawing.Size(71, 25);
             this.lbGioRa.TabIndex = 3;
             this.lbGioRa.Text = "Giờ ra:";
             // 
@@ -312,10 +321,10 @@
             this.lbGioVao.AutoSize = true;
             this.lbGioVao.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGioVao.ForeColor = System.Drawing.Color.White;
-            this.lbGioVao.Location = new System.Drawing.Point(11, 52);
-            this.lbGioVao.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.lbGioVao.Location = new System.Drawing.Point(8, 42);
+            this.lbGioVao.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbGioVao.Name = "lbGioVao";
-            this.lbGioVao.Size = new System.Drawing.Size(101, 31);
+            this.lbGioVao.Size = new System.Drawing.Size(85, 25);
             this.lbGioVao.TabIndex = 4;
             this.lbGioVao.Text = "Giờ vào:";
             // 
@@ -331,13 +340,13 @@
             this.lvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.HideSelection = false;
-            this.lvHoaDon.Location = new System.Drawing.Point(0, 227);
+            this.lvHoaDon.Location = new System.Drawing.Point(0, 184);
+            this.lvHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(683, 483);
+            this.lvHoaDon.Size = new System.Drawing.Size(512, 292);
             this.lvHoaDon.TabIndex = 5;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
-            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.lvHoaDon_SelectedIndexChanged);
             // 
             // chTenMon
             // 
@@ -364,16 +373,17 @@
             // 
             // frmPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(683, 1008);
+            this.ClientSize = new System.Drawing.Size(512, 718);
             this.Controls.Add(this.lvHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPayment";
             this.Text = "frmPayment";
             this.Load += new System.EventHandler(this.frmPayment_Load);

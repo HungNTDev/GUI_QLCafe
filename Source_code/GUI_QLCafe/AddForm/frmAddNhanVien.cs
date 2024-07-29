@@ -20,7 +20,7 @@ namespace GUI_QLCafe
         private int status;
         private string image;
         private string saveDirectory;
-                private Image originalImage;
+        private Image originalImage;
 
         BUS_Staff busNhanVien = new BUS_Staff();
 
@@ -381,74 +381,74 @@ namespace GUI_QLCafe
             //    btnLuu.Text = "SỬA";
             //}
         }
-        private void LoadFormData()
-        {
+        //private void LoadFormData()
+        //{
 
-            btnLuu.Text = chucnang == "sua" ? "SỬA" : "LƯU";
-            if (chucnang == "sua")
-            {
+        //    btnLuu.Text = chucnang == "sua" ? "SỬA" : "LƯU";
+        //    if (chucnang == "sua")
+        //    {
 
-                txtEmail.Text = email;
-                txtTenNhanVien.Text = fullname;
-                rdoQuanTri.Checked = role == 1;
-                rdoNhanVien.Checked = role != 1;
-                rdoHoatDong.Checked = status == 1;
-                rdoNgungHoatDong.Checked = status != 1;
-                txtDuongDan.Text = image;
-
-
-                string imagePath = Path.Combine(saveDirectory, image.TrimStart('\\')); // Chuyển đổi thành đường dẫn tuyệt đối
+        //        txtEmail.Text = email;
+        //        txtTenNhanVien.Text = fullname;
+        //        //rdoQuanTri.Checked = role == 1;
+        //        //rdoNhanVien.Checked = role != 1;
+        //        rdoHoatDong.Checked = status == 1;
+        //        rdoNgungHoatDong.Checked = status != 1;
+        //        txtDuongDan.Text = image;
 
 
-                //Nếu file đã tồn tại thì gửi ảnh lên picture box
-                if (File.Exists(imagePath))
-                {
-                    picNhanVien.Image = Image.FromFile(imagePath);
-                    txtDuongDan.Text = imagePath;
-                }
-                else
-                {
-                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    picNhanVien.Image = null;
-                }
-            }
-            //txtEmail.Text = email;
-            //txtTenNhanVien.Text = fullname;
+        //        string imagePath = Path.Combine(saveDirectory, image.TrimStart('\\')); // Chuyển đổi thành đường dẫn tuyệt đối
 
 
-            //if (role == 1)
-            //{
-            //    rdoQuanTri.Checked = true;
-            //}
-            //else
-            //{
-            //    rdoNhanVien.Checked = true;
-            //}
-
-            //if (status == 1)
-            //{
-            //    rdoHoatDong.Checked = true;
-            //}
-            //else
-            //{
-            //    rdoNgungHoatDong.Checked = true;
-            //}
-
-            //string relativePath = image;
-            //string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\')); // Chuyển đổi thành đường dẫn tuyệt đối
+        //        //Nếu file đã tồn tại thì gửi ảnh lên picture box
+        //        if (File.Exists(imagePath))
+        //        {
+        //            picNhanVien.Image = Image.FromFile(imagePath);
+        //            txtDuongDan.Text = imagePath;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            picNhanVien.Image = null;
+        //        }
+        //    }
+        //txtEmail.Text = email;
+        //txtTenNhanVien.Text = fullname;
 
 
-            ////Nếu file đã tồn tại thì gửi ảnh lên picture box
-            //if (File.Exists(imagePath))
-            //{
-            //    picNhanVien.Image = Image.FromFile(imagePath);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+        //if (role == 1)
+        //{
+        //    rdoQuanTri.Checked = true;
+        //}
+        //else
+        //{
+        //    rdoNhanVien.Checked = true;
+        //}
 
-        }
+        //if (status == 1)
+        //{
+        //    rdoHoatDong.Checked = true;
+        //}
+        //else
+        //{
+        //    rdoNgungHoatDong.Checked = true;
+        //}
+
+        //string relativePath = image;
+        //string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\')); // Chuyển đổi thành đường dẫn tuyệt đối
+
+
+        ////Nếu file đã tồn tại thì gửi ảnh lên picture box
+        //if (File.Exists(imagePath))
+        //{
+        //    picNhanVien.Image = Image.FromFile(imagePath);
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //}
+
+        //}
 
         //Nếu thiếu thông tin thì trở về
         private bool ValidateInput()

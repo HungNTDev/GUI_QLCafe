@@ -1,15 +1,7 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ZedGraph;
 
 namespace GUI_QLCafe
 {
@@ -17,7 +9,7 @@ namespace GUI_QLCafe
     {
         BUS_Payment payment = new BUS_Payment();
         BUS_Bill busBill = new BUS_Bill();
-        BUS_TableCF busTB = new BUS_TableCF ();
+        BUS_TableCF busTB = new BUS_TableCF();
         BUS_Staff busStaff = new BUS_Staff();
 
         DTO_Voucher voucher = new DTO_Voucher();
@@ -36,7 +28,7 @@ namespace GUI_QLCafe
                 this.Close();
             }
 
-            
+
         }
 
         private void frmPayment_Load(object sender, EventArgs e)
@@ -104,7 +96,29 @@ namespace GUI_QLCafe
             }
         }
 
-        private void cbVoucher_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult = MessageBox.Show("Bạn có muốn thanh toán??", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    billDTO.IdTable = frmPOS.idTable;
+                    billDTO.DateCheckOut = DateTime.Parse(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
+                    billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
+                    billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
+                    payment.Payment(billDTO);
+                    MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cbVoucher_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
             {
@@ -126,28 +140,6 @@ namespace GUI_QLCafe
                 showBill(idTable);
             }
             catch (Exception) { }
-        }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult = MessageBox.Show("Bạn có muốn thanh toán??", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (DialogResult == DialogResult.Yes)
-                {
-                    billDTO.IdTable = frmPOS.idTable;
-                    billDTO.DateCheckOut = DateTime.Parse(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
-                    billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
-                    billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
-                    payment.Payment(billDTO);
-                    MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }

@@ -87,7 +87,7 @@ namespace BUS_QLCafe
 
         public DataTable StaffInfo(string email)
         {
-            return dal.StaffInfo(email);    
+            return dal.StaffInfo(email);
         }
     }
 }

@@ -92,7 +92,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy bàn", " Thông báo", 
+                    MessageBox.Show("Không tìm thấy bàn", " Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

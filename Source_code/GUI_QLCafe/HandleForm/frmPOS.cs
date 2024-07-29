@@ -4,7 +4,6 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using ZedGraph;
 
 namespace GUI_QLCafe
 {

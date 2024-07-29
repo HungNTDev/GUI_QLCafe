@@ -132,7 +132,7 @@ namespace DAL_QLCafe
 
                     cmd.CommandText = "NewPass";
                     cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", matkhaumoi);
+                    cmd.Parameters.AddWithValue("@password", matkhaumoi);
                     conn.Open();
 
                     if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
@@ -429,7 +429,7 @@ namespace DAL_QLCafe
             }
         }
 
-        public DataTable StaffInfo (string email)
+        public DataTable StaffInfo(string email)
         {
             try
             {

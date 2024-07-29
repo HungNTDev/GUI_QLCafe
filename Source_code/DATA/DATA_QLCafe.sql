@@ -1,5 +1,7 @@
 ﻿create database QL_Cafe;
+
 use QL_Cafe;
+
 create table Staff(
 Id              int identity(1,1) not null ,
 IdStaff         nvarchar(20) not null,
@@ -7,7 +9,7 @@ FullName        nvarchar(50) not null,
 ImageStaff      nvarchar(500) not null,
 Email           nvarchar(50) not null,
 PasswordStaff   nvarchar(50) not null,
-RoleStaff       int not null,
+RoleStaff      nvarchar(50) not null,
 StatusStaff     int not null,
 Primary key (IdStaff)
 )
@@ -110,15 +112,11 @@ add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
 
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
-('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',0),
+('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',1),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',N'Nhân viên',0),
 ('NV3',N'Nguyễn Duy Thanh','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','dthanhnd999@gmail.com','thanh999',N'Quản trị',1),
 ('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',0),
-('NV5',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
-
-update Staff set RoleStaff = N'Nhân viên' where IdStaff = 'NV2'
-	
-('NV4',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',1,0)
+('NV5',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',N'Nhân viên',0)
 
 go
 	
@@ -200,6 +198,12 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 	('JUC4', N'Thơm ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
 	('JUC5', N'Bưởi ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC')
 
+	go
+	update Product 
+	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\d5cb1aa5e36899-cphvanillaphclong.png'
+ 
+
+go
 --Đăng nhập
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
 as
@@ -263,7 +267,7 @@ create or alter proc TableInfo (@IdTable nvarchar(10)) as
 
 /*Load menu (hien danh sach thuc an theo loai)*/
 create or alter proc ListMenu (@IdPT nvarchar(10)) as
-	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT
+	select IdProduct, NameProduct, Price, ImageProduct from Product where IdPT = @IdPT and StatusProduct = 1
 
 /*Thông tin đồ ăn*/
 create or alter proc TagProduct (@IdProduct nvarchar(20)) as
@@ -272,7 +276,7 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select * from Staff
 
 -- Lấy danh sách nhân viên
-alter proc GetStaff (@status int)
+create proc GetStaff (@status int)
 as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
@@ -280,8 +284,8 @@ end
 
 
 --Thêm NV
-ALTER proc InsertStaff
-(@FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
+alter proc InsertStaff
+(@FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role nvarchar(50), @Status int)
 as
 begin
 	DECLARE @IdStaff VARCHAR(20);
@@ -291,7 +295,7 @@ begin
 
 	DECLARE @PASSWORD nvarchar(50)
 
-	if (@Role = 1)
+	if (@Role = N'Quản trị')
 		begin
 			Set @PASSWORD = '196145663720616991136127245362061123820032'
 		end
@@ -304,9 +308,10 @@ begin
 	values (@IdStaff, @FullName, @ImageStaff, @Password, @Email, @Role, @Status)
 end
 
+exec InsertStaff N'Nguyễn', 'img\Product\d5cb1aa5e36899-cphvanillaphclong.png','armus2002@gmail.com',N'Quản trị',1
 
 -- Sửa nhân viên
-alter proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role int, @Status int)
+alter proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role nvarchar(50), @Status int)
 as
 begin
 
@@ -332,7 +337,7 @@ begin
 end
 
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
-alter PROCEDURE SearchStaff
+create PROCEDURE SearchStaff
     @column VARCHAR(30),
     @value NVARCHAR(100),
     @status INT,
@@ -400,6 +405,32 @@ BEGIN
     FETCH NEXT @fetch ROWS ONLY;
 END
 
+create PROCEDURE GetPagedStaff
+    @pageNumber INT,
+    @pageSize INT,
+    @status INT
+AS
+BEGIN
+    DECLARE @startRow INT;
+    SET @startRow = (@pageNumber - 1) * @pageSize;
+
+    SELECT IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff
+    FROM Staff
+    WHERE StatusStaff = @status
+    ORDER BY IdStaff
+    OFFSET @startRow ROWS
+    FETCH NEXT @pageSize ROWS ONLY;
+END
+
+create PROCEDURE GetTotalStaffCount
+    @status INT
+AS
+BEGIN
+    SELECT COUNT(*)
+    FROM Staff
+    WHERE StatusStaff = @status;
+END
+
 -- Danh sách sản phẩm
 create or alter proc GetProduct
 as 
@@ -423,7 +454,7 @@ as
   end
 
 -- Sửa sản phẩm
-alter proc UpdateProduct (@idProduct nvarchar(20),
+create proc UpdateProduct (@idProduct nvarchar(20),
                             @nameProduct nvarchar(100),
 							@price float,
 							@imageProduct nvarchar(500),
@@ -445,7 +476,10 @@ end
 
 
 -- Tìm kiếm sản phẩm
-create proc SearchPr
+create proc SearchProduct (@value nvarchar(500)) as
+select * from Product 
+where IdProduct = @value or NameProduct like N'%' + @value + '%' or Price like N'%' + @value + '%' 
+      or ImageProduct like N'%' + @value + '%'
 
 -- Xử lý phân trang sản phẩm <Thanh>
 -- Lấy trang
@@ -506,3 +540,41 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
+
+-- GetTable 
+create proc GetTable
+as 
+  select IdTable, NameTable from TableCF
+
+-- InsertTable
+create proc InsertTable (@idTable nvarchar(10),
+                         @nameTable nvarchar(20))
+						 as
+begin 
+     Insert into TableCF (IdTable, NameTable, StatusTable) values 
+	                     (@idTable, @nameTable, 0)
+end
+
+-- UpdateTable
+create proc UpdateTable (@idTable nvarchar(10),
+                         @nameTable nvarchar(20))
+						 as
+begin
+     update TableCF set NameTable = @nameTable
+	 where IdTable = @idTable
+	 end
+
+-- DeleteTable 
+create proc DeleteTable (@idTable nvarchar(10))
+as 
+  begin 
+       delete from TableCF where IdTable = @idTable 
+end
+
+-- SearchTable
+create proc SearchTable (@value nvarchar(20))
+as 
+  begin 
+      select * from TableCF where IdTable = @value or 
+	  NameTable like N'%' + @value + '%'
+	  end

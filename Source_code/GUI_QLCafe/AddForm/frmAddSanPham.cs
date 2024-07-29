@@ -4,7 +4,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-
 namespace GUI_QLCafe
 {
     public partial class frmAddSanPham : Form
@@ -144,21 +143,32 @@ namespace GUI_QLCafe
                     product.IdProduct = id;
                     if (busproduct.update(product))
                     {
+                        lbtagname.Visible = true;
                         if (txtDuongDan.Text != checkUrlImage)
                         {
-                            if (File.Exists(fileSavePath))
-                            {
-                                File.Delete(fileSavePath);
-                            }
+                            //if (File.Exists(fileSavePath))
+                            //{
+                            //    File.Delete(fileSavePath);
+                            //}
                             File.Copy(fileAddress, fileSavePath, true);
+
+                            if (File.Exists(fileAddress))
+                            {
+                                File.Copy(fileAddress, fileSavePath, true);
+                                MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("File nguồn không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Message("Cập nhật thất bại :(", frmNotification.enumType.Failed);
+
+                        else
+                        {
+                            this.Message("Cập nhật thất bại :(", frmNotification.enumType.Failed);
+                        }
                     }
                 }
             }
@@ -199,6 +209,7 @@ namespace GUI_QLCafe
                     // Tạo đường dẫn để lưu file vào thư mục của project
 
                     txtDuongDan.Text = fileAddress;
+                    lbtagname.Visible = false;
                 }
             }
             catch (Exception ex)

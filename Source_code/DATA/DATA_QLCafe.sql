@@ -509,36 +509,14 @@ create proc GetTotalProductCount as select count(*) from Product
 SELECT TOP 10 * FROM Product;
 
 --Thêm bill--
-CREATE OR ALTER PROCEDURE AddingBill(
-    @IdTable NVARCHAR(10),
-    @IdStaff NVARCHAR(10)
-)
-AS
-BEGIN
-    DECLARE @IdBill INT;
-
-    -- Lấy giá trị lớn nhất của IdBill từ bảng Bill
-    SELECT @IdBill = MAX(CAST(SUBSTRING(IdBill, 5, LEN(IdBill) - 4) AS INT))
-    FROM Bill;
-
-    -- Nếu không có bản ghi nào trong bảng Bill, đặt giá trị ban đầu cho @IdBill
-    IF @IdBill IS NULL
-    BEGIN
-        SET @IdBill = 0;
-    END
-
-    -- Tăng giá trị của @IdBill lên 1
-    SET @IdBill = @IdBill + 1;
-
-    -- Thêm bản ghi mới vào bảng Bill
-    INSERT INTO Bill (IdBill, IdPayment, IdTable, IdStaff, IdVoucher, StatusBill)
-    VALUES ('bill' + CAST(@IdBill AS NVARCHAR(10)), NULL, @IdTable, @IdStaff, NULL, 1);
-
-    -- Cập nhật trạng thái của bàn trong bảng TableCF
-    UPDATE TableCF
-    SET StatusTable = 1
-    WHERE IdTable = @IdTable;
-END;
+create or alter proc AddingBill
+		@IdTable nvarchar(10),
+		@IdStaff nvarchar(10),
+		@DateCheckIn datetime
+as
+INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheckIn, DateCheckOut)
+    VALUES ( NULL, @IdTable, @IdStaff, NULL, 1, @DateCheckIn, null);
+	update TableCF set StatusTable = 1 where IdTable = @IdTable
 
 --Thêm DetailBill--
 create or alter proc AddingDetailBill(
@@ -615,7 +593,7 @@ as
 
 	exec StaffInfo 'hungntps38090@gmail.com'
 
-create or alter proc AddingBill
+	create or alter proc AddingBill
 		@IdTable nvarchar(10),
 		@IdStaff nvarchar(10),
 		@DateCheckIn datetime
@@ -624,64 +602,17 @@ INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheck
     VALUES ( NULL, @IdTable, @IdStaff, NULL, 1, @DateCheckIn, null);
 	update TableCF set StatusTable = 1 where IdTable = @IdTable
 
-	create proc BillInfo
+create proc BillInfo
 	@IdTable nvarchar(10)
-	as
+as
 	select Product.NameProduct, DetailBill.Amount, Product.price, DetailBill.TotalPrice, Bill.DateCheckIn from DetailBill
 	join Bill on Bill.IdBill = DetailBill.IdBill
 	join Product on Product.IdProduct = DetailBill.IdProduct
 	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
 
-
--- Voucher 
-insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) values
-('#NULL',N'Không có',0,1),
-('SALE10%',N'Giảm 10%',10,1),
-('SALE7.5%',N'Giảm 7.5%',7.5,1)
-
--- Payment
-insert into Payment (IdPayment, TypePayment, StatusPayment) values
-('TM',N'Tiền Mặt',1),
-('MM',N'MOMO',1)
-
+	--
 	create proc ListPayment as 
 	select * from Payment order by IdPayment
 
 	create proc ListVoucher as
 	select * from Voucher order by PercentVoucher
-
-
-create proc Pay (@IdTable nvarchar(10), @DateCheckOut datetime, @IdVoucher nvarchar(10), @IdPayment nvarchar(20))
-as
-	update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
-	update TableCF set StatusTable = 0 where IdTable = @IdTable
-
--- XỬ LÝ PHÂN TRANG VOUCHER VÀ HÓA ĐƠN - THANH
---VOUCHER
--- Lấy trang voucher
-create proc GetPagedVoucher
-@PageIndex int,
-@PageSize int
-as
-	begin
-		select * from Voucher order by IdVoucher offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
-	end
-
-EXEC GetPagedVoucher @PageIndex = 1, @PageSize = 10;
--- Lấy tổng số voucher
-create proc GetTotalVoucherCount as select count(*) from Voucher
-
--- HÓA ĐƠN
--- Lấy trang hóa đơn
-create proc GetPagedBill
-@PageIndex int,
-@PageSize int
-as
-	begin
-		select * from DetailBill order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
-	end
-
-EXEC GetPagedBill @PageIndex = 1, @PageSize = 10;
-
--- Lấy tổng số bill
-create proc GetTotalBillCount as select count(*) from DetailBill

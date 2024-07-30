@@ -12,7 +12,7 @@ namespace GUI_QLCafe
     public partial class frmQLNhanVien : Form
     {
         private frmMainQLCF mainForm;
-        public frmQLNhanVien()
+        public frmQLNhanVien(frmMainQLCF mainForm)
         {
             InitializeComponent();
             originalImage = picNhanVien.Image;
@@ -36,7 +36,7 @@ namespace GUI_QLCafe
         string fileSavePath; //vị trí lưu
         string fileAddress;
 
-        private const int PageSize = 10;
+        private const int PageSize = 15;
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
@@ -44,34 +44,6 @@ namespace GUI_QLCafe
         {
             try
             {
-                txtEmail.Clear();
-                txtTen.Clear();
-                txtTimKiem.Clear();
-                txtDuongDan.Clear();
-
-
-                btnMoHinh.Enabled = false;
-
-                picNhanVien.Image = originalImage;
-                rdoHoatDong.Checked = false;
-                rdoNgungHoatDong.Checked = false;
-                rdoNhanVien.Checked = false;
-                rdoQuanTri.Checked = false;
-
-                rdoHoatDong.Enabled = false;
-                rdoHoatDong.Checked = false;
-
-                rdoNgungHoatDong.Enabled = false;
-                rdoNgungHoatDong.Checked = false;
-
-                rdoNhanVien.Enabled = false;
-                rdoNhanVien.Checked = false;
-
-                rdoQuanTri.Enabled = false;
-                rdoQuanTri.Checked = false;
-
-                txtEmail.Enabled = false;
-                txtTen.Enabled = false;
 
                 selected = false;
 
@@ -108,6 +80,35 @@ namespace GUI_QLCafe
             }
         }
 
+        private void Default()
+        {
+
+            txtEmail.Clear();
+            txtTen.Clear();
+            txtTimKiem.Clear();
+            txtDuongDan.Clear();
+
+
+
+            btnMoHinh.Enabled = false;
+
+            picNhanVien.Image = originalImage;
+
+            rdoHoatDong.Enabled = false;
+            rdoHoatDong.Checked = false;
+
+            rdoNgungHoatDong.Enabled = false;
+            rdoNgungHoatDong.Checked = false;
+
+            rdoNhanVien.Enabled = false;
+            rdoNhanVien.Checked = false;
+
+            rdoQuanTri.Enabled = false;
+            rdoQuanTri.Checked = false;
+
+            txtEmail.Enabled = false;
+            txtTen.Enabled = false;
+        }
 
         private void LoadGridView_NhanVien()
         {
@@ -155,7 +156,7 @@ namespace GUI_QLCafe
         private void frmQLNhanVien_Load(object sender, EventArgs e)
         {
             //Reload();
-
+            Default();
             currentPageIndex = 1;
             lbCurrentPage.Text = currentPageIndex.ToString();
             LoadData(status);
@@ -175,7 +176,7 @@ namespace GUI_QLCafe
                 btnSu.Enabled = false;
 
                 string column = "";
-                int pageSize = 15; // Set the page size (number of rows per page)
+                int pageSize = 15; // Giới hạn số trang
 
                 if (txtTimKiem.Text.Trim().Length == 0)
                 {
@@ -206,12 +207,12 @@ namespace GUI_QLCafe
                     }
                 }
 
-                // Call the search function with pagination parameters
+                // Tìm
                 var result = busNhanVien.search(column, txtTimKiem.Text, status, currentPageIndex, pageSize, out totalRows, out totalPages);
 
                 dgvDanhSachNhanVien.DataSource = result;
 
-                // Update pagination controls or display relevant information
+                // Cập nhật số trang và số dòng
                 lbTotalRows.Text = totalRows.ToString();
                 lbTotalPage.Text = totalPages.ToString();
                 lbCurrentPage.Text = currentPageIndex.ToString();
@@ -223,6 +224,8 @@ namespace GUI_QLCafe
         }
         private string saveDirectory;
         private string relativePath;
+
+        private string currentEmail = "";
         private void dgvDanhSachNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Lấy vị trí lưu
@@ -245,6 +248,8 @@ namespace GUI_QLCafe
                 txtTen.Text = dgvDanhSachNhanVien.CurrentRow.Cells["FullName"].Value.ToString();
                 txtEmail.Text = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
                 txtDuongDan.Text = dgvDanhSachNhanVien.CurrentRow.Cells["ImageStaff"].Value.ToString();
+
+                currentEmail = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
 
                 if (dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString() == "Quản trị")
                 {
@@ -366,8 +371,6 @@ namespace GUI_QLCafe
         }
         private void btnSu_Click(object sender, EventArgs e)
         {
-            if (selected)
-            {
                 string id = dgvDanhSachNhanVien.CurrentRow.Cells["IdStaff"].Value.ToString();
                 string email = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
                 string fullname = dgvDanhSachNhanVien.CurrentRow.Cells["FullName"].Value.ToString();
@@ -424,7 +427,7 @@ namespace GUI_QLCafe
                     return;
                 }
                 //Nếu email mới khác với email hiện tại, kiểm tra xem email mới có tồn tại trong hệ thống hay không
-                else if (txtEmail.Text != email && busNhanVien.KiemTraEmail(txtEmail.Text))
+                else if (txtEmail.Text != currentEmail && busNhanVien.KiemTraEmail(txtEmail.Text))
                 {
                     MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmail.Focus();
@@ -477,7 +480,7 @@ namespace GUI_QLCafe
 
                             this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
 
-                            // Call checkStatus on the main form
+                            //Gọi check status
                             if (this.mainForm != null)
                             {
                                 this.mainForm.checkStatus(txtEmail.Text, role);
@@ -501,39 +504,12 @@ namespace GUI_QLCafe
                         }
                     }
                 }
-
-
-            }
-            else
-            {
-                Notification("Vui lòng chọn nhân viên cần sửa!", frmNotification.enumType.Failed);
-                return;
-            }
         }
 
         private void btnLamMo_Click(object sender, EventArgs e)
         {
 
-            txtEmail.Clear();
-            txtTen.Clear();
-            txtTimKiem.Clear();
-            txtDuongDan.Clear();
-            picNhanVien.Image = originalImage;
-
-            rdoHoatDong.Enabled = false;
-            rdoHoatDong.Checked = false;
-
-            rdoNgungHoatDong.Enabled = false;
-            rdoNgungHoatDong.Checked = false;
-
-            rdoNhanVien.Enabled = false;
-            rdoNhanVien.Checked = false;
-
-            rdoNhanVien.Enabled = false;
-            rdoQuanTri.Checked = false;
-
-            txtEmail.Enabled = false;
-            txtTen.Enabled = false;
+            Default();
 
             btnSu.Enabled = false;
 

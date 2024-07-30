@@ -396,6 +396,9 @@
     <EmbeddedResource Include="ViewForm\frmViewSanPham.resx">
       <DependentUpon>frmViewSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmViewVoucher.resx">
+      <DependentUpon>frmViewVoucher.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

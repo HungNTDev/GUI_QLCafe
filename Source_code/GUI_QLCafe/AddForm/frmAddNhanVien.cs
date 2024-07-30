@@ -182,14 +182,13 @@ namespace GUI_QLCafe
                 MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
-
             }
             else
             {
                 try
                 {
                     DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
-
+                    guiMK();
                     if (busNhanVien.insert(staff))
                     {
                         // Đường dẫn thư mục gốc của dự án
@@ -224,7 +223,7 @@ namespace GUI_QLCafe
                         //frmQLNhanVien qlnv = new frmQLNhanVien();
                         //qlnv.Reload();
                         Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        guiMK();
+                        
                         txtEmail.Clear();
                         txtTenNhanVien.Clear();
                         rdoHoatDong.Checked = false;

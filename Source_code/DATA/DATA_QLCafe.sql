@@ -68,6 +68,11 @@ StatusBill  int ,
 Primary key (IdBill)
 )
 	
+-- Cập nhật lại trạng thái bàn
+delete from DetailBill
+delete from Bill
+update TableCF set StatusTable = 0
+
 --Drop detail bill và bill để thêm datecheckin checkout
 alter table DetailBill
 drop constraint fk_b_db
@@ -167,7 +172,6 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('JUC',N'Nước ép',1)
 
 update TableCF set StatusTable = 0 where IdTable = 'B01'
-
 
 
 --Thêm sản phẩm--
@@ -611,7 +615,7 @@ as
 
 	exec StaffInfo 'hungntps38090@gmail.com'
 
-	create or alter proc AddingBill
+create or alter proc AddingBill
 		@IdTable nvarchar(10),
 		@IdStaff nvarchar(10),
 		@DateCheckIn datetime
@@ -628,9 +632,56 @@ INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheck
 	join Product on Product.IdProduct = DetailBill.IdProduct
 	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
 
-	--
+
+-- Voucher 
+insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) values
+('#NULL',N'Không có',0,1),
+('SALE10%',N'Giảm 10%',10,1),
+('SALE7.5%',N'Giảm 7.5%',7.5,1)
+
+-- Payment
+insert into Payment (IdPayment, TypePayment, StatusPayment) values
+('TM',N'Tiền Mặt',1),
+('MM',N'MOMO',1)
+
 	create proc ListPayment as 
 	select * from Payment order by IdPayment
 
 	create proc ListVoucher as
 	select * from Voucher order by PercentVoucher
+
+
+create proc Pay (@IdTable nvarchar(10), @DateCheckOut datetime, @IdVoucher nvarchar(10), @IdPayment nvarchar(20))
+as
+	update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
+	update TableCF set StatusTable = 0 where IdTable = @IdTable
+
+-- XỬ LÝ PHÂN TRANG VOUCHER VÀ HÓA ĐƠN - THANH
+--VOUCHER
+-- Lấy trang voucher
+create proc GetPagedVoucher
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from Voucher order by IdVoucher offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedVoucher @PageIndex = 1, @PageSize = 10;
+-- Lấy tổng số voucher
+create proc GetTotalVoucherCount as select count(*) from Voucher
+
+-- HÓA ĐƠN
+-- Lấy trang hóa đơn
+create proc GetPagedBill
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from DetailBill order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedBill @PageIndex = 1, @PageSize = 10;
+
+-- Lấy tổng số bill
+create proc GetTotalBillCount as select count(*) from DetailBill

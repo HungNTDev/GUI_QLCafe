@@ -16,6 +16,11 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
+
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
+
         // phương thức này dùng để gọi Notfication khi thêm thành công
         public void Nofication(string msg, frmNotification.enumType type)
         {
@@ -23,14 +28,16 @@ namespace GUI_QLCafe
             frmNotification.showNotfication(msg, type);
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void frmAddVoucher_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if (formMode == FormMode.Them)
+            {
+                lbHeaderText.Text = "THÊM THÔNG TIN SẢN PHẨM";
+            }
+            if (formMode == FormMode.Sua)
+            {
+                lbHeaderText.Text = "CẬP NHẬT THÔNG TIN SẢN PHẨM";
+            }
         }
     }
 }

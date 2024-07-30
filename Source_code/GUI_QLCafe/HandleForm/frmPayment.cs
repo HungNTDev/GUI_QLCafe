@@ -1,5 +1,6 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Windows.Forms;
 
@@ -18,6 +19,7 @@ namespace GUI_QLCafe
         public frmPayment()
         {
             InitializeComponent();
+            btnTaoMa.Click += btnTaoMa_Click;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -86,7 +88,7 @@ namespace GUI_QLCafe
                         total = total + (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
                     }
                     float TotalSale = total - (total * voucher.PercentVoucher / 100);
-                    lbTongHoaDon.Text = total + " VND";
+                    lbTongHoaDon.Text = "Tổng hóa đơn: " +  total + " VND";
                     lbTongTien.Text = "Thành tiền: " + TotalSale + " VND";
                 }
             }
@@ -140,6 +142,30 @@ namespace GUI_QLCafe
                 showBill(idTable);
             }
             catch (Exception) { }
+        }
+
+        private void lbText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTongHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTaoMa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string totalAmount = lbTongTien.Text.Replace("Thành tiền: ", "").Replace(" VND", "");
+                frmQRCode qrCode = new frmQRCode(totalAmount);
+                qrCode.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

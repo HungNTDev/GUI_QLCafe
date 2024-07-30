@@ -42,10 +42,10 @@
             this.txtMaKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbText0 = new System.Windows.Forms.Label();
+            this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lbHeaderText = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // cbTrangThai
@@ -154,7 +154,6 @@
             this.btnLuu.Size = new System.Drawing.Size(713, 57);
             this.btnLuu.TabIndex = 49;
             this.btnLuu.Text = "LƯU";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtTenKhuyenMai
             // 
@@ -252,13 +251,12 @@
             this.btnThoat.Size = new System.Drawing.Size(713, 57);
             this.btnThoat.TabIndex = 51;
             this.btnThoat.Text = "THOÁT";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.panelHeader.Controls.Add(this.guna2PictureBox1);
-            this.panelHeader.Controls.Add(this.lbText0);
+            this.panelHeader.Controls.Add(this.picLogo);
+            this.panelHeader.Controls.Add(this.lbHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -266,29 +264,29 @@
             this.panelHeader.Size = new System.Drawing.Size(800, 81);
             this.panelHeader.TabIndex = 52;
             // 
-            // guna2PictureBox1
+            // picLogo
             // 
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 81);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 47;
-            this.guna2PictureBox1.TabStop = false;
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.ImageRotate = 0F;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(103, 81);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 47;
+            this.picLogo.TabStop = false;
             // 
-            // lbText0
+            // lbHeaderText
             // 
-            this.lbText0.AutoSize = true;
-            this.lbText0.BackColor = System.Drawing.Color.Transparent;
-            this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbText0.ForeColor = System.Drawing.Color.White;
-            this.lbText0.Location = new System.Drawing.Point(204, 21);
-            this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(419, 45);
-            this.lbText0.TabIndex = 10;
-            this.lbText0.Text = "THÔNG TIN KHUYẾN MÃI";
+            this.lbHeaderText.AutoSize = true;
+            this.lbHeaderText.BackColor = System.Drawing.Color.Transparent;
+            this.lbHeaderText.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeaderText.ForeColor = System.Drawing.Color.White;
+            this.lbHeaderText.Location = new System.Drawing.Point(109, 19);
+            this.lbHeaderText.Name = "lbHeaderText";
+            this.lbHeaderText.Size = new System.Drawing.Size(228, 45);
+            this.lbHeaderText.TabIndex = 10;
+            this.lbHeaderText.Text = "KHUYẾN MÃI";
             // 
             // frmAddVoucher
             // 
@@ -311,9 +309,10 @@
             this.Name = "frmAddVoucher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddVoucher";
+            this.Load += new System.EventHandler(this.frmAddVoucher_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +332,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhuyenMai;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label lbText0;
+        private Guna.UI2.WinForms.Guna2PictureBox picLogo;
+        private System.Windows.Forms.Label lbHeaderText;
     }
 }

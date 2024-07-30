@@ -139,16 +139,12 @@ namespace GUI_QLCafe
 
         }
 
-        private void flpTable_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             pay.ShowDialog();
             LoadTable();
             ResetBill();
         }
+
     }
 }

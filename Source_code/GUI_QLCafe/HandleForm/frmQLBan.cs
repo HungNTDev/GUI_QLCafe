@@ -154,5 +154,10 @@ namespace GUI_QLCafe
         {
             LoadPage();
         }
+
+        private void dgvDSBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

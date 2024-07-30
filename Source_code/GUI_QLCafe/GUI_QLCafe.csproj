@@ -288,6 +288,18 @@
     <Compile Include="HandleForm\frmQLVoucher.Designer.cs">
       <DependentUpon>frmQLVoucher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForm\frmQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmQRCode.Designer.cs">
+      <DependentUpon>frmQRCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmViewHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmViewHoaDon.Designer.cs">
+      <DependentUpon>frmViewHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewForm\frmViewNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +311,12 @@
     </Compile>
     <Compile Include="ViewForm\frmViewSanPham.Designer.cs">
       <DependentUpon>frmViewSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm\frmViewVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmViewVoucher.Designer.cs">
+      <DependentUpon>frmViewVoucher.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddForm\frmAddNhanVien.resx">
       <DependentUpon>frmAddNhanVien.cs</DependentUpon>
@@ -368,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HandleForm\frmQLVoucher.resx">
       <DependentUpon>frmQLVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmQRCode.resx">
+      <DependentUpon>frmQRCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmViewNhanVien.resx">
       <DependentUpon>frmViewNhanVien.cs</DependentUpon>

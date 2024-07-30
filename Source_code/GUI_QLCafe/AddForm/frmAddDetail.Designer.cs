@@ -50,11 +50,11 @@
             this.nudAmount.BackColor = System.Drawing.Color.Transparent;
             this.nudAmount.BorderRadius = 5;
             this.nudAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nudAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAmount.Location = new System.Drawing.Point(44, 218);
+            this.nudAmount.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.nudAmount.Location = new System.Drawing.Point(44, 232);
             this.nudAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nudAmount.Name = "nudAmount";
-            this.nudAmount.Size = new System.Drawing.Size(413, 36);
+            this.nudAmount.Size = new System.Drawing.Size(413, 49);
             this.nudAmount.TabIndex = 9;
             this.nudAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.nudAmount.UpDownButtonForeColor = System.Drawing.Color.White;
@@ -68,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 186);
+            this.label2.Location = new System.Drawing.Point(39, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 28);
             this.label2.TabIndex = 6;
@@ -106,7 +106,7 @@
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(413, 36);
+            this.txtName.Size = new System.Drawing.Size(413, 49);
             this.txtName.TabIndex = 22;
             // 
             // bfDetail
@@ -137,7 +137,7 @@
             this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(44, 360);
+            this.btnThoat.Location = new System.Drawing.Point(44, 391);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(413, 49);
@@ -163,11 +163,11 @@
             this.btnAdd.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(44, 288);
+            this.btnAdd.Location = new System.Drawing.Point(44, 309);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnAdd.Size = new System.Drawing.Size(413, 49);
+            this.btnAdd.Size = new System.Drawing.Size(413, 59);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "THÊM";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(505, 445);
+            this.ClientSize = new System.Drawing.Size(505, 464);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnThoat);

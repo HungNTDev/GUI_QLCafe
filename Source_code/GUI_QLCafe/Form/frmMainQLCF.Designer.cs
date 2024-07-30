@@ -31,10 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainQLCF));
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.line = new System.Windows.Forms.Label();
             this.pblogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lbGio = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
             this.cbMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -117,10 +115,8 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Controls.Add(this.line);
             this.panelHeader.Controls.Add(this.pblogo);
             this.panelHeader.Controls.Add(this.lblEmail);
-            this.panelHeader.Controls.Add(this.lbGio);
             this.panelHeader.Controls.Add(this.lbNgay);
             this.panelHeader.Controls.Add(this.cbMinimize);
             this.panelHeader.Controls.Add(this.cbClose);
@@ -129,16 +125,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1338, 52);
             this.panelHeader.TabIndex = 0;
-            // 
-            // line
-            // 
-            this.line.AutoSize = true;
-            this.line.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.line.Location = new System.Drawing.Point(170, 6);
-            this.line.Name = "line";
-            this.line.Size = new System.Drawing.Size(17, 25);
-            this.line.TabIndex = 8;
-            this.line.Text = "|";
             // 
             // pblogo
             // 
@@ -163,17 +149,6 @@
             this.lblEmail.Text = "-";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
-            // 
-            // lbGio
-            // 
-            this.lbGio.AutoSize = true;
-            this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGio.ForeColor = System.Drawing.Color.Black;
-            this.lbGio.Location = new System.Drawing.Point(212, 3);
-            this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(43, 28);
-            this.lbGio.TabIndex = 3;
-            this.lbGio.Text = "Giờ";
             // 
             // lbNgay
             // 
@@ -925,7 +900,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
-        private System.Windows.Forms.Label lbGio;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Timer quanlyTransition;
         private System.Windows.Forms.Timer sidebarTransition;
@@ -976,7 +950,6 @@
         private System.Windows.Forms.Panel panelDangXuat;
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
         private Guna.UI2.WinForms.Guna2PictureBox pblogo;
-        private System.Windows.Forms.Label line;
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
     }
 }

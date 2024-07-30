@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-
 namespace GUI_QLCafe
 {
     public partial class frmQLBan : Form
@@ -34,7 +33,6 @@ namespace GUI_QLCafe
         private void frmQLBan_Load(object sender, EventArgs e)
         {
             LoadPage();
-            LoadData();
             currentPageIndex = 1;
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
@@ -121,7 +119,7 @@ namespace GUI_QLCafe
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = 1;
-            LoadData();
+            LoadPage();
             lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
@@ -154,7 +152,7 @@ namespace GUI_QLCafe
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
-            LoadData();
+            LoadPage();
         }
     }
 }

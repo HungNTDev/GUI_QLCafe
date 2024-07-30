@@ -59,7 +59,7 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtMaSanPham.Enabled = false;
                 frmAddSanPham.cbLoaiSanPham.Enabled = false;
                 frmAddSanPham.txtDuongDan.Enabled = false;
-                
+
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
                 frmAddSanPham.txtMaSanPham.Text = maSanPham;
@@ -78,7 +78,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo", 
+                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
@@ -88,7 +88,7 @@ namespace GUI_QLCafe
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
             {
-                frmViewSanPham frmViewSanPham = new frmViewSanPham();   
+                frmViewSanPham frmViewSanPham = new frmViewSanPham();
 
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 string tenSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
@@ -103,7 +103,7 @@ namespace GUI_QLCafe
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXoa")
             {
                 string maSanPham = Convert.ToString((dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value));
-                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo", 
+                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     if (busSanPham.delete(maSanPham))
@@ -221,7 +221,7 @@ namespace GUI_QLCafe
             string sp = txtTimKiem.Text;
             if (string.IsNullOrEmpty(sp))
             {
-                MessageBox.Show("Vui lòng nhập nội dung cần tìm!", "Thông báo", 
+                MessageBox.Show("Vui lòng nhập nội dung cần tìm!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -233,7 +233,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", 
+                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

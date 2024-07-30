@@ -1,5 +1,4 @@
 ﻿using BUS_QLCafe;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -141,36 +140,36 @@ namespace GUI_QLCafe
 
         private void txtNewPassword_TextChanged(object sender, System.EventArgs e)
         {
-            string password = txtNewPassword.Text;
-            string strength = CheckPasswordStrength(password);
-            lbPasswordStrength.Text = strength;
+            //string password = txtNewPassword.Text;
+            //string strength = CheckPasswordStrength(password);
+            //lbPasswordStrength.Text = strength;
 
-            switch (strength)
-            {
-                default:
-                    lbPasswordStrength.ForeColor = Color.Red;
-                    break;
-                case "Mật khẩu yếu":
-                    lbPasswordStrength.ForeColor = Color.Red;
-                    break;
-                case "Mật khẩu trung bình":
-                    lbPasswordStrength.ForeColor = Color.Orange;
-                    break;
-                case "Mật khẩu mạnh":
-                    lbPasswordStrength.ForeColor = Color.LightGreen;
-                    break;
-                case "Mật khẩu rất mạnh":
-                    lbPasswordStrength.ForeColor = Color.Green;
-                    break;
-            }
+            //switch (strength)
+            //{
+            //    default:
+            //        lbPasswordStrength.ForeColor = Color.Red;
+            //        break;
+            //    case "Mật khẩu yếu":
+            //        lbPasswordStrength.ForeColor = Color.Red;
+            //        break;
+            //    case "Mật khẩu trung bình":
+            //        lbPasswordStrength.ForeColor = Color.Orange;
+            //        break;
+            //    case "Mật khẩu mạnh":
+            //        lbPasswordStrength.ForeColor = Color.LightGreen;
+            //        break;
+            //    case "Mật khẩu rất mạnh":
+            //        lbPasswordStrength.ForeColor = Color.Green;
+            //        break;
+            //}
         }
 
         private void cbClose_Click(object sender, System.EventArgs e)
         {
             DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(dl == DialogResult.OK)
+            if (dl == DialogResult.OK)
             {
-                this.Close();   
+                this.Close();
             }
         }
     }

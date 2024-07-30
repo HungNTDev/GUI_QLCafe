@@ -57,14 +57,14 @@ Primary key (IdProduct)
 )
 
 create table Bill (
-IdBill          nvarchar(20) not null,
-IdPayment       nvarchar(20) not null,
+IdBill        int  identity(1,1) ,
+IdPayment       nvarchar(20) ,
 IdTable         nvarchar(10) not null,
 IdStaff         nvarchar(20) not null,
-IdVoucher       nvarchar(10) not null,
+IdVoucher       nvarchar(10) ,
 DateCheckIn	datetime,
 DateCheckOut	datetime,
-StatusBill  int not null,
+StatusBill  int ,
 Primary key (IdBill)
 )
 	
@@ -76,7 +76,7 @@ drop table DetailBill
 drop table Bill
 
 create table DetailBill (
-IdBill nvarchar(20) not null,
+IdBill int not null,
 IdProduct nvarchar(20) not null,
 TotalPrice float not null,
 Amount int not null,
@@ -110,6 +110,9 @@ Foreign key (IdVoucher) references Voucher(IdVoucher)
 alter table Bill
 add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
+
+alter table DetailBill
+drop constraint fk_b_db
 
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',1),
@@ -163,7 +166,9 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('STO',N'Sinh tố',1),
 ('JUC',N'Nước ép',1)
 
-delete from Product
+update TableCF set StatusTable = 0 where IdTable = 'B01'
+
+
 
 --Thêm sản phẩm--
 /*Trà*/
@@ -202,6 +207,7 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 	update Product 
 	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\d5cb1aa5e36899-cphvanillaphclong.png'
  
+
 
 go
 --Đăng nhập
@@ -541,6 +547,22 @@ as
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
 
+-- Lấy trang bàn
+create proc GetPagedTable
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from TableCF order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+
+-- Lấy tổng số sản phẩm 
+create proc GetTotalTableCount as select count(*) from TableCF
+
+SELECT TOP 10 * FROM TableCF;
+
 -- GetTable 
 create proc GetTable
 as 
@@ -578,3 +600,37 @@ as
       select * from TableCF where IdTable = @value or 
 	  NameTable like N'%' + @value + '%'
 	  end
+
+-- StaffInfo 
+create proc StaffInfo (@email nvarchar(50))
+as 
+   begin 
+            select * from Staff where Email = @email
+	
+	end
+
+	exec StaffInfo 'hungntps38090@gmail.com'
+
+	create or alter proc AddingBill
+		@IdTable nvarchar(10),
+		@IdStaff nvarchar(10),
+		@DateCheckIn datetime
+as
+INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheckIn, DateCheckOut)
+    VALUES ( NULL, @IdTable, @IdStaff, NULL, 1, @DateCheckIn, null);
+	update TableCF set StatusTable = 1 where IdTable = @IdTable
+
+	create proc BillInfo
+	@IdTable nvarchar(10)
+	as
+	select Product.NameProduct, DetailBill.Amount, Product.price, DetailBill.TotalPrice, Bill.DateCheckIn from DetailBill
+	join Bill on Bill.IdBill = DetailBill.IdBill
+	join Product on Product.IdProduct = DetailBill.IdProduct
+	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
+
+	--
+	create proc ListPayment as 
+	select * from Payment order by IdPayment
+
+	create proc ListVoucher as
+	select * from Voucher order by PercentVoucher

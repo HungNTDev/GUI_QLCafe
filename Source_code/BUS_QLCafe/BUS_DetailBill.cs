@@ -32,11 +32,6 @@ namespace BUS_QLCafe
             return dal.search(obj);
         }
 
-        //Thêm detail bill
-        public bool AddingDetailBill(DTO_DetailBill detailBill)
-        {
-            return dal.AddingDetailBill(detailBill);
-        }
 
     }
 }

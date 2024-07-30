@@ -53,5 +53,12 @@ namespace BUS_QLCafe
         {
             return dal.ShowPayment();
         }
+
+
+        //Thêm detail bill
+        public bool AddingDetailBill(DTO_Bill Bill)
+        {
+            return dal.AddingDetailBill(Bill);
+        }
     }
 }

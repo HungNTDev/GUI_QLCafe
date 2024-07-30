@@ -143,57 +143,7 @@ namespace DAL_QLCafe
             }
         }
 
-        //List voucher
-        public DataTable ListVoucher()
-        {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "ListVoucher";
-                    conn.Open();
-                    DataTable dtPayment = new DataTable();
-                    dtPayment.Load(cmd.ExecuteReader());
-                    return dtPayment;
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }
 
-        //List payment
-        public DataTable ListPayment()
-        {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "ListPayment";
-                    conn.Open();
-                    DataTable dtPayment = new DataTable();
-                    dtPayment.Load(cmd.ExecuteReader());
-                    return dtPayment;
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }
 
         //payment
         public bool Payment(DTO_Bill bill)
@@ -225,6 +175,58 @@ namespace DAL_QLCafe
                 }
             }
             return false;
+        }
+
+        //List payment
+        public DataTable ListPayment()
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "ListPayment";
+                    conn.Open();
+                    DataTable dtPayment = new DataTable();
+                    dtPayment.Load(cmd.ExecuteReader());
+                    return dtPayment;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        //List voucher
+        public DataTable ListVoucher()
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "ListVoucher";
+                    conn.Open();
+                    DataTable dtPayment = new DataTable();
+                    dtPayment.Load(cmd.ExecuteReader());
+                    return dtPayment;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }

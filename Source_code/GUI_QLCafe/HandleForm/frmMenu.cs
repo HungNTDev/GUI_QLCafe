@@ -162,7 +162,7 @@ namespace GUI_QLCafe
         {
             try
             {
-                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2].ToString()) == 0)
+                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2].ToString()) == 0 && ListOrder_dgv.Rows.Count > 1)
                 {
                     billDTO.IdTable = busTB.TableInfo(billDTO).Rows[0][0].ToString();
                     billDTO.IdStaff = busStaff.StaffInfo(frmMainQLCF.email).Rows[0][1].ToString();
@@ -170,12 +170,14 @@ namespace GUI_QLCafe
                     busBill.AddingBill(billDTO);
                     for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
                     {
-                        detailBillDTO.idBill = frmPOS.idTable;
-                        detailBillDTO.Amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
-                        detailBillDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / detailBillDTO.Amount;
-                        detailBillDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
-                        detailBillDTO.TotalPrice = detailBillDTO.Price * detailBillDTO.Amount;
-                        busDetailBill.AddingDetailBill(detailBillDTO);
+                        billDTO.idBill = frmPOS.idTable;
+                        billDTO.Amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
+                        billDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / billDTO.Amount;
+                        billDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
+                        billDTO.TotalPrice = billDTO.Price * billDTO.Amount;
+
+
+                        busBill.AddingDetailBill(billDTO);
                         //Count += bill.Amount;
                     }
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

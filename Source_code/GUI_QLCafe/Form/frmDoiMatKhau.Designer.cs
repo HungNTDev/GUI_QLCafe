@@ -43,12 +43,12 @@
             this.cbClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
-            this.lbPasswordStrength = new System.Windows.Forms.Label();
             this.lbRetypePass = new System.Windows.Forms.Label();
             this.lbNewPassword = new System.Windows.Forms.Label();
             this.txtRetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.bfDoiMatKhau = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.lbPasswordStrength = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.panelDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
@@ -277,17 +277,6 @@
             this.chkShowPassword.UseVisualStyleBackColor = false;
             this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
-            // lbPasswordStrength
-            // 
-            this.lbPasswordStrength.AutoSize = true;
-            this.lbPasswordStrength.BackColor = System.Drawing.Color.Transparent;
-            this.lbPasswordStrength.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPasswordStrength.Location = new System.Drawing.Point(608, 517);
-            this.lbPasswordStrength.Name = "lbPasswordStrength";
-            this.lbPasswordStrength.Size = new System.Drawing.Size(21, 28);
-            this.lbPasswordStrength.TabIndex = 6;
-            this.lbPasswordStrength.Text = " .";
-            // 
             // lbRetypePass
             // 
             this.lbRetypePass.AutoSize = true;
@@ -371,6 +360,18 @@
             this.bfDoiMatKhau.DockIndicatorTransparencyValue = 0.6D;
             this.bfDoiMatKhau.TransparentWhileDrag = true;
             // 
+            // lbPasswordStrength
+            // 
+            this.lbPasswordStrength.AutoSize = true;
+            this.lbPasswordStrength.BackColor = System.Drawing.Color.Transparent;
+            this.lbPasswordStrength.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPasswordStrength.Location = new System.Drawing.Point(608, 517);
+            this.lbPasswordStrength.Name = "lbPasswordStrength";
+            this.lbPasswordStrength.Size = new System.Drawing.Size(21, 28);
+            this.lbPasswordStrength.TabIndex = 6;
+            this.lbPasswordStrength.Text = " .";
+            this.lbPasswordStrength.Visible = false;
+            // 
             // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,9 +408,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtRetypePassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
         private Guna.UI2.WinForms.Guna2Shapes shapeLine;
-        private System.Windows.Forms.Label lbPasswordStrength;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfDoiMatKhau;
         private Guna.UI2.WinForms.Guna2ControlBox cbMinimize;
         private Guna.UI2.WinForms.Guna2ControlBox cbClose;
+        private System.Windows.Forms.Label lbPasswordStrength;
     }
 }

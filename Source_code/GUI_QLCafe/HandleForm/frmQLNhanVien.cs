@@ -36,7 +36,7 @@ namespace GUI_QLCafe
         string fileSavePath; //vị trí lưu
         string fileAddress;
 
-        private const int PageSize = 15;
+        private const int PageSize = 10;
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
@@ -544,7 +544,7 @@ namespace GUI_QLCafe
             LoadData(status);
         }
 
-        
+
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             currentPageIndex = 1;
@@ -589,10 +589,10 @@ namespace GUI_QLCafe
 
                     PerformSearch();
                 }
-                
+
                 lbCurrentPage.Text = currentPageIndex.ToString();
             }
-            
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)

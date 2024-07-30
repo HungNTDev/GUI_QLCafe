@@ -231,5 +231,38 @@ namespace DAL_QLCafe
                 return dt;
             }
         }
+
+        //Thêm detail bill
+        public bool AddingDetailBill(DTO_Bill Bill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "AddingDetailBill";
+                    cmd.Parameters.AddWithValue("@IdTable", Bill.IdTable);
+
+                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
+                    cmd.Parameters.AddWithValue("@Amount", Bill.Amount);
+                    cmd.Parameters.AddWithValue("@TotalPrice", Bill.TotalPrice);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
     }
 }

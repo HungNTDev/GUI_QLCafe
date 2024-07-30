@@ -13,6 +13,24 @@ namespace DTO_QLCafe
         public DateTime dateCheckIn;
         public DateTime dateCheckOut;
 
+
+        public string idProduct;
+
+        public int amount;
+
+        public float price;
+
+        public float totalPrice;
+
+
+
+        public string IdProduct { get => idProduct; set => idProduct = value; }
+
+        public float TotalPrice { get => totalPrice; set => totalPrice = value; }
+
+        public int Amount { get => amount; set => amount = value; }
+        public float Price { get => price; set => price = value; }
+
         public string IdBill { get => idBill; set => idBill = value; }
         public string IdTable { get => idTable; set => idTable = value; }
         public string IdVoucher { get => idVoucher; set => idVoucher = value; }

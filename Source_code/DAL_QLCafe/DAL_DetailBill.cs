@@ -140,36 +140,6 @@ namespace DAL_QLCafe
             }
         }
 
-        //Thêm detail bill
-        public bool AddingDetailBill(DTO_DetailBill detailBill)
-        {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "AddingDetailBill";
-                    cmd.Parameters.AddWithValue("@IdTable", detailBill.IdBill);
-                    cmd.Parameters.AddWithValue("@IdProduct", detailBill.IdProduct);
-                    cmd.Parameters.AddWithValue("@Amount", detailBill.Amount);
-                    cmd.Parameters.AddWithValue("@TotalPrice", detailBill.TotalPrice);
-                    conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-            return false;
-        }
+
     }
 }

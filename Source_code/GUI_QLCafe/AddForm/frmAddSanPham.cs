@@ -143,7 +143,7 @@ namespace GUI_QLCafe
                     product.IdProduct = id;
                     if (busproduct.update(product))
                     {
-                        lbtagname.Visible = true;
+                        //lbtagname.Visible = true;
                         if (txtDuongDan.Text != checkUrlImage)
                         {
                             //if (File.Exists(fileSavePath))
@@ -209,7 +209,7 @@ namespace GUI_QLCafe
                     // Tạo đường dẫn để lưu file vào thư mục của project
 
                     txtDuongDan.Text = fileAddress;
-                    lbtagname.Visible = false;
+                    //lbtagname.Visible = false;
                 }
             }
             catch (Exception ex)

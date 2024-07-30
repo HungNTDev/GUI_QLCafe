@@ -300,6 +300,12 @@
     <Compile Include="ViewForm\frmViewSanPham.Designer.cs">
       <DependentUpon>frmViewSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForm\frmViewVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmViewVoucher.Designer.cs">
+      <DependentUpon>frmViewVoucher.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddForm\frmAddNhanVien.resx">
       <DependentUpon>frmAddNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForm\frmViewSanPham.resx">
       <DependentUpon>frmViewSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm\frmViewVoucher.resx">
+      <DependentUpon>frmViewVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -246,6 +246,11 @@ namespace DAL_QLCafe
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     conn.Open();
                     da.Fill(dt);
+
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
                 }
             }
             catch (Exception e)
@@ -268,6 +273,11 @@ namespace DAL_QLCafe
 
                     conn.Open();
                     totalProductCount = (int)cmd.ExecuteScalar();
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+
                 }
             }
             catch (Exception e)

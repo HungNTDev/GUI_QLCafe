@@ -7,9 +7,21 @@ namespace BUS_QLCafe
     public class BUS_Voucher
     {
         DAL_Voucher dal = new DAL_Voucher();
+        public int GetTotalVoucherCount()
+        {
+            return dal.GetTotalVoucherCount();
+        }
+        public DataTable GetPageVoucher(int pageIndex, int pageSize)
+        {
+            return dal.GetPagedVoucher(pageIndex, pageSize);
+        }
         public DataTable get()
         {
             return dal.get();
+        }
+        public bool KiemTraVoucher(string id)
+        {
+            return dal.KiemTraVoucher(id);
         }
         public bool insert(DTO_Voucher obj)
         {
@@ -19,9 +31,14 @@ namespace BUS_QLCafe
         {
             return dal.update(obj);
         }
-        public DataTable search(string keyword, string column)
+        public bool delete(string id)
         {
-            return dal.search(keyword, column);
+            return dal.delete(id);
+        }
+        public DataTable search(string value, int pageNumber, int pageSize, out int totalRows, out int totalPages)
+        {
+            // Call the DAL search method
+            return dal.search(value, pageNumber, pageSize, out totalRows, out totalPages);
         }
     }
 }

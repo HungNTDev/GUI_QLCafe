@@ -7,8 +7,6 @@ namespace GUI_QLCafe
     {
         public static int session = 0; //tình trạng login
         public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
-        // vai trò 0 là nv
-        // vai tro 1 là quản trị
 
         public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
         public static string dateTime;
@@ -268,7 +266,7 @@ namespace GUI_QLCafe
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
             if (role == "Quản trị")
-                AddControls(new frmQLNhanVien());
+                AddControls(new frmQLNhanVien(this));
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
@@ -280,7 +278,11 @@ namespace GUI_QLCafe
 
         private void btnQLVoucher_Click_1(object sender, EventArgs e)
         {
-            AddControls(new frmQLVoucher());
+
+            if (role == "Quản trị")
+                AddControls(new frmQLVoucher());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)

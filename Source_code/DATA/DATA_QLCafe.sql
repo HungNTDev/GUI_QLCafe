@@ -84,10 +84,17 @@ Primary key (IdStatistic)
 create table DetailStatistic (
 IdDetailStatistic int ,
 IdStatistic int,
-NameMenu nvarchar(100),
+NameProduct nvarchar(100),
 Amount int,
-
+Price float,
+TotalPrice float,
+Primary key (IdDetailStatistic)
 )
+
+alter table DetailStatistic
+add constraint fk_dtst_st
+foreign key (IdStatistic) references Statistic(IdStatistic)
+
 --Drop detail bill và bill để thêm datecheckin checkout
 alter table DetailBill
 drop constraint fk_b_db

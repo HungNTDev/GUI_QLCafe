@@ -1,5 +1,6 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -163,41 +164,30 @@ namespace GUI_QLCafe
         {
             if (cbPhuongThucTT.Text == "MOMO")
             {
-                picMoMo.Visible = true;
+                btnTaoQR.Visible = true;
 
             }
             else if (cbPhuongThucTT.Text == "Tiền Mặt")
             {
 
-                picMoMo.Visible = false;
+                btnTaoQR.Visible = false;
 
             }
         }
 
-        private void btn_TaoQR_Click(object sender, EventArgs e)
+        private void btnTaoQR_Click(object sender, EventArgs e)
         {
-            string ten = "Lý Bảo Hoàng";
-            string so = "0836753008";
-
-            var qrcode_text = $"2|99|{so.Trim()}|{ten.Trim()}|0|0|{busBill.BillInfo(billDTO).Rows[0][3].ToString()}";
-            BarcodeWriter writer = new BarcodeWriter();
-            EncodingOptions encodingOptions = new EncodingOptions()
+            try
             {
-                Width = 250,
-                Height = 250,
-                Margin = 1,
-                PureBarcode = false
-            };
-            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
-            writer.Renderer = new BitmapRenderer();
-            writer.Options = encodingOptions;
-            writer.Format = BarcodeFormat.QR_CODE;
-            Bitmap bitmap = writer.Write(qrcode_text);
-            Bitmap logo = resizeImage(Properties.Resources.logo_momo, 20, 20) as Bitmap;
-            Graphics g = Graphics.FromImage(bitmap);
-            g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
-            picMoMo.Image = bitmap;
-
+                string totalAmount = lbTongTien.Text.Replace("Thành tiền: ", "").Replace(" VND", "");
+                frmQRCode qrCode = new frmQRCode(totalAmount, billDTO);
+                qrCode.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
+

@@ -36,11 +36,11 @@
             this.lbTongTien = new System.Windows.Forms.Label();
             this.lbThoiGian = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.picQRCode = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picMoMo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelHeader.SuspendLayout();
             this.panelBody.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoMo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -131,7 +131,7 @@
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2GroupBox1.BorderRadius = 10;
-            this.guna2GroupBox1.Controls.Add(this.picQRCode);
+            this.guna2GroupBox1.Controls.Add(this.picMoMo);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
@@ -142,16 +142,16 @@
             this.guna2GroupBox1.Text = "Quét mã tại đây";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // picQRCode
+            // picMoMo
             // 
-            this.picQRCode.BackColor = System.Drawing.Color.White;
-            this.picQRCode.FillColor = System.Drawing.Color.Silver;
-            this.picQRCode.ImageRotate = 0F;
-            this.picQRCode.Location = new System.Drawing.Point(96, 70);
-            this.picQRCode.Name = "picQRCode";
-            this.picQRCode.Size = new System.Drawing.Size(265, 246);
-            this.picQRCode.TabIndex = 0;
-            this.picQRCode.TabStop = false;
+            this.picMoMo.BackColor = System.Drawing.Color.White;
+            this.picMoMo.FillColor = System.Drawing.Color.Silver;
+            this.picMoMo.ImageRotate = 0F;
+            this.picMoMo.Location = new System.Drawing.Point(96, 70);
+            this.picMoMo.Name = "picMoMo";
+            this.picMoMo.Size = new System.Drawing.Size(265, 246);
+            this.picMoMo.TabIndex = 0;
+            this.picMoMo.TabStop = false;
             // 
             // frmQRCode
             // 
@@ -172,7 +172,7 @@
             this.panelBody.ResumeLayout(false);
             this.panelBody.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoMo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Label lblHeaderText;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox picQRCode;
+        private Guna.UI2.WinForms.Guna2PictureBox picMoMo;
         private System.Windows.Forms.Label lbThoiGian;
         private Guna.UI2.WinForms.Guna2Button btnThanhToanKhac;
         private System.Windows.Forms.Label lbTongTien;

@@ -1,13 +1,6 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -26,7 +19,6 @@ namespace GUI_QLCafe
         {
             InitializeComponent();
         }
-
         // phương thức này dùng để gọi Notfication khi thêm thành công
         public void Nofication(string msg, frmNotification.enumType type)
         {
@@ -83,32 +75,35 @@ namespace GUI_QLCafe
                     status = 1;
                 }
                 DTO_Voucher dto = new DTO_Voucher(txtMaKhuyenMai.Text, txtTenKhuyenMai.Text, int.Parse(txtPhanTramKM.Text), status);
-                
-                if (formMode == FormMode.Them)
+                if (MessageBox.Show("Bạn chắc chắn lưu?", "Thông báo",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    if (bus.insert(dto))
+                    if (formMode == FormMode.Them)
                     {
-                        MessageBox.Show("Thêm mã khuyến mãi thành công!", "Thông báo",
+                        if (bus.insert(dto))
+                        {
+                            MessageBox.Show("Thêm mã khuyến mãi thành công!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Message("Thêm thất bại!", frmNotification.enumType.Failed);
+                        }
+                    }
+                    else
+                    {
+                        dto.IdVoucher = id;
+                        if (bus.update(dto))
+                        {
+                            MessageBox.Show("Cập nhật thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Message("Thêm thất bại!", frmNotification.enumType.Failed);
-                    }
-                }
-                else
-                {
-                    dto.IdVoucher = id;
-                    if (bus.update(dto))
-                    {
-                        MessageBox.Show("Cập nhật thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Message("Cập nhật thất bại!", frmNotification.enumType.Failed);
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Message("Cập nhật thất bại!", frmNotification.enumType.Failed);
+                        }
                     }
                 }
             }

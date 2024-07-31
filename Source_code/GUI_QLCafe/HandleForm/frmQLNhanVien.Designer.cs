@@ -119,14 +119,14 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(725, 422);
+            this.txtTimKiem.Location = new System.Drawing.Point(795, 422);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTimKiem.PlaceholderText = "";
             this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(315, 44);
+            this.txtTimKiem.Size = new System.Drawing.Size(245, 44);
             this.txtTimKiem.TabIndex = 2;
             // 
             // btnTimKiem
@@ -206,7 +206,7 @@
             this.dgvDanhSachNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDanhSachNhanVien.RowTemplate.Height = 24;
             this.dgvDanhSachNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1479, 565);
+            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1479, 515);
             this.dgvDanhSachNhanVien.TabIndex = 15;
             this.dgvDanhSachNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachNhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -305,7 +305,7 @@
             "Email",
             "Tên nhân viên",
             "Vai trò"});
-            this.cboTim.Location = new System.Drawing.Point(492, 422);
+            this.cboTim.Location = new System.Drawing.Point(563, 423);
             this.cboTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTim.Name = "cboTim";
             this.cboTim.Size = new System.Drawing.Size(223, 36);
@@ -627,7 +627,7 @@
             this.guna2Panel1.Controls.Add(this.lbtotalRow);
             this.guna2Panel1.Controls.Add(this.btnNext);
             this.guna2Panel1.Controls.Add(this.btnPrev);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 1079);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 1012);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1587, 91);
@@ -887,6 +887,7 @@
             this.Name = "frmQLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLNhanVien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmQLNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachNhanVien)).EndInit();
             this.gbTrangThai.ResumeLayout(false);

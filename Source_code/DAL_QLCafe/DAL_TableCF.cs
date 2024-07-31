@@ -109,7 +109,7 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "DeleteTableCF";
+                    cmd.CommandText = "DeleteTable";
                     cmd.Parameters.AddWithValue("@IdTable", id);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)

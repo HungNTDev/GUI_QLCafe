@@ -185,63 +185,66 @@ namespace GUI_QLCafe
             }
             else
             {
-                try
+                if (MessageBox.Show("Chắc chắn lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
-                    guiMK();
-                    if (busNhanVien.insert(staff))
+                    try
                     {
-                        // Đường dẫn thư mục gốc của dự án
-                        string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-                        string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
-
-                        // Tạo thư mục nếu chưa có
-                        if (!Directory.Exists(saveDirectory))
+                        DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
+                        guiMK();
+                        if (busNhanVien.insert(staff))
                         {
-                            Directory.CreateDirectory(saveDirectory);
+                            // Đường dẫn thư mục gốc của dự án
+                            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                            string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
+
+                            // Tạo thư mục nếu chưa có
+                            if (!Directory.Exists(saveDirectory))
+                            {
+                                Directory.CreateDirectory(saveDirectory);
+                            }
+
+
+                            // Đường dẫn ảnh
+                            string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                            string fileName = Path.GetFileName(fileAddress);
+                            string fileSavePath = Path.Combine(saveDirectory, fileName);
+                            // Copy the image to the specified directory
+
+                            // Ensure the image file is released
+                            if (picNhanVien.Image != null)
+                            {
+                                picNhanVien.Image.Dispose();
+                                picNhanVien.Image = originalImage;
+                            }
+
+                            File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
+
+                            // Update txtHinh to point to the new location
+                            txtDuongDan.Text = fileSavePath;
+
+                            //frmQLNhanVien qlnv = new frmQLNhanVien();
+                            //qlnv.Reload();
+                            Nofication("Thêm thành công!", frmNotification.enumType.Success);
+
+                            txtEmail.Clear();
+                            txtTenNhanVien.Clear();
+                            rdoHoatDong.Checked = false;
+                            rdoNgungHoatDong.Checked = false;
+                            rdoNhanVien.Checked = false;
+                            rdoQuanTri.Checked = false;
                         }
-
-
-                        // Đường dẫn ảnh
-                        string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
-                        string fileName = Path.GetFileName(fileAddress);
-                        string fileSavePath = Path.Combine(saveDirectory, fileName);
-                        // Copy the image to the specified directory
-
-                        // Ensure the image file is released
-                        if (picNhanVien.Image != null)
+                        else
                         {
-                            picNhanVien.Image.Dispose();
-                            picNhanVien.Image = originalImage;
+                            Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                            return;
                         }
-
-                        File.Copy(fileAddress, fileSavePath, true); // Copy and overwrite if exists
-
-                        // Update txtHinh to point to the new location
-                        txtDuongDan.Text = fileSavePath;
-
-                        //frmQLNhanVien qlnv = new frmQLNhanVien();
-                        //qlnv.Reload();
-                        Nofication("Thêm thành công!", frmNotification.enumType.Success);
-                        
-                        txtEmail.Clear();
-                        txtTenNhanVien.Clear();
-                        rdoHoatDong.Checked = false;
-                        rdoNgungHoatDong.Checked = false;
-                        rdoNhanVien.Checked = false;
-                        rdoQuanTri.Checked = false;
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
+                        MessageBox.Show(ex.ToString());
+                        //Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
                         return;
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                    //Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
-                    return;
                 }
             }
             //    }

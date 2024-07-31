@@ -177,6 +177,7 @@
             this.btnThemMon.Size = new System.Drawing.Size(178, 48);
             this.btnThemMon.TabIndex = 1;
             this.btnThemMon.Text = "Thêm món";
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // btnThanhToan
             // 

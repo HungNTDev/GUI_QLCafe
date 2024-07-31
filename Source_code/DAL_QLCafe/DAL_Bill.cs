@@ -263,5 +263,14 @@ namespace DAL_QLCafe
             }
             return totalBillCount;
         }
+
+        public bool MergeBillMenu(DTO_Bill bill, int amount)
+        {
+            string Query = @"exec MergeBillMenu @IdTable = '" + bill.IdTable + "', @quanity = '" + bill.Amount + "', @quanityNew = '" + amount + "' ";
+            SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+            DataTable dt = new DataTable();
+            adt.Fill(dt);
+            return true;
+        }
     }
 }

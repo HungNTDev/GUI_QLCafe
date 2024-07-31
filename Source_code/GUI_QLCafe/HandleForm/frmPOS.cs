@@ -146,5 +146,12 @@ namespace GUI_QLCafe
             ResetBill();
         }
 
+        private void btnThemMon_Click(object sender, EventArgs e)
+        {
+            NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
+            idTable = busTB.TableInfo(billDTO).Rows[0][0].ToString();
+            menu.ShowDialog();
+            showBill(idTable);
+        }
     }
 }

@@ -1,12 +1,5 @@
 ﻿using BUS_QLCafe;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing.Common;
 using ZXing.QrCode.Internal;
@@ -38,7 +31,7 @@ namespace GUI_QLCafe.ViewForm
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if(i > 0)
+            if (i > 0)
             {
                 i--;
                 lbThoiGian.Text = "Thời gian thanh toán còn lại: " + i.ToString();
@@ -46,7 +39,7 @@ namespace GUI_QLCafe.ViewForm
             else
             {
                 timer.Stop();   
-                MessageBox.Show("Hết thời gian thanh toán - Vui lòng kiểm tra giao dịch", "Thông báo", 
+                MessageBox.Show("Hết thời gian thanh toán.", "Thông báo", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
@@ -60,7 +53,6 @@ namespace GUI_QLCafe.ViewForm
 
         private void btnThanhToanKhac_Click(object sender, EventArgs e)
         {
-            frmPayment frmPayment = new frmPayment();
             DialogResult dl = MessageBox.Show("Bạn có muốn chọn loại thanh toán khác?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dl == DialogResult.OK)
             {

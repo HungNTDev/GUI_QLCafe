@@ -177,6 +177,7 @@
             this.btnLuu.Size = new System.Drawing.Size(460, 57);
             this.btnLuu.TabIndex = 29;
             this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // bfAddBan
             // 

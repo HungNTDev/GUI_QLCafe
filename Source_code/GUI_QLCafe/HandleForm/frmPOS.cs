@@ -36,7 +36,7 @@ namespace GUI_QLCafe
             lbThuNgan.Text = "Thu ngân : ";
             lbGioVao.Text = "Giờ vào : ";
             lbThanhTien.Text = "Thành tiền : ";
-            btnThanhToan.Enabled = false;
+            //btnThanhToan.Enabled = false;
         }
 
         private void showBill(string id)

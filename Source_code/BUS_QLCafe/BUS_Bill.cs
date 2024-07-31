@@ -12,24 +12,23 @@ namespace BUS_QLCafe
         {
             return dal.get();
         }
-
-        public bool insert(DTO_Bill bill)
-        {
-            return dal.insert(bill);
-        }
-
-        public bool update(DTO_Bill bill)
-        {
-            return dal.update(bill);
-        }
-
         public bool delete(string obj)
         {
             return dal.delete(obj);
         }
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
-            return dal.search(keyword, column);
+            return dal.search(keyword);
+        }
+
+        public DataTable GetPagedBill(int PageIndex, int PageSize)
+        {
+            return dal.GetPagedBill(PageIndex, PageSize);
+        }
+
+        public int ToTalBill()
+        {
+            return dal.GetTotalBillCount();
         }
 
         //Xem thông tin bill

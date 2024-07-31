@@ -40,7 +40,7 @@ namespace GUI_QLCafe
         }
 
         public string id = "";
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMaBan.Text))
             {

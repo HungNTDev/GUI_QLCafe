@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPayment));
             this.panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_TaoQR = new Guna.UI2.WinForms.Guna2Button();
+            this.picMoMo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.cbPhuongThucTT = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -53,6 +55,7 @@
             this.chDonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chThanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoMo)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -61,6 +64,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel3.Controls.Add(this.btn_TaoQR);
+            this.panel3.Controls.Add(this.picMoMo);
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Controls.Add(this.btnThanhToan);
             this.panel3.Controls.Add(this.cbPhuongThucTT);
@@ -71,11 +76,49 @@
             this.panel3.Controls.Add(this.lbTongTien);
             this.panel3.Controls.Add(this.lbTongHoaDon);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 476);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 376);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(512, 242);
+            this.panel3.Size = new System.Drawing.Size(613, 342);
             this.panel3.TabIndex = 1;
+            // 
+            // btn_TaoQR
+            // 
+            this.btn_TaoQR.BorderColor = System.Drawing.Color.White;
+            this.btn_TaoQR.BorderRadius = 10;
+            this.btn_TaoQR.BorderThickness = 1;
+            this.btn_TaoQR.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_TaoQR.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_TaoQR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_TaoQR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_TaoQR.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btn_TaoQR.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TaoQR.ForeColor = System.Drawing.Color.White;
+            this.btn_TaoQR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btn_TaoQR.HoverState.FillColor = System.Drawing.Color.White;
+            this.btn_TaoQR.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btn_TaoQR.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btn_TaoQR.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaoQR.Image")));
+            this.btn_TaoQR.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_TaoQR.Location = new System.Drawing.Point(14, 155);
+            this.btn_TaoQR.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_TaoQR.Name = "btn_TaoQR";
+            this.btn_TaoQR.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btn_TaoQR.Size = new System.Drawing.Size(167, 41);
+            this.btn_TaoQR.TabIndex = 8;
+            this.btn_TaoQR.Text = "Tạo mã";
+            this.btn_TaoQR.Click += new System.EventHandler(this.btn_TaoQR_Click);
+            // 
+            // picMoMo
+            // 
+            this.picMoMo.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.picMoMo.ImageRotate = 0F;
+            this.picMoMo.Location = new System.Drawing.Point(354, 4);
+            this.picMoMo.Margin = new System.Windows.Forms.Padding(2);
+            this.picMoMo.Name = "picMoMo";
+            this.picMoMo.Size = new System.Drawing.Size(257, 250);
+            this.picMoMo.TabIndex = 6;
+            this.picMoMo.TabStop = false;
             // 
             // btnHuy
             // 
@@ -92,11 +135,11 @@
             this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnHuy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHuy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnHuy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnHuy.Location = new System.Drawing.Point(266, 183);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Location = new System.Drawing.Point(323, 284);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnHuy.Size = new System.Drawing.Size(238, 41);
@@ -119,11 +162,11 @@
             this.btnThanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThanhToan.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnThanhToan.Location = new System.Drawing.Point(14, 183);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThanhToan.Location = new System.Drawing.Point(14, 284);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnThanhToan.Size = new System.Drawing.Size(238, 41);
@@ -145,11 +188,12 @@
             this.cbPhuongThucTT.Items.AddRange(new object[] {
             "Tiền mặt",
             "MoMo"});
-            this.cbPhuongThucTT.Location = new System.Drawing.Point(222, 89);
-            this.cbPhuongThucTT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPhuongThucTT.Location = new System.Drawing.Point(226, 106);
+            this.cbPhuongThucTT.Margin = new System.Windows.Forms.Padding(2);
             this.cbPhuongThucTT.Name = "cbPhuongThucTT";
             this.cbPhuongThucTT.Size = new System.Drawing.Size(124, 36);
             this.cbPhuongThucTT.TabIndex = 4;
+            this.cbPhuongThucTT.SelectedIndexChanged += new System.EventHandler(this.cbPhuongThucTT_SelectedIndexChanged);
             // 
             // cbVoucher
             // 
@@ -162,8 +206,8 @@
             this.cbVoucher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbVoucher.ItemHeight = 30;
-            this.cbVoucher.Location = new System.Drawing.Point(90, 50);
-            this.cbVoucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbVoucher.Location = new System.Drawing.Point(98, 64);
+            this.cbVoucher.Margin = new System.Windows.Forms.Padding(2);
             this.cbVoucher.Name = "cbVoucher";
             this.cbVoucher.Size = new System.Drawing.Size(124, 36);
             this.cbVoucher.TabIndex = 4;
@@ -174,7 +218,7 @@
             this.lbVoucher.AutoSize = true;
             this.lbVoucher.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVoucher.ForeColor = System.Drawing.Color.White;
-            this.lbVoucher.Location = new System.Drawing.Point(218, 54);
+            this.lbVoucher.Location = new System.Drawing.Point(234, 64);
             this.lbVoucher.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbVoucher.Name = "lbVoucher";
             this.lbVoucher.Size = new System.Drawing.Size(63, 25);
@@ -186,7 +230,7 @@
             this.lbPhuongThucTT.AutoSize = true;
             this.lbPhuongThucTT.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhuongThucTT.ForeColor = System.Drawing.Color.White;
-            this.lbPhuongThucTT.Location = new System.Drawing.Point(8, 89);
+            this.lbPhuongThucTT.Location = new System.Drawing.Point(8, 110);
             this.lbPhuongThucTT.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbPhuongThucTT.Name = "lbPhuongThucTT";
             this.lbPhuongThucTT.Size = new System.Drawing.Size(236, 25);
@@ -198,7 +242,7 @@
             this.lbTextVoucher.AutoSize = true;
             this.lbTextVoucher.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextVoucher.ForeColor = System.Drawing.Color.White;
-            this.lbTextVoucher.Location = new System.Drawing.Point(9, 50);
+            this.lbTextVoucher.Location = new System.Drawing.Point(10, 64);
             this.lbTextVoucher.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTextVoucher.Name = "lbTextVoucher";
             this.lbTextVoucher.Size = new System.Drawing.Size(86, 25);
@@ -210,7 +254,7 @@
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongTien.ForeColor = System.Drawing.Color.White;
-            this.lbTongTien.Location = new System.Drawing.Point(8, 134);
+            this.lbTongTien.Location = new System.Drawing.Point(9, 203);
             this.lbTongTien.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTongTien.Name = "lbTongTien";
             this.lbTongTien.Size = new System.Drawing.Size(144, 32);
@@ -222,7 +266,7 @@
             this.lbTongHoaDon.AutoSize = true;
             this.lbTongHoaDon.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lbTongHoaDon.Location = new System.Drawing.Point(9, 9);
+            this.lbTongHoaDon.Location = new System.Drawing.Point(8, 18);
             this.lbTongHoaDon.Margin = new System.Windows.Forms.Padding(2, 6, 2, 2);
             this.lbTongHoaDon.Name = "lbTongHoaDon";
             this.lbTongHoaDon.Size = new System.Drawing.Size(143, 25);
@@ -235,9 +279,9 @@
             this.panel1.Controls.Add(this.lbText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 41);
+            this.panel1.Size = new System.Drawing.Size(613, 41);
             this.panel1.TabIndex = 0;
             // 
             // lbText
@@ -262,9 +306,9 @@
             this.panel2.Controls.Add(this.lbGioVao);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 41);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 143);
+            this.panel2.Size = new System.Drawing.Size(613, 143);
             this.panel2.TabIndex = 2;
             // 
             // guna2PictureBox1
@@ -272,8 +316,8 @@
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(335, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(436, 0);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(177, 143);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,9 +385,9 @@
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.HideSelection = false;
             this.lvHoaDon.Location = new System.Drawing.Point(0, 184);
-            this.lvHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(512, 292);
+            this.lvHoaDon.Size = new System.Drawing.Size(613, 192);
             this.lvHoaDon.TabIndex = 5;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
@@ -351,44 +395,46 @@
             // chTenMon
             // 
             this.chTenMon.Text = "Tên món";
-            this.chTenMon.Width = 200;
+            this.chTenMon.Width = 152;
             // 
             // chSoLuong
             // 
             this.chSoLuong.Text = "Số lượng";
             this.chSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chSoLuong.Width = 120;
+            this.chSoLuong.Width = 124;
             // 
             // chDonGia
             // 
             this.chDonGia.Text = "Đơn giá";
             this.chDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chDonGia.Width = 160;
+            this.chDonGia.Width = 140;
             // 
             // chThanhTien
             // 
             this.chThanhTien.Text = "Thành tiền";
             this.chThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chThanhTien.Width = 200;
+            this.chThanhTien.Width = 199;
             // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(512, 718);
+            this.ClientSize = new System.Drawing.Size(613, 718);
             this.Controls.Add(this.lvHoaDon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPayment";
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoMo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -422,5 +468,7 @@
         private System.Windows.Forms.Label lbTongTien;
         private Guna.UI2.WinForms.Guna2Button btnThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnHuy;
+        private Guna.UI2.WinForms.Guna2PictureBox picMoMo;
+        private Guna.UI2.WinForms.Guna2Button btn_TaoQR;
     }
 }

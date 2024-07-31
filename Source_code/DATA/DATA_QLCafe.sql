@@ -207,7 +207,16 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 	update Product 
 	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\d5cb1aa5e36899-cphvanillaphclong.png'
  
+ -- Voucher 
+insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) values
+('#NULL',N'Không có',0,1),
+('SALE10%',N'Giảm 10%',10,1),
+('SALE7.5%',N'Giảm 7.5%',7.5,1)
 
+-- Payment
+insert into Payment (IdPayment, TypePayment, StatusPayment) values
+('TM',N'Tiền Mặt',1),
+('MM',N'MOMO',1)
 
 go
 --Đăng nhập
@@ -428,6 +437,7 @@ BEGIN
     FETCH NEXT @pageSize ROWS ONLY;
 END
 
+-- Lấy tổng số trang nhân viên
 create PROCEDURE GetTotalStaffCount
     @status INT
 AS
@@ -611,6 +621,7 @@ as
 
 	exec StaffInfo 'hungntps38090@gmail.com'
 
+--AddingBill
 	create or alter proc AddingBill
 		@IdTable nvarchar(10),
 		@IdStaff nvarchar(10),
@@ -620,6 +631,7 @@ INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheck
     VALUES ( NULL, @IdTable, @IdStaff, NULL, 1, @DateCheckIn, null);
 	update TableCF set StatusTable = 1 where IdTable = @IdTable
 
+--BillInfo
 	create proc BillInfo
 	@IdTable nvarchar(10)
 	as
@@ -628,9 +640,44 @@ INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheck
 	join Product on Product.IdProduct = DetailBill.IdProduct
 	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
 
-	--
+	--ListPayment
 	create proc ListPayment as 
 	select * from Payment order by IdPayment
 
+	-- ListVoucher
 	create proc ListVoucher as
 	select * from Voucher order by PercentVoucher
+
+	--Thanh toán
+	create   proc Pay (@IdTable nvarchar(10), @DateCheckOut datetime, @IdVoucher nvarchar(10), @IdPayment nvarchar(20))
+as
+	update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
+	update TableCF set StatusTable = 0 where IdTable = @IdTable
+
+	-- Load Bill 
+alter proc LoadBill 
+as 
+    select  IdBill, IdTable, IdStaff, StatusBill  from Bill
+
+	-- Xóa Bill 
+create proc BIllDelete @idBill int 
+as 
+	 delete from DetailBill where IdBill = @idBill
+	 delete from Bill where IdBill = @idBill 
+
+
+	 -- Lấy trang bill
+create proc GetPagedBill
+@PageIndex int,
+@PageSize int
+as
+	begin
+		select * from Bill order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+
+-- Lấy tổng số sản phẩm 
+create proc GetTotalTableCount as select count(*) from TableCF
+
+SELECT TOP 10 * FROM TableCF;

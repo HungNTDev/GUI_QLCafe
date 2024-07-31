@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace DTO_QLCafe
+﻿namespace DTO_QLCafe
 {
     public class DTO_Product
     {

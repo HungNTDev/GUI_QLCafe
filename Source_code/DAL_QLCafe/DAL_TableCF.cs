@@ -78,7 +78,7 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "UpdateTableCF ";
+                    cmd.CommandText = "UpdateTable ";
 
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);

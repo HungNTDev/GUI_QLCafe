@@ -1,8 +1,13 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
 using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode.Internal;
+using ZXing.Rendering;
 namespace GUI_QLCafe
 {
     public partial class frmPayment : Form
@@ -22,13 +27,12 @@ namespace GUI_QLCafe
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn quay lại?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn quay lại?",
+                "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dl == DialogResult.OK)
             {
                 this.Close();
             }
-
-
         }
 
         private void frmPayment_Load(object sender, EventArgs e)
@@ -40,7 +44,6 @@ namespace GUI_QLCafe
             ListVoucher();
             ListPayment();
         }
-
         private void ListPayment()
         {
             try
@@ -100,15 +103,18 @@ namespace GUI_QLCafe
         {
             try
             {
-                DialogResult = MessageBox.Show("Bạn có muốn thanh toán??", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult = MessageBox.Show("Bạn có muốn thanh toán??", "Thanh toán",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
                     billDTO.IdTable = frmPOS.idTable;
-                    billDTO.DateCheckOut = DateTime.Parse(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
+                    billDTO.DateCheckOut = DateTime.Parse(DateTime.Now.ToShortDateString() + " "
+                            + DateTime.Now.ToLongTimeString());
                     billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
                     billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
                     payment.Payment(billDTO);
-                    MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thanh toán thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
@@ -140,6 +146,57 @@ namespace GUI_QLCafe
                 showBill(idTable);
             }
             catch (Exception) { }
+        }
+
+
+        public Image resizeImage(Image image, int new_height, int new_width)
+        {
+            Bitmap new_image = new Bitmap(new_width, new_height);
+            Graphics g = Graphics.FromImage((Image)new_image);
+            g.InterpolationMode = InterpolationMode.High;
+            g.DrawImage(image, 0, 0, new_width, new_height);
+            return new_image;
+        }
+
+        private void cbPhuongThucTT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPhuongThucTT.Text == "MOMO")
+            {
+                picMoMo.Visible = true;
+
+            }
+            else if (cbPhuongThucTT.Text == "Tiền Mặt")
+            {
+                btn_TaoQR.Visible = false;
+                picMoMo.Visible = false;
+
+            }
+        }
+
+        private void btn_TaoQR_Click(object sender, EventArgs e)
+        {
+            string ten = "Lý Bảo Hoàng";
+            string so = "0836753008";
+
+            var qrcode_text = $"2|99|{so.Trim()}|{ten.Trim()}|0|0|{busBill.BillInfo(billDTO).Rows[0][3].ToString()}";
+            BarcodeWriter writer = new BarcodeWriter();
+            EncodingOptions encodingOptions = new EncodingOptions()
+            {
+                Width = 250,
+                Height = 250,
+                Margin = 1,
+                PureBarcode = false
+            };
+            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
+            writer.Renderer = new BitmapRenderer();
+            writer.Options = encodingOptions;
+            writer.Format = BarcodeFormat.QR_CODE;
+            Bitmap bitmap = writer.Write(qrcode_text);
+            Bitmap logo = resizeImage(Properties.Resources.logo_momo, 20, 20) as Bitmap;
+            Graphics g = Graphics.FromImage(bitmap);
+            g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
+            picMoMo.Image = bitmap;
+
         }
     }
 }

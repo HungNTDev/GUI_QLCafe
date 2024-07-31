@@ -1,4 +1,5 @@
 ﻿using DTO_QLCafe;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL_QLCafe
@@ -10,11 +11,12 @@ namespace DAL_QLCafe
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "GetBill";
+                    cmd.CommandText = "LoadBill";
                     conn.Open();
                     DataTable dtBill = new DataTable();
                     dtBill.Load(cmd.ExecuteReader());
@@ -30,77 +32,15 @@ namespace DAL_QLCafe
             }
         }
 
-        public bool insert(DTO_Bill obj)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "InsertBill";
-                    cmd.Parameters.AddWithValue("@IdBill", obj.IdBill);
-                    cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
-                    cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
-                    cmd.Parameters.AddWithValue("@IdStaff", obj.IdStaff);
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@StatusBill", obj.StatusBill);
-                    conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-            return false;
-        }
-
-        public bool update(DTO_Bill obj)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "UpdateBill";
-                    cmd.Parameters.AddWithValue("@IdBill", obj.IdBill);
-                    cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
-                    cmd.Parameters.AddWithValue("@IdPayment", obj.IdPayment);
-                    cmd.Parameters.AddWithValue("@IdStaff", obj.IdStaff);
-                    cmd.Parameters.AddWithValue("@IdVoucher", obj.IdVoucher);
-                    cmd.Parameters.AddWithValue("@StatusBill", obj.StatusBill);
-                    conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                { conn.Close(); }
-            }
-            return false;
-        }
-
         public bool delete(string id)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "DeleteBill";
+                    cmd.CommandText = "BIllDelete";
                     cmd.Parameters.AddWithValue("@IdBill", id);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
@@ -116,17 +56,17 @@ namespace DAL_QLCafe
             }
             return false;
         }
-        public DataTable search(string keyword, string column)
+        public DataTable search(string keyword)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_conn))
+                using (conn = new SqlConnection(_conn))
                 {
                     SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "SearchBill";
-                    cmd.Parameters.AddWithValue("@keyword", keyword);
-                    cmd.Parameters.AddWithValue("@column", column);
+                    cmd.Parameters.AddWithValue("@value", keyword);
                     conn.Open();
                     DataTable dtBill = new DataTable();
                     dtBill.Load(cmd.ExecuteReader());
@@ -167,7 +107,7 @@ namespace DAL_QLCafe
             //    }
             //}
 
-            using (SqlConnection Connection = new SqlConnection(_conn))
+            using (conn = new SqlConnection(_conn))
             {
                 string Query = @"exec BillInfo @idTable = '" + bill.IdTable + "'";
                 SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
@@ -210,7 +150,7 @@ namespace DAL_QLCafe
 
         public DataTable ShowVoucher()
         {
-            using (SqlConnection Connection = new SqlConnection(_conn))
+            using (conn = new SqlConnection(_conn))
             {
                 string Query = @"exec ShowVoucher";
                 SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
@@ -222,7 +162,7 @@ namespace DAL_QLCafe
 
         public DataTable ShowPayment()
         {
-            using (SqlConnection Connection = new SqlConnection(_conn))
+            using (conn = new SqlConnection(_conn))
             {
                 string Query = @"exec ShowPayment";
                 SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
@@ -263,6 +203,65 @@ namespace DAL_QLCafe
                 }
             }
             return false;
+        }
+
+        public DataTable GetPagedBill(int PageIndex, int PageSize)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetPagedBill";
+                    cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", PageSize);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    da.Fill(dt);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        Console.WriteLine("Không có dữ liệu được trả về từ proc");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return dt;
+        }
+
+        public int GetTotalBillCount()
+        {
+            int totalBillCount = 0;
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetTotalBillCount";
+                    conn.Open();
+                    totalBillCount = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            return totalBillCount;
         }
     }
 }

@@ -34,7 +34,6 @@
             this.lbThanhTien = new System.Windows.Forms.Label();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lbThuNgan = new System.Windows.Forms.Label();
-            this.lbGioRa = new System.Windows.Forms.Label();
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
             this.btnBan = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemMon = new Guna.UI2.WinForms.Guna2Button();
@@ -59,12 +58,12 @@
             // lbTenBan
             // 
             this.lbTenBan.AutoSize = true;
-            this.lbTenBan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenBan.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenBan.ForeColor = System.Drawing.Color.White;
-            this.lbTenBan.Location = new System.Drawing.Point(21, 15);
+            this.lbTenBan.Location = new System.Drawing.Point(21, 7);
             this.lbTenBan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbTenBan.Name = "lbTenBan";
-            this.lbTenBan.Size = new System.Drawing.Size(103, 31);
+            this.lbTenBan.Size = new System.Drawing.Size(150, 45);
             this.lbTenBan.TabIndex = 0;
             this.lbTenBan.Text = "Tên bàn:";
             // 
@@ -73,7 +72,7 @@
             this.lbGioVao.AutoSize = true;
             this.lbGioVao.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGioVao.ForeColor = System.Drawing.Color.White;
-            this.lbGioVao.Location = new System.Drawing.Point(20, 57);
+            this.lbGioVao.Location = new System.Drawing.Point(23, 63);
             this.lbGioVao.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbGioVao.Name = "lbGioVao";
             this.lbGioVao.Size = new System.Drawing.Size(101, 31);
@@ -97,12 +96,11 @@
             this.panelHeader.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelHeader.Controls.Add(this.lbThuNgan);
             this.panelHeader.Controls.Add(this.lbTenBan);
-            this.panelHeader.Controls.Add(this.lbGioRa);
             this.panelHeader.Controls.Add(this.lbGioVao);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(595, 186);
+            this.panelHeader.Size = new System.Drawing.Size(595, 154);
             this.panelHeader.TabIndex = 2;
             // 
             // lbThuNgan
@@ -110,24 +108,12 @@
             this.lbThuNgan.AutoSize = true;
             this.lbThuNgan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThuNgan.ForeColor = System.Drawing.Color.White;
-            this.lbThuNgan.Location = new System.Drawing.Point(21, 136);
+            this.lbThuNgan.Location = new System.Drawing.Point(23, 104);
             this.lbThuNgan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.lbThuNgan.Name = "lbThuNgan";
             this.lbThuNgan.Size = new System.Drawing.Size(127, 31);
             this.lbThuNgan.TabIndex = 1;
             this.lbThuNgan.Text = "Thu ngân: ";
-            // 
-            // lbGioRa
-            // 
-            this.lbGioRa.AutoSize = true;
-            this.lbGioRa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGioRa.ForeColor = System.Drawing.Color.White;
-            this.lbGioRa.Location = new System.Drawing.Point(21, 95);
-            this.lbGioRa.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
-            this.lbGioRa.Name = "lbGioRa";
-            this.lbGioRa.Size = new System.Drawing.Size(84, 31);
-            this.lbGioRa.TabIndex = 0;
-            this.lbGioRa.Text = "Giờ ra:";
             // 
             // panelFooter
             // 
@@ -229,9 +215,9 @@
             this.lvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.HideSelection = false;
-            this.lvHoaDon.Location = new System.Drawing.Point(0, 186);
+            this.lvHoaDon.Location = new System.Drawing.Point(0, 154);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(595, 394);
+            this.lvHoaDon.Size = new System.Drawing.Size(595, 426);
             this.lvHoaDon.TabIndex = 4;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
@@ -268,7 +254,6 @@
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(595, 751);
             this.flpTable.TabIndex = 6;
-            this.flpTable.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTable_Paint);
             // 
             // paneText
             // 
@@ -346,7 +331,6 @@
         private System.Windows.Forms.Label lbGioVao;
         private System.Windows.Forms.Label lbThanhTien;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
-        private System.Windows.Forms.Label lbGioRa;
         private Guna.UI2.WinForms.Guna2Panel panelFooter;
         private Guna.UI2.WinForms.Guna2Button btnThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnThemMon;

@@ -1,6 +1,6 @@
-﻿namespace GUI_QLCafe
+﻿namespace GUI_QLCafe.ViewForm
 {
-    partial class frmAddVoucher
+    partial class frmViewVoucher
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddVoucher));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewVoucher));
             this.cbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbTrangThai = new System.Windows.Forms.Label();
             this.lbPhanTramKM = new System.Windows.Forms.Label();
             this.txtPhanTramKM = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbTenKhuyenMai = new System.Windows.Forms.Label();
-            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.txtTenKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMaKhuyenMai = new System.Windows.Forms.Label();
             this.bfAddVoucher = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.txtMaKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbHeaderText = new System.Windows.Forms.Label();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
+            this.txtMaKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,11 +62,11 @@
             this.cbTrangThai.Items.AddRange(new object[] {
             "Chưa sử dụng",
             "Đã sử dụng"});
-            this.cbTrangThai.Location = new System.Drawing.Point(308, 171);
-            this.cbTrangThai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTrangThai.Location = new System.Drawing.Point(308, 172);
+            this.cbTrangThai.Margin = new System.Windows.Forms.Padding(2);
             this.cbTrangThai.Name = "cbTrangThai";
-            this.cbTrangThai.Size = new System.Drawing.Size(260, 36);
-            this.cbTrangThai.TabIndex = 50;
+            this.cbTrangThai.Size = new System.Drawing.Size(259, 36);
+            this.cbTrangThai.TabIndex = 61;
             // 
             // lbTrangThai
             // 
@@ -75,11 +74,11 @@
             this.lbTrangThai.BackColor = System.Drawing.Color.White;
             this.lbTrangThai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.lbTrangThai.Location = new System.Drawing.Point(307, 145);
+            this.lbTrangThai.Location = new System.Drawing.Point(307, 146);
             this.lbTrangThai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTrangThai.Name = "lbTrangThai";
             this.lbTrangThai.Size = new System.Drawing.Size(96, 25);
-            this.lbTrangThai.TabIndex = 43;
+            this.lbTrangThai.TabIndex = 54;
             this.lbTrangThai.Text = "Trạng thái";
             // 
             // lbPhanTramKM
@@ -88,11 +87,11 @@
             this.lbPhanTramKM.BackColor = System.Drawing.Color.White;
             this.lbPhanTramKM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhanTramKM.ForeColor = System.Drawing.Color.Black;
-            this.lbPhanTramKM.Location = new System.Drawing.Point(307, 84);
+            this.lbPhanTramKM.Location = new System.Drawing.Point(307, 85);
             this.lbPhanTramKM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPhanTramKM.Name = "lbPhanTramKM";
             this.lbPhanTramKM.Size = new System.Drawing.Size(201, 25);
-            this.lbPhanTramKM.TabIndex = 44;
+            this.lbPhanTramKM.TabIndex = 55;
             this.lbPhanTramKM.Text = "Phần trăm khuyến mãi";
             // 
             // txtPhanTramKM
@@ -110,7 +109,7 @@
             this.txtPhanTramKM.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhanTramKM.ForeColor = System.Drawing.Color.Black;
             this.txtPhanTramKM.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtPhanTramKM.Location = new System.Drawing.Point(310, 110);
+            this.txtPhanTramKM.Location = new System.Drawing.Point(310, 111);
             this.txtPhanTramKM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhanTramKM.Name = "txtPhanTramKM";
             this.txtPhanTramKM.PasswordChar = '\0';
@@ -118,7 +117,7 @@
             this.txtPhanTramKM.PlaceholderText = "";
             this.txtPhanTramKM.SelectedText = "";
             this.txtPhanTramKM.Size = new System.Drawing.Size(257, 29);
-            this.txtPhanTramKM.TabIndex = 46;
+            this.txtPhanTramKM.TabIndex = 57;
             // 
             // lbTenKhuyenMai
             // 
@@ -126,39 +125,12 @@
             this.lbTenKhuyenMai.BackColor = System.Drawing.Color.White;
             this.lbTenKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
-            this.lbTenKhuyenMai.Location = new System.Drawing.Point(29, 145);
+            this.lbTenKhuyenMai.Location = new System.Drawing.Point(29, 146);
             this.lbTenKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTenKhuyenMai.Name = "lbTenKhuyenMai";
             this.lbTenKhuyenMai.Size = new System.Drawing.Size(143, 25);
-            this.lbTenKhuyenMai.TabIndex = 45;
+            this.lbTenKhuyenMai.TabIndex = 56;
             this.lbTenKhuyenMai.Text = "Tên khuyến mãi";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
-            this.btnLuu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnLuu.BorderRadius = 15;
-            this.btnLuu.BorderThickness = 1;
-            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnLuu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(33, 229);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnLuu.Size = new System.Drawing.Size(535, 46);
-            this.btnLuu.TabIndex = 49;
-            this.btnLuu.Text = "LƯU";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtTenKhuyenMai
             // 
@@ -175,7 +147,7 @@
             this.txtTenKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
             this.txtTenKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTenKhuyenMai.Location = new System.Drawing.Point(33, 173);
+            this.txtTenKhuyenMai.Location = new System.Drawing.Point(33, 174);
             this.txtTenKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
             this.txtTenKhuyenMai.PasswordChar = '\0';
@@ -183,7 +155,7 @@
             this.txtTenKhuyenMai.PlaceholderText = "";
             this.txtTenKhuyenMai.SelectedText = "";
             this.txtTenKhuyenMai.Size = new System.Drawing.Size(257, 29);
-            this.txtTenKhuyenMai.TabIndex = 47;
+            this.txtTenKhuyenMai.TabIndex = 58;
             // 
             // lbMaKhuyenMai
             // 
@@ -191,11 +163,11 @@
             this.lbMaKhuyenMai.BackColor = System.Drawing.Color.White;
             this.lbMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaKhuyenMai.ForeColor = System.Drawing.Color.Black;
-            this.lbMaKhuyenMai.Location = new System.Drawing.Point(29, 84);
+            this.lbMaKhuyenMai.Location = new System.Drawing.Point(29, 85);
             this.lbMaKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaKhuyenMai.Name = "lbMaKhuyenMai";
             this.lbMaKhuyenMai.Size = new System.Drawing.Size(141, 25);
-            this.lbMaKhuyenMai.TabIndex = 42;
+            this.lbMaKhuyenMai.TabIndex = 53;
             this.lbMaKhuyenMai.Text = "Mã khuyến mãi";
             // 
             // bfAddVoucher
@@ -208,57 +180,6 @@
             this.bfAddVoucher.DockIndicatorTransparencyValue = 0.6D;
             this.bfAddVoucher.TransparentWhileDrag = true;
             // 
-            // txtMaKhuyenMai
-            // 
-            this.txtMaKhuyenMai.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaKhuyenMai.BorderColor = System.Drawing.Color.Silver;
-            this.txtMaKhuyenMai.BorderRadius = 5;
-            this.txtMaKhuyenMai.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaKhuyenMai.DefaultText = "";
-            this.txtMaKhuyenMai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaKhuyenMai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaKhuyenMai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaKhuyenMai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaKhuyenMai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhuyenMai.ForeColor = System.Drawing.Color.Black;
-            this.txtMaKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtMaKhuyenMai.Location = new System.Drawing.Point(33, 110);
-            this.txtMaKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
-            this.txtMaKhuyenMai.PasswordChar = '\0';
-            this.txtMaKhuyenMai.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMaKhuyenMai.PlaceholderText = "";
-            this.txtMaKhuyenMai.SelectedText = "";
-            this.txtMaKhuyenMai.Size = new System.Drawing.Size(257, 29);
-            this.txtMaKhuyenMai.TabIndex = 48;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.BorderColor = System.Drawing.Color.Gray;
-            this.btnThoat.BorderRadius = 15;
-            this.btnThoat.BorderThickness = 1;
-            this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThoat.FillColor = System.Drawing.Color.White;
-            this.btnThoat.FocusedColor = System.Drawing.Color.Black;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(33, 307);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(535, 46);
-            this.btnThoat.TabIndex = 51;
-            this.btnThoat.Text = "THOÁT";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
@@ -266,10 +187,10 @@
             this.panelHeader.Controls.Add(this.lbHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(600, 66);
-            this.panelHeader.TabIndex = 52;
+            this.panelHeader.TabIndex = 63;
             // 
             // guna2PictureBox1
             // 
@@ -277,7 +198,7 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(77, 66);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -297,29 +218,78 @@
             this.lbHeaderText.TabIndex = 10;
             this.lbHeaderText.Text = "THÔNG TIN KHUYẾN MÃI";
             // 
-            // frmAddVoucher
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.BorderColor = System.Drawing.Color.Gray;
+            this.btnThoat.BorderRadius = 15;
+            this.btnThoat.BorderThickness = 1;
+            this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThoat.FillColor = System.Drawing.Color.White;
+            this.btnThoat.FocusedColor = System.Drawing.Color.Black;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(34, 227);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(533, 46);
+            this.btnThoat.TabIndex = 62;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // txtMaKhuyenMai
+            // 
+            this.txtMaKhuyenMai.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaKhuyenMai.BorderColor = System.Drawing.Color.Silver;
+            this.txtMaKhuyenMai.BorderRadius = 5;
+            this.txtMaKhuyenMai.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKhuyenMai.DefaultText = "";
+            this.txtMaKhuyenMai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaKhuyenMai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaKhuyenMai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaKhuyenMai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaKhuyenMai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.txtMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhuyenMai.ForeColor = System.Drawing.Color.Black;
+            this.txtMaKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.txtMaKhuyenMai.Location = new System.Drawing.Point(33, 111);
+            this.txtMaKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
+            this.txtMaKhuyenMai.PasswordChar = '\0';
+            this.txtMaKhuyenMai.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMaKhuyenMai.PlaceholderText = "";
+            this.txtMaKhuyenMai.SelectedText = "";
+            this.txtMaKhuyenMai.Size = new System.Drawing.Size(257, 29);
+            this.txtMaKhuyenMai.TabIndex = 59;
+            // 
+            // frmViewVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 383);
-            this.Controls.Add(this.panelHeader);
-            this.Controls.Add(this.btnThoat);
+            this.ClientSize = new System.Drawing.Size(600, 304);
             this.Controls.Add(this.cbTrangThai);
             this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.lbPhanTramKM);
             this.Controls.Add(this.txtPhanTramKM);
             this.Controls.Add(this.lbTenKhuyenMai);
-            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtTenKhuyenMai);
             this.Controls.Add(this.lbMaKhuyenMai);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.txtMaKhuyenMai);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmAddVoucher";
+            this.Name = "frmViewVoucher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddVoucher";
-            this.Load += new System.EventHandler(this.frmAddVoucher_Load);
+            this.Text = "frmViewVoucher";
+            this.Load += new System.EventHandler(this.frmViewVoucher_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -329,19 +299,19 @@
         }
 
         #endregion
+
+        public Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
         private System.Windows.Forms.Label lbTrangThai;
         private System.Windows.Forms.Label lbPhanTramKM;
+        public Guna.UI2.WinForms.Guna2TextBox txtPhanTramKM;
         private System.Windows.Forms.Label lbTenKhuyenMai;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        public Guna.UI2.WinForms.Guna2TextBox txtTenKhuyenMai;
         private System.Windows.Forms.Label lbMaKhuyenMai;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddVoucher;
-        private Guna.UI2.WinForms.Guna2Button btnThoat;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label lbHeaderText;
-        public Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
-        public Guna.UI2.WinForms.Guna2TextBox txtPhanTramKM;
-        public Guna.UI2.WinForms.Guna2TextBox txtTenKhuyenMai;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
         public Guna.UI2.WinForms.Guna2TextBox txtMaKhuyenMai;
     }
 }

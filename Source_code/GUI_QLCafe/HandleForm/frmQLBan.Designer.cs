@@ -257,6 +257,7 @@
             this.dgvDSBan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSBan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDSBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBan_CellClick);
+            this.dgvDSBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBan_CellContentClick);
             // 
             // dgvMBan
             // 
@@ -490,7 +491,7 @@
             this.lblHeaderText.AutoSize = true;
             this.lblHeaderText.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeaderText.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderText.Location = new System.Drawing.Point(443, 16);
+            this.lblHeaderText.Location = new System.Drawing.Point(443, 19);
             this.lblHeaderText.Name = "lblHeaderText";
             this.lblHeaderText.Size = new System.Drawing.Size(357, 54);
             this.lblHeaderText.TabIndex = 0;

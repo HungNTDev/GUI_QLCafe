@@ -22,14 +22,6 @@ namespace GUI_QLCafe
             dgvDSHD.DataSource = busbill.get();
         }
 
-        private void frmQLHoaDon_Load(object sender, System.EventArgs e)
-        {
-            LoadData();
-            LoadPage();
-            currentPageIndex = 1;
-            lbCurrentPage.Text = currentPageIndex.ToString();
-        }
-
         private void btnRefesh_Click(object sender, System.EventArgs e)
         {
             LoadData();
@@ -37,22 +29,22 @@ namespace GUI_QLCafe
 
         private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string mabill = Convert.ToString((dgvDSHD.CurrentRow.Cells["IdBill"].Value));
-            if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                if (busbill.delete(mabill))
-                {
-                    MessageBox.Show("Xóa này thanh cong", "Tho báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa that bai", "Tho báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+            //string mabill = Convert.ToString((dgvDSHD.CurrentRow.Cells["IdBill"].Value));
+            //if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo",
+            //        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            //{
+            //    if (busbill.delete(mabill))
+            //    {
+            //        MessageBox.Show("Xóa này thanh cong", "Tho báo",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        LoadData();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Xóa that bai", "Tho báo",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //}
         }
         private void LoadPage()
         {
@@ -104,12 +96,9 @@ namespace GUI_QLCafe
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadPage();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
+            currentPageIndex = totalPages;
+            LoadPage();
+            lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -125,7 +114,7 @@ namespace GUI_QLCafe
                 DataTable dt = busbill.search(sp);
                 if (dt.Rows.Count > 0)
                 {
-                    dgvDSHD.DataSource = dt;
+                    //dgvDSHD.DataSource = dt;
                 }
                 else
                 {
@@ -133,6 +122,24 @@ namespace GUI_QLCafe
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void shapeLine_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmQLHoaDon_Load_1(object sender, EventArgs e)
+        {
+            LoadData();
+            LoadPage();
+            currentPageIndex = 1;
+            lbCurrentPage.Text = currentPageIndex.ToString();
+        }
+
+        private void btnRefesh_Click_1(object sender, EventArgs e)
+        {
+            LoadPage();
         }
     }
 }

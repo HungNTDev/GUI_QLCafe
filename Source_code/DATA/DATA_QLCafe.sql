@@ -166,9 +166,12 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('STO',N'Sinh tố',1),
 ('JUC',N'Nước ép',1)
 
-update TableCF set StatusTable = 0 where IdTable = 'B01'
+update TableCF set StatusTable = 0
+delete from DetailBill
+delete from Bill 
 
-
+select * from DetailBill
+select * from Bill
 
 --Thêm sản phẩm--
 /*Trà*/
@@ -681,3 +684,104 @@ EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
 create proc GetTotalTableCount as select count(*) from TableCF
 
 SELECT TOP 10 * FROM TableCF;
+
+-- Ktra Voucher
+create proc [dbo].[KiemTraVoucher](@IdVoucher nvarchar(10))
+as
+begin
+	SELECT COUNT(*) FROM Voucher WHERE IdVoucher = @IdVoucher
+end
+
+-- Xoa Voucher
+create proc [dbo].[DeleteVoucher] @IdVoucher nvarchar(10)
+as
+begin
+delete from Voucher where IdVoucher = @IdVoucher
+end
+
+-- Trang Voucher
+create PROCEDURE [dbo].[GetPagedVoucher]
+    @pageIndex INT,
+    @pageSize INT
+AS
+BEGIN
+    DECLARE @startRow INT;
+    SET @startRow = (@pageIndex - 1) * @pageSize;
+
+    SELECT IdVoucher, NameVoucher, PercentVoucher, StatusVoucher
+    FROM Voucher
+    ORDER BY IdVoucher
+    OFFSET @startRow ROWS
+    FETCH NEXT @pageSize ROWS ONLY;
+END
+
+create PROCEDURE [dbo].[GetTotalVoucherCount]
+AS
+BEGIN
+    SELECT COUNT(*)
+    FROM Voucher
+END
+
+create proc [dbo].[InsertVoucher] 
+(@IdVoucher nvarchar(10), @NameVoucher nvarchar(100), @PercentVoucher int, @StatusVoucher int)
+as
+begin
+	INSERT INTO Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher)
+		 VALUES (@IdVoucher, @NameVoucher, @PercentVoucher, @StatusVoucher)
+end
+
+create PROCEDURE [dbo].[SearchVoucher]
+    @value NVARCHAR(100),
+    @pageNumber INT,
+    @pageSize INT,
+    @totalRows INT OUTPUT,
+    @totalPages INT OUTPUT
+AS
+BEGIN
+    -- Declare variables for pagination
+    DECLARE @offset INT, @fetch INT;
+
+    -- Calculate offset and fetch values
+    SET @offset = (@pageNumber - 1) * @pageSize;
+    SET @fetch = @pageSize;
+
+    -- Get total rows
+    SELECT @totalRows = COUNT(*)
+    FROM Voucher
+    WHERE 
+
+		--Tìm các cột
+        IdVoucher LIKE '%' + @value + '%' OR
+        NameVoucher LIKE '%' + @value + '%' OR
+        PercentVoucher LIKE '%' + @value + '%' OR
+        StatusVoucher LIKE '%' + @value + '%';
+
+    -- Calculate total pages
+    SET @totalPages = CEILING(CAST(@totalRows AS FLOAT) / @pageSize);
+
+    -- Get paginated data
+    SELECT *
+    FROM Voucher
+    WHERE 
+        --Tìm các cột
+        IdVoucher LIKE '%' + @value + '%' OR
+        NameVoucher LIKE '%' + @value + '%' OR
+        PercentVoucher LIKE '%' + @value + '%' OR
+        StatusVoucher LIKE '%' + @value + '%'
+
+    ORDER BY IdVoucher -- Adjust this as needed
+    OFFSET @offset ROWS
+    FETCH NEXT @fetch ROWS ONLY;
+END
+
+create proc [dbo].[UpdateVoucher] 
+(@IdVoucher nvarchar(10), @NameVoucher nvarchar(100), @PercentVoucher int, @StatusVoucher int)
+as
+begin
+	Update Voucher
+	set NameVoucher = @NameVoucher,
+	PercentVoucher = @PercentVoucher,
+	StatusVoucher = @StatusVoucher
+	where IdVoucher = @IdVoucher
+end
+

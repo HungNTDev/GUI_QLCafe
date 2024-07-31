@@ -2,9 +2,6 @@
 using GUI_QLCafe.ViewForm;
 using System;
 using System.Data;
-using System.Data.Common;
-using System.Drawing.Printing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe

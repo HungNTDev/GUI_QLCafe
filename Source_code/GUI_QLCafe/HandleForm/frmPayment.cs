@@ -45,6 +45,7 @@ namespace GUI_QLCafe
             ListVoucher();
             ListPayment();
         }
+
         private void ListPayment()
         {
             try
@@ -90,7 +91,7 @@ namespace GUI_QLCafe
                         total = total + (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
                     }
                     float TotalSale = total - (total * voucher.PercentVoucher / 100);
-                    lbTongHoaDon.Text = total + " VND";
+                    lbTongHoaDon.Text = "Tổng hóa đơn: "  + total + " VND";
                     lbTongTien.Text = "Thành tiền: " + TotalSale + " VND";
                 }
             }
@@ -115,8 +116,8 @@ namespace GUI_QLCafe
                     billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
                     billDTO.IdBill = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[0][5].ToString());
                     payment.Payment(billDTO);
-                    MessageBox.Show("Thanh toán thành công!", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn không?", "Thông báo",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
@@ -165,13 +166,10 @@ namespace GUI_QLCafe
             if (cbPhuongThucTT.Text == "MOMO")
             {
                 btnTaoQR.Visible = true;
-
             }
             else if (cbPhuongThucTT.Text == "Tiền Mặt")
             {
-
                 btnTaoQR.Visible = false;
-
             }
         }
 
@@ -183,11 +181,10 @@ namespace GUI_QLCafe
                 frmQRCode qrCode = new frmQRCode(totalAmount, billDTO);
                 qrCode.Show();
             }
-            catch (Exception ex)
+                        catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
-

@@ -672,7 +672,7 @@ INSERT INTO Bill ( IdPayment, IdTable, IdStaff, IdVoucher, StatusBill, DateCheck
 	select * from Voucher order by PercentVoucher
 
 	--Thanh toán
-	create   proc Pay (@IdTable nvarchar(10), @DateCheckOut datetime, @IdVoucher nvarchar(10), @IdPayment nvarchar(20))
+	create or alter proc Pay (@IdTable nvarchar(10), @DateCheckOut datetime, @IdVoucher nvarchar(10), @IdPayment nvarchar(20))
 as
 	update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
 	update TableCF set StatusTable = 0 where IdTable = @IdTable
@@ -815,6 +815,8 @@ as
 		set amount= @amount + @amountNew
 		where IdBill = @IdTable
 
+
+	-- BILLINFO
 	ALTER proc [dbo].[BillInfo]
 	@IdTable nvarchar(10)
 	as
@@ -823,6 +825,8 @@ as
 	join Product on Product.IdProduct = DetailBill.IdProduct
 	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
 
+
+	-- PAY
 	ALTER   proc [dbo].[Pay] (@IdTable nvarchar(10), @IdBill int, @DateCheckOut datetime, @IdPayment nvarchar(10), @IdVoucher nvarchar(10) )
 as
 		update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable

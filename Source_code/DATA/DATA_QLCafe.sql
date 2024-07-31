@@ -68,6 +68,26 @@ StatusBill  int ,
 Primary key (IdBill)
 )
 	
+create table Statistic (
+IdStatistic int not null,
+IdBill int ,
+PercentVoucher float,
+Total float,
+NameStaff nvarchar(50),
+CheckIn datetime,
+CheckOut datetime,
+NamePayment nvarchar(50),
+NameTable nvarchar(10),
+Primary key (IdStatistic)
+)
+
+create table DetailStatistic (
+IdDetailStatistic int ,
+IdStatistic int,
+NameMenu nvarchar(100),
+Amount int,
+
+)
 --Drop detail bill và bill để thêm datecheckin checkout
 alter table DetailBill
 drop constraint fk_b_db

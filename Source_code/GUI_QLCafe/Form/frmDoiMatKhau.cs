@@ -29,19 +29,22 @@ namespace GUI_QLCafe
         {
             if (txtNewPassword.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn phải nhập mật khẩu mới", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNewPassword.Focus();
                 return;
             }
             else if (txtOldPassword.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn phải nhập mật khẩu cũ", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtOldPassword.Focus();
                 return;
             }
             else if (txtRetypePassword.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập lại mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn phải nhập lại mật khẩu mới", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtRetypePassword.Focus();
                 return;
             }

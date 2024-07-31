@@ -24,6 +24,9 @@ namespace GUI_QLCafe
         public static string nameProduct;
         public static string dateCheckOut;
 
+        public int amount;
+
+        public int status;
         public frmMenu()
         {
             InitializeComponent();
@@ -174,7 +177,7 @@ namespace GUI_QLCafe
                     busBill.AddingBill(billDTO);
                     for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
                     {
-                        billDTO.idBill = frmPOS.idTable;
+                        billDTO.idTable = frmPOS.idTable;
                         billDTO.Amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
                         billDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / billDTO.Amount;
                         billDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
@@ -191,17 +194,47 @@ namespace GUI_QLCafe
                 {
                     MessageBox.Show("Bạn chưa chọn món", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //else
-                //{
-                //    for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
-                //    {
+                else
+                {
+                    for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
+                    {
+                        status = 0;
+                        billDTO.IdTable = frmPOS.idTable;
+                        billDTO.amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
+                        billDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / billDTO.amount;
+                        billDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
+                        billDTO.totalPrice = billDTO.Price * billDTO.amount;
 
-                //    }
-                //}
+                        nameProduct = ListOrder_dgv.Rows[i].Cells[0].Value.ToString();
+                        amount = billDTO.amount;
+
+                        MergeBill();
+                        if (status == 0)
+                        {
+                            busBill.AddingDetailBill(billDTO);
+                        }
+                    }
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void MergeBill()
+        {
+            for (int i = 0; i < busBill.BillInfo(billDTO).Rows.Count; i++)
+            {
+                if (nameProduct == busBill.BillInfo(billDTO).Rows[i][0].ToString())
+                {
+                    status = 1;
+                    billDTO.IdTable = frmPOS.idTable;
+                    billDTO.amount = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[i][1].ToString());
+                    busBill.MergeBillMenu(billDTO, amount);
+                }
             }
         }
 

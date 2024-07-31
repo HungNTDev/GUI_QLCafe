@@ -76,11 +76,11 @@ drop table DetailBill
 drop table Bill
 
 create table DetailBill (
+IdDetailBill int identity primary key,
 IdBill int not null,
 IdProduct nvarchar(20) not null,
-TotalPrice float not null,
+TotalPrice int default 0,
 Amount int not null,
-Primary key (IdBill, IdProduct)
 )
 
 alter table Product
@@ -784,4 +784,14 @@ begin
 	StatusVoucher = @StatusVoucher
 	where IdVoucher = @IdVoucher
 end
+
+-- Thêm món khi có bill sẵn
+create  proc [dbo].[MergeBillMenu]
+				@IdTable nvarchar(10),
+				@amount int,
+				@amountNew int
+as
+		Update DetailBill
+		set amount= @amount + @amountNew
+		where IdBill = @IdTable
 

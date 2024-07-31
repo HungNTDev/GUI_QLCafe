@@ -59,5 +59,10 @@ namespace BUS_QLCafe
         {
             return dal.AddingDetailBill(Bill);
         }
+
+        public bool MergeBillMenu(DTO_Bill bill, int amount)
+        {
+            return dal.MergeBillMenu(bill, amount);
+        }
     }
 }

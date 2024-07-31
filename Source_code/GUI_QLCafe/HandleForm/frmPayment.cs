@@ -108,10 +108,11 @@ namespace GUI_QLCafe
                 if (DialogResult == DialogResult.Yes)
                 {
                     billDTO.IdTable = frmPOS.idTable;
-                    billDTO.DateCheckOut = DateTime.Parse(DateTime.Now.ToShortDateString() + " "
-                            + DateTime.Now.ToLongTimeString());
+                    string checkOut = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    billDTO.DateCheckOut = DateTime.ParseExact(checkOut, "yyyy/MM/dd HH:mm:ss", null);
                     billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
                     billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
+                    billDTO.IdBill = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[0][5].ToString());
                     payment.Payment(billDTO);
                     MessageBox.Show("Thanh toán thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -167,7 +168,7 @@ namespace GUI_QLCafe
             }
             else if (cbPhuongThucTT.Text == "Tiền Mặt")
             {
-                btn_TaoQR.Visible = false;
+
                 picMoMo.Visible = false;
 
             }

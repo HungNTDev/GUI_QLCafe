@@ -148,33 +148,40 @@ namespace DAL_QLCafe
         //payment
         public bool Payment(DTO_Bill bill)
         {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "Pay";
-                    cmd.Parameters.AddWithValue("@IdPayment", bill.idPayment);
-                    cmd.Parameters.AddWithValue("@IdTable", bill.idTable);
-                    cmd.Parameters.AddWithValue("@DateCheckOut", bill.dateCheckOut);
-                    cmd.Parameters.AddWithValue("@IdVoucher", bill.idVoucher);
-                    conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-            return false;
+            //try
+            //{
+            //    using (conn = new SqlConnection(_conn))
+            //    {
+            //        SqlCommand cmd = new SqlCommand();
+            //        cmd.Connection = conn;
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.CommandText = "Pay";
+            //        cmd.Parameters.AddWithValue("@IdPayment", bill.idPayment);
+            //        cmd.Parameters.AddWithValue("@IdTable", bill.idTable);
+            //        cmd.Parameters.AddWithValue("@DateCheckOut", bill.dateCheckOut);
+            //        cmd.Parameters.AddWithValue("@IdVoucher", bill.idVoucher);
+            //        cmd.Parameters.AddWithValue("@IdBill", bill.idBill);
+            //        conn.Open();
+            //        if (cmd.ExecuteNonQuery() > 0)
+            //        {
+            //            return true;
+            //        }
+            //    }
+            //}
+            //finally
+            //{
+            //    if (conn.State == ConnectionState.Open)
+            //    {
+            //        conn.Close();
+            //    }
+            //}
+            //return false;
+
+            string Query = @"exec Pay @IdTable = '" + bill.IdTable + "', @DateCheckOut = '" + bill.dateCheckOut + "', @IdBill = '" + bill.IdBill + "', @IdPayment = '" + bill.IdPayment + "', @IdVoucher = '" + bill.IdVoucher + "' ";
+            SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
+            DataTable dt = new DataTable();
+            adt.Fill(dt);
+            return true;
         }
 
         //List payment

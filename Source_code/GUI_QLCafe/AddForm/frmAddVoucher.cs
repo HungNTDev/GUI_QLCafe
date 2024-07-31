@@ -27,10 +27,6 @@ namespace GUI_QLCafe
             InitializeComponent();
         }
 
-        public FormMode formMode { get; set; }
-
-        public enum FormMode { Them, Sua }
-
         // phương thức này dùng để gọi Notfication khi thêm thành công
         public void Nofication(string msg, frmNotification.enumType type)
         {

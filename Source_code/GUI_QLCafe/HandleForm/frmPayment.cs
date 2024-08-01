@@ -1,9 +1,11 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using ZedGraph;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode.Internal;
@@ -20,6 +22,7 @@ namespace GUI_QLCafe
         DTO_Voucher voucher = new DTO_Voucher();
         DTO_Bill billDTO = new DTO_Bill();
 
+        public float TotalBill;
         public frmPayment()
         {
             InitializeComponent();
@@ -44,6 +47,7 @@ namespace GUI_QLCafe
             ListVoucher();
             ListPayment();
         }
+
         private void ListPayment()
         {
             try
@@ -88,15 +92,35 @@ namespace GUI_QLCafe
                         lvHoaDon.Items.Add(item);
                         total = total + (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
                     }
-                    float TotalSale = total - (total * voucher.PercentVoucher / 100);
-                    lbTongHoaDon.Text = total + " VND";
-                    lbTongTien.Text = "Thành tiền: " + TotalSale + " VND";
+                    TotalBill = total - (total * voucher.PercentVoucher / 100);
+                    lbTongHoaDon.Text = "Tổng hóa đơn: "  + total + " VND";
+                    lbTongTien.Text = "Thành tiền: " + TotalBill + " VND";
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        void getStatistic()
+        {
+            try
+            {
+                billDTO.IdTable = frmPOS.idTable;
+                billDTO.IdBill = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[0][5].ToString());
+                billDTO.TotalPrice = TotalBill;
+                billDTO.NameStaff = busStaff.StaffInfo(frmMainQLCF.email).Rows[0][2].ToString().Trim();
+                string CheckOut = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                billDTO.DateCheckOut = DateTime.ParseExact(CheckOut, "dd/MM/yyyy HH:mm:ss", null);
+                string CheckIn = DateTime.Parse(busBill.BillInfo(billDTO).Rows[0][4].ToString()).ToString("dd/MM/yyyy HH:mm:ss");
+                billDTO.DateCheckIn = DateTime.ParseExact(CheckIn, "dd/MM/yyyy HH:mm:ss", null);
+                billDTO.NamePayment = cbPhuongThucTT.Text.Trim();
+                billDTO.NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
+                billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
+                billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
+            }
+            catch (Exception) { }
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -107,15 +131,21 @@ namespace GUI_QLCafe
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    billDTO.IdTable = frmPOS.idTable;
-                    string checkOut = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                    billDTO.DateCheckOut = DateTime.ParseExact(checkOut, "yyyy/MM/dd HH:mm:ss", null);
-                    billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
-                    billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
-                    billDTO.IdBill = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[0][5].ToString());
+                    getStatistic();
+                    busBill.AddStatistic(billDTO, voucher);
+
+                    for (int i = 0; i < busBill.BillInfo(billDTO).Rows.Count; i++)
+                    {
+                        billDTO.NameProduct = busBill.BillInfo(billDTO).Rows[i][0].ToString();
+                        billDTO.Amount = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[i][1].ToString());
+                        billDTO.Price = (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][2].ToString());
+                        billDTO.totalPrice = (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
+                        busBill.AddDetailStatistic(billDTO);
+                    }
+
                     payment.Payment(billDTO);
-                    MessageBox.Show("Thanh toán thành công!", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn không?", "Thông báo",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
@@ -163,40 +193,30 @@ namespace GUI_QLCafe
         {
             if (cbPhuongThucTT.Text == "MOMO")
             {
-                picMoMo.Visible = true;
-
+                btnTaoQR.Visible = true;
             }
             else if (cbPhuongThucTT.Text == "Tiền Mặt")
             {
-
-                picMoMo.Visible = false;
-
+                btnTaoQR.Visible = false;
             }
         }
 
-        private void btn_TaoQR_Click(object sender, EventArgs e)
+        private void btnTaoQR_Click(object sender, EventArgs e)
         {
-            string ten = "Lý Bảo Hoàng";
-            string so = "0836753008";
-
-            var qrcode_text = $"2|99|{so.Trim()}|{ten.Trim()}|0|0|{busBill.BillInfo(billDTO).Rows[0][3].ToString()}";
-            BarcodeWriter writer = new BarcodeWriter();
-            EncodingOptions encodingOptions = new EncodingOptions()
+            try
             {
-                Width = 250,
-                Height = 250,
-                Margin = 1,
-                PureBarcode = false
-            };
-            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
-            writer.Renderer = new BitmapRenderer();
-            writer.Options = encodingOptions;
-            writer.Format = BarcodeFormat.QR_CODE;
-            Bitmap bitmap = writer.Write(qrcode_text);
-            Bitmap logo = resizeImage(Properties.Resources.logo_momo, 20, 20) as Bitmap;
-            Graphics g = Graphics.FromImage(bitmap);
-            g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
-            picMoMo.Image = bitmap;
+                string totalAmount = lbTongTien.Text.Replace("Thành tiền: ", "").Replace(" VND", "");
+                frmQRCode qrCode = new frmQRCode(totalAmount, billDTO);
+                qrCode.Show();
+            }
+                        catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbPhuongThucTT_SelectedValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -378,9 +378,9 @@ namespace GUI_QLCafe
             this.dgvDanhSachKhuyenMai.ReadOnly = true;
             this.dgvDanhSachKhuyenMai.RowHeadersVisible = false;
             this.dgvDanhSachKhuyenMai.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15.70909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dgvDanhSachKhuyenMai.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachKhuyenMai.RowTemplate.Height = 35;
@@ -444,6 +444,7 @@ namespace GUI_QLCafe
             this.dgvTrangThai.MinimumWidth = 150;
             this.dgvTrangThai.Name = "dgvTrangThai";
             this.dgvTrangThai.ReadOnly = true;
+            this.dgvTrangThai.Visible = false;
             // 
             // dgvSua
             // 
@@ -523,12 +524,12 @@ namespace GUI_QLCafe
         private System.Windows.Forms.Label lblHeaderText;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         public Guna.UI2.WinForms.Guna2DataGridView dgvDanhSachKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMaKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTenKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPhanTramKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThai;
-        private System.Windows.Forms.DataGridViewImageColumn dgvSua;
-        private System.Windows.Forms.DataGridViewImageColumn dgvXem;
-        private System.Windows.Forms.DataGridViewImageColumn dgvXoa;
+        private DataGridViewTextBoxColumn dgvMaKhuyenMai;
+        private DataGridViewTextBoxColumn dgvTenKhuyenMai;
+        private DataGridViewTextBoxColumn dgvPhanTramKM;
+        private DataGridViewTextBoxColumn dgvTrangThai;
+        private DataGridViewImageColumn dgvSua;
+        private DataGridViewImageColumn dgvXem;
+        private DataGridViewImageColumn dgvXoa;
     }
 }

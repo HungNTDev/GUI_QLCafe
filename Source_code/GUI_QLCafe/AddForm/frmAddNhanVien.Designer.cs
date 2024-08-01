@@ -38,6 +38,7 @@
             this.rdoHoatDong = new System.Windows.Forms.RadioButton();
             this.rdoNgungHoatDong = new System.Windows.Forms.RadioButton();
             this.gbVaiTro = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rdoChuSoHuu = new System.Windows.Forms.RadioButton();
             this.gbTrangThai = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
@@ -97,7 +98,7 @@
             this.rdoQuanTri.BackColor = System.Drawing.Color.White;
             this.rdoQuanTri.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
-            this.rdoQuanTri.Location = new System.Drawing.Point(8, 47);
+            this.rdoQuanTri.Location = new System.Drawing.Point(14, 49);
             this.rdoQuanTri.Name = "rdoQuanTri";
             this.rdoQuanTri.Size = new System.Drawing.Size(85, 25);
             this.rdoQuanTri.TabIndex = 2;
@@ -111,7 +112,7 @@
             this.rdoNhanVien.BackColor = System.Drawing.Color.White;
             this.rdoNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.rdoNhanVien.Location = new System.Drawing.Point(8, 85);
+            this.rdoNhanVien.Location = new System.Drawing.Point(14, 87);
             this.rdoNhanVien.Name = "rdoNhanVien";
             this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
             this.rdoNhanVien.TabIndex = 2;
@@ -151,6 +152,7 @@
             // 
             this.gbVaiTro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.gbVaiTro.BorderRadius = 5;
+            this.gbVaiTro.Controls.Add(this.rdoChuSoHuu);
             this.gbVaiTro.Controls.Add(this.rdoQuanTri);
             this.gbVaiTro.Controls.Add(this.rdoNhanVien);
             this.gbVaiTro.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
@@ -161,6 +163,21 @@
             this.gbVaiTro.Size = new System.Drawing.Size(201, 125);
             this.gbVaiTro.TabIndex = 8;
             this.gbVaiTro.Text = "Vai trò";
+            // 
+            // rdoChuSoHuu
+            // 
+            this.rdoChuSoHuu.AutoSize = true;
+            this.rdoChuSoHuu.BackColor = System.Drawing.Color.White;
+            this.rdoChuSoHuu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoChuSoHuu.ForeColor = System.Drawing.Color.Black;
+            this.rdoChuSoHuu.Location = new System.Drawing.Point(117, 85);
+            this.rdoChuSoHuu.Name = "rdoChuSoHuu";
+            this.rdoChuSoHuu.Size = new System.Drawing.Size(108, 25);
+            this.rdoChuSoHuu.TabIndex = 6;
+            this.rdoChuSoHuu.TabStop = true;
+            this.rdoChuSoHuu.Text = "Chủ sở hữu";
+            this.rdoChuSoHuu.UseVisualStyleBackColor = false;
+            this.rdoChuSoHuu.Visible = false;
             // 
             // gbTrangThai
             // 
@@ -234,7 +251,7 @@
             this.picNhanVien.FillColor = System.Drawing.Color.DodgerBlue;
             this.picNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("picNhanVien.Image")));
             this.picNhanVien.ImageRotate = 0F;
-            this.picNhanVien.Location = new System.Drawing.Point(497, 111);
+            this.picNhanVien.Location = new System.Drawing.Point(497, 144);
             this.picNhanVien.Name = "picNhanVien";
             this.picNhanVien.Size = new System.Drawing.Size(173, 198);
             this.picNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,10 +270,10 @@
             this.btnMoHinh.ForeColor = System.Drawing.Color.White;
             this.btnMoHinh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnMoHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnMoHinh.Image")));
-            this.btnMoHinh.Location = new System.Drawing.Point(497, 315);
+            this.btnMoHinh.Location = new System.Drawing.Point(497, 348);
             this.btnMoHinh.Name = "btnMoHinh";
             this.btnMoHinh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnMoHinh.Size = new System.Drawing.Size(173, 35);
+            this.btnMoHinh.Size = new System.Drawing.Size(173, 42);
             this.btnMoHinh.TabIndex = 11;
             this.btnMoHinh.Text = "Mở hình";
             this.btnMoHinh.Click += new System.EventHandler(this.btnMoHinh_Click);
@@ -411,6 +428,7 @@
             this.Name = "frmAddNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.frmAddNhanVien_Load);
             this.gbVaiTro.ResumeLayout(false);
             this.gbVaiTro.PerformLayout();
             this.gbTrangThai.ResumeLayout(false);
@@ -445,5 +463,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private System.Windows.Forms.Label lbHeaderText;
+        private System.Windows.Forms.RadioButton rdoChuSoHuu;
     }
 }

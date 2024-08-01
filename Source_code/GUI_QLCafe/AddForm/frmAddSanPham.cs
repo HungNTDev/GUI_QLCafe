@@ -49,7 +49,7 @@ namespace GUI_QLCafe
         {
             float gia;
             bool isfloat = float.TryParse(txtGia.Text.Trim(), out gia);
-            int trangthai = rdoCo.Checked ? 1 : 0;
+            string trangthai = rdoCo.Checked ? "Còn Bán" : "Ngưng Bán";
 
             // Kiểm tra các điều kiện
             if (string.IsNullOrWhiteSpace(txtMaSanPham.Text))

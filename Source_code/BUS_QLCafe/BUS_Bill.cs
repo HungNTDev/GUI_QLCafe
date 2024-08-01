@@ -64,5 +64,15 @@ namespace BUS_QLCafe
         {
             return dal.MergeBillMenu(bill, amount);
         }
+
+        public bool AddStatistic(DTO_Bill Bill, DTO_Voucher Voucher)
+        {
+            return dal.AddStatistic(Bill, Voucher);
+        }
+
+        public bool AddDetailStatistic(DTO_Bill Bill)
+        {
+            return dal.AddDetailStatistic(Bill);
+        }
     }
 }

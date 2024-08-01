@@ -69,7 +69,7 @@ Primary key (IdBill)
 )
 	
 create table Statistic (
-IdStatistic int not null,
+IdStatistic int identity not null ,
 IdBill int ,
 PercentVoucher float,
 Total float,
@@ -82,18 +82,31 @@ Primary key (IdStatistic)
 )
 
 create table DetailStatistic (
-IdDetailStatistic int ,
+IdDetailStatistic int identity,
 IdStatistic int,
-NameMenu nvarchar(100),
+NameProduct nvarchar(100),
 Amount int,
-
+Price float,
+TotalPrice float,
+Primary key (IdDetailStatistic)
 )
+
+drop table DetailStatistic
+drop table Statistic
+
+alter table DetailStatistic
+drop constraint fk_dtst_st
+
 --Drop detail bill và bill để thêm datecheckin checkout
 alter table DetailBill
 drop constraint fk_b_db
 
 drop table DetailBill
 drop table Bill
+
+alter table DetailStatistic
+add constraint fk_dtst_st
+foreign key (IdStatistic) references Statistic(IdStatistic)
 
 create table DetailBill (
 IdDetailBill int identity primary key,
@@ -834,6 +847,37 @@ as
 	delete from Bill where idTable = @IdTable
 
 	update TableCF set StatusTable = 0 where idTable = @IdTable
+	
+	--thêm thống kê (add statistic)
+	alter proc [dbo].[AddStatistic]
+		@IdBill int,
+		@PercentVoucher float,
+		@Total float,
+		@NameStaff nvarchar(50),
+		@CheckIn datetime,
+		@CheckOut datetime,
+		@namePayment nvarchar(50),
+		@NameTable nvarchar(10)
+	as
+	insert into Statistic(IdBill, PercentVoucher, Total, NameStaff, CheckIn, CheckOut, NamePayment, NameTable) values
+			(@IdBill, @PercentVoucher, @Total, @NameStaff, @CheckIn, @CheckOut, @namePayment, @NameTable)
+
+	--Thêm thống kê chi tiết (add detail statistic)
+	alter proc [dbo].[AddDetailStatistic]
+		@IdBill int,
+		@NameProduct nvarchar(100),
+		@Amount int,
+		@Price float,
+		@TotalPrice float
+	as
+			DECLARE @ID int
+			set @ID = (select Top(1) IdStatistic from Statistic where IdBill = @IdBill order by IdStatistic desc)
+
+			insert into DetailStatistic(IdStatistic, NameProduct, Amount, Price, TotalPrice) values
+			(@ID, @NameProduct, @Amount, @Price, @TotalPrice)
 
 
+select * from Statistic
+select * from DetailStatistic
 
+delete from Statistic

@@ -272,5 +272,72 @@ namespace DAL_QLCafe
             adt.Fill(dt);
             return true;
         }
+
+        public bool AddStatistic(DTO_Bill Bill, DTO_Voucher Voucher)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "AddStatistic";
+                    cmd.Parameters.AddWithValue("@IdBill", Bill.IdBill);
+                    cmd.Parameters.AddWithValue("@PercentVoucher", Voucher.PercentVoucher);
+                    cmd.Parameters.AddWithValue("@Total", Bill.TotalPrice);
+                    cmd.Parameters.AddWithValue("@NameStaff", Bill.NameStaff);
+                    cmd.Parameters.AddWithValue("@CheckIn", Bill.dateCheckIn);
+                    cmd.Parameters.AddWithValue("@CheckOut", Bill.dateCheckOut);
+                    cmd.Parameters.AddWithValue("@namePayment", Bill.NamePayment);
+                    cmd.Parameters.AddWithValue("@NameTable", Bill.NameTable);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+
+        public bool AddDetailStatistic(DTO_Bill Bill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "AddDetailStatistic";
+                    cmd.Parameters.AddWithValue("@IdBill", Bill.IdBill);
+                    cmd.Parameters.AddWithValue("@NameProduct", Bill.NameProduct);
+                    cmd.Parameters.AddWithValue("@Amount", Bill.Amount);
+                    cmd.Parameters.AddWithValue("@Price", Bill.Price);
+                    cmd.Parameters.AddWithValue("@TotalPrice", Bill.totalPrice);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
     }
 }

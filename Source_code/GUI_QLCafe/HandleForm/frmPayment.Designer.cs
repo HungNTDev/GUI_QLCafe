@@ -181,6 +181,7 @@
             this.cbPhuongThucTT.Size = new System.Drawing.Size(164, 36);
             this.cbPhuongThucTT.TabIndex = 4;
             this.cbPhuongThucTT.SelectedIndexChanged += new System.EventHandler(this.cbPhuongThucTT_SelectedIndexChanged);
+            this.cbPhuongThucTT.SelectedValueChanged += new System.EventHandler(this.cbPhuongThucTT_SelectedValueChanged);
             // 
             // cbVoucher
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emgu.CV.Shape;
+using System;
 
 namespace DTO_QLCafe
 {
@@ -12,19 +13,22 @@ namespace DTO_QLCafe
         public int statusBill;
         public DateTime dateCheckIn;
         public DateTime dateCheckOut;
-
-
         public string idProduct;
-
+        private string nameProduct;
         public int amount;
-
         public float price;
-
         public float totalPrice;
+        private string nameTable;
+        private string namePayment;
+        private string nameStaff;
 
+        public string NameStaff { get => nameStaff; set => nameStaff = value; }
 
+        public string NamePayment { get => namePayment; set => namePayment = value; }
+        public string NameTable { get => nameTable; set => nameTable = value; }
 
         public string IdProduct { get => idProduct; set => idProduct = value; }
+        public string NameProduct { get => nameProduct; set => nameProduct = value; }
 
         public float TotalPrice { get => totalPrice; set => totalPrice = value; }
 
@@ -42,7 +46,7 @@ namespace DTO_QLCafe
 
         public DTO_Bill() { }
 
-        public DTO_Bill(int idBill, string idTable, string idVoucher, string idPayment, string idStaff, int statusBill, DateTime dateCheckIn, DateTime dateCheckOut)
+        public DTO_Bill(int idBill, string idTable, string idVoucher, string idPayment, string idStaff, int statusBill, DateTime dateCheckIn, DateTime dateCheckOut, string nameTable, string namePayment, string nameStaff, string nameProduct)
         {
             this.idBill = idBill;
             this.idTable = idTable;
@@ -52,6 +56,10 @@ namespace DTO_QLCafe
             this.statusBill = statusBill;
             this.dateCheckIn = dateCheckIn;
             this.dateCheckOut = dateCheckOut;
+            this.nameTable = nameTable;
+            this.namePayment = namePayment;
+            this.nameStaff = nameStaff;
+            this.nameProduct = nameProduct;
         }
     }
 }

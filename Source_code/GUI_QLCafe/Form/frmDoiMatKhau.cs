@@ -18,30 +18,37 @@ namespace GUI_QLCafe
             txtEmail.Text = stremail;
             txtEmail.Enabled = false;
             this.mainForm = mainForm;
+            this.FormClosing += new FormClosingEventHandler(frmDoiMatKhau_FormClosing);
+            this.Load += new System.EventHandler(frmDoiMatKhau_Load);
         }
-
-        private void panelDoiMatKhau_Paint(object sender, PaintEventArgs e)
+        private void frmDoiMatKhau_Load(object sender, System.EventArgs e)
         {
-
+            txtNewPassword.Focus();
         }
 
         private void btnChangePassword_Click(object sender, System.EventArgs e)
         {
-            if (txtNewPassword.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải nhập mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNewPassword.Focus();
-                return;
-            }
-            else if (txtOldPassword.Text.Trim().Length == 0)
+            if (txtOldPassword.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtOldPassword.Focus();
                 return;
             }
+            else if (txtNewPassword.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNewPassword.Focus();
+                return;
+            }
             else if (txtRetypePassword.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập lại mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRetypePassword.Focus();
+                return;
+            }
+            else if (txtRetypePassword.Text != txtNewPassword.Text)
+            {
+                MessageBox.Show("Mật khẩu nhập lại không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtRetypePassword.Focus();
                 return;
             }
@@ -66,7 +73,7 @@ namespace GUI_QLCafe
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu cũ không đúng, Cập nhật mật khẩu không thành công");
+                        MessageBox.Show("Mật khẩu cũ không đúng, cập nhật mật khẩu không thành công!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtNewPassword.Text = null;
                         txtOldPassword.Text = null;
                         txtRetypePassword.Text = null;
@@ -163,13 +170,11 @@ namespace GUI_QLCafe
             //        break;
             //}
         }
-
-        private void cbClose_Click(object sender, System.EventArgs e)
+        private void frmDoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dl == DialogResult.OK)
+            if (MessageBox.Show("Chắc chắn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
-                this.Close();
+                e.Cancel = true; // Cancel the form close
             }
         }
     }

@@ -118,6 +118,7 @@ namespace GUI_QLCafe
 
                     DataTable dt = busStaff.VaiTro(staff.email);
                     frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
+                    frmMainQLCF.status = 1;
                     frmMainQLCF.session = 1;
                     frmMainQLCF.email = staff.email;
 

@@ -306,6 +306,12 @@
     <Compile Include="ViewForm\frmQRCode.Designer.cs">
       <DependentUpon>frmQRCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForm\frmViewBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm\frmViewBan.Designer.cs">
+      <DependentUpon>frmViewBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewForm\frmViewHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>

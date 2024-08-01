@@ -116,7 +116,7 @@ namespace GUI_QLCafe
                     billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
                     billDTO.IdBill = Convert.ToInt32(busBill.BillInfo(billDTO).Rows[0][5].ToString());
                     payment.Payment(billDTO);
-                    MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn không?", "Thông báo",
+                    MessageBox.Show("Thanh toán thành công!", "Thông báo",
                             MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     this.Close();
                 }

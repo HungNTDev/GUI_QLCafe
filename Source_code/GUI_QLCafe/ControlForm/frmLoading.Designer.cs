@@ -85,9 +85,9 @@
             this.lbText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbText.Location = new System.Drawing.Point(139, 194);
             this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(639, 42);
+            this.lbText.Size = new System.Drawing.Size(567, 42);
             this.lbText.TabIndex = 3;
-            this.lbText.Text = "Coffee Shop Management System";
+            this.lbText.Text = "Hệ thống quản lý quán cà phê";
             // 
             // lbText1
             // 

@@ -42,11 +42,6 @@
             this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDSBan = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvMBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSuaBan = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvXemBan = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvXoaBan = new System.Windows.Forms.DataGridViewImageColumn();
             this.lbTotalPage = new System.Windows.Forms.Label();
             this.lbCurrentPage = new System.Windows.Forms.Label();
             this.lbPageLine = new System.Windows.Forms.Label();
@@ -59,6 +54,11 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lblHeaderText = new System.Windows.Forms.Label();
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvMBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSuaBan = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvXemBan = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvXoaBan = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBan)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -258,58 +258,6 @@
             this.dgvDSBan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDSBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBan_CellClick);
             this.dgvDSBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBan_CellContentClick);
-            // 
-            // dgvMBan
-            // 
-            this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvMBan.DataPropertyName = "IdTable";
-            this.dgvMBan.HeaderText = "Mã bàn";
-            this.dgvMBan.MinimumWidth = 300;
-            this.dgvMBan.Name = "dgvMBan";
-            this.dgvMBan.ReadOnly = true;
-            this.dgvMBan.Width = 300;
-            // 
-            // dgvTBan
-            // 
-            this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvTBan.DataPropertyName = "NameTable";
-            this.dgvTBan.HeaderText = "Tên bàn";
-            this.dgvTBan.MinimumWidth = 300;
-            this.dgvTBan.Name = "dgvTBan";
-            this.dgvTBan.ReadOnly = true;
-            this.dgvTBan.Width = 300;
-            // 
-            // dgvSuaBan
-            // 
-            this.dgvSuaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSuaBan.FillWeight = 50F;
-            this.dgvSuaBan.HeaderText = "";
-            this.dgvSuaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvSuaBan.Image")));
-            this.dgvSuaBan.MinimumWidth = 250;
-            this.dgvSuaBan.Name = "dgvSuaBan";
-            this.dgvSuaBan.ReadOnly = true;
-            this.dgvSuaBan.Width = 250;
-            // 
-            // dgvXemBan
-            // 
-            this.dgvXemBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvXemBan.HeaderText = "";
-            this.dgvXemBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXemBan.Image")));
-            this.dgvXemBan.MinimumWidth = 250;
-            this.dgvXemBan.Name = "dgvXemBan";
-            this.dgvXemBan.ReadOnly = true;
-            this.dgvXemBan.Width = 250;
-            // 
-            // dgvXoaBan
-            // 
-            this.dgvXoaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvXoaBan.FillWeight = 50F;
-            this.dgvXoaBan.HeaderText = "";
-            this.dgvXoaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoaBan.Image")));
-            this.dgvXoaBan.MinimumWidth = 250;
-            this.dgvXoaBan.Name = "dgvXoaBan";
-            this.dgvXoaBan.ReadOnly = true;
-            this.dgvXoaBan.Width = 250;
             // 
             // lbTotalPage
             // 
@@ -517,6 +465,58 @@
             this.btnRefesh.Size = new System.Drawing.Size(54, 40);
             this.btnRefesh.TabIndex = 31;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // dgvMBan
+            // 
+            this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvMBan.DataPropertyName = "IdTable";
+            this.dgvMBan.HeaderText = "Mã bàn";
+            this.dgvMBan.MinimumWidth = 300;
+            this.dgvMBan.Name = "dgvMBan";
+            this.dgvMBan.ReadOnly = true;
+            this.dgvMBan.Width = 300;
+            // 
+            // dgvTBan
+            // 
+            this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvTBan.DataPropertyName = "NameTable";
+            this.dgvTBan.HeaderText = "Tên bàn";
+            this.dgvTBan.MinimumWidth = 300;
+            this.dgvTBan.Name = "dgvTBan";
+            this.dgvTBan.ReadOnly = true;
+            this.dgvTBan.Width = 300;
+            // 
+            // dgvSuaBan
+            // 
+            this.dgvSuaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSuaBan.FillWeight = 50F;
+            this.dgvSuaBan.HeaderText = "";
+            this.dgvSuaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvSuaBan.Image")));
+            this.dgvSuaBan.MinimumWidth = 250;
+            this.dgvSuaBan.Name = "dgvSuaBan";
+            this.dgvSuaBan.ReadOnly = true;
+            this.dgvSuaBan.Width = 250;
+            // 
+            // dgvXemBan
+            // 
+            this.dgvXemBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXemBan.HeaderText = "";
+            this.dgvXemBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXemBan.Image")));
+            this.dgvXemBan.MinimumWidth = 250;
+            this.dgvXemBan.Name = "dgvXemBan";
+            this.dgvXemBan.ReadOnly = true;
+            this.dgvXemBan.Width = 250;
+            // 
+            // dgvXoaBan
+            // 
+            this.dgvXoaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXoaBan.FillWeight = 50F;
+            this.dgvXoaBan.HeaderText = "";
+            this.dgvXoaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoaBan.Image")));
+            this.dgvXoaBan.MinimumWidth = 250;
+            this.dgvXoaBan.Name = "dgvXoaBan";
+            this.dgvXoaBan.ReadOnly = true;
+            this.dgvXoaBan.Width = 250;
             // 
             // frmQLBan
             // 

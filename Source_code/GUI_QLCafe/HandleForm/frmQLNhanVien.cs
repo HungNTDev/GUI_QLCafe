@@ -297,6 +297,7 @@ namespace GUI_QLCafe
                 }
                 selected = true;
 
+                //Chủ sở hữu với chủ sở hữu khác
                 if (frmMainQLCF.role == "Chủ sở hữu" && role == "Chủ sở hữu")
                 {
                     rdoHoatDong.Enabled = false;
@@ -304,8 +305,24 @@ namespace GUI_QLCafe
                     rdoNhanVien.Enabled = false;
                     rdoQuanTri.Enabled = false;
                     rdoChuSoHuu.Enabled = false;
-
                 }
+
+                //Bản thân quản trị
+                else if (frmMainQLCF.email == txtEmail.Text && frmMainQLCF.role == "Quản trị")
+                {
+                    //rdoHoatDong.Enabled = false;
+                    //rdoNgungHoatDong.Enabled = false;
+                    //rdoNhanVien.Enabled = false;
+                    //rdoQuanTri.Enabled = false;
+                    //rdoChuSoHuu.Enabled = false;
+
+                    //txtEmail.Enabled = false;
+                    //txtTen.Enabled = false;
+                    //btnMoHinh.Enabled = false;
+                    //btnSu.Enabled = false;
+                }
+
+                //Quản trị với chủ sở hữu
                 else if (frmMainQLCF.role == "Quản trị" && role == "Chủ sở hữu")
                 {
                     rdoHoatDong.Enabled = false;
@@ -319,6 +336,26 @@ namespace GUI_QLCafe
                     btnMoHinh.Enabled = false;
                     btnSu.Enabled = false;
                 }
+
+                //Quản trị với quản trị khác
+                else if (frmMainQLCF.role == "Quản trị" && role == "Quản trị")
+                {
+                    rdoChuSoHuu.Enabled = false;
+
+                    //txtEmail.Enabled = false;
+                    //txtTen.Enabled = false;
+                    //btnMoHinh.Enabled = false;
+                    //btnSu.Enabled = false;
+                }
+
+
+                //Quản trị với nhân viên khác
+                else if (frmMainQLCF.role == "Quản trị" && role == "Nhân viên")
+                {
+                    rdoQuanTri.Enabled = false;
+                    rdoChuSoHuu.Enabled = false;
+                }
+
             }
             else
             {

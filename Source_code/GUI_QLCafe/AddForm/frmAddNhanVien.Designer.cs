@@ -98,7 +98,7 @@
             this.rdoQuanTri.BackColor = System.Drawing.Color.White;
             this.rdoQuanTri.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
-            this.rdoQuanTri.Location = new System.Drawing.Point(14, 85);
+            this.rdoQuanTri.Location = new System.Drawing.Point(14, 49);
             this.rdoQuanTri.Name = "rdoQuanTri";
             this.rdoQuanTri.Size = new System.Drawing.Size(85, 25);
             this.rdoQuanTri.TabIndex = 2;
@@ -112,7 +112,7 @@
             this.rdoNhanVien.BackColor = System.Drawing.Color.White;
             this.rdoNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.rdoNhanVien.Location = new System.Drawing.Point(14, 123);
+            this.rdoNhanVien.Location = new System.Drawing.Point(14, 87);
             this.rdoNhanVien.Name = "rdoNhanVien";
             this.rdoNhanVien.Size = new System.Drawing.Size(99, 25);
             this.rdoNhanVien.TabIndex = 2;
@@ -160,7 +160,7 @@
             this.gbVaiTro.ForeColor = System.Drawing.Color.White;
             this.gbVaiTro.Location = new System.Drawing.Point(44, 268);
             this.gbVaiTro.Name = "gbVaiTro";
-            this.gbVaiTro.Size = new System.Drawing.Size(201, 163);
+            this.gbVaiTro.Size = new System.Drawing.Size(201, 125);
             this.gbVaiTro.TabIndex = 8;
             this.gbVaiTro.Text = "Vai trò";
             // 
@@ -170,13 +170,14 @@
             this.rdoChuSoHuu.BackColor = System.Drawing.Color.White;
             this.rdoChuSoHuu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoChuSoHuu.ForeColor = System.Drawing.Color.Black;
-            this.rdoChuSoHuu.Location = new System.Drawing.Point(14, 47);
+            this.rdoChuSoHuu.Location = new System.Drawing.Point(117, 85);
             this.rdoChuSoHuu.Name = "rdoChuSoHuu";
             this.rdoChuSoHuu.Size = new System.Drawing.Size(108, 25);
             this.rdoChuSoHuu.TabIndex = 6;
             this.rdoChuSoHuu.TabStop = true;
             this.rdoChuSoHuu.Text = "Chủ sở hữu";
             this.rdoChuSoHuu.UseVisualStyleBackColor = false;
+            this.rdoChuSoHuu.Visible = false;
             // 
             // gbTrangThai
             // 
@@ -269,10 +270,10 @@
             this.btnMoHinh.ForeColor = System.Drawing.Color.White;
             this.btnMoHinh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnMoHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnMoHinh.Image")));
-            this.btnMoHinh.Location = new System.Drawing.Point(267, 399);
+            this.btnMoHinh.Location = new System.Drawing.Point(497, 348);
             this.btnMoHinh.Name = "btnMoHinh";
             this.btnMoHinh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnMoHinh.Size = new System.Drawing.Size(201, 35);
+            this.btnMoHinh.Size = new System.Drawing.Size(173, 42);
             this.btnMoHinh.TabIndex = 11;
             this.btnMoHinh.Text = "Mở hình";
             this.btnMoHinh.Click += new System.EventHandler(this.btnMoHinh_Click);

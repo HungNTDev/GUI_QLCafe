@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
@@ -192,6 +193,8 @@
             // 
             this.dgvDSBan.AllowUserToAddRows = false;
             this.dgvDSBan.AllowUserToDeleteRows = false;
+            this.dgvDSBan.AllowUserToResizeColumns = false;
+            this.dgvDSBan.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDSBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -225,13 +228,21 @@
             this.dgvDSBan.Location = new System.Drawing.Point(43, 208);
             this.dgvDSBan.Name = "dgvDSBan";
             this.dgvDSBan.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSBan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSBan.RowHeadersVisible = false;
             this.dgvDSBan.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvDSBan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dgvDSBan.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDSBan.RowTemplate.Height = 35;
             this.dgvDSBan.Size = new System.Drawing.Size(1109, 438);
             this.dgvDSBan.TabIndex = 22;
@@ -257,7 +268,6 @@
             this.dgvDSBan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSBan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDSBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBan_CellClick);
-            this.dgvDSBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBan_CellContentClick);
             // 
             // lbTotalPage
             // 
@@ -468,23 +478,21 @@
             // 
             // dgvMBan
             // 
-            this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvMBan.DataPropertyName = "IdTable";
             this.dgvMBan.HeaderText = "Mã bàn";
-            this.dgvMBan.MinimumWidth = 450;
+            this.dgvMBan.MinimumWidth = 300;
             this.dgvMBan.Name = "dgvMBan";
             this.dgvMBan.ReadOnly = true;
-            this.dgvMBan.Width = 450;
             // 
             // dgvTBan
             // 
-            this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvTBan.DataPropertyName = "NameTable";
             this.dgvTBan.HeaderText = "Tên bàn";
-            this.dgvTBan.MinimumWidth = 450;
+            this.dgvTBan.MinimumWidth = 300;
             this.dgvTBan.Name = "dgvTBan";
             this.dgvTBan.ReadOnly = true;
-            this.dgvTBan.Width = 450;
             // 
             // dgvSuaBan
             // 
@@ -492,20 +500,21 @@
             this.dgvSuaBan.FillWeight = 50F;
             this.dgvSuaBan.HeaderText = "";
             this.dgvSuaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvSuaBan.Image")));
-            this.dgvSuaBan.MinimumWidth = 90;
+            this.dgvSuaBan.MinimumWidth = 60;
             this.dgvSuaBan.Name = "dgvSuaBan";
             this.dgvSuaBan.ReadOnly = true;
-            this.dgvSuaBan.Width = 90;
+            this.dgvSuaBan.Width = 60;
             // 
             // dgvXemBan
             // 
             this.dgvXemBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvXemBan.HeaderText = "";
             this.dgvXemBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXemBan.Image")));
-            this.dgvXemBan.MinimumWidth = 90;
+            this.dgvXemBan.MinimumWidth = 60;
             this.dgvXemBan.Name = "dgvXemBan";
             this.dgvXemBan.ReadOnly = true;
-            this.dgvXemBan.Width = 90;
+            this.dgvXemBan.Visible = false;
+            this.dgvXemBan.Width = 60;
             // 
             // dgvXoaBan
             // 
@@ -513,10 +522,10 @@
             this.dgvXoaBan.FillWeight = 50F;
             this.dgvXoaBan.HeaderText = "";
             this.dgvXoaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoaBan.Image")));
-            this.dgvXoaBan.MinimumWidth = 90;
+            this.dgvXoaBan.MinimumWidth = 60;
             this.dgvXoaBan.Name = "dgvXoaBan";
             this.dgvXoaBan.ReadOnly = true;
-            this.dgvXoaBan.Width = 90;
+            this.dgvXoaBan.Width = 60;
             // 
             // frmQLBan
             // 

@@ -35,7 +35,7 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lbThuNgan = new System.Windows.Forms.Label();
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnBan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoaMon = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemMon = new Guna.UI2.WinForms.Guna2Button();
             this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.lvHoaDon = new System.Windows.Forms.ListView();
@@ -120,7 +120,7 @@
             this.panelFooter.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panelFooter.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelFooter.BorderThickness = 2;
-            this.panelFooter.Controls.Add(this.btnBan);
+            this.panelFooter.Controls.Add(this.btnXoaMon);
             this.panelFooter.Controls.Add(this.btnThemMon);
             this.panelFooter.Controls.Add(this.btnThanhToan);
             this.panelFooter.Controls.Add(this.lbThanhTien);
@@ -130,29 +130,29 @@
             this.panelFooter.Size = new System.Drawing.Size(595, 171);
             this.panelFooter.TabIndex = 3;
             // 
-            // btnBan
+            // btnXoaMon
             // 
-            this.btnBan.BorderColor = System.Drawing.Color.White;
-            this.btnBan.BorderRadius = 10;
-            this.btnBan.BorderThickness = 1;
-            this.btnBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnBan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBan.ForeColor = System.Drawing.Color.White;
-            this.btnBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnBan.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnBan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnBan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnBan.Image = ((System.Drawing.Image)(resources.GetObject("btnBan.Image")));
-            this.btnBan.Location = new System.Drawing.Point(403, 97);
-            this.btnBan.Name = "btnBan";
-            this.btnBan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnBan.Size = new System.Drawing.Size(178, 48);
-            this.btnBan.TabIndex = 1;
-            this.btnBan.Text = "Bàn";
+            this.btnXoaMon.BorderColor = System.Drawing.Color.White;
+            this.btnXoaMon.BorderRadius = 10;
+            this.btnXoaMon.BorderThickness = 1;
+            this.btnXoaMon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaMon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaMon.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaMon.ForeColor = System.Drawing.Color.White;
+            this.btnXoaMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaMon.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXoaMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnXoaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMon.Image")));
+            this.btnXoaMon.Location = new System.Drawing.Point(403, 97);
+            this.btnXoaMon.Name = "btnXoaMon";
+            this.btnXoaMon.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnXoaMon.Size = new System.Drawing.Size(178, 48);
+            this.btnXoaMon.TabIndex = 1;
+            this.btnXoaMon.Text = "Xóa Món";
             // 
             // btnThemMon
             // 
@@ -222,6 +222,7 @@
             this.lvHoaDon.TabIndex = 4;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
+            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.lvHoaDon_SelectedIndexChanged);
             // 
             // chTenMon
             // 
@@ -335,7 +336,7 @@
         private Guna.UI2.WinForms.Guna2Panel panelFooter;
         private Guna.UI2.WinForms.Guna2Button btnThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnThemMon;
-        private Guna.UI2.WinForms.Guna2Button btnBan;
+        private Guna.UI2.WinForms.Guna2Button btnXoaMon;
         private System.Windows.Forms.ListView lvHoaDon;
         private System.Windows.Forms.ColumnHeader chTenMon;
         private System.Windows.Forms.ColumnHeader chSoLuong;

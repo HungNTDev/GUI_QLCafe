@@ -124,6 +124,7 @@ namespace GUI_QLCafe
 
         private void btnRefesh_Click_1(object sender, EventArgs e)
         {
+            txtTimKiem.Clear();
             LoadPage();
         }
     }

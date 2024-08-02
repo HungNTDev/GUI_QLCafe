@@ -299,6 +299,7 @@ namespace DAL_QLCafe
             {
                 using (conn = new SqlConnection(_conn))
                 {
+                    conn.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -306,7 +307,6 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
                     cmd.Parameters.AddWithValue("@PageSize", PageSize);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    conn.Open();
                     da.Fill(dt);
 
                     if (dt.Rows.Count == 0)

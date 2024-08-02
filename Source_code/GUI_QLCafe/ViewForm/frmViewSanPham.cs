@@ -19,7 +19,7 @@ namespace GUI_QLCafe.ViewForm
             txtTenSanPham.Enabled = false;
             cbLoaiSanPham.Enabled = false;
             rdoKhong.Enabled = false;
-            rdoCo.Enabled = false;   
+            rdoCo.Enabled = false;
             txtGia.Enabled = false;
         }
 
@@ -28,13 +28,13 @@ namespace GUI_QLCafe.ViewForm
             HienThi();
         }
 
-        public void SetProductInfo(string maSanPham, string tenSanPham, string giaSanPham, string duongDan, bool trangThai, string loaiSanPham)
+        public void SetProductInfo(string maSanPham, string tenSanPham, string giaSanPham, string duongDan, string trangThai, string loaiSanPham)
         {
             txtMaSanPham.Text = maSanPham;
             txtTenSanPham.Text = tenSanPham;
             txtGia.Text = giaSanPham;
             txtDuongDan.Text = duongDan;
-            rdoCo.Checked = trangThai;
+            rdoCo.Text = trangThai;
             cbLoaiSanPham.Text = loaiSanPham;
 
             // Hiển thị hình ảnh

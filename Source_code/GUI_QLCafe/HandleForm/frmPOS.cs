@@ -153,5 +153,10 @@ namespace GUI_QLCafe
             menu.ShowDialog();
             showBill(idTable);
         }
+
+        private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

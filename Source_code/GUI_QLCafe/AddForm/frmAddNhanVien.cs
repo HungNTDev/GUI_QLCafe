@@ -506,7 +506,11 @@ namespace GUI_QLCafe
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dl == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void frmAddNhanVien_Load(object sender, EventArgs e)

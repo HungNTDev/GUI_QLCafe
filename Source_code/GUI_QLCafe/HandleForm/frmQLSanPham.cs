@@ -33,7 +33,7 @@ namespace GUI_QLCafe
         {
             frmAddSanPham frmAddSanPham = new frmAddSanPham();
             frmAddSanPham.ShowDialog();
-            LoadGridView_SanPham();
+            LoadData();
         }
         public void LoadGridView_SanPham()
         {
@@ -42,7 +42,6 @@ namespace GUI_QLCafe
 
         private void frmQLSanPham_Load(object sender, EventArgs e)
         {
-            LoadGridView_SanPham();
             LoadData();
             currentPageIndex = 1;
             lbCurrentPage.Text = currentPageIndex.ToString();
@@ -241,7 +240,7 @@ namespace GUI_QLCafe
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
-            LoadGridView_SanPham();
+            LoadData();
         }
     }
 }

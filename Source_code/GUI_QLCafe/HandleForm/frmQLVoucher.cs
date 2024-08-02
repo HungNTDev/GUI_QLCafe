@@ -163,6 +163,7 @@ namespace GUI_QLCafe
         private void btnRefesh_Click(object sender, EventArgs e)
         {
             searching = false;
+            txtTimKiem.Clear();
             LoadData();
         }
 

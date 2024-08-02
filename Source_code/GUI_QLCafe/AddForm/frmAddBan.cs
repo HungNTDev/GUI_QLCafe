@@ -32,7 +32,7 @@ namespace GUI_QLCafe
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dl == DialogResult.OK)
             {
                 this.Close();

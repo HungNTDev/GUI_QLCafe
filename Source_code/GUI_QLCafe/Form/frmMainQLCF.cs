@@ -7,7 +7,7 @@ namespace GUI_QLCafe
     {
         public static int session = 0; //tình trạng login
         public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
-        public static int status {  set; get; }
+        public static int status { set; get; }
         public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
         public static string dateTime;
 

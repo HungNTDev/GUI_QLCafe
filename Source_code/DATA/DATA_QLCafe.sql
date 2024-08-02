@@ -191,6 +191,8 @@ insert into TableCF (IdTable, NameTable, StatusTable) values
 ('B29',N'Bàn 29',0),
 ('B30',N'Bàn 30',0)
 	
+update TableCF set StatusTable = 0
+
 update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
 go
@@ -203,6 +205,7 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('JUC',N'Nước ép',1)
 
 update TableCF set StatusTable = 0
+
 delete from DetailBill
 delete from Bill 
 

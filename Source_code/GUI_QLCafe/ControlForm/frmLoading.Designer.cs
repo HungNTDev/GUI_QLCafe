@@ -34,7 +34,6 @@
             this.lbStatus = new System.Windows.Forms.Label();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbText = new System.Windows.Forms.Label();
-            this.lbText1 = new System.Windows.Forms.Label();
             this.pbLoading = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.time_Loading = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -83,25 +82,11 @@
             this.lbText.AutoSize = true;
             this.lbText.Font = new System.Drawing.Font("Cooper Black", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbText.Location = new System.Drawing.Point(139, 194);
+            this.lbText.Location = new System.Drawing.Point(192, 198);
             this.lbText.Name = "lbText";
             this.lbText.Size = new System.Drawing.Size(567, 42);
             this.lbText.TabIndex = 3;
             this.lbText.Text = "Hệ thống quản lý quán cà phê";
-            // 
-            // lbText1
-            // 
-            this.lbText1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbText1.AutoSize = true;
-            this.lbText1.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbText1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbText1.Location = new System.Drawing.Point(206, 240);
-            this.lbText1.Name = "lbText1";
-            this.lbText1.Size = new System.Drawing.Size(485, 70);
-            this.lbText1.TabIndex = 3;
-            this.lbText1.Text = "-Freshly Brewed, Just for You-\r\n\r\n";
             // 
             // pbLoading
             // 
@@ -125,7 +110,6 @@
             this.ClientSize = new System.Drawing.Size(790, 450);
             this.Controls.Add(this.pbLoading);
             this.Controls.Add(this.lbStatus);
-            this.Controls.Add(this.lbText1);
             this.Controls.Add(this.lbText);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.panelFooter);
@@ -148,7 +132,6 @@
         private System.Windows.Forms.Label lbStatus;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
         private System.Windows.Forms.Label lbText;
-        private System.Windows.Forms.Label lbText1;
         private Guna.UI2.WinForms.Guna2GradientPanel pbLoading;
         private System.Windows.Forms.Timer time_Loading;
     }

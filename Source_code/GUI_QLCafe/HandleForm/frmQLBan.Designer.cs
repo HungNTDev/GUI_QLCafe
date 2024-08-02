@@ -471,20 +471,20 @@
             this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvMBan.DataPropertyName = "IdTable";
             this.dgvMBan.HeaderText = "Mã bàn";
-            this.dgvMBan.MinimumWidth = 300;
+            this.dgvMBan.MinimumWidth = 450;
             this.dgvMBan.Name = "dgvMBan";
             this.dgvMBan.ReadOnly = true;
-            this.dgvMBan.Width = 300;
+            this.dgvMBan.Width = 450;
             // 
             // dgvTBan
             // 
             this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvTBan.DataPropertyName = "NameTable";
             this.dgvTBan.HeaderText = "Tên bàn";
-            this.dgvTBan.MinimumWidth = 300;
+            this.dgvTBan.MinimumWidth = 450;
             this.dgvTBan.Name = "dgvTBan";
             this.dgvTBan.ReadOnly = true;
-            this.dgvTBan.Width = 300;
+            this.dgvTBan.Width = 450;
             // 
             // dgvSuaBan
             // 
@@ -492,20 +492,20 @@
             this.dgvSuaBan.FillWeight = 50F;
             this.dgvSuaBan.HeaderText = "";
             this.dgvSuaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvSuaBan.Image")));
-            this.dgvSuaBan.MinimumWidth = 250;
+            this.dgvSuaBan.MinimumWidth = 90;
             this.dgvSuaBan.Name = "dgvSuaBan";
             this.dgvSuaBan.ReadOnly = true;
-            this.dgvSuaBan.Width = 250;
+            this.dgvSuaBan.Width = 90;
             // 
             // dgvXemBan
             // 
             this.dgvXemBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvXemBan.HeaderText = "";
             this.dgvXemBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXemBan.Image")));
-            this.dgvXemBan.MinimumWidth = 250;
+            this.dgvXemBan.MinimumWidth = 90;
             this.dgvXemBan.Name = "dgvXemBan";
             this.dgvXemBan.ReadOnly = true;
-            this.dgvXemBan.Width = 250;
+            this.dgvXemBan.Width = 90;
             // 
             // dgvXoaBan
             // 
@@ -513,10 +513,10 @@
             this.dgvXoaBan.FillWeight = 50F;
             this.dgvXoaBan.HeaderText = "";
             this.dgvXoaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoaBan.Image")));
-            this.dgvXoaBan.MinimumWidth = 250;
+            this.dgvXoaBan.MinimumWidth = 90;
             this.dgvXoaBan.Name = "dgvXoaBan";
             this.dgvXoaBan.ReadOnly = true;
-            this.dgvXoaBan.Width = 250;
+            this.dgvXoaBan.Width = 90;
             // 
             // frmQLBan
             // 

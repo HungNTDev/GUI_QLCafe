@@ -12,6 +12,7 @@ namespace GUI_QLCafe
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
+
         public frmQLHoaDon()
         {
             InitializeComponent();
@@ -29,22 +30,7 @@ namespace GUI_QLCafe
 
         private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //string mabill = Convert.ToString((dgvDSHD.CurrentRow.Cells["IdBill"].Value));
-            //if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo",
-            //        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            //{
-            //    if (busbill.delete(mabill))
-            //    {
-            //        MessageBox.Show("Xóa này thanh cong", "Tho báo",
-            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        LoadData();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Xóa that bai", "Tho báo",
-            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
+            
         }
         private void LoadPage()
         {
@@ -53,7 +39,6 @@ namespace GUI_QLCafe
                 totalRows = busbill.ToTalBill();
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
                 lbTotalPage.Text = totalPages.ToString();
-                lbTotalRows.Text = "Tổng số dự án: " + totalRows.ToString();
 
                 DataTable dt = busbill.GetPagedBill(currentPageIndex, PageSize);
                 dgvDSHD.DataSource = dt;

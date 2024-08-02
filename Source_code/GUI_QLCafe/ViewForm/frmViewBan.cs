@@ -16,5 +16,27 @@ namespace GUI_QLCafe.ViewForm
         {
             InitializeComponent();
         }
+
+        public void HienThi()
+        {
+            txtMaBan.Enabled = false;
+            txtTenBan.Enabled = false;  
+        }
+
+        public void SetTableInfo(string maBan, string tenBan)
+        {
+            txtTenBan.Text = maBan;
+            txtMaBan.Text = tenBan; 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmViewBan_Load(object sender, EventArgs e)
+        {
+            HienThi();
+        }
     }
 }

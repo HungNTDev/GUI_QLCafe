@@ -34,8 +34,6 @@
             this.txtMaBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMaBan = new System.Windows.Forms.Label();
             this.lbTenBan = new System.Windows.Forms.Label();
-            this.cbTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbTrangThai = new System.Windows.Forms.Label();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.bfAddBan = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
@@ -120,38 +118,6 @@
             this.lbTenBan.TabIndex = 24;
             this.lbTenBan.Text = "Tên bàn";
             // 
-            // cbTrangThai
-            // 
-            this.cbTrangThai.BackColor = System.Drawing.Color.Transparent;
-            this.cbTrangThai.BorderColor = System.Drawing.Color.Silver;
-            this.cbTrangThai.BorderRadius = 5;
-            this.cbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.cbTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.cbTrangThai.ItemHeight = 30;
-            this.cbTrangThai.Items.AddRange(new object[] {
-            "Có",
-            "Không có"});
-            this.cbTrangThai.Location = new System.Drawing.Point(44, 276);
-            this.cbTrangThai.Name = "cbTrangThai";
-            this.cbTrangThai.Size = new System.Drawing.Size(460, 36);
-            this.cbTrangThai.TabIndex = 28;
-            // 
-            // lbTrangThai
-            // 
-            this.lbTrangThai.AutoSize = true;
-            this.lbTrangThai.BackColor = System.Drawing.Color.White;
-            this.lbTrangThai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.lbTrangThai.Location = new System.Drawing.Point(42, 245);
-            this.lbTrangThai.Name = "lbTrangThai";
-            this.lbTrangThai.Size = new System.Drawing.Size(98, 28);
-            this.lbTrangThai.TabIndex = 27;
-            this.lbTrangThai.Text = "Trạng thái";
-            // 
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.Color.Transparent;
@@ -170,7 +136,7 @@
             this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(44, 343);
+            this.btnLuu.Location = new System.Drawing.Point(44, 283);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -207,7 +173,7 @@
             this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(44, 431);
+            this.btnThoat.Location = new System.Drawing.Point(44, 371);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(460, 57);
@@ -256,12 +222,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(547, 522);
+            this.ClientSize = new System.Drawing.Size(547, 464);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.cbTrangThai);
-            this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.txtTenBan);
             this.Controls.Add(this.txtMaBan);
             this.Controls.Add(this.lbMaBan);
@@ -282,11 +246,9 @@
         #endregion
         private System.Windows.Forms.Label lbMaBan;
         private System.Windows.Forms.Label lbTenBan;
-        private System.Windows.Forms.Label lbTrangThai;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddBan;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
-        public Guna.UI2.WinForms.Guna2ComboBox cbTrangThai;
         public Guna.UI2.WinForms.Guna2TextBox txtMaBan;
         public Guna.UI2.WinForms.Guna2TextBox txtTenBan;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;

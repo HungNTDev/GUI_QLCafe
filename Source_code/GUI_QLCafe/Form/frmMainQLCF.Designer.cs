@@ -61,8 +61,6 @@
             this.flpThongKe = new System.Windows.Forms.FlowLayoutPanel();
             this.panelThongKe = new System.Windows.Forms.Panel();
             this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
-            this.panelThongKeSLSanPham = new System.Windows.Forms.Panel();
-            this.btnThongKeSLSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.panelThongKeSLHoaDon = new System.Windows.Forms.Panel();
             this.btnThongKeSLHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.flpQuanLy = new System.Windows.Forms.FlowLayoutPanel();
@@ -98,7 +96,6 @@
             this.panelDoiMatKhau.SuspendLayout();
             this.flpThongKe.SuspendLayout();
             this.panelThongKe.SuspendLayout();
-            this.panelThongKeSLSanPham.SuspendLayout();
             this.panelThongKeSLHoaDon.SuspendLayout();
             this.flpQuanLy.SuspendLayout();
             this.panelQuanLy.SuspendLayout();
@@ -148,7 +145,6 @@
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "-";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // lbNgay
             // 
@@ -233,7 +229,6 @@
             this.picBackGround.TabIndex = 0;
             this.picBackGround.TabStop = false;
             this.picBackGround.UseTransparentBackground = true;
-            this.picBackGround.Click += new System.EventHandler(this.picBackGround_Click);
             // 
             // timer_ThoiGian
             // 
@@ -457,7 +452,6 @@
             // 
             this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
             this.flpThongKe.Controls.Add(this.panelThongKe);
-            this.flpThongKe.Controls.Add(this.panelThongKeSLSanPham);
             this.flpThongKe.Controls.Add(this.panelThongKeSLHoaDon);
             this.flpThongKe.Location = new System.Drawing.Point(3, 322);
             this.flpThongKe.Name = "flpThongKe";
@@ -497,40 +491,10 @@
             this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // panelThongKeSLSanPham
-            // 
-            this.panelThongKeSLSanPham.Controls.Add(this.btnThongKeSLSanPham);
-            this.panelThongKeSLSanPham.Location = new System.Drawing.Point(3, 54);
-            this.panelThongKeSLSanPham.Name = "panelThongKeSLSanPham";
-            this.panelThongKeSLSanPham.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelThongKeSLSanPham.Size = new System.Drawing.Size(300, 45);
-            this.panelThongKeSLSanPham.TabIndex = 2;
-            // 
-            // btnThongKeSLSanPham
-            // 
-            this.btnThongKeSLSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKeSLSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKeSLSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThongKeSLSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKeSLSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btnThongKeSLSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKeSLSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnThongKeSLSanPham.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnThongKeSLSanPham.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThongKeSLSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeSLSanPham.Image")));
-            this.btnThongKeSLSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKeSLSanPham.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThongKeSLSanPham.Location = new System.Drawing.Point(0, -16);
-            this.btnThongKeSLSanPham.Name = "btnThongKeSLSanPham";
-            this.btnThongKeSLSanPham.Size = new System.Drawing.Size(345, 76);
-            this.btnThongKeSLSanPham.TabIndex = 3;
-            this.btnThongKeSLSanPham.Text = "          Thống kê SL sản phẩm";
-            this.btnThongKeSLSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // panelThongKeSLHoaDon
             // 
             this.panelThongKeSLHoaDon.Controls.Add(this.btnThongKeSLHoaDon);
-            this.panelThongKeSLHoaDon.Location = new System.Drawing.Point(3, 105);
+            this.panelThongKeSLHoaDon.Location = new System.Drawing.Point(3, 54);
             this.panelThongKeSLHoaDon.Name = "panelThongKeSLHoaDon";
             this.panelThongKeSLHoaDon.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.panelThongKeSLHoaDon.Size = new System.Drawing.Size(300, 45);
@@ -556,6 +520,7 @@
             this.btnThongKeSLHoaDon.TabIndex = 3;
             this.btnThongKeSLHoaDon.Text = "          Thống kê SL hóa đơn";
             this.btnThongKeSLHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKeSLHoaDon.Click += new System.EventHandler(this.btnThongKeSLHoaDon_Click);
             // 
             // flpQuanLy
             // 
@@ -878,7 +843,6 @@
             this.panelDoiMatKhau.ResumeLayout(false);
             this.flpThongKe.ResumeLayout(false);
             this.panelThongKe.ResumeLayout(false);
-            this.panelThongKeSLSanPham.ResumeLayout(false);
             this.panelThongKeSLHoaDon.ResumeLayout(false);
             this.flpQuanLy.ResumeLayout(false);
             this.panelQuanLy.ResumeLayout(false);
@@ -931,8 +895,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpThongKe;
         private System.Windows.Forms.Panel panelThongKe;
         private Guna.UI2.WinForms.Guna2Button btnThongKe;
-        private System.Windows.Forms.Panel panelThongKeSLSanPham;
-        private Guna.UI2.WinForms.Guna2Button btnThongKeSLSanPham;
         private System.Windows.Forms.Panel panelThongKeSLHoaDon;
         private Guna.UI2.WinForms.Guna2Button btnThongKeSLHoaDon;
         private System.Windows.Forms.FlowLayoutPanel flpHeThong;

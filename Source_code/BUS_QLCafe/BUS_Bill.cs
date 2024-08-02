@@ -74,5 +74,28 @@ namespace BUS_QLCafe
         {
             return dal.AddDetailStatistic(Bill);
         }
+
+        // Danh sách thống kê
+        public DataTable GetStatistic()
+        {
+            return dal.GetStatistic();
+        }
+
+        // Phân trang thống kê
+        public DataTable GetPagedStatistic(int PageIndex, int PageSize)
+        {
+            return dal.GetPagedStatistic(PageIndex, PageSize);
+        }
+
+        public int GetTotalStatisticCount()
+        {
+            return dal.GetTotalStatisticCount();
+        }
+
+        // Tìm kiếm thống kê
+        public DataTable SearchStatistic(string keyword)
+        {
+            return dal.SearchStatistic(keyword);
+        }
     }
 }

@@ -74,5 +74,9 @@ namespace BUS_QLCafe
         {
             return dal.AddDetailStatistic(Bill);
         }
+        public bool DelProductFromBill(DTO_Bill Bill)
+        {
+            return dal.DelProductFromBill(Bill);
+        }
     }
 }

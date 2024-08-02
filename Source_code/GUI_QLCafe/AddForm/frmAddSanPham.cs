@@ -14,6 +14,7 @@ namespace GUI_QLCafe
         string fileName;
         string fileSavePath;
         string fileAddress;
+        string saveDirectory;
 
         public frmAddSanPham()
         {

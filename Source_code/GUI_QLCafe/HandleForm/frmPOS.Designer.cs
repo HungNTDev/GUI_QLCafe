@@ -48,6 +48,7 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelAside = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.chMaSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.paneText.SuspendLayout();
@@ -153,6 +154,7 @@
             this.btnXoaMon.Size = new System.Drawing.Size(178, 48);
             this.btnXoaMon.TabIndex = 1;
             this.btnXoaMon.Text = "Xóa Món";
+            this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
             // 
             // btnThemMon
             // 
@@ -212,7 +214,8 @@
             this.chTenMon,
             this.chSoLuong,
             this.chDonGia,
-            this.chThanhTien});
+            this.chThanhTien,
+            this.chMaSP});
             this.lvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.HideSelection = false;
@@ -303,6 +306,11 @@
             this.panelBody.Size = new System.Drawing.Size(595, 751);
             this.panelBody.TabIndex = 9;
             // 
+            // chMaSP
+            // 
+            this.chMaSP.Text = "";
+            this.chMaSP.Width = 0;
+            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -348,5 +356,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelAside;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private System.Windows.Forms.Label lbThuNgan;
+        private System.Windows.Forms.ColumnHeader chMaSP;
     }
 }

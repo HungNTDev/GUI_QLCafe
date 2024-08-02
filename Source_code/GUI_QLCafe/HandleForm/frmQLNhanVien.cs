@@ -1,6 +1,5 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
-using Emgu.CV.Mcc;
 using System;
 using System.Data;
 using System.Drawing;
@@ -46,6 +45,7 @@ namespace GUI_QLCafe
             try
             {
 
+                txtTimKiem.Clear();
                 selected = false;
 
 
@@ -86,7 +86,6 @@ namespace GUI_QLCafe
 
             txtEmail.Clear();
             txtTen.Clear();
-            txtTimKiem.Clear();
             txtDuongDan.Clear();
 
             btnMoHinh.Enabled = false;
@@ -305,6 +304,8 @@ namespace GUI_QLCafe
                     rdoNhanVien.Enabled = false;
                     rdoQuanTri.Enabled = false;
                     rdoChuSoHuu.Enabled = false;
+                    txtEmail.Enabled = false;
+                    btnMoHinh.Enabled = false;
                 }
 
                 //Bản thân quản trị

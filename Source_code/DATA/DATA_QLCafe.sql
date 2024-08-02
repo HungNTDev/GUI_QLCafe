@@ -912,3 +912,16 @@ select * from Statistic
 select * from DetailStatistic
 
 delete from Statistic
+
+-- Xóa món 
+create or alter proc DelProductFromBill (@IdTable nvarchar(10), @IdProduct nvarchar(10))
+as
+	DECLARE @ID int
+	set @ID = (select IdBill from Bill where IdTable = @IdTable)
+
+	delete from DetailBill where IdBill = @ID and IdProduct = @IdProduct
+	update Staff set RoleStaff = N'Chủ sở hữu' where IdStaff = 'NV1'
+
+	select * from Staff
+
+	update TableCF set StatusTable =0

@@ -58,6 +58,7 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtMaSanPham.Enabled = false;
                 frmAddSanPham.cbLoaiSanPham.Enabled = false;
                 frmAddSanPham.txtDuongDan.Enabled = false;
+                frmAddSanPham.rdoKhong.Visible = false;
 
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
@@ -65,7 +66,11 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
                 frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
-                frmAddSanPham.rdoCo.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+
+                if (Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) == "Còn Bán")
+                {
+                    frmAddSanPham.rdoCo.Checked = true;
+                }
                 frmAddSanPham.cbLoaiSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value).Trim();
 
                 saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
@@ -240,6 +245,7 @@ namespace GUI_QLCafe
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
+            txtTimKiem.Clear();
             LoadData();
         }
     }

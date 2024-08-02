@@ -21,6 +21,7 @@ namespace GUI_QLCafe
         public static string idTable;
         public static string dateCheckIn;
 
+        public string idProduct;
 
         public frmPOS()
         {
@@ -58,6 +59,7 @@ namespace GUI_QLCafe
                         item.SubItems.Add(busBill.BillInfo(billDTO).Rows[i][1].ToString());
                         item.SubItems.Add(busBill.BillInfo(billDTO).Rows[i][2].ToString());
                         item.SubItems.Add(busBill.BillInfo(billDTO).Rows[i][3].ToString() + " VND");
+                        item.SubItems.Add(busBill.BillInfo(billDTO).Rows[i][7].ToString());
                         lvHoaDon.Items.Add(item);
                         total = total + (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
                     }
@@ -156,6 +158,30 @@ namespace GUI_QLCafe
 
         private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lvHoaDon.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lvHoaDon.SelectedItems[0];
+
+                if (selectedItem.SubItems.Count > 4)
+                {
+                    idProduct = selectedItem.SubItems[4].Text;
+                }
+            }
+        }
+
+        private void btnXoaMon_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Bạn có muốn xóa sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (del == DialogResult.Yes)
+            {
+                lvHoaDon.Items.Remove(lvHoaDon.SelectedItems[0]);
+                billDTO.idProduct = idProduct;
+                billDTO.idTable = idTable;
+                busBill.DelProductFromBill(billDTO);
+                lvHoaDon.Update();
+                showBill(idTable);
+            }
+
 
         }
     }

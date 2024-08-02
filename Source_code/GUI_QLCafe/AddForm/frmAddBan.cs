@@ -26,7 +26,7 @@ namespace GUI_QLCafe
             }
             if (formMode == FormMode.Sua)
             {
-                lbHeaderText.Text = "CẬP NHẬT THÔNG TIN BÀN";
+                lbHeaderText.Text = "CẬP NHẬT BÀN";
             }
         }
 
@@ -61,23 +61,27 @@ namespace GUI_QLCafe
                        txtTenBan.Text
                 );
 
-                if (string.IsNullOrEmpty(id))
-                {
-                    DialogResult dl = MessageBox.Show("Bạn có muốn lưu không?", "Thông báo",
-                   MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    if (dl == DialogResult.OK)
+                if(formMode == FormMode.Them)
+                {
+                    if (string.IsNullOrEmpty(id))
                     {
-                        if (table.insert(tl))
+                        DialogResult dl = MessageBox.Show("Bạn có muốn lưu không?", "Thông báo",
+                       MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                        if (dl == DialogResult.OK)
                         {
-                            MessageBox.Show("Thêm bàn thành công", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm bàn thất bại", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (table.insert(tl))
+                            {
+                                MessageBox.Show("Thêm bàn thành công", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Thêm bàn thất bại", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
                 }

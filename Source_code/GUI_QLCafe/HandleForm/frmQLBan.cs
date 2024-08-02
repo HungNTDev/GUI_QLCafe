@@ -1,4 +1,5 @@
 ﻿using BUS_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -41,9 +42,11 @@ namespace GUI_QLCafe
         {
             if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvSuaBan")
             {
-                frmAddBan frmAddBan = new frmAddBan();
+                frmAddBan frmAddBan = new frmAddBan
+                {
+                    formMode = frmAddBan.FormMode.Sua
+                };
                 frmAddBan.txtMaBan.Enabled = false;
-
 
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
                 frmAddBan.id = maBan;
@@ -53,7 +56,15 @@ namespace GUI_QLCafe
                 frmAddBan.ShowDialog();
                 LoadPage();
             }
-            if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXoaBan")
+            else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXemBan")
+            {
+                frmViewBan frmViewBan = new frmViewBan();
+                string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
+                string tenBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTban"].Value);
+                frmViewBan.SetTableInfo(maBan, tenBan);
+                frmViewBan.ShowDialog();
+            }
+            else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXoaBan")
             {
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
                 if (MessageBox.Show("Bạn chắc chắn  muốn xóa bàn?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)

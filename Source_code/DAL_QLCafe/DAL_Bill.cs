@@ -340,7 +340,8 @@ namespace DAL_QLCafe
             return false;
         }
 
-        public bool DelProductFromBill(DTO_Bill Bill)
+        // Danh sách thống kê
+        public DataTable GetStatistic()
         {
             try
             {
@@ -349,14 +350,11 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "DelProductFromBill";
-                    cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
-                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
+                    cmd.CommandText = "GetStatistic";
                     conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
+                    DataTable dtStatistic = new DataTable();
+                    dtStatistic.Load(cmd.ExecuteReader());
+                    return dtStatistic;
                 }
             }
             finally
@@ -366,7 +364,94 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
-            return false;
+        }
+
+        // Phân trang thống kê
+        public DataTable GetPagedStatistic(int PageIndex, int PageSize)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetPagedStatistic";
+                    cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", PageSize);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    da.Fill(dt);
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        Console.WriteLine("Không có dữ liệu được trả về từ proc");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return dt;
+        }
+
+        // Lấy tổng số
+        public int GetTotalStatisticCount()
+        {
+            int totalBillCount = 0;
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetTotalStatisticCount";
+                    conn.Open();
+                    totalBillCount = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            return totalBillCount;
+        }
+
+        // Tìm kiếm thống kê
+        public DataTable SearchStatistic(string keyword)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "SearchStatistic";
+                    cmd.Parameters.AddWithValue("@value", keyword);
+                    conn.Open();
+                    DataTable dtStatistic = new DataTable();
+                    dtStatistic.Load(cmd.ExecuteReader());
+                    return dtStatistic;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }

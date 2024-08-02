@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_QLCafe.HandleForm;
+using System;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -123,7 +124,7 @@ namespace GUI_QLCafe
                 flpThongKe.Height += 15;
 
                 // Nếu chiều cao đạt 300
-                if (flpThongKe.Height >= 162)
+                if (flpThongKe.Height >= 110)
                 {
                     thongkeTransition.Stop(); // Dừng timer
                     thongkeExpand = true; // Mở rộng
@@ -303,6 +304,11 @@ namespace GUI_QLCafe
             AddControls(new frmQLBan());
         }
 
+        private void btnThongKeSLHoaDon_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmQLThongKe());
+        }
+
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
             // Hiển thị ngày + giờ trên lbNgay
@@ -323,14 +329,5 @@ namespace GUI_QLCafe
             }
         }
 
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picBackGround_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

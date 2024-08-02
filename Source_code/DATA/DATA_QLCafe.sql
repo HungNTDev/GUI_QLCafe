@@ -70,7 +70,7 @@ Primary key (IdBill)
 	
 create table Statistic (
 IdStatistic int identity not null ,
-IdBill int ,
+IdBill int,
 PercentVoucher float,
 Total float,
 NameStaff nvarchar(50),
@@ -610,7 +610,7 @@ as
 		select * from TableCF order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
 	end
 
-EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+EXEC GetPagedTable @PageIndex = 1, @PageSize = 10;
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalTableCount as select count(*) from TableCF
@@ -699,9 +699,9 @@ as
 	update TableCF set StatusTable = 0 where IdTable = @IdTable
 
 	-- Load Bill 
-alter proc LoadBill 
+create or alter proc LoadBill 
 as 
-    select  IdBill, IdTable, IdStaff, StatusBill  from Bill
+    select  IdBill, IdTable, IdStaff, DateCheckIn,StatusBill  from Bill
 
 	-- Xóa Bill 
 create proc BIllDelete @idBill int 
@@ -711,15 +711,15 @@ as
 
 
 	 -- Lấy trang bill
-create proc GetPagedBill
+create or alter proc GetPagedBill
 @PageIndex int,
 @PageSize int
 as
 	begin
-		select * from Bill order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+		select  IdBill, IdTable, IdStaff, DateCheckIn,StatusBill  from Bill order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
 	end
 
-EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+EXEC GetPagedBill @PageIndex = 1, @PageSize = 10;
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalTableCount as select count(*) from TableCF
@@ -846,9 +846,8 @@ as
 	join Product on Product.IdProduct = DetailBill.IdProduct
 	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
 
-
 	-- PAY
-	ALTER   proc [dbo].[Pay] (@IdTable nvarchar(10), @IdBill int, @DateCheckOut datetime, @IdPayment nvarchar(10), @IdVoucher nvarchar(10) )
+	ALTER proc [dbo].[Pay] (@IdTable nvarchar(10), @IdBill int, @DateCheckOut datetime, @IdPayment nvarchar(10), @IdVoucher nvarchar(10) )
 as
 		update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
 	delete from DetailBill where idBill = @IdBill
@@ -884,16 +883,32 @@ create proc [dbo].[AddStatistic]
 			insert into DetailStatistic(IdStatistic, NameProduct, Amount, Price, TotalPrice) values
 			(@ID, @NameProduct, @Amount, @Price, @TotalPrice)
 
+-- PROC GET DANH SACH THONG KE
+CREATE OR ALTER PROC GetStatistic AS SELECT * FROM Statistic
+
+-- PHAN TRANG FORM THONG KE
+CREATE OR ALTER PROC GetPagedStatistic
+@PageIndex INT,
+@PageSize INT
+AS
+	BEGIN
+		SELECT * FROM Statistic ORDER BY IdStatistic offset(@PageIndex - 1) * @PageSize ROWS FETCH NEXT @PageSize ROWS only;
+	END
+
+-- LAY TONG SO
+CREATE OR ALTER PROC GetTotalStatisticCount AS SELECT COUNT(*) FROM Statistic
+
+-- TIM KIEM THONG KE
+CREATE OR ALTER PROC SearchStatistic (@value nvarchar(500))
+AS
+	BEGIN 
+		 SELECT * FROM Statistic where NameStaff like N'%' + @value + '%'
+		 or NamePayment like N'%' + @value + '%' or NameTable like N'%' + @value + '%'
+	END
+
+
 
 select * from Statistic
 select * from DetailStatistic
 
 delete from Statistic
-
--- Xóa món 
-create or alter proc DelProductFromBill (@IdTable nvarchar(10), @IdProduct nvarchar(10))
-as
-	DECLARE @ID int
-	set @ID = (select IdBill from Bill where IdTable = @IdTable)
-
-	delete from DetailBill where IdBill = @ID and IdProduct = @IdProduct

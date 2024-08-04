@@ -74,8 +74,8 @@ namespace GUI_QLCafe
             {
                 if (role == "Quản trị" || role == "Chủ sở hữu")
                 {
-                    btnQLNhanVien.Enabled = true;
-                    btnThongKe.Enabled = true;
+                    //btnQLNhanVien.Enabled = true;
+                    //btnThongKe.Enabled = true;
                 }
             }
         }
@@ -276,7 +276,10 @@ namespace GUI_QLCafe
 
         private void btnQLSanPham_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLSanPham());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLSanPham());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLVoucher_Click_1(object sender, EventArgs e)
@@ -301,12 +304,18 @@ namespace GUI_QLCafe
 
         private void btnQLBan_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLBan());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLBan());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnThongKeSLHoaDon_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLThongKe());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLThongKe());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void timer_ThoiGian_Tick(object sender, EventArgs e)

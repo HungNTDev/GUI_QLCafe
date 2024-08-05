@@ -186,6 +186,12 @@
     <Compile Include="AddForm\frmAddSanPham.Designer.cs">
       <DependentUpon>frmAddSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddForm\frmSubtractAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\frmSubtractAmount.Designer.cs">
+      <DependentUpon>frmSubtractAmount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,18 @@
     </Compile>
     <Compile Include="AddForm\frmAddDetail.Designer.cs">
       <DependentUpon>frmAddDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandleForm\frmTableList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleForm\frmTableList.Designer.cs">
+      <DependentUpon>frmTableList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandleForm\frmMenuProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleForm\frmMenuProduct.Designer.cs">
+      <DependentUpon>frmMenuProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="HandleForm\frmPayment.cs">
       <SubType>Form</SubType>
@@ -352,6 +370,9 @@
     <EmbeddedResource Include="AddForm\frmAddVoucher.resx">
       <DependentUpon>frmAddVoucher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddForm\frmSubtractAmount.resx">
+      <DependentUpon>frmSubtractAmount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlForm\frmNotification.resx">
       <DependentUpon>frmNotification.cs</DependentUpon>
     </EmbeddedResource>
@@ -366,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\frmAddDetail.resx">
       <DependentUpon>frmAddDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandleForm\frmMenuProduct.resx">
+      <DependentUpon>frmMenuProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandleForm\frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
@@ -387,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HandleForm\frmQLThongKe.resx">
       <DependentUpon>frmQLThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandleForm\frmTableList.resx">
+      <DependentUpon>frmTableList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -494,9 +521,7 @@
     <Content Include="img\Product\download %2821%29.jpg" />
     <Content Include="img\Product\tralipton.jpg" />
     <Content Include="img\Product\cach-lam-ca-phe-da-bao-frappuccino-thom-beo-mat-lanh-nhu-starbucks-tai-nha-202111031405246034.jpg" />
-    <Content Include="img\Product\d5cb1aa5e36899-cphvanillaphclong.png" />
     <Content Include="img\Product\download %281%29.jpg" />
-    <Content Include="img\Product\download %2810%29.jpg" />
     <Content Include="img\Product\download %2811%29.jpg" />
     <Content Include="img\Product\download %2812%29.jpg" />
     <Content Include="img\Product\download %2813%29.jpg" />

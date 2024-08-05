@@ -266,7 +266,7 @@ namespace DAL_QLCafe
 
         public bool MergeBillMenu(DTO_Bill bill, int amount)
         {
-            string Query = @"exec MergeBillMenu @IdTable = '" + bill.IdTable + "', @quanity = '" + bill.Amount + "', @quanityNew = '" + amount + "' ";
+            string Query = @"exec MergeBillMenu @IdTable = '" + bill.IdTable + "', @amount = '" + bill.Amount + "', @amountNew = '" + amount + "', @idProduct = '" + bill.IdProduct + "' ";
             SqlDataAdapter adt = new SqlDataAdapter(Query, _conn);
             DataTable dt = new DataTable();
             adt.Fill(dt);
@@ -323,6 +323,34 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@Amount", Bill.Amount);
                     cmd.Parameters.AddWithValue("@Price", Bill.Price);
                     cmd.Parameters.AddWithValue("@TotalPrice", Bill.totalPrice);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+        public bool DelProductFromBill(DTO_Bill Bill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DelProductFromBill";
+                    cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
+                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
                     {
@@ -452,6 +480,95 @@ namespace DAL_QLCafe
                     conn.Close();
                 }
             }
+        }
+
+        //public bool DelProductFromBill(DTO_Bill Bill)
+        //{
+        //    try
+        //    {
+        //        using (conn = new SqlConnection(_conn))
+        //        {
+        //            SqlCommand cmd = new SqlCommand();
+        //            cmd.Connection = conn;
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.CommandText = "DelProductFromBill";
+        //            cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
+        //            cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
+        //            conn.Open();
+        //            if (cmd.ExecuteNonQuery() > 0)
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        if (conn.State == ConnectionState.Open)
+        //        {
+        //            conn.Close();
+        //        }
+        //    }
+        //    return false;
+        //}
+
+        public bool UpdateProductInBill(DTO_Bill Bill, int amount)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateProductInBill";
+                    cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
+                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
+                    cmd.Parameters.AddWithValue("@Amount", amount);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+
+        public bool AddProductInBill(DTO_Bill Bill, int amount)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateProductInBillAdd";
+                    cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
+                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
+                    cmd.Parameters.AddWithValue("@Amount", amount);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
         }
     }
 }

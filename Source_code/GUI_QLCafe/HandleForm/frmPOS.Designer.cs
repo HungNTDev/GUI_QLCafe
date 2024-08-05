@@ -35,6 +35,7 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lbThuNgan = new System.Windows.Forms.Label();
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnXoaSoLuong = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaMon = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemMon = new Guna.UI2.WinForms.Guna2Button();
             this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
@@ -43,12 +44,13 @@
             this.chSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chThanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMaSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.paneText = new Guna.UI2.WinForms.Guna2Panel();
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelAside = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
-            this.chMaSP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnPlus = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.paneText.SuspendLayout();
@@ -85,7 +87,7 @@
             this.lbThanhTien.AutoSize = true;
             this.lbThanhTien.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThanhTien.ForeColor = System.Drawing.Color.White;
-            this.lbThanhTien.Location = new System.Drawing.Point(18, 20);
+            this.lbThanhTien.Location = new System.Drawing.Point(18, 5);
             this.lbThanhTien.Name = "lbThanhTien";
             this.lbThanhTien.Size = new System.Drawing.Size(187, 45);
             this.lbThanhTien.TabIndex = 0;
@@ -121,6 +123,8 @@
             this.panelFooter.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panelFooter.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelFooter.BorderThickness = 2;
+            this.panelFooter.Controls.Add(this.btnPlus);
+            this.panelFooter.Controls.Add(this.btnXoaSoLuong);
             this.panelFooter.Controls.Add(this.btnXoaMon);
             this.panelFooter.Controls.Add(this.btnThemMon);
             this.panelFooter.Controls.Add(this.btnThanhToan);
@@ -130,6 +134,31 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(595, 171);
             this.panelFooter.TabIndex = 3;
+            // 
+            // btnXoaSoLuong
+            // 
+            this.btnXoaSoLuong.BorderColor = System.Drawing.Color.White;
+            this.btnXoaSoLuong.BorderRadius = 10;
+            this.btnXoaSoLuong.BorderThickness = 1;
+            this.btnXoaSoLuong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaSoLuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaSoLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaSoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaSoLuong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaSoLuong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSoLuong.ForeColor = System.Drawing.Color.White;
+            this.btnXoaSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaSoLuong.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXoaSoLuong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaSoLuong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnXoaSoLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaSoLuong.Image")));
+            this.btnXoaSoLuong.Location = new System.Drawing.Point(403, 58);
+            this.btnXoaSoLuong.Name = "btnXoaSoLuong";
+            this.btnXoaSoLuong.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnXoaSoLuong.Size = new System.Drawing.Size(178, 48);
+            this.btnXoaSoLuong.TabIndex = 2;
+            this.btnXoaSoLuong.Text = "Giảm số lượng";
+            this.btnXoaSoLuong.Click += new System.EventHandler(this.btnXoaSoLuong_Click);
             // 
             // btnXoaMon
             // 
@@ -146,14 +175,14 @@
             this.btnXoaMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnXoaMon.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoaMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnXoaMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnXoaMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnXoaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMon.Image")));
-            this.btnXoaMon.Location = new System.Drawing.Point(403, 97);
+            this.btnXoaMon.Location = new System.Drawing.Point(403, 112);
             this.btnXoaMon.Name = "btnXoaMon";
             this.btnXoaMon.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnXoaMon.Size = new System.Drawing.Size(178, 48);
             this.btnXoaMon.TabIndex = 1;
-            this.btnXoaMon.Text = "Xóa Món";
+            this.btnXoaMon.Text = "Xóa món";
             this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
             // 
             // btnThemMon
@@ -171,9 +200,9 @@
             this.btnThemMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThemMon.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThemMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThemMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnThemMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
-            this.btnThemMon.Location = new System.Drawing.Point(214, 97);
+            this.btnThemMon.Location = new System.Drawing.Point(219, 112);
             this.btnThemMon.Name = "btnThemMon";
             this.btnThemMon.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnThemMon.Size = new System.Drawing.Size(178, 48);
@@ -196,12 +225,12 @@
             this.btnThanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.btnThanhToan.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(25, 97);
+            this.btnThanhToan.Location = new System.Drawing.Point(25, 112);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnThanhToan.Size = new System.Drawing.Size(178, 48);
+            this.btnThanhToan.Size = new System.Drawing.Size(180, 48);
             this.btnThanhToan.TabIndex = 1;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
@@ -218,6 +247,7 @@
             this.chMaSP});
             this.lvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvHoaDon.FullRowSelect = true;
             this.lvHoaDon.HideSelection = false;
             this.lvHoaDon.Location = new System.Drawing.Point(0, 154);
             this.lvHoaDon.Name = "lvHoaDon";
@@ -230,25 +260,30 @@
             // chTenMon
             // 
             this.chTenMon.Text = "Tên món";
-            this.chTenMon.Width = 190;
+            this.chTenMon.Width = 130;
             // 
             // chSoLuong
             // 
             this.chSoLuong.Text = "Số lượng";
             this.chSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chSoLuong.Width = 120;
+            this.chSoLuong.Width = 150;
             // 
             // chDonGia
             // 
             this.chDonGia.Text = "Đơn giá";
             this.chDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chDonGia.Width = 135;
+            this.chDonGia.Width = 150;
             // 
             // chThanhTien
             // 
             this.chThanhTien.Text = "Thành tiền";
             this.chThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chThanhTien.Width = 155;
+            this.chThanhTien.Width = 165;
+            // 
+            // chMaSP
+            // 
+            this.chMaSP.Text = "Mã SP";
+            this.chMaSP.Width = 0;
             // 
             // flpTable
             // 
@@ -306,10 +341,30 @@
             this.panelBody.Size = new System.Drawing.Size(595, 751);
             this.panelBody.TabIndex = 9;
             // 
-            // chMaSP
+            // btnPlus
             // 
-            this.chMaSP.Text = "";
-            this.chMaSP.Width = 0;
+            this.btnPlus.BorderColor = System.Drawing.Color.White;
+            this.btnPlus.BorderRadius = 10;
+            this.btnPlus.BorderThickness = 1;
+            this.btnPlus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPlus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPlus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPlus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPlus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPlus.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlus.ForeColor = System.Drawing.Color.White;
+            this.btnPlus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPlus.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnPlus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPlus.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnPlus.Image = ((System.Drawing.Image)(resources.GetObject("btnPlus.Image")));
+            this.btnPlus.Location = new System.Drawing.Point(219, 58);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnPlus.Size = new System.Drawing.Size(178, 48);
+            this.btnPlus.TabIndex = 3;
+            this.btnPlus.Text = "Tăng số lượng";
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // frmPOS
             // 
@@ -323,6 +378,7 @@
             this.Name = "frmPOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHoaDon";
+            this.Load += new System.EventHandler(this.frmPOS_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
@@ -357,5 +413,7 @@
         private Guna.UI2.WinForms.Guna2Panel panelBody;
         private System.Windows.Forms.Label lbThuNgan;
         private System.Windows.Forms.ColumnHeader chMaSP;
+        private Guna.UI2.WinForms.Guna2Button btnXoaSoLuong;
+        private Guna.UI2.WinForms.Guna2Button btnPlus;
     }
 }

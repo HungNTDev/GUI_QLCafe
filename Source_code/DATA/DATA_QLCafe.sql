@@ -35,7 +35,8 @@ Primary key(IdPT)
 create table TableCF(
 IdTable nvarchar(10) not null,
 NameTable nvarchar(20) not null,
-StatusTable int not null,
+StatusTableCF nvarchar(20),
+StatusTablePos int not null,
 Primary key (IdTable)
 )
 
@@ -124,9 +125,6 @@ alter table DetailBill
 add constraint fk_p_db
 Foreign key (IdProduct) references Product(IdProduct)
 
-alter table DetailBill
-drop constraint fk_p_db
-
 alter table DetailBill 
 add constraint fk_b_db
 Foreign key (IdBill) references Bill(IdBill)
@@ -134,6 +132,9 @@ Foreign key (IdBill) references Bill(IdBill)
 alter table Bill
 add constraint fk_b_tb
 Foreign key (IdTable) references TableCF(IdTable)
+
+alter table Bill
+drop constraint fk_b_tb
 
 alter table Bill 
 add constraint fk_b_p
@@ -146,9 +147,6 @@ Foreign key (IdVoucher) references Voucher(IdVoucher)
 alter table Bill
 add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
-
-alter table DetailBill
-drop constraint fk_b_db
 
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',1),
@@ -191,6 +189,8 @@ insert into TableCF (IdTable, NameTable, StatusTable) values
 ('B29',N'Bàn 29',0),
 ('B30',N'Bàn 30',0)
 	
+	delete from TableCF
+	
 update TableCF set StatusTable = 0
 
 update Staff set PasswordStaff='196145663720616991136127245362061123820032'
@@ -205,12 +205,6 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('JUC',N'Nước ép',1)
 
 update TableCF set StatusTable = 0
-
-delete from DetailBill
-delete from Bill 
-
-select * from DetailBill
-select * from Bill
 
 --Thêm sản phẩm--
 /*Trà*/
@@ -247,9 +241,8 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 
 	go
 	update Product 
-	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\d5cb1aa5e36899-cphvanillaphclong.png'
+	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\download (1).jpg'
 
-	delete from Product
  
  -- Voucher 
 insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) values
@@ -939,6 +932,9 @@ AS
 			INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
 			WHERE a.NameTable = @value
 	END
+select * from Statistic
+select * from DetailStatistic
+select * from Bill
 
 EXEC SearchBill @value = 'Bàn 4'
 
@@ -955,3 +951,61 @@ as
 
 SELECT * FROM DetailBill
 SELECT * FROM Bill
+	update TableCF set StatusTable =0
+
+	-- Lấy bill
+	CREATE OR ALTER PROC GetBill
+AS
+BEGIN 
+    			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+    FROM Statistic a
+    INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+END
+
+exec GetBill
+-- PHAN TRANG HOA DON
+create or alter proc GetPagedBill
+@PageIndex int,
+@PageSize int
+as
+	begin
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+		FROM Statistic a
+		INNER JOIN DetailStatistic b
+		ON b.IdStatistic = a.IdStatistic order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+-- LAY TONG SO 
+CREATE OR ALTER PROC GetTotalBillCount  AS SELECT COUNT(*) FROM DetailBill
+EXEC GetTotalBillCount
+
+-- TIM KIEM HOA DON
+CREATE OR ALTER PROC SearchBill (@value NVARCHAR(500))
+AS
+	BEGIN 
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+			FROM Statistic a
+			INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+			WHERE a.NameTable = @value
+	END
+
+	-- Kiem tra ten ban trung
+	create proc KiemTraTenBan @NameTable nvarchar(10)
+as
+begin
+
+    select count(*) from TableCF where NameTable = @NameTable
+end
+
+-- Lấy id 
+create proc GetIdTable
+as
+
+
+   exec GetIdTable

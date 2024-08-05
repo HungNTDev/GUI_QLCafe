@@ -1,8 +1,8 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
 using System;
+using System.Data;
 using System.Windows.Forms;
-
 namespace GUI_QLCafe
 {
     public partial class frmAddBan : Form
@@ -20,8 +20,14 @@ namespace GUI_QLCafe
 
         private void frmAddBan_Load(object sender, EventArgs e)
         {
+
+            txtMaBan.Enabled = false;
+
             if (formMode == FormMode.Them)
             {
+                string Next = "";
+                DataTable dt = table.getIdTable(out Next);
+                txtMaBan.Text = Next;
                 lbHeaderText.Text = "THÊM THÔNG TIN BÀN";
             }
             if (formMode == FormMode.Sua)
@@ -42,14 +48,22 @@ namespace GUI_QLCafe
         public string id = "";
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMaBan.Text))
-            {
-                MessageBox.Show("Vui lòng nhập mã bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            string trangthai = rdoCo.Checked ? "Hoạt Động" : "Ngưng Hoạt Động";
+
             if (string.IsNullOrEmpty(txtTenBan.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (table.KiemTra(txtTenBan.Text))
+            {
+                MessageBox.Show("Tên bàn đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!rdoCo.Checked && !rdoKhong.Checked)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -57,12 +71,12 @@ namespace GUI_QLCafe
             {
                 DTO_TableCF tl = new DTO_TableCF
                 (
-                       txtMaBan.Text,
-                       txtTenBan.Text
+
+                       txtTenBan.Text,
+                       trangthai
                 );
 
-
-                if(formMode == FormMode.Them)
+                if (formMode == FormMode.Them)
                 {
                     if (string.IsNullOrEmpty(id))
                     {
@@ -87,6 +101,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
+
                     tl.IdTable = id;
                     if (table.update(tl))
                     {

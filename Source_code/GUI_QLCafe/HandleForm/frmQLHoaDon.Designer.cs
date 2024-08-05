@@ -49,7 +49,6 @@
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lblHeaderText = new System.Windows.Forms.Label();
-            this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -288,17 +287,25 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDSHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDSHD.Location = new System.Drawing.Point(37, 206);
-            this.dgvDSHD.Name = "dgvDSHD";
-            this.dgvDSHD.ReadOnly = true;
-            this.dgvDSHD.RowHeadersVisible = false;
-            this.dgvDSHD.RowHeadersWidth = 51;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dgvDSHD.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDSHD.ReadOnly = true;
+            this.dgvDSHD.RowHeadersVisible = false;
+            this.dgvDSHD.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dgvDSHD.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDSHD.RowTemplate.Height = 35;
             this.dgvDSHD.Size = new System.Drawing.Size(1456, 556);
             this.dgvDSHD.TabIndex = 27;
@@ -337,6 +344,74 @@
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
             this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
+            // dgvMaHoaDon
+            // 
+            this.dgvMaHoaDon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvMaHoaDon.DataPropertyName = "IdBill";
+            this.dgvMaHoaDon.HeaderText = "Mã hóa đơn";
+            this.dgvMaHoaDon.MinimumWidth = 180;
+            this.dgvMaHoaDon.Name = "dgvMaHoaDon";
+            this.dgvMaHoaDon.ReadOnly = true;
+            // 
+            // dgvMaBan
+            // 
+            this.dgvMaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvMaBan.DataPropertyName = "IdTable";
+            this.dgvMaBan.HeaderText = "Mã Bàn";
+            this.dgvMaBan.MinimumWidth = 200;
+            this.dgvMaBan.Name = "dgvMaBan";
+            this.dgvMaBan.ReadOnly = true;
+            // 
+            // dgvMaNhanVien
+            // 
+            this.dgvMaNhanVien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvMaNhanVien.DataPropertyName = "IdStaff";
+            this.dgvMaNhanVien.HeaderText = "Mã Nhân Viên";
+            this.dgvMaNhanVien.MinimumWidth = 170;
+            this.dgvMaNhanVien.Name = "dgvMaNhanVien";
+            this.dgvMaNhanVien.ReadOnly = true;
+            // 
+            // dgvTrangThai
+            // 
+            this.dgvTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTrangThai.DataPropertyName = "StatusBill";
+            this.dgvTrangThai.HeaderText = "Trạng Thái";
+            this.dgvTrangThai.MinimumWidth = 200;
+            this.dgvTrangThai.Name = "dgvTrangThai";
+            this.dgvTrangThai.ReadOnly = true;
+            // 
+            // dgvSua
+            // 
+            this.dgvSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSua.FillWeight = 50F;
+            this.dgvSua.HeaderText = "";
+            this.dgvSua.Image = ((System.Drawing.Image)(resources.GetObject("dgvSua.Image")));
+            this.dgvSua.MinimumWidth = 60;
+            this.dgvSua.Name = "dgvSua";
+            this.dgvSua.ReadOnly = true;
+            this.dgvSua.Width = 60;
+            // 
+            // dgvXem
+            // 
+            this.dgvXem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXem.HeaderText = "";
+            this.dgvXem.Image = ((System.Drawing.Image)(resources.GetObject("dgvXem.Image")));
+            this.dgvXem.MinimumWidth = 60;
+            this.dgvXem.Name = "dgvXem";
+            this.dgvXem.ReadOnly = true;
+            this.dgvXem.Width = 60;
+            // 
+            // dgvXoa
+            // 
+            this.dgvXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXoa.FillWeight = 50F;
+            this.dgvXoa.HeaderText = "";
+            this.dgvXoa.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoa.Image")));
+            this.dgvXoa.MinimumWidth = 60;
+            this.dgvXoa.Name = "dgvXoa";
+            this.dgvXoa.ReadOnly = true;
+            this.dgvXoa.Width = 60;
+            // 
             this.btnRefesh.ImageSize = new System.Drawing.Size(30, 30);
             this.btnRefesh.Location = new System.Drawing.Point(1290, 111);
             this.btnRefesh.Name = "btnRefesh";
@@ -367,7 +442,7 @@
             this.lblHeaderText.TabIndex = 0;
             this.lblHeaderText.Text = "DANH SÁCH HÓA ĐƠN";
             // 
-            // frmQLHoaDon
+            this.Controls.Add(this.panelFooter);
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -375,6 +450,7 @@
             this.Controls.Add(this.dgvDSHD);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnRefesh);
+            this.Controls.Add(this.dgvDSHD);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
@@ -384,8 +460,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLHoaDon";
             this.Load += new System.EventHandler(this.frmQLHoaDon_Load_1);
-            this.panelFooter.ResumeLayout(false);
-            this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -397,15 +471,6 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         public Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Shapes shapeLine;
-        private Guna.UI2.WinForms.Guna2Panel panelFooter;
-        private Guna.UI2.WinForms.Guna2Button btnNext;
-        private Guna.UI2.WinForms.Guna2Button btnFirstPage;
-        private System.Windows.Forms.Label lbTotalPage;
-        private System.Windows.Forms.Label lbCurrentPage;
-        private Guna.UI2.WinForms.Guna2Button btnPrev;
-        private System.Windows.Forms.Label lbPageLine;
-        private Guna.UI2.WinForms.Guna2Button btnLastPage;
-        private System.Windows.Forms.Label lbTotalRows;
         public Guna.UI2.WinForms.Guna2DataGridView dgvDSHD;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;

@@ -1,5 +1,6 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
+using GUI_QLCafe.AddForm;
 using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
@@ -14,14 +15,19 @@ namespace GUI_QLCafe
         BUS_Staff busStaff = new BUS_Staff();
 
         DTO_Bill billDTO = new DTO_Bill();
+
         frmMenu menu = new frmMenu();
         frmPayment pay = new frmPayment();
+        frmSubtractAmount subtract = new frmSubtractAmount();
+        frmAddDetail detail = new frmAddDetail();
 
         public static string NameTable;
         public static string idTable;
         public static string dateCheckIn;
-
+        public static string nameProduct;
         public string idProduct;
+        public int amount;
+
 
         public frmPOS()
         {
@@ -69,6 +75,9 @@ namespace GUI_QLCafe
                 {
                     ResetBill();
                 }
+                btnXoaMon.Enabled = false;
+                btnXoaSoLuong.Enabled = false;
+                btnPlus.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -97,7 +106,7 @@ namespace GUI_QLCafe
                 //btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + busTB.TableList().Rows[i][2].ToString();
                 btn.Click += btn_Click;
                 btn.Tag = busTB.TableList().Rows[i][0].ToString();
-                if (busTB.TableList().Rows[i][2].ToString() == "0")
+                if (busTB.TableList().Rows[i][3].ToString() == "0")
                 {
                     btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + "Trống";
                 }
@@ -119,12 +128,12 @@ namespace GUI_QLCafe
             billDTO.idTable = btn.Tag.ToString();
             idTable = billDTO.idTable;
             NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
-            if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2]) == 0)
+            if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][3]) == 0)
             {
                 NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
                 ResetBill();
                 menu.ShowDialog();
-                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2]) != 0)
+                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][3]) != 0)
                 {
                     btnThemMon.Enabled = true;
                     btnThanhToan.Enabled = true;
@@ -138,7 +147,6 @@ namespace GUI_QLCafe
                 btnThemMon.Enabled = true;
                 showBill(idTable);
             }
-
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -156,19 +164,6 @@ namespace GUI_QLCafe
             showBill(idTable);
         }
 
-        private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvHoaDon.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = lvHoaDon.SelectedItems[0];
-
-                if (selectedItem.SubItems.Count > 4)
-                {
-                    idProduct = selectedItem.SubItems[4].Text;
-                }
-            }
-        }
-
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
             DialogResult del = MessageBox.Show("Bạn có muốn xóa sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -181,8 +176,80 @@ namespace GUI_QLCafe
                 lvHoaDon.Update();
                 showBill(idTable);
             }
-
-
         }
+
+        private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvHoaDon.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lvHoaDon.SelectedItems[0];
+
+                if (selectedItem.SubItems.Count > 4) 
+                {
+                    idProduct = selectedItem.SubItems[4].Text;
+                    nameProduct = selectedItem.SubItems[0].Text;
+                }
+
+                if (selectedItem.SubItems.Count > 0)
+                {
+                    nameProduct = selectedItem.SubItems[0].Text;
+                }
+
+                if (Convert.ToInt32(selectedItem.SubItems[1].Text) == 1)
+                {
+                    btnXoaSoLuong.Enabled = false;
+                    btnXoaMon.Enabled = true;
+                    btnPlus.Enabled = true;
+                }
+                else
+                {
+                    btnXoaMon.Enabled = true;
+                    btnXoaSoLuong.Enabled = true;
+                    btnPlus.Enabled = true;
+                }    
+            }
+        }
+
+        private void btnXoaSoLuong_Click(object sender, EventArgs e)
+        {
+            subtract.ShowDialog();
+            if(frmSubtractAmount.MinusStatus == 1)
+            {
+                amount = frmSubtractAmount.Amount;
+                billDTO.idProduct = idProduct;
+                billDTO.idTable = idTable;
+                busBill.UpdateProductInBill(billDTO, amount);
+            }
+            lvHoaDon.Update();
+            showBill(idTable);
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            detail.ShowDialog();
+            if (frmAddDetail.Status == 1)
+            {
+                amount = frmAddDetail.Amount;
+                billDTO.idProduct = idProduct;
+                billDTO.idTable = idTable;
+                busBill.AddProductInBill(billDTO, amount);
+            }
+            lvHoaDon.Update();
+            showBill(idTable);
+        }
+
+        private void frmPOS_Load(object sender, EventArgs e)
+        {
+            btnXoaMon.Enabled = false;
+            btnXoaSoLuong.Enabled = false;
+            btnThanhToan.Enabled = false;
+            btnThemMon.Enabled = false;
+            btnPlus.Enabled = false;
+        }
+
+        
+
+     
+
     }
 }

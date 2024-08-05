@@ -4,12 +4,18 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
 {
-    public partial class frmMenu : Form
+    public partial class frmMenuProduct : Form
     {
+        public frmMenuProduct()
+        {
+            InitializeComponent();
+        }
+
         DTO_Bill billDTO = new DTO_Bill();
         DTO_Product productDTO = new DTO_Product();
         DTO_DetailBill detailBillDTO = new DTO_DetailBill();
@@ -20,26 +26,11 @@ namespace GUI_QLCafe
         BUS_Bill busBill = new BUS_Bill();
         BUS_DetailBill busDetailBill = new BUS_DetailBill();
 
-        public string categoryID = "";
+        frmTableList tbList = new frmTableList();
+
+        public static string categoryID;
         public static string nameProduct;
-        public static string dateCheckOut;
-
-        public int amount;
-        public int currentAmount;
-
-        public int status;
-        public frmMenu()
-        {
-            InitializeComponent();
-        }
-
-        private void frmMenu_Load(object sender, EventArgs e)
-        {
-            lbNameTable.Text = "Tên bàn: " + frmPOS.NameTable;
-            billDTO.idTable = frmPOS.idTable;
-            LoadMenu("CFE");
-            ListOrder();
-        }
+        public static int addStatus;
 
         void ListOrder()
         {
@@ -50,6 +41,7 @@ namespace GUI_QLCafe
             ListOrder_dgv.Columns.Add("Price", "Giá");
             ListOrder_dgv.Columns.Add("IdProduct", "Id Product");
             ListOrder_dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            ListOrder_dgv.Columns[0].Width = 160;
             ListOrder_dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ListOrder_dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ListOrder_dgv.Columns[3].Visible = false;
@@ -123,6 +115,13 @@ namespace GUI_QLCafe
                 }
             }
         }
+
+        private void frmMenuProduct_Load(object sender, EventArgs e)
+        {
+            ListOrder();
+            LoadMenu("CFE");
+        }
+
         private void tc_Menu_Click(object sender, EventArgs e)
         {
             categoryID = tc_Menu.SelectedTab.Name.ToString();
@@ -135,6 +134,7 @@ namespace GUI_QLCafe
             Guna2Button btn = (Guna2Button)sender;
             productDTO.IdProduct = btn.Tag.ToString();
             nameProduct = productBUS.TagProduct(productDTO).Rows[0][0].ToString();
+            addStatus = 1;
             detail.ShowDialog();
             if (frmAddDetail.Status == 1)
             {
@@ -166,75 +166,6 @@ namespace GUI_QLCafe
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2].ToString()) == 0 && ListOrder_dgv.Rows.Count > 1)
-                {
-                    billDTO.IdTable = busTB.TableInfo(billDTO).Rows[0][0].ToString();
-                    billDTO.IdStaff = busStaff.StaffInfo(frmMainQLCF.email).Rows[0][1].ToString();
-                    billDTO.dateCheckIn = DateTime.Now;
-                    busBill.AddingBill(billDTO);
-                    for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
-                    {
-                        billDTO.idTable = frmPOS.idTable;
-                        billDTO.Amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
-                        billDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / billDTO.Amount;
-                        billDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
-                        billDTO.TotalPrice = billDTO.Price * billDTO.Amount;
-
-                        busBill.AddingDetailBill(billDTO);
-                        //Count += bill.Amount;
-                    }
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else if (ListOrder_dgv.Rows.Count == 1)
-                {
-                    MessageBox.Show("Bạn chưa chọn món", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
-                    {
-                        status = 0;
-                        billDTO.IdTable = frmPOS.idTable;
-                        billDTO.Amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
-                        billDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / billDTO.Amount;
-                        billDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
-                        billDTO.TotalPrice = billDTO.Price * billDTO.Amount;
-
-                        nameProduct = ListOrder_dgv.Rows[i].Cells[0].Value.ToString();
-                        amount = billDTO.Amount;
-                        //MergeBill();
-
-                        if (status == 0)
-                        {
-                            busBill.AddingDetailBill(billDTO);
-                        }
-                    }
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //private void MergeBill()
-        //{
-        //    for (int i = 0; i < busBill.BillInfo(billDTO).Rows.Count; i++)
-        //    {
-        //        if (nameProduct == busBill.BillInfo(billDTO).Rows[i][0].ToString())
-        //        {
-        //            MessageBox.Show("Món này đã có trong hóa đơn !", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information); 
-        //        }
-        //    }
-        //}
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             try
@@ -246,6 +177,44 @@ namespace GUI_QLCafe
             }
             catch
             { }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ListOrder_dgv.Rows.Count > 1)
+                {
+                    if (ListOrder_dgv.Rows.Count > 1)
+                    {
+                        frmTableList tbList = new frmTableList();
+                        tbList.ShowDialog();
+                        billDTO.IdTable = frmTableList.IdTable;
+                        billDTO.IdStaff = busStaff.StaffInfo(frmMainQLCF.email).Rows[0][1].ToString();
+                        billDTO.dateCheckIn = DateTime.Now;
+                        busBill.AddingBill(billDTO);
+                        for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
+                        {
+                            billDTO.idTable = frmTableList.IdTable;
+                            billDTO.Amount = Convert.ToInt32(ListOrder_dgv.Rows[i].Cells[1].Value.ToString());
+                            billDTO.Price = (float)Convert.ToDouble(ListOrder_dgv.Rows[i].Cells[2].Value.ToString()) / billDTO.Amount;
+                            billDTO.IdProduct = ListOrder_dgv.Rows[i].Cells[3].Value.ToString();
+                            billDTO.TotalPrice = billDTO.Price * billDTO.Amount;
+                            busBill.AddingDetailBill(billDTO);
+                        }
+                    }
+                    LoadMenu("CFE");
+                    ListOrder_dgv.Rows.Clear();
+                }
+                else if (ListOrder_dgv.Rows.Count == 1)
+                {
+                    MessageBox.Show("Bạn chưa chọn món", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

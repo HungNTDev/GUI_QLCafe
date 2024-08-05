@@ -260,15 +260,16 @@ namespace GUI_QLCafe
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            AddControls(new frmPOS());
+            AddControls(new frmMenuProduct());
         }
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
             if (role == "Quản trị")
-                AddControls(new frmQLNhanVien(this));
+                //AddControls(new frmQLNhanVien(this));
+                AddControls(new frmPOS());
             else
-                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
+                        messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLSanPham_Click(object sender, EventArgs e)

@@ -879,5 +879,6 @@ as
 
 select * from Statistic
 select * from DetailStatistic
+select * from Bill
 
 delete from Statistic

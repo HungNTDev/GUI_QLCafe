@@ -63,6 +63,7 @@
             0,
             0,
             0});
+            this.nudAmount.ValueChanged += new System.EventHandler(this.nudAmount_ValueChanged);
             // 
             // label2
             // 
@@ -73,6 +74,7 @@
             this.label2.Size = new System.Drawing.Size(92, 28);
             this.label2.TabIndex = 6;
             this.label2.Text = "Số lượng";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbName
             // 
@@ -83,6 +85,7 @@
             this.lbName.Size = new System.Drawing.Size(86, 28);
             this.lbName.TabIndex = 5;
             this.lbName.Text = "Tên món";
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // txtName
             // 
@@ -108,6 +111,7 @@
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(413, 49);
             this.txtName.TabIndex = 22;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // bfDetail
             // 
@@ -183,6 +187,7 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(505, 81);
             this.panelHeader.TabIndex = 32;
+            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // guna2PictureBox1
             // 
@@ -195,6 +200,7 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 47;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // lbText0
             // 
@@ -207,6 +213,7 @@
             this.lbText0.Size = new System.Drawing.Size(206, 45);
             this.lbText0.TabIndex = 10;
             this.lbText0.Text = "THÊM MÓN";
+            this.lbText0.Click += new System.EventHandler(this.lbText0_Click);
             // 
             // frmAddDetail
             // 

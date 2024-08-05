@@ -111,7 +111,10 @@ namespace GUI_QLCafe
 
         private void btnQuanLy_Click(object sender, EventArgs e)
         {
-            quanlyTransition.Start();
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                quanlyTransition.Start();
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         bool thongkeExpand = false;
@@ -299,7 +302,10 @@ namespace GUI_QLCafe
 
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLHoaDon());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLHoaDon());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLBan_Click(object sender, EventArgs e)

@@ -3,13 +3,7 @@ using DTO_QLCafe;
 using GUI_QLCafe.AddForm;
 using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -55,7 +49,7 @@ namespace GUI_QLCafe
                 //btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + busTB.TableList().Rows[i][2].ToString();
                 btn.Click += btn_Click;
                 btn.Tag = busTB.TableList().Rows[i][0].ToString();
-                if (busTB.TableList().Rows[i][2].ToString() == "0")
+                if (busTB.TableList().Rows[i][3].ToString() == "0")
                 {
                     btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + "Trống";
                 }
@@ -87,7 +81,7 @@ namespace GUI_QLCafe
             {
                 Guna2Button btn = (Guna2Button)sender;
                 billDTO.idTable = btn.Tag.ToString();
-                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2].ToString()) == 0)
+                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][3].ToString()) == 0)
                 {
                     DialogResult pick = MessageBox.Show("Bạn muốn chọn bàn này?", "Chọn bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (pick == DialogResult.Yes)
@@ -104,7 +98,8 @@ namespace GUI_QLCafe
                     {
                         MessageBox.Show("Đặt bàn không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Bàn đã có người, vui lòng chọn bàn khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

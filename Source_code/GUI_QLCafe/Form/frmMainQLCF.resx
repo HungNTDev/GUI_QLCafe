@@ -121,7 +121,7 @@
   <data name="pblogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qgAAAKoBBgpwTwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGzSURBVFhHvdY/
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGzSURBVFhHvdY/
         KEZRGMfxNxSFiTL4M2CQP+VPFApZ/VssSimDUiaSkdFqESklZTAykRJJFAbFhIiJgYgo4vvUe+t0eu7l
         5Ry/+pTzvDrP033PvfeN/SKpGMIuHvGMA4whHV5TgGN8hjhHKbwkAyfQGpuukQPnGYfWUDMD57mE1kwj
         Z0POirNkQWsUpRzOUgStSZQmOEsxtCZRmuEsudCaRKmFs6TgCVojzQfk3DjNErRmmk04TwleoDU0vaMB
@@ -5327,7 +5327,7 @@
   <metadata name="timer_ThoiGian.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1026, 17</value>
   </metadata>
-  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAH7SURBVEhL7VXP
@@ -5353,7 +5353,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHASURBVEhLtZVL
@@ -5403,7 +5403,7 @@
         FUYHCDggIVNoe8dJrHFVGgTBC3fTdsss/0XXAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="resource.Image2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image4" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKPSURBVEhLpVU9
@@ -5454,7 +5454,7 @@
         0ee11K7LqlT+AT/UYvxQpXqZAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="resource.Image3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAH7SURBVEhL7VXP
@@ -5496,7 +5496,7 @@
         VfdGx/o1oT6N0Vido8zZdF9Dp+/PlkQlNh0Jhd4BtZ+1QA5rkg8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image4" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJPSURBVEhLzZW/
@@ -5590,7 +5590,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="resource.Image5" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIrSURBVEhLrVQ9
@@ -13159,6 +13159,31 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
+  <metadata name="posTransition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1345, 17</value>
+  </metadata>
+  <data name="btn_Menu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABGklEQVRIS+3UPUtCURjA8fsVRFAXv0bQNwkUl1wjJLDBQRoiHJocwk0b2npRcJNEMYTAXRDUpQ8g
+        RIVC1//jPaZ578F7j+DkH35w3zgPhyNae8+27RNcGkqoZbzjgxB+sUsRtZw7Xkadb1x9oIU6JniArrha
+        zh0vdQMauEcOI5xCl9GAR/Rxgx/cQpfRgDGWu3hCF9/wKvCAIlKQhd/RRglHkPPYLPCAc9zhAhl1n0cC
+        SVSwXuABcrCfzuW/rvCGwuJuVeABTZSdy79mOEYWU3mwltEhy6/nGh1UkUYPXhkNkIaQg37FlzzQZDzA
+        b74G1CB/XgO8qOttniEddrC1ww60fO0g7HyzUzG1nHd8cAb5OzaRUcvsK8uaA3pRuS9wpoPOAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="btn_Ban.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAAqklEQVRIS+2VSwqAMAxEcy0P4lIpejuv4+c0Qu20EfwkopjuOjDQNk0eJIUS5L3vgufgNfivUAO1
+        3F68x2kmOQCWtM6iCQCLtmhaAcgqAOqcfgTwI6iu5wdXfEeKRT+2iJOHtBM18B1VBfAKIA4H5uTfQxYD
+        sBVAFSeXIeuyAojDgTm5vCL9wzEAxA8HH7QoA8CIoEvruwwADeI7ZAo+tYtjXwGogVotEdEG12ju8PrS
+        VVgAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

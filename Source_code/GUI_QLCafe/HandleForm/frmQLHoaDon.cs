@@ -103,7 +103,7 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo",
+                    MessageBox.Show("Không tìm thấy hóa đơn", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

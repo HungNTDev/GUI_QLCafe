@@ -76,9 +76,9 @@ namespace BUS_QLCafe
         }
 
         // Danh sách thống kê
-        public DataTable GetStatistic()
+        public DataTable GetDetailStatistic()
         {
-            return dal.GetStatistic();
+            return dal.GetDetailStatistic();
         }
 
         // Phân trang thống kê

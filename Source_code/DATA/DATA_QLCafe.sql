@@ -691,26 +691,12 @@ as
 	update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
 	update TableCF set StatusTable = 0 where IdTable = @IdTable
 
-	-- Load Bill 
-create or alter proc LoadBill 
-as 
-    select  IdBill, IdTable, IdStaff, DateCheckIn,StatusBill  from Bill
-
 	-- Xóa Bill 
 create proc BIllDelete @idBill int 
 as 
 	 delete from DetailBill where IdBill = @idBill
 	 delete from Bill where IdBill = @idBill 
 
-
-	 -- Lấy trang bill
-create or alter proc GetPagedBill
-@PageIndex int,
-@PageSize int
-as
-	begin
-		select  IdBill, IdTable, IdStaff, DateCheckIn,StatusBill  from Bill order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
-	end
 
 EXEC GetPagedBill @PageIndex = 1, @PageSize = 10;
 
@@ -878,6 +864,7 @@ create proc [dbo].[AddStatistic]
 
 -- PROC GET DANH SACH THONG KE
 CREATE OR ALTER PROC GetStatistic AS SELECT * FROM Statistic
+DROP PROC GetStatistic
 
 -- PHAN TRANG FORM THONG KE
 CREATE OR ALTER PROC GetPagedStatistic
@@ -885,27 +872,71 @@ CREATE OR ALTER PROC GetPagedStatistic
 @PageSize INT
 AS
 	BEGIN
-		SELECT * FROM Statistic ORDER BY IdStatistic offset(@PageIndex - 1) * @PageSize ROWS FETCH NEXT @PageSize ROWS only;
+		SELECT NameProduct, Amount, TotalPrice FROM DetailStatistic ORDER BY NameProduct offset(@PageIndex - 1) * @PageSize ROWS FETCH NEXT @PageSize ROWS only;
 	END
 
 -- LAY TONG SO
-CREATE OR ALTER PROC GetTotalStatisticCount AS SELECT COUNT(*) FROM Statistic
+CREATE OR ALTER PROC GetTotalStatisticCount AS SELECT COUNT(*) FROM DetailStatistic
 
 -- TIM KIEM THONG KE
 CREATE OR ALTER PROC SearchStatistic (@value nvarchar(500))
 AS
 	BEGIN 
-		 SELECT * FROM Statistic where NameStaff like N'%' + @value + '%'
-		 or NamePayment like N'%' + @value + '%' or NameTable like N'%' + @value + '%'
+		 SELECT * FROM DetailStatistic where NameProduct like N'%' + @value + '%'
 	END
 
+-- LẤY THỐNG KÊ DỰA TRÊN 3 CỘT (SẢN PHẨM, SỐ LƯỢNG, TỔNG TIỀN)
+CREATE OR ALTER PROC GetDetailStatistic 
+AS SELECT NameProduct AS N'Tên sản phẩm', sum(Amount) AS N'Số lượng', SUM(TotalPrice) AS N'Tổng tiền  (VND)' FROM DetailStatistic GROUP BY NameProduct
+EXEC GetDetailStatistic
 
+-- JOIN 2 BẢNG STATISTIC VÀ STATISTIC
+CREATE OR ALTER PROC GetBill
+AS
+BEGIN 
+    			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+    FROM Statistic a
+    INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+END
+		
+EXEC GetBill
 
+-- PHAN TRANG HOA DON
+create or alter proc GetPagedBill
+@PageIndex int,
+@PageSize int
+as
+	begin
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+		FROM Statistic a
+		INNER JOIN DetailStatistic b
+		ON b.IdStatistic = a.IdStatistic order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+-- LAY TONG SO 
+CREATE OR ALTER PROC GetTotalBillCount  AS SELECT COUNT(*) FROM DetailBill
+EXEC GetTotalBillCount
+
+-- TIM KIEM HOA DON
+CREATE OR ALTER PROC SearchBill (@value NVARCHAR(500))
+AS
+	BEGIN 
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+			FROM Statistic a
+			INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+			WHERE a.NameTable = @value
+	END
 select * from Statistic
 select * from DetailStatistic
 select * from Bill
 
-delete from Statistic
+EXEC SearchBill @value = 'Bàn 4'
 
 -- Xóa món 
 create or alter proc DelProductFromBill (@IdTable nvarchar(10), @IdProduct nvarchar(10))
@@ -918,6 +949,8 @@ as
 
 	select * from Staff
 
+SELECT * FROM DetailBill
+SELECT * FROM Bill
 	update TableCF set StatusTable =0
 
 	-- Lấy bill

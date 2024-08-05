@@ -28,7 +28,9 @@ namespace GUI_QLCafe.HandleForm
 
         private void LoadData()
         {
-            dgvDanhSachThongKe.DataSource = busStatistic.GetStatistic();   
+            dgvDanhSachThongKe.DataSource = busStatistic.GetDetailStatistic();
+            decimal tongDoanhThu = TinhTongDoanhThu();
+            lbTongDoanhThu.Text = "Tổng doanh thu: " + tongDoanhThu.ToString() + " VND";
         }
 
         private void LoadPage()
@@ -155,7 +157,7 @@ namespace GUI_QLCafe.HandleForm
             oSheet.Name = sheetName;
 
             // Tạo phần Tiêu đề
-            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "I1");
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "C1");
             head.MergeCells = true;
             head.Value2 = title;
             head.Font.Bold = true;
@@ -165,42 +167,18 @@ namespace GUI_QLCafe.HandleForm
 
             // Tạo tiêu đề cột 
             Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
-            cl1.Value2 = "Mã thống kê";
-            cl1.ColumnWidth = 12;
+            cl1.Value2 = "Tên sản phẩm";
+            cl1.ColumnWidth = 25;
 
             Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
-            cl2.Value2 = "Mã hóa đơn";
+            cl2.Value2 = "Số lượng";
             cl2.ColumnWidth = 25.0;
 
             Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
-            cl3.Value2 = "Khuyến mãi(%)";
-            cl3.ColumnWidth = 18;
+            cl3.Value2 = "Tổng tiền (VND)";
+            cl3.ColumnWidth = 20;
 
-            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
-            cl4.Value2 = "Tổng tiền";
-            cl4.ColumnWidth = 13.0;
-
-            Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
-            cl5.Value2 = "Tên nhân viên";
-            cl5.ColumnWidth = 20.5;
-
-            Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
-            cl6.Value2 = "Giờ vào";
-            cl6.ColumnWidth = 20.5;
-
-            Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
-            cl7.Value2 = "Giờ ra";
-            cl7.ColumnWidth = 20.5;
-
-            Microsoft.Office.Interop.Excel.Range cl8 = oSheet.get_Range("H3", "H3");
-            cl8.Value2 = "Phương thức TT";
-            cl8.ColumnWidth = 20.5;
-
-            Microsoft.Office.Interop.Excel.Range cl9 = oSheet.get_Range("I3", "I3");
-            cl9.Value2 = "Tên bàn";
-            cl9.ColumnWidth = 20.5;
-
-            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "I3");
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "C3");
             rowHead.Font.Bold = true;
 
             // Kẻ viền
@@ -249,6 +227,20 @@ namespace GUI_QLCafe.HandleForm
             oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
         }
 
+        private decimal TinhTongDoanhThu()
+        {
+            decimal tongDoanhThu = 0;
+
+            foreach(DataGridViewRow dgvRow in dgvDanhSachThongKe.Rows)
+            {
+                if (dgvRow.Cells["Tổng tiền  (VND)"].Value != null && decimal.TryParse(dgvRow.Cells["Tổng tiền  (VND)"].Value.ToString(), out decimal total))
+                {
+                    tongDoanhThu += total;  
+                }
+            }
+            return tongDoanhThu;
+        }
+
         private void btnExcel_Click(object sender, EventArgs e)
         {
             if (!kiemTraData)
@@ -270,44 +262,26 @@ namespace GUI_QLCafe.HandleForm
             {
                 DataTable dataTable = new DataTable();
 
-                DataColumn col1 = new DataColumn("IdStatistic");
-                DataColumn col2 = new DataColumn("IdBill");
-                DataColumn col3 = new DataColumn("PercentVoucher");
-                DataColumn col4 = new DataColumn("Total");
-                DataColumn col5 = new DataColumn("NameStaff");
-                DataColumn col6 = new DataColumn("CheckIn");
-                DataColumn col7 = new DataColumn("CheckOut");
-                DataColumn col8 = new DataColumn("NamePayment");
-                DataColumn col9 = new DataColumn("NameTable");
+                DataColumn col1 = new DataColumn("NameProduct");
+                DataColumn col2 = new DataColumn("Amount");
+                DataColumn col3 = new DataColumn("TotalPrice");
 
                 dataTable.Columns.Add(col1);
                 dataTable.Columns.Add(col2);
                 dataTable.Columns.Add(col3);
-                dataTable.Columns.Add(col4);
-                dataTable.Columns.Add(col5);
-                dataTable.Columns.Add(col6);
-                dataTable.Columns.Add(col7);
-                dataTable.Columns.Add(col8);
-                dataTable.Columns.Add(col9);
 
-                foreach (DataGridViewRow dgvrRow in dgvDanhSachThongKe.Rows)
+                foreach (DataGridViewRow dgvRow in dgvDanhSachThongKe.Rows)
                 {
                     DataRow dataRow = dataTable.NewRow();
 
-                    dataRow[0] = dgvrRow.Cells[0].Value;
-                    dataRow[1] = dgvrRow.Cells[1].Value;
-                    dataRow[2] = dgvrRow.Cells[2].Value;
-                    dataRow[3] = dgvrRow.Cells[3].Value;
-                    dataRow[4] = dgvrRow.Cells[4].Value;
-                    dataRow[5] = dgvrRow.Cells[5].Value;
-                    dataRow[6] = dgvrRow.Cells[6].Value;
-                    dataRow[7] = dgvrRow.Cells[7].Value;
-                    dataRow[8] = dgvrRow.Cells[8].Value;
+                    dataRow[0] = dgvRow.Cells[0].Value;
+                    dataRow[1] = dgvRow.Cells[1].Value;
+                    dataRow[2] = dgvRow.Cells[2].Value;
 
                     dataTable.Rows.Add(dataRow);
                 }
 
-                ExportFile(dataTable, "Danh sách", "DANH SÁCH THỐNG KÊ HÓA ĐƠN");
+                ExportFile(dataTable, "Danh sách", "DANH SÁCH THỐNG KÊ DOANH THU");
             }
         }
     }

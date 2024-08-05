@@ -172,7 +172,7 @@ namespace GUI_QLCafe
                 lvHoaDon.Items.Remove(lvHoaDon.SelectedItems[0]);
                 billDTO.idProduct = idProduct;
                 billDTO.idTable = idTable;
-                busBill.DelProductFromBill(billDTO);
+                //busBill.DelProductFromBill(billDTO);
                 lvHoaDon.Update();
                 showBill(idTable);
             }

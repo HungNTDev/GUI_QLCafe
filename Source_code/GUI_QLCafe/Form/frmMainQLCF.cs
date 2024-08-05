@@ -228,7 +228,7 @@ namespace GUI_QLCafe
             if (sidebarExpand)
             {
                 // Giảm chiều rộng xuống 5
-                flpSidebar.Width -= 20;
+                flpSidebar.Width -= 15;
 
                 // Nếu chiều rộng nhỏ hơn hoặc bằng 61
                 if (flpSidebar.Width <= 54)
@@ -240,13 +240,43 @@ namespace GUI_QLCafe
             else
             {
                 // Tăng chiều rộng lên 5
-                flpSidebar.Width += 20;
+                flpSidebar.Width += 15;
 
                 // Nếu chiều rộng đạt tới 300
                 if (flpSidebar.Width >= 300)
                 {
                     sidebarExpand = true; // Mở rộng
                     sidebarTransition.Stop(); // Dừng timer
+                }
+            }
+        }
+
+        bool posExpand = true;
+        private void posTransition_Tick(object sender, EventArgs e)
+        {
+            // Nếu chưa mở rộng
+            if (posExpand == false)
+            {
+                // Tăng chiều cao lên 5
+                flpPOS.Height += 15;
+
+                // Nếu chiều cao đạt 300
+                if (flpPOS.Height >= 170)
+                {
+                    posTransition.Stop(); // Dừng timer
+                    posExpand = true; // Mở rộng
+                }
+            }
+            else
+            {
+                // Giảm chiều cao xuống 5
+                flpPOS.Height -= 15;
+
+                // Nếu chiều cao nhỏ hơn hoặc bằng 45
+                if (flpPOS.Height <= 45)
+                {
+                    posTransition.Stop(); // Dừng timer
+                    posExpand = false; // Thu gọn
                 }
             }
         }
@@ -263,7 +293,7 @@ namespace GUI_QLCafe
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            AddControls(new frmPOS());
+            posTransition.Start();
         }
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
@@ -329,5 +359,14 @@ namespace GUI_QLCafe
             }
         }
 
+        private void btn_Menu_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmMenu());
+        }
+
+        private void btn_Ban_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmPOS());
+        }
     }
 }

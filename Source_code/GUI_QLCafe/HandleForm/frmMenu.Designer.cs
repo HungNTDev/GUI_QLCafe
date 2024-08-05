@@ -326,6 +326,7 @@
             // 
             // flp_CaPhe
             // 
+            this.flp_CaPhe.AutoScroll = true;
             this.flp_CaPhe.BackColor = System.Drawing.Color.White;
             this.flp_CaPhe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_CaPhe.Location = new System.Drawing.Point(3, 3);

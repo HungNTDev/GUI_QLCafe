@@ -28,10 +28,6 @@ namespace GUI_QLCafe
             LoadData();
         }
 
-        private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
         private void LoadPage()
         {
             try
@@ -99,19 +95,14 @@ namespace GUI_QLCafe
                 DataTable dt = busbill.search(sp);
                 if (dt.Rows.Count > 0)
                 {
-                    //dgvDSHD.DataSource = dt;
+                    dgvDSHD.DataSource = dt;
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo",
+                    MessageBox.Show("Không tìm thấy hóa đơn", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void shapeLine_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmQLHoaDon_Load_1(object sender, EventArgs e)
@@ -125,7 +116,8 @@ namespace GUI_QLCafe
         private void btnRefesh_Click_1(object sender, EventArgs e)
         {
             txtTimKiem.Clear();
-            LoadPage();
+            LoadData();
         }
+
     }
 }

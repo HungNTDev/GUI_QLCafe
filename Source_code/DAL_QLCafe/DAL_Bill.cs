@@ -16,7 +16,7 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "LoadBill";
+                    cmd.CommandText = "GetBill";
                     conn.Open();
                     DataTable dtBill = new DataTable();
                     dtBill.Load(cmd.ExecuteReader());
@@ -341,7 +341,7 @@ namespace DAL_QLCafe
         }
 
         // Danh sách thống kê
-        public DataTable GetStatistic()
+        public DataTable GetDetailStatistic()
         {
             try
             {
@@ -350,7 +350,7 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "GetStatistic";
+                    cmd.CommandText = "GetDetailStatistic";
                     conn.Open();
                     DataTable dtStatistic = new DataTable();
                     dtStatistic.Load(cmd.ExecuteReader());
@@ -407,7 +407,7 @@ namespace DAL_QLCafe
         // Lấy tổng số
         public int GetTotalStatisticCount()
         {
-            int totalBillCount = 0;
+            int totalStatisticCount = 0;
             try
             {
                 using (conn = new SqlConnection(_conn))
@@ -417,14 +417,14 @@ namespace DAL_QLCafe
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "GetTotalStatisticCount";
                     conn.Open();
-                    totalBillCount = (int)cmd.ExecuteScalar();
+                    totalStatisticCount = (int)cmd.ExecuteScalar();
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
             }
-            return totalBillCount;
+            return totalStatisticCount;
         }
 
         // Tìm kiếm thống kê

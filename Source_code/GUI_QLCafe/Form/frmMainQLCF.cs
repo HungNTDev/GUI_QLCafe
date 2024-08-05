@@ -266,7 +266,7 @@ namespace GUI_QLCafe
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            AddControls(new frmMenuProduct());
+            AddControls(new frmPOS());
         }
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)

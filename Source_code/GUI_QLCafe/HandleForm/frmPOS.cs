@@ -28,7 +28,6 @@ namespace GUI_QLCafe
         public string idProduct;
         public int amount;
 
-        public string idProduct;
 
         public frmPOS()
         {

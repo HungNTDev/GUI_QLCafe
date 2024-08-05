@@ -190,10 +190,6 @@ namespace GUI_QLCafe
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                else if (ListOrder_dgv.Rows.Count == 1)
-                {
-                    MessageBox.Show("Bạn chưa chọn món", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                 {
                     for (int i = 0; i < ListOrder_dgv.Rows.Count - 1; i++)
@@ -217,6 +213,7 @@ namespace GUI_QLCafe
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
+
             }
             catch (Exception ex)
             {
@@ -234,11 +231,6 @@ namespace GUI_QLCafe
         //        }
         //    }
         //}
-
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDel_Click(object sender, EventArgs e)
         {

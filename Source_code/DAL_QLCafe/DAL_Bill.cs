@@ -482,34 +482,34 @@ namespace DAL_QLCafe
             }
         }
 
-        public bool DelProductFromBill(DTO_Bill Bill)
-        {
-            try
-            {
-                using (conn = new SqlConnection(_conn))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "DelProductFromBill";
-                    cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
-                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
-                    conn.Open();
-                    if (cmd.ExecuteNonQuery() > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-            return false;
-        }
+        //public bool DelProductFromBill(DTO_Bill Bill)
+        //{
+        //    try
+        //    {
+        //        using (conn = new SqlConnection(_conn))
+        //        {
+        //            SqlCommand cmd = new SqlCommand();
+        //            cmd.Connection = conn;
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.CommandText = "DelProductFromBill";
+        //            cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
+        //            cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
+        //            conn.Open();
+        //            if (cmd.ExecuteNonQuery() > 0)
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        if (conn.State == ConnectionState.Open)
+        //        {
+        //            conn.Close();
+        //        }
+        //    }
+        //    return false;
+        //}
 
         public bool UpdateProductInBill(DTO_Bill Bill, int amount)
         {

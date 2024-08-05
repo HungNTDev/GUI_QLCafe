@@ -4,7 +4,8 @@
     {
         public string idTable;
         public string nameTable;
-        public int statusTable;
+        public int statusTablePos;
+        public string statusTableCF;
 
         public string IdTable
         {
@@ -18,24 +19,36 @@
             set { nameTable = value; }
         }
 
-        public int StatusTable
+        public int StatusTablePos
         {
-            get { return statusTable; }
-            set { statusTable = value; }
+            get { return statusTablePos; }
+            set { statusTablePos = value; }
+        }
+
+        public string StatusTableCF
+        {
+            get { return statusTableCF; }
+            set { statusTableCF = value; }
         }
 
         public DTO_TableCF() { }
 
         public DTO_TableCF(string nameTable)
         {
-
             this.nameTable = nameTable;
         }
-        public DTO_TableCF(string idTable, string nameTable, int statusTable)
+
+        public DTO_TableCF(string nameTable, string statusTableCF)
+        {
+            this.nameTable = nameTable;
+            this.statusTableCF = statusTableCF;
+        }
+        public DTO_TableCF(string idTable, string nameTable, int statusTablePos, string statusTableCF)
         {
             this.idTable = idTable;
             this.nameTable = nameTable;
-            this.statusTable = statusTable;
+            this.statusTablePos = statusTablePos;
+            StatusTableCF = statusTableCF;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace GUI_QLCafe
     {
         BUS_Product busSanPham = new BUS_Product();
 
-        private string saveDirectory;
+
         private string relativePath;
         private const int PageSize = 10;
         private int currentPageIndex = 1;
@@ -66,25 +66,44 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
                 frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
+                frmAddSanPham.rdoCo.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+                frmAddSanPham.rdoKhong.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
 
-                if (Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) == "Còn Bán")
-                {
-                    frmAddSanPham.rdoCo.Checked = true;
-                }
                 frmAddSanPham.cbLoaiSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value).Trim();
 
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                relativePath = dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value.ToString();
+                string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                string relativePath = dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value.ToString();
                 string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\'));
+
+                // Check if the image file exists
                 if (File.Exists(imagePath))
                 {
-                    frmAddSanPham.picSanPham.Image = Image.FromFile(imagePath);
+                    try
+                    {
+                        // Load and display the image in the PictureBox
+                        using (Image image = Image.FromFile(imagePath))
+                        {
+                            frmAddSanPham.picSanPham.Image = new Bitmap(image); // Create a new Bitmap to avoid disposing of the original image
+                        }
+                    }
+                    catch (OutOfMemoryException ex)
+                    {
+                        // Handle the OutOfMemoryException here if needed
+                        MessageBox.Show("Unable to load the image. The file might be too large or corrupted.", "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle other exceptions if necessary
+                        MessageBox.Show("An error occurred: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    // Display a message if the file does not exist
+                    MessageBox.Show("Image file does not exist: " + imagePath, "Notice",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 frmAddSanPham.ShowDialog();

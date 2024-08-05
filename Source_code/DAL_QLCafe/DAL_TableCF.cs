@@ -78,6 +78,7 @@ namespace DAL_QLCafe
 
                     cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
+                    cmd.Parameters.AddWithValue("@statusTableCF", obj.StatusTableCF);
 
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
@@ -251,5 +252,74 @@ namespace DAL_QLCafe
             }
             return dt;
         }
+
+        public bool KiemtraTrungTenBan(string id)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "KiemTraTenBan";
+                    cmd.Parameters.AddWithValue("@nameTable", id);
+                    conn.Open();
+
+                    int count = (int)cmd.ExecuteScalar();
+                    if (Convert.ToInt16(count) > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+
+        public DataTable getIdTable(out string Next)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    using (SqlCommand cmd = new SqlCommand("GetIdTable", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter NextId = new SqlParameter("@Next", SqlDbType.NVarChar, 10)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(NextId);
+
+                        // Open connection and execute query
+                        conn.Open();
+                        DataTable dtTableCF = new DataTable();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            dtTableCF.Load(reader);
+                        }
+
+                        Next = NextId.Value.ToString();
+                        return dtTableCF;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
     }
 }

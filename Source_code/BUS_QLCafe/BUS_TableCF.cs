@@ -45,5 +45,15 @@ namespace BUS_QLCafe
         {
             return dal.GetPagedTable(page, pageSize);
         }
+
+        public bool KiemTra(string name)
+        {
+            return dal.KiemtraTrungTenBan(name);
+        }
+
+        public DataTable getIdTable(out string Next)
+        {
+            return dal.getIdTable(out Next);
+        }
     }
 }

@@ -97,7 +97,7 @@ namespace GUI_QLCafe
                 //btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + busTB.TableList().Rows[i][2].ToString();
                 btn.Click += btn_Click;
                 btn.Tag = busTB.TableList().Rows[i][0].ToString();
-                if (busTB.TableList().Rows[i][2].ToString() == "0")
+                if (busTB.TableList().Rows[i][3].ToString() == "0")
                 {
                     btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + "Trống";
                 }
@@ -119,12 +119,12 @@ namespace GUI_QLCafe
             billDTO.idTable = btn.Tag.ToString();
             idTable = billDTO.idTable;
             NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
-            if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2]) == 0)
+            if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][3]) == 0)
             {
                 NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
                 ResetBill();
                 menu.ShowDialog();
-                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2]) != 0)
+                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][3]) != 0)
                 {
                     btnThemMon.Enabled = true;
                     btnThanhToan.Enabled = true;

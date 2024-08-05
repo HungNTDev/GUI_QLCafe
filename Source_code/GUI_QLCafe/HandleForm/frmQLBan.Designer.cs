@@ -57,6 +57,8 @@
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.dgvMBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTrangThaiHoatDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCapNhatTrangThaiBan = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvXemBan = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvXoaBan = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBan)).BeginInit();
@@ -212,6 +214,8 @@
             this.dgvDSBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvMBan,
             this.dgvTBan,
+            this.dgvTrangThaiHoatDong,
+            this.dgvCapNhatTrangThaiBan,
             this.dgvXemBan,
             this.dgvXoaBan});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -275,7 +279,7 @@
             this.lbTotalPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbTotalPage.Location = new System.Drawing.Point(612, 23);
             this.lbTotalPage.Name = "lbTotalPage";
-            this.lbTotalPage.Size = new System.Drawing.Size(23, 25);
+            this.lbTotalPage.Size = new System.Drawing.Size(27, 31);
             this.lbTotalPage.TabIndex = 26;
             this.lbTotalPage.Text = "0";
             // 
@@ -287,7 +291,7 @@
             this.lbCurrentPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbCurrentPage.Location = new System.Drawing.Point(567, 23);
             this.lbCurrentPage.Name = "lbCurrentPage";
-            this.lbCurrentPage.Size = new System.Drawing.Size(23, 25);
+            this.lbCurrentPage.Size = new System.Drawing.Size(27, 31);
             this.lbCurrentPage.TabIndex = 27;
             this.lbCurrentPage.Text = "0";
             // 
@@ -299,7 +303,7 @@
             this.lbPageLine.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbPageLine.Location = new System.Drawing.Point(592, 23);
             this.lbPageLine.Name = "lbPageLine";
-            this.lbPageLine.Size = new System.Drawing.Size(20, 25);
+            this.lbPageLine.Size = new System.Drawing.Size(24, 31);
             this.lbPageLine.TabIndex = 28;
             this.lbPageLine.Text = "/";
             // 
@@ -353,7 +357,7 @@
             this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.lbTotalRows.Location = new System.Drawing.Point(517, 62);
             this.lbTotalRows.Name = "lbTotalRows";
-            this.lbTotalRows.Size = new System.Drawing.Size(138, 25);
+            this.lbTotalRows.Size = new System.Drawing.Size(171, 31);
             this.lbTotalRows.TabIndex = 23;
             this.lbTotalRows.Text = "Tổng số dòng: ";
             this.lbTotalRows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,7 +453,7 @@
             this.lblHeaderText.ForeColor = System.Drawing.Color.White;
             this.lblHeaderText.Location = new System.Drawing.Point(443, 19);
             this.lblHeaderText.Name = "lblHeaderText";
-            this.lblHeaderText.Size = new System.Drawing.Size(290, 45);
+            this.lblHeaderText.Size = new System.Drawing.Size(357, 54);
             this.lblHeaderText.TabIndex = 0;
             this.lblHeaderText.Text = "DANH SÁCH BÀN";
             // 
@@ -476,33 +480,50 @@
             // 
             // dgvMBan
             // 
-            this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvMBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvMBan.DataPropertyName = "IdTable";
             this.dgvMBan.HeaderText = "Mã bàn";
             this.dgvMBan.MinimumWidth = 300;
             this.dgvMBan.Name = "dgvMBan";
             this.dgvMBan.ReadOnly = true;
-            this.dgvMBan.Width = 300;
             // 
             // dgvTBan
             // 
-            this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvTBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvTBan.DataPropertyName = "NameTable";
             this.dgvTBan.HeaderText = "Tên bàn";
             this.dgvTBan.MinimumWidth = 300;
             this.dgvTBan.Name = "dgvTBan";
             this.dgvTBan.ReadOnly = true;
-            this.dgvTBan.Width = 300;
+            // 
+            // dgvTrangThaiHoatDong
+            // 
+            this.dgvTrangThaiHoatDong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTrangThaiHoatDong.DataPropertyName = "StatusTableCF";
+            this.dgvTrangThaiHoatDong.HeaderText = "Trạng thái";
+            this.dgvTrangThaiHoatDong.MinimumWidth = 140;
+            this.dgvTrangThaiHoatDong.Name = "dgvTrangThaiHoatDong";
+            this.dgvTrangThaiHoatDong.ReadOnly = true;
+            // 
+            // dgvCapNhatTrangThaiBan
+            // 
+            this.dgvCapNhatTrangThaiBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvCapNhatTrangThaiBan.HeaderText = "";
+            this.dgvCapNhatTrangThaiBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvCapNhatTrangThaiBan.Image")));
+            this.dgvCapNhatTrangThaiBan.MinimumWidth = 90;
+            this.dgvCapNhatTrangThaiBan.Name = "dgvCapNhatTrangThaiBan";
+            this.dgvCapNhatTrangThaiBan.ReadOnly = true;
+            this.dgvCapNhatTrangThaiBan.Width = 90;
             // 
             // dgvXemBan
             // 
             this.dgvXemBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvXemBan.HeaderText = "";
             this.dgvXemBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXemBan.Image")));
-            this.dgvXemBan.MinimumWidth = 250;
+            this.dgvXemBan.MinimumWidth = 90;
             this.dgvXemBan.Name = "dgvXemBan";
             this.dgvXemBan.ReadOnly = true;
-            this.dgvXemBan.Width = 250;
+            this.dgvXemBan.Width = 90;
             // 
             // dgvXoaBan
             // 
@@ -510,10 +531,10 @@
             this.dgvXoaBan.FillWeight = 50F;
             this.dgvXoaBan.HeaderText = "";
             this.dgvXoaBan.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoaBan.Image")));
-            this.dgvXoaBan.MinimumWidth = 250;
+            this.dgvXoaBan.MinimumWidth = 90;
             this.dgvXoaBan.Name = "dgvXoaBan";
             this.dgvXoaBan.ReadOnly = true;
-            this.dgvXoaBan.Width = 250;
+            this.dgvXoaBan.Width = 90;
             // 
             // frmQLBan
             // 
@@ -566,6 +587,8 @@
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvMBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThaiHoatDong;
+        private System.Windows.Forms.DataGridViewImageColumn dgvCapNhatTrangThaiBan;
         private System.Windows.Forms.DataGridViewImageColumn dgvXemBan;
         private System.Windows.Forms.DataGridViewImageColumn dgvXoaBan;
     }

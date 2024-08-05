@@ -48,6 +48,27 @@ namespace GUI_QLCafe
                 frmViewBan.SetTableInfo(maBan, tenBan);
                 frmViewBan.ShowDialog();
             }
+            else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvCapNhatTrangThaiBan")
+            {
+                frmAddBan addban = new frmAddBan();
+
+                string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
+                addban.id = maBan;
+                addban.txtMaBan.Text = maBan;
+                addban.txtTenBan.Text = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTBan"].Value);
+
+                if (Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTrangThaiHoatDong"].Value) == "Hoạt Động")
+                {
+                    addban.rdoCo.Checked = true;
+                }
+                else
+                {
+                    addban.rdoKhong.Checked = true;
+                }
+
+                addban.ShowDialog();
+                LoadPage();
+            }
             else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXoaBan")
             {
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);

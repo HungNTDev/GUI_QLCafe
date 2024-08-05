@@ -40,8 +40,12 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbHeaderText = new System.Windows.Forms.Label();
+            this.gbTrangThai = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rdoCo = new System.Windows.Forms.RadioButton();
+            this.rdoKhong = new System.Windows.Forms.RadioButton();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.gbTrangThai.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTenBan
@@ -136,7 +140,7 @@
             this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(44, 283);
+            this.btnLuu.Location = new System.Drawing.Point(44, 383);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
@@ -173,7 +177,7 @@
             this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(44, 371);
+            this.btnThoat.Location = new System.Drawing.Point(44, 470);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(460, 57);
@@ -217,12 +221,59 @@
             this.lbHeaderText.TabIndex = 10;
             this.lbHeaderText.Text = "BÀN";
             // 
+            // gbTrangThai
+            // 
+            this.gbTrangThai.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.gbTrangThai.BorderRadius = 5;
+            this.gbTrangThai.Controls.Add(this.rdoCo);
+            this.gbTrangThai.Controls.Add(this.rdoKhong);
+            this.gbTrangThai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.gbTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbTrangThai.ForeColor = System.Drawing.Color.White;
+            this.gbTrangThai.Location = new System.Drawing.Point(44, 256);
+            this.gbTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTrangThai.Name = "gbTrangThai";
+            this.gbTrangThai.Size = new System.Drawing.Size(460, 105);
+            this.gbTrangThai.TabIndex = 34;
+            this.gbTrangThai.Text = "Trạng thái";
+            // 
+            // rdoCo
+            // 
+            this.rdoCo.AutoSize = true;
+            this.rdoCo.BackColor = System.Drawing.Color.White;
+            this.rdoCo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoCo.ForeColor = System.Drawing.Color.Black;
+            this.rdoCo.Location = new System.Drawing.Point(35, 59);
+            this.rdoCo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdoCo.Name = "rdoCo";
+            this.rdoCo.Size = new System.Drawing.Size(115, 27);
+            this.rdoCo.TabIndex = 2;
+            this.rdoCo.TabStop = true;
+            this.rdoCo.Text = "Hoạt Động";
+            this.rdoCo.UseVisualStyleBackColor = false;
+            // 
+            // rdoKhong
+            // 
+            this.rdoKhong.AutoSize = true;
+            this.rdoKhong.BackColor = System.Drawing.Color.White;
+            this.rdoKhong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoKhong.ForeColor = System.Drawing.Color.Black;
+            this.rdoKhong.Location = new System.Drawing.Point(264, 59);
+            this.rdoKhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rdoKhong.Name = "rdoKhong";
+            this.rdoKhong.Size = new System.Drawing.Size(173, 27);
+            this.rdoKhong.TabIndex = 2;
+            this.rdoKhong.TabStop = true;
+            this.rdoKhong.Text = "Ngưng Hoạt Động";
+            this.rdoKhong.UseVisualStyleBackColor = false;
+            // 
             // frmAddBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(547, 464);
+            this.ClientSize = new System.Drawing.Size(547, 577);
+            this.Controls.Add(this.gbTrangThai);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
@@ -238,6 +289,8 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.gbTrangThai.ResumeLayout(false);
+            this.gbTrangThai.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +307,8 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private System.Windows.Forms.Label lbHeaderText;
+        private Guna.UI2.WinForms.Guna2GroupBox gbTrangThai;
+        public System.Windows.Forms.RadioButton rdoCo;
+        public System.Windows.Forms.RadioButton rdoKhong;
     }
 }

@@ -15,7 +15,6 @@ namespace GUI_QLCafe
         string fileSavePath;
         string fileAddress;
 
-
         public frmAddSanPham()
         {
             InitializeComponent();
@@ -90,24 +89,22 @@ namespace GUI_QLCafe
                 return;
             }
 
+
             // Đường dẫn thư mục
             string directory = Path.Combine(Application.StartupPath, "img", "Product");
+            // Tên tệp
 
             // Đường dẫn đầy đủ
             string fullpath = Path.Combine(directory, fileName);
 
-            // Kiểm tra và tạo thư mục nếu chưa tồn tại
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
-
-            // Sau khi đảm bảo thư mục tồn tại, bạn có thể lưu tệp vào 'fullpath'
-            DTO_Product product = new DTO_Product(txtMaSanPham.Text,
-                txtTenSanPham.Text, gia, fullpath, trangthai, cbLoaiSanPham.Text);
-
             try
             {
+                // Kiểm tra và tạo thư mục nếu chưa tồn tại
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
                 // Đọc ảnh từ file và tạo bản sao
                 using (FileStream fs = new FileStream(fileAddress, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
@@ -126,6 +123,8 @@ namespace GUI_QLCafe
                 }
 
                 txtDuongDan.Text = fullpath;
+                DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
+                    gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
                 if (formMode == FormMode.Them)
                 {
@@ -151,8 +150,6 @@ namespace GUI_QLCafe
                         //lbtagname.Visible = true;
                         if (txtDuongDan.Text != checkUrlImage)
                         {
-                            File.Copy(fileAddress, fullpath, true);
-
                             if (File.Exists(fileAddress))
                             {
                                 File.Copy(fileAddress, fullpath, true);
@@ -171,6 +168,10 @@ namespace GUI_QLCafe
                         }
                     }
                 }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show("Lỗi khi lưu ảnh: Không có quyền truy cập vào đường dẫn. " + ex.Message, "Thông Báo");
             }
             catch (Exception ex)
             {
@@ -204,7 +205,8 @@ namespace GUI_QLCafe
                     fileName = Path.GetFileName(dlgopen.FileName); // Tên ảnh
 
                     // Tạo đường dẫn để lưu file vào thư mục của project
-                    string saveDirectory = Path.Combine(Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10)), "img", "Product");
+                    string saveDirectory = Path.Combine(Application.StartupPath.Substring(0,
+                        (Application.StartupPath.Length - 10)), "img", "Product");
                     if (!Directory.Exists(saveDirectory))
                     {
                         Directory.CreateDirectory(saveDirectory);

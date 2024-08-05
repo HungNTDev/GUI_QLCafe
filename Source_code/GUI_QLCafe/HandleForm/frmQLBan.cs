@@ -1,4 +1,5 @@
 ﻿using BUS_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -22,7 +23,7 @@ namespace GUI_QLCafe
         {
             frmAddBan frmAddBan = new frmAddBan();
             frmAddBan.ShowDialog();
-            LoadData();
+            LoadPage();
         }
 
         private void LoadData()
@@ -39,29 +40,44 @@ namespace GUI_QLCafe
 
         private void dgvDSBan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvSuaBan")
+            if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXemBan")
             {
-                frmAddBan frmAddBan = new frmAddBan();
-                frmAddBan.txtMaBan.Enabled = false;
-
-
+                frmViewBan frmViewBan = new frmViewBan();
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
-                frmAddBan.id = maBan;
-                frmAddBan.txtMaBan.Text = maBan;
-                frmAddBan.txtTenBan.Text = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTBan"].Value);
-
-                frmAddBan.ShowDialog();
-                LoadData();
+                string tenBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTban"].Value);
+                frmViewBan.SetTableInfo(maBan, tenBan);
+                frmViewBan.ShowDialog();
             }
-            if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXoaBan")
+            else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvCapNhatTrangThaiBan")
+            {
+                frmAddBan addban = new frmAddBan();
+
+                string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
+                addban.id = maBan;
+                addban.txtMaBan.Text = maBan;
+                addban.txtTenBan.Text = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTBan"].Value);
+
+                if (Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTrangThaiHoatDong"].Value) == "Hoạt Động")
+                {
+                    addban.rdoCo.Checked = true;
+                }
+                else
+                {
+                    addban.rdoKhong.Checked = true;
+                }
+
+                addban.ShowDialog();
+                LoadPage();
+            }
+            else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXoaBan")
             {
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
-                if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("Bạn chắc chắn  muốn xóa bàn?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     if (table.delete(maBan))
                     {
                         MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadData();
+                        LoadPage();
                     }
                     else
                     {
@@ -85,8 +101,6 @@ namespace GUI_QLCafe
                 if (dt.Rows.Count > 0)
                 {
                     dgvDSBan.DataSource = dt;
-                    dgvDSBan.Columns[2].HeaderText = "Mã bàn";
-                    dgvDSBan.Columns[3].HeaderText = "Tên bàn";
                 }
                 else
                 {
@@ -153,11 +167,7 @@ namespace GUI_QLCafe
         private void btnRefesh_Click(object sender, EventArgs e)
         {
             LoadPage();
-        }
-
-        private void dgvDSBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            txtTimKiem.Clear();
         }
     }
 }

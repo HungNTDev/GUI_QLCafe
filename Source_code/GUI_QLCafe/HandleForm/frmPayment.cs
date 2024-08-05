@@ -1,11 +1,9 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
-using GUI_QLCafe.ViewForm;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using ZedGraph;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode.Internal;
@@ -93,7 +91,7 @@ namespace GUI_QLCafe
                         total = total + (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
                     }
                     TotalBill = total - (total * voucher.PercentVoucher / 100);
-                    lbTongHoaDon.Text = "Tổng hóa đơn: "  + total + " VND";
+                    lbTongHoaDon.Text = "Tổng hóa đơn: " + total + " VND";
                     lbTongTien.Text = "Thành tiền: " + TotalBill + " VND";
                 }
             }
@@ -144,8 +142,20 @@ namespace GUI_QLCafe
                     }
 
                     payment.Payment(billDTO);
-                    MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn không?", "Thông báo",
+
+                    string chonPhuongThucTT = cbPhuongThucTT.Text;
+
+                    if (chonPhuongThucTT.Contains("MOMO"))
+                    {
+                        MessageBox.Show("Thanh toán MoMo thành công!", "Thông báo",
                             MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thanh toán tiền mặt thành công!", "Thông báo",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    }
+
                     this.Close();
                 }
             }
@@ -194,25 +204,49 @@ namespace GUI_QLCafe
             if (cbPhuongThucTT.Text == "MOMO")
             {
                 btnTaoQR.Visible = true;
+                picMoMo.Visible = true;
             }
             else if (cbPhuongThucTT.Text == "Tiền Mặt")
             {
                 btnTaoQR.Visible = false;
+                picMoMo.Visible = false;
             }
         }
 
         private void btnTaoQR_Click(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    string totalAmount = lbTongTien.Text.Replace("Thành tiền: ", "").Replace(" VND", "");
+            //    frmQRCode qrCode = new frmQRCode(totalAmount, billDTO);
+            //    qrCode.Show();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+            string ten = "Lý Bảo Hoàng";
+            string so = "0836753008";
+
+            var qrcode_text = $"2|99|{so.Trim()}|{ten.Trim()}|0|0|{busBill.BillInfo(billDTO).Rows[0][3].ToString()}";
+            BarcodeWriter writer = new BarcodeWriter();
+            EncodingOptions encodingOptions = new EncodingOptions()
             {
-                string totalAmount = lbTongTien.Text.Replace("Thành tiền: ", "").Replace(" VND", "");
-                frmQRCode qrCode = new frmQRCode(totalAmount, billDTO);
-                qrCode.Show();
-            }
-                        catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                Width = 250,
+                Height = 250,
+                Margin = 1,
+                PureBarcode = false
+            };
+            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
+            writer.Renderer = new BitmapRenderer();
+            writer.Options = encodingOptions;
+            writer.Format = BarcodeFormat.QR_CODE;
+            Bitmap bitmap = writer.Write(qrcode_text);
+            Bitmap logo = resizeImage(Properties.Resources.logo_momo, 20, 20) as Bitmap;
+            Graphics g = Graphics.FromImage(bitmap);
+            g.DrawImage(logo, new Point((bitmap.Width - logo.Width) / 2, (bitmap.Height - logo.Height) / 2));
+            picMoMo.Image = bitmap;
         }
 
         private void cbPhuongThucTT_SelectedValueChanged(object sender, EventArgs e)

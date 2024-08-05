@@ -12,6 +12,7 @@ namespace GUI_QLCafe
         private int currentPageIndex = 1;
         private int totalPages = 0;
         private int totalRows = 0;
+
         public frmQLHoaDon()
         {
             InitializeComponent();
@@ -29,22 +30,7 @@ namespace GUI_QLCafe
 
         private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //string mabill = Convert.ToString((dgvDSHD.CurrentRow.Cells["IdBill"].Value));
-            //if (MessageBox.Show("Bạn chắc chắn  muốn xóa sản phẩm?", "Thông báo",
-            //        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            //{
-            //    if (busbill.delete(mabill))
-            //    {
-            //        MessageBox.Show("Xóa này thanh cong", "Tho báo",
-            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        LoadData();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Xóa that bai", "Tho báo",
-            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
+
         }
         private void LoadPage()
         {
@@ -52,14 +38,13 @@ namespace GUI_QLCafe
             {
                 totalRows = busbill.ToTalBill();
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
-                lbTotalPage.Text = totalPages.ToString();
-                lbTotalRows.Text = "Tổng số dự án: " + totalRows.ToString();
+                //lbTotalPage.Text = totalPages.ToString();
 
                 DataTable dt = busbill.GetPagedBill(currentPageIndex, PageSize);
                 dgvDSHD.DataSource = dt;
 
                 dgvDSHD.Refresh();
-                lbTotalRows.Text = "Tổng số dòng: " + totalRows.ToString();
+                //lbTotalRows.Text = "Tổng số dòng: " + totalRows.ToString();
             }
             catch (Exception ex)
             {
@@ -69,36 +54,36 @@ namespace GUI_QLCafe
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
-            currentPageIndex = 1;
-            LoadPage();
-            lbCurrentPage.Text = currentPageIndex.ToString();
+            //currentPageIndex = 1;
+            //LoadPage();
+            //lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            if (currentPageIndex > 1)
-            {
-                currentPageIndex--;
-                LoadPage();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
+            //if (currentPageIndex > 1)
+            //{
+            //    currentPageIndex--;
+            //    LoadPage();
+            //    lbCurrentPage.Text = currentPageIndex.ToString();
+            //}
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentPageIndex < totalPages)
-            {
-                currentPageIndex++;
-                LoadPage();
-                lbCurrentPage.Text = currentPageIndex.ToString();
-            }
+            //if (currentPageIndex < totalPages)
+            //{
+            //    currentPageIndex++;
+            //    LoadPage();
+            //    lbCurrentPage.Text = currentPageIndex.ToString();
+            //}
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
-            currentPageIndex = totalPages;
-            LoadPage();
-            lbCurrentPage.Text = currentPageIndex.ToString();
+            //currentPageIndex = totalPages;
+            //LoadPage();
+            //lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -114,7 +99,7 @@ namespace GUI_QLCafe
                 DataTable dt = busbill.search(sp);
                 if (dt.Rows.Count > 0)
                 {
-                    //dgvDSHD.DataSource = dt;
+                    dgvDSHD.DataSource = dt;
                 }
                 else
                 {
@@ -132,14 +117,15 @@ namespace GUI_QLCafe
         private void frmQLHoaDon_Load_1(object sender, EventArgs e)
         {
             LoadData();
-            LoadPage();
-            currentPageIndex = 1;
-            lbCurrentPage.Text = currentPageIndex.ToString();
+            //LoadPage();
+            //currentPageIndex = 1;
+            //lbCurrentPage.Text = currentPageIndex.ToString();
         }
 
         private void btnRefesh_Click_1(object sender, EventArgs e)
         {
-            LoadPage();
+            txtTimKiem.Clear();
+            LoadData();
         }
     }
 }

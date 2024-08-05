@@ -45,6 +45,7 @@ namespace GUI_QLCafe
             try
             {
 
+                txtTimKiem.Clear();
                 selected = false;
 
 
@@ -85,10 +86,7 @@ namespace GUI_QLCafe
 
             txtEmail.Clear();
             txtTen.Clear();
-            txtTimKiem.Clear();
             txtDuongDan.Clear();
-
-
 
             btnMoHinh.Enabled = false;
 
@@ -105,6 +103,10 @@ namespace GUI_QLCafe
 
             rdoQuanTri.Enabled = false;
             rdoQuanTri.Checked = false;
+
+            rdoChuSoHuu.Enabled = false;
+            rdoChuSoHuu.Checked = false;
+
 
             txtEmail.Enabled = false;
             txtTen.Enabled = false;
@@ -242,6 +244,7 @@ namespace GUI_QLCafe
 
                 txtEmail.Enabled = true;
                 txtTen.Enabled = true;
+
                 rdoHoatDong.Enabled = true;
                 rdoNgungHoatDong.Enabled = true;
                 rdoNhanVien.Enabled = true;
@@ -253,13 +256,19 @@ namespace GUI_QLCafe
 
                 currentEmail = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
 
-                if (dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString() == "Quản trị")
+                string role = dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString();
+
+                switch (role)
                 {
-                    rdoQuanTri.Checked = true;
-                }
-                else
-                {
-                    rdoNhanVien.Checked = true;
+                    case "Chủ sở hữu":
+                        rdoChuSoHuu.Checked = true;
+                        break;
+                    case "Quản trị":
+                        rdoQuanTri.Checked = true;
+                        break;
+                    case "Nhân viên":
+                        rdoNhanVien.Checked = true;
+                        break;
                 }
 
                 if (int.Parse(dgvDanhSachNhanVien.CurrentRow.Cells["StatusStaff"].Value.ToString()) == 1)
@@ -286,6 +295,68 @@ namespace GUI_QLCafe
                     return;
                 }
                 selected = true;
+
+                //Chủ sở hữu với chủ sở hữu khác
+                if (frmMainQLCF.role == "Chủ sở hữu" && role == "Chủ sở hữu")
+                {
+                    rdoHoatDong.Enabled = false;
+                    rdoNgungHoatDong.Enabled = false;
+                    rdoNhanVien.Enabled = false;
+                    rdoQuanTri.Enabled = false;
+                    rdoChuSoHuu.Enabled = false;
+                    txtEmail.Enabled = false;
+                    btnMoHinh.Enabled = false;
+                }
+
+                //Bản thân quản trị
+                else if (frmMainQLCF.email == txtEmail.Text && frmMainQLCF.role == "Quản trị")
+                {
+                    //rdoHoatDong.Enabled = false;
+                    //rdoNgungHoatDong.Enabled = false;
+                    //rdoNhanVien.Enabled = false;
+                    //rdoQuanTri.Enabled = false;
+                    //rdoChuSoHuu.Enabled = false;
+
+                    //txtEmail.Enabled = false;
+                    //txtTen.Enabled = false;
+                    //btnMoHinh.Enabled = false;
+                    //btnSu.Enabled = false;
+                }
+
+                //Quản trị với chủ sở hữu
+                else if (frmMainQLCF.role == "Quản trị" && role == "Chủ sở hữu")
+                {
+                    rdoHoatDong.Enabled = false;
+                    rdoNgungHoatDong.Enabled = false;
+                    rdoNhanVien.Enabled = false;
+                    rdoQuanTri.Enabled = false;
+                    rdoChuSoHuu.Enabled = false;
+
+                    txtEmail.Enabled = false;
+                    txtTen.Enabled = false;
+                    btnMoHinh.Enabled = false;
+                    btnSu.Enabled = false;
+                }
+
+                //Quản trị với quản trị khác
+                else if (frmMainQLCF.role == "Quản trị" && role == "Quản trị")
+                {
+                    rdoChuSoHuu.Enabled = false;
+
+                    //txtEmail.Enabled = false;
+                    //txtTen.Enabled = false;
+                    //btnMoHinh.Enabled = false;
+                    //btnSu.Enabled = false;
+                }
+
+
+                //Quản trị với nhân viên khác
+                else if (frmMainQLCF.role == "Quản trị" && role == "Nhân viên")
+                {
+                    rdoQuanTri.Enabled = false;
+                    rdoChuSoHuu.Enabled = false;
+                }
+
             }
             else
             {
@@ -316,11 +387,12 @@ namespace GUI_QLCafe
             txtTimKiem.Clear();
             txtDuongDan.Clear();
             picNhanVien.Image = originalImage;
+
             rdoHoatDong.Checked = false;
             rdoNgungHoatDong.Checked = false;
             rdoNhanVien.Checked = false;
             rdoQuanTri.Checked = false;
-
+            rdoChuSoHuu.Checked = false;
 
             btnSu.Enabled = false;
 
@@ -389,6 +461,10 @@ namespace GUI_QLCafe
             {
                 role = "Quản trị";
             }
+            else if (rdoChuSoHuu.Checked)
+            {
+                role = "Chủ sở hữu";
+            }
             if (rdoHoatDong.Checked)
             {
                 status = 1;
@@ -413,12 +489,12 @@ namespace GUI_QLCafe
                 txtTen.Focus();
                 return;
             }
-            else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false)
+            else if (rdoQuanTri.Checked == false && rdoNhanVien.Checked == false && rdoChuSoHuu.Checked == false)
             {
                 MessageBox.Show("Vui lòng chọn vai trò!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false)
+            else if (rdoHoatDong.Checked == false && rdoNgungHoatDong.Checked == false && rdoChuSoHuu.Checked == false)
             {
                 MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -485,7 +561,7 @@ namespace GUI_QLCafe
                         //Gọi check status
                         if (this.mainForm != null)
                         {
-                            this.mainForm.checkStatus(txtEmail.Text, role);
+                            this.mainForm.checkStatus(txtEmail.Text, role, status);
                         }
 
                         LoadData(status);

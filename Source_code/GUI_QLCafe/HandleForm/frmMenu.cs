@@ -170,7 +170,7 @@ namespace GUI_QLCafe
         {
             try
             {
-                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][2].ToString()) == 0 && ListOrder_dgv.Rows.Count > 1)
+                if (Convert.ToInt32(busTB.TableInfo(billDTO).Rows[0][3].ToString()) == 0 && ListOrder_dgv.Rows.Count > 1)
                 {
                     billDTO.IdTable = busTB.TableInfo(billDTO).Rows[0][0].ToString();
                     billDTO.IdStaff = busStaff.StaffInfo(frmMainQLCF.email).Rows[0][1].ToString();
@@ -234,6 +234,11 @@ namespace GUI_QLCafe
         //        }
         //    }
         //}
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnDel_Click(object sender, EventArgs e)
         {

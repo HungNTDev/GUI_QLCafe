@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_QLCafe.HandleForm;
+using System;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -7,7 +8,7 @@ namespace GUI_QLCafe
     {
         public static int session = 0; //tình trạng login
         public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
-
+        public static int status { set; get; }
         public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
         public static string dateTime;
 
@@ -48,7 +49,7 @@ namespace GUI_QLCafe
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.Show();
         }
-        public void checkStatus(string emailAfter, string roleAfter)
+        public void checkStatus(string emailAfter, string roleAfter, int statusAfter)
         {
 
             if (email == emailAfter && role != roleAfter)
@@ -57,9 +58,11 @@ namespace GUI_QLCafe
 
                 reLogin();
             }
-            else
+            else if (email == emailAfter && status != statusAfter)
             {
-                Console.WriteLine("No change or not current user, main form stays open");
+                MessageBox.Show("Trạng thái của bạn đã thay đổi, vui lòng đăng nhập lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                reLogin();
             }
         }
         public void PhanQuyen()
@@ -69,10 +72,10 @@ namespace GUI_QLCafe
 
             if (session == 1)
             {
-                if (role == "Quản trị")
+                if (role == "Quản trị" || role == "Chủ sở hữu")
                 {
-                    btnQLNhanVien.Enabled = true;
-                    btnThongKe.Enabled = true;
+                    //btnQLNhanVien.Enabled = true;
+                    //btnThongKe.Enabled = true;
                 }
             }
         }
@@ -108,7 +111,10 @@ namespace GUI_QLCafe
 
         private void btnQuanLy_Click(object sender, EventArgs e)
         {
-            quanlyTransition.Start();
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                quanlyTransition.Start();
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         bool thongkeExpand = false;
@@ -121,7 +127,7 @@ namespace GUI_QLCafe
                 flpThongKe.Height += 15;
 
                 // Nếu chiều cao đạt 300
-                if (flpThongKe.Height >= 162)
+                if (flpThongKe.Height >= 110)
                 {
                     thongkeTransition.Stop(); // Dừng timer
                     thongkeExpand = true; // Mở rộng
@@ -143,7 +149,7 @@ namespace GUI_QLCafe
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            if (role == "Quản trị")
+            if (role == "Quản trị" || role == "Chủ sở hữu")
                 thongkeTransition.Start();
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo");
@@ -265,22 +271,24 @@ namespace GUI_QLCafe
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
-            if (role == "Quản trị")
-                //AddControls(new frmQLNhanVien(this));
-                AddControls(new frmPOS());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLNhanVien(this));
             else
                         messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLSanPham_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLSanPham());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLSanPham());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLVoucher_Click_1(object sender, EventArgs e)
         {
 
-            if (role == "Quản trị")
+            if (role == "Quản trị" || role == "Chủ sở hữu")
                 AddControls(new frmQLVoucher());
             else
                 messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
@@ -289,17 +297,31 @@ namespace GUI_QLCafe
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
             frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau(frmMainQLCF.email, this);
-            frmDoiMatKhau.Show();
+            frmDoiMatKhau.ShowDialog();
         }
 
         private void btnQLHoaDon_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLHoaDon());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLHoaDon());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void btnQLBan_Click(object sender, EventArgs e)
         {
-            AddControls(new frmQLBan());
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLBan());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
+        }
+
+        private void btnThongKeSLHoaDon_Click(object sender, EventArgs e)
+        {
+            if (role == "Quản trị" || role == "Chủ sở hữu")
+                AddControls(new frmQLThongKe());
+            else
+                messageDialog.Show("Bạn không có quyền truy cập chức năng này!", "Cảnh báo");
         }
 
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
@@ -322,14 +344,5 @@ namespace GUI_QLCafe
             }
         }
 
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picBackGround_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

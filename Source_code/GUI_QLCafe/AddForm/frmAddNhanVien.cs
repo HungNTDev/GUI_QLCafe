@@ -372,17 +372,6 @@ namespace GUI_QLCafe
             //}
 
         }
-        public void Load()
-        {
-            frmAddNhanVien_Load(this, EventArgs.Empty);
-        }
-        private void frmAddNhanVien_Load(object sender, EventArgs e)
-        {
-            //if (chucnang == "sua")
-            //{
-            //    btnLuu.Text = "SỬA";
-            //}
-        }
         //private void LoadFormData()
         //{
 
@@ -517,7 +506,20 @@ namespace GUI_QLCafe
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dl = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dl == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
+
+        private void frmAddNhanVien_Load(object sender, EventArgs e)
+        {
+            rdoChuSoHuu.Enabled = false;
+            if (frmMainQLCF.role == "Chủ sở hữu")
+            {
+                rdoChuSoHuu.Enabled = true;
+            }
         }
     }
 }

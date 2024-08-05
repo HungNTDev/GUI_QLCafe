@@ -328,10 +328,10 @@
             this.rdoCo.Location = new System.Drawing.Point(15, 59);
             this.rdoCo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoCo.Name = "rdoCo";
-            this.rdoCo.Size = new System.Drawing.Size(132, 27);
+            this.rdoCo.Size = new System.Drawing.Size(96, 27);
             this.rdoCo.TabIndex = 2;
             this.rdoCo.TabStop = true;
-            this.rdoCo.Text = "Có sản phẩm";
+            this.rdoCo.Text = "Còn Bán";
             this.rdoCo.UseVisualStyleBackColor = false;
             // 
             // rdoKhong
@@ -343,10 +343,10 @@
             this.rdoKhong.Location = new System.Drawing.Point(179, 59);
             this.rdoKhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoKhong.Name = "rdoKhong";
-            this.rdoKhong.Size = new System.Drawing.Size(162, 27);
+            this.rdoKhong.Size = new System.Drawing.Size(118, 27);
             this.rdoKhong.TabIndex = 2;
             this.rdoKhong.TabStop = true;
-            this.rdoKhong.Text = "Sản phẩm đã hết";
+            this.rdoKhong.Text = "Ngưng bán";
             this.rdoKhong.UseVisualStyleBackColor = false;
             // 
             // messageDialog1

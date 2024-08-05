@@ -35,7 +35,8 @@ Primary key(IdPT)
 create table TableCF(
 IdTable nvarchar(10) not null,
 NameTable nvarchar(20) not null,
-StatusTable int not null,
+StatusTableCF nvarchar(20),
+StatusTablePos int not null,
 Primary key (IdTable)
 )
 
@@ -47,11 +48,11 @@ Primary key (IdPayment)
 )
 
 create table Product(
-IdProduct nvarchar(20) not null,
+IdProduct nvarchar(20),
 NameProduct nvarchar(20) not null,
 Price float not null,
 ImageProduct nvarchar(500) not null,
-StatusProduct int not null,
+StatusProduct nvarchar(50) not null,
 IdPT nvarchar(10) not null,
 Primary key (IdProduct)
 )
@@ -70,7 +71,7 @@ Primary key (IdBill)
 	
 create table Statistic (
 IdStatistic int identity not null ,
-IdBill int ,
+IdBill int,
 PercentVoucher float,
 Total float,
 NameStaff nvarchar(50),
@@ -120,7 +121,7 @@ alter table Product
 add constraint fk_pt_p
 Foreign key (IdPT) references ProductType(IdPT) 
 
-alter table DetailBill 
+alter table DetailBill
 add constraint fk_p_db
 Foreign key (IdProduct) references Product(IdProduct)
 
@@ -131,6 +132,9 @@ Foreign key (IdBill) references Bill(IdBill)
 alter table Bill
 add constraint fk_b_tb
 Foreign key (IdTable) references TableCF(IdTable)
+
+alter table Bill
+drop constraint fk_b_tb
 
 alter table Bill 
 add constraint fk_b_p
@@ -143,9 +147,6 @@ Foreign key (IdVoucher) references Voucher(IdVoucher)
 alter table Bill
 add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
-
-alter table DetailBill
-drop constraint fk_b_db
 
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',1),
@@ -188,6 +189,10 @@ insert into TableCF (IdTable, NameTable, StatusTable) values
 ('B29',N'Bàn 29',0),
 ('B30',N'Bàn 30',0)
 	
+	delete from TableCF
+	
+update TableCF set StatusTable = 0
+
 update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
 go
@@ -200,48 +205,44 @@ insert into ProductType (IdPT, NamePT, StatusPT) values
 ('JUC',N'Nước ép',1)
 
 update TableCF set StatusTable = 0
-delete from DetailBill
-delete from Bill 
-
-select * from DetailBill
-select * from Bill
 
 --Thêm sản phẩm--
 /*Trà*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('TEA1', N'Hồng trà đặc cam', 65000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
-	('TEA2', N'Trà lại đặc thơm', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
-	('TEA3', N'Hồng trà chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
-	('TEA4', N'Hồng trà sữa', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA'),
-	('TEA5', N'Trà sữa Truyền Thống', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'TEA')
+	('TEA1', N'Hồng trà đặc cam', 65000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'TEA'),
+	('TEA2', N'Trà lại đặc thơm', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'TEA'),
+	('TEA3', N'Hồng trà chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'TEA'),
+	('TEA4', N'Hồng trà sữa', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'TEA'),
+	('TEA5', N'Trà sữa Truyền Thống', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'TEA')
 
 /*Cà phê*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
-	('CFE2', N'Cà phê Expresso', 30000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
-	('CFE3', N'Cà phê kem tươi', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
-	('CFE4', N'Cà phê Vanilla', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE'),
-	('CFE5', N'Cà phê Caramel ', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'CFE')
+	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'CFE'),
+	('CFE2', N'Cà phê Expresso', 30000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
+	('CFE3', N'Cà phê kem tươi', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
+	('CFE4', N'Cà phê Vanilla', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
+	('CFE5', N'Cà phê Caramel ', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE')
 
 /*Sinh tố*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('STO1', N'Sinh tố dâu', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
-	('STO2', N'Sinh tố chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
-	('STO3', N'Sinh tố xoài', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
-	('STO4', N'Sinh tố nhiệt đới', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO'),
-	('STO5', N'Sinh tố cà rốt', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'STO')
+	('STO1', N'Sinh tố dâu', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'STO'),
+	('STO2', N'Sinh tố chanh', 45000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'STO'),
+	('STO3', N'Sinh tố xoài', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'STO'),
+	('STO4', N'Sinh tố nhiệt đới', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'STO'),
+	('STO5', N'Sinh tố cà rốt', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'STO')
 
 /*Nước ép*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('JUC1', N'Dâu ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
-	('JUC2', N'Táo ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
-	('JUC3', N'Táo và dâu ép i', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
-	('JUC4', N'Thơm ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC'),
-	('JUC5', N'Bưởi ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 1, 'JUC')
+	('JUC1', N'Dâu ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'JUC'),
+	('JUC2', N'Táo ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'JUC'),
+	('JUC3', N'Táo và dâu ép i', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'JUC'),
+	('JUC4', N'Thơm ép', 55000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'JUC'),
+	('JUC5', N'Bưởi ép', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'JUC')
 
 	go
 	update Product 
-	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\d5cb1aa5e36899-cphvanillaphclong.png'
+	set ImageProduct = 'C:\Users\ADMIN\source\repos\GUI_QLCafe\Source_code\GUI_QLCafe\img\Product\download (1).jpg'
+
  
  -- Voucher 
 insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) values
@@ -602,7 +603,7 @@ as
 		select * from TableCF order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
 	end
 
-EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+EXEC GetPagedTable @PageIndex = 1, @PageSize = 10;
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalTableCount as select count(*) from TableCF
@@ -691,9 +692,9 @@ as
 	update TableCF set StatusTable = 0 where IdTable = @IdTable
 
 	-- Load Bill 
-alter proc LoadBill 
+create or alter proc LoadBill 
 as 
-    select  IdBill, IdTable, IdStaff, StatusBill  from Bill
+    select  IdBill, IdTable, IdStaff, DateCheckIn,StatusBill  from Bill
 
 	-- Xóa Bill 
 create proc BIllDelete @idBill int 
@@ -703,15 +704,15 @@ as
 
 
 	 -- Lấy trang bill
-create proc GetPagedBill
+create or alter proc GetPagedBill
 @PageIndex int,
 @PageSize int
 as
 	begin
-		select * from Bill order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+		select  IdBill, IdTable, IdStaff, DateCheckIn,StatusBill  from Bill order by IdTable offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
 	end
 
-EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+EXEC GetPagedBill @PageIndex = 1, @PageSize = 10;
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalTableCount as select count(*) from TableCF
@@ -838,9 +839,8 @@ as
 	join Product on Product.IdProduct = DetailBill.IdProduct
 	where Bill.idTable = @IdTable and Bill.StatusBill = 1;
 
-
 	-- PAY
-	ALTER   proc [dbo].[Pay] (@IdTable nvarchar(10), @IdBill int, @DateCheckOut datetime, @IdPayment nvarchar(10), @IdVoucher nvarchar(10) )
+	ALTER proc [dbo].[Pay] (@IdTable nvarchar(10), @IdBill int, @DateCheckOut datetime, @IdPayment nvarchar(10), @IdVoucher nvarchar(10) )
 as
 		update Bill set DateCheckOut = @DateCheckOut, IdPayment = @IdPayment, IdVoucher = @IdVoucher, StatusBill = 0 where IdTable = @IdTable
 	delete from DetailBill where idBill = @IdBill
@@ -849,7 +849,7 @@ as
 	update TableCF set StatusTable = 0 where idTable = @IdTable
 	
 	--thêm thống kê (add statistic)
-	alter proc [dbo].[AddStatistic]
+create proc [dbo].[AddStatistic]
 		@IdBill int,
 		@PercentVoucher float,
 		@Total float,
@@ -863,7 +863,7 @@ as
 			(@IdBill, @PercentVoucher, @Total, @NameStaff, @CheckIn, @CheckOut, @namePayment, @NameTable)
 
 	--Thêm thống kê chi tiết (add detail statistic)
-	alter proc [dbo].[AddDetailStatistic]
+	create proc [dbo].[AddDetailStatistic]
 		@IdBill int,
 		@NameProduct nvarchar(100),
 		@Amount int,
@@ -876,9 +876,103 @@ as
 			insert into DetailStatistic(IdStatistic, NameProduct, Amount, Price, TotalPrice) values
 			(@ID, @NameProduct, @Amount, @Price, @TotalPrice)
 
+-- PROC GET DANH SACH THONG KE
+CREATE OR ALTER PROC GetStatistic AS SELECT * FROM Statistic
+
+-- PHAN TRANG FORM THONG KE
+CREATE OR ALTER PROC GetPagedStatistic
+@PageIndex INT,
+@PageSize INT
+AS
+	BEGIN
+		SELECT * FROM Statistic ORDER BY IdStatistic offset(@PageIndex - 1) * @PageSize ROWS FETCH NEXT @PageSize ROWS only;
+	END
+
+-- LAY TONG SO
+CREATE OR ALTER PROC GetTotalStatisticCount AS SELECT COUNT(*) FROM Statistic
+
+-- TIM KIEM THONG KE
+CREATE OR ALTER PROC SearchStatistic (@value nvarchar(500))
+AS
+	BEGIN 
+		 SELECT * FROM Statistic where NameStaff like N'%' + @value + '%'
+		 or NamePayment like N'%' + @value + '%' or NameTable like N'%' + @value + '%'
+	END
+
+
 
 select * from Statistic
 select * from DetailStatistic
 select * from Bill
 
 delete from Statistic
+
+-- Xóa món 
+create or alter proc DelProductFromBill (@IdTable nvarchar(10), @IdProduct nvarchar(10))
+as
+	DECLARE @ID int
+	set @ID = (select IdBill from Bill where IdTable = @IdTable)
+
+	delete from DetailBill where IdBill = @ID and IdProduct = @IdProduct
+	update Staff set RoleStaff = N'Chủ sở hữu' where IdStaff = 'NV1'
+
+	select * from Staff
+
+	update TableCF set StatusTable =0
+
+	-- Lấy bill
+	CREATE OR ALTER PROC GetBill
+AS
+BEGIN 
+    			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+    FROM Statistic a
+    INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+END
+
+exec GetBill
+-- PHAN TRANG HOA DON
+create or alter proc GetPagedBill
+@PageIndex int,
+@PageSize int
+as
+	begin
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+		FROM Statistic a
+		INNER JOIN DetailStatistic b
+		ON b.IdStatistic = a.IdStatistic order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+-- LAY TONG SO 
+CREATE OR ALTER PROC GetTotalBillCount  AS SELECT COUNT(*) FROM DetailBill
+EXEC GetTotalBillCount
+
+-- TIM KIEM HOA DON
+CREATE OR ALTER PROC SearchBill (@value NVARCHAR(500))
+AS
+	BEGIN 
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+			FROM Statistic a
+			INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+			WHERE a.NameTable = @value
+	END
+
+	-- Kiem tra ten ban trung
+	create proc KiemTraTenBan @NameTable nvarchar(10)
+as
+begin
+
+    select count(*) from TableCF where NameTable = @NameTable
+end
+
+-- Lấy id 
+create proc GetIdTable
+as
+
+
+   exec GetIdTable

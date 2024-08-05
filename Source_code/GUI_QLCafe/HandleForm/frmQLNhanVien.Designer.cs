@@ -53,6 +53,7 @@
             this.rdoHoatDong = new System.Windows.Forms.RadioButton();
             this.rdoNgungHoatDong = new System.Windows.Forms.RadioButton();
             this.gbVaiTro = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rdoChuSoHuu = new System.Windows.Forms.RadioButton();
             this.rdoQuanTri = new System.Windows.Forms.RadioButton();
             this.rdoNhanVien = new System.Windows.Forms.RadioButton();
             this.picNhanVien = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -155,6 +156,8 @@
             // 
             this.dgvDanhSachNhanVien.AllowUserToAddRows = false;
             this.dgvDanhSachNhanVien.AllowUserToDeleteRows = false;
+            this.dgvDanhSachNhanVien.AllowUserToResizeColumns = false;
+            this.dgvDanhSachNhanVien.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -206,7 +209,7 @@
             this.dgvDanhSachNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDanhSachNhanVien.RowTemplate.Height = 24;
             this.dgvDanhSachNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1479, 515);
+            this.dgvDanhSachNhanVien.Size = new System.Drawing.Size(1479, 501);
             this.dgvDanhSachNhanVien.TabIndex = 15;
             this.dgvDanhSachNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachNhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -328,7 +331,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtEmail.Location = new System.Drawing.Point(361, 220);
+            this.txtEmail.Location = new System.Drawing.Point(361, 171);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -344,7 +347,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 15.70909F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.lblEmail.Location = new System.Drawing.Point(87, 220);
+            this.lblEmail.Location = new System.Drawing.Point(87, 171);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(87, 37);
@@ -400,7 +403,7 @@
             this.gbTrangThai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.gbTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTrangThai.ForeColor = System.Drawing.Color.White;
-            this.gbTrangThai.Location = new System.Drawing.Point(989, 220);
+            this.gbTrangThai.Location = new System.Drawing.Point(989, 171);
             this.gbTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbTrangThai.Name = "gbTrangThai";
             this.gbTrangThai.Size = new System.Drawing.Size(268, 154);
@@ -442,17 +445,33 @@
             this.gbVaiTro.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbVaiTro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.gbVaiTro.BorderRadius = 5;
+            this.gbVaiTro.Controls.Add(this.rdoChuSoHuu);
             this.gbVaiTro.Controls.Add(this.rdoQuanTri);
             this.gbVaiTro.Controls.Add(this.rdoNhanVien);
             this.gbVaiTro.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.gbVaiTro.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbVaiTro.ForeColor = System.Drawing.Color.White;
-            this.gbVaiTro.Location = new System.Drawing.Point(713, 220);
+            this.gbVaiTro.Location = new System.Drawing.Point(713, 170);
             this.gbVaiTro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbVaiTro.Name = "gbVaiTro";
-            this.gbVaiTro.Size = new System.Drawing.Size(268, 154);
+            this.gbVaiTro.Size = new System.Drawing.Size(268, 204);
             this.gbVaiTro.TabIndex = 26;
             this.gbVaiTro.Text = "Vai trò";
+            // 
+            // rdoChuSoHuu
+            // 
+            this.rdoChuSoHuu.AutoSize = true;
+            this.rdoChuSoHuu.BackColor = System.Drawing.Color.White;
+            this.rdoChuSoHuu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoChuSoHuu.ForeColor = System.Drawing.Color.Black;
+            this.rdoChuSoHuu.Location = new System.Drawing.Point(11, 59);
+            this.rdoChuSoHuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoChuSoHuu.Name = "rdoChuSoHuu";
+            this.rdoChuSoHuu.Size = new System.Drawing.Size(119, 27);
+            this.rdoChuSoHuu.TabIndex = 5;
+            this.rdoChuSoHuu.TabStop = true;
+            this.rdoChuSoHuu.Text = "Chủ sở hữu";
+            this.rdoChuSoHuu.UseVisualStyleBackColor = false;
             // 
             // rdoQuanTri
             // 
@@ -460,7 +479,7 @@
             this.rdoQuanTri.BackColor = System.Drawing.Color.White;
             this.rdoQuanTri.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoQuanTri.ForeColor = System.Drawing.Color.Black;
-            this.rdoQuanTri.Location = new System.Drawing.Point(11, 58);
+            this.rdoQuanTri.Location = new System.Drawing.Point(11, 108);
             this.rdoQuanTri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoQuanTri.Name = "rdoQuanTri";
             this.rdoQuanTri.Size = new System.Drawing.Size(94, 27);
@@ -475,7 +494,7 @@
             this.rdoNhanVien.BackColor = System.Drawing.Color.White;
             this.rdoNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.rdoNhanVien.Location = new System.Drawing.Point(11, 105);
+            this.rdoNhanVien.Location = new System.Drawing.Point(11, 161);
             this.rdoNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdoNhanVien.Name = "rdoNhanVien";
             this.rdoNhanVien.Size = new System.Drawing.Size(109, 27);
@@ -495,7 +514,7 @@
             this.picNhanVien.Location = new System.Drawing.Point(1265, 112);
             this.picNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picNhanVien.Name = "picNhanVien";
-            this.picNhanVien.Size = new System.Drawing.Size(230, 227);
+            this.picNhanVien.Size = new System.Drawing.Size(230, 262);
             this.picNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNhanVien.TabIndex = 28;
             this.picNhanVien.TabStop = false;
@@ -518,7 +537,7 @@
             this.txtDuongDan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDuongDan.ForeColor = System.Drawing.Color.Black;
             this.txtDuongDan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtDuongDan.Location = new System.Drawing.Point(1000, 170);
+            this.txtDuongDan.Location = new System.Drawing.Point(1000, 114);
             this.txtDuongDan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDuongDan.Name = "txtDuongDan";
             this.txtDuongDan.PasswordChar = '*';
@@ -627,7 +646,7 @@
             this.guna2Panel1.Controls.Add(this.lbtotalRow);
             this.guna2Panel1.Controls.Add(this.btnNext);
             this.guna2Panel1.Controls.Add(this.btnPrev);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 1012);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 998);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1587, 91);
@@ -811,7 +830,7 @@
             // 
             // btnMoHinh
             // 
-            this.btnMoHinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMoHinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMoHinh.BorderRadius = 5;
             this.btnMoHinh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMoHinh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -822,11 +841,11 @@
             this.btnMoHinh.ForeColor = System.Drawing.Color.White;
             this.btnMoHinh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
             this.btnMoHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnMoHinh.Image")));
-            this.btnMoHinh.Location = new System.Drawing.Point(1265, 347);
+            this.btnMoHinh.Location = new System.Drawing.Point(989, 331);
             this.btnMoHinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMoHinh.Name = "btnMoHinh";
             this.btnMoHinh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnMoHinh.Size = new System.Drawing.Size(231, 43);
+            this.btnMoHinh.Size = new System.Drawing.Size(268, 43);
             this.btnMoHinh.TabIndex = 35;
             this.btnMoHinh.Text = "Mở hình";
             this.btnMoHinh.Click += new System.EventHandler(this.btnMoHinh_Click);
@@ -861,7 +880,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1587, 1102);
+            this.ClientSize = new System.Drawing.Size(1587, 1088);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnMoHinh);
             this.Controls.Add(this.guna2Panel1);
@@ -946,5 +965,6 @@
         private Guna.UI2.WinForms.Guna2Button btnMoHinh;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private System.Windows.Forms.Label lblHeaderText;
+        private System.Windows.Forms.RadioButton rdoChuSoHuu;
     }
 }

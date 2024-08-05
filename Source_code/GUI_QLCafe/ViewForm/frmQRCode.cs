@@ -8,7 +8,6 @@ using ZXing;
 using System.Drawing.Drawing2D;
 using System.Drawing;
 using DTO_QLCafe;
-using System.Drawing;
 
 namespace GUI_QLCafe.ViewForm
 {

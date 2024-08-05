@@ -26,9 +26,9 @@
 
         public DTO_TableCF() { }
 
-        public DTO_TableCF(string idTable, string nameTable)
+        public DTO_TableCF(string nameTable)
         {
-            this.idTable = idTable;
+
             this.nameTable = nameTable;
         }
         public DTO_TableCF(string idTable, string nameTable, int statusTable)

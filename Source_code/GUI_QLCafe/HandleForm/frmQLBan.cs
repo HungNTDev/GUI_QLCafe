@@ -40,23 +40,7 @@ namespace GUI_QLCafe
 
         private void dgvDSBan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvSuaBan")
-            {
-                frmAddBan frmAddBan = new frmAddBan
-                {
-                    formMode = frmAddBan.FormMode.Sua
-                };
-                frmAddBan.txtMaBan.Enabled = false;
-
-                string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
-                frmAddBan.id = maBan;
-                frmAddBan.txtMaBan.Text = maBan;
-                frmAddBan.txtTenBan.Text = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTBan"].Value);
-
-                frmAddBan.ShowDialog();
-                LoadPage();
-            }
-            else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXemBan")
+            if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvXemBan")
             {
                 frmViewBan frmViewBan = new frmViewBan();
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);

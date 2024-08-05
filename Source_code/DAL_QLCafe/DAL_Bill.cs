@@ -16,7 +16,7 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "LoadBill";
+                    cmd.CommandText = "GetBill";
                     conn.Open();
                     DataTable dtBill = new DataTable();
                     dtBill.Load(cmd.ExecuteReader());
@@ -323,6 +323,34 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@Amount", Bill.Amount);
                     cmd.Parameters.AddWithValue("@Price", Bill.Price);
                     cmd.Parameters.AddWithValue("@TotalPrice", Bill.totalPrice);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+        public bool DelProductFromBill(DTO_Bill Bill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DelProductFromBill";
+                    cmd.Parameters.AddWithValue("@IdTable", Bill.idTable);
+                    cmd.Parameters.AddWithValue("@IdProduct", Bill.IdProduct);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
                     {

@@ -14,7 +14,7 @@ namespace GUI_QLCafe
         string fileName;
         string fileSavePath;
         string fileAddress;
-        string saveDirectory;
+
 
         public frmAddSanPham()
         {
@@ -90,23 +90,21 @@ namespace GUI_QLCafe
                 return;
             }
 
-            //string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            // Đường dẫn thư mục
+            string directory = Path.Combine(Application.StartupPath, "img", "Product");
 
-            string saveDirectory = Path.Combine("\\img\\", "\\Product\\", fileName);
+            // Đường dẫn đầy đủ
+            string fullpath = Path.Combine(directory, fileName);
 
-            if (!Directory.Exists(saveDirectory))
+            // Kiểm tra và tạo thư mục nếu chưa tồn tại
+            if (!Directory.Exists(directory))
             {
-                Directory.CreateDirectory(saveDirectory);
+                Directory.CreateDirectory(directory);
             }
 
-            //string fileName = Path.GetFileName(fileAddress);
-
+            // Sau khi đảm bảo thư mục tồn tại, bạn có thể lưu tệp vào 'fullpath'
             DTO_Product product = new DTO_Product(txtMaSanPham.Text,
-                txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
-
-            //DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text, gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
-
-            //txtTenSanPham.Text, gia, fileSavePath, trangthai);//, txtLoaiSanPham.Text);
+                txtTenSanPham.Text, gia, fullpath, trangthai, cbLoaiSanPham.Text);
 
             try
             {
@@ -118,10 +116,16 @@ namespace GUI_QLCafe
                         fs.CopyTo(ms);
                         ms.Position = 0;
                         picSanPham.Image = Image.FromStream(ms);
+
+                        // Lưu ảnh vào đường dẫn đầy đủ
+                        using (FileStream saveFile = new FileStream(fullpath, FileMode.Create, FileAccess.Write))
+                        {
+                            ms.CopyTo(saveFile);
+                        }
                     }
                 }
 
-                txtDuongDan.Text = fileSavePath;
+                txtDuongDan.Text = fullpath;
 
                 if (formMode == FormMode.Them)
                 {
@@ -147,15 +151,11 @@ namespace GUI_QLCafe
                         //lbtagname.Visible = true;
                         if (txtDuongDan.Text != checkUrlImage)
                         {
-                            //if (File.Exists(fileSavePath))
-                            //{
-                            //    File.Delete(fileSavePath);
-                            //}
-                            File.Copy(fileAddress, fileSavePath, true);
+                            File.Copy(fileAddress, fullpath, true);
 
                             if (File.Exists(fileAddress))
                             {
-                                File.Copy(fileAddress, fileSavePath, true);
+                                File.Copy(fileAddress, fullpath, true);
                                 MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
@@ -165,7 +165,6 @@ namespace GUI_QLCafe
                                 MessageBox.Show("File nguồn không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-
                         else
                         {
                             this.Message("Cập nhật thất bại :(", frmNotification.enumType.Failed);
@@ -175,8 +174,9 @@ namespace GUI_QLCafe
             }
             catch (Exception ex)
             {
-                messageDialog.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
+                MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
             }
+
         }
 
         private void btnMoHinh_Click(object sender, EventArgs e)
@@ -196,21 +196,24 @@ namespace GUI_QLCafe
                     using (FileStream fs = new FileStream(fileAddress, FileMode.Open, FileAccess.Read))
                     {
                         MemoryStream ms = new MemoryStream();
-
                         fs.CopyTo(ms);
                         ms.Position = 0;
                         picSanPham.Image = Image.FromStream(ms);
-
                     }
 
                     fileName = Path.GetFileName(dlgopen.FileName); // Tên ảnh
 
-                    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                    fileSavePath = Path.Combine("img", "Product", fileName);
                     // Tạo đường dẫn để lưu file vào thư mục của project
+                    string saveDirectory = Path.Combine(Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10)), "img", "Product");
+                    if (!Directory.Exists(saveDirectory))
+                    {
+                        Directory.CreateDirectory(saveDirectory);
+                    }
 
+                    fileSavePath = Path.Combine(saveDirectory, fileName);
+
+                    // Hiển thị đường dẫn ảnh trên giao diện
                     txtDuongDan.Text = fileAddress;
-                    //lbtagname.Visible = false;
                 }
             }
             catch (Exception ex)

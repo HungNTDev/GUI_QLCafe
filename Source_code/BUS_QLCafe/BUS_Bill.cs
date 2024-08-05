@@ -97,5 +97,10 @@ namespace BUS_QLCafe
         {
             return dal.SearchStatistic(keyword);
         }
+
+        public bool DelProductFromBill(DTO_Bill bill)
+        {
+            return dal.DelProductFromBill(bill);
+        }
     }
 }

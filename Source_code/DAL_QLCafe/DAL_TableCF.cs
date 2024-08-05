@@ -47,11 +47,7 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "InsertTable";
-
-                    cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
                     cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
-
-
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
                     {

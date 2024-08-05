@@ -925,3 +925,45 @@ as
 	select * from Staff
 
 	update TableCF set StatusTable =0
+
+	-- Lấy bill
+	CREATE OR ALTER PROC GetBill
+AS
+BEGIN 
+    			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+    FROM Statistic a
+    INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+END
+
+exec GetBill
+-- PHAN TRANG HOA DON
+create or alter proc GetPagedBill
+@PageIndex int,
+@PageSize int
+as
+	begin
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+		FROM Statistic a
+		INNER JOIN DetailStatistic b
+		ON b.IdStatistic = a.IdStatistic order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
+	end
+
+-- LAY TONG SO 
+CREATE OR ALTER PROC GetTotalBillCount  AS SELECT COUNT(*) FROM DetailBill
+EXEC GetTotalBillCount
+
+-- TIM KIEM HOA DON
+CREATE OR ALTER PROC SearchBill (@value NVARCHAR(500))
+AS
+	BEGIN 
+			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+			FROM Statistic a
+			INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+			WHERE a.NameTable = @value
+	END

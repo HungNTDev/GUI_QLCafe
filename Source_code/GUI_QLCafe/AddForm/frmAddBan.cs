@@ -20,6 +20,7 @@ namespace GUI_QLCafe
 
         private void frmAddBan_Load(object sender, EventArgs e)
         {
+            txtMaBan.Enabled = false;
             if (formMode == FormMode.Them)
             {
                 lbHeaderText.Text = "THÊM THÔNG TIN BÀN";
@@ -42,11 +43,11 @@ namespace GUI_QLCafe
         public string id = "";
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMaBan.Text))
-            {
-                MessageBox.Show("Vui lòng nhập mã bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtMaBan.Text))
+            //{
+            //    MessageBox.Show("Vui lòng nhập mã bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
             if (string.IsNullOrEmpty(txtTenBan.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,12 +58,12 @@ namespace GUI_QLCafe
             {
                 DTO_TableCF tl = new DTO_TableCF
                 (
-                       txtMaBan.Text,
+
                        txtTenBan.Text
                 );
 
 
-                if(formMode == FormMode.Them)
+                if (formMode == FormMode.Them)
                 {
                     if (string.IsNullOrEmpty(id))
                     {

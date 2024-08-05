@@ -233,5 +233,10 @@ namespace GUI_QLCafe
                 }
             }
         }
+
+        private void dgvDanhSachKhuyenMai_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

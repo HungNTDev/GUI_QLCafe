@@ -1,11 +1,9 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
-using GUI_QLCafe.ViewForm;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using ZedGraph;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode.Internal;
@@ -93,7 +91,7 @@ namespace GUI_QLCafe
                         total = total + (float)Convert.ToDouble(busBill.BillInfo(billDTO).Rows[i][3].ToString());
                     }
                     TotalBill = total - (total * voucher.PercentVoucher / 100);
-                    lbTongHoaDon.Text = "Tổng hóa đơn: "  + total + " VND";
+                    lbTongHoaDon.Text = "Tổng hóa đơn: " + total + " VND";
                     lbTongTien.Text = "Thành tiền: " + TotalBill + " VND";
                 }
             }

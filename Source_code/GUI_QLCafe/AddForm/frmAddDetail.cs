@@ -21,9 +21,17 @@ namespace GUI_QLCafe
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            Status = 1;
             Amount = Convert.ToInt32(nudAmount.Value.ToString());
-            this.Close();
+            if (Amount < 1)
+            {
+                MessageBox.Show("Số lượng không hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Status = 1;
+                this.Close();
+            }
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

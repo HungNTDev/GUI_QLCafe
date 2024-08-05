@@ -73,7 +73,7 @@ namespace GUI_QLCafe
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu cũ không đúng, cập nhật mật khẩu không thành công!" , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Mật khẩu cũ không đúng, cập nhật mật khẩu không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtNewPassword.Text = null;
                         txtOldPassword.Text = null;
                         txtRetypePassword.Text = null;

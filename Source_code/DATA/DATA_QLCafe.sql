@@ -1009,3 +1009,20 @@ as
 
 
    exec GetIdTable
+
+
+ create  proc [dbo].[AddDetailStatistic]
+		@IdBill int,
+		@NameProduct nvarchar(100),
+		@Amount int,
+		@Price float,
+		@TotalPrice float
+	as
+			DECLARE @ID int
+			set @ID = (select Top(1) IdStatistic from Statistic where IdBill = @IdBill order by IdStatistic desc)
+
+			insert into DetailStatistic(IdStatistic, NameProduct, Amount, Price, TotalPrice) values
+			(@ID, @NameProduct, @Amount, @Price, @TotalPrice)
+
+			CREATE OR ALTER PROC GetDetailStatistic 
+AS SELECT NameProduct AS N'Tên sản phẩm', sum(Amount) AS N'Số lượng', SUM(TotalPrice) AS N'Tổng tiền  (VND)' FROM DetailStatistic GROUP BY NameProduct

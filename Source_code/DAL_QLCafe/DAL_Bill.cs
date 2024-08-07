@@ -285,12 +285,16 @@ namespace DAL_QLCafe
                     cmd.CommandText = "AddStatistic";
                     cmd.Parameters.AddWithValue("@IdBill", Bill.IdBill);
                     cmd.Parameters.AddWithValue("@PercentVoucher", Voucher.PercentVoucher);
+                    cmd.Parameters.AddWithValue("@IdPayment", Bill.IdPayment);
+                    cmd.Parameters.AddWithValue("@IdVoucher", Voucher.IdVoucher);
                     cmd.Parameters.AddWithValue("@Total", Bill.TotalPrice);
+                    cmd.Parameters.AddWithValue("@IdTable", Bill.IdTable);
                     cmd.Parameters.AddWithValue("@NameStaff", Bill.NameStaff);
                     cmd.Parameters.AddWithValue("@CheckIn", Bill.dateCheckIn);
                     cmd.Parameters.AddWithValue("@CheckOut", Bill.dateCheckOut);
                     cmd.Parameters.AddWithValue("@namePayment", Bill.NamePayment);
                     cmd.Parameters.AddWithValue("@NameTable", Bill.NameTable);
+                    cmd.Parameters.AddWithValue("@DateCheckOut", Bill.DateCheckOut);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() > 0)
                     {

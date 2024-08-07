@@ -115,7 +115,7 @@ namespace GUI_QLCafe
                 billDTO.DateCheckIn = DateTime.ParseExact(CheckIn, "dd/MM/yyyy HH:mm:ss", null);
                 billDTO.NamePayment = cbPhuongThucTT.Text.Trim();
                 billDTO.NameTable = busTB.TableInfo(billDTO).Rows[0][1].ToString();
-                billDTO.IdVoucher = cbVoucher.SelectedText.ToString();
+                voucher.IdVoucher = cbVoucher.SelectedText.ToString();
                 billDTO.IdPayment = cbPhuongThucTT.SelectedValue.ToString();
             }
             catch (Exception) { }

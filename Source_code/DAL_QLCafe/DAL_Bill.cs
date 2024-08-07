@@ -574,5 +574,31 @@ namespace DAL_QLCafe
             }
             return false;
         }
+
+        public DataTable GetBillById(string idBill)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "GetBillById";
+                    cmd.Parameters.AddWithValue("@IdBill", idBill);
+                    conn.Open();
+                    DataTable dtBill = new DataTable();
+                    dtBill.Load(cmd.ExecuteReader());
+                    return dtBill;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

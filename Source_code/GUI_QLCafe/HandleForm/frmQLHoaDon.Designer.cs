@@ -183,6 +183,7 @@
             this.dgvDSHD.ThemeStyle.RowsStyle.Height = 35;
             this.dgvDSHD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSHD.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDSHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellContentClick);
             // 
             // btnRefesh
             // 
@@ -391,7 +392,7 @@
             this.Name = "frmQLHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLHoaDon";
-            this.Load += new System.EventHandler(this.frmQLHoaDon_Load_1);
+            this.Load += new System.EventHandler(this.frmQLHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -418,5 +419,6 @@
         private System.Windows.Forms.Label lbPageLine;
         private Guna.UI2.WinForms.Guna2Button btnLastPage;
         private System.Windows.Forms.Label lbTotalRows;
+        private System.Drawing.Printing.PrintDocument printDocument;
     }
 }

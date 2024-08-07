@@ -43,6 +43,26 @@
             this.hethongTransition = new System.Windows.Forms.Timer(this.components);
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.picBackGround = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.flpPOS = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPOS = new Guna.UI2.WinForms.Guna2Button();
+            this.panelBan = new System.Windows.Forms.Panel();
+            this.btnBan = new Guna.UI2.WinForms.Guna2Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
+            this.flpQuanLy = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelQuanLy = new System.Windows.Forms.Panel();
+            this.btnQuanLy = new Guna.UI2.WinForms.Guna2Button();
+            this.panelQLBan = new System.Windows.Forms.Panel();
+            this.btnQLBan = new Guna.UI2.WinForms.Guna2Button();
+            this.panelQLVoucher = new System.Windows.Forms.Panel();
+            this.btnQLVoucher = new Guna.UI2.WinForms.Guna2Button();
+            this.panelQLHoaDon = new System.Windows.Forms.Panel();
+            this.btnQLHoaDon = new Guna.UI2.WinForms.Guna2Button();
+            this.panelQLNhanVien = new System.Windows.Forms.Panel();
+            this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
+            this.panelQLSanPham = new System.Windows.Forms.Panel();
+            this.btnQLSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.timer_ThoiGian = new System.Windows.Forms.Timer(this.components);
             this.panelDangXuat = new System.Windows.Forms.Panel();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
@@ -63,35 +83,26 @@
             this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.panelThongKeSLHoaDon = new System.Windows.Forms.Panel();
             this.btnThongKeSLHoaDon = new Guna.UI2.WinForms.Guna2Button();
-            this.flpQuanLy = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelQuanLy = new System.Windows.Forms.Panel();
-            this.btnQuanLy = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLBan = new System.Windows.Forms.Panel();
-            this.btnQLBan = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLVoucher = new System.Windows.Forms.Panel();
-            this.btnQLVoucher = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLHoaDon = new System.Windows.Forms.Panel();
-            this.btnQLHoaDon = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLNhanVien = new System.Windows.Forms.Panel();
-            this.btnQLNhanVien = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLSanPham = new System.Windows.Forms.Panel();
-            this.btnQLSanPham = new Guna.UI2.WinForms.Guna2Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.picLogo1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flpSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.messageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.posTransition = new System.Windows.Forms.Timer(this.components);
-            this.flpPOS = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Menu = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Ban = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).BeginInit();
+            this.flpPOS.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelBan.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.flpQuanLy.SuspendLayout();
+            this.panelQuanLy.SuspendLayout();
+            this.panelQLBan.SuspendLayout();
+            this.panelQLVoucher.SuspendLayout();
+            this.panelQLHoaDon.SuspendLayout();
+            this.panelQLNhanVien.SuspendLayout();
+            this.panelQLSanPham.SuspendLayout();
             this.panelDangXuat.SuspendLayout();
             this.flpHuongDan.SuspendLayout();
             this.panelHuongDan.SuspendLayout();
@@ -103,20 +114,9 @@
             this.flpThongKe.SuspendLayout();
             this.panelThongKe.SuspendLayout();
             this.panelThongKeSLHoaDon.SuspendLayout();
-            this.flpQuanLy.SuspendLayout();
-            this.panelQuanLy.SuspendLayout();
-            this.panelQLBan.SuspendLayout();
-            this.panelQLVoucher.SuspendLayout();
-            this.panelQLHoaDon.SuspendLayout();
-            this.panelQLNhanVien.SuspendLayout();
-            this.panelQLSanPham.SuspendLayout();
-            this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.flpSidebar.SuspendLayout();
-            this.flpPOS.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -239,297 +239,114 @@
             this.picBackGround.TabStop = false;
             this.picBackGround.UseTransparentBackground = true;
             // 
-            // timer_ThoiGian
+            // flpPOS
             // 
-            this.timer_ThoiGian.Enabled = true;
-            this.timer_ThoiGian.Tick += new System.EventHandler(this.timer_ThoiGian_Tick);
+            this.flpPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpPOS.Controls.Add(this.panel3);
+            this.flpPOS.Controls.Add(this.panelBan);
+            this.flpPOS.Controls.Add(this.panel5);
+            this.flpPOS.Location = new System.Drawing.Point(3, 220);
+            this.flpPOS.Name = "flpPOS";
+            this.flpPOS.Size = new System.Drawing.Size(300, 45);
+            this.flpPOS.TabIndex = 3;
             // 
-            // panelDangXuat
+            // panel3
             // 
-            this.panelDangXuat.Controls.Add(this.btnDangXuat);
-            this.panelDangXuat.Location = new System.Drawing.Point(3, 475);
-            this.panelDangXuat.Name = "panelDangXuat";
-            this.panelDangXuat.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelDangXuat.Size = new System.Drawing.Size(300, 45);
-            this.panelDangXuat.TabIndex = 2;
+            this.panel3.Controls.Add(this.btnPOS);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(330, 48);
+            this.panel3.TabIndex = 2;
             // 
-            // btnDangXuat
+            // btnPOS
             // 
-            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDangXuat.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
-            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangXuat.ImageOffset = new System.Drawing.Point(7, 0);
-            this.btnDangXuat.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDangXuat.Location = new System.Drawing.Point(0, -16);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnDangXuat.Size = new System.Drawing.Size(345, 76);
-            this.btnDangXuat.TabIndex = 3;
-            this.btnDangXuat.Text = "          Đăng xuất";
-            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            this.btnPOS.CausesValidation = false;
+            this.btnPOS.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnPOS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPOS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPOS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPOS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPOS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPOS.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPOS.ForeColor = System.Drawing.Color.White;
+            this.btnPOS.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnPOS.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPOS.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnPOS.Image = ((System.Drawing.Image)(resources.GetObject("btnPOS.Image")));
+            this.btnPOS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPOS.ImageOffset = new System.Drawing.Point(35, 0);
+            this.btnPOS.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnPOS.Location = new System.Drawing.Point(-33, -14);
+            this.btnPOS.Name = "btnPOS";
+            this.btnPOS.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnPOS.Size = new System.Drawing.Size(357, 73);
+            this.btnPOS.TabIndex = 3;
+            this.btnPOS.Text = "                 POS";
+            this.btnPOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
-            // flpHuongDan
+            // panelBan
             // 
-            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.flpHuongDan.Controls.Add(this.panelHuongDan);
-            this.flpHuongDan.Controls.Add(this.panelHuongDanSD);
-            this.flpHuongDan.Controls.Add(this.panelGioiThieuPM);
-            this.flpHuongDan.Location = new System.Drawing.Point(3, 424);
-            this.flpHuongDan.Name = "flpHuongDan";
-            this.flpHuongDan.Size = new System.Drawing.Size(300, 45);
-            this.flpHuongDan.TabIndex = 3;
+            this.panelBan.Controls.Add(this.btnBan);
+            this.panelBan.Location = new System.Drawing.Point(3, 57);
+            this.panelBan.Name = "panelBan";
+            this.panelBan.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelBan.Size = new System.Drawing.Size(330, 45);
+            this.panelBan.TabIndex = 2;
             // 
-            // panelHuongDan
+            // btnBan
             // 
-            this.panelHuongDan.Controls.Add(this.btnHuongDan);
-            this.panelHuongDan.Location = new System.Drawing.Point(3, 3);
-            this.panelHuongDan.Name = "panelHuongDan";
-            this.panelHuongDan.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelHuongDan.Size = new System.Drawing.Size(300, 45);
-            this.panelHuongDan.TabIndex = 2;
+            this.btnBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.btnBan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBan.ForeColor = System.Drawing.Color.White;
+            this.btnBan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnBan.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnBan.Image = ((System.Drawing.Image)(resources.GetObject("btnBan.Image")));
+            this.btnBan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBan.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnBan.Location = new System.Drawing.Point(0, -16);
+            this.btnBan.Name = "btnBan";
+            this.btnBan.Size = new System.Drawing.Size(345, 76);
+            this.btnBan.TabIndex = 3;
+            this.btnBan.Text = "          Bàn";
+            this.btnBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
             // 
-            // btnHuongDan
+            // panel5
             // 
-            this.btnHuongDan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHuongDan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHuongDan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHuongDan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHuongDan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDan.Image")));
-            this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHuongDan.Location = new System.Drawing.Point(0, -16);
-            this.btnHuongDan.Name = "btnHuongDan";
-            this.btnHuongDan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnHuongDan.Size = new System.Drawing.Size(345, 76);
-            this.btnHuongDan.TabIndex = 3;
-            this.btnHuongDan.Text = "         Hướng dẫn";
-            this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
+            this.panel5.Controls.Add(this.btnMenu);
+            this.panel5.Location = new System.Drawing.Point(3, 108);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panel5.Size = new System.Drawing.Size(330, 45);
+            this.panel5.TabIndex = 2;
             // 
-            // panelHuongDanSD
+            // btnMenu
             // 
-            this.panelHuongDanSD.Controls.Add(this.guna2Button1);
-            this.panelHuongDanSD.Location = new System.Drawing.Point(3, 54);
-            this.panelHuongDanSD.Name = "panelHuongDanSD";
-            this.panelHuongDanSD.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelHuongDanSD.Size = new System.Drawing.Size(300, 45);
-            this.panelHuongDanSD.TabIndex = 2;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button1.Location = new System.Drawing.Point(0, -16);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(345, 76);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "          Hướng dẫn sử dụng PM";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // panelGioiThieuPM
-            // 
-            this.panelGioiThieuPM.BackColor = System.Drawing.Color.White;
-            this.panelGioiThieuPM.Controls.Add(this.guna2Button2);
-            this.panelGioiThieuPM.Location = new System.Drawing.Point(3, 105);
-            this.panelGioiThieuPM.Name = "panelGioiThieuPM";
-            this.panelGioiThieuPM.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelGioiThieuPM.Size = new System.Drawing.Size(300, 45);
-            this.panelGioiThieuPM.TabIndex = 2;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(0, -16);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(345, 76);
-            this.guna2Button2.TabIndex = 3;
-            this.guna2Button2.Text = "          Giới thiệu phần mềm";
-            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // flpHeThong
-            // 
-            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.flpHeThong.Controls.Add(this.panelHeThong);
-            this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
-            this.flpHeThong.Location = new System.Drawing.Point(3, 373);
-            this.flpHeThong.Name = "flpHeThong";
-            this.flpHeThong.Size = new System.Drawing.Size(300, 45);
-            this.flpHeThong.TabIndex = 4;
-            // 
-            // panelHeThong
-            // 
-            this.panelHeThong.Controls.Add(this.btnHeThong);
-            this.panelHeThong.Location = new System.Drawing.Point(3, 3);
-            this.panelHeThong.Name = "panelHeThong";
-            this.panelHeThong.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelHeThong.Size = new System.Drawing.Size(300, 45);
-            this.panelHeThong.TabIndex = 2;
-            // 
-            // btnHeThong
-            // 
-            this.btnHeThong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHeThong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHeThong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHeThong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHeThong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnHeThong.Image = ((System.Drawing.Image)(resources.GetObject("btnHeThong.Image")));
-            this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHeThong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHeThong.Location = new System.Drawing.Point(0, -16);
-            this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnHeThong.Size = new System.Drawing.Size(345, 76);
-            this.btnHeThong.TabIndex = 3;
-            this.btnHeThong.Text = "         Hệ thống";
-            this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
-            // 
-            // panelDoiMatKhau
-            // 
-            this.panelDoiMatKhau.Controls.Add(this.btnDoiMatKhau);
-            this.panelDoiMatKhau.Location = new System.Drawing.Point(3, 54);
-            this.panelDoiMatKhau.Name = "panelDoiMatKhau";
-            this.panelDoiMatKhau.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelDoiMatKhau.Size = new System.Drawing.Size(300, 45);
-            this.panelDoiMatKhau.TabIndex = 2;
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDoiMatKhau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDoiMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDoiMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDoiMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnDoiMatKhau.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnDoiMatKhau.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
-            this.btnDoiMatKhau.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDoiMatKhau.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, -16);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(345, 76);
-            this.btnDoiMatKhau.TabIndex = 3;
-            this.btnDoiMatKhau.Text = "          Đổi mật khẩu";
-            this.btnDoiMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
-            // 
-            // flpThongKe
-            // 
-            this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.flpThongKe.Controls.Add(this.panelThongKe);
-            this.flpThongKe.Controls.Add(this.panelThongKeSLHoaDon);
-            this.flpThongKe.Location = new System.Drawing.Point(3, 322);
-            this.flpThongKe.Name = "flpThongKe";
-            this.flpThongKe.Size = new System.Drawing.Size(300, 45);
-            this.flpThongKe.TabIndex = 3;
-            // 
-            // panelThongKe
-            // 
-            this.panelThongKe.Controls.Add(this.btnThongKe);
-            this.panelThongKe.Location = new System.Drawing.Point(3, 3);
-            this.panelThongKe.Name = "panelThongKe";
-            this.panelThongKe.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelThongKe.Size = new System.Drawing.Size(300, 45);
-            this.panelThongKe.TabIndex = 2;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThongKe.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
-            this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKe.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThongKe.Location = new System.Drawing.Point(0, -16);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnThongKe.Size = new System.Drawing.Size(324, 76);
-            this.btnThongKe.TabIndex = 3;
-            this.btnThongKe.Text = "         Thống kê";
-            this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // panelThongKeSLHoaDon
-            // 
-            this.panelThongKeSLHoaDon.Controls.Add(this.btnThongKeSLHoaDon);
-            this.panelThongKeSLHoaDon.Location = new System.Drawing.Point(3, 54);
-            this.panelThongKeSLHoaDon.Name = "panelThongKeSLHoaDon";
-            this.panelThongKeSLHoaDon.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelThongKeSLHoaDon.Size = new System.Drawing.Size(300, 45);
-            this.panelThongKeSLHoaDon.TabIndex = 2;
-            // 
-            // btnThongKeSLHoaDon
-            // 
-            this.btnThongKeSLHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKeSLHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThongKeSLHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThongKeSLHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKeSLHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btnThongKeSLHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKeSLHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnThongKeSLHoaDon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnThongKeSLHoaDon.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThongKeSLHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeSLHoaDon.Image")));
-            this.btnThongKeSLHoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKeSLHoaDon.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThongKeSLHoaDon.Location = new System.Drawing.Point(0, -16);
-            this.btnThongKeSLHoaDon.Name = "btnThongKeSLHoaDon";
-            this.btnThongKeSLHoaDon.Size = new System.Drawing.Size(345, 76);
-            this.btnThongKeSLHoaDon.TabIndex = 3;
-            this.btnThongKeSLHoaDon.Text = "          Thống kê doanh thu";
-            this.btnThongKeSLHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongKeSLHoaDon.Click += new System.EventHandler(this.btnThongKeSLHoaDon_Click);
+            this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnMenu.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenu.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnMenu.Location = new System.Drawing.Point(0, -16);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(345, 76);
+            this.btnMenu.TabIndex = 3;
+            this.btnMenu.Text = "          Menu Coffee";
+            this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // flpQuanLy
             // 
@@ -567,7 +384,7 @@
             this.btnQuanLy.ForeColor = System.Drawing.Color.White;
             this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnQuanLy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnQuanLy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnQuanLy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLy.Image")));
             this.btnQuanLy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuanLy.ImageOffset = new System.Drawing.Point(35, 0);
@@ -736,43 +553,297 @@
             this.btnQLSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLSanPham.Click += new System.EventHandler(this.btnQLSanPham_Click);
             // 
-            // panelMenu
+            // timer_ThoiGian
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Location = new System.Drawing.Point(3, 3);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelMenu.Size = new System.Drawing.Size(300, 45);
-            this.panelMenu.TabIndex = 2;
+            this.timer_ThoiGian.Enabled = true;
+            this.timer_ThoiGian.Tick += new System.EventHandler(this.timer_ThoiGian_Tick);
             // 
-            // btnMenu
+            // panelDangXuat
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnMenu.CausesValidation = false;
-            this.btnMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMenu.FillColor = System.Drawing.Color.Transparent;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnMenu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnMenu.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenu.ImageOffset = new System.Drawing.Point(35, 0);
-            this.btnMenu.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnMenu.Location = new System.Drawing.Point(-30, -12);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnMenu.Size = new System.Drawing.Size(357, 76);
-            this.btnMenu.TabIndex = 3;
-            this.btnMenu.Text = "                  POS";
-            this.btnMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.panelDangXuat.Controls.Add(this.btnDangXuat);
+            this.panelDangXuat.Location = new System.Drawing.Point(3, 475);
+            this.panelDangXuat.Name = "panelDangXuat";
+            this.panelDangXuat.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelDangXuat.Size = new System.Drawing.Size(300, 45);
+            this.panelDangXuat.TabIndex = 2;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDangXuat.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
+            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.ImageOffset = new System.Drawing.Point(7, 0);
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, -16);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnDangXuat.Size = new System.Drawing.Size(345, 76);
+            this.btnDangXuat.TabIndex = 3;
+            this.btnDangXuat.Text = "          Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
+            // flpHuongDan
+            // 
+            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpHuongDan.Controls.Add(this.panelHuongDan);
+            this.flpHuongDan.Controls.Add(this.panelHuongDanSD);
+            this.flpHuongDan.Controls.Add(this.panelGioiThieuPM);
+            this.flpHuongDan.Location = new System.Drawing.Point(3, 373);
+            this.flpHuongDan.Name = "flpHuongDan";
+            this.flpHuongDan.Size = new System.Drawing.Size(300, 45);
+            this.flpHuongDan.TabIndex = 3;
+            // 
+            // panelHuongDan
+            // 
+            this.panelHuongDan.Controls.Add(this.btnHuongDan);
+            this.panelHuongDan.Location = new System.Drawing.Point(3, 3);
+            this.panelHuongDan.Name = "panelHuongDan";
+            this.panelHuongDan.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelHuongDan.Size = new System.Drawing.Size(300, 45);
+            this.panelHuongDan.TabIndex = 2;
+            // 
+            // btnHuongDan
+            // 
+            this.btnHuongDan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuongDan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuongDan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHuongDan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHuongDan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDan.Image")));
+            this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHuongDan.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHuongDan.Location = new System.Drawing.Point(0, -16);
+            this.btnHuongDan.Name = "btnHuongDan";
+            this.btnHuongDan.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnHuongDan.Size = new System.Drawing.Size(345, 76);
+            this.btnHuongDan.TabIndex = 3;
+            this.btnHuongDan.Text = "         Hướng dẫn";
+            this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
+            // 
+            // panelHuongDanSD
+            // 
+            this.panelHuongDanSD.Controls.Add(this.guna2Button1);
+            this.panelHuongDanSD.Location = new System.Drawing.Point(3, 54);
+            this.panelHuongDanSD.Name = "panelHuongDanSD";
+            this.panelHuongDanSD.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelHuongDanSD.Size = new System.Drawing.Size(300, 45);
+            this.panelHuongDanSD.TabIndex = 2;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button1.Location = new System.Drawing.Point(0, -16);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(345, 76);
+            this.guna2Button1.TabIndex = 3;
+            this.guna2Button1.Text = "          Hướng dẫn sử dụng PM";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // panelGioiThieuPM
+            // 
+            this.panelGioiThieuPM.BackColor = System.Drawing.Color.White;
+            this.panelGioiThieuPM.Controls.Add(this.guna2Button2);
+            this.panelGioiThieuPM.Location = new System.Drawing.Point(3, 105);
+            this.panelGioiThieuPM.Name = "panelGioiThieuPM";
+            this.panelGioiThieuPM.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelGioiThieuPM.Size = new System.Drawing.Size(300, 45);
+            this.panelGioiThieuPM.TabIndex = 2;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button2.Location = new System.Drawing.Point(0, -16);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(345, 76);
+            this.guna2Button2.TabIndex = 3;
+            this.guna2Button2.Text = "          Giới thiệu phần mềm";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // flpHeThong
+            // 
+            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpHeThong.Controls.Add(this.panelHeThong);
+            this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
+            this.flpHeThong.Location = new System.Drawing.Point(3, 424);
+            this.flpHeThong.Name = "flpHeThong";
+            this.flpHeThong.Size = new System.Drawing.Size(300, 45);
+            this.flpHeThong.TabIndex = 4;
+            // 
+            // panelHeThong
+            // 
+            this.panelHeThong.Controls.Add(this.btnHeThong);
+            this.panelHeThong.Location = new System.Drawing.Point(3, 3);
+            this.panelHeThong.Name = "panelHeThong";
+            this.panelHeThong.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelHeThong.Size = new System.Drawing.Size(300, 45);
+            this.panelHeThong.TabIndex = 2;
+            // 
+            // btnHeThong
+            // 
+            this.btnHeThong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHeThong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHeThong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHeThong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeThong.ForeColor = System.Drawing.Color.White;
+            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHeThong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnHeThong.Image = ((System.Drawing.Image)(resources.GetObject("btnHeThong.Image")));
+            this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHeThong.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHeThong.Location = new System.Drawing.Point(0, -16);
+            this.btnHeThong.Name = "btnHeThong";
+            this.btnHeThong.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnHeThong.Size = new System.Drawing.Size(345, 76);
+            this.btnHeThong.TabIndex = 3;
+            this.btnHeThong.Text = "         Hệ thống";
+            this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
+            // 
+            // panelDoiMatKhau
+            // 
+            this.panelDoiMatKhau.Controls.Add(this.btnDoiMatKhau);
+            this.panelDoiMatKhau.Location = new System.Drawing.Point(3, 54);
+            this.panelDoiMatKhau.Name = "panelDoiMatKhau";
+            this.panelDoiMatKhau.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelDoiMatKhau.Size = new System.Drawing.Size(300, 45);
+            this.panelDoiMatKhau.TabIndex = 2;
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDoiMatKhau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDoiMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDoiMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDoiMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
+            this.btnDoiMatKhau.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnDoiMatKhau.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
+            this.btnDoiMatKhau.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDoiMatKhau.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(0, -16);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(345, 76);
+            this.btnDoiMatKhau.TabIndex = 3;
+            this.btnDoiMatKhau.Text = "          Đổi mật khẩu";
+            this.btnDoiMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            // 
+            // flpThongKe
+            // 
+            this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpThongKe.Controls.Add(this.panelThongKe);
+            this.flpThongKe.Controls.Add(this.panelThongKeSLHoaDon);
+            this.flpThongKe.Location = new System.Drawing.Point(3, 322);
+            this.flpThongKe.Name = "flpThongKe";
+            this.flpThongKe.Size = new System.Drawing.Size(300, 45);
+            this.flpThongKe.TabIndex = 3;
+            // 
+            // panelThongKe
+            // 
+            this.panelThongKe.Controls.Add(this.btnThongKe);
+            this.panelThongKe.Location = new System.Drawing.Point(3, 3);
+            this.panelThongKe.Name = "panelThongKe";
+            this.panelThongKe.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelThongKe.Size = new System.Drawing.Size(300, 45);
+            this.panelThongKe.TabIndex = 2;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKe.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
+            this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKe.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThongKe.Location = new System.Drawing.Point(0, -16);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnThongKe.Size = new System.Drawing.Size(324, 76);
+            this.btnThongKe.TabIndex = 3;
+            this.btnThongKe.Text = "         Thống kê";
+            this.btnThongKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // panelThongKeSLHoaDon
+            // 
+            this.panelThongKeSLHoaDon.Controls.Add(this.btnThongKeSLHoaDon);
+            this.panelThongKeSLHoaDon.Location = new System.Drawing.Point(3, 54);
+            this.panelThongKeSLHoaDon.Name = "panelThongKeSLHoaDon";
+            this.panelThongKeSLHoaDon.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.panelThongKeSLHoaDon.Size = new System.Drawing.Size(300, 45);
+            this.panelThongKeSLHoaDon.TabIndex = 2;
+            // 
+            // btnThongKeSLHoaDon
+            // 
+            this.btnThongKeSLHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKeSLHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongKeSLHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThongKeSLHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThongKeSLHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.btnThongKeSLHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKeSLHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnThongKeSLHoaDon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnThongKeSLHoaDon.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThongKeSLHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeSLHoaDon.Image")));
+            this.btnThongKeSLHoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKeSLHoaDon.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThongKeSLHoaDon.Location = new System.Drawing.Point(0, -16);
+            this.btnThongKeSLHoaDon.Name = "btnThongKeSLHoaDon";
+            this.btnThongKeSLHoaDon.Size = new System.Drawing.Size(345, 76);
+            this.btnThongKeSLHoaDon.TabIndex = 3;
+            this.btnThongKeSLHoaDon.Text = "          Thống kê doanh thu";
+            this.btnThongKeSLHoaDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKeSLHoaDon.Click += new System.EventHandler(this.btnThongKeSLHoaDon_Click);
             // 
             // panelLogo
             // 
@@ -803,8 +874,8 @@
             this.flpSidebar.Controls.Add(this.flpPOS);
             this.flpSidebar.Controls.Add(this.flpQuanLy);
             this.flpSidebar.Controls.Add(this.flpThongKe);
-            this.flpSidebar.Controls.Add(this.flpHeThong);
             this.flpSidebar.Controls.Add(this.flpHuongDan);
+            this.flpSidebar.Controls.Add(this.flpHeThong);
             this.flpSidebar.Controls.Add(this.panelDangXuat);
             this.flpSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpSidebar.Location = new System.Drawing.Point(0, 52);
@@ -825,91 +896,6 @@
             // 
             this.posTransition.Interval = 10;
             this.posTransition.Tick += new System.EventHandler(this.posTransition_Tick);
-            // 
-            // flpPOS
-            // 
-            this.flpPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.flpPOS.Controls.Add(this.panelMenu);
-            this.flpPOS.Controls.Add(this.panel1);
-            this.flpPOS.Controls.Add(this.panel2);
-            this.flpPOS.Location = new System.Drawing.Point(3, 220);
-            this.flpPOS.Name = "flpPOS";
-            this.flpPOS.Size = new System.Drawing.Size(300, 45);
-            this.flpPOS.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.panel1.Controls.Add(this.btn_Menu);
-            this.panel1.Location = new System.Drawing.Point(3, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(300, 45);
-            this.panel1.TabIndex = 2;
-            // 
-            // btn_Menu
-            // 
-            this.btn_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btn_Menu.CausesValidation = false;
-            this.btn_Menu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btn_Menu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Menu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Menu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Menu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Menu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btn_Menu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Menu.ForeColor = System.Drawing.Color.White;
-            this.btn_Menu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btn_Menu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
-            this.btn_Menu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Menu.ImageOffset = new System.Drawing.Point(35, 0);
-            this.btn_Menu.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_Menu.Location = new System.Drawing.Point(-30, -12);
-            this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btn_Menu.Size = new System.Drawing.Size(357, 76);
-            this.btn_Menu.TabIndex = 3;
-            this.btn_Menu.Text = "                  Menu Coffee";
-            this.btn_Menu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.panel2.Controls.Add(this.btn_Ban);
-            this.panel2.Location = new System.Drawing.Point(3, 105);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(300, 45);
-            this.panel2.TabIndex = 2;
-            // 
-            // btn_Ban
-            // 
-            this.btn_Ban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btn_Ban.CausesValidation = false;
-            this.btn_Ban.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btn_Ban.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Ban.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Ban.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Ban.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Ban.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
-            this.btn_Ban.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ban.ForeColor = System.Drawing.Color.White;
-            this.btn_Ban.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btn_Ban.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_Ban.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ban.Image")));
-            this.btn_Ban.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Ban.ImageOffset = new System.Drawing.Point(35, 0);
-            this.btn_Ban.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_Ban.Location = new System.Drawing.Point(-30, -12);
-            this.btn_Ban.Name = "btn_Ban";
-            this.btn_Ban.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btn_Ban.Size = new System.Drawing.Size(357, 76);
-            this.btn_Ban.TabIndex = 3;
-            this.btn_Ban.Text = "                  Bàn";
-            this.btn_Ban.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Ban.Click += new System.EventHandler(this.btn_Ban_Click);
             // 
             // frmMainQLCF
             // 
@@ -932,6 +918,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).EndInit();
+            this.flpPOS.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panelBan.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.flpQuanLy.ResumeLayout(false);
+            this.panelQuanLy.ResumeLayout(false);
+            this.panelQLBan.ResumeLayout(false);
+            this.panelQLVoucher.ResumeLayout(false);
+            this.panelQLHoaDon.ResumeLayout(false);
+            this.panelQLNhanVien.ResumeLayout(false);
+            this.panelQLSanPham.ResumeLayout(false);
             this.panelDangXuat.ResumeLayout(false);
             this.flpHuongDan.ResumeLayout(false);
             this.panelHuongDan.ResumeLayout(false);
@@ -943,20 +940,9 @@
             this.flpThongKe.ResumeLayout(false);
             this.panelThongKe.ResumeLayout(false);
             this.panelThongKeSLHoaDon.ResumeLayout(false);
-            this.flpQuanLy.ResumeLayout(false);
-            this.panelQuanLy.ResumeLayout(false);
-            this.panelQLBan.ResumeLayout(false);
-            this.panelQLVoucher.ResumeLayout(false);
-            this.panelQLHoaDon.ResumeLayout(false);
-            this.panelQLNhanVien.ResumeLayout(false);
-            this.panelQLSanPham.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).EndInit();
             this.flpSidebar.ResumeLayout(false);
-            this.flpPOS.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -979,8 +965,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpSidebar;
         private System.Windows.Forms.Panel panelLogo;
         private Guna.UI2.WinForms.Guna2PictureBox picLogo1;
-        private System.Windows.Forms.Panel panelMenu;
-        private Guna.UI2.WinForms.Guna2Button btnMenu;
         private System.Windows.Forms.FlowLayoutPanel flpQuanLy;
         private System.Windows.Forms.Panel panelQuanLy;
         private Guna.UI2.WinForms.Guna2Button btnQuanLy;
@@ -1017,9 +1001,11 @@
         private Guna.UI2.WinForms.Guna2MessageDialog messageDialog;
         private System.Windows.Forms.Timer posTransition;
         private System.Windows.Forms.FlowLayoutPanel flpPOS;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btn_Menu;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button btn_Ban;
+        private System.Windows.Forms.Panel panel3;
+        private Guna.UI2.WinForms.Guna2Button btnPOS;
+        private System.Windows.Forms.Panel panelBan;
+        private Guna.UI2.WinForms.Guna2Button btnBan;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI2.WinForms.Guna2Button btnMenu;
     }
 }

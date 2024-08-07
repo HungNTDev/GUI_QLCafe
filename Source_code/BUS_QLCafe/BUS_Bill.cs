@@ -113,5 +113,10 @@ namespace BUS_QLCafe
         {
             return dal.AddProductInBill(Bill, amount);
         }
+
+        public DataTable GetBillById(string idBill)
+        {
+            return dal.GetBillById(idBill);
+        }
     }
 }

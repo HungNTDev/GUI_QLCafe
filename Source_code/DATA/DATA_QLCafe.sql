@@ -1006,7 +1006,26 @@ end
 -- Lấy id 
 create proc GetIdTable
 as
+   exec GetIdTable
 
+-- XỬ LÝ IN HÓA ĐƠN
+CREATE OR ALTER PROC GetBillById @IdBill NVARCHAR(50)
+AS
+BEGIN
+	SELECT 
+	a.IdBill AS N'Mã hóa đơn',
+	a.NameTable AS N'Tên bàn',
+	b.NameProduct AS N'Tên sản phẩm',
+	b.Amount AS N'Số lượng',
+	a.PercentVoucher AS N'Phần trăm khuyến mãi', 
+	a.NamePayment AS N'Phương thức thanh toán', 
+	a.CheckIn AS N'Giờ vào', 
+	a.CheckOut AS N'Giờ ra', 
+	a.Total AS N'Tổng tiền (VND)'
+	FROM Statistic a
+	INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+	WHERE a.IdBill = @IdBill;
+END
 
    exec GetIdTable
 

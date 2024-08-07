@@ -40,6 +40,7 @@ namespace GUI_QLCafe
             // Hiển thị ngày + giờ trên lbNgay
             lbNgay.Text = DateTime.Now.ToShortDateString() + "  |  " + DateTime.Now.ToLongTimeString();
             PhanQuyen();
+            posExpand = flpPOS.Height >= 174;
         }
 
         public void reLogin()
@@ -254,17 +255,18 @@ namespace GUI_QLCafe
             }
         }
 
-        bool posExpand = true;
+
+        bool posExpand;
         private void posTransition_Tick(object sender, EventArgs e)
         {
-            // Nếu chưa mở rộng
-            if (posExpand == false)
+            //Nếu chưa mở rộng
+            if (!posExpand)
             {
                 // Tăng chiều cao lên 5
                 flpPOS.Height += 15;
 
                 // Nếu chiều cao đạt 300
-                if (flpPOS.Height >= 170)
+                if (flpPOS.Height >= 174)
                 {
                     posTransition.Stop(); // Dừng timer
                     posExpand = true; // Mở rộng
@@ -284,6 +286,22 @@ namespace GUI_QLCafe
             }
         }
 
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            posExpand = flpPOS.Height >= 174;
+            posTransition.Start();
+        }
+
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmPOS());
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmMenuProduct());
+        }
+
         private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -292,11 +310,6 @@ namespace GUI_QLCafe
         private void picHam_Click(object sender, EventArgs e)
         {
             //sidebarTransition.Start();
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            posTransition.Start();
         }
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
@@ -372,16 +385,6 @@ namespace GUI_QLCafe
                 frmDangNhap dangNhap = new frmDangNhap();
                 dangNhap.Show();
             }
-        }
-
-        private void btn_Menu_Click(object sender, EventArgs e)
-        {
-            AddControls(new frmMenu());
-        }
-
-        private void btn_Ban_Click(object sender, EventArgs e)
-        {
-            AddControls(new frmPOS());
         }
     }
 }

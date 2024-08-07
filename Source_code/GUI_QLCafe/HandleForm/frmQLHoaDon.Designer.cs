@@ -40,6 +40,7 @@
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lblHeaderText = new System.Windows.Forms.Label();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +140,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvDSHD.Location = new System.Drawing.Point(0, 0);
+            this.dgvDSHD.Location = new System.Drawing.Point(50, 206);
             this.dgvDSHD.Name = "dgvDSHD";
             this.dgvDSHD.ReadOnly = true;
             this.dgvDSHD.RowHeadersVisible = false;
@@ -173,6 +174,7 @@
             this.dgvDSHD.ThemeStyle.RowsStyle.Height = 35;
             this.dgvDSHD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSHD.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDSHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellContentClick);
             // 
             // btnRefesh
             // 
@@ -217,6 +219,9 @@
             this.lblHeaderText.TabIndex = 0;
             this.lblHeaderText.Text = "DANH SÁCH HÓA ĐƠN";
             // 
+            // printDocument
+            // 
+            // 
             // frmQLHoaDon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -232,7 +237,7 @@
             this.Name = "frmQLHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLHoaDon";
-            this.Load += new System.EventHandler(this.frmQLHoaDon_Load_1);
+            this.Load += new System.EventHandler(this.frmQLHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -248,5 +253,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private System.Windows.Forms.Label lblHeaderText;
+        private System.Drawing.Printing.PrintDocument printDocument;
     }
 }

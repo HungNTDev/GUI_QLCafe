@@ -50,12 +50,16 @@ namespace GUI_QLCafe
             }
             else if (dgvDSBan.CurrentCell.OwningColumn.Name == "dgvCapNhatTrangThaiBan")
             {
-                frmAddBan addban = new frmAddBan();
+                frmAddBan addban = new frmAddBan
+                {
+                    formMode = frmAddBan.FormMode.Sua
+                };
 
                 string maBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvMBan"].Value);
                 addban.id = maBan;
                 addban.txtMaBan.Text = maBan;
                 addban.txtTenBan.Text = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTBan"].Value);
+                addban.currentTenBan = Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTBan"].Value);
 
                 if (Convert.ToString(dgvDSBan.CurrentRow.Cells["dgvTrangThaiHoatDong"].Value) == "Hoạt Động")
                 {

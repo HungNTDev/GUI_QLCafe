@@ -13,6 +13,7 @@ namespace GUI_QLCafe
 
         public enum FormMode { Them, Sua }
 
+        public string currentTenBan;
         public frmAddBan()
         {
             InitializeComponent();
@@ -53,11 +54,7 @@ namespace GUI_QLCafe
             if (string.IsNullOrEmpty(txtTenBan.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (table.KiemTra(txtTenBan.Text))
-            {
-                MessageBox.Show("Tên bàn đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTenBan.Focus();
                 return;
             }
 
@@ -67,6 +64,12 @@ namespace GUI_QLCafe
                 return;
             }
 
+            if (txtTenBan.Text != currentTenBan && table.KiemTra(txtTenBan.Text))
+            {
+                MessageBox.Show("Tên bàn đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenBan.Focus();
+                return;
+            }
             try
             {
                 DTO_TableCF tl = new DTO_TableCF

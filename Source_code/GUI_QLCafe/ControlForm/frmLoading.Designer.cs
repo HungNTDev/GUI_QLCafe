@@ -64,8 +64,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.ErrorImage = null;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.ImageRotate = 0F;
+            this.picLogo.InitialImage = null;
             this.picLogo.Location = new System.Drawing.Point(318, 36);
             this.picLogo.Name = "picLogo";
             this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -80,11 +82,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbText.AutoSize = true;
-            this.lbText.Font = new System.Drawing.Font("Cooper Black", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbText.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbText.Location = new System.Drawing.Point(192, 198);
             this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(567, 42);
+            this.lbText.Size = new System.Drawing.Size(542, 50);
             this.lbText.TabIndex = 3;
             this.lbText.Text = "Hệ thống quản lý quán cà phê";
             // 

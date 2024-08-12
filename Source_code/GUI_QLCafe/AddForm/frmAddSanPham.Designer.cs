@@ -120,13 +120,14 @@
             this.txtDuongDan.Location = new System.Drawing.Point(456, 422);
             this.txtDuongDan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDuongDan.Name = "txtDuongDan";
-            this.txtDuongDan.PasswordChar = '*';
+            this.txtDuongDan.PasswordChar = '\0';
             this.txtDuongDan.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtDuongDan.PlaceholderText = "";
             this.txtDuongDan.ReadOnly = true;
             this.txtDuongDan.SelectedText = "";
             this.txtDuongDan.Size = new System.Drawing.Size(271, 37);
             this.txtDuongDan.TabIndex = 20;
+            this.txtDuongDan.Visible = false;
             // 
             // txtTenSanPham
             // 
@@ -325,7 +326,7 @@
             this.rdoCo.BackColor = System.Drawing.Color.White;
             this.rdoCo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoCo.ForeColor = System.Drawing.Color.Black;
-            this.rdoCo.Location = new System.Drawing.Point(15, 59);
+            this.rdoCo.Location = new System.Drawing.Point(60, 59);
             this.rdoCo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoCo.Name = "rdoCo";
             this.rdoCo.Size = new System.Drawing.Size(96, 27);

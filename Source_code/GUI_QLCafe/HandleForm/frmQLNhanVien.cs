@@ -317,7 +317,7 @@ namespace GUI_QLCafe
                     //rdoQuanTri.Enabled = false;
                     //rdoChuSoHuu.Enabled = false;
 
-                    //txtEmail.Enabled = false;
+                    txtEmail.Enabled = false;
                     //txtTen.Enabled = false;
                     //btnMoHinh.Enabled = false;
                     //btnSu.Enabled = false;

@@ -76,8 +76,8 @@ namespace DAL_QLCafe
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateTable ";
 
-                    cmd.Parameters.AddWithValue("@IdTable", obj.IdTable);
-                    cmd.Parameters.AddWithValue("@NameTable", obj.NameTable);
+                    cmd.Parameters.AddWithValue("@idTable", obj.IdTable);
+                    cmd.Parameters.AddWithValue("@nameTable", obj.NameTable);
                     cmd.Parameters.AddWithValue("@statusTableCF", obj.StatusTableCF);
 
                     conn.Open();

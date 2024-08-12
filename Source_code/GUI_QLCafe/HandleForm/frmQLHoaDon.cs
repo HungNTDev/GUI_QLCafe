@@ -2,8 +2,8 @@
 using System;
 using System.Data;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Drawing.Printing;
+using System.Windows.Forms;
 
 namespace GUI_QLCafe
 {
@@ -22,7 +22,9 @@ namespace GUI_QLCafe
 
         private void frmQLHoaDon_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadPage();
+            currentPageIndex = 1;
+            lbCurrentPage.Text = currentPageIndex.ToString();
             AddButtonColumns();
         }
 
@@ -34,7 +36,7 @@ namespace GUI_QLCafe
         private void btnRefesh_Click(object sender, System.EventArgs e)
         {
             txtTimKiem.Clear();
-            LoadData();
+            LoadPage();
         }
         private void LoadPage()
         {
@@ -42,13 +44,14 @@ namespace GUI_QLCafe
             {
                 totalRows = busbill.ToTalBill();
                 totalPages = (int)Math.Ceiling((double)totalRows / PageSize);
-                //lbTotalPage.Text = totalPages.ToString();
+                lbTotalPage.Text = totalPages.ToString();
 
                 DataTable dt = busbill.GetPagedBill(currentPageIndex, PageSize);
                 dgvDSHD.DataSource = dt;
 
                 dgvDSHD.Refresh();
-                //lbTotalRows.Text = "Tổng số dòng: " + totalRows.ToString();
+
+                lbTotalRows.Text = "Tổng số dòng: " + totalRows.ToString();
             }
             catch (Exception ex)
             {
@@ -109,15 +112,9 @@ namespace GUI_QLCafe
                 {
                     MessageBox.Show("Không tìm thấy hóa đơn", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadPage();
                 }
             }
-        }
-
-
-        private void btnRefesh_Click_1(object sender, EventArgs e)
-        {
-            txtTimKiem.Clear();
-            LoadData();
         }
 
         private void AddButtonColumns()
@@ -129,7 +126,7 @@ namespace GUI_QLCafe
             printColumn.UseColumnTextForButtonValue = true;
             dgvDSHD.Columns.Add(printColumn);
 
-            dgvDSHD.CellContentClick += dgvDSHD_CellContentClick;
+            //dgvDSHD.CellContentClick += dgvDSHD_CellContentClick;
         }
 
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -142,7 +139,7 @@ namespace GUI_QLCafe
             int startY = 10;
             int offset = 40;
 
-            e.Graphics.DrawString("HÓA ĐƠN THANH TOÁN", new Font("Arial", 35, FontStyle.Bold), Brushes.Black, new Point(155,20));
+            e.Graphics.DrawString("HÓA ĐƠN THANH TOÁN", new Font("Arial", 35, FontStyle.Bold), Brushes.Black, new Point(155, 20));
             startY += 65;
             e.Graphics.DrawString("_______________________________________________________________________________________", font, Brushes.Black, startX, startY);
             startY += 30;
@@ -169,7 +166,7 @@ namespace GUI_QLCafe
                 e.Graphics.DrawString(amount, new Font("Arial", 16, FontStyle.Bold), Brushes.Black, startX + 320, startY + offset);
                 e.Graphics.DrawString(price, new Font("Arial", 16, FontStyle.Bold), Brushes.Black, startX + 400, startY + offset);
                 e.Graphics.DrawString(totalprice, new Font("Arial", 16, FontStyle.Bold), Brushes.Black, startX + 550, startY + offset);
-                
+
                 offset += (int)fontHeight + 10;
             }
 
@@ -189,17 +186,17 @@ namespace GUI_QLCafe
             printDocument.PrintPage += printDocument_PrintPage;
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog
             {
-                Document = printDocument,   
+                Document = printDocument,
                 Width = 800,
                 Height = 600
             };
 
-            printPreviewDialog.ShowDialog();    
+            printPreviewDialog.ShowDialog();
         }
 
         private void dgvDSHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && dgvDSHD.Columns[e.ColumnIndex].Name == "Print")
+            if (e.RowIndex >= 0 && dgvDSHD.Columns[e.ColumnIndex].Name == "Print")
             {
                 string idBill = dgvDSHD.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString();
                 PrintBill(idBill); ;

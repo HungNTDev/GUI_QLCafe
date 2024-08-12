@@ -30,28 +30,31 @@ namespace GUI_QLCafe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLVoucher));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLVoucher));
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.shapeLine = new Guna.UI2.WinForms.Guna2Shapes();
-            this.btnThem = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panelFooter = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.btnFirstPage = new Guna.UI2.WinForms.Guna2Button();
             this.lbTotalPage = new System.Windows.Forms.Label();
             this.lbCurrentPage = new System.Windows.Forms.Label();
-            this.btnPrev = new Guna.UI2.WinForms.Guna2Button();
             this.lbPageLine = new System.Windows.Forms.Label();
             this.btnLastPage = new Guna.UI2.WinForms.Guna2Button();
             this.lbTotalRows = new System.Windows.Forms.Label();
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lblHeaderText = new System.Windows.Forms.Label();
-            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.dgvDanhSachKhuyenMai = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrev = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dgvMaKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTenKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPhanTramKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,27 +66,6 @@ namespace GUI_QLCafe
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKhuyenMai)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.BorderRadius = 5;
-            this.btnTimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTimKiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(995, 107);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnTimKiem.Size = new System.Drawing.Size(156, 40);
-            this.btnTimKiem.TabIndex = 20;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -129,23 +111,6 @@ namespace GUI_QLCafe
             this.shapeLine.Text = "guna2Shapes1";
             this.shapeLine.Zoom = 80;
             // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.Transparent;
-            this.btnThem.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnThem.HoverState.ImageSize = new System.Drawing.Size(57, 57);
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnThem.ImageRotate = 0F;
-            this.btnThem.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnThem.IndicateFocus = true;
-            this.btnThem.Location = new System.Drawing.Point(42, 98);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.PressedState.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnThem.Size = new System.Drawing.Size(55, 55);
-            this.btnThem.TabIndex = 16;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // panelFooter
             // 
             this.panelFooter.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -164,25 +129,6 @@ namespace GUI_QLCafe
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1190, 93);
             this.panelFooter.TabIndex = 26;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNext.BorderRadius = 5;
-            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnNext.Location = new System.Drawing.Point(652, 18);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(78, 36);
-            this.btnNext.TabIndex = 27;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnFirstPage
             // 
@@ -232,22 +178,6 @@ namespace GUI_QLCafe
             this.lbCurrentPage.Size = new System.Drawing.Size(33, 38);
             this.lbCurrentPage.TabIndex = 23;
             this.lbCurrentPage.Text = "0";
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnPrev.BorderRadius = 5;
-            this.btnPrev.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-            this.btnPrev.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnPrev.Location = new System.Drawing.Point(484, 18);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.PressedColor = System.Drawing.Color.White;
-            this.btnPrev.Size = new System.Drawing.Size(78, 36);
-            this.btnPrev.TabIndex = 28;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // lbPageLine
             // 
@@ -315,27 +245,6 @@ namespace GUI_QLCafe
             this.lblHeaderText.Size = new System.Drawing.Size(524, 54);
             this.lblHeaderText.TabIndex = 0;
             this.lblHeaderText.Text = "DANH SÁCH KHUYẾN MÃI";
-            // 
-            // btnRefesh
-            // 
-            this.btnRefesh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefesh.BorderRadius = 5;
-            this.btnRefesh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefesh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRefesh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRefesh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
-            this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
-            this.btnRefesh.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnRefesh.Location = new System.Drawing.Point(935, 107);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnRefesh.Size = new System.Drawing.Size(54, 40);
-            this.btnRefesh.TabIndex = 33;
-            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // dgvDanhSachKhuyenMai
             // 
@@ -411,6 +320,132 @@ namespace GUI_QLCafe
             this.dgvDanhSachKhuyenMai.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDanhSachKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachKhuyenMai_CellClick);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.MinimumWidth = 60;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 60;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.MinimumWidth = 60;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn2.Width = 60;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn3.FillWeight = 50F;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+            this.dataGridViewImageColumn3.MinimumWidth = 60;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn3.Width = 60;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefesh.BorderRadius = 5;
+            this.btnRefesh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefesh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefesh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefesh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
+            this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnRefesh.ForeColor = System.Drawing.Color.White;
+            this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
+            this.btnRefesh.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnRefesh.Location = new System.Drawing.Point(935, 107);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnRefesh.Size = new System.Drawing.Size(54, 40);
+            this.btnRefesh.TabIndex = 33;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnNext.BorderRadius = 5;
+            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNext.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnNext.Location = new System.Drawing.Point(652, 18);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(78, 36);
+            this.btnNext.TabIndex = 27;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPrev.BorderRadius = 5;
+            this.btnPrev.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
+            this.btnPrev.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnPrev.Location = new System.Drawing.Point(484, 18);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.PressedColor = System.Drawing.Color.White;
+            this.btnPrev.Size = new System.Drawing.Size(78, 36);
+            this.btnPrev.TabIndex = 28;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.BorderRadius = 5;
+            this.btnTimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTimKiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(995, 107);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnTimKiem.Size = new System.Drawing.Size(156, 40);
+            this.btnTimKiem.TabIndex = 20;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnThem.HoverState.ImageSize = new System.Drawing.Size(57, 57);
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnThem.ImageRotate = 0F;
+            this.btnThem.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnThem.IndicateFocus = true;
+            this.btnThem.Location = new System.Drawing.Point(42, 98);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.PressedState.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnThem.Size = new System.Drawing.Size(55, 55);
+            this.btnThem.TabIndex = 16;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // dgvMaKhuyenMai
             // 
             this.dgvMaKhuyenMai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -419,6 +454,7 @@ namespace GUI_QLCafe
             this.dgvMaKhuyenMai.MinimumWidth = 150;
             this.dgvMaKhuyenMai.Name = "dgvMaKhuyenMai";
             this.dgvMaKhuyenMai.ReadOnly = true;
+            this.dgvMaKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dgvTenKhuyenMai
             // 
@@ -428,6 +464,7 @@ namespace GUI_QLCafe
             this.dgvTenKhuyenMai.MinimumWidth = 200;
             this.dgvTenKhuyenMai.Name = "dgvTenKhuyenMai";
             this.dgvTenKhuyenMai.ReadOnly = true;
+            this.dgvTenKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dgvPhanTramKM
             // 
@@ -437,6 +474,7 @@ namespace GUI_QLCafe
             this.dgvPhanTramKM.MinimumWidth = 100;
             this.dgvPhanTramKM.Name = "dgvPhanTramKM";
             this.dgvPhanTramKM.ReadOnly = true;
+            this.dgvPhanTramKM.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dgvTrangThai
             // 
@@ -446,6 +484,8 @@ namespace GUI_QLCafe
             this.dgvTrangThai.MinimumWidth = 150;
             this.dgvTrangThai.Name = "dgvTrangThai";
             this.dgvTrangThai.ReadOnly = true;
+            this.dgvTrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTrangThai.Visible = false;
             // 
             // dgvSua
             // 
@@ -456,6 +496,7 @@ namespace GUI_QLCafe
             this.dgvSua.MinimumWidth = 60;
             this.dgvSua.Name = "dgvSua";
             this.dgvSua.ReadOnly = true;
+            this.dgvSua.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSua.Width = 60;
             // 
             // dgvXem
@@ -466,6 +507,7 @@ namespace GUI_QLCafe
             this.dgvXem.MinimumWidth = 60;
             this.dgvXem.Name = "dgvXem";
             this.dgvXem.ReadOnly = true;
+            this.dgvXem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvXem.Width = 60;
             // 
             // dgvXoa
@@ -477,6 +519,7 @@ namespace GUI_QLCafe
             this.dgvXoa.MinimumWidth = 60;
             this.dgvXoa.Name = "dgvXoa";
             this.dgvXoa.ReadOnly = true;
+            this.dgvXoa.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvXoa.Width = 60;
             // 
             // frmQLVoucher
@@ -531,5 +574,8 @@ namespace GUI_QLCafe
         private DataGridViewImageColumn dgvSua;
         private DataGridViewImageColumn dgvXem;
         private DataGridViewImageColumn dgvXoa;
+        private DataGridViewImageColumn dataGridViewImageColumn1;
+        private DataGridViewImageColumn dataGridViewImageColumn2;
+        private DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }

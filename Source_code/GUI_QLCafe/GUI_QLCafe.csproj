@@ -235,6 +235,12 @@
     <Compile Include="AddForm\frmAddDetail.Designer.cs">
       <DependentUpon>frmAddDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="HandleForm\frmGioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandleForm\frmGioiThieu.Designer.cs">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="HandleForm\frmTableList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddForm\frmAddDetail.resx">
       <DependentUpon>frmAddDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandleForm\frmGioiThieu.resx">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandleForm\frmMenuProduct.resx">
       <DependentUpon>frmMenuProduct.cs</DependentUpon>

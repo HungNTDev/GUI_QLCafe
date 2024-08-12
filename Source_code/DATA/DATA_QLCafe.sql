@@ -1045,3 +1045,69 @@ END
 
 			CREATE OR ALTER PROC GetDetailStatistic 
 AS SELECT NameProduct AS N'Tên sản phẩm', sum(Amount) AS N'Số lượng', SUM(TotalPrice) AS N'Tổng tiền  (VND)' FROM DetailStatistic GROUP BY NameProduct
+
+-- XỬ LÝ IN HÓA ĐƠN
+CREATE OR ALTER PROC GetBillById @IdBill NVARCHAR(50)
+AS
+BEGIN
+	SELECT 
+	a.IdBill AS N'Mã hóa đơn', 
+	a.NameTable AS N'Tên bàn', 
+	b.NameProduct AS N'Tên sản phẩm', 
+	b.Amount AS N'Số lượng', 
+	b.Price AS N'Đơn giá', 
+	b.TotalPrice AS N'Thành tiền(VND)',
+	a.PercentVoucher AS N'Phần trăm khuyến mãi', 
+	a.NamePayment AS N'Phương thức thanh toán', 
+	a.CheckIn AS N'Giờ vào', 
+	a.CheckOut AS N'Giờ ra', 
+	a.Total AS N'Tổng tiền(VND)'
+	FROM Statistic a
+	INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+	WHERE a.IdBill = @IdBill;
+END
+
+-- JOIN 2 BẢNG STATISTIC VÀ STATISTIC
+CREATE OR ALTER PROC GetBill
+AS
+BEGIN 
+	SELECT 
+	a.IdBill AS N'Mã hóa đơn', 
+	a.NameTable AS N'Tên bàn', 
+	b.NameProduct AS N'Tên sản phẩm', 
+	b.Amount AS N'Số lượng', 
+	b.Price AS N'Đơn giá', 
+	b.TotalPrice AS N'Thành tiền(VND)',
+	a.PercentVoucher AS N'Phần trăm khuyến mãi', 
+	a.NamePayment AS N'Phương thức thanh toán', 
+	a.CheckIn AS N'Giờ vào', 
+	a.CheckOut AS N'Giờ ra', 
+	a.Total AS N'Tổng tiền(VND)'
+    FROM Statistic a INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+END
+
+create proc [dbo].[UpdateProductInBillAdd] (@Amount int, @IdTable nvarchar(10), @IdProduct nvarchar(10))
+as
+	declare @ID int
+	set @ID = (select IdBill from Bill where IdTable = @IdTable)
+
+	declare @Price float
+	set @Price = (select Price from Product where IdProduct = @IdProduct)
+
+	update DetailBill set Amount = Amount + @Amount where IdProduct = @IdProduct and IdBill = @ID
+	update DetailBill set TotalPrice = Amount * @Price where IdProduct = @IdProduct and IdBill = @ID\
+
+
+
+create   proc [dbo].[UpdateProductInBill] (@Amount int, @IdTable nvarchar(10), @IdProduct nvarchar(10))
+as
+	declare @ID int
+	set @ID = (select IdBill from Bill where IdTable = @IdTable)
+
+	declare @Price float
+	set @Price = (select Price from Product where IdProduct = @IdProduct)
+
+	update DetailBill set Amount = Amount - @Amount where IdProduct = @IdProduct and IdBill = @ID
+	update DetailBill set TotalPrice = Amount * @Price where IdProduct = @IdProduct and IdBill = @ID
+
+	select * from Staff

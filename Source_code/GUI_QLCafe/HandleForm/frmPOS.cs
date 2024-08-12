@@ -27,6 +27,7 @@ namespace GUI_QLCafe
         public static string nameProduct;
         public string idProduct;
         public int amount;
+        public int amountProduct;
 
 
         public frmPOS()
@@ -184,10 +185,11 @@ namespace GUI_QLCafe
             {
                 ListViewItem selectedItem = lvHoaDon.SelectedItems[0];
 
-                if (selectedItem.SubItems.Count > 4) 
+                if (selectedItem.SubItems.Count > 4)
                 {
                     idProduct = selectedItem.SubItems[4].Text;
                     nameProduct = selectedItem.SubItems[0].Text;
+                    amountProduct = Convert.ToInt32(selectedItem.SubItems[1].Text);
                 }
 
                 if (selectedItem.SubItems.Count > 0)
@@ -206,20 +208,35 @@ namespace GUI_QLCafe
                     btnXoaMon.Enabled = true;
                     btnXoaSoLuong.Enabled = true;
                     btnPlus.Enabled = true;
-                }    
+                }
             }
         }
 
         private void btnXoaSoLuong_Click(object sender, EventArgs e)
         {
             subtract.ShowDialog();
-            if(frmSubtractAmount.MinusStatus == 1)
+            //if (frmSubtractAmount.MinusStatus == 1)
+            //{
+            //    amount = frmSubtractAmount.Amount;
+            //    billDTO.idProduct = idProduct;
+            //    billDTO.idTable = idTable;
+            //    busBill.UpdateProductInBill(billDTO, amount);
+            //}
+            if (amountProduct > frmSubtractAmount.Amount)
             {
-                amount = frmSubtractAmount.Amount;
-                billDTO.idProduct = idProduct;
-                billDTO.idTable = idTable;
-                busBill.UpdateProductInBill(billDTO, amount);
+                if (frmSubtractAmount.MinusStatus == 1)
+                {
+                    amount = frmSubtractAmount.Amount;
+                    billDTO.idProduct = idProduct;
+                    billDTO.idTable = idTable;
+                    busBill.UpdateProductInBill(billDTO, amount);
+                }
             }
+            else
+            {
+                MessageBox.Show("Số lượng giảm lớn hơn hoặc bằng số lượng hóa đơn đang có!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             lvHoaDon.Update();
             showBill(idTable);
         }
@@ -247,9 +264,9 @@ namespace GUI_QLCafe
             btnPlus.Enabled = false;
         }
 
-        
 
-     
+
+
 
     }
 }

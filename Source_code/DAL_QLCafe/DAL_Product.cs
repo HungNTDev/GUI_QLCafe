@@ -102,6 +102,7 @@ namespace DAL_QLCafe
                     cmd.Parameters.AddWithValue("@nameProduct", obj.NameProduct);
                     cmd.Parameters.AddWithValue("@price", obj.Price);
                     cmd.Parameters.AddWithValue("@imageProduct", obj.ImageProduct);
+                    cmd.Parameters.AddWithValue("@statusProduct", obj.StatusProduct);
                     cmd.Parameters.AddWithValue("@idPT", obj.IdPT);
 
                     conn.Open();

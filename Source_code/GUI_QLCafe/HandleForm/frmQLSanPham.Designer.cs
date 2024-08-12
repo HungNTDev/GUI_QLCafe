@@ -34,15 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLSanPham));
             this.dgvDanhSachSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvMaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDuongDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvXem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbHeaderText = new System.Windows.Forms.Label();
@@ -61,6 +52,15 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lblHeaderText = new System.Windows.Forms.Label();
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvMaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDuongDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSua = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvXem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvXoa = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSanPham)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -142,98 +142,6 @@
             this.dgvDanhSachSanPham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDanhSachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellClick);
             this.dgvDanhSachSanPham.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDanhSachSanPham_DataError);
-            // 
-            // dgvMaSanPham
-            // 
-            this.dgvMaSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvMaSanPham.DataPropertyName = "IdProduct";
-            this.dgvMaSanPham.HeaderText = "Mã sản phẩm";
-            this.dgvMaSanPham.MinimumWidth = 170;
-            this.dgvMaSanPham.Name = "dgvMaSanPham";
-            this.dgvMaSanPham.ReadOnly = true;
-            this.dgvMaSanPham.Width = 170;
-            // 
-            // dgvTenSanPham
-            // 
-            this.dgvTenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvTenSanPham.DataPropertyName = "NameProduct";
-            this.dgvTenSanPham.HeaderText = "Tên sản phẩm";
-            this.dgvTenSanPham.MinimumWidth = 200;
-            this.dgvTenSanPham.Name = "dgvTenSanPham";
-            this.dgvTenSanPham.ReadOnly = true;
-            this.dgvTenSanPham.Width = 200;
-            // 
-            // dgvGia
-            // 
-            this.dgvGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvGia.DataPropertyName = "Price";
-            this.dgvGia.HeaderText = "Giá (VNĐ)";
-            this.dgvGia.MinimumWidth = 150;
-            this.dgvGia.Name = "dgvGia";
-            this.dgvGia.ReadOnly = true;
-            this.dgvGia.Width = 150;
-            // 
-            // dgvDuongDan
-            // 
-            this.dgvDuongDan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDuongDan.DataPropertyName = "ImageProduct";
-            this.dgvDuongDan.HeaderText = "Đường dẫn";
-            this.dgvDuongDan.MinimumWidth = 200;
-            this.dgvDuongDan.Name = "dgvDuongDan";
-            this.dgvDuongDan.ReadOnly = true;
-            this.dgvDuongDan.Width = 200;
-            // 
-            // dgvTrangThai
-            // 
-            this.dgvTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvTrangThai.DataPropertyName = "StatusProduct";
-            this.dgvTrangThai.HeaderText = "Trạng thái";
-            this.dgvTrangThai.MinimumWidth = 150;
-            this.dgvTrangThai.Name = "dgvTrangThai";
-            this.dgvTrangThai.ReadOnly = true;
-            this.dgvTrangThai.Width = 150;
-            // 
-            // dgvMaLoai
-            // 
-            this.dgvMaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvMaLoai.DataPropertyName = "IdPT";
-            this.dgvMaLoai.HeaderText = "Mã loại";
-            this.dgvMaLoai.MinimumWidth = 100;
-            this.dgvMaLoai.Name = "dgvMaLoai";
-            this.dgvMaLoai.ReadOnly = true;
-            this.dgvMaLoai.Width = 125;
-            // 
-            // dgvSua
-            // 
-            this.dgvSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSua.FillWeight = 50F;
-            this.dgvSua.HeaderText = "";
-            this.dgvSua.Image = ((System.Drawing.Image)(resources.GetObject("dgvSua.Image")));
-            this.dgvSua.MinimumWidth = 60;
-            this.dgvSua.Name = "dgvSua";
-            this.dgvSua.ReadOnly = true;
-            this.dgvSua.Width = 60;
-            // 
-            // dgvXem
-            // 
-            this.dgvXem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvXem.HeaderText = "";
-            this.dgvXem.Image = ((System.Drawing.Image)(resources.GetObject("dgvXem.Image")));
-            this.dgvXem.MinimumWidth = 60;
-            this.dgvXem.Name = "dgvXem";
-            this.dgvXem.ReadOnly = true;
-            this.dgvXem.Width = 60;
-            // 
-            // dgvXoa
-            // 
-            this.dgvXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvXoa.FillWeight = 50F;
-            this.dgvXoa.HeaderText = "";
-            this.dgvXoa.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoa.Image")));
-            this.dgvXoa.MinimumWidth = 60;
-            this.dgvXoa.Name = "dgvXoa";
-            this.dgvXoa.ReadOnly = true;
-            this.dgvXoa.Width = 60;
             // 
             // btnTimKiem
             // 
@@ -518,6 +426,95 @@
             this.btnRefesh.Size = new System.Drawing.Size(54, 40);
             this.btnRefesh.TabIndex = 32;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // dgvMaSanPham
+            // 
+            this.dgvMaSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvMaSanPham.DataPropertyName = "IdProduct";
+            this.dgvMaSanPham.HeaderText = "Mã sản phẩm";
+            this.dgvMaSanPham.MinimumWidth = 170;
+            this.dgvMaSanPham.Name = "dgvMaSanPham";
+            this.dgvMaSanPham.ReadOnly = true;
+            // 
+            // dgvTenSanPham
+            // 
+            this.dgvTenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTenSanPham.DataPropertyName = "NameProduct";
+            this.dgvTenSanPham.HeaderText = "Tên sản phẩm";
+            this.dgvTenSanPham.MinimumWidth = 200;
+            this.dgvTenSanPham.Name = "dgvTenSanPham";
+            this.dgvTenSanPham.ReadOnly = true;
+            // 
+            // dgvGia
+            // 
+            this.dgvGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvGia.DataPropertyName = "Price";
+            this.dgvGia.HeaderText = "Giá (VNĐ)";
+            this.dgvGia.MinimumWidth = 150;
+            this.dgvGia.Name = "dgvGia";
+            this.dgvGia.ReadOnly = true;
+            // 
+            // dgvDuongDan
+            // 
+            this.dgvDuongDan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDuongDan.DataPropertyName = "ImageProduct";
+            this.dgvDuongDan.HeaderText = "Đường dẫn";
+            this.dgvDuongDan.MinimumWidth = 200;
+            this.dgvDuongDan.Name = "dgvDuongDan";
+            this.dgvDuongDan.ReadOnly = true;
+            this.dgvDuongDan.Visible = false;
+            this.dgvDuongDan.Width = 200;
+            // 
+            // dgvTrangThai
+            // 
+            this.dgvTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvTrangThai.DataPropertyName = "StatusProduct";
+            this.dgvTrangThai.HeaderText = "Trạng thái";
+            this.dgvTrangThai.MinimumWidth = 150;
+            this.dgvTrangThai.Name = "dgvTrangThai";
+            this.dgvTrangThai.ReadOnly = true;
+            // 
+            // dgvMaLoai
+            // 
+            this.dgvMaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvMaLoai.DataPropertyName = "IdPT";
+            this.dgvMaLoai.HeaderText = "Mã loại";
+            this.dgvMaLoai.MinimumWidth = 100;
+            this.dgvMaLoai.Name = "dgvMaLoai";
+            this.dgvMaLoai.ReadOnly = true;
+            this.dgvMaLoai.Visible = false;
+            // 
+            // dgvSua
+            // 
+            this.dgvSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSua.FillWeight = 50F;
+            this.dgvSua.HeaderText = "";
+            this.dgvSua.Image = ((System.Drawing.Image)(resources.GetObject("dgvSua.Image")));
+            this.dgvSua.MinimumWidth = 60;
+            this.dgvSua.Name = "dgvSua";
+            this.dgvSua.ReadOnly = true;
+            this.dgvSua.Width = 60;
+            // 
+            // dgvXem
+            // 
+            this.dgvXem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXem.HeaderText = "";
+            this.dgvXem.Image = ((System.Drawing.Image)(resources.GetObject("dgvXem.Image")));
+            this.dgvXem.MinimumWidth = 60;
+            this.dgvXem.Name = "dgvXem";
+            this.dgvXem.ReadOnly = true;
+            this.dgvXem.Width = 60;
+            // 
+            // dgvXoa
+            // 
+            this.dgvXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvXoa.FillWeight = 50F;
+            this.dgvXoa.HeaderText = "";
+            this.dgvXoa.Image = ((System.Drawing.Image)(resources.GetObject("dgvXoa.Image")));
+            this.dgvXoa.MinimumWidth = 60;
+            this.dgvXoa.Name = "dgvXoa";
+            this.dgvXoa.ReadOnly = true;
+            this.dgvXoa.Width = 60;
             // 
             // frmQLSanPham
             // 

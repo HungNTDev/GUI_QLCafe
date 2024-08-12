@@ -58,78 +58,79 @@ namespace GUI_QLCafe
                 txtMaSanPham.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
+            else if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenSanPham.Focus();
                 return;
             }
-            if (!isfloat || gia < 0)
+            else if (!isfloat || gia < 0)
             {
                 MessageBox.Show("Vui lòng nhập giá hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtGia.Focus();
                 return;
             }
-            if (!rdoCo.Checked && !rdoKhong.Checked)
+            else if (!rdoCo.Checked && !rdoKhong.Checked)
             {
                 MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (cbLoaiSanPham.Text.Trim().Length == 0)
+            else if (cbLoaiSanPham.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng chọn loại cho sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cbLoaiSanPham.Focus();
                 return;
             }
 
-            string fileAddress = txtDuongDan.Text;
-            if (!File.Exists(fileAddress))
+            //string fileAddress = txtDuongDan.Text;
+            //if (!File.Exists(fileAddress))
+            //{
+            //    MessageBox.Show("Tệp không tồn tại: " + fileAddress, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+
+            //// Đường dẫn thư mục
+            //string directory = Path.Combine(Application.StartupPath, "img", "Product");
+            //// Tên tệp
+
+            //// Đường dẫn đầy đủ
+            //string fullpath = Path.Combine(directory, fileName);
+
+            else
             {
-                MessageBox.Show("Tệp không tồn tại: " + fileAddress, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                //// Kiểm tra và tạo thư mục nếu chưa tồn tại
+                //if (!Directory.Exists(directory))
+                //{
+                //    Directory.CreateDirectory(directory);
+                //}
 
+                //// Đọc ảnh từ file và tạo bản sao
+                //using (FileStream fs = new FileStream(fileAddress, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                //{
+                //    using (MemoryStream ms = new MemoryStream())
+                //    {
+                //        fs.CopyTo(ms);
+                //        ms.Position = 0;
+                //        picSanPham.Image = Image.FromStream(ms);
 
-            // Đường dẫn thư mục
-            string directory = Path.Combine(Application.StartupPath, "img", "Product");
-            // Tên tệp
+                //        // Lưu ảnh vào đường dẫn đầy đủ
+                //        using (FileStream saveFile = new FileStream(fullpath, FileMode.Create, FileAccess.Write))
+                //        {
+                //            ms.CopyTo(saveFile);
+                //        }
+                //    }
+                //}
 
-            // Đường dẫn đầy đủ
-            string fullpath = Path.Combine(directory, fileName);
+                //txtDuongDan.Text = fullpath;
 
-            try
-            {
-                // Kiểm tra và tạo thư mục nếu chưa tồn tại
-                if (!Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                }
-
-                // Đọc ảnh từ file và tạo bản sao
-                using (FileStream fs = new FileStream(fileAddress, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                {
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        fs.CopyTo(ms);
-                        ms.Position = 0;
-                        picSanPham.Image = Image.FromStream(ms);
-
-                        // Lưu ảnh vào đường dẫn đầy đủ
-                        using (FileStream saveFile = new FileStream(fullpath, FileMode.Create, FileAccess.Write))
-                        {
-                            ms.CopyTo(saveFile);
-                        }
-                    }
-                }
-
-                txtDuongDan.Text = fullpath;
-                DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
-                    gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
 
                 if (formMode == FormMode.Them)
                 {
                     if (string.IsNullOrEmpty(id))
                     {
+                        DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
+                    gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
                         if (busproduct.insert(product))
                         {
                             MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo",
@@ -144,40 +145,53 @@ namespace GUI_QLCafe
                 }
                 else
                 {
-                    product.IdProduct = id;
-                    if (busproduct.update(product))
+                    if (MessageBox.Show("Chắc chắn lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        //lbtagname.Visible = true;
-                        if (txtDuongDan.Text != checkUrlImage)
+                        // Đường dẫn thư mục gốc của dự án
+                        string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                        string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Product");
+
+                        // Tạo thư mục nếu chưa có
+                        if (!Directory.Exists(saveDirectory))
                         {
-                            if (File.Exists(fileAddress))
+                            Directory.CreateDirectory(saveDirectory);
+                        }
+
+
+                        // Đường dẫn ảnh
+                        fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                        string fileName = Path.GetFileName(fileAddress);
+                        string fileSavePath = Path.Combine(saveDirectory, fileName);
+
+
+
+                        // Kiểm tra xem hình đã tồn tại trong thư mục staff hay chưa
+                        if (!File.Exists(fileSavePath))
+                        {
+                            try
                             {
-                                File.Copy(fileAddress, fullpath, true);
-                                MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                File.Copy(fileAddress, fileSavePath, true); // Sao chép hình vào thư mục Images nếu chưa tồn tại
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                MessageBox.Show("File nguồn không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
                             }
                         }
-                        else
+
+                        // Update txtHinh to point to the new location
+                        txtDuongDan.Text = fileSavePath;
+                        DTO_Product product = new DTO_Product(txtMaSanPham.Text, txtTenSanPham.Text,
+                    gia, fileSavePath, trangthai, cbLoaiSanPham.Text);
+                        product.IdProduct = id;
+                        if (busproduct.update(product))
                         {
-                            this.Message("Cập nhật thất bại :(", frmNotification.enumType.Failed);
+                            MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
             }
-            catch (UnauthorizedAccessException ex)
-            {
-                MessageBox.Show("Lỗi khi lưu ảnh: Không có quyền truy cập vào đường dẫn. " + ex.Message, "Thông Báo");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo");
-            }
-
         }
 
         private void btnMoHinh_Click(object sender, EventArgs e)

@@ -1,12 +1,6 @@
 ﻿using BUS_QLCafe;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe.HandleForm
@@ -231,11 +225,11 @@ namespace GUI_QLCafe.HandleForm
         {
             decimal tongDoanhThu = 0;
 
-            foreach(DataGridViewRow dgvRow in dgvDanhSachThongKe.Rows)
+            foreach (DataGridViewRow dgvRow in dgvDanhSachThongKe.Rows)
             {
                 if (dgvRow.Cells["Tổng tiền  (VND)"].Value != null && decimal.TryParse(dgvRow.Cells["Tổng tiền  (VND)"].Value.ToString(), out decimal total))
                 {
-                    tongDoanhThu += total;  
+                    tongDoanhThu += total;
                 }
             }
             return tongDoanhThu;
@@ -256,9 +250,9 @@ namespace GUI_QLCafe.HandleForm
                 }
             }
 
-            DialogResult dl2 = MessageBox.Show("Bạn có muốn xuất thống kê ra file?", "Thông báo", 
+            DialogResult dl2 = MessageBox.Show("Bạn có muốn xuất thống kê ra file?", "Thông báo",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(dl2 == DialogResult.OK)
+            if (dl2 == DialogResult.OK)
             {
                 DataTable dataTable = new DataTable();
 

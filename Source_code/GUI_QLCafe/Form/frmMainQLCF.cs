@@ -1,5 +1,6 @@
 ﻿using GUI_QLCafe.HandleForm;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -69,7 +70,7 @@ namespace GUI_QLCafe
         public void PhanQuyen()
         {
 
-            lblEmail.Text = email;
+            lblEmail.Text = email + "  |  " + role;
 
             if (session == 1)
             {
@@ -395,6 +396,24 @@ namespace GUI_QLCafe
         private void btn_Ban_Click(object sender, EventArgs e)
         {
             AddControls(new frmPOS());
+        }
+
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "HDSD.odt");
+                System.Diagnostics.Process.Start(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi" + ex);
+            }
+        }
+
+        private void btnGT_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmGioiThieu());
         }
     }
 }

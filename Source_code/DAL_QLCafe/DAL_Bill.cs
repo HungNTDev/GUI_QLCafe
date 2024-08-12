@@ -16,7 +16,7 @@ namespace DAL_QLCafe
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "GetBill";
+                    cmd.CommandText = "GetPagedBill";
                     conn.Open();
                     DataTable dtBill = new DataTable();
                     dtBill.Load(cmd.ExecuteReader());

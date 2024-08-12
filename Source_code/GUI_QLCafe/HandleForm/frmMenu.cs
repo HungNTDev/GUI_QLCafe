@@ -39,6 +39,10 @@ namespace GUI_QLCafe
             billDTO.idTable = frmPOS.idTable;
             LoadMenu("CFE");
             ListOrder();
+            flp_CaPhe.AutoScroll = true;
+            flp_NuocEp.AutoScroll = true;
+            flp_SinhTo.AutoScroll = true;
+            flp_Tra.AutoScroll = true;
         }
 
         void ListOrder()

@@ -4,7 +4,6 @@ using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace GUI_QLCafe
@@ -120,6 +119,10 @@ namespace GUI_QLCafe
         {
             ListOrder();
             LoadMenu("CFE");
+            flp_CaPhe.AutoScroll = true;
+            flp_NuocEp.AutoScroll = true;
+            flp_SinhTo.AutoScroll = true;
+            flp_Tra.AutoScroll = true;
         }
 
         private void tc_Menu_Click(object sender, EventArgs e)

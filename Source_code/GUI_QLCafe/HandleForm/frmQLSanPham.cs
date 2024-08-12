@@ -58,7 +58,6 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtMaSanPham.Enabled = false;
                 frmAddSanPham.cbLoaiSanPham.Enabled = false;
                 frmAddSanPham.txtDuongDan.Enabled = false;
-                frmAddSanPham.rdoKhong.Visible = false;
 
                 string maSanPham = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaSanPham"].Value);
                 frmAddSanPham.id = maSanPham;
@@ -66,8 +65,17 @@ namespace GUI_QLCafe
                 frmAddSanPham.txtTenSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTenSanPham"].Value);
                 frmAddSanPham.txtGia.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvGia"].Value);
                 frmAddSanPham.txtDuongDan.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value);
-                frmAddSanPham.rdoCo.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
-                frmAddSanPham.rdoKhong.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+                //frmAddSanPham.rdoCo.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+                //frmAddSanPham.rdoKhong.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value);
+
+                if (Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvTrangThai"].Value) == "Còn Bán")
+                {
+                    frmAddSanPham.rdoCo.Checked = true;
+                }
+                else
+                {
+                    frmAddSanPham.rdoKhong.Checked = true;
+                }
 
                 frmAddSanPham.cbLoaiSanPham.Text = Convert.ToString(dgvDanhSachSanPham.CurrentRow.Cells["dgvMaLoai"].Value).Trim();
 
@@ -75,35 +83,12 @@ namespace GUI_QLCafe
                 string relativePath = dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value.ToString();
                 string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\'));
 
-                // Check if the image file exists
+
+
+                //Nếu file đã tồn tại thì gửi ảnh lên picture box
                 if (File.Exists(imagePath))
                 {
-                    try
-                    {
-                        // Load and display the image in the PictureBox
-                        using (Image image = Image.FromFile(imagePath))
-                        {
-                            frmAddSanPham.picSanPham.Image = new Bitmap(image); // Create a new Bitmap to avoid disposing of the original image
-                        }
-                    }
-                    catch (OutOfMemoryException ex)
-                    {
-                        // Handle the OutOfMemoryException here if needed
-                        MessageBox.Show("Unable to load the image. The file might be too large or corrupted.", "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle other exceptions if necessary
-                        MessageBox.Show("An error occurred: " + ex.Message, "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    // Display a message if the file does not exist
-                    MessageBox.Show("Image file does not exist: " + imagePath, "Notice",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmAddSanPham.picSanPham.Image = Image.FromFile(imagePath);
                 }
 
                 frmAddSanPham.ShowDialog();

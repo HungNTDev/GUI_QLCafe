@@ -34,8 +34,16 @@ namespace GUI_QLCafe.ViewForm
             txtTenSanPham.Text = tenSanPham;
             txtGia.Text = giaSanPham;
             txtDuongDan.Text = duongDan;
-            rdoCo.Text = trangThai;
             cbLoaiSanPham.Text = loaiSanPham;
+
+            if (trangThai == "Còn Bán")
+            {
+                rdoCo.Checked = true;
+            }
+            else
+            {
+                rdoKhong.Checked = true;
+            }
 
             // Hiển thị hình ảnh
             string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));

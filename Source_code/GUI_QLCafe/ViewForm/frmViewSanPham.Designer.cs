@@ -63,6 +63,7 @@
             this.cbLoaiSanPham.BorderRadius = 5;
             this.cbLoaiSanPham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbLoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLoaiSanPham.Enabled = false;
             this.cbLoaiSanPham.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbLoaiSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbLoaiSanPham.Font = new System.Drawing.Font("Segoe UI", 10.8F);
@@ -92,30 +93,32 @@
             // 
             this.rdoCo.AutoSize = true;
             this.rdoCo.BackColor = System.Drawing.Color.White;
+            this.rdoCo.Enabled = false;
             this.rdoCo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoCo.ForeColor = System.Drawing.Color.Black;
-            this.rdoCo.Location = new System.Drawing.Point(15, 59);
+            this.rdoCo.Location = new System.Drawing.Point(49, 59);
             this.rdoCo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoCo.Name = "rdoCo";
-            this.rdoCo.Size = new System.Drawing.Size(132, 27);
+            this.rdoCo.Size = new System.Drawing.Size(96, 27);
             this.rdoCo.TabIndex = 2;
             this.rdoCo.TabStop = true;
-            this.rdoCo.Text = "Có sản phẩm";
+            this.rdoCo.Text = "Còn Bán";
             this.rdoCo.UseVisualStyleBackColor = false;
             // 
             // rdoKhong
             // 
             this.rdoKhong.AutoSize = true;
             this.rdoKhong.BackColor = System.Drawing.Color.White;
+            this.rdoKhong.Enabled = false;
             this.rdoKhong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoKhong.ForeColor = System.Drawing.Color.Black;
             this.rdoKhong.Location = new System.Drawing.Point(179, 59);
             this.rdoKhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdoKhong.Name = "rdoKhong";
-            this.rdoKhong.Size = new System.Drawing.Size(162, 27);
+            this.rdoKhong.Size = new System.Drawing.Size(118, 27);
             this.rdoKhong.TabIndex = 2;
             this.rdoKhong.TabStop = true;
-            this.rdoKhong.Text = "Sản phẩm đã hết";
+            this.rdoKhong.Text = "Ngưng Bán";
             this.rdoKhong.UseVisualStyleBackColor = false;
             // 
             // gbTrangThai
@@ -178,6 +181,7 @@
             this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.Enabled = false;
             this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtGia.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.ForeColor = System.Drawing.Color.Black;
@@ -291,6 +295,7 @@
             this.txtDuongDan.SelectedText = "";
             this.txtDuongDan.Size = new System.Drawing.Size(271, 37);
             this.txtDuongDan.TabIndex = 36;
+            this.txtDuongDan.Visible = false;
             // 
             // txtTenSanPham
             // 
@@ -303,6 +308,7 @@
             this.txtTenSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtTenSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenSanPham.Enabled = false;
             this.txtTenSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSanPham.ForeColor = System.Drawing.Color.Black;
@@ -328,6 +334,7 @@
             this.txtMaSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtMaSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaSanPham.Enabled = false;
             this.txtMaSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.txtMaSanPham.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSanPham.ForeColor = System.Drawing.Color.Black;

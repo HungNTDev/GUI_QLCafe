@@ -56,7 +56,7 @@
             this.nudAmount.Name = "nudAmount";
             this.nudAmount.Size = new System.Drawing.Size(413, 49);
             this.nudAmount.TabIndex = 9;
-            this.nudAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.nudAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.nudAmount.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nudAmount.Value = new decimal(new int[] {
             1,
@@ -165,7 +165,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnAdd.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(44, 309);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -178,7 +178,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.Controls.Add(this.guna2PictureBox1);
             this.panelHeader.Controls.Add(this.lbText0);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;

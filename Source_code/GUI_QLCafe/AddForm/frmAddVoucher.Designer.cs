@@ -35,7 +35,6 @@
             this.lbPhanTramKM = new System.Windows.Forms.Label();
             this.txtPhanTramKM = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbTenKhuyenMai = new System.Windows.Forms.Label();
-            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.txtTenKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbMaKhuyenMai = new System.Windows.Forms.Label();
             this.bfAddVoucher = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -44,6 +43,7 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbHeaderText = new System.Windows.Forms.Label();
+            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,33 +129,6 @@
             this.lbTenKhuyenMai.Size = new System.Drawing.Size(146, 28);
             this.lbTenKhuyenMai.TabIndex = 45;
             this.lbTenKhuyenMai.Text = "Tên khuyến mãi";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
-            this.btnLuu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnLuu.BorderRadius = 15;
-            this.btnLuu.BorderThickness = 1;
-            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnLuu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
-            this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(44, 282);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnLuu.Size = new System.Drawing.Size(713, 57);
-            this.btnLuu.TabIndex = 49;
-            this.btnLuu.Text = "LƯU";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtTenKhuyenMai
             // 
@@ -257,7 +230,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.Controls.Add(this.guna2PictureBox1);
             this.panelHeader.Controls.Add(this.lbHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -291,6 +264,33 @@
             this.lbHeaderText.Size = new System.Drawing.Size(419, 45);
             this.lbHeaderText.TabIndex = 10;
             this.lbHeaderText.Text = "THÔNG TIN KHUYẾN MÃI";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLuu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnLuu.BorderRadius = 15;
+            this.btnLuu.BorderThickness = 1;
+            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnLuu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.HoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLuu.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnLuu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnLuu.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(44, 282);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnLuu.Size = new System.Drawing.Size(713, 57);
+            this.btnLuu.TabIndex = 49;
+            this.btnLuu.Text = "LƯU";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmAddVoucher
             // 
@@ -327,7 +327,6 @@
         private System.Windows.Forms.Label lbTrangThai;
         private System.Windows.Forms.Label lbPhanTramKM;
         private System.Windows.Forms.Label lbTenKhuyenMai;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
         private System.Windows.Forms.Label lbMaKhuyenMai;
         private Guna.UI2.WinForms.Guna2BorderlessForm bfAddVoucher;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
@@ -338,5 +337,6 @@
         public Guna.UI2.WinForms.Guna2TextBox txtPhanTramKM;
         public Guna.UI2.WinForms.Guna2TextBox txtTenKhuyenMai;
         public Guna.UI2.WinForms.Guna2TextBox txtMaKhuyenMai;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
     }
 }

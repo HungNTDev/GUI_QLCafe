@@ -241,7 +241,7 @@
             // 
             // flpPOS
             // 
-            this.flpPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.flpPOS.Controls.Add(this.panel3);
             this.flpPOS.Controls.Add(this.panelBan);
             this.flpPOS.Controls.Add(this.panel5);
@@ -267,12 +267,12 @@
             this.btnPOS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPOS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPOS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPOS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPOS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnPOS.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPOS.ForeColor = System.Drawing.Color.White;
-            this.btnPOS.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnPOS.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnPOS.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnPOS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnPOS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnPOS.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnPOS.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnPOS.Image = ((System.Drawing.Image)(resources.GetObject("btnPOS.Image")));
             this.btnPOS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPOS.ImageOffset = new System.Drawing.Point(35, 0);
@@ -350,7 +350,7 @@
             // 
             // flpQuanLy
             // 
-            this.flpQuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpQuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.flpQuanLy.Controls.Add(this.panelQuanLy);
             this.flpQuanLy.Controls.Add(this.panelQLBan);
             this.flpQuanLy.Controls.Add(this.panelQLVoucher);
@@ -379,12 +379,12 @@
             this.btnQuanLy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQuanLy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuanLy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnQuanLy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnQuanLy.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLy.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnQuanLy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnQuanLy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnQuanLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnQuanLy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnQuanLy.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnQuanLy.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLy.Image")));
             this.btnQuanLy.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQuanLy.ImageOffset = new System.Drawing.Point(35, 0);
@@ -573,12 +573,12 @@
             this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnDangXuat.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnDangXuat.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.ImageOffset = new System.Drawing.Point(7, 0);
@@ -594,7 +594,7 @@
             // 
             // flpHuongDan
             // 
-            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.flpHuongDan.Controls.Add(this.panelHuongDan);
             this.flpHuongDan.Controls.Add(this.panelHuongDanSD);
             this.flpHuongDan.Controls.Add(this.panelGioiThieuPM);
@@ -618,12 +618,12 @@
             this.btnHuongDan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuongDan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHuongDan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHuongDan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnHuongDan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnHuongDan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnHuongDan.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("btnHuongDan.Image")));
             this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHuongDan.ImageSize = new System.Drawing.Size(25, 25);
@@ -701,7 +701,7 @@
             // 
             // flpHeThong
             // 
-            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.flpHeThong.Controls.Add(this.panelHeThong);
             this.flpHeThong.Controls.Add(this.panelDoiMatKhau);
             this.flpHeThong.Location = new System.Drawing.Point(3, 424);
@@ -724,12 +724,12 @@
             this.btnHeThong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHeThong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHeThong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnHeThong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnHeThong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnHeThong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnHeThong.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHeThong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnHeThong.Image = ((System.Drawing.Image)(resources.GetObject("btnHeThong.Image")));
             this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHeThong.ImageSize = new System.Drawing.Size(25, 25);
@@ -775,7 +775,7 @@
             // 
             // flpThongKe
             // 
-            this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(98)))));
+            this.flpThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.flpThongKe.Controls.Add(this.panelThongKe);
             this.flpThongKe.Controls.Add(this.panelThongKeSLHoaDon);
             this.flpThongKe.Location = new System.Drawing.Point(3, 322);
@@ -798,11 +798,11 @@
             this.btnThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnThongKe.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -859,19 +859,20 @@
             // picLogo1
             // 
             this.picLogo1.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLogo1.FillColor = System.Drawing.Color.Wheat;
             this.picLogo1.Image = ((System.Drawing.Image)(resources.GetObject("picLogo1.Image")));
             this.picLogo1.ImageRotate = 0F;
-            this.picLogo1.Location = new System.Drawing.Point(-27, -13);
+            this.picLogo1.Location = new System.Drawing.Point(0, 0);
             this.picLogo1.Name = "picLogo1";
-            this.picLogo1.Size = new System.Drawing.Size(333, 246);
+            this.picLogo1.Size = new System.Drawing.Size(297, 211);
             this.picLogo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo1.TabIndex = 0;
             this.picLogo1.TabStop = false;
             // 
             // flpSidebar
             // 
-            this.flpSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.flpSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.flpSidebar.Controls.Add(this.panelLogo);
             this.flpSidebar.Controls.Add(this.flpPOS);
             this.flpSidebar.Controls.Add(this.flpQuanLy);

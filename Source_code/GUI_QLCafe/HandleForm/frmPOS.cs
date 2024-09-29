@@ -108,7 +108,7 @@ namespace GUI_QLCafe
                 btn.Click += btn_Click;
                 btn.Tag = busTB.TableList().Rows[i][0].ToString();
                 if (busTB.TableList().Rows[i][3].ToString() == "0")
-                {
+                {   
                     btn.Text = busTB.TableList().Rows[i][1].ToString() + Environment.NewLine + "Trống";
                 }
                 else

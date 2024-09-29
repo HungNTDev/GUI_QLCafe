@@ -449,13 +449,16 @@ namespace DAL_QLCafe
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "StaffInfo";
-                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@email", email);
                     conn.Open();
 
                     DataTable dtNhanVien = new DataTable();
                     dtNhanVien.Load(cmd.ExecuteReader());
                     return dtNhanVien;
                 }
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
             finally
             {

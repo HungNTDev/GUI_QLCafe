@@ -163,8 +163,6 @@ namespace GUI_QLCafe
                         string fileName = Path.GetFileName(fileAddress);
                         string fileSavePath = Path.Combine(saveDirectory, fileName);
 
-
-
                         // Kiểm tra xem hình đã tồn tại trong thư mục staff hay chưa
                         if (!File.Exists(fileSavePath))
                         {
@@ -188,6 +186,7 @@ namespace GUI_QLCafe
                         {
                             MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
                         }
                     }
                 }
@@ -245,6 +244,11 @@ namespace GUI_QLCafe
             {
                 this.Close();
             }
+        }
+
+        private void gbTrangThai_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

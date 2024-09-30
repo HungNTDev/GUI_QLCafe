@@ -127,7 +127,7 @@
             this.gbTrangThai.BorderRadius = 5;
             this.gbTrangThai.Controls.Add(this.rdoCo);
             this.gbTrangThai.Controls.Add(this.rdoKhong);
-            this.gbTrangThai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.gbTrangThai.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.gbTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTrangThai.ForeColor = System.Drawing.Color.White;
             this.gbTrangThai.Location = new System.Drawing.Point(44, 423);
@@ -198,7 +198,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.Controls.Add(this.picLogo);
             this.panelHeader.Controls.Add(this.lbHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;

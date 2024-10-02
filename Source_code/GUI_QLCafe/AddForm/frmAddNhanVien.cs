@@ -21,6 +21,9 @@ namespace GUI_QLCafe
         private string image;
         private string saveDirectory;
         private Image originalImage;
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
 
         BUS_Staff busNhanVien = new BUS_Staff();
 

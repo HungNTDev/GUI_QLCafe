@@ -1,5 +1,6 @@
 ﻿using BUS_QLCafe;
 using DTO_QLCafe;
+using GUI_QLCafe.ViewForm;
 using System;
 using System.Data;
 using System.Drawing;
@@ -182,7 +183,7 @@ namespace GUI_QLCafe
 
                 if (txtTimKiem.Text.Trim().Length == 0)
                 {
-                    Notification("Nhập nội dung cần tìm!", frmNotification.enumType.Failed);
+                    Nofication("Nhập nội dung cần tìm!", frmNotification.enumType.Failed);
                     return;
                 }
 
@@ -232,136 +233,206 @@ namespace GUI_QLCafe
         private string currentEmail = "";
         private void dgvDanhSachNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Lấy vị trí lưu
-
-            saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-            if (dgvDanhSachNhanVien.Rows.Count > 0)
+            if (dgvDanhSachNhanVien.CurrentCell.OwningColumn.Name == "dgvSua")
             {
-                txtTen.Enabled = true;
-                txtEmail.Enabled = true;
-                btnSu.Enabled = true;
-                btnMoHinh.Enabled = true;
-
-                txtEmail.Enabled = true;
-                txtTen.Enabled = true;
-
-                rdoHoatDong.Enabled = true;
-                rdoNgungHoatDong.Enabled = true;
-                rdoNhanVien.Enabled = true;
-                rdoQuanTri.Enabled = true;
-
-                txtTen.Text = dgvDanhSachNhanVien.CurrentRow.Cells["FullName"].Value.ToString();
-                txtEmail.Text = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
-                txtDuongDan.Text = dgvDanhSachNhanVien.CurrentRow.Cells["ImageStaff"].Value.ToString();
-
-                currentEmail = dgvDanhSachNhanVien.CurrentRow.Cells["Email"].Value.ToString();
-
-                string role = dgvDanhSachNhanVien.CurrentRow.Cells["RoleStaff"].Value.ToString();
-
-                switch (role)
+                frmAddNhanVien frmAdd = new frmAddNhanVien
                 {
-                    case "Chủ sở hữu":
-                        rdoChuSoHuu.Checked = true;
-                        break;
-                    case "Quản trị":
-                        rdoQuanTri.Checked = true;
-                        break;
-                    case "Nhân viên":
-                        rdoNhanVien.Checked = true;
-                        break;
-                }
+                    formMode = frmAddNhanVien.FormMode.Sua
+                };
+                frmAdd.txtMaNV.Enabled = false;
+                frmAdd.txtEmail.Enabled = true;
+                frmAdd.txtTenNhanVien.Enabled = true;
+                frmAdd.txtDuongDan.Enabled = false;
 
-                if (int.Parse(dgvDanhSachNhanVien.CurrentRow.Cells["StatusStaff"].Value.ToString()) == 1)
+                frmAdd.txtMaNV.Text = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvMaNV"].Value);
+                frmAdd.txtEmail.Text = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvEmail"].Value);
+                frmAdd.txtTenNhanVien.Text = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvFullName"].Value);
+
+
+                if (Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvRoleStaff"].Value) == "Nhân viên")
                 {
-                    rdoHoatDong.Checked = true;
+                    frmAdd.rdoNhanVien.Checked = true;
                 }
                 else
                 {
-                    rdoNgungHoatDong.Checked = true;
+                    frmAdd.rdoQuanTri.Checked = true;
                 }
 
-                relativePath = dgvDanhSachNhanVien.CurrentRow.Cells["ImageStaff"].Value.ToString();
-                string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\')); // Chuyển đổi thành đường dẫn tuyệt đối
-
+                if (Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvStatusStaff"].Value) == "Hoạt động")
+                {
+                    frmAdd.rdoHoatDong.Checked = true;
+                }
+                else
+                {
+                    frmAdd.rdoNgungHoatDong.Checked = true;
+                }
+                string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                string relativePath = dgvDanhSachNhanVien.CurrentRow.Cells["dgvImageStaff"].Value.ToString();
+                string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\'));
 
                 //Nếu file đã tồn tại thì gửi ảnh lên picture box
                 if (File.Exists(imagePath))
                 {
-                    picNhanVien.Image = Image.FromFile(imagePath);
-                }
-                else
-                {
-                    messageDialog.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo");
-                    return;
-                }
-                selected = true;
-
-                //Chủ sở hữu với chủ sở hữu khác
-                if (frmMainQLCF.role == "Chủ sở hữu" && role == "Chủ sở hữu")
-                {
-                    rdoHoatDong.Enabled = false;
-                    rdoNgungHoatDong.Enabled = false;
-                    rdoNhanVien.Enabled = false;
-                    rdoQuanTri.Enabled = false;
-                    rdoChuSoHuu.Enabled = false;
-                    txtEmail.Enabled = false;
-                    btnMoHinh.Enabled = false;
+                    frmAdd.picNhanVien.Image = Image.FromFile(imagePath);
                 }
 
-                //Bản thân quản trị
-                else if (frmMainQLCF.email == txtEmail.Text && frmMainQLCF.role == "Quản trị")
-                {
-                    //rdoHoatDong.Enabled = false;
-                    //rdoNgungHoatDong.Enabled = false;
-                    //rdoNhanVien.Enabled = false;
-                    //rdoQuanTri.Enabled = false;
-                    //rdoChuSoHuu.Enabled = false;
+                frmAdd.ShowDialog();
 
-                    txtEmail.Enabled = false;
-                    //txtTen.Enabled = false;
-                    //btnMoHinh.Enabled = false;
-                    //btnSu.Enabled = false;
-                }
-
-                //Quản trị với chủ sở hữu
-                else if (frmMainQLCF.role == "Quản trị" && role == "Chủ sở hữu")
-                {
-                    rdoHoatDong.Enabled = false;
-                    rdoNgungHoatDong.Enabled = false;
-                    rdoNhanVien.Enabled = false;
-                    rdoQuanTri.Enabled = false;
-                    rdoChuSoHuu.Enabled = false;
-
-                    txtEmail.Enabled = false;
-                    txtTen.Enabled = false;
-                    btnMoHinh.Enabled = false;
-                    btnSu.Enabled = false;
-                }
-
-                //Quản trị với quản trị khác
-                else if (frmMainQLCF.role == "Quản trị" && role == "Quản trị")
-                {
-                    rdoChuSoHuu.Enabled = false;
-
-                    //txtEmail.Enabled = false;
-                    //txtTen.Enabled = false;
-                    //btnMoHinh.Enabled = false;
-                    //btnSu.Enabled = false;
-                }
-
-
-                //Quản trị với nhân viên khác
-                else if (frmMainQLCF.role == "Quản trị" && role == "Nhân viên")
-                {
-                    rdoQuanTri.Enabled = false;
-                    rdoChuSoHuu.Enabled = false;
-                }
-
+                LoadData(status);
             }
-            else
+            else if (dgvDanhSachNhanVien.CurrentCell.OwningColumn.Name == "dgvXem")
             {
-                MessageBox.Show("Bảng trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmViewNhanVien frmView = new frmViewNhanVien();
+
+                string maNV = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvMaNV"].Value);
+                string tenNV = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvFullName"].Value);
+                string email = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvEmail"].Value);
+                string duongDan = Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvDuongDan"].Value);
+                bool trangThai = false;
+                bool vaiTro = false;
+
+                if (Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvRoleStaff"].Value) == "Nhân viên")
+                {
+                    vaiTro = true;
+                }
+
+                if (Convert.ToString(dgvDanhSachNhanVien.CurrentRow.Cells["dgvStatusStaff"].Value) == "Hoạt động")
+                {
+                    trangThai = true;
+                }
+
+                frmView.SetStaffInfo(maNV, tenNV, email, duongDan, trangThai, vaiTro);
+                frmView.ShowDialog();
             }
+            ////Lấy vị trí lưu
+            //saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+            //if (dgvDanhSachNhanVien.Rows.Count > 0)
+            //{
+            //    txtTen.Enabled = true;
+            //    txtEmail.Enabled = true;
+            //    btnSu.Enabled = true;
+            //    btnMoHinh.Enabled = true;
+
+            //    txtEmail.Enabled = true;
+            //    txtTen.Enabled = true;
+
+            //    rdoHoatDong.Enabled = true;
+            //    rdoNgungHoatDong.Enabled = true;
+            //    rdoNhanVien.Enabled = true;
+            //    rdoQuanTri.Enabled = true;
+
+            //    txtTen.Text = dgvDanhSachNhanVien.CurrentRow.Cells["dgvFullName"].Value.ToString();
+            //    txtEmail.Text = dgvDanhSachNhanVien.CurrentRow.Cells["dgvEmail"].Value.ToString();
+            //    txtDuongDan.Text = dgvDanhSachNhanVien.CurrentRow.Cells["dgvImageStaff"].Value.ToString();
+
+            //    currentEmail = dgvDanhSachNhanVien.CurrentRow.Cells["dgvEmail"].Value.ToString();
+
+            //    string role = dgvDanhSachNhanVien.CurrentRow.Cells["dgvRoleStaff"].Value.ToString();
+
+            //    switch (role)
+            //    {
+            //        case "Chủ sở hữu":
+            //            rdoChuSoHuu.Checked = true;
+            //            break;
+            //        case "Quản trị":
+            //            rdoQuanTri.Checked = true;
+            //            break;
+            //        case "Nhân viên":
+            //            rdoNhanVien.Checked = true;
+            //            break;
+            //    }
+
+            //    if (int.Parse(dgvDanhSachNhanVien.CurrentRow.Cells["dgvStatusStaff"].Value.ToString()) == 1)
+            //    {
+            //        rdoHoatDong.Checked = true;
+            //    }
+            //    else
+            //    {
+            //        rdoNgungHoatDong.Checked = true;
+            //    }
+
+            //    relativePath = dgvDanhSachNhanVien.CurrentRow.Cells["dgvImageStaff"].Value.ToString();
+            //    string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\')); // Chuyển đổi thành đường dẫn tuyệt đối
+
+
+            //    //Nếu file đã tồn tại thì gửi ảnh lên picture box
+            //    if (File.Exists(imagePath))
+            //    {
+            //        picNhanVien.Image = Image.FromFile(imagePath);
+            //    }
+            //    else
+            //    {
+            //        messageDialog.Show("Hình ảnh không tồn tại: " + imagePath, "Thông báo");
+            //        return;
+            //    }
+            //    selected = true;
+
+            //    //Chủ sở hữu với chủ sở hữu khác
+            //    if (frmMainQLCF.role == "Chủ sở hữu" && role == "Chủ sở hữu")
+            //    {
+            //        rdoHoatDong.Enabled = false;
+            //        rdoNgungHoatDong.Enabled = false;
+            //        rdoNhanVien.Enabled = false;
+            //        rdoQuanTri.Enabled = false;
+            //        rdoChuSoHuu.Enabled = false;
+            //        txtEmail.Enabled = false;
+            //        btnMoHinh.Enabled = false;
+            //    }
+
+            //    //Bản thân quản trị
+            //    else if (frmMainQLCF.email == txtEmail.Text && frmMainQLCF.role == "Quản trị")
+            //    {
+            //        //rdoHoatDong.Enabled = false;
+            //        //rdoNgungHoatDong.Enabled = false;
+            //        //rdoNhanVien.Enabled = false;
+            //        //rdoQuanTri.Enabled = false;
+            //        //rdoChuSoHuu.Enabled = false;
+
+            //        txtEmail.Enabled = false;
+            //        //txtTen.Enabled = false;
+            //        //btnMoHinh.Enabled = false;
+            //        //btnSu.Enabled = false;
+            //    }
+
+            //    //Quản trị với chủ sở hữu
+            //    else if (frmMainQLCF.role == "Quản trị" && role == "Chủ sở hữu")
+            //    {
+            //        rdoHoatDong.Enabled = false;
+            //        rdoNgungHoatDong.Enabled = false;
+            //        rdoNhanVien.Enabled = false;
+            //        rdoQuanTri.Enabled = false;
+            //        rdoChuSoHuu.Enabled = false;
+
+            //        txtEmail.Enabled = false;
+            //        txtTen.Enabled = false;
+            //        btnMoHinh.Enabled = false;
+            //        btnSu.Enabled = false;
+            //    }
+
+            //    //Quản trị với quản trị khác
+            //    else if (frmMainQLCF.role == "Quản trị" && role == "Quản trị")
+            //    {
+            //        rdoChuSoHuu.Enabled = false;
+
+            //        //txtEmail.Enabled = false;
+            //        //txtTen.Enabled = false;
+            //        //btnMoHinh.Enabled = false;
+            //        //btnSu.Enabled = false;
+            //    }
+
+
+            //    //Quản trị với nhân viên khác
+            //    else if (frmMainQLCF.role == "Quản trị" && role == "Nhân viên")
+            //    {
+            //        rdoQuanTri.Enabled = false;
+            //        rdoChuSoHuu.Enabled = false;
+            //    }
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bảng trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
         // phương thức này dùng để gọi Notfication khi thêm thành công
         public void Notification(string msg, frmNotification.enumType type)

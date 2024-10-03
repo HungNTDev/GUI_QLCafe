@@ -18,20 +18,8 @@ namespace GUI_QLCafe.ViewForm
             InitializeComponent();
         }
 
-        public void HienThi()
-        {
-            txtEmail.Enabled = false;
-            txtTenNhanVien.Enabled = false;
-            txtDuongDan.Enabled = false;    
-            rdoHoatDong.Enabled = false;
-            rdoNgungHoatDong.Enabled = false;
-            rdoNhanVien.Enabled = false;
-            rdoQuanTri.Enabled = false;
-        }
-
         private void frmViewNhanVien_Load(object sender, EventArgs e)
         {
-            HienThi();
         }
 
         public void SetStaffInfo(string maNV, string tenNhanVien, string email, string duongDan, bool trangThai, bool vaiTro)

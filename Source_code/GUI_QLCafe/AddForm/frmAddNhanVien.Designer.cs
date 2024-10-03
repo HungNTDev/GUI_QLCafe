@@ -38,7 +38,6 @@
             this.rdoHoatDong = new System.Windows.Forms.RadioButton();
             this.rdoNgungHoatDong = new System.Windows.Forms.RadioButton();
             this.gbVaiTro = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.rdoChuSoHuu = new System.Windows.Forms.RadioButton();
             this.gbTrangThai = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
@@ -154,7 +153,6 @@
             // 
             this.gbVaiTro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.gbVaiTro.BorderRadius = 5;
-            this.gbVaiTro.Controls.Add(this.rdoChuSoHuu);
             this.gbVaiTro.Controls.Add(this.rdoQuanTri);
             this.gbVaiTro.Controls.Add(this.rdoNhanVien);
             this.gbVaiTro.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
@@ -165,21 +163,6 @@
             this.gbVaiTro.Size = new System.Drawing.Size(201, 125);
             this.gbVaiTro.TabIndex = 8;
             this.gbVaiTro.Text = "Vai trò";
-            // 
-            // rdoChuSoHuu
-            // 
-            this.rdoChuSoHuu.AutoSize = true;
-            this.rdoChuSoHuu.BackColor = System.Drawing.Color.White;
-            this.rdoChuSoHuu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoChuSoHuu.ForeColor = System.Drawing.Color.Black;
-            this.rdoChuSoHuu.Location = new System.Drawing.Point(117, 85);
-            this.rdoChuSoHuu.Name = "rdoChuSoHuu";
-            this.rdoChuSoHuu.Size = new System.Drawing.Size(108, 25);
-            this.rdoChuSoHuu.TabIndex = 6;
-            this.rdoChuSoHuu.TabStop = true;
-            this.rdoChuSoHuu.Text = "Chủ sở hữu";
-            this.rdoChuSoHuu.UseVisualStyleBackColor = false;
-            this.rdoChuSoHuu.Visible = false;
             // 
             // gbTrangThai
             // 
@@ -255,7 +238,7 @@
             this.picNhanVien.ImageRotate = 0F;
             this.picNhanVien.Location = new System.Drawing.Point(497, 143);
             this.picNhanVien.Name = "picNhanVien";
-            this.picNhanVien.Size = new System.Drawing.Size(173, 227);
+            this.picNhanVien.Size = new System.Drawing.Size(173, 268);
             this.picNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNhanVien.TabIndex = 10;
             this.picNhanVien.TabStop = false;
@@ -272,7 +255,7 @@
             this.btnMoHinh.ForeColor = System.Drawing.Color.White;
             this.btnMoHinh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnMoHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnMoHinh.Image")));
-            this.btnMoHinh.Location = new System.Drawing.Point(497, 376);
+            this.btnMoHinh.Location = new System.Drawing.Point(497, 417);
             this.btnMoHinh.Name = "btnMoHinh";
             this.btnMoHinh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
             this.btnMoHinh.Size = new System.Drawing.Size(173, 42);
@@ -297,7 +280,7 @@
             this.txtDuongDan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDuongDan.ForeColor = System.Drawing.Color.Black;
             this.txtDuongDan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtDuongDan.Location = new System.Drawing.Point(497, 426);
+            this.txtDuongDan.Location = new System.Drawing.Point(497, 102);
             this.txtDuongDan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDuongDan.Name = "txtDuongDan";
             this.txtDuongDan.PasswordChar = '*';
@@ -496,7 +479,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private System.Windows.Forms.Label lbHeaderText;
-        private System.Windows.Forms.RadioButton rdoChuSoHuu;
         public System.Windows.Forms.RadioButton rdoQuanTri;
         public System.Windows.Forms.RadioButton rdoNhanVien;
         public System.Windows.Forms.RadioButton rdoHoatDong;
@@ -506,6 +488,6 @@
         public Guna.UI2.WinForms.Guna2PictureBox picNhanVien;
         public Guna.UI2.WinForms.Guna2TextBox txtDuongDan;
         public Guna.UI2.WinForms.Guna2TextBox txtMaNV;
-        private System.Windows.Forms.Label lbMaNV;
+        public System.Windows.Forms.Label lbMaNV;
     }
 }

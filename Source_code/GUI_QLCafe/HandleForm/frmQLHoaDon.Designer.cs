@@ -160,7 +160,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dgvDSHD.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSHD.RowTemplate.Height = 35;
-            this.dgvDSHD.Size = new System.Drawing.Size(1456, 556);
+            this.dgvDSHD.Size = new System.Drawing.Size(1456, 548);
             this.dgvDSHD.TabIndex = 27;
             this.dgvDSHD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDSHD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -242,7 +242,7 @@
             this.panelFooter.Controls.Add(this.btnLastPage);
             this.panelFooter.Controls.Add(this.lbTotalRows);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 792);
+            this.panelFooter.Location = new System.Drawing.Point(0, 784);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1537, 100);
             this.panelFooter.TabIndex = 35;
@@ -380,7 +380,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1537, 892);
+            this.ClientSize = new System.Drawing.Size(1537, 884);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnRefesh);

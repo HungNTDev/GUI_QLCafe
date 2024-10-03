@@ -83,8 +83,6 @@ namespace GUI_QLCafe
                 string relativePath = dgvDanhSachSanPham.CurrentRow.Cells["dgvDuongDan"].Value.ToString();
                 string imagePath = Path.Combine(saveDirectory, relativePath.TrimStart('\\'));
 
-
-
                 //Nếu file đã tồn tại thì gửi ảnh lên picture box
                 if (File.Exists(imagePath))
                 {
@@ -92,6 +90,7 @@ namespace GUI_QLCafe
                 }
 
                 frmAddSanPham.ShowDialog();
+                
                 LoadData();
             }
             else if (dgvDanhSachSanPham.CurrentCell.OwningColumn.Name == "dgvXem")
@@ -117,7 +116,9 @@ namespace GUI_QLCafe
                     if (busSanPham.delete(maSanPham))
                     {
                         this.Message("Xóa thành công!", frmNotification.enumType.Success);
+                        
                         LoadData();
+
                     }
                     else
                     {

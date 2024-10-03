@@ -278,5 +278,10 @@ namespace GUI_QLCafe.HandleForm
                 ExportFile(dataTable, "Danh sách", "DANH SÁCH THỐNG KÊ DOANH THU");
             }
         }
+
+        private void dgvDanhSachThongKe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

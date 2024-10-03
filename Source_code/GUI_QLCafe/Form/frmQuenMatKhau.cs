@@ -32,7 +32,7 @@ namespace GUI_QLCafe
             busNV.CapNhatMK(txtEmail.Text, matKhau);
 
             messageDialog.Show($"Mật khẩu mới đã được gửi về {txtEmail.Text}!", "Thông báo");
-                
+
         }
         public string RandomString(int size, bool lowerCase)
         {

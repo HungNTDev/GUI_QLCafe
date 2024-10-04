@@ -329,7 +329,7 @@
             // 
             // paneText
             // 
-            this.paneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.paneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.paneText.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.paneText.BorderThickness = 2;
             this.paneText.Controls.Add(this.lbText0);

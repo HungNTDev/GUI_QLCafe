@@ -51,7 +51,7 @@
             this.label7.Location = new System.Drawing.Point(372, 556);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(413, 46);
+            this.label7.Size = new System.Drawing.Size(408, 45);
             this.label7.TabIndex = 15;
             this.label7.Text = "Số điện thoại: 0797774073";
             // 
@@ -62,7 +62,7 @@
             this.label6.Location = new System.Drawing.Point(372, 510);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(533, 46);
+            this.label6.Size = new System.Drawing.Size(524, 45);
             this.label6.TabIndex = 14;
             this.label6.Text = "Email: hungntps38090@gmail.com";
             // 
@@ -73,7 +73,7 @@
             this.label5.Location = new System.Drawing.Point(315, 466);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 46);
+            this.label5.Size = new System.Drawing.Size(223, 45);
             this.label5.TabIndex = 13;
             this.label5.Text = "Liên hệ hỗ trợ";
             // 
@@ -95,7 +95,7 @@
             this.label2.Location = new System.Drawing.Point(315, 173);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 46);
+            this.label2.Size = new System.Drawing.Size(125, 45);
             this.label2.TabIndex = 18;
             this.label2.Text = "Tác giả:";
             // 
@@ -104,7 +104,7 @@
             this.guna2PictureBox1.BorderRadius = 10;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(980, 173);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(919, 178);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(495, 423);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +113,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
             this.panelHeader.Controls.Add(this.lblHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);

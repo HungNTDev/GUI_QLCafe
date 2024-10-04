@@ -62,10 +62,10 @@
             this.cbTrangThai.Items.AddRange(new object[] {
             "Chưa sử dụng",
             "Đã sử dụng"});
-            this.cbTrangThai.Location = new System.Drawing.Point(308, 172);
-            this.cbTrangThai.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTrangThai.Location = new System.Drawing.Point(411, 212);
+            this.cbTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTrangThai.Name = "cbTrangThai";
-            this.cbTrangThai.Size = new System.Drawing.Size(259, 36);
+            this.cbTrangThai.Size = new System.Drawing.Size(344, 36);
             this.cbTrangThai.TabIndex = 61;
             // 
             // lbTrangThai
@@ -74,10 +74,9 @@
             this.lbTrangThai.BackColor = System.Drawing.Color.White;
             this.lbTrangThai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTrangThai.ForeColor = System.Drawing.Color.Black;
-            this.lbTrangThai.Location = new System.Drawing.Point(307, 146);
-            this.lbTrangThai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTrangThai.Location = new System.Drawing.Point(409, 180);
             this.lbTrangThai.Name = "lbTrangThai";
-            this.lbTrangThai.Size = new System.Drawing.Size(96, 25);
+            this.lbTrangThai.Size = new System.Drawing.Size(98, 28);
             this.lbTrangThai.TabIndex = 54;
             this.lbTrangThai.Text = "Trạng thái";
             // 
@@ -87,10 +86,9 @@
             this.lbPhanTramKM.BackColor = System.Drawing.Color.White;
             this.lbPhanTramKM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhanTramKM.ForeColor = System.Drawing.Color.Black;
-            this.lbPhanTramKM.Location = new System.Drawing.Point(307, 85);
-            this.lbPhanTramKM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPhanTramKM.Location = new System.Drawing.Point(409, 105);
             this.lbPhanTramKM.Name = "lbPhanTramKM";
-            this.lbPhanTramKM.Size = new System.Drawing.Size(201, 25);
+            this.lbPhanTramKM.Size = new System.Drawing.Size(206, 28);
             this.lbPhanTramKM.TabIndex = 55;
             this.lbPhanTramKM.Text = "Phần trăm khuyến mãi";
             // 
@@ -109,14 +107,14 @@
             this.txtPhanTramKM.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhanTramKM.ForeColor = System.Drawing.Color.Black;
             this.txtPhanTramKM.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtPhanTramKM.Location = new System.Drawing.Point(310, 111);
-            this.txtPhanTramKM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPhanTramKM.Location = new System.Drawing.Point(413, 137);
+            this.txtPhanTramKM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhanTramKM.Name = "txtPhanTramKM";
             this.txtPhanTramKM.PasswordChar = '\0';
             this.txtPhanTramKM.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPhanTramKM.PlaceholderText = "";
             this.txtPhanTramKM.SelectedText = "";
-            this.txtPhanTramKM.Size = new System.Drawing.Size(257, 29);
+            this.txtPhanTramKM.Size = new System.Drawing.Size(343, 36);
             this.txtPhanTramKM.TabIndex = 57;
             // 
             // lbTenKhuyenMai
@@ -125,10 +123,9 @@
             this.lbTenKhuyenMai.BackColor = System.Drawing.Color.White;
             this.lbTenKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
-            this.lbTenKhuyenMai.Location = new System.Drawing.Point(29, 146);
-            this.lbTenKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTenKhuyenMai.Location = new System.Drawing.Point(39, 180);
             this.lbTenKhuyenMai.Name = "lbTenKhuyenMai";
-            this.lbTenKhuyenMai.Size = new System.Drawing.Size(143, 25);
+            this.lbTenKhuyenMai.Size = new System.Drawing.Size(146, 28);
             this.lbTenKhuyenMai.TabIndex = 56;
             this.lbTenKhuyenMai.Text = "Tên khuyến mãi";
             // 
@@ -147,14 +144,14 @@
             this.txtTenKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
             this.txtTenKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtTenKhuyenMai.Location = new System.Drawing.Point(33, 174);
-            this.txtTenKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenKhuyenMai.Location = new System.Drawing.Point(44, 214);
+            this.txtTenKhuyenMai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
             this.txtTenKhuyenMai.PasswordChar = '\0';
             this.txtTenKhuyenMai.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTenKhuyenMai.PlaceholderText = "";
             this.txtTenKhuyenMai.SelectedText = "";
-            this.txtTenKhuyenMai.Size = new System.Drawing.Size(257, 29);
+            this.txtTenKhuyenMai.Size = new System.Drawing.Size(343, 36);
             this.txtTenKhuyenMai.TabIndex = 58;
             // 
             // lbMaKhuyenMai
@@ -163,10 +160,9 @@
             this.lbMaKhuyenMai.BackColor = System.Drawing.Color.White;
             this.lbMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaKhuyenMai.ForeColor = System.Drawing.Color.Black;
-            this.lbMaKhuyenMai.Location = new System.Drawing.Point(29, 85);
-            this.lbMaKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMaKhuyenMai.Location = new System.Drawing.Point(39, 105);
             this.lbMaKhuyenMai.Name = "lbMaKhuyenMai";
-            this.lbMaKhuyenMai.Size = new System.Drawing.Size(141, 25);
+            this.lbMaKhuyenMai.Size = new System.Drawing.Size(145, 28);
             this.lbMaKhuyenMai.TabIndex = 53;
             this.lbMaKhuyenMai.Text = "Mã khuyến mãi";
             // 
@@ -182,14 +178,14 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.Controls.Add(this.guna2PictureBox1);
             this.panelHeader.Controls.Add(this.lbHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(600, 66);
+            this.panelHeader.Size = new System.Drawing.Size(800, 81);
             this.panelHeader.TabIndex = 63;
             // 
             // guna2PictureBox1
@@ -198,9 +194,9 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(77, 66);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 81);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 47;
             this.guna2PictureBox1.TabStop = false;
@@ -211,10 +207,9 @@
             this.lbHeaderText.BackColor = System.Drawing.Color.Transparent;
             this.lbHeaderText.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHeaderText.ForeColor = System.Drawing.Color.White;
-            this.lbHeaderText.Location = new System.Drawing.Point(153, 17);
-            this.lbHeaderText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbHeaderText.Location = new System.Drawing.Point(204, 21);
             this.lbHeaderText.Name = "lbHeaderText";
-            this.lbHeaderText.Size = new System.Drawing.Size(397, 42);
+            this.lbHeaderText.Size = new System.Drawing.Size(419, 45);
             this.lbHeaderText.TabIndex = 10;
             this.lbHeaderText.Text = "THÔNG TIN KHUYẾN MÃI";
             // 
@@ -236,10 +231,10 @@
             this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(34, 227);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThoat.Location = new System.Drawing.Point(45, 279);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(533, 46);
+            this.btnThoat.Size = new System.Drawing.Size(711, 57);
             this.btnThoat.TabIndex = 62;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -259,22 +254,22 @@
             this.txtMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKhuyenMai.ForeColor = System.Drawing.Color.Black;
             this.txtMaKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtMaKhuyenMai.Location = new System.Drawing.Point(33, 111);
-            this.txtMaKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaKhuyenMai.Location = new System.Drawing.Point(44, 137);
+            this.txtMaKhuyenMai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
             this.txtMaKhuyenMai.PasswordChar = '\0';
             this.txtMaKhuyenMai.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtMaKhuyenMai.PlaceholderText = "";
             this.txtMaKhuyenMai.SelectedText = "";
-            this.txtMaKhuyenMai.Size = new System.Drawing.Size(257, 29);
+            this.txtMaKhuyenMai.Size = new System.Drawing.Size(343, 36);
             this.txtMaKhuyenMai.TabIndex = 59;
             // 
             // frmViewVoucher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 304);
+            this.ClientSize = new System.Drawing.Size(800, 374);
             this.Controls.Add(this.cbTrangThai);
             this.Controls.Add(this.lbTrangThai);
             this.Controls.Add(this.lbPhanTramKM);
@@ -286,6 +281,7 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.txtMaKhuyenMai);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmViewVoucher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmViewVoucher";

@@ -14,6 +14,8 @@ namespace GUI_QLCafe
         public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
         public static int status { set; get; }
         public static string email; //dùng để truyền email từ frmMainQLBH qua các form khác (static)
+
+        public static string fullname; 
         public static string dateTime;
 
         //Tạo form đăng nhập
@@ -72,7 +74,7 @@ namespace GUI_QLCafe
         public void PhanQuyen()
         {
 
-            lblEmail.Text = "Tên nhân viên: " + email;
+            lblEmail.Text = "Tên nhân viên: " + fullname;
             lblRole.Text = "Vai trò: " + role;
             if (session == 1)
             {

@@ -121,8 +121,11 @@ namespace GUI_QLCafe
                     frmMainQLCF.status = 1;
                     frmMainQLCF.session = 1;
 
+                    DataTable Email = busStaff.StaffInfo(txtEmail.Text);
+					frmMainQLCF.email = Email.Rows[0]["Email"].ToString();
+
                     DataTable Name = busStaff.StaffInfo(txtEmail.Text);
-					frmMainQLCF.email = Name.Rows[0]["FullName"].ToString();
+                    frmMainQLCF.fullname = Name.Rows[0]["FullName"].ToString();
                     frmLoading.Show();
 
                     //foreach (Form form in Application.OpenForms)

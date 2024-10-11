@@ -250,5 +250,10 @@ namespace GUI_QLCafe
         {
 
         }
-    }
+
+		private void lbTenSanPham_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

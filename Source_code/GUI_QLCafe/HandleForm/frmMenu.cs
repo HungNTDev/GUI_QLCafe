@@ -76,8 +76,8 @@ namespace GUI_QLCafe
                 btn.Width = 300;
                 btn.Height = 150;
                 btn.BorderColor = Color.White;
-                btn.FillColor = Color.MediumSeaGreen;
-                btn.ForeColor = Color.White;
+                btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+				btn.ForeColor = Color.White;
                 btn.Click += btn_Click;
                 btn.BorderThickness = 1;
                 btn.BorderRadius = 5;
@@ -127,6 +127,7 @@ namespace GUI_QLCafe
                 }
             }
         }
+
         private void tc_Menu_Click(object sender, EventArgs e)
         {
             categoryID = tc_Menu.SelectedTab.Name.ToString();
@@ -248,5 +249,10 @@ namespace GUI_QLCafe
             catch
             { }
         }
-    }
+
+		private void flp_CaPhe_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+	}
 }

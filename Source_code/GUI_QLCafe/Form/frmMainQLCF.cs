@@ -2,6 +2,9 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using System.Drawing;
+using System.Windows.Shapes;
 
 namespace GUI_QLCafe
 {
@@ -19,7 +22,6 @@ namespace GUI_QLCafe
         public frmMainQLCF()
         {
             InitializeComponent();
-
         }
 
         public void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
@@ -41,7 +43,7 @@ namespace GUI_QLCafe
             // Hiển thị ngày + giờ trên lbNgay
             lbNgay.Text = DateTime.Now.ToShortDateString() + "  |  " + DateTime.Now.ToLongTimeString();
             PhanQuyen();
-            posExpand = flpPOS.Height >= 174;
+            posExpand = flpPOS.Height >= 175;
         }
 
         public void reLogin()
@@ -70,8 +72,8 @@ namespace GUI_QLCafe
         public void PhanQuyen()
         {
 
-            lblEmail.Text = email + "  |  " + role;
-
+            lblEmail.Text = "Tên nhân viên: " + email;
+            lblRole.Text = "Vai trò: " + role;
             if (session == 1)
             {
                 if (role == "Quản trị" || role == "Chủ sở hữu")
@@ -256,7 +258,6 @@ namespace GUI_QLCafe
             }
         }
 
-
         bool posExpand;
         private void posTransition_Tick(object sender, EventArgs e)
         {
@@ -301,16 +302,6 @@ namespace GUI_QLCafe
         private void btnMenu_Click(object sender, EventArgs e)
         {
             AddControls(new frmMenuProduct());
-        }
-
-        private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void picHam_Click(object sender, EventArgs e)
-        {
-            //sidebarTransition.Start();
         }
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
@@ -371,7 +362,7 @@ namespace GUI_QLCafe
         private void timer_ThoiGian_Tick(object sender, EventArgs e)
         {
             // Hiển thị ngày + giờ trên lbNgay
-            lbNgay.Text = DateTime.Now.ToShortDateString() + "  |  " + DateTime.Now.ToLongTimeString();
+            lbNgay.Text = DateTime.Now.ToShortDateString() + "  \n" + DateTime.Now.ToLongTimeString();
 
             timer_ThoiGian.Start();
         }
@@ -402,8 +393,8 @@ namespace GUI_QLCafe
         {
             try
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "HDSD.odt");
-                System.Diagnostics.Process.Start(path);
+                //var path = Path.Combine(Directory.GetCurrentDirectory(), "HDSD.odt");
+                //System.Diagnostics.Process.Start(path);
             }
             catch (Exception ex)
             {
@@ -415,5 +406,27 @@ namespace GUI_QLCafe
         {
             AddControls(new frmGioiThieu());
         }
-    }
+
+        private void flpSidebar_Paint(object sender, PaintEventArgs e)
+        {
+            FlowLayoutPanel panel = sender as FlowLayoutPanel;
+
+            int cornerRadius = 30;
+
+            GraphicsPath graphicsPath = new GraphicsPath();
+
+            // Vẽ hình chữ nhật với góc trên bên phải bo
+            graphicsPath.AddLine(0, 0, panel.Width - cornerRadius, 0); // Đường ngang trên
+            graphicsPath.AddArc(panel.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90); // Bo góc trên bên phải
+            graphicsPath.AddLine(panel.Width, cornerRadius, panel.Width, panel.Height); // Đường dọc bên phải
+            graphicsPath.AddLine(panel.Width, panel.Height, 0, panel.Height); // Đường ngang dưới
+            graphicsPath.AddLine(0, panel.Height, 0, 0); // Đường dọc bên trái
+            panel.Region = new Region(graphicsPath);
+        }
+
+		private void frmMainQLCF_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

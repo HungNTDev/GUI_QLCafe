@@ -942,11 +942,18 @@ EXEC GetDetailStatistic
 CREATE OR ALTER PROC GetBill
 AS
 BEGIN 
-    			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
-			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
-			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
-    FROM Statistic a
-    INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+		SELECT 
+		a.IdBill AS N'Mã hóa đơn', 
+		a.NameTable AS N'Tên bàn', 
+		b.NameProduct AS N'Tên sản phẩm', 
+		b.Amount AS N'Số lượng', 
+		a.PercentVoucher AS N'Phần trăm khuyến mãi',
+		a.NamePayment AS N'Phương thức thanh toán', 
+		a.CheckIn AS N'Giờ vào', 
+		a.CheckOut AS N'Giờ ra', 
+		a.Total AS N'Tổng tiền (VND)'
+		FROM Statistic a
+		INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
 END
 		
 EXEC GetBill
@@ -1019,9 +1026,9 @@ create or alter proc GetPagedBill
 @PageSize int
 as
 	begin
-			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
-			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
-			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+		SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+		a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+		a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
 		FROM Statistic a
 		INNER JOIN DetailStatistic b
 		ON b.IdStatistic = a.IdStatistic order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
@@ -1163,3 +1170,36 @@ as
 -- Load nhân vien wpf
 create proc AllStaff as
 select ImageStaff, FullName, Email, RoleStaff, IdStaff from Staff
+
+-- TẠO THỐNG KÊ THEO NGÀY -- 
+CREATE OR ALTER PROC GetStatisticByDay
+	@startDate DATE,
+	@endDate DATE
+AS
+BEGIN
+	SELECT 
+	a.NameProduct AS N'Tên sản phẩm', 
+	SUM(a.Amount) AS N'Số lượng',
+	SUM(a.TotalPrice) AS N'Tổng tiền'
+	FROM DetailStatistic a
+	INNER JOIN Statistic b ON a.IdStatistic = b.IdStatistic
+	WHERE CAST(b.CheckIn AS DATE) BETWEEN @startDate AND @endDate
+	GROUP BY a.NameProduct
+	ORDER BY SUM(a.TotalPrice) DESC;
+END
+
+EXEC GetStatisticByDay @startDate = '2024-08-01', @endDate = '2024-08-01';
+
+-- TỈNH TỔNG CỘT TỔNG TIỀN --
+CREATE OR ALTER PROC GetStatisticByDay2
+	@startDate DATE,
+	@endDate DATE
+AS
+	SELECT
+		SUM(a.TotalPrice) AS N'Tổng tiền'
+		FROM DetailStatistic a
+		INNER JOIN Statistic b ON a.IdStatistic = b.IdStatistic
+		WHERE CAST(b.CheckIn AS DATE) BETWEEN '2024-08-01' AND '2024-08-01'
+		--GROUP BY a.NameProduct
+		ORDER BY SUM(a.TotalPrice) DESC;
+end

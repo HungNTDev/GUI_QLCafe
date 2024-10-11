@@ -36,6 +36,7 @@
             this.lbText = new System.Windows.Forms.Label();
             this.pbLoading = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.time_Loading = new System.Windows.Forms.Timer(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +106,13 @@
             this.time_Loading.Interval = 15;
             this.time_Loading.Tick += new System.EventHandler(this.time_Loading_Tick);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 15;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // frmLoading
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -136,5 +144,6 @@
         private System.Windows.Forms.Label lbText;
         private Guna.UI2.WinForms.Guna2GradientPanel pbLoading;
         private System.Windows.Forms.Timer time_Loading;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

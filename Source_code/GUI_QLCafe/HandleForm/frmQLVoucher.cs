@@ -238,5 +238,15 @@ namespace GUI_QLCafe
         {
 
         }
-    }
+
+		private void lbCurrentPage_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lbPageLine_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

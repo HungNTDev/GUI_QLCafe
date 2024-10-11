@@ -12,15 +12,10 @@ namespace GUI_QLCafe
 {
     public partial class frmAddNhanVien : Form
     {
-        private string id;
-        private string chucnang;
-        private string email;
-        private string fullname;
-        private int role;
-        private int status;
-        private string image;
-        private string saveDirectory;
         private Image originalImage;
+        public FormMode formMode { get; set; }
+
+        public enum FormMode { Them, Sua }
 
         BUS_Staff busNhanVien = new BUS_Staff();
 
@@ -28,6 +23,10 @@ namespace GUI_QLCafe
         string fileName; //tên file
         string fileSavePath; //vị trí lưu
         string fileAddress;
+
+        public string currentEmail = "";
+
+
         public frmAddNhanVien(/*string id, string chucnang, string email, string fullname, int role, int status, string image, string saveDirectory*/)
         {
             InitializeComponent();
@@ -128,21 +127,14 @@ namespace GUI_QLCafe
         }
 
 
+        private string saveDirectory;
+        private string relativePath;
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
             //if (chucnang == "luu")
             //{
-            string role = ""; //vai tro nhan vien
-            if (rdoQuanTri.Checked)
-            {
-                role = "Quản trị";
-            }
-            int status = 0; //ngung hoat dong
-            if (rdoHoatDong.Checked)
-            {
-                status = 1;
-            }
+            
             if (txtEmail.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Vui lòng nhập email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -177,7 +169,8 @@ namespace GUI_QLCafe
                 return;
             }
             //Nếu thêm nhân viên thành công thì hiện cái Nofication lên không thì ngược lại
-            else if (busNhanVien.KiemTraEmail(txtEmail.Text))
+            //Nếu email mới khác với email hiện tại, kiểm tra xem email mới có tồn tại trong hệ thống hay không
+            else if (txtEmail.Text != currentEmail && busNhanVien.KiemTraEmail(txtEmail.Text))
             {
                 MessageBox.Show("Email đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
@@ -185,9 +178,28 @@ namespace GUI_QLCafe
             }
             else
             {
-                if (MessageBox.Show("Chắc chắn lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (formMode == FormMode.Them)
                 {
-                    try
+                    string role = ""; //vai tro nhan vien
+                    if (rdoQuanTri.Checked)
+                    {
+                        role = "Quản trị";
+                    }
+                    else
+                    {
+                        role = "Nhân viên";
+                    }
+                    int status = 0; //ngung hoat dong
+                    if (rdoHoatDong.Checked)
+                    {
+                        status = 1;
+                    }
+                    else
+                    {
+                        status = 0;
+                    }
+
+                    if (MessageBox.Show("Chắc chắn lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
                         guiMK();
@@ -239,11 +251,88 @@ namespace GUI_QLCafe
                             return;
                         }
                     }
-                    catch (Exception ex)
+                }
+                else
+                {
+                    if (MessageBox.Show("Chắc chắn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(ex.ToString());
-                        //Nofication("Thêm thất bại!", frmNotification.enumType.Failed);
-                        return;
+                        string id = txtMaNV.Text;
+                        string email = txtEmail.Text;
+                        string fullname = txtTenNhanVien.Text;
+                        string image = txtDuongDan.Text;
+
+                        string role = ""; //vai tro nhan vien
+                        int status = 0; //ngung hoat dong
+
+                        //frmAddNhanVien frmAddNV = new frmAddNhanVien(id, "sua", email, fullname, role, status, image, saveDirectory);
+                        //frmAddNV.ShowDialog();
+                        //Reload();
+
+                        if (rdoQuanTri.Checked)
+                        {
+                            role = "Quản trị";
+                        }
+                        else
+                        {
+                            role = "Nhân viên";
+                        }
+
+                        if (rdoHoatDong.Checked)
+                        {
+                            status = 1;
+                        }
+                        else
+                        {
+                            status = 0;
+                        }
+                        // Đường dẫn thư mục gốc của dự án
+                        string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                        string saveDirectory = Path.Combine(projectDirectory, "GUI_QLCafe", "img", "Staff");
+
+                        // Tạo thư mục nếu chưa có
+                        if (!Directory.Exists(saveDirectory))
+                        {
+                            Directory.CreateDirectory(saveDirectory);
+                        }
+
+
+                        // Đường dẫn ảnh
+                        string fileAddress = txtDuongDan.Text; // txtDuongDan chứa đường dẫn tới ảnh
+                        string fileName = Path.GetFileName(fileAddress);
+                        string fileSavePath = Path.Combine(saveDirectory, fileName);
+
+
+
+                        // Kiểm tra xem hình đã tồn tại trong thư mục staff hay chưa
+                        if (!File.Exists(fileSavePath))
+                        {
+                            try
+                            {
+                                File.Copy(fileAddress, fileSavePath, true); // Sao chép hình vào thư mục Images nếu chưa tồn tại
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+
+                        // Update txtHinh to point to the new location
+                        txtDuongDan.Text = fileSavePath;
+                        DTO_Staff staff = new DTO_Staff(txtTenNhanVien.Text, txtDuongDan.Text, txtEmail.Text, role, status);
+
+                        if (busNhanVien.update(staff, id))
+                        {
+                            frmMainQLCF ql = new frmMainQLCF();
+
+                            this.Nofication("Sửa thành công!", frmNotification.enumType.Success);
+
+                        }
+                        else
+                        {
+                            this.Nofication("Sửa thất bại!", frmNotification.enumType.Failed);
+                            return;
+                        }
                     }
                 }
             }
@@ -442,46 +531,46 @@ namespace GUI_QLCafe
         //}
 
         //Nếu thiếu thông tin thì trở về
-        private bool ValidateInput()
-        {
-            if (string.IsNullOrEmpty(txtEmail.Text))
-            {
-                messageDialog.Show("Vui lòng nhập email!", "Thông báo");
-                txtEmail.Focus();
-                return false;
-            }
-            else if (!IsValid(txtEmail.Text))
-            {
-                messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
-                txtEmail.Focus();
-                return false;
-            }
-            else if (string.IsNullOrEmpty(txtTenNhanVien.Text))
-            {
-                messageDialog.Show("Vui lòng nhập tên nhân viên!", "Thông báo");
-                txtTenNhanVien.Focus();
-                return false;
-            }
-            else if (!rdoQuanTri.Checked && !rdoNhanVien.Checked)
-            {
-                messageDialog.Show("Vui lòng chọn vai trò!", "Thông báo");
-                return false;
-            }
-            else if (!rdoHoatDong.Checked && !rdoNgungHoatDong.Checked)
-            {
-                messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
-                return false;
-            }
-            else if (string.IsNullOrEmpty(txtDuongDan.Text))
-            {
-                messageDialog.Show("Vui lòng chọn hình", "Thông Báo");
-                return false;
-            }
+        //private bool ValidateInput()
+        //{
+        //    if (string.IsNullOrEmpty(txtEmail.Text))
+        //    {
+        //        messageDialog.Show("Vui lòng nhập email!", "Thông báo");
+        //        txtEmail.Focus();
+        //        return false;
+        //    }
+        //    else if (!IsValid(txtEmail.Text))
+        //    {
+        //        messageDialog.Show("Vui lòng nhập đúng định dạng email!", "Thông báo");
+        //        txtEmail.Focus();
+        //        return false;
+        //    }
+        //    else if (string.IsNullOrEmpty(txtTenNhanVien.Text))
+        //    {
+        //        messageDialog.Show("Vui lòng nhập tên nhân viên!", "Thông báo");
+        //        txtTenNhanVien.Focus();
+        //        return false;
+        //    }
+        //    else if (!rdoQuanTri.Checked && !rdoNhanVien.Checked)
+        //    {
+        //        messageDialog.Show("Vui lòng chọn vai trò!", "Thông báo");
+        //        return false;
+        //    }
+        //    else if (!rdoHoatDong.Checked && !rdoNgungHoatDong.Checked)
+        //    {
+        //        messageDialog.Show("Vui lòng chọn trạng thái!", "Thông báo");
+        //        return false;
+        //    }
+        //    else if (string.IsNullOrEmpty(txtDuongDan.Text))
+        //    {
+        //        messageDialog.Show("Vui lòng chọn hình", "Thông Báo");
+        //        return false;
+        //    }
 
-            role = rdoQuanTri.Checked ? 1 : 0;
-            status = rdoHoatDong.Checked ? 1 : 0;
-            return true;
-        }
+        //    role = rdoQuanTri.Checked ? 1 : 0;
+        //    status = rdoHoatDong.Checked ? 1 : 0;
+        //    return true;
+        //}
         private void btnMoHinh_Click(object sender, EventArgs e)
         {
 
@@ -515,11 +604,6 @@ namespace GUI_QLCafe
 
         private void frmAddNhanVien_Load(object sender, EventArgs e)
         {
-            rdoChuSoHuu.Enabled = false;
-            if (frmMainQLCF.role == "Chủ sở hữu")
-            {
-                rdoChuSoHuu.Enabled = true;
-            }
         }
     }
 }

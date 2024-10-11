@@ -21,8 +21,6 @@ ALTER COLUMN RoleStaff  nvarchar(50)
 create table Voucher(
 IdVoucher  nvarchar(10) not null,
 NameVoucher nvarchar(100) not null,
-DateStart datetime,
-DateEnd  datetime,
 PercentVoucher int not null,
 StatusVoucher int not null,
 Primary key (IdVoucher)
@@ -166,38 +164,39 @@ go
 update Staff set ImageStaff=' '
 	
 insert into TableCF (IdTable, NameTable, StatusTableCF,StatusTablePos) values
-('B01',N'Bàn 1','Trống',0),
-('B02',N'Bàn 2','Trống',0),
-('B03',N'Bàn 3','Trống',0),
-('B04',N'Bàn 4','Trống',0),
-('B05',N'Bàn 5','Trống',0),
-('B06',N'Bàn 6','Trống',0),
-('B07',N'Bàn 7','Trống',0),
-('B08',N'Bàn 8','Trống',0),
-('B09',N'Bàn 9','Trống',0),
-('B10',N'Bàn 10','Trống',0),
-('B11',N'Bàn 11','Trống',0),
-('B12',N'Bàn 12','Trống',0),
-('B13',N'Bàn 13','Trống',0),
-('B14',N'Bàn 14','Trống',0),
-('B15',N'Bàn 15','Trống',0),
-('B16',N'Bàn 16','Trống',0),
-('B17',N'Bàn 17','Trống',0),
-('B18',N'Bàn 18','Trống',0),
-('B19',N'Bàn 19','Trống',0),
-('B20',N'Bàn 20','Trống',0),
-('B21',N'Bàn 21','Trống',0),
-('B22',N'Bàn 22','Trống',0),
-('B23',N'Bàn 23','Trống',0),
-('B24',N'Bàn 24','Trống',0),
-('B25',N'Bàn 25','Trống',0),
-('B26',N'Bàn 26','Trống',0),
-('B27',N'Bàn 27','Trống',0),
-('B28',N'Bàn 28','Trống',0),
-('B29',N'Bàn 29','Trống',0),
-('B30',N'Bàn 30','Trống',0)
+('B01',N'Bàn 1',N'Hoạt Động',0),
+('B02',N'Bàn 2',N'Hoạt Động',0),
+('B03',N'Bàn 3',N'Hoạt Động',0),
+('B04',N'Bàn 4',N'Hoạt Động',0),
+('B05',N'Bàn 5',N'Hoạt Động',0),
+('B06',N'Bàn 6',N'Hoạt Động',0),
+('B07',N'Bàn 7',N'Hoạt Động',0),
+('B08',N'Bàn 8',N'Hoạt Động',0),
+('B09',N'Bàn 9',N'Hoạt Động',0),
+('B10',N'Bàn 10',N'Hoạt Động',0),
+('B11',N'Bàn 11',N'Hoạt Động',0),
+('B12',N'Bàn 12',N'Hoạt Động',0),
+('B13',N'Bàn 13',N'Hoạt Động',0),
+('B14',N'Bàn 14',N'Hoạt Động',0),
+('B15',N'Bàn 15',N'Hoạt Động',0),
+('B16',N'Bàn 16',N'Hoạt Động',0),
+('B17',N'Bàn 17',N'Hoạt Động',0),
+('B18',N'Bàn 18',N'Hoạt Động',0),
+('B19',N'Bàn 19',N'Hoạt Động',0),
+('B20',N'Bàn 20',N'Hoạt Động',0),
+('B21',N'Bàn 21',N'Hoạt Động',0),
+('B22',N'Bàn 22',N'Hoạt Động',0),
+('B23',N'Bàn 23',N'Hoạt Động',0),
+('B24',N'Bàn 24',N'Hoạt Động',0),
+('B25',N'Bàn 25',N'Hoạt Động',0),
+('B26',N'Bàn 26',N'Hoạt Động',0),
+('B27',N'Bàn 27',N'Hoạt Động',0),
+('B28',N'Bàn 28',N'Hoạt Động',0),
+('B29',N'Bàn 29',N'Hoạt Động',0),
+('B30',N'Bàn 30',N'Hoạt Động',0)
 	
-update TableCF set StatusTableCF = N'Trống'
+update TableCF set StatusTableCF = N'Hoạt Động'
+delete from TableCF
 
 update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
@@ -225,7 +224,8 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 
 /*Cà phê*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'CFE'),
+	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'CFE')
+	insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
 	('CFE2', N'Cà phê Expresso', 30000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
 	('CFE3', N'Cà phê kem tươi', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
 	('CFE4', N'Cà phê Vanilla', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
@@ -253,10 +253,10 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 
  
  -- Voucher 
-insert into Voucher (IdVoucher, NameVoucher, DateStart, DateEnd ,PercentVoucher, StatusVoucher) values
-('#NULL',N'Không có',0,0,0,1),
-('SALE10%',N'Giảm 10%',2024-8-16,2024-8-20,10,1),
-('SALE7.5%',N'Giảm 7.5%',2024-8-16,2024-8-20,7.5,1)
+insert into Voucher (IdVoucher, NameVoucher,PercentVoucher, StatusVoucher) values
+('#NULL',N'Không có',0,1),
+('SALE10%',N'Giảm 10%',10,1),
+('SALE7.5%',N'Giảm 7.5%',7.5,1)
 
 -- Payment
 insert into Payment (IdPayment, TypePayment, StatusPayment) values

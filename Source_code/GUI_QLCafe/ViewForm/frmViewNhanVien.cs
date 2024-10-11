@@ -18,29 +18,18 @@ namespace GUI_QLCafe.ViewForm
             InitializeComponent();
         }
 
-        public void HienThi()
-        {
-            txtEmail.Enabled = false;
-            txtTenNhanVien.Enabled = false;
-            txtDuongDan.Enabled = false;    
-            rdoHoatDong.Enabled = false;
-            rdoNgungHoatDong.Enabled = false;
-            rdoNhanVien.Enabled = false;
-            rdoQuanTri.Enabled = false;
-        }
-
         private void frmViewNhanVien_Load(object sender, EventArgs e)
         {
-            HienThi();
         }
 
-        public void SetStaffInfo(string email, string tenNhanVien, string duongDan, bool trangThai, bool vaiTro)
+        public void SetStaffInfo(string maNV, string tenNhanVien, string email, string duongDan, bool trangThai, bool vaiTro)
         {
+            txtMaNV.Text = maNV;
             txtEmail.Text = email;   
             txtTenNhanVien.Text = tenNhanVien;
             txtDuongDan.Text = duongDan;
-            rdoQuanTri.Checked = vaiTro;
-            rdoHoatDong.Checked = trangThai;
+            vaiTro = true ? rdoNhanVien.Checked = true : rdoQuanTri.Checked = true;
+            trangThai = true ? rdoHoatDong.Checked = true : rdoNgungHoatDong.Checked = true;
 
             string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
             string imagePath = Path.Combine(saveDirectory, duongDan.TrimStart('\\'));

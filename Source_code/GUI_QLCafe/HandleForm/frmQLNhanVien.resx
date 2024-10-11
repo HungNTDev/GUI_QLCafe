@@ -150,7 +150,7 @@
   <data name="dgvSua.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGdSURBVEhL7ZWx
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGdSURBVEhL7ZWx
         LwNhGMY/iYHEYiWshqJ3X2MwSDoZJRJ2xH3XdmJmwE7wl1gkTDrZcN9JB4kwSNAFMViEet/P+/au7V21
         V4nFL3nSvPc897yXL21P/CZpLzdoa+fA9tW9+TxfGiCrczIlNWxrdQOqBHIOye4cKJuB0vfwAkurV7KT
         g08utVoTFdFl+Wq+bklRZE82um3fXYfhCvTUXO4R9RrCxyK1u4tLIDMHMy4pj+v8iIDyTQy0qDPqjjxz
@@ -167,7 +167,7 @@
   <data name="dgvXem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKKSURBVEhLxVVL
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKKSURBVEhLxVVL
         axRBGGyfYBT0rv4CIc7sGjQqKKgHEY8BFQQPmZ6QmwfxEZXFgC+CGvwHUYl6EHx78+ZJ2elZot5NxAiK
         6Hl3reqp3ewzC4qxoNj9qvr7evrr7hmzJOh3w5sCZ0+FaXy6xryz22X3RM4N72jMZa2tychG2cZAPB86
         W21iYm/L7gmObctHTdl8AlugqPCvwVqsqfA/T5B/a/tCFx9FX28GafzIM7E3QhcdGXxzco2GNaFtgqAU
@@ -188,7 +188,7 @@
   <data name="dgvXoa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        rgAAAK4B+ff3XQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFqSURBVEhLvZW9
+        rAAAAKwBhgk01AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFqSURBVEhLvZW9
         SsRAFIWvmBnUymfwFRT0BcQXWAVB7AQLC1srezu7LSwFK1uLVbAWQXyAbGHlT2GhgmAS4rlwITdjZpzJ
         ih8cFk7OObNJYJd+oySTQ7VHucT6g5HKGdWqJNafkuwAWvdoILE4vsisdIwkCRvLMtcGt7vt3P4Eslsy
         24ALw5/B3hrKbENFZh8XLv9CvCWz/0xNlOEbjCdQjo1pmesGoXeo67nG6FVm/CD04JRKaAd6bjz7KB5f
@@ -243,6 +243,9 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>176, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,6 +52,7 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.paneText = new Guna.UI2.WinForms.Guna2Panel();
             this.lbText0 = new System.Windows.Forms.Label();
+            this.elMenuProduct = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.STO.SuspendLayout();
             this.TEA.SuspendLayout();
             this.CFE.SuspendLayout();
@@ -115,7 +117,7 @@
             // flp_CaPhe
             // 
             this.flp_CaPhe.AutoScroll = true;
-            this.flp_CaPhe.BackColor = System.Drawing.Color.White;
+            this.flp_CaPhe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.flp_CaPhe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_CaPhe.Location = new System.Drawing.Point(3, 3);
             this.flp_CaPhe.Name = "flp_CaPhe";
@@ -182,7 +184,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.ListOrder_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -228,7 +230,7 @@
             this.ListOrder_dgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.ListOrder_dgv.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.ListOrder_dgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.ListOrder_dgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.ListOrder_dgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.ListOrder_dgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.ListOrder_dgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOrder_dgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
@@ -266,7 +268,7 @@
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelFooter.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelFooter.BorderThickness = 2;
             this.panelFooter.Controls.Add(this.btnDel);
@@ -286,12 +288,12 @@
             this.btnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnDel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDel.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDel.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnDel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnDel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnDel.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.Location = new System.Drawing.Point(255, 27);
@@ -311,12 +313,12 @@
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnAdd.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(22, 26);
@@ -351,6 +353,11 @@
             this.lbText0.TabIndex = 11;
             this.lbText0.Text = "SPECIAL MENU FOR YOU - FRESHLY BREWED, JUST FOR YOU\r\n\r\n";
             // 
+            // elMenuProduct
+            // 
+            this.elMenuProduct.BorderRadius = 30;
+            this.elMenuProduct.TargetControl = this;
+            // 
             // frmMenuProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -362,6 +369,7 @@
             this.Controls.Add(this.paneText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenuProduct";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenuProduct_Load);
             this.STO.ResumeLayout(false);
             this.TEA.ResumeLayout(false);
@@ -397,5 +405,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Panel paneText;
         private System.Windows.Forms.Label lbText0;
+        private Guna.UI2.WinForms.Guna2Elipse elMenuProduct;
     }
 }

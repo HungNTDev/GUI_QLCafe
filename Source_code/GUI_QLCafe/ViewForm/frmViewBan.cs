@@ -38,5 +38,10 @@ namespace GUI_QLCafe.ViewForm
         {
             HienThi();
         }
-    }
+
+		private void picLogo_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

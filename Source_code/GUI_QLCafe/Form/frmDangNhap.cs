@@ -120,8 +120,12 @@ namespace GUI_QLCafe
                     frmMainQLCF.role = dt.Rows[0]["roleStaff"].ToString();
                     frmMainQLCF.status = 1;
                     frmMainQLCF.session = 1;
-                    frmMainQLCF.email = staff.email;
 
+                    DataTable Email = busStaff.StaffInfo(txtEmail.Text);
+					frmMainQLCF.email = Email.Rows[0]["Email"].ToString();
+
+                    DataTable Name = busStaff.StaffInfo(txtEmail.Text);
+                    frmMainQLCF.fullname = Name.Rows[0]["FullName"].ToString();
                     frmLoading.Show();
 
                     //foreach (Form form in Application.OpenForms)
@@ -281,13 +285,6 @@ namespace GUI_QLCafe
             }
         }
 
-
-
-
-        private void cbClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private string TaoMK()
         {
             StringBuilder builder = new StringBuilder();
@@ -299,6 +296,7 @@ namespace GUI_QLCafe
 
             return matKhau;
         }
+
         private void lkQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (DialogResult.OK == MessageBox.Show("Bạn muốn sử dụng tính năng quên mật khẩu?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
@@ -391,5 +389,14 @@ namespace GUI_QLCafe
             client.Send(Msg); // Send our email.
 
         }
-    }
+
+		private void btnThoat_Click(object sender, EventArgs e)
+		{
+            DialogResult dl = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(dl == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+		}
+	}
 }

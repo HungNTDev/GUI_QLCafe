@@ -23,8 +23,9 @@ namespace GUI_QLCafe.HandleForm
         private void LoadData()
         {
             dgvDanhSachThongKe.DataSource = busStatistic.GetDetailStatistic();
-            decimal tongDoanhThu = TinhTongDoanhThu();
-            lbTongDoanhThu.Text = "Tổng doanh thu: " + tongDoanhThu.ToString() + " VND";
+            //decimal tongDoanhThu = TinhTongDoanhThu();
+            string TongDoanhThu = String.Format("{0:0,0}", TinhTongDoanhThu());
+            lbTongDoanhThu.Text = "Tổng doanh thu: " + TongDoanhThu + " VNĐ";
         }
 
         private void LoadPage()
@@ -245,9 +246,7 @@ namespace GUI_QLCafe.HandleForm
                     LoadAllData();
                 }
                 else
-                {
                     return;
-                }
             }
 
             DialogResult dl2 = MessageBox.Show("Bạn có muốn xuất thống kê ra file?", "Thông báo",
@@ -278,5 +277,7 @@ namespace GUI_QLCafe.HandleForm
                 ExportFile(dataTable, "Danh sách", "DANH SÁCH THỐNG KÊ DOANH THU");
             }
         }
-    }
+
+
+	}
 }

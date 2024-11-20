@@ -11,6 +11,7 @@ Email           nvarchar(50) not null,
 PasswordStaff   nvarchar(50) not null,
 RoleStaff      nvarchar(50) not null,
 StatusStaff     int not null,
+StatusNewBie int default 0,
 Primary key (IdStaff)
 )
 
@@ -148,6 +149,9 @@ alter table Bill
 add constraint fk_b_st
 Foreign key (IdStaff) references Staff(IdStaff)
 
+alter table Bill
+drop constraint fk_b_st
+
 insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff,StatusStaff) values
 ('NV1',N'Lý Bảo Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hungntps38090@gmail.com','123',N'Quản trị',1),
 ('NV2',N'Nguyễn Tuấn Hùng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','nguyenhunghocmon02@gmail.com','123',N'Nhân viên',0),
@@ -156,42 +160,43 @@ insert into Staff(IdStaff, FullName, ImageStaff, Email, PasswordStaff, RoleStaff
 ('NV5',N'Lý Minh Hoàng','C:\Users\ADMIN\Pictures\hinh-nen-anime-chill-full-hd_012439279.png','hoanglbps38288@gmail.com','123',N'Nhân viên',0)
 
 go
+
+update Staff set ImageStaff=' '
 	
-insert into TableCF (IdTable, NameTable, StatusTable) values
-('B01',N'Bàn 1',0),
-('B02',N'Bàn 2',0),
-('B03',N'Bàn 3',0),
-('B04',N'Bàn 4',0),
-('B05',N'Bàn 5',0),
-('B06',N'Bàn 6',0),
-('B07',N'Bàn 7',0),
-('B08',N'Bàn 8',0),
-('B09',N'Bàn 9',0),
-('B10',N'Bàn 10',0),
-('B11',N'Bàn 11',0),
-('B12',N'Bàn 12',0),
-('B13',N'Bàn 13',0),
-('B14',N'Bàn 14',0),
-('B15',N'Bàn 15',0),
-('B16',N'Bàn 16',0),
-('B17',N'Bàn 17',0),
-('B18',N'Bàn 18',0),
-('B19',N'Bàn 19',0),
-('B20',N'Bàn 20',0),
-('B21',N'Bàn 21',0),
-('B22',N'Bàn 22',0),
-('B23',N'Bàn 23',0),
-('B24',N'Bàn 24',0),
-('B25',N'Bàn 25',0),
-('B26',N'Bàn 26',0),
-('B27',N'Bàn 27',0),
-('B28',N'Bàn 28',0),
-('B29',N'Bàn 29',0),
-('B30',N'Bàn 30',0)
+insert into TableCF (IdTable, NameTable, StatusTableCF,StatusTablePos) values
+('B01',N'Bàn 1',N'Hoạt Động',0),
+('B02',N'Bàn 2',N'Hoạt Động',0),
+('B03',N'Bàn 3',N'Hoạt Động',0),
+('B04',N'Bàn 4',N'Hoạt Động',0),
+('B05',N'Bàn 5',N'Hoạt Động',0),
+('B06',N'Bàn 6',N'Hoạt Động',0),
+('B07',N'Bàn 7',N'Hoạt Động',0),
+('B08',N'Bàn 8',N'Hoạt Động',0),
+('B09',N'Bàn 9',N'Hoạt Động',0),
+('B10',N'Bàn 10',N'Hoạt Động',0),
+('B11',N'Bàn 11',N'Hoạt Động',0),
+('B12',N'Bàn 12',N'Hoạt Động',0),
+('B13',N'Bàn 13',N'Hoạt Động',0),
+('B14',N'Bàn 14',N'Hoạt Động',0),
+('B15',N'Bàn 15',N'Hoạt Động',0),
+('B16',N'Bàn 16',N'Hoạt Động',0),
+('B17',N'Bàn 17',N'Hoạt Động',0),
+('B18',N'Bàn 18',N'Hoạt Động',0),
+('B19',N'Bàn 19',N'Hoạt Động',0),
+('B20',N'Bàn 20',N'Hoạt Động',0),
+('B21',N'Bàn 21',N'Hoạt Động',0),
+('B22',N'Bàn 22',N'Hoạt Động',0),
+('B23',N'Bàn 23',N'Hoạt Động',0),
+('B24',N'Bàn 24',N'Hoạt Động',0),
+('B25',N'Bàn 25',N'Hoạt Động',0),
+('B26',N'Bàn 26',N'Hoạt Động',0),
+('B27',N'Bàn 27',N'Hoạt Động',0),
+('B28',N'Bàn 28',N'Hoạt Động',0),
+('B29',N'Bàn 29',N'Hoạt Động',0),
+('B30',N'Bàn 30',N'Hoạt Động',0)
 	
-	delete from TableCF
-	
-update TableCF set StatusTable = 0
+update TableCF set StatusTableCF = N'Hoạt Động'
+delete from TableCF
 
 update Staff set PasswordStaff='196145663720616991136127245362061123820032'
 where IdStaff='NV1'
@@ -215,9 +220,12 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 	('TEA4', N'Hồng trà sữa', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'TEA'),
 	('TEA5', N'Trà sữa Truyền Thống', 50000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'TEA')
 
+
+
 /*Cà phê*/
 insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
-	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'CFE'),
+	('CFE1', N'Cà phê Cappuchino', 35000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg', 'Còn Bán', 'CFE')
+	insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT) values
 	('CFE2', N'Cà phê Expresso', 30000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
 	('CFE3', N'Cà phê kem tươi', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
 	('CFE4', N'Cà phê Vanilla', 40000, '\img\Product\f881c559678a3d3fd31e4284b351c9a3.jpg','Còn Bán', 'CFE'),
@@ -245,7 +253,7 @@ insert into Product (IdProduct, NameProduct, Price, ImageProduct, StatusProduct,
 
  
  -- Voucher 
-insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) values
+insert into Voucher (IdVoucher, NameVoucher,PercentVoucher, StatusVoucher) values
 ('#NULL',N'Không có',0,1),
 ('SALE10%',N'Giảm 10%',10,1),
 ('SALE7.5%',N'Giảm 7.5%',7.5,1)
@@ -254,8 +262,33 @@ insert into Voucher (IdVoucher, NameVoucher, PercentVoucher, StatusVoucher) valu
 insert into Payment (IdPayment, TypePayment, StatusPayment) values
 ('TM',N'Tiền Mặt',1),
 ('MM',N'MOMO',1)
-
 go
+
+create proc [dbo].[LoginStatus] @email nvarchar(50)
+as
+begin
+    select StatusNewBie from Staff
+    where Email = @email
+end
+
+-- Load Voucher
+create proc GetVoucher
+as 
+   select * from Voucher 
+go
+
+-- Insert Voucher
+create proc InsertVoucher(@idVoucher nvarchar(10),
+                                          @nameVoucher nvarchar(100),
+										  @dateStart datetime,
+										  @dateEnd datetime,
+										  @percentVoucher int,
+										  @statusVoucher int)
+as 
+   begin 
+           insert into Voucher (IdVoucher, NameVoucher, DateStart, DateEnd, PercentVoucher, StatusVoucher) values
+		   (@idVoucher, @nameVoucher, @dateStart, @dateEnd, @percentVoucher, @statusVoucher)
+	end
 --Đăng nhập
 create proc DangNhap (@email nvarchar(50), @password nvarchar(50))
 as
@@ -279,6 +312,7 @@ as
 begin
 	SELECT COUNT(email) FROM staff WHERE email = @Email
 end
+go
 
 	-- Thay đổi mật khẩu
 create procedure ChangePass(
@@ -304,6 +338,7 @@ as
 begin
 	update Staff set PasswordStaff = @password where Email = @email
 end
+go
 
 -- Xử lí bàn (Lý Bảo Hoàng) --
 /*Danh sách bàn*/
@@ -326,14 +361,14 @@ create or alter proc TagProduct (@IdProduct nvarchar(20)) as
 	select NameProduct, Price, IdProduct from Product where IdProduct = @IdProduct
 
 	select * from Staff
-
+	go
 -- Lấy danh sách nhân viên
 create proc GetStaff (@status int)
 as
 begin
 	select IdStaff, Email, FullName, RoleStaff, StatusStaff, ImageStaff from Staff where StatusStaff = @status;
 end
-
+go
 
 --Thêm NV
 alter proc InsertStaff
@@ -361,6 +396,7 @@ begin
 end
 
 exec InsertStaff N'Nguyễn', 'img\Product\d5cb1aa5e36899-cphvanillaphclong.png','armus2002@gmail.com',N'Quản trị',1
+go
 
 -- Sửa nhân viên
 alter proc UpdateStaff(@Id nvarchar(20), @FullName nvarchar(50), @ImageStaff nvarchar(500), @Email nvarchar(50), @Role nvarchar(50), @Status int)
@@ -377,6 +413,7 @@ begin
 	where IdStaff = @Id
 
 end
+go
 
 -- Xóa nhân viên
 
@@ -387,7 +424,7 @@ begin
 	Delete from Staff where IdStaff = @Id
 
 end
-
+go
 --Tìm kiếm nhân viên (tìm tất cả cột nếu combobox rỗng)
 create PROCEDURE SearchStaff
     @column VARCHAR(30),
@@ -456,6 +493,7 @@ BEGIN
     OFFSET @offset ROWS
     FETCH NEXT @fetch ROWS ONLY;
 END
+go
 
 create PROCEDURE GetPagedStaff
     @pageNumber INT,
@@ -473,6 +511,7 @@ BEGIN
     OFFSET @startRow ROWS
     FETCH NEXT @pageSize ROWS ONLY;
 END
+go
 
 -- Lấy tổng số trang nhân viên
 create PROCEDURE GetTotalStaffCount
@@ -483,14 +522,14 @@ BEGIN
     FROM Staff
     WHERE StatusStaff = @status;
 END
-
+go
 -- Danh sách sản phẩm
 create or alter proc GetProduct
 as 
   begin 
       select IdProduct, NameProduct, Price, ImageProduct, StatusProduct, IdPT from Product
  end 
-
+ go
  -- Thêm sản phẩm
 
  create proc InsertProduct (@idProduct nvarchar(20),
@@ -505,6 +544,7 @@ as
 	   values 
 	   (@idProduct, @nameProduct, @price, @imageProduct, @statusProduct, @idpt)
   end
+  go
 
 -- Sửa sản phẩm
 create proc UpdateProduct (@idProduct nvarchar(20),
@@ -518,6 +558,7 @@ as
 	 NameProduct= @nameProduct, Price = @price, ImageProduct= @imageProduct, IdPT=@idpt
 	 where IdProduct=@idProduct
 end
+go
 
 -- Xóa sửa phẩm
 create proc DeleteProcduct (@id nvarchar(20))
@@ -526,13 +567,14 @@ as
       update Product set StatusProduct = 0 
 	  where IdProduct = @id
 end
-
+go
 
 -- Tìm kiếm sản phẩm
 create proc SearchProduct (@value nvarchar(500)) as
 select * from Product 
 where IdProduct = @value or NameProduct like N'%' + @value + '%' or Price like N'%' + @value + '%' 
       or ImageProduct like N'%' + @value + '%'
+go
 
 -- Xử lý phân trang sản phẩm <Thanh>
 -- Lấy trang
@@ -545,11 +587,13 @@ as
 	end
 
 EXEC GetPagedProduct @PageIndex = 1, @PageSize = 10;
+go
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalProductCount as select count(*) from Product
 
 SELECT TOP 10 * FROM Product;
+go
 
 --Thêm bill--
 CREATE OR ALTER PROCEDURE AddingBill(
@@ -582,6 +626,7 @@ BEGIN
     SET StatusTable = 1
     WHERE IdTable = @IdTable;
 END;
+go
 
 --Thêm DetailBill--
 create or alter proc AddingDetailBill(
@@ -593,6 +638,7 @@ as
 			DECLARE @ID nvarchar(10)
 			set @ID = (select IdBill from Bill where IdTable = @IdTable)
 	insert DetailBill (IdBill, IdProduct, Amount, TotalPrice) values (@ID, @IdProduct, @Amount,  @TotalPrice)
+	go
 
 -- Lấy trang bàn
 create proc GetPagedTable
@@ -604,11 +650,13 @@ as
 	end
 
 EXEC GetPagedTable @PageIndex = 1, @PageSize = 10;
+go
 
 -- Lấy tổng số sản phẩm 
 create proc GetTotalTableCount as select count(*) from TableCF
 
 SELECT TOP 10 * FROM TableCF;
+go
 
 -- GetTable 
 create proc GetTable
@@ -894,11 +942,18 @@ EXEC GetDetailStatistic
 CREATE OR ALTER PROC GetBill
 AS
 BEGIN 
-    			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
-			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
-			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
-    FROM Statistic a
-    INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
+		SELECT 
+		a.IdBill AS N'Mã hóa đơn', 
+		a.NameTable AS N'Tên bàn', 
+		b.NameProduct AS N'Tên sản phẩm', 
+		b.Amount AS N'Số lượng', 
+		a.PercentVoucher AS N'Phần trăm khuyến mãi',
+		a.NamePayment AS N'Phương thức thanh toán', 
+		a.CheckIn AS N'Giờ vào', 
+		a.CheckOut AS N'Giờ ra', 
+		a.Total AS N'Tổng tiền (VND)'
+		FROM Statistic a
+		INNER JOIN DetailStatistic b ON b.IdStatistic = a.IdStatistic
 END
 		
 EXEC GetBill
@@ -971,9 +1026,9 @@ create or alter proc GetPagedBill
 @PageSize int
 as
 	begin
-			SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
-			a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
-			a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
+		SELECT a.IdBill AS N'Mã hóa đơn', a.NameTable AS N'Tên bàn', b.NameProduct AS N'Tên sản phẩm', b.Amount AS N'Số lượng', 
+		a.PercentVoucher AS N'Phần trăm khuyến mãi', a.NamePayment AS N'Phương thức thanh toán', 
+		a.CheckIn AS N'Giờ vào', a.CheckOut AS N'Giờ ra', a.Total AS N'Tổng tiền (VND)'
 		FROM Statistic a
 		INNER JOIN DetailStatistic b
 		ON b.IdStatistic = a.IdStatistic order by IdBill offset(@PageIndex - 1) * @PageSize Rows Fetch next @PageSize Rows only;
@@ -1111,3 +1166,40 @@ as
 	update DetailBill set TotalPrice = Amount * @Price where IdProduct = @IdProduct and IdBill = @ID
 
 	select * from Staff
+
+-- Load nhân vien wpf
+create proc AllStaff as
+select ImageStaff, FullName, Email, RoleStaff, IdStaff from Staff
+
+-- TẠO THỐNG KÊ THEO NGÀY -- 
+CREATE OR ALTER PROC GetStatisticByDay
+	@startDate DATE,
+	@endDate DATE
+AS
+BEGIN
+	SELECT 
+	a.NameProduct AS N'Tên sản phẩm', 
+	SUM(a.Amount) AS N'Số lượng',
+	SUM(a.TotalPrice) AS N'Tổng tiền'
+	FROM DetailStatistic a
+	INNER JOIN Statistic b ON a.IdStatistic = b.IdStatistic
+	WHERE CAST(b.CheckIn AS DATE) BETWEEN @startDate AND @endDate
+	GROUP BY a.NameProduct
+	ORDER BY SUM(a.TotalPrice) DESC;
+END
+
+EXEC GetStatisticByDay @startDate = '2024-08-01', @endDate = '2024-08-01';
+
+-- TỈNH TỔNG CỘT TỔNG TIỀN --
+CREATE OR ALTER PROC GetStatisticByDay2
+	@startDate DATE,
+	@endDate DATE
+AS
+	SELECT
+		SUM(a.TotalPrice) AS N'Tổng tiền'
+		FROM DetailStatistic a
+		INNER JOIN Statistic b ON a.IdStatistic = b.IdStatistic
+		WHERE CAST(b.CheckIn AS DATE) BETWEEN '2024-08-01' AND '2024-08-01'
+		--GROUP BY a.NameProduct
+		ORDER BY SUM(a.TotalPrice) DESC;
+end

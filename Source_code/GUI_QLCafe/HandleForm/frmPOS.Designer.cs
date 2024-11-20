@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.lbTenBan = new System.Windows.Forms.Label();
             this.lbGioVao = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.lbText0 = new System.Windows.Forms.Label();
             this.panelAside = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.elPOS = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.paneText.SuspendLayout();
@@ -95,7 +97,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelHeader.Controls.Add(this.lbThuNgan);
             this.panelHeader.Controls.Add(this.lbTenBan);
@@ -120,7 +122,7 @@
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.SeaGreen;
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelFooter.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.panelFooter.BorderThickness = 2;
             this.panelFooter.Controls.Add(this.btnPlus);
@@ -144,14 +146,12 @@
             this.btnPlus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPlus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPlus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPlus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnPlus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnPlus.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.ForeColor = System.Drawing.Color.White;
-            this.btnPlus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnPlus.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnPlus.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnPlus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnPlus.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnPlus.Image = ((System.Drawing.Image)(resources.GetObject("btnPlus.Image")));
+            this.btnPlus.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnPlus.Location = new System.Drawing.Point(219, 58);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
@@ -169,14 +169,12 @@
             this.btnXoaSoLuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoaSoLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoaSoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoaSoLuong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnXoaSoLuong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnXoaSoLuong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaSoLuong.ForeColor = System.Drawing.Color.White;
-            this.btnXoaSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaSoLuong.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnXoaSoLuong.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnXoaSoLuong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnXoaSoLuong.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnXoaSoLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaSoLuong.Image")));
+            this.btnXoaSoLuong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnXoaSoLuong.Location = new System.Drawing.Point(403, 58);
             this.btnXoaSoLuong.Name = "btnXoaSoLuong";
             this.btnXoaSoLuong.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
@@ -194,13 +192,13 @@
             this.btnXoaMon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoaMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoaMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnXoaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnXoaMon.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaMon.ForeColor = System.Drawing.Color.White;
-            this.btnXoaMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnXoaMon.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnXoaMon.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnXoaMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnXoaMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnXoaMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnXoaMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnXoaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMon.Image")));
             this.btnXoaMon.Location = new System.Drawing.Point(403, 112);
             this.btnXoaMon.Name = "btnXoaMon";
@@ -219,13 +217,13 @@
             this.btnThemMon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThemMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThemMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnThemMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnThemMon.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemMon.ForeColor = System.Drawing.Color.White;
-            this.btnThemMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThemMon.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnThemMon.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnThemMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThemMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnThemMon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnThemMon.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
             this.btnThemMon.Location = new System.Drawing.Point(219, 112);
             this.btnThemMon.Name = "btnThemMon";
@@ -244,13 +242,13 @@
             this.btnThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnThanhToan.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnThanhToan.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
             this.btnThanhToan.Location = new System.Drawing.Point(25, 112);
             this.btnThanhToan.Name = "btnThanhToan";
@@ -313,7 +311,7 @@
             // flpTable
             // 
             this.flpTable.AutoScroll = true;
-            this.flpTable.BackColor = System.Drawing.SystemColors.Control;
+            this.flpTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.flpTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpTable.Location = new System.Drawing.Point(0, 0);
             this.flpTable.Name = "flpTable";
@@ -366,6 +364,11 @@
             this.panelBody.Size = new System.Drawing.Size(595, 751);
             this.panelBody.TabIndex = 9;
             // 
+            // elPOS
+            // 
+            this.elPOS.BorderRadius = 30;
+            this.elPOS.TargetControl = this;
+            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -415,5 +418,6 @@
         private System.Windows.Forms.ColumnHeader chMaSP;
         private Guna.UI2.WinForms.Guna2Button btnXoaSoLuong;
         private Guna.UI2.WinForms.Guna2Button btnPlus;
+        private Guna.UI2.WinForms.Guna2Elipse elPOS;
     }
 }

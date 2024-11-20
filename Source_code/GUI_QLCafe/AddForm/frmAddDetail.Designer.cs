@@ -28,217 +28,217 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddDetail));
-            this.nudAmount = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.bfDetail = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbText0 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
-            this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // nudAmount
-            // 
-            this.nudAmount.BackColor = System.Drawing.Color.Transparent;
-            this.nudAmount.BorderRadius = 5;
-            this.nudAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nudAmount.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.nudAmount.Location = new System.Drawing.Point(44, 232);
-            this.nudAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.nudAmount.Name = "nudAmount";
-            this.nudAmount.Size = new System.Drawing.Size(413, 49);
-            this.nudAmount.TabIndex = 9;
-            this.nudAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
-            this.nudAmount.UpDownButtonForeColor = System.Drawing.Color.White;
-            this.nudAmount.Value = new decimal(new int[] {
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddDetail));
+			this.nudAmount = new Guna.UI2.WinForms.Guna2NumericUpDown();
+			this.label2 = new System.Windows.Forms.Label();
+			this.lbName = new System.Windows.Forms.Label();
+			this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+			this.bfDetail = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+			this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
+			this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+			this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+			this.lbText0 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
+			this.panelHeader.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// nudAmount
+			// 
+			this.nudAmount.BackColor = System.Drawing.Color.Transparent;
+			this.nudAmount.BorderRadius = 5;
+			this.nudAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.nudAmount.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.nudAmount.Location = new System.Drawing.Point(44, 232);
+			this.nudAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.nudAmount.Name = "nudAmount";
+			this.nudAmount.Size = new System.Drawing.Size(413, 49);
+			this.nudAmount.TabIndex = 9;
+			this.nudAmount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+			this.nudAmount.UpDownButtonForeColor = System.Drawing.Color.White;
+			this.nudAmount.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudAmount.ValueChanged += new System.EventHandler(this.nudAmount_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 28);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Số lượng";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(39, 99);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(86, 28);
-            this.lbName.TabIndex = 5;
-            this.lbName.Text = "Tên món";
-            this.lbName.Click += new System.EventHandler(this.lbName_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.Transparent;
-            this.txtName.BorderColor = System.Drawing.Color.Silver;
-            this.txtName.BorderRadius = 5;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "";
-            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.txtName.Location = new System.Drawing.Point(44, 132);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtName.PlaceholderText = "";
-            this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(413, 49);
-            this.txtName.TabIndex = 22;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            // 
-            // bfDetail
-            // 
-            this.bfDetail.AnimateWindow = true;
-            this.bfDetail.AnimationInterval = 250;
-            this.bfDetail.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
-            this.bfDetail.BorderRadius = 10;
-            this.bfDetail.ContainerControl = this;
-            this.bfDetail.DockIndicatorTransparencyValue = 0.6D;
-            this.bfDetail.TransparentWhileDrag = true;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.BorderColor = System.Drawing.Color.Gray;
-            this.btnThoat.BorderRadius = 15;
-            this.btnThoat.BorderThickness = 1;
-            this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThoat.FillColor = System.Drawing.Color.White;
-            this.btnThoat.FocusedColor = System.Drawing.Color.Black;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(44, 391);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(413, 49);
-            this.btnThoat.TabIndex = 27;
-            this.btnThoat.Text = "THOÁT";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderThickness = 1;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.btnAdd.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
-            this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(44, 309);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
-            this.btnAdd.Size = new System.Drawing.Size(413, 59);
-            this.btnAdd.TabIndex = 28;
-            this.btnAdd.Text = "THÊM";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
-            this.panelHeader.Controls.Add(this.guna2PictureBox1);
-            this.panelHeader.Controls.Add(this.lbText0);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(505, 81);
-            this.panelHeader.TabIndex = 32;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 81);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 47;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // lbText0
-            // 
-            this.lbText0.AutoSize = true;
-            this.lbText0.BackColor = System.Drawing.Color.Transparent;
-            this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbText0.ForeColor = System.Drawing.Color.White;
-            this.lbText0.Location = new System.Drawing.Point(158, 21);
-            this.lbText0.Name = "lbText0";
-            this.lbText0.Size = new System.Drawing.Size(206, 45);
-            this.lbText0.TabIndex = 10;
-            this.lbText0.Text = "THÊM MÓN";
-            this.lbText0.Click += new System.EventHandler(this.lbText0_Click);
-            // 
-            // frmAddDetail
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(505, 464);
-            this.Controls.Add(this.panelHeader);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.nudAmount);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAddDetail";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDetail";
-            this.Load += new System.EventHandler(this.frmDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.nudAmount.ValueChanged += new System.EventHandler(this.nudAmount_ValueChanged);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(39, 200);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(92, 28);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "Số lượng";
+			this.label2.Click += new System.EventHandler(this.label2_Click);
+			// 
+			// lbName
+			// 
+			this.lbName.AutoSize = true;
+			this.lbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbName.Location = new System.Drawing.Point(39, 99);
+			this.lbName.Name = "lbName";
+			this.lbName.Size = new System.Drawing.Size(86, 28);
+			this.lbName.TabIndex = 5;
+			this.lbName.Text = "Tên món";
+			this.lbName.Click += new System.EventHandler(this.lbName_Click);
+			// 
+			// txtName
+			// 
+			this.txtName.BackColor = System.Drawing.Color.Transparent;
+			this.txtName.BorderColor = System.Drawing.Color.Silver;
+			this.txtName.BorderRadius = 5;
+			this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txtName.DefaultText = "";
+			this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+			this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtName.ForeColor = System.Drawing.Color.Black;
+			this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+			this.txtName.Location = new System.Drawing.Point(44, 132);
+			this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.txtName.Name = "txtName";
+			this.txtName.PasswordChar = '\0';
+			this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
+			this.txtName.PlaceholderText = "";
+			this.txtName.SelectedText = "";
+			this.txtName.Size = new System.Drawing.Size(413, 49);
+			this.txtName.TabIndex = 22;
+			this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+			// 
+			// bfDetail
+			// 
+			this.bfDetail.AnimateWindow = true;
+			this.bfDetail.AnimationInterval = 250;
+			this.bfDetail.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
+			this.bfDetail.BorderRadius = 10;
+			this.bfDetail.ContainerControl = this;
+			this.bfDetail.DockIndicatorTransparencyValue = 0.6D;
+			this.bfDetail.TransparentWhileDrag = true;
+			// 
+			// btnThoat
+			// 
+			this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+			this.btnThoat.BorderColor = System.Drawing.Color.Gray;
+			this.btnThoat.BorderRadius = 15;
+			this.btnThoat.BorderThickness = 1;
+			this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.btnThoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.btnThoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btnThoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.btnThoat.FillColor = System.Drawing.Color.White;
+			this.btnThoat.FocusedColor = System.Drawing.Color.Black;
+			this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnThoat.ForeColor = System.Drawing.Color.Black;
+			this.btnThoat.HoverState.BorderColor = System.Drawing.Color.Transparent;
+			this.btnThoat.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+			this.btnThoat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+			this.btnThoat.HoverState.ForeColor = System.Drawing.Color.White;
+			this.btnThoat.Location = new System.Drawing.Point(44, 391);
+			this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnThoat.Name = "btnThoat";
+			this.btnThoat.Size = new System.Drawing.Size(413, 49);
+			this.btnThoat.TabIndex = 27;
+			this.btnThoat.Text = "THOÁT";
+			this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+			this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+			this.btnAdd.BorderRadius = 15;
+			this.btnAdd.BorderThickness = 1;
+			this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+			this.btnAdd.FocusedColor = System.Drawing.Color.Transparent;
+			this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdd.ForeColor = System.Drawing.Color.White;
+			this.btnAdd.HoverState.BorderColor = System.Drawing.Color.Transparent;
+			this.btnAdd.HoverState.CustomBorderColor = System.Drawing.Color.Transparent;
+			this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+			this.btnAdd.HoverState.ForeColor = System.Drawing.Color.White;
+			this.btnAdd.Location = new System.Drawing.Point(44, 309);
+			this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+			this.btnAdd.Size = new System.Drawing.Size(413, 59);
+			this.btnAdd.TabIndex = 28;
+			this.btnAdd.Text = "THÊM";
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+			// 
+			// panelHeader
+			// 
+			this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
+			this.panelHeader.Controls.Add(this.guna2PictureBox1);
+			this.panelHeader.Controls.Add(this.lbText0);
+			this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelHeader.Location = new System.Drawing.Point(0, 0);
+			this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.panelHeader.Name = "panelHeader";
+			this.panelHeader.Size = new System.Drawing.Size(505, 81);
+			this.panelHeader.TabIndex = 32;
+			this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
+			// 
+			// guna2PictureBox1
+			// 
+			this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+			this.guna2PictureBox1.ImageRotate = 0F;
+			this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.guna2PictureBox1.Name = "guna2PictureBox1";
+			this.guna2PictureBox1.Size = new System.Drawing.Size(86, 81);
+			this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.guna2PictureBox1.TabIndex = 47;
+			this.guna2PictureBox1.TabStop = false;
+			this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+			// 
+			// lbText0
+			// 
+			this.lbText0.AutoSize = true;
+			this.lbText0.BackColor = System.Drawing.Color.Transparent;
+			this.lbText0.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbText0.ForeColor = System.Drawing.Color.White;
+			this.lbText0.Location = new System.Drawing.Point(158, 21);
+			this.lbText0.Name = "lbText0";
+			this.lbText0.Size = new System.Drawing.Size(206, 45);
+			this.lbText0.TabIndex = 10;
+			this.lbText0.Text = "THÊM MÓN";
+			this.lbText0.Click += new System.EventHandler(this.lbText0_Click);
+			// 
+			// frmAddDetail
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+			this.ClientSize = new System.Drawing.Size(505, 464);
+			this.Controls.Add(this.panelHeader);
+			this.Controls.Add(this.btnAdd);
+			this.Controls.Add(this.btnThoat);
+			this.Controls.Add(this.txtName);
+			this.Controls.Add(this.nudAmount);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lbName);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Name = "frmAddDetail";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "frmDetail";
+			this.Load += new System.EventHandler(this.frmDetail_Load);
+			((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
+			this.panelHeader.ResumeLayout(false);
+			this.panelHeader.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 

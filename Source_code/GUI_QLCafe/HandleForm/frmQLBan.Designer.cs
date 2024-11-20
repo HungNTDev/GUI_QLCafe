@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLBan));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,6 +62,7 @@
             this.panelHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.lblHeaderText = new System.Windows.Forms.Label();
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.qlBan = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBan)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -120,7 +122,7 @@
             this.shapeLine.BackColor = System.Drawing.Color.Transparent;
             this.shapeLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.shapeLine.BorderThickness = 1;
-            this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.shapeLine.Location = new System.Drawing.Point(-99, 175);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
@@ -367,7 +369,7 @@
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.panelFooter.BorderRadius = 5;
             this.panelFooter.BorderThickness = 1;
             this.panelFooter.Controls.Add(this.lbTotalPage);
@@ -386,18 +388,18 @@
             // 
             // btnLastPage
             // 
-            this.btnLastPage.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnLastPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnLastPage.BorderColor = System.Drawing.Color.Transparent;
             this.btnLastPage.BorderRadius = 5;
             this.btnLastPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLastPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLastPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLastPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLastPage.FillColor = System.Drawing.Color.SeaGreen;
+            this.btnLastPage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnLastPage.ForeColor = System.Drawing.Color.White;
             this.btnLastPage.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLastPage.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLastPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnLastPage.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnLastPage.ImageSize = new System.Drawing.Size(25, 25);
             this.btnLastPage.Location = new System.Drawing.Point(736, 18);
@@ -422,7 +424,7 @@
             // 
             // btnFirstPage
             // 
-            this.btnFirstPage.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnFirstPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnFirstPage.BorderColor = System.Drawing.Color.Transparent;
             this.btnFirstPage.BorderRadius = 5;
             this.btnFirstPage.BorderThickness = 1;
@@ -434,7 +436,7 @@
             this.btnFirstPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnFirstPage.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.ImageSize = new System.Drawing.Size(25, 25);
             this.btnFirstPage.Location = new System.Drawing.Point(321, 18);
@@ -447,7 +449,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnNext.BorderColor = System.Drawing.Color.Transparent;
             this.btnNext.BorderRadius = 5;
             this.btnNext.BorderThickness = 1;
@@ -471,7 +473,7 @@
             // 
             // btnPrev
             // 
-            this.btnPrev.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnPrev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnPrev.BorderColor = System.Drawing.Color.Transparent;
             this.btnPrev.BorderRadius = 5;
             this.btnPrev.BorderThickness = 1;
@@ -496,7 +498,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.Controls.Add(this.lblHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -526,15 +528,20 @@
             this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
             this.btnRefesh.ImageSize = new System.Drawing.Size(30, 30);
             this.btnRefesh.Location = new System.Drawing.Point(936, 123);
             this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnRefesh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnRefesh.Size = new System.Drawing.Size(54, 40);
             this.btnRefesh.TabIndex = 31;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // qlBan
+            // 
+            this.qlBan.BorderRadius = 30;
+            this.qlBan.TargetControl = this;
             // 
             // frmQLBan
             // 
@@ -585,11 +592,12 @@
         private Guna.UI2.WinForms.Guna2Panel panelHeader;
         private System.Windows.Forms.Label lblHeaderText;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThaiHoatDong;
-        private System.Windows.Forms.DataGridViewImageColumn dgvCapNhatTrangThaiBan;
-        private System.Windows.Forms.DataGridViewImageColumn dgvXemBan;
-        private System.Windows.Forms.DataGridViewImageColumn dgvXoaBan;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgvMBan;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgvTBan;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgvTrangThaiHoatDong;
+		private System.Windows.Forms.DataGridViewImageColumn dgvCapNhatTrangThaiBan;
+		private System.Windows.Forms.DataGridViewImageColumn dgvXemBan;
+		private System.Windows.Forms.DataGridViewImageColumn dgvXoaBan;
+        private Guna.UI2.WinForms.Guna2Elipse qlBan;
     }
 }

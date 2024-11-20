@@ -63,7 +63,7 @@ namespace GUI_QLCafe
                 btn.Width = 300;
                 btn.Height = 150;
                 btn.BorderColor = Color.White;
-                btn.FillColor = Color.MediumSeaGreen;
+                btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
                 btn.ForeColor = Color.White;
                 btn.Click += btn_Click;
                 btn.BorderThickness = 1;

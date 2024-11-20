@@ -30,6 +30,7 @@ namespace GUI_QLCafe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLVoucher));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -62,6 +63,7 @@ namespace GUI_QLCafe
             this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.elVoucher = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelFooter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKhuyenMai)).BeginInit();
@@ -100,7 +102,7 @@ namespace GUI_QLCafe
             this.shapeLine.BackColor = System.Drawing.Color.Transparent;
             this.shapeLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.shapeLine.BorderThickness = 1;
-            this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.shapeLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.shapeLine.Location = new System.Drawing.Point(-100, 159);
             this.shapeLine.Name = "shapeLine";
             this.shapeLine.PolygonSkip = 1;
@@ -113,7 +115,7 @@ namespace GUI_QLCafe
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.panelFooter.BorderRadius = 5;
             this.panelFooter.BorderThickness = 1;
             this.panelFooter.Controls.Add(this.btnNext);
@@ -138,9 +140,10 @@ namespace GUI_QLCafe
             this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageSize = new System.Drawing.Size(25, 25);
             this.btnNext.Location = new System.Drawing.Point(652, 18);
@@ -157,11 +160,11 @@ namespace GUI_QLCafe
             this.btnFirstPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFirstPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnFirstPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFirstPage.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnFirstPage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnFirstPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnFirstPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnFirstPage.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.ImageSize = new System.Drawing.Size(25, 25);
             this.btnFirstPage.Location = new System.Drawing.Point(316, 18);
@@ -178,7 +181,7 @@ namespace GUI_QLCafe
             this.lbTotalPage.AutoSize = true;
             this.lbTotalPage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbTotalPage.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbTotalPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.lbTotalPage.Location = new System.Drawing.Point(613, 18);
             this.lbTotalPage.Name = "lbTotalPage";
             this.lbTotalPage.Size = new System.Drawing.Size(33, 38);
@@ -191,20 +194,22 @@ namespace GUI_QLCafe
             this.lbCurrentPage.AutoSize = true;
             this.lbCurrentPage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbCurrentPage.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentPage.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbCurrentPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.lbCurrentPage.Location = new System.Drawing.Point(568, 18);
             this.lbCurrentPage.Name = "lbCurrentPage";
             this.lbCurrentPage.Size = new System.Drawing.Size(33, 38);
             this.lbCurrentPage.TabIndex = 23;
             this.lbCurrentPage.Text = "0";
+            this.lbCurrentPage.Click += new System.EventHandler(this.lbCurrentPage_Click);
             // 
             // btnPrev
             // 
             this.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPrev.BorderRadius = 5;
-            this.btnPrev.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnPrev.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
             this.btnPrev.ImageSize = new System.Drawing.Size(25, 25);
             this.btnPrev.Location = new System.Drawing.Point(484, 18);
@@ -220,12 +225,13 @@ namespace GUI_QLCafe
             this.lbPageLine.AutoSize = true;
             this.lbPageLine.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbPageLine.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPageLine.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbPageLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.lbPageLine.Location = new System.Drawing.Point(593, 18);
             this.lbPageLine.Name = "lbPageLine";
             this.lbPageLine.Size = new System.Drawing.Size(29, 38);
             this.lbPageLine.TabIndex = 23;
             this.lbPageLine.Text = "/";
+            this.lbPageLine.Click += new System.EventHandler(this.lbPageLine_Click);
             // 
             // btnLastPage
             // 
@@ -235,9 +241,10 @@ namespace GUI_QLCafe
             this.btnLastPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLastPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLastPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLastPage.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLastPage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnLastPage.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLastPage.ForeColor = System.Drawing.Color.White;
+            this.btnLastPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnLastPage.Location = new System.Drawing.Point(736, 18);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.PressedColor = System.Drawing.Color.Transparent;
@@ -251,7 +258,7 @@ namespace GUI_QLCafe
             this.lbTotalRows.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbTotalRows.AutoSize = true;
             this.lbTotalRows.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalRows.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbTotalRows.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.lbTotalRows.Location = new System.Drawing.Point(517, 62);
             this.lbTotalRows.Name = "lbTotalRows";
             this.lbTotalRows.Size = new System.Drawing.Size(171, 31);
@@ -261,7 +268,7 @@ namespace GUI_QLCafe
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.SeaGreen;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.panelHeader.Controls.Add(this.lblHeaderText);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -471,15 +478,15 @@ namespace GUI_QLCafe
             this.btnRefesh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRefesh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRefesh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
+            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(81)))));
+            this.btnRefesh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
             this.btnRefesh.ImageSize = new System.Drawing.Size(30, 30);
             this.btnRefesh.Location = new System.Drawing.Point(935, 107);
             this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(217)))), ((int)(((byte)(132)))));
+            this.btnRefesh.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(74)))));
             this.btnRefesh.Size = new System.Drawing.Size(54, 40);
             this.btnRefesh.TabIndex = 33;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
@@ -521,6 +528,11 @@ namespace GUI_QLCafe
             this.btnThem.Size = new System.Drawing.Size(55, 55);
             this.btnThem.TabIndex = 16;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // elVoucher
+            // 
+            this.elVoucher.BorderRadius = 30;
+            this.elVoucher.TargetControl = this;
             // 
             // frmQLVoucher
             // 
@@ -567,15 +579,16 @@ namespace GUI_QLCafe
         private System.Windows.Forms.Label lblHeaderText;
         private Guna.UI2.WinForms.Guna2Button btnRefesh;
         public Guna.UI2.WinForms.Guna2DataGridView dgvDanhSachKhuyenMai;
-        private DataGridViewTextBoxColumn dgvMaKhuyenMai;
-        private DataGridViewTextBoxColumn dgvTenKhuyenMai;
-        private DataGridViewTextBoxColumn dgvPhanTramKM;
-        private DataGridViewTextBoxColumn dgvTrangThai;
-        private DataGridViewImageColumn dgvSua;
-        private DataGridViewImageColumn dgvXem;
-        private DataGridViewImageColumn dgvXoa;
         private DataGridViewImageColumn dataGridViewImageColumn1;
         private DataGridViewImageColumn dataGridViewImageColumn2;
         private DataGridViewImageColumn dataGridViewImageColumn3;
+		private DataGridViewTextBoxColumn dgvMaKhuyenMai;
+		private DataGridViewTextBoxColumn dgvTenKhuyenMai;
+		private DataGridViewTextBoxColumn dgvPhanTramKM;
+		private DataGridViewTextBoxColumn dgvTrangThai;
+		private DataGridViewImageColumn dgvSua;
+		private DataGridViewImageColumn dgvXem;
+		private DataGridViewImageColumn dgvXoa;
+        private Guna.UI2.WinForms.Guna2Elipse elVoucher;
     }
 }

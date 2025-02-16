@@ -202,6 +202,32 @@ namespace DAL_QLCafe
             }
             return false;
         }
+        public DataTable search(string name)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conn))
+                {
+                    using (SqlCommand cmd = new SqlCommand("select * from Voucher WHERE NameVoucher = @name", conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@name", name);
+
+                        conn.Open();
+                        DataTable dtProduct = new DataTable();
+                        dtProduct.Load(cmd.ExecuteReader());
+                        return dtProduct;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
         public DataTable search(string value, int pageNumber, int pageSize, out int totalRows, out int totalPages)
         {
             totalRows = 0;

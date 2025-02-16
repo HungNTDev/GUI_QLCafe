@@ -381,6 +381,60 @@ namespace DAL_QLCafe
             }
             return false;
         }
+        public bool delete(string name)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conn))
+                {
+                    using (SqlCommand cmd = new SqlCommand("DELETE FROM Staff WHERE FullName = @name", conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@name", name);
+
+                        conn.Open();
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public DataTable search(string id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conn))
+                {
+                    using (SqlCommand cmd = new SqlCommand("select * from Staff WHERE idStaff = @Id", conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Id", id);
+
+                        conn.Open();
+                        DataTable dtProduct = new DataTable();
+                        dtProduct.Load(cmd.ExecuteReader());
+                        return dtProduct;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
         public DataTable search(string column, string value, int status, int pageNumber, int pageSize, out int totalRows, out int totalPages)
         {
             totalRows = 0;

@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BUS_QLCafe\BUS_QLCafe.csproj" />
     <ProjectReference Include="..\DAL_QLCafe\DAL_QLCafe.csproj" />
   </ItemGroup>
 

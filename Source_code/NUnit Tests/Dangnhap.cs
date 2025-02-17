@@ -1,4 +1,5 @@
-﻿    using DAL_QLCafe;
+﻿using BUS_QLCafe;
+using DAL_QLCafe;
     using DTO_QLCafe;
     using System;
     using System.Collections.Generic;
@@ -60,13 +61,15 @@
             [Test]
             public void LoginSuccessfully()
             {
+                BUS_Staff busStaff = new BUS_Staff();
                 DTO_Staff loginDTO = new DTO_Staff
                 {
                     Email = "hungntps38090@gmail.com",
-                    passwordStaff = "123456"
+                    passwordStaff = busStaff.encryption("123456")
                 };
 
                 bool result = loginDAL.dangNhap(loginDTO);
+                Console.WriteLine($"Kết quả đăng nhập: {result}");
                 Assert.IsTrue(result, "Login should succeed with valid email and password.");
             }
 

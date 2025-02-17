@@ -401,13 +401,6 @@ namespace DAL_QLCafe
             {
                 return false;
             }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
         }
         public DataTable search(string id)
         {
@@ -427,12 +420,9 @@ namespace DAL_QLCafe
                     }
                 }
             }
-            finally
+            catch (Exception ex)
             {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
+                throw new Exception("Error in search method: " + ex.Message);
             }
         }
         public DataTable search(string column, string value, int status, int pageNumber, int pageSize, out int totalRows, out int totalPages)

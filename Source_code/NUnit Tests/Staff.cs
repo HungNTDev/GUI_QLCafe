@@ -7,10 +7,13 @@ namespace NUnit_Tests
     public class Staff
     {
         private DAL_Staff staffDAL;
+        private string testStaffId;
+
         [SetUp]
         public void Setup()
         {
             staffDAL = new DAL_Staff();
+            testStaffId = "TEST_" + Guid.NewGuid().ToString("N").Substring(0, 5); // Unique ID
         }
 
         [Test]
@@ -18,7 +21,7 @@ namespace NUnit_Tests
         {
             DTO_Staff staffDTO = new DTO_Staff
             {
-                IdStaff = "S001",
+                IdStaff = testStaffId,
                 FullName = "John Doe",
                 ImageStaff = "image.jpg",
                 Email = "john.doe@example.com",
@@ -28,7 +31,7 @@ namespace NUnit_Tests
             };
 
             bool result = staffDAL.insert(staffDTO);
-            Assert.IsTrue(result);
+            Assert.IsTrue(result, "Adding staff failed.");
         }
 
         [Test]
@@ -36,7 +39,28 @@ namespace NUnit_Tests
         {
             DTO_Staff staffDTO = new DTO_Staff
             {
-                IdStaff = "S001",
+                IdStaff = testStaffId,  // Same ID as the added staff
+                FullName = "John Updated",
+                ImageStaff = "image.jpg",
+                Email = "john.updated@example.com",
+                PasswordStaff = "newpassword",
+                RoleStaff = "Admin",
+                StatusStaff = 1
+            };
+
+            bool insertResult = staffDAL.insert(staffDTO);
+            Assert.IsTrue(insertResult, "Adding staff before update failed.");
+
+            bool updateResult = staffDAL.update(staffDTO, testStaffId); // Use correct ID
+            Assert.IsTrue(updateResult, "Updating staff failed.");
+        }
+
+        [Test]
+        public void DeleteStaff()
+        {
+            DTO_Staff staffDTO = new DTO_Staff
+            {
+                IdStaff = testStaffId,
                 FullName = "John Doe",
                 ImageStaff = "image.jpg",
                 Email = "john.doe@example.com",
@@ -45,22 +69,25 @@ namespace NUnit_Tests
                 StatusStaff = 1
             };
 
-            bool result = staffDAL.update(staffDTO, "NV001");
-            Assert.IsTrue(result);
-        }
+            bool insertResult = staffDAL.insert(staffDTO);
+            Assert.IsTrue(insertResult, "Adding staff before delete failed.");
 
-        [Test]
-        public void DeleteStaff()
-        {
-            bool result = staffDAL.delete("NV001");
-            Assert.IsTrue(result);
+            bool deleteResult = staffDAL.delete(testStaffId);
+            Assert.IsTrue(deleteResult, "Deleting staff failed.");
         }
 
         [Test]
         public void SearchStaff()
         {
-            DataTable results = staffDAL.search("Thanh");
-            Assert.IsNotNull(results);
+            DataTable results = staffDAL.search("John Doe");
+            Assert.IsNotNull(results, "Search returned null.");
+            Assert.IsTrue(results.Rows.Count > 0, "Search returned no results.");
+        }
+
+        [TearDown]
+        public void Cleanup()
+        {
+            staffDAL.delete(testStaffId); // Cleanup test data
         }
     }
 }

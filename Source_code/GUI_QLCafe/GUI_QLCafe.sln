@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS_QLCafe", "..\BUS_QLCafe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_QLCafe", "..\DTO_QLCafe\DTO_QLCafe.csproj", "{92DA7950-C245-49A1-8407-AAD8F8D4CE5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "..\TestProject\TestProject.csproj", "{6D1A43A3-66DF-4928-8A88-95456036C505}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{92DA7950-C245-49A1-8407-AAD8F8D4CE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92DA7950-C245-49A1-8407-AAD8F8D4CE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92DA7950-C245-49A1-8407-AAD8F8D4CE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1A43A3-66DF-4928-8A88-95456036C505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1A43A3-66DF-4928-8A88-95456036C505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1A43A3-66DF-4928-8A88-95456036C505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1A43A3-66DF-4928-8A88-95456036C505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

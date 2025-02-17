@@ -27,10 +27,10 @@ namespace NUnit_Tests
         {
             DTO_Product productDTO = new DTO_Product
             {
-                IdProduct =  testIdProduct,
+                IdProduct = testIdProduct,
                 NameProduct = "san pham 1",
                 Price = 13000f,
-                StatusProduct = 1,
+                StatusProduct = "1",
                 ImageProduct = "baohoang.png",
                 IdPT = "CFE"
             };
@@ -48,7 +48,7 @@ namespace NUnit_Tests
                 IdProduct = testIdProduct,
                 NameProduct = "san pham 1",
                 Price = 13000f,
-                StatusProduct = 1,
+                StatusProduct = "1",
                 ImageProduct = "baohoang.png",
                 IdPT = "CFE"
             };
@@ -69,7 +69,7 @@ namespace NUnit_Tests
                 IdProduct = testIdProduct,
                 NameProduct = "san pham 1",
                 Price = 13000f,
-                StatusProduct = 1,
+                StatusProduct = "1",
                 ImageProduct = "baohoang.png",
                 IdPT = "CFE"
             };
@@ -87,7 +87,7 @@ namespace NUnit_Tests
                 IdProduct = testIdProduct,
                 NameProduct = "san pham 1",
                 Price = 13000f,
-                StatusProduct = 1,
+                StatusProduct = "1",
                 ImageProduct = "baohoang.png",
                 IdPT = "CFE"
             };

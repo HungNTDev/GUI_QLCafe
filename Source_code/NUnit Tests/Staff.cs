@@ -54,14 +54,20 @@ namespace NUnit_Tests
             bool updateResult = staffDAL.update(staffDTO, testStaffId); // Use correct ID
             Assert.IsTrue(updateResult, "Updating staff failed.");
         }
-
         [Test]
-        public void DeleteStaff()
+        public void S01_SearchStaff()
+        {
+            DataTable results = staffDAL.search("John Doe");
+            Assert.IsNotNull(results, "Search returned null.");
+            Assert.IsTrue(results.Rows.Count > 0, "Search returned no results.");
+        }
+        [Test]
+        public void S02_DeleteStaff()
         {
             DTO_Staff staffDTO = new DTO_Staff
             {
                 IdStaff = testStaffId,
-                FullName = "John Doe",
+                FullName = "John Updated",
                 ImageStaff = "image.jpg",
                 Email = "john.doe@example.com",
                 PasswordStaff = "password123",
@@ -72,17 +78,11 @@ namespace NUnit_Tests
             bool insertResult = staffDAL.insert(staffDTO);
             Assert.IsTrue(insertResult, "Adding staff before delete failed.");
 
-            bool deleteResult = staffDAL.delete(testStaffId);
+            bool deleteResult = staffDAL.delete(staffDTO.FullName);
             Assert.IsTrue(deleteResult, "Deleting staff failed.");
         }
 
-        [Test]
-        public void SearchStaff()
-        {
-            DataTable results = staffDAL.search("John Doe");
-            Assert.IsNotNull(results, "Search returned null.");
-            Assert.IsTrue(results.Rows.Count > 0, "Search returned no results.");
-        }
+        
 
         [TearDown]
         public void Cleanup()

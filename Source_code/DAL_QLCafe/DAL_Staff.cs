@@ -402,16 +402,16 @@ namespace DAL_QLCafe
                 return false;
             }
         }
-        public DataTable search(string id)
+        public DataTable search(string fullname)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(_conn))
                 {
-                    using (SqlCommand cmd = new SqlCommand("select * from Staff WHERE idStaff = @Id", conn))
+                    using (SqlCommand cmd = new SqlCommand("select * from Staff WHERE FullName = @FullName", conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@Id", id);
+                        cmd.Parameters.AddWithValue("@FullName", fullname);
 
                         conn.Open();
                         DataTable dtProduct = new DataTable();

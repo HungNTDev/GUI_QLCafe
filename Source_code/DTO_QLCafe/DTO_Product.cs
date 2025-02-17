@@ -10,7 +10,7 @@
 
         public string imageProduct;
 
-        public string statusProduct;
+        public int statusProduct;
 
         public string idPT;
 
@@ -38,7 +38,7 @@
             set { imageProduct = value; }
         }
 
-        public string StatusProduct
+        public int StatusProduct
         {
             get { return statusProduct; }
             set { statusProduct = value; }
@@ -52,7 +52,7 @@
 
         public DTO_Product() { }
 
-        public DTO_Product(string idProduct, string nameProduct, float price, string imageProduct, string statusProduct, string idPT)
+        public DTO_Product(string idProduct, string nameProduct, float price, string imageProduct, int statusProduct, string idPT)
         {
             this.idProduct = idProduct;
             this.nameProduct = nameProduct;
@@ -62,7 +62,7 @@
             this.idPT = idPT;
         }
 
-        public DTO_Product(string idProduct, string nameProduct, float price, string imageProduct, string statusProduct)
+        public DTO_Product(string idProduct, string nameProduct, float price, string imageProduct, int statusProduct)
         {
             this.idProduct = idProduct;
             this.nameProduct = nameProduct;

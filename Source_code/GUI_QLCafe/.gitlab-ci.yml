@@ -1,3 +1,6 @@
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH'  # Run CI/CD on all branches
 stages:
   - build
   - test
